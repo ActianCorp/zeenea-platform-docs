@@ -1,0 +1,149 @@
+---
+title: Understanding Item Documentation
+---
+
+# Understanding the Documentation of an Item
+
+## Attributes of an Item
+
+### Standard Attributes of Object Documentation
+
+By default, catalog Items are defined by a set of attributes:
+
+* **Name**: The name of the Item defined in Zeenea Studio or by API.
+* **Description**: Can be edited in Zeenea Studio or by API
+* **Contacts**: People associated with catalog Objects, and their responsibility for them (Data Steward, Data Owner, etc.).
+* **Curators**: Users responsible for editing Item documentation
+* **Glossary Items**: Items or business terms that define a technical or logical Item
+* **Properties**: Custom attributes defined by your platform administrator
+* **Last update**: Date of last update of Item documentation in Zeenea Studio. For Items originating from connections, this date is updated each time a new inventory or synchronization is created, or for datasets each time the schema is verified.
+
+When an Item comes from a connection (e.g. Dataset), it also includes other attributes from this connection. These attributes are read-only in Zeenea:
+
+* **Technical name**: Name of the Item as defined at the source level and collected by the scanner
+* **Source Description**: This second description cannot be modified in the Studio
+* **Contacts**: Some connections can also be used to retrieve contacts
+* **Source properties**: Attributes specific to the connector or connection (e.g. schema)
+* **Connection**: Item source system
+
+### Specific Attributes for Each Item Type
+
+In Zeenea, each type of Item can have specific attributes, depending on its nature:
+
+#### Datasets:
+* Type (Table, View, etc.)
+* List of foreign keys and relationships with other datasets
+* List of functional keys
+* Category
+* Sample data
+* Quality information
+
+#### Fields:
+
+* Functional key (yes/no)
+* Primary key (yes/no)
+* Foreign key (yes/no)
+* Type (normalized type of the Field: Integer, Varchar, etc.)
+* Native type (as provided by the source)
+* Multivalued (yes/no)
+* Nullable (yes/no)
+
+#### Visualizations:
+
+* Associated datasets
+
+#### Data Processes:
+
+* Inputs / outputs
+* List of operations (Field by Field transformations)
+
+#### Glossary Items:
+
+* Parent and/or child Items
+* Alternative names (synonym, acronym, variant, ...)
+
+#### Custom Items:
+
+* Linked Items
+
+## Editing Item Documentation
+
+Only certain user profiles can edit an Item's documentation from within Zeenea Studio. To do so, a user must meet one or both of the following conditions, depending on his or her user groups:
+
+* Have editing rights for the type of Item (e.g. Dataset, Glossary Object)
+* Be one of the Object's curators
+
+### Editing Options
+
+Documentation can be edited individually or in bulk:
+
+* From an Item overview (e.g. in the "Catalog" section)
+* From an Item's detail page
+* From the "Catalog" section, using the action menu
+* By Excel import
+
+## Description Editing
+
+### Simple Descriptions
+
+By default, the description editing component lets you create simple, unformatted descriptions, including line breaks.
+
+This format is ideal for mass use, such as Excel import/export, as it does not include HTML tags or rich objects (images, tables, etc.).
+
+## Rich Descriptions
+
+You can also convert your descriptions to "rich text" format, to add formatting, by clicking on the "Rich text editor" button on the details page of an Item.
+
+The rich text format is suitable for documenting key catalog objects (Glossary Items, reference Items, etc.).
+
+:::note
+This rich text editor is not available for Field Items, which can only be accessed from Explorer previews.
+:::
+
+The rich text editor supports the following options:
+
+* Bold
+* Italic
+* Underline
+* Font and background color
+* Strikethrough text
+* Text alignment
+* Ordered list
+* Unordered list
+* Hypertext link
+* Special characters
+* Tables
+* Images (as links or by upload)
+* Delete formatting
+
+  ![](/img/zeenea-edit-description.png)
+
+In rich text mode, descriptions are converted to HTML format and therefore contain tags to manage formatting options, making mass exploitation complex and risky. For this reason, rich text descriptions cannot be imported into the Studio.
+
+If necessary, you can reset your description and return to "simple description" mode using the "Reset description" action from the "Actions" menu on the detail page. It will also soon be possible to return to simple description mode using Excel import.
+
+### Using the Source Description
+
+For Items imported from a connection, it is possible to use the description defined at the data source level, rather than defining a description manually in Zeenea.
+
+To do this, check the **Use source description** checkbox. When this box is checked, the source description is used in the Studio and Explorer detail pages. The description is automatically updated each time the source is synchronized. If a manual description has been defined, it is deleted.
+
+### Generating the Summary
+
+Whatever its origin or format, a summary is generated by Zeenea when each new description is created.
+
+This summary is used in the search results or preview panels available in applications when the full display of the description is not optimal.
+
+For simple descriptions, each update to the content of the description will automatically regenerate a summary.
+
+For rich descriptions, the summary is generated by removing the formatting and certain elements that cannot be displayed optimally in search results (images, tables, bullets, etc.). In this case, you can edit the summary manually.
+
+Consequently, in the event of future modifications to a rich description, the summary is not updated automatically. You can update it manually if required.
+
+## Linking Glossary Items
+
+Depending on your metamodel configuration, you can link physical or logical items (datasets, fields, custom items, etc.) with business definitions (glossary items).
+
+Possible links between item types are defined at the metamodel level. So that you can not link a physical item with any glossary item. The type of link must be authorized by your metamodel.
+
+Read more: [Configuring the Glossary Metamodel](./zeenea-studio-configure-glossary-model.md)

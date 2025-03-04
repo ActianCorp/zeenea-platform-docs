@@ -1,0 +1,426 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@300;400&display=swap');
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-font-family-base: 'Red Hat Text';
+  --ifm-color-primary: #238ffb;
+  --ifm-color-primary-dark: #0781fa;
+  --ifm-color-primary-darker: #047aef;
+  --ifm-color-primary-darkest: #0464c5;
+  --ifm-color-primary-light: #3f9dfc;
+  --ifm-color-primary-lighter: #4da4fc;
+  --ifm-color-primary-lightest: #77bafd;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-navbar-link-hover-color: rgb(0, 0, 0);
+  --ifm-footer-padding-vertical: 15px;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #238ffb;
+  --ifm-color-primary-dark: #0781fa;
+  --ifm-color-primary-darker: #047aef;
+  --ifm-color-primary-darkest: #0464c5;
+  --ifm-color-primary-light: #3f9dfc;
+  --ifm-color-primary-lighter: #4da4fc;
+  --ifm-color-primary-lightest: #77bafd;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-navbar-link-hover-color: rgb(0, 0, 0);
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #1e2129;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 44px;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #238ffb;
+}
+
+.navbar__title {
+  color: white;
+}
+
+.navbar__link {
+  color: white;
+}
+
+[data-theme='dark'] .theme-doc-version-banner {
+  --ifm-alert-background-color: #5e5e5e;
+}
+
+[data-theme='light'] .theme-doc-version-banner {
+  --ifm-alert-background-color: #cecece;
+}
+
+/* THIS ONLY APPLIES TO THE ARROW ICON
+.navbar__link :hover {
+     color: black !important; 
+} 
+*/ 
+/* END Navbar */
+
+/* HOME PAGE */
+/* WHY DO THESE NOT WORK IF I PUT THEM HERE, WHERE THERE ARE OTHER CUSTOMIZATION?: src\components\HomepageFeatures\styles.module.css */
+header:has(> div.homeheader) {
+  /*background: url('/img/home/vc-cta-background.jpg'); */
+  background-image: url('../../static/img/home/zeenea-header.png');
+  background-color: #0464c5;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;  
+  /*border-bottom: 10px solid #A8E117;*/
+}
+
+.homeheader {
+  margin-top: -2rem;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
+  height: 190px;
+}
+
+.header-github-link {
+  &:after {
+    transition: opacity 0.2s;
+    content: "";
+    width: 24px;
+    height: 24px;
+    display: flex;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:hover:after {
+    opacity: 0.5;
+  }
+}
+
+.hero__title {
+  color: white;
+  font-size: 52px;
+  font-weight: 600;
+}
+.hero__subtitle {
+  color: white;
+  font-size: 36px;
+}
+
+/* Boxes */
+.featureSVG-custom {
+  width: 50px;
+}
+
+.featureLink {
+  text-decoration: none !important;
+  font-size: 20px;
+  padding-top: 5px; 
+}
+
+[data-theme='light'] .featureLink {
+  color:#000000;
+}
+
+[data-theme='dark'] .featureLink {
+  color:#ffffff;
+}
+
+h3.featureLink {
+  font-size: 16px;
+  font-weight: 500;
+
+  &::after {
+    content: '  >';
+    color:  #A8E117;
+    font-size: 28px;
+    font-weight:900;
+    vertical-align: middle;
+   }
+}
+/* END Boxes */
+/* END Home Page */
+
+/* Sidebar */
+.menu__link {
+  font-size: 91%;
+}
+    /* First items */
+[data-theme='dark'] .theme-doc-sidebar-item-category-level-1 >
+.menu__list-item-collapsible:first-child {
+/* 	font-weight: bold; */
+  background-color: #444;
+}
+[data-theme='light'] .theme-doc-sidebar-item-category-level-1 >
+.menu__list-item-collapsible:first-child {
+/* 	font-weight: bold; */
+  background-color: #DDD;
+}
+/* END Sidebar */
+
+/* Footer */
+.footer__link-item {
+       color: red;
+}
+  
+.footerColumn-left {
+  float: left;
+  width: 33.33%;
+}
+
+.footerColumn-center {
+  float: left;
+  width: 33.33%;
+  text-align: center;
+}
+
+.footerColumn-right {
+  float: right;
+  width: 33.33%;
+  text-align: right;
+}
+
+/* Clear floats after the columns */
+.footerRow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footerCopyright {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+[data-theme='dark'] .footerCopyright {
+  color: #888888;
+}
+
+[data-theme='dark'] .footer {
+  background-color: #303030;
+}
+
+[data-theme='light'] .footerCopyright {
+  color: #313131;
+}
+
+[data-theme='light'] .footer {
+  background-color: #ebebeb;
+}
+
+[data-theme='dark'] .pagination-nav__link {
+  background-color: #2b2b2b;
+
+}
+
+[data-theme='light'] .pagination-nav__link {
+  background-color: #e2e2e2;
+}
+
+.theme-doc-footer a {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  color: var(--ifm-color-content-secondary);
+  display: inline-block;
+  padding: 4px 12px;
+  margin-left: 16px;
+}
+
+.theme-doc-footer a:hover {
+  background-color: rgba(158, 158, 158,0.1);
+  text-decoration: none;
+}
+
+.pageFeedback {
+  color: var(--ifm-color-content-secondary);
+  width: 135px;
+  height: 26px;
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left:20px;
+  &:after {
+    content: " ";
+    }
+}
+
+[data-theme='light'] .pageFeedback {
+  /* color: #575860; */
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='22' height='22' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M10.3009 13.6949L20.102 3.89742M10.5795 14.1355L12.8019 18.5804C13.339 19.6545 13.6075 20.1916 13.9458 20.3356C14.2394 20.4606 14.575 20.4379 14.8492 20.2747C15.1651 20.0866 15.3591 19.5183 15.7472 18.3818L19.9463 6.08434C20.2845 5.09409 20.4535 4.59896 20.3378 4.27142C20.2371 3.98648 20.013 3.76234 19.7281 3.66167C19.4005 3.54595 18.9054 3.71502 17.9151 4.05315L5.61763 8.2523C4.48114 8.64037 3.91289 8.83441 3.72478 9.15032C3.56153 9.42447 3.53891 9.76007 3.66389 10.0536C3.80791 10.3919 4.34498 10.6605 5.41912 11.1975L9.86397 13.42C10.041 13.5085 10.1295 13.5527 10.2061 13.6118C10.2742 13.6643 10.3352 13.7253 10.3876 13.7933C10.4468 13.87 10.491 13.9585 10.5795 14.1355Z' stroke='%23525860' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+
+[data-theme='dark'] .pageFeedback {
+  /* color: rgb(255, 255, 255); */
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='22' height='22' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M10.3009 13.6949L20.102 3.89742M10.5795 14.1355L12.8019 18.5804C13.339 19.6545 13.6075 20.1916 13.9458 20.3356C14.2394 20.4606 14.575 20.4379 14.8492 20.2747C15.1651 20.0866 15.3591 19.5183 15.7472 18.3818L19.9463 6.08434C20.2845 5.09409 20.4535 4.59896 20.3378 4.27142C20.2371 3.98648 20.013 3.76234 19.7281 3.66167C19.4005 3.54595 18.9054 3.71502 17.9151 4.05315L5.61763 8.2523C4.48114 8.64037 3.91289 8.83441 3.72478 9.15032C3.56153 9.42447 3.53891 9.76007 3.66389 10.0536C3.80791 10.3919 4.34498 10.6605 5.41912 11.1975L9.86397 13.42C10.041 13.5085 10.1295 13.5527 10.2061 13.6118C10.2742 13.6643 10.3352 13.7253 10.3876 13.7933C10.4468 13.87 10.491 13.9585 10.5795 14.1355Z' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+/* END Footer */
+
+/* Add icon after external links */
+[data-theme='dark'] .externalLink::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+  margin-right: 2px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M13.5 10.5L21 3' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M16 3L21 3L21 8' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M21 14V19C21 20.1046 20.1046 21 19 21H12H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H10' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+[data-theme='light'] .externalLink::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M13.5 10.5L21 3' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M16 3L21 3L21 8' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M21 14V19C21 20.1046 20.1046 21 19 21H12H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H10' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+
+/* Put a border around images by default */
+img {
+  border: 1px solid black;;
+}
+
+/* No border for logo or icons */
+div.navbar__logo > img, .icon {
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+input {
+  height: 40px;
+  width: 300px;
+}
+
+textarea {
+  border: 1px solid #ccc;
+  display: block;
+  font-size: 11pt;
+  width: 500px;
+  padding: 12px 20px;
+  margin: 6px 0;
+  border-radius: 8px;
+  background: none;
+  box-sizing: border-box;
+  font-family: 'Red Hat Text';
+  font-size: 16px;
+}
+
+input {
+  border: 1px solid #ccc;
+  display: block;
+  font-size: 11pt;
+  width: 150px;
+  border-radius: 8px;
+  background: none;
+  box-sizing: border-box;
+  font-family: 'Red Hat Text';
+}
+
+::placeholder {
+  opacity: 0.5;
+}
+
+input[type="submit"]:hover {
+  background: #AAAAAA;
+  font-family: 'Red Hat Text';
+}
+
+[data-theme='light'] .submit {
+  color: black;
+}
+
+[data-theme='dark'] .submit {
+  color: white;
+}
+
+.formLabel {
+  color: #1fcc1f;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.feedbackDiv {
+  margin-top: 10px;
+}
+
+.codeHighlight {
+  background-color: rgb(151, 209, 151);
+}
+
+
+.codeBold {
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.card-text {
+  height: 60px;
+  line-height: 22px;
+  font-size: 15px;
+  width: 320px;
+}
+
+[data-theme='dark'] .api {
+  background-image: url("../../static/img/home/api-light.svg");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: 0px;
+  padding-bottom: 80px;
+}
+
+[data-theme='light'] .api {
+  background-image: url("../../static/img/home/api-dark.svg");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: 0px;
+  padding-bottom: 80px;
+}
+
+.api-row {
+  margin-bottom: 10px;
+}
+
+.api-col1 {
+  font-size: 14px;
+  width: 400px;
+}
+
+.api-col2 {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  margin-left: 50px;
+  position: absolute;
+  x: 500px;
+}
+
+.api-info {
+  padding-left: 0px;
+  padding-top: 50px;
+}
