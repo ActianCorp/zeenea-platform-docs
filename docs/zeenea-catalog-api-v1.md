@@ -352,7 +352,7 @@ The above request will return the following:
 }
 ```
 
-### Example 5: Udate the key of a Data catalog Visualization Item whose key is "Table/Samples/Regional" with the key "Finance/Report/Regional"
+### Example 5: Update the key of a Data catalog Visualization Item whose key is "Table/Samples/Regional" with the key "Finance/Report/Regional"
 
 ```
 mutation {
