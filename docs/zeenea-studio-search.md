@@ -56,8 +56,8 @@ Once selected, the scope doesn’t change when you update your search; that way,
 
 You can restrict your search to one of four scopes: 
 
-* Default: Datasets, Visualisations, Data Processes, Categories, and Custom Items
-* Assets: Datasets, Visualisations and Data Processes
+* Default: Datasets, Visualizations, Data Processes, Categories, and Custom Items
+* Assets: Datasets, Visualizations and Data Processes
 * Glossary: Glossary Items
 * All Items
 
