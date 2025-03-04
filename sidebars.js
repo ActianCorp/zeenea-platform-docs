@@ -79,6 +79,7 @@ const sidebars = {
         'zeenea-connector-db2',
         'zeenea-connector-dbt',
         'zeenea-connector-dynamics365',
+        'zeenea-connector-dyamics-ax',
         'zeenea-connector-denodo',
         'zeenea-connector-elasticsearch',
         'zeenea-connector-generic-dataset',
@@ -248,6 +249,8 @@ const sidebars = {
         'zeenea-tenant-management',
         'zeenea-query-language',
         'zeenea-data-catalog',
+        'zeenea-property-library',
+        'zeenea-configuring-templates',
       ]
     },
   ],
