@@ -148,7 +148,7 @@ const config = {
         // Public API key: it is safe to commit it
         apiKey: '557417026f266de1c4a0a43fc919ca41',
   
-        indexName: 'integration-platform-netlify',
+        indexName: 'zeenea-platform-netlify',
   
         // Optional: see doc section below
         //contextualSearch: true,
