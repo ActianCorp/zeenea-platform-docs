@@ -245,6 +245,7 @@ const sidebars = {
         'zeenea-silwood-safyr',
         'zeenea-tenant-management',
         'zeenea-query-language',
+        'zeenea-data-catalog',
       ]
     },
   ],
