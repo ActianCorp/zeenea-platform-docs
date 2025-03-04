@@ -126,6 +126,7 @@ const sidebars = {
         `zeenea-connector-snowflake`,
         'zeenea-connector-splunk',
         `zeenea-connector-sqlserver`,
+        'zeenea-connector-ssas',
         'zeenea-connector-ssis',
         'zeenea-connector-ssrs',
         'zeenea-connector-sybase-iq',
@@ -144,6 +145,7 @@ const sidebars = {
       items: [
         'zeenea-studio-overview',
         'zeenea-studio-import',
+        'zeenea-studio-search',
         'zeenea-studio-search-export',
         'zeenea-dashboard-widgets',
         'zeenea-doc-completion-level',
