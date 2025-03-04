@@ -1,6 +1,10 @@
 ---
 title: Actian Zeenea Data Discovery Platform
 ---
+<head>
+    <meta name="algolia-site-verification" content="B703B3BAFE42676B" />
+    <title>Algolia Verification</title>
+</head>
 
 # Actian Zeenea Data Discovery Platform
 
