@@ -175,7 +175,7 @@ The Spotfire connector is able to retrieve the lineage between datasets that hav
 | Source System| **Possible value of `alias` parameter to be assigned in the source system configuration file** |
 | :--- | :--- | 
 | [AWS Redshift](./zeenea-connector-aws-redshift.md) | `host:port/db` |
-| [Tibco Data Virtualization](./zeenea-connector-tibco-data-visualization.md) | `IP` |
+| [Tibco Data Virtualization](./zeenea-connector-tibco-data-virtualization.md) | `IP` |
 
 :::note
 The connector creates a data process object for each dataset from Spotfire to represent the link with the source dataset even if the source dataset is not present in the catalog.
