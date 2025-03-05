@@ -21,7 +21,7 @@ Creating and configuring connectors is done through a dedicated configuration fi
 
 Read more: [Managing Connections](./zeenea-managing-connections.md)
  
-In order to establish a connection with SSIS, the following parameters in the dedicated file are required:
+In order to establish a connection with SSAS, the following parameters in the dedicated file are required:
  
 <table>
   <tr>
