@@ -141,7 +141,7 @@ Example:
 `filter = "database in ('production', 'qa') and table ~ /(?:hr|it|market)_figures/"`
 
 :::note
-The `filter` attribute can contain either the raw value or a file URL to the content. (e.g. `file:///path/to/zeenea/connections/aws-glue-inventory-filter.json`)
+The `filter` attribute can contain either the raw value or a file URL to the content. (e.g., `file:///path/to/zeenea/connections/aws-glue-inventory-filter.json`)
 
 When using an side-file, filter changes are taken into account without restarting the scanner.
 :::

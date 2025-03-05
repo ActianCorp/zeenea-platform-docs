@@ -50,9 +50,8 @@ Before you start documenting items, they must be assigned to you as a Contact wi
 
 Then you should be able to try the following features:
 
-* Adding contact item by item or in bulk (read more here).
-* Search and filters (read more here).
-* Bulk edition (read more here).
+* [Adding contact item by item or in bulk](./zeenea-editing-items-in-bulk.md)
+* [Search and filters](./zeenea-studio-search.md)
 
 ## Step 4: Start documenting your perimeter
 

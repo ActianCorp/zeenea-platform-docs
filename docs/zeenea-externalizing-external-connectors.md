@@ -9,7 +9,7 @@ Previously, the Scanner embedded some of our Connectors whereas others were prov
 
 Since we've decided to simplify and standardize the way the Scanner manages all its Connectors, they all became plugins starting from Scanner version 54.
 
-The following list of the previously embedded connectors will help you identify those you will need to migrate if you decide to install a version of the Scanner greater or equal to 54. See our migration procedure in this article.
+The following list of the previously embedded connectors will help you identify those you will need to migrate if you decide to install a version of the Scanner greater or equal to 54. See [Migration Procedure](#migration-procedure).
 
 Previously embedded Connectors were:
 

@@ -4,10 +4,6 @@ title: Federated Catalog Overview
 
 # Federated Catalog Overview
 
-<font color="red">
-NOTE: I changed the heading from "Presentation" to "Federated Catalog Overview" to be more specific.
-</font>
-
 This section only applies if your subscription includes the Federated Catalog option. If you want to activate this paid option, please contact the Customer Success team.
 
 ## Introduction

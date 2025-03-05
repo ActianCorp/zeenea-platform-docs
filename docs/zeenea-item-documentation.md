@@ -18,12 +18,12 @@ By default, catalog Items are defined by a set of attributes:
 * **Properties**: Custom attributes defined by your platform administrator
 * **Last update**: Date of last update of Item documentation in Zeenea Studio. For Items originating from connections, this date is updated each time a new inventory or synchronization is created, or for datasets each time the schema is verified.
 
-When an Item comes from a connection (e.g. Dataset), it also includes other attributes from this connection. These attributes are read-only in Zeenea:
+When an Item comes from a connection (e.g., Dataset), it also includes other attributes from this connection. These attributes are read-only in Zeenea:
 
 * **Technical name**: Name of the Item as defined at the source level and collected by the scanner
 * **Source Description**: This second description cannot be modified in the Studio
 * **Contacts**: Some connections can also be used to retrieve contacts
-* **Source properties**: Attributes specific to the connector or connection (e.g. schema)
+* **Source properties**: Attributes specific to the connector or connection (e.g., schema)
 * **Connection**: Item source system
 
 ### Specific Attributes for Each Item Type
@@ -70,14 +70,14 @@ In Zeenea, each type of Item can have specific attributes, depending on its natu
 
 Only certain user profiles can edit an Item's documentation from within Zeenea Studio. To do so, a user must meet one or both of the following conditions, depending on his or her user groups:
 
-* Have editing rights for the type of Item (e.g. Dataset, Glossary Object)
+* Have editing rights for the type of Item (e.g., Dataset, Glossary Object)
 * Be one of the Object's curators
 
 ### Editing Options
 
 Documentation can be edited individually or in bulk:
 
-* From an Item overview (e.g. in the "Catalog" section)
+* From an Item overview (e.g., in the "Catalog" section)
 * From an Item's detail page
 * From the "Catalog" section, using the action menu
 * By Excel import
@@ -116,7 +116,7 @@ The rich text editor supports the following options:
 * Images (as links or by upload)
 * Delete formatting
 
-  ![](/img/zeenea-edit-description.png)
+![](/img/zeenea-edit-description.png)
 
 In rich text mode, descriptions are converted to HTML format and therefore contain tags to manage formatting options, making mass exploitation complex and risky. For this reason, rich text descriptions cannot be imported into the Studio.
 

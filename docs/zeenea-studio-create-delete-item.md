@@ -33,14 +33,16 @@ To create a new Item from Zeenea Studio:
 
   ![](/img/zeenea-create-item-confirm.png)
 
-QQQQ --> N.B.: A unique key will be automatically generated based on the Item Type code and its name. You can find this key in the detailed view of the newly created Item via the "Actions" menu. In case of a duplicate, an incremental number is automatically added to the key to ensure its unicity.
+:::note
+A unique key will be automatically generated based on the Item Type code and its name. You can find this key in the detailed view of the newly created Item via the "Actions" menu. In case of a duplicate, an incremental number is automatically added to the key to ensure its unicity.
 
 Once the item has been created, you'll be able to edit its documentation.
+:::
 
 ## Deleting an item
 You can delete an Item: 
 
-* From the item's detailed page, click on the "Trashcan" icon.
+* From the item's detailed page, click on the "trash can" icon.
 * Using the mass edition feature.
 * Consequences of deleting:
   * Deleting a Dataset automatically deletes all its Fields.

@@ -4,12 +4,12 @@ title: Managing Users
 
 # Managing Users
 
-Managing the repository of users is done through the administration interface in the section "Users & Contacts.
+Managing the repository of users is done through the administration interface in the **Users & Contacts** section.
 
   ![](/img/zeenea-users.png)
 
 ## Creating a new user
-Click the **New User**"** button and fill in the required fields:
+Click the **New User** button and fill in the required fields:
 
 * Email: The user's email is used as his unique identifier in Zeenea and also as his login
 * Groups: A user can belong to one or several groups. Select groups to give extra permissions to the user. Note that there are two types of group licenses (Explorer and Data Steward) with different pricing). A user can also belong to no group. In this case, he has read access in the Explorer to the default catalog items and also to the shared items in the Federated Catalog

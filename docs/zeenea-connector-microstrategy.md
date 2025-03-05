@@ -128,11 +128,11 @@ The connector is able to reconstruct the lineage of tables used in the folders i
   </tr>
   <tr>
     <td>[BigQuery](./zeenea-connector-google-bigquery.md)</td>
-    <td>BigQuery project identifier. (example: `alias = ["project_id"]`)</td>
+    <td>BigQuery project identifier. Example: `alias = ["project_id"]`</td>
   </tr>
   <tr>
     <td>[PostgreSQL](./zeenea-connector-postgresql.md), [Oracle](./zeenea-connector-oracle.md), [Redshift](./zeenea-connector-aws-redshift.md), [SQLServer](./zeenea-connector-sqlserver.md)</td>
-    <td>Database address. (example: `alias = ["host:port/database"]`)</td>
+    <td>Database address. Example: `alias = ["host:port/database"]`</td>
   </tr>
 </table>
 

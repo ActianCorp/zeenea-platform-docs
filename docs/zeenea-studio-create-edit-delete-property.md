@@ -112,6 +112,7 @@ Other information is read-only:
 * Type
 * Importance in completion calculation
 
-QQQQ --> N.B.: Once the name or description has been modified, the value from the connector can be restored by clearing the corresponding form field.
-
+:::note
+Once the name or description has been modified, the value from the connector can be restored by clearing the corresponding form field.
+:::
  

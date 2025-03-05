@@ -2,7 +2,7 @@
 title: Synchronizing Users
 ---
 
-# Introduction
+# Synchronizing Users with your Zeenea Platform
 
 Zeenea provides different services through its API to manage users and permissions. If you have an Access Management Platform (Identity and Access Management or IAM platform) you'd like to use to populate your Zeenea instance with the users having the appropriate privileges, you may need a synchronization script between the two.
 

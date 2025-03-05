@@ -41,6 +41,10 @@ const config = {
     maxHits: 20
   }]],
 
+  plugins: [[ require.resolve('docusaurus-lunr-search'), {
+    maxHits: 20
+  }]],
+  
   presets: [
     [
       'classic',

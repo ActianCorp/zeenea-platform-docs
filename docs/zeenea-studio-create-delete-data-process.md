@@ -7,7 +7,7 @@ title: Creating, Editing, or Deleting a Data Process
 ## Creating a New Data Process:
 
 1. Log in to the Zeenea Studio application.
-2. In the page menu, click the **New Item** button and then click **"**Data Process**.
+2. In the page menu, click the **New Item** button and then click **Data Process**.
 3. Complete the required fields: name, description, contacts, and metamodel properties.
 
   ![](/img/zeenea-data-process-new.png)

@@ -10,9 +10,9 @@ Watchlists allow you to save your search filters in your dashboard, so you can q
 To create a new Watchlist: 
 
 1. Open Zeenea Studio.
-2. Go to the **Catalog**"** section.
+2. Go to the **Catalog** section.
 3. Select the desired filters.
-4. Click **Save**"** at the top right of the screen, then click **New Watchlist**.
+4. Click **Save** at the top right of the screen, then click **New Watchlist**.
 5. Enter the name of your Watchlist, then click **Confirm**.
 
 To create a Watchlist, at least one Item type must be selected via the **Item** filter or via a **Scope** in the search bar.
