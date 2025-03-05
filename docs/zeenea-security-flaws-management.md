@@ -14,7 +14,7 @@ For each published CVE, if it affects any part of Zeenea technical ecosystem (**
 
 * The vulnerability is qualified as **CRITICAL**:
 
-    It is immediately taken into account with the implementation of an adapted correction method (e.g. : upgrade of the dependency to include the associated patch) within 30 days following the availability of the associated patch.
+    It is immediately taken into account with the implementation of an adapted correction method (e.g., : upgrade of the dependency to include the associated patch) within 30 days following the availability of the associated patch.
 
 * The vulnerability is **lower**:
 

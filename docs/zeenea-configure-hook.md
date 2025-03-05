@@ -20,9 +20,9 @@ One single type of hook is supported in Scanner v72. This hook type allows you t
 
 At the end of each of the above jobs, the scanner will send the following environment variables to the hook:
 
-* ZEENEA_HOOK_CONNECTOR_CODE: Connector code
-* ZEENEA_HOOK_CONNECTION_ID: Connection id
-* ZEENEA_HOOK_CONNECTION_CODE : Connection code
+* `ZEENEA_HOOK_CONNECTOR_CODE`: Connector code
+* `ZEENEA_HOOK_CONNECTION_ID`: Connection id
+* `ZEENEA_HOOK_CONNECTION_CODE`: Connection code
 
 The list of items that have been successfully processed is also sent separated by carriage returns. This list of items is provided in the form of "zeepaths" (breadcrumb to an item). To build the identification key of an item, you must concatenate the connection code and the zeepath of the item.
 
@@ -48,9 +48,9 @@ Then, you can add hooks using one of these plugins by creating a new `.conf` fil
 
 In the configuration file, you must provide the following information:
 
-* **enabled**: Hook activation [true|false]
-* **code**: Hook code (unique code to identify the hook in the scanner logs for instance)
-* **hook_id**: Hook plugin id. It refers to a specific hook plugin this configuration should be used with - ex: "external-script".
+* `enabled`: Hook activation [true|false]
+* `code`: Hook code (unique code to identify the hook in the scanner logs for instance)
+* `hook_id`: Hook plugin id. It refers to a specific hook plugin this configuration should be used with (ex: `external-script`).
 * Hook-specific parameters (ex: command to trigger the external script). Example of command for an external script: 
   
   `post_items_upsert_command = ["python", "mutate_business_terms.py"]`

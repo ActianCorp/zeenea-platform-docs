@@ -143,7 +143,7 @@ By sharing an item, you also enable curators from other catalogs to create links
 
 Please note that you can retrieve and manage shared items using the "Shared" filter in the Studio. Shared items are also identifiable by a badge close to their name.
 
-## Related Topics
+#### Related Topics
 
 * [Searching in the Federated Catalog](./zeenea-searching-federated-catalog)
  
@@ -153,7 +153,7 @@ You can use Zeenea SCIM API to synchronize users with your identity management t
  
 In this first version of the Federated Catalog, the Catalog API does not yet support the catalog concept. As a matter of fact, you can read or update items issued from any catalog but the catalog information will not be returned by the API. You can also create new items but they will be assigned to the default catalog.
  
-### Related Topics
+#### Related Topics
 
 * [SCIM API](./zeenea-scim-api.md)
 * [Catalog API](https://docs.zeenea.com/)

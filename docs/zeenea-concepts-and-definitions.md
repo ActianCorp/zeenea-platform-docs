@@ -8,7 +8,7 @@ This list highlights select Zeenea-specific terms you might encounter in the doc
 
 Many definitions on the list provide links to articles and core reference materials, offering deeper insights into the concepts and practical applications of the associated keyword.
 
-Use the search feature in your browser to quickly find the term or phrase that you are looking for. Search is usually activated with CTRL+F or ⌘ + F.
+Use the search feature in your browser to quickly find the term or phrase that you are looking for. Search is usually activated with **CTRL+F** or **⌘ + F**.
 
 ## Category
 

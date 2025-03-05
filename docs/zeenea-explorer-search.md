@@ -10,7 +10,7 @@ From Zeenea Explorer, you can search for the different types of Objects in the c
 * Visualizations
 * Data Processes
 * Glossary Items
-* Organization-specific custom Items (e.g. Applications, Entities, etc.)
+* Organization-specific custom Items (e.g., Applications, Entities, etc.)
 
 ## The Search Engine
 

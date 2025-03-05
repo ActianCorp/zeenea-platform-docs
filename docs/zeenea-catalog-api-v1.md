@@ -79,7 +79,7 @@ Source and custom properties are returned in the same section, but are however d
 
 ## Representation of the links between Items
 
-Links between items, be it native links (e.g. dataset-fields) or custom (e.g. a "custom item"-type property in a template) are grouped in a dedicated section called "itemLinks", that provides details on all linked items. In particular, multi-valued properties are represented as an object for each non-null value in the catalog. 
+Links between items, be it native links (e.g., dataset-fields) or custom (e.g., a "custom item"-type property in a template) are grouped in a dedicated section called "itemLinks", that provides details on all linked items. In particular, multi-valued properties are represented as an object for each non-null value in the catalog. 
 
 Links are directional and represented by 3 information:
 

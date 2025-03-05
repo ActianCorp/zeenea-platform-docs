@@ -114,5 +114,6 @@ Add this parameter to your ExecStart command from your systemd init file:
 
 ```
 ExecStart=[...] -Djava.io.tmpdir=/a/path/to/another/folder/
-This folder should be owned by the user the scanner starts with.
 ```
+
+This folder should be owned by the user the scanner starts with.

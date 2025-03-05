@@ -6,7 +6,7 @@ title: Creating or Deleting a Custom Item
 
 In addition to the native item types supported by the catalog, Zeenea allows you to configure custom item types to categorize, contextualize, and enrich the documentation of your data assets.
 
-Indeed, Custom Item Types allow you to enrich the metamodel by representing technical or structural concepts that are specific to your company (e.g. applications, entities, processes).
+Indeed, Custom Item Types allow you to enrich the metamodel by representing technical or structural concepts that are specific to your company (e.g., applications, entities, processes).
 
 These types of items can be used to create links between them and any other item type in the catalog, and thus represent hierarchical relationships or links, or be used in the representation of a lineage. 
 
