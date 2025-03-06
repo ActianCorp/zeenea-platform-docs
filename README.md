@@ -1,8 +1,6 @@
-# Actian Integration Platform Documentation
+# Zeenea Data Discovery Platform Documentation
 
 We welcome and encourage your feedback on the platform and documentation. Feedback from the user community plays an important role in improving the product.
-
-## Documentation
 
 Let us know if:
 
@@ -16,7 +14,7 @@ There are two ways to provide your feedback on the documentation:
 * Submit a message using the **Page Feedback** button.
 * Use the **Suggest Edits** button to edit the page in GitHub.
 
-### Page Feedback
+## Page Feedback
 
 Entering page feedback is easy, and available to anyone. There is a **Page Feedback** button on the bottom of every page:
 
@@ -24,7 +22,7 @@ Entering page feedback is easy, and available to anyone. There is a **Page Feedb
 
 Click this button to display a text field, enter your message, and click **Send Feedback**. Your message will be delivered to us. Feel free to include your email address in the message if you'd like to chat.
 
-### Suggest Edits
+## Suggest Edits
 
 Users are encouraged to suggest content edits. Suggesting page edits requires you to have a GitHub account. 
 
