@@ -39,7 +39,7 @@ Make sure that the following placeholders:
 
 have been replaced by their actual values in the command:
 
-   `curl -L -H "X-API-SECRET: $APISECRET" "https://$hostname/studio/api-v1/agent/get-agent" -o scanner.tar.gz`
+   <pre>curl -L -H "X-API-SECRET: <font className="codeHighlight">$APISECRET</font>" "https://<font className="codeHighlight">$hostname</font>/studio/api-v1/agent/get-agent" -o scanner.tar.gz</pre>
  
 Make sure to also check that you’re not using a proxy. 
 
@@ -53,7 +53,7 @@ then it is possible that the proxy is listening for the network and is generatin
 
 Confirm this is happening with the following command: 
 
-`keytool -printcert -sslserver [hostname].zeenea.app`
+<pre>keytool -printcert -sslserver <font className="codeHighlight">[instance-name]</font>.zeenea.app</pre>
  
 Below is the expected result: 
 

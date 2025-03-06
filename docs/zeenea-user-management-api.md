@@ -36,7 +36,11 @@ Zeenea provides two tools for understanding and testing this GraphQL API: Voyage
 
 ### Voyager documentation
 
-You can access the full documentation for Zeenea GraphQL APIs by accessing Voyager, at the following URL: https://[myenvironment].zeenea.app/public-api/catalog/voyager
+You can access the full documentation for Zeenea GraphQL APIs by accessing Voyager, at the following URL:
+
+<pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/catalog/voyager</pre>
+
+where `[instance-name]` is the name of your instance.
 
 This tool allows you to access the entire documentation of the User Management API and in particular the available requests. 
 
@@ -54,7 +58,7 @@ Documentation in Voyager is split into two sections:
 If you wish to test your queries before running them, you can use the Playground tool, accessible here:
 
 <pre>
-  https://<font className="codeHighlight">[myenvironment]</font>.zeenea.app/public-api/catalog/playground/search
+  https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/catalog/playground/search
 </pre>
 
 :::note

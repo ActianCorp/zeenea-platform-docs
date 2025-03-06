@@ -63,7 +63,7 @@ Unlike Zeenea Studio and Zeenea Explorer, the scanner must be updated manually.
 ### Installation procedure: 
 
 1. Stop the current scanner
-2. Download the new version available at: https://[yourenvironment].zeenea.app/admin/settings/scanners. (If you need a specific version of the scanner, it will be provided by Zeenea support.)
+2. Download the new version available at: <pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/admin/settings/scanners</pre> (If you need a specific version of the scanner, it will be provided by Zeenea support.)
 4. Copy the file `agent-identifier` from the root directory of the current scanner and paste it into the root directory of the new scanner.
 5. Copy the file `application.conf` from the `conf` directory of the current scanner and paste it into the `conf` directory of the new scanner.
 6. Copy the connections configuration files from the `connections` directory of the current scanner and paste them in the `connections` directory of the new scanner.

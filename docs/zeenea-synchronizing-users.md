@@ -12,7 +12,7 @@ We describe here the steps such a script should implement.
 
 Several services must be used in order to synchronize users. They are all provided by our GraphQL v1 API. The entry point for this API is:
 
-<pre>https://<font className="codeHighlight">YOUR_TENANT</font>.zeenea.app/public-api/catalog/graphql</pre>
+<pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/catalog/graphql</pre>
 
 Here is the list of all the services needed:
 

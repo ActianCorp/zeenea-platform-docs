@@ -33,7 +33,7 @@ Here is how to proceed:
 * Generate a new API key. 
 * Use the generated secret to configure your Identity Management Platform and select the correct authentication mode: Bearer authentication (also called Token authentication).
 
-In addition, the Content-Type parameter must be specified in request headers as follows: `‘Content-Type: application/scim+json’`.
+In addition, the `Content-Type` parameter must be specified in request headers as follows: `Content-Type: application/scim+json`.
 
 ## Model
 
@@ -72,14 +72,17 @@ The table below shows the attributes supported by Zeenea for objects of type "Gr
 
 SCIM provides a REST API with a set of operations that allow resource manipulation.
 
-The SCIM API URL for your tenant is `https://<my_instance_name>.zeenea.app/api/scim/v2`, where `<my_instance_name>` is to be replaced by the name of your instance.
+The SCIM API URL for your tenant is <pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/api/scim/v2</pre>
+
+where `[instance_name]` is to be replaced by the name of your instance.
 
 Zeenea only supports the operations described below.
 
 ## Users
 
-Operations relating to users are carried out from the `/Users` endpoint: `https://<my_instance_name>.zeenea.app/api/scim/v2/Users`
-where `<my_instance_name>`is to be replaced by the name of your instance.
+Operations relating to users are carried out from the `/Users` endpoint: <pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/api/scim/v2/Users</pre>
+
+where `[instance_name]` is to be replaced by the name of your instance.
 
 ### Create User
 
@@ -95,7 +98,7 @@ When a user is created, no group is assigned to him, which means that he is give
 
 ```
 curl --request POST \
---location 'https://<my_instance_name>.zeenea.app/api/scim/v2/Users'; \
+--location 'https://[instance_name].zeenea.app/api/scim/v2/Users'; \
 --header 'Authorization: Bearer ' \
 --header 'Content-Type: application/scim+json' \
 --data-raw '{
@@ -110,14 +113,6 @@ curl --request POST \
 }'
 ```
 
-<font color="red">
-where `<my_instance_name>` is to be replaced by the name of your instance.
-</font>
-
-<font color="red">
-Added the line above and changed `https://.zeenea.app/...` to `https://<my_instance_name>.zeenea.app/...`  Is this correct?
-</font>
-
 ### Patch User
 
 You can modify a user's attributes from a PATCH request using the `/Users` endpoint with a user ID.
@@ -125,32 +120,30 @@ You can modify a user's attributes from a PATCH request using the `/Users` endpo
 Example request:
 
 ```
-curl --request PATCH \
---location 'https://<my_instance_name>.zeenea.app/api/scim/v2/Users/'; \
---header 'Authorization: Bearer ' \
---header 'Content-Type: application/scim+json' \
---data-raw '{
-"schemas": [
-    "urn:ietf:params:scim:api:messages:2.0:PatchOp"
-    ],
-    "Operations": [{
-       "op": "replace",
-       "value": {
-          "name": {
-             "familyName": "Doe",
-             "givenName": "John"
-          }
-       }
-    }]
-}'
+    curl --request PATCH \
+    --location 'https://[instance_name].zeenea.app/api/scim/v2/Users/'; \
+    --header 'Authorization: Bearer ' \
+    --header 'Content-Type: application/scim+json' \
+    --data-raw '{
+    "schemas": [
+        "urn:ietf:params:scim:api:messages:2.0:PatchOp"
+        ],
+        "Operations": [{
+        "op": "replace",
+        "value": {
+            "name": {
+                "familyName": "Doe",
+                "givenName": "John"
+            }
+        }
+        }]
+    }
 ```
 
-where <font color="red">`<my_instance_name>` is to be replaced by the name of your instance and `<???>` </font> is to be replaced by the user's internal Zeenea ID.
-
+where `[instance_name]` is to be replaced by the name of your instance and <font color="red">`[???]`</font> is to be replaced by the user's internal Zeenea ID.
 
 <font color="red">
-* Added `<my_instance_name>` and changed `https://.zeenea.app/...` to `https://<my_instance_name>.zeenea.app/...`  Is this correct?
-* Where does the user's internal ID go (`<???>` above)?
+Where does the user's internal ID go (`[???]` above)?
 </font>
 
 ### Delete User
@@ -161,16 +154,15 @@ You can delete a user from a DELETE request using the /Users endpoint with a use
 
 ```
 curl --request DELETE \
---location 'https://<my_instance_name>.zeenea.app/api/scim/v2/Users/'; \
+--location 'https://[instance_name].zeenea.app/api/scim/v2/Users/'; \
 --header 'Authorization: Bearer ' \
 --header 'Content-Type: application/scim+json'
 ```
 
-where <font color="red">`<my_instance_name>` is to be replaced by the name of your instance and `<???>` </font> is to be replaced by the user's internal Zeenea ID.
+where `[instance_name]` is to be replaced by the name of your instance and <font color="red">`[???]`</font> is to be replaced by the user's internal Zeenea ID.
 
 <font color="red">
-* Added `<my_instance_name>` and changed `https://.zeenea.app/...` to `https://<my_instance_name>.zeenea.app/...`  Is this correct?
-* Where does the user's internal ID go (`<???>` above)?
+Where does the user's internal ID go (`[???]` above)?
 </font>
 
 ### Get User
@@ -181,16 +173,15 @@ Example request:
 
 ```
 curl —-request GET \
---location 'https://<my_instance_name>.zeenea.app/api/scim/v2/Users/’ \
+--location 'https://[instance_name].zeenea.app/api/scim/v2/Users/’ \
 --header 'Authorization: Bearer ’ \
 --header 'Content-Type: application/scim+json'
 ```
 
-where <font color="red">`<my_instance_name>` is to be replaced by the name of your instance and `<???>` </font> is to be replaced by the user's internal Zeenea ID.
+where `[instance_name]` is to be replaced by the name of your instance and <font color="red">`[???]` </font> is to be replaced by the user's internal Zeenea ID.
 
 <font color="red">
-* Added `<my_instance_name>` and changed `https://.zeenea.app/...` to `https://<my_instance_name>.zeenea.app/...`  Is this correct?
-* Where does the user's internal ID go (`<???>` above)?
+Where does the user's internal ID go (`[???]` above)?
 </font>
 
 ### List Users
@@ -210,7 +201,7 @@ Example request:
 
 ```
 curl —-request GET \
---location 'https://<my_instance_name>.zeenea.app/api/scim/v2/Users/?filter=userName%20co%20%22domain.com%22&sortBy=userName&sortOrder=ascending’ \
+--location 'https://[instance_name].zeenea.app/api/scim/v2/Users/?filter=userName%20co%20%22domain.com%22&sortBy=userName&sortOrder=ascending’ \
 --header 'Authorization: Bearer ’ \
 --header 'Content-Type: application/scim+json'
 ```
@@ -219,13 +210,9 @@ curl —-request GET \
 
 Operations relating to groups are carried out from the `/Groups` endpoint:
 
-`https://<my_instance_name>.zeenea.app/api/scim/v2/Groups` 
+`https://[instance_name].zeenea.app/api/scim/v2/Groups` 
 
-where <font color="red">`<my_instance_name>`</font> is to be replaced by the name of your instance.
-
-<font color="red">
-Changed `https://.zeenea.app/...` to `https://<my_instance_name>.zeenea.app/...`. Is this correct?
-</font>
+where `[instance_name]` is to be replaced by the name of your instance.
 
 Creating and deleting groups is not supported by the API. Use the Zeenea Administration interface to configure your groups.
 
@@ -243,7 +230,7 @@ Example request:
 
 ```
 curl --request PATCH \
---location 'https://<my_instance_name>.zeenea.app/api/scim/v2/Groups/'; \
+--location 'https://[instance_name].zeenea.app/api/scim/v2/Groups/'; \
 --header 'Authorization: Bearer ' \
 --header 'Content-Type: application/scim+json' \
 --data-raw '{
@@ -260,11 +247,10 @@ curl --request PATCH \
 }'
 ```
 
-where <font color="red">`<my_instance_name>` is to be replaced by the name of your instance and `<???>` </font> is to be replaced by the group identifier and by a user identifier.
+where `[instance_name]` is to be replaced by the name of your instance and <font color="red">`[???]` </font> is to be replaced by the group identifier and by a user identifier.
 
 <font color="red">
-* Added `<my_instance_name>` and changed `https://.zeenea.app/...` to `https://<my_instance_name>.zeenea.app/...`  Is this correct?
-* Where does the group/user identifier go (`<???>` above)?
+Where does the group/user identifier go (`[???]` above)?
 </font>
 
 ### List Groups
@@ -280,14 +266,13 @@ Example request:
 
 ```
 curl —-request GET \
---location 'https://<my_instance_name>.zeenea.app/api/scim/v2/Groups/?filter=displayName%20co%20%22%22&sortBy=displayName&sortOrder=ascending’ \
+--location 'https://[instance_name].zeenea.app/api/scim/v2/Groups/?filter=displayName%20co%20%22%22&sortBy=displayName&sortOrder=ascending’ \
 --header 'Authorization: Bearer ’ \
 --header 'Content-Type: application/scim+json'
 ```
 
-where <font color="red">`<my_instance_name>` is to be replaced by the name of your instance and `<???>` </font> is to be replaced by the name of the group.
+where `[instance_name]` is to be replaced by the name of your instance and <font color="red">`[???]` </font> is to be replaced by the name of the group.
 
 <font color="red">
-* Added `<my_instance_name>` and changed `https://.zeenea.app/...` to `https://<my_instance_name>.zeenea.app/...`  Is this correct?
-* Where does the group name go (`<???>` above)?
+Where does the group name go (`[???]` above)?
 </font>

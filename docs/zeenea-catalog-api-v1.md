@@ -68,7 +68,7 @@ For more information, see [API Lifecycle](./zeenea-api-lifecycle.md) can be foun
 :::note
 The complete API documentation is available in the [Voyager](https://github.com/APIs-guru/graphql-voyager) tool which you can access from any of your environments by following this address:
 
-<pre>https://<font className="codeHighlight">YOUR_TENANT</font>.zeenea.app/public-api/catalog/voyager</pre>
+<pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/catalog/voyager</pre>
 :::
 
 ## Representation of the properties

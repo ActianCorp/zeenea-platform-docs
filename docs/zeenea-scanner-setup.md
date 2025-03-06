@@ -174,7 +174,9 @@ By default, the file is named `application.conf.template`. It must be renamed to
 
 ### Enter your Platform Address
 
-You must enter the address of your Zeenea platform to allow the Scanner to retrieve the metadata. This is done by enhancing the `zeenea-url` property with the URL of your platform in the form https://myenv.zeenea.app.
+You must enter the address of your Zeenea platform to allow the Scanner to retrieve the metadata. This is done by enhancing the `zeenea-url` property with the URL of your platform in the form:
+
+<pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app</pre>
 
 Example:
 
@@ -218,6 +220,10 @@ Each process execution is configured with the help of a cron expression. Please,
 
 ## Configure a Proxy (optional)
 
+:::note
+The gRPC protocol cannot be used in conjunction with a proxy.
+:::
+
 It is possible to configure a proxy that will be used by the Scanner during exchanges with the Zeenea platform.
 
 The configuration portion named proxy-configuration should be uncommented (# characters should be removed) while respecting the opening and closing braces.
@@ -248,19 +254,19 @@ proxy-configuration {
 
 ## Modify Default Protocol (HTTP REST vs gRPC)
 
-### Why Should you mModify This?
+### Why should you modify this?
 
 The default REST based protocol is very convenient as it works almost everywhere. But, in some situations, the scanner may face one of its limits: the maximum size of the requests payload.
 
 gRPC protocol is not concerned by this limitation. Thus it could make sense to consider gRPC in case of very important inventories being built.
 
-### Is my Architecture Ready for gRPC?
+### Is my architecture ready for gRPC?
 
 gRPC uses HTTP/2 as its transport protocol. Your infrastructure MUST support HTTP/2 from end to end. In case of any doubt, please read your proxies documentation to validate they do support HTTP/2 properly.
 
 When configured to use gRPC, the scanner will communicate with a unique central entry point: grpc.zeenea.app. Make sure this address is accessible for the scanner.
 
-### How do I Enable and Configure gRPC?
+### How do I enable and configure gRPC?
 
 In order to activate gRPC, you just have to add the following line to your scanner configuration file:
 

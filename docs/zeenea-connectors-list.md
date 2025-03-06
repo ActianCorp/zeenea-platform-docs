@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 :::note[NOTES]
 * Some plugins may require a minimum version of the scanner.
-* The latest version of the scanner can be downloaded from your instance: `https://[your_instance].zeenea.app/admin/settings/scanners`
+* The latest version of the scanner can be downloaded from your instance: <pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/admin/settings/scanners</pre>
 * A plugin can contain several connectors.
 * Templates files to configure each connector are available in [this Github repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 * For installation instructions, see [Zeenea Scanner Setup](./zeenea-scanner-setup.md).

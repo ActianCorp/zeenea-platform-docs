@@ -28,14 +28,14 @@ The API technical documentation is provided in this section.
 The full technical documentation for the Zeenea Audit Trail API can be retrieved by using a GET method (on any API Platform such as Postman) on the following URL: 
 
 <pre>
-https://<font className="codeHighlight">[myapp]</font>.zeenea.app/public-api/management/audit/docs 
+https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/management/audit/docs 
 </pre>
 
 ### Authentication
 
 To use the API, you must be authenticated via an API Key on the following URL: 
 
-https://[myapp].zeenea.app/public-api/management/audit
+<pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/management/audit</pre>
 
 Most of the APIs use the POST method.
 
@@ -86,7 +86,7 @@ Do the following:
 :::note[IMPORTANT]
 The item ID can be retrievable with the help of the Exploration APIs or it can be found in the URL of a specific item. As an example, after having accessed an item, its ID was retrieved from its URL:
 
-`https://[myapp].zeenea.app/studio/dataset/c89862e8-1002-4dff-92d6-fd7d5bb57b6c/general`
+<pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/studio/dataset/c89862e8-1002-4dff-92d6-fd7d5bb57b6c/general</pre>
 
 The ID is string like `c89862e8-1002-4dff-92d6-fd7d5bb57b6c`.
 :::
