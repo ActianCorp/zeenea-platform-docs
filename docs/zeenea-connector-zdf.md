@@ -380,7 +380,7 @@ A visualization description.
   <tr>
     <td>`datasets`*</td>
     <td>`List<ZdfDataset>`</td>
-    <td>List of the visualization's internal datasets.<br /><br />**Note**: these objects represent access to visualization data. They belong to the visualization and cannot be shared. Their life cycle is the same as that of the visualization to which they are attached.<br /><br />Shared datasets must be produced in another connection with the zdf-dataset connector.</td>
+    <td>List of the visualization's internal datasets.<br /><br />**Note**: these objects represent access to visualization data. They belong to the visualization and cannot be shared. Their lifecycle is the same as that of the visualization to which they are attached.<br /><br />Shared datasets must be produced in another connection with the zdf-dataset connector.</td>
   </tr>
 </table>
 

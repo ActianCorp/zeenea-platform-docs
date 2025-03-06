@@ -58,7 +58,7 @@ For more details, see [View 360 Diagram](./zeenea-view-360-diagram.md).
 
 ### Lineage
 
-Lineage can be viewed on items such as Datasets, Visualizations, or Data Processes. It describes the transformations and uses of the data throughout its life cycle. 
+Lineage can be viewed on items such as Datasets, Visualizations, or Data Processes. It describes the transformations and uses of the data throughout its lifecycle. 
 
 For more details, see [Data Lineage](./zeenea-data-lineage.md).
 

@@ -120,7 +120,7 @@ This option allows finding Items for which the selected attribute (contact, prop
   <tr>
     <td>Item Lifecycle Event</td>
     <td>
-        <p>This filter allows you to retrieve items from the catalog according to certain events in their life cycle.</p>
+        <p>This filter allows you to retrieve items from the catalog according to certain events in their lifecycle.</p>
         <p>Select the required event type and then select a period for this event.</p>
         <p>Two types of events are proposed:</p>
         <ul>
