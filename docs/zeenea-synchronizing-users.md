@@ -27,7 +27,6 @@ Two main responsibilities must be implemented in your script:
 
 1. Browse all the users having the right to access Zeenea as defined in your platform and create/update them in your Zeenea instance.
 2. Identify users already defined in Zeenea but not allowed to access Zeenea anymore (for instance, someone who left your company but still defined in Zeenea).
- 
 
 ### 1. Browse all your users
 

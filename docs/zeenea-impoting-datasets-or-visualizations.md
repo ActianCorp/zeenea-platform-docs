@@ -21,6 +21,7 @@ If the requirements are met, you can access the import wizard by clicking the "I
   ![](/img/zeenea-import-items.png)
 
 ### Step 1: Connection
+
 First, select the connection corresponding to the items to be imported.
 
 Some specifics about this step: 
@@ -28,6 +29,7 @@ Some specifics about this step:
 * Connections with automatic import activated are grayed out. If necessary, it is possible to force an automatic import from the administration interface.
 
 ### Step 2: Items
+
 Search for the items either:
 
 * by browsing the folders (by clicking on their name) 
@@ -39,6 +41,7 @@ Search for the items either:
 Select the **Show already imported** checkbox to view the items already imported in the catalog.
 
 ### Step 3: Curators (Optional)
+
 You can now add one or more Curators to datasets when importing them. These will be the Stewards in charge of documenting the imported datasets. 
 
 :::note
@@ -46,12 +49,15 @@ If a user requesting the import does not have permission to edit unassigned item
 :::
 
 ### Step 4: Contact (Optional)
+
 It is possible to associate a contact and a responsibility to the datasets resulting from your selection. 
 
 ### Step 5: Category (Optional)
+
 For datasets only, it is possible to specify a category among those already created.
 
 ### Step 6: Confirm
+
 Before final confirmation, a summary of the operations to be carried out is proposed in the last stage.
 
 :::note[IMPORTANT]

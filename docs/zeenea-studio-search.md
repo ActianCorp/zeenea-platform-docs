@@ -18,7 +18,7 @@ By clicking on an item in the list, you’ll be redirected to its detailed page,
 
 ![](/img/zeenea-studio-search.png)
 
-## Using the search engine
+## Using the Search Engine
 
 The search engine works in a way similar to Internet search engines. 
 
@@ -65,7 +65,7 @@ You can restrict your search to one of four scopes:
 
 Type in one or more keywords in the search bar and hit “Enter” on your keyboard. You can also view all items in your scope by emptying the input zone. 
 
-## Sorting the results
+## Sorting the Results
 
 By default, results are sorted by relevance to the query according to a probability score of being the document closest to what the user is looking for. 
 
@@ -73,22 +73,22 @@ For equal relevance, two results are sorted in alphabetical order.
 
 You can also sort search results by name or last update date.
 
-### How is the score calculated? 
+### How is the Score Calculated? 
 
 Depending on the presence of the largest number of words entered but also on the location of these words (the weight will potentially be different between a word found in the name of a dataset compared to the value of one of its properties).
 
-## Filter your searches in Zeenea Studio
+## Filter Your Searches in Zeenea Studio
 
 Find the filters in the Catalog section of Zeenea Studio.
 
-### Filter behavior
+### Filter Behavior
 
 Several values are selected:
 
 * Within the same filter, corresponds to a search using a logical OR between these values. 
 * In different filters, corresponds to a search using a logical AND.
 
-#### Visibility & Dynamic Filters:
+#### Visibility & Dynamic Filters
 
 * Default filters are proposed.
 * Others, based on properties during metamodel configurations, can be activated.
@@ -96,13 +96,13 @@ Several values are selected:
 
 The selected filters and their values are displayed above the list of results. You can remove them one by one or click on "Clear all filters" to reset the search.
 
-### Filter empty values:
+### Filter Empty Values
 
 For each filter, you can select "Include empty values".
 
 This option allows finding Items for which the selected attribute (contact, property, etc.) is not completed, whether this attribute exists in the related Item Type template or not.
 
-### Default filter types
+### Default Filter Types
  
 <table>
   <tr>
@@ -179,7 +179,7 @@ This option allows finding Items for which the selected attribute (contact, prop
   </tr>
  </table>
 
-### Add filters by property
+### Add Filters by Property
 
 All properties for which the "Use as filter" option has been enabled in the Catalog Design section are displayed dynamically as search filters.
 

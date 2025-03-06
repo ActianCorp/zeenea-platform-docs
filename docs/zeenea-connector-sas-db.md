@@ -13,7 +13,6 @@ The current version of this connector is not final and it will be updated.
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with SAS.
 * Zeenea traffic flows towards the data source must be open.
 
-
 :::note[IMPORTANT]
 * **The SAS proprietary libraries are not provided with the connector**.<br />
 Please download them and place them in the `/lib-ext` folder of the scanner: https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/omaref/p0522mtdjome30n1j0t0ku3ziwoy.htm
@@ -164,31 +163,30 @@ Dataset field.
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
  
 More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys.md).
-  
- <table>
-   <tr><th>Object</th><th>Identifier Key</th><th>Description</th></tr>
-   <tr>
-     <td>Dataset</td>
-     <td>code/repository/dataset id</td>
-     <td>
-       <ul>
-         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-         <li>**repository**: Object repository</li>
-         <li>**dataset id**: Dataset SAS technical identifier</li>
-       </ul>
-     </td>
-   </tr>
-   <tr>
-     <td>Field</td>
-     <td>code/repository/dataset id/field name</td>
-     <td>
-       <ul>
-         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-         <li>**repository**: Object repository</li>
-         <li>**dataset id**: Dataset SAS technical identifier</li>
-         <li>**field name**</li>
-       </ul>
-     </td>
-   </tr>
- </table>
- 
+
+<table>
+  <tr><th>Object</th><th>Identifier Key</th><th>Description</th></tr>
+  <tr>
+    <td>Dataset</td>
+    <td>code/repository/dataset id</td>
+    <td>
+      <ul>
+        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+        <li>**repository**: Object repository</li>
+        <li>**dataset id**: Dataset SAS technical identifier</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Field</td>
+    <td>code/repository/dataset id/field name</td>
+    <td>
+      <ul>
+        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+        <li>**repository**: Object repository</li>
+        <li>**dataset id**: Dataset SAS technical identifier</li>
+        <li>**field name**</li>
+      </ul>
+    </td>
+  </tr>
+</table>

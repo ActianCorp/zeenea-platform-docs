@@ -27,11 +27,11 @@ The Tableau plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
- ## Declaring the Connection
+## Declaring the Connection
   
- Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
+Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
- Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections.md)
  
 In order to establish a connection with Tableau, specifying the following parameters in the dedicated file is required:
  
@@ -239,50 +239,50 @@ To represent the data flow from an external source, a Zeenea Data Process will b
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
- Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys.md)
 
- <table>
-   <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>
+<table>
+  <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>
   <tr>
-     <td>Visualization</td>
-     <td>code/workbook identifier</td>
-     <td>
-       <ul>
-         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-         <li>**workbook identifier**: Workbook Tableau technical identifier</li>
-       </ul>
-     </td>
-   </tr>
-   <tr>
-     <td>Dataset</td>
-     <td>code/dataset/data source identifier</td>
-     <td>
-       <ul>
-         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-         <li>**data source identifier**: Data Source Tableau technical identifier</li>
-       </ul>
-     </td>
-   </tr>
-   <tr>
-     <td>Field</td>
-     <td>code/dataset/data source identifier/field identifier</td>
-     <td>
-       <ul>
-         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-         <li>**data source identifier**: Data Source Tableau technical identifier</li>
-         <li>**field identifier**: Field Tableau technical identifier</li>
-       </ul>
-     </td>
-   </tr>
-   <tr>
-     <td>Data process</td>
-     <td>code/transformation/data source identifier</td>
-     <td>
-       <ul>
-         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-         <li>**data source identifier**: Data Source Tableau technical identifier</li>
-       </ul>
-     </td>
-   </tr>
- </table>
-    
+    <td>Visualization</td>
+    <td>code/workbook identifier</td>
+    <td>
+      <ul>
+        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+        <li>**workbook identifier**: Workbook Tableau technical identifier</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Dataset</td>
+    <td>code/dataset/data source identifier</td>
+    <td>
+      <ul>
+        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+        <li>**data source identifier**: Data Source Tableau technical identifier</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Field</td>
+    <td>code/dataset/data source identifier/field identifier</td>
+    <td>
+      <ul>
+        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+        <li>**data source identifier**: Data Source Tableau technical identifier</li>
+        <li>**field identifier**: Field Tableau technical identifier</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Data process</td>
+    <td>code/transformation/data source identifier</td>
+    <td>
+      <ul>
+        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+        <li>**data source identifier**: Data Source Tableau technical identifier</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+  

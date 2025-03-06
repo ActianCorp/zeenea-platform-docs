@@ -70,6 +70,7 @@ This user must have read and/or write rights to the entire directory and subdire
 Our scanner is regularly updated to correct bugs and add improvements. **We recommend updating it at least every 6 months**.
 
 ### Linux Environnement
+
 Unless the binary is specifically provided to you by Zeenea, the Scanner can be downloaded as an archive by using a dedicated API entry point or via the Scanners monitoring page in Zeenea (Administration interface) where a download link is proposed.
 
 If you decide to download the Scanner using the API, you have to create a dedicated API key. See [Managing API Keys](./zeenea-managing-api-keys.md).
@@ -368,6 +369,7 @@ scanner_snowflake {
 ```
 
 ### Secret Injection Syntax
+
 Your connection file must contain a secret_manager object and can then use the following syntax to benefit from the Secret Manager:
 
 `${secret_manager.}`

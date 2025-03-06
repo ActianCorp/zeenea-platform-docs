@@ -168,9 +168,9 @@ Dataset field.
 
 ## Unique Identifier Keys
  
- A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
+A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
  
- More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys.md).
   
  <table>
    <tr><th>Object</th><th>Identifier Key</th><th>Description</th></tr>

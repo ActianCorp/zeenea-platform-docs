@@ -9,7 +9,6 @@ This topic describes the procedure to follow in case of a problem with the Zeene
 This procedure is intended for users who have access to the machines on which the scanning processes are hosted.
 
 If you do not find in the answers to common issues, you can report your incident by opening a ticket and contacting the operator of Zeenea. We will be able to refer to the latter for additional information.
- 
 
 ## Unresolved Issue Procedure
 
@@ -52,7 +51,7 @@ If the scanner fails to connect to Zeenea with the error message:
 
 then it is possible that the proxy is listening for the network and is generating a fake Zeenea certificate, using an internal CA. This certificate will not be recognized by Java. 
 
- Confirm this is happening with the following command: 
+Confirm this is happening with the following command: 
 
 `keytool -printcert -sslserver [hostname].zeenea.app`
  

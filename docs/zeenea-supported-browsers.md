@@ -3,6 +3,7 @@ title: Supported Browsers
 ---
 
 # Supported Browsers
+
 Zeenea Studio and Explorer applications can run on any computer with an Internet connection and supports the following browsers:
 
 | Browser| Notes |

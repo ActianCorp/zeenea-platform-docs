@@ -246,7 +246,6 @@ More information about unique identification keys in this documentation: [Identi
      </td>
    </tr>
  </table>
-    
 
 ## Additional Information
 

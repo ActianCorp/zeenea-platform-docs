@@ -14,6 +14,7 @@ A configuration template can be downloaded here: [Snowflake.conf](https://actian
 :::
 
 ## Supported Versions
+
 The Snowflake connector has been tested with the cloud version of this service. 
 
 ## Installing the Plugin
@@ -42,7 +43,7 @@ In order to establish a connection with Snowflake, specifying the following para
 
 | Parameter| Expected Value |
 | :--- | :--- |
-| `name` | The name that will be displayed to catalog users for this connection. | 
+| `name` | The name that will be displayed to catalog users for this connection | 
 | `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `Snowflake` and this value must not be modified. | 
 | `connection.url` | Database address.<br /><br />Example: `jdbc:snowflake://kn12345.eu-west-1.snowflakecomputing.com/?db=SNOWFLAKE_DATA&warehouse=SMALL_COMPUTE_WH`.<br /><br />**Parameter `db` and `warehouse` are mandatory to define a connection entry point**. |
@@ -256,7 +257,6 @@ Dataset field.
 ## Data Process
 
 A data process can be the representation of a Snowpipe, a view construction request or a data insertion.
-
 
 * **Name**
 * **Source Description**

@@ -112,7 +112,6 @@ For the Linux, Unix, Windows version, the user must have read access to the foll
 * `SYSCAT.TABLES`
 * `SYSCAT.COLUMNS`
 
-
 ## Filters
 
 Since version 48 of the scanner, the DB2 connector benefits from the feature of rich filters in the configuration of the connector.

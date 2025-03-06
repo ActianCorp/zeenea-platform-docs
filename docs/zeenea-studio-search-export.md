@@ -7,6 +7,7 @@ title: Exporting Search Results
 The Export feature allows you to export a selection of Items from the Catalog section. Once exported, the same selection can be imported back into the Catalog.  
 
 ## Overview
+
 To export the documentation of a set of Items, select all relevant items (either by manually selecting them or by clicking on the “Select All” option) from the Catalog section, and then click on “Export”.
 
 To be exported, your selection must comply with the following: 
@@ -22,7 +23,8 @@ Microsoft Excel's technical constraints bind the Export feature. In particular, 
 
 Once the export is over, click **Download** to retrieve the .xlsx file on your computer. 
 
-## Exported information 
+## Exported Information 
+
 The following information is exported: 
 
 * key: contains the unique identifier for that object

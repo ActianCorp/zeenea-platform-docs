@@ -64,6 +64,6 @@ hide_table_of_contents: true
 | [Zeenea Descriptor Format Visualization](./zeenea-connector-zdf.md) (**) | Generic Visualization | 54 | [zdf-connector-plugin-2.0.0.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.0.zip) |
 | [Zeenea Descriptor Format Lineage](./zeenea-connector-zdf.md) (**) | Generic Lineage | 54 | [zdf-connector-plugin-2.0.0.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.0.zip) |
  
- (*) Safyr connectors require Safyr third party solution from Silwood.
+(*) Safyr connectors require Safyr third party solution from Silwood.
 
 (**) This connector is restricted to specific use cases, please read carefully its documentation.

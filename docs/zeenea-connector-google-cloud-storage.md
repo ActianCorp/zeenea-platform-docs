@@ -89,8 +89,6 @@ The inventory collects all data sources that the user can access.
 
 A dataset is a data source that has been identified as such, as per the rules of the connector. 
 
-
-
 * **Name**
 * **Source Description**
 * **Technical Data**:

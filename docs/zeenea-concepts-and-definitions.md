@@ -32,7 +32,6 @@ The elements of a Category item are the following:
 * Properties
 * Contacts
 
-
 ## Connection
 A Connection represents a system to which Zeenea is connected. It allows the scanner to retrieve metadata from your information source with which you are connected and incorporate them into Zeenea. 
 
@@ -43,8 +42,7 @@ Custom items allow you to document entirely new concepts, without being limited 
 
 Each new custom item type can be used on each of the templates, as a single or multi-valued property, to create relationships with all of Zeenea's asset types.
 
-
- ## Dataset
+## Dataset
  
  A dataset is a physical representation of an existing set of data from a database. 
 
@@ -67,6 +65,7 @@ In the detailed pages of this item, you can find a set of information, such as:
 * properties filled in by the associated contacts
 
 ## Data Process
+
 A Data Process is an item in Zeenea generally used to materialize a program or pipeline taking one or more sets of data as input and producing one or more other sets of data as output.
 
 This item thus makes it possible to materialize these relations between datasets and therefore to build the "horizontal" lineage of the data.
@@ -84,6 +83,7 @@ In the detailed pages of this item, you can find a set of information, such as:
 * Outputs Datasets
 
 ## Field
+
 The structure of a dataset is described in its schema. This structure contains the enumeration, if known, of the Fields, which typically correspond to the columns of a table in a database. 
 
 Fields are the technical items with the finest granularity in Zeenea.

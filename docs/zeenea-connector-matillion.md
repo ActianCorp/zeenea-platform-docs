@@ -226,7 +226,6 @@ Text is missing placeholder:
 
 Where <font color="red">[what?]</font> is the Snowflake organization identifier, is the snowflake account identifier and is the database of the Snowflake connection.
 
-
 ## Collected Metadata
 
 ### Data Process

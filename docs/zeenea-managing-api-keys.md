@@ -30,7 +30,6 @@ Zeenea offers a "machine-to-machine" authentication mechanism based on API keys.
 
 You can delete an existing API key at any time from the **API Key** section in the administration interface.
 
-    :::caution[IMPORTANT]
-    Be careful when deleting the API key, because the services (script, scanners, or others) that use this key for authentication will no longer be able to connect to the Zeenea platform.
-    :::
- 
+:::caution[IMPORTANT]
+Be careful when deleting the API key, because the services (script, scanners, or others) that use this key for authentication will no longer be able to connect to the Zeenea platform.
+:::

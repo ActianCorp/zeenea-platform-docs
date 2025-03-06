@@ -19,11 +19,11 @@ The Talend plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
- ## Declaring the Connection
+## Declaring the Connection
   
- Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
+Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
- Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections.md)
  
 In order to establish a connection with Talend, the following parameters in the dedicated file are required:
  
@@ -73,7 +73,6 @@ A template of the configuration file is available in [this repository](https://g
 ## User Permissions
 
 In order to collect metadata, the user the scanner is executed with must have enough privileges to access and read files from the directory specified in the dedicated parameter.
-
 
 ## Rich Filters
 
@@ -131,19 +130,19 @@ A data process is the representation of a Talend transformation.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
- Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys.md)
 
- <table>
-   <tr><th>Object</th><th>Identifier Key</th><th>Description</th></tr>
+<table>
+  <tr><th>Object</th><th>Identifier Key</th><th>Description</th></tr>
   <tr>
-     <td>Data process</td>
-     <td>code/identifier</td>
-     <td>
-       <ul>
-         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-         <li>**identifier**: Talend transformation technical identifier</li>
-       </ul>
-     </td>
-   </tr>
- </table>
-    
+    <td>Data process</td>
+    <td>code/identifier</td>
+    <td>
+      <ul>
+        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+        <li>**identifier**: Talend transformation technical identifier</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+  

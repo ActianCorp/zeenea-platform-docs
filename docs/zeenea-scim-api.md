@@ -45,7 +45,6 @@ SCIM defines two main types of objects: "Users" and "Groups".
 
 Users can be defined in SCIM using a list of attributes. The table below shows the attributes supported by Zeenea for objects of type "User":
 
-
 | SCIM attribute | Mapping in Zeenea | 
 | :--- | :--- | 
 | `id` | User identifier in Zeenea (UUID) |

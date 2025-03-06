@@ -101,6 +101,7 @@ The table below summarizes the possible values of the `alias` parameter to be co
 (*) Do not fill in the database name if the configuration of the connector is in `multi_catalog.enabled = true`.
 
 ### Data Process
+
 A data process is the representation of a pipeline.
 
 * **Name**
@@ -112,6 +113,7 @@ A data process is the representation of a pipeline.
   * Dataprocess Modification Date
  
 ## Unique Identification Keys
+
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
 Read more: [Identification Keys](./zeenea-identification-keys.md)

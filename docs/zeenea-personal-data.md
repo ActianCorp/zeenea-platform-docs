@@ -4,7 +4,6 @@ title: Personally Identifiable Information
 
 # Personally Identifiable Information Property
 
-
 The acronym PII stands for "Personally Identifiable Information".
 
 It refers to Personal Confidential Data (PCD). This is the information held by the company and allows the direct or indirect identification of a Physical Person. This data must be carefully handled, particularly in terms of security, retention time, and access control.

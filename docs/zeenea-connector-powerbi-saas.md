@@ -294,51 +294,51 @@ An identification key is associated with each object in the catalog. In the case
  
 More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys.md).
   
- <table>
-   <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>
-   <tr>
-     <td>Visualization</td>
-     <td>code/group id.report.id</td>
-     <td>
-       <ul>
-         <li>**code**: Unique identifier of the connection noted in the configuration file</li>
-         <li>**group id**: Power BI SaaS Group technical identifier</li>
-         <li>**id**: Power BI object technical identifier</li>
-       </ul>
-     </td>
-   </tr>
-   <tr>
-     <td>Dataset</td>
-     <td>code/group id.dataset.id</td>
-     <td>
-       <ul>
-         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-         <li>**group id**: Power BI SaaS Group technical identifier</li>
-         <li>**id**: Power BI object technical identifier</li>
-       </ul>
-     </td>
-   </tr>
-   <tr>
-     <td>Field</td>
-     <td>code/group id.dataset.id/field name</td>
-     <td>
-       <ul>
-         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-         <li>**group id**: Power BI SaaS Group technical identifier</li>
-         <li>**id**: Power BI object technical identifier</li>
-         <li>**field name**</li>
-       </ul>
-     </td>
-   </tr>
-   <tr>
-     <td>Data process</td>
-     <td>code/data process name</td>
-     <td>
-       <ul>
-         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-         <li>**data process name**</li>
-       </ul>
-     </td>
-   </tr>
- </table>
+<table>
+  <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>
+  <tr>
+    <td>Visualization</td>
+    <td>code/group id.report.id</td>
+    <td>
+      <ul>
+        <li>**code**: Unique identifier of the connection noted in the configuration file</li>
+        <li>**group id**: Power BI SaaS Group technical identifier</li>
+        <li>**id**: Power BI object technical identifier</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Dataset</td>
+    <td>code/group id.dataset.id</td>
+    <td>
+      <ul>
+        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+        <li>**group id**: Power BI SaaS Group technical identifier</li>
+        <li>**id**: Power BI object technical identifier</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Field</td>
+    <td>code/group id.dataset.id/field name</td>
+    <td>
+      <ul>
+        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+        <li>**group id**: Power BI SaaS Group technical identifier</li>
+        <li>**id**: Power BI object technical identifier</li>
+        <li>**field name**</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Data process</td>
+    <td>code/data process name</td>
+    <td>
+      <ul>
+        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+        <li>**data process name**</li>
+      </ul>
+    </td>
+  </tr>
+</table>
  

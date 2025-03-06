@@ -24,7 +24,7 @@ Configuration templates can be downloaded here:
 
 * [empty_dataset_description.json](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GUVEx&d=%2Fa%2FNu000002lfUn%2F65pNHnkVq60yfmIcXVCF4VnX6xhR.KgsSug2ohQWod0&asPdf=false)
 * [example_dataset_description.json](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GUgWr&d=%2Fa%2FNu000002lfWP%2FeeMFWRTqgqIGzyJV5ytd983DUDc1hFE_xoxT4PPHELQ&asPdf=false)
-*  [datasets.conf](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GULFY&d=%2Fa%2FNu000002lfY1%2FZvrYkaMo1XsJ_zZ9QYd7EBUWOIZu4rn27WVyfVDrwLA&asPdf=false)
+* [datasets.conf](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GULFY&d=%2Fa%2FNu000002lfY1%2FZvrYkaMo1XsJ_zZ9QYd7EBUWOIZu4rn27WVyfVDrwLA&asPdf=false)
 
 ## Supported Versions
 

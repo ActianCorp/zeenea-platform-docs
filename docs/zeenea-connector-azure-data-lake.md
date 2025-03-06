@@ -4,7 +4,6 @@ title: Azure Data Lake
 
 # Adding an Azure Data Lake Connection
 
-
 ## Prerequisites
 
 * To connect to an Azure data lake, a user with sufficient [permissions](#user-permissions) is required. 
@@ -86,7 +85,6 @@ In order to establish a connection with an Azure Gen 2 cluster, specifying the f
 | `xml.namespace_identification` | Used for configuring XML fields identification. Use `uri`, except to keep the compatibility with a scanner previous to version 43, where it is necessary to use the value `legacy` (default value). |
 | `xml.fields_ordering` | Starting from version 67.<br />Allows ordering the list of retrieved fields.<br />Possible values are: <ul><li>`alphabetical`: Fields are ordered alphabetically</li><li>`""`, `legacy` or `unordered`: Fields are ordered as they are read.</li></ul> |
  
-
 ## User Permissions
 
 In order to collect metadata, the running user's permissions must allow them to access and read reports that need cataloging.

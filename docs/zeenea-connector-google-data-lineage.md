@@ -27,9 +27,9 @@ For more information on how to install a plugin, please refer to the following a
 
  ## Declaring the Connection
   
- Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
+Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
- Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections.md)
  
 In order to establish a connection with a Data Lineage instance, specifying the following parameters in the dedicated file is required:
  

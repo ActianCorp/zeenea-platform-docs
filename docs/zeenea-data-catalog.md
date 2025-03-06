@@ -10,7 +10,6 @@ The Zeenea data catalogue serves a clear purpose: to make your company and its e
 
 Watch this [demo video](https://youtu.be/23LKd9XbnMc) on YouTube.
 
-
 ## Zeenea Data Catalog: how does it work?
 
 Zeenea offers two important distinct applications in its data catalog service, providing an optimized and personalized experience for its users.

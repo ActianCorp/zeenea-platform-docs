@@ -105,6 +105,7 @@ To find out the exact nature of the error, check the scanner logs.
 In order to delete a connection from the Catalog, you must follow the next two steps: first, delete the connection from the scanner folder and then go to the administration interface and delete the connection.
 
 ### From the scanner
+
 To delete a connection from a scanner : 
 
 1. Go to the `/connections` folder of the scanner, 

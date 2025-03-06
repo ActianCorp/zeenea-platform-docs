@@ -137,6 +137,7 @@ To connect to an instance, the parameters of the connection file must be complet
 </table>
 
 ## zdf-dataset
+
 This is a Dataset connector.
 
 It operates according to the inventory/import/update cycle. The objects inventoried are Datasets.
@@ -351,36 +352,36 @@ Dataset description.
 
 A visualization description.
 
- <table>
-   <tr><th>Attribute</th><th>Type</th><th>Description</th></tr>
-   <tr>
-     <td>`path`</td>
-     <td>`Text`</td>
-     <td>
-      <p>Path identifying the view in the connection.</p>
-      <p> If not specified, the path will be `/report/` (example: `/report/sales_evolutions`).</p>
-    </td>
-   </tr>
-   <tr>
-     <td>`name`*</td>
-     <td>`Text`</td>
-     <td>Visualization name</td>
-   </tr>
-   <tr>
-     <td>`description`</td>
-     <td>`Text`</td>
-     <td>Visualization description</td>
-   </tr>
-   <tr>
-     <td>`owner`</td>
-     <td>`ZdfOwner`</td>
-     <td>Visualization owner contact</td>
-   </tr>
-   <tr>
-     <td>`datasets`*</td>
-     <td>`List<ZdfDataset>`</td>
-     <td>List of the visualization's internal datasets.<br /><br />**Note**: these objects represent access to visualization data. They belong to the visualization and cannot be shared. Their life cycle is the same as that of the visualization to which they are attached.<br /><br />Shared datasets must be produced in another connection with the zdf-dataset connector.</td>
-   </tr>
+<table>
+  <tr><th>Attribute</th><th>Type</th><th>Description</th></tr>
+  <tr>
+    <td>`path`</td>
+    <td>`Text`</td>
+    <td>
+    <p>Path identifying the view in the connection.</p>
+    <p> If not specified, the path will be `/report/` (example: `/report/sales_evolutions`).</p>
+  </td>
+  </tr>
+  <tr>
+    <td>`name`*</td>
+    <td>`Text`</td>
+    <td>Visualization name</td>
+  </tr>
+  <tr>
+    <td>`description`</td>
+    <td>`Text`</td>
+    <td>Visualization description</td>
+  </tr>
+  <tr>
+    <td>`owner`</td>
+    <td>`ZdfOwner`</td>
+    <td>Visualization owner contact</td>
+  </tr>
+  <tr>
+    <td>`datasets`*</td>
+    <td>`List<ZdfDataset>`</td>
+    <td>List of the visualization's internal datasets.<br /><br />**Note**: these objects represent access to visualization data. They belong to the visualization and cannot be shared. Their life cycle is the same as that of the visualization to which they are attached.<br /><br />Shared datasets must be produced in another connection with the zdf-dataset connector.</td>
+  </tr>
 </table>
 
 ### ZdfProcess
@@ -429,80 +430,80 @@ Process description.
 
 A field description.
 
- <table>
-   <tr><th>Attribute</th><th>Type</th><th>Description</th></tr>
-   <tr>
-     <td>`name`*</td>
-     <td>`Text`</td>
-     <td>Field name</td>
-   </tr>
-   <tr>
-     <td>`description`</td>
-     <td>`Text`</td>
-     <td>Field description</td>
-   </tr>
-   <tr>
-     <td>`nativeType`</td>
-     <td>`Text`</td>
-     <td>
-        <p>Native type of the field.</p>
-        <p>If unset, the `dataType` value is used.</p>
-      </td>
+<table>
+  <tr><th>Attribute</th><th>Type</th><th>Description</th></tr>
+  <tr>
+    <td>`name`*</td>
+    <td>`Text`</td>
+    <td>Field name</td>
   </tr>
   <tr>
-    <td>`dataType`</td>
+    <td>`description`</td>
+    <td>`Text`</td>
+    <td>Field description</td>
+  </tr>
+  <tr>
+    <td>`nativeType`</td>
     <td>`Text`</td>
     <td>
-      <p>Zeenea type of the field.</p>
-      <p>If unset, the `nativeType` value is used.</p>
-      <p>Allowed values are:</p>
-      <ul>
-        <li>`boolean`</li>
-        <li>`byte`</li>
-        <li>`short`</li>
-        <li>`integer`</li>
-        <li>`long`</li>
-        <li>`float`</li>
-        <li>`double`</li>
-        <li>`string`</li>
-        <li>`date`</li>
-        <li>`timestamp`</li>
-        <li>`binary`</li>
-        <li>`struct`</li>
-        <li>`unknown`</li>
-      </ul>
+      <p>Native type of the field.</p>
+      <p>If unset, the `dataType` value is used.</p>
     </td>
-  </tr>
-   <tr>
-     <td>`isNullable`</td>
-     <td>`Boolean`</td>
-     <td>The field can be null. Default value `false`.</td>
-  </tr>
-   <tr>
-     <td>`isMultivalued`</td>
-     <td>`Boolean`</td>
-     <td>The field can contain <font color="red">[WHAT?]</font>. Default value `false`.</td>
-  </tr>
-   <tr>
-     <td>`isPrimaryKey`</td>
-     <td>`Boolean`</td>
-     <td>The field is part of the primary key. Default value `false`.</td>
-  </tr>
-   <tr>
-     <td>`encoding`</td>
-     <td>`Text`</td>
-     <td>Source property `encoding`</td>
-  </tr>
-   <tr>
-     <td>`format`</td>
-     <td>`Text`</td>
-     <td>Source property `format`</td>
-  </tr>
-   <tr>
-     <td>`length`</td>
-     <td>`Text`</td>
-     <td>Source property `length`</td>
-  </tr>
+</tr>
+<tr>
+  <td>`dataType`</td>
+  <td>`Text`</td>
+  <td>
+    <p>Zeenea type of the field.</p>
+    <p>If unset, the `nativeType` value is used.</p>
+    <p>Allowed values are:</p>
+    <ul>
+      <li>`boolean`</li>
+      <li>`byte`</li>
+      <li>`short`</li>
+      <li>`integer`</li>
+      <li>`long`</li>
+      <li>`float`</li>
+      <li>`double`</li>
+      <li>`string`</li>
+      <li>`date`</li>
+      <li>`timestamp`</li>
+      <li>`binary`</li>
+      <li>`struct`</li>
+      <li>`unknown`</li>
+    </ul>
+  </td>
+</tr>
+  <tr>
+    <td>`isNullable`</td>
+    <td>`Boolean`</td>
+    <td>The field can be null. Default value `false`.</td>
+</tr>
+  <tr>
+    <td>`isMultivalued`</td>
+    <td>`Boolean`</td>
+    <td>The field can contain <font color="red">[WHAT?]</font>. Default value `false`.</td>
+</tr>
+  <tr>
+    <td>`isPrimaryKey`</td>
+    <td>`Boolean`</td>
+    <td>The field is part of the primary key. Default value `false`.</td>
+</tr>
+  <tr>
+    <td>`encoding`</td>
+    <td>`Text`</td>
+    <td>Source property `encoding`</td>
+</tr>
+  <tr>
+    <td>`format`</td>
+    <td>`Text`</td>
+    <td>Source property `format`</td>
+</tr>
+  <tr>
+    <td>`length`</td>
+    <td>`Text`</td>
+    <td>Source property `length`</td>
+</tr>
 </table>
 
 ## ZdfDatasetRef
@@ -513,77 +514,77 @@ The link can be represented either with the identification key, or with the conn
 
 One of the attributes `identificationKey` or `path` must be filled in.
 
- <table>
-   <tr><th>Attribute</th><th>Type</th><th>Description</th></tr>
-   <tr>
-     <td>`identificationKey`</td>
-     <td>`Text`</td>
-     <td>Dataset [identification key](./zeenea-identification-keys.md)</td>
-   </tr>
-   <tr>
-     <td>`connectionCode`</td>
-     <td>`Text`</td>
-     <td>Connection code. Leave blank if this is the current connection. It is possible to use one of the connection aliases.</td>
-   </tr>
-   <tr>
-     <td>`zeepath`</td>
-     <td>`Text`</td>
-     <td>Dataset path</td>
-   </tr>
-  </table>
+<table>
+  <tr><th>Attribute</th><th>Type</th><th>Description</th></tr>
+  <tr>
+    <td>`identificationKey`</td>
+    <td>`Text`</td>
+    <td>Dataset [identification key](./zeenea-identification-keys.md)</td>
+  </tr>
+  <tr>
+    <td>`connectionCode`</td>
+    <td>`Text`</td>
+    <td>Connection code. Leave blank if this is the current connection. It is possible to use one of the connection aliases.</td>
+  </tr>
+  <tr>
+    <td>`zeepath`</td>
+    <td>`Text`</td>
+    <td>Dataset path</td>
+  </tr>
+</table>
 
 ## ZdfOwner
 
 A contact description.
 
- <table>
-   <tr><th>Attribute</th><th>Type</th><th>Description</th></tr>
-   <tr>
-     <td>`role`*</td>
-     <td>`Text`</td>
-     <td>Contact role</td>
-   </tr>
-   <tr>
-     <td>`email`*</td>
-     <td>`Text`</td>
-     <td>Contact email address</td>
-   </tr>
-   <tr>
-     <td>`firstname`</td>
-     <td>`Text`</td>
-     <td>Contact first name</td>
-   </tr>
-   <tr>
-     <td>`lastname`</td>
-     <td>`Text`</td>
-     <td>Contact last name</td>
-   </tr>
-  </table>
+<table>
+  <tr><th>Attribute</th><th>Type</th><th>Description</th></tr>
+  <tr>
+    <td>`role`*</td>
+    <td>`Text`</td>
+    <td>Contact role</td>
+  </tr>
+  <tr>
+    <td>`email`*</td>
+    <td>`Text`</td>
+    <td>Contact email address</td>
+  </tr>
+  <tr>
+    <td>`firstname`</td>
+    <td>`Text`</td>
+    <td>Contact first name</td>
+  </tr>
+  <tr>
+    <td>`lastname`</td>
+    <td>`Text`</td>
+    <td>Contact last name</td>
+  </tr>
+</table>
 
 ## ZdfForeignKey
 
 A foreign key description.
 
- <table>
-   <tr><th>Attribute</th><th>Type</th><th>Description</th></tr>
-   <tr>
-     <td>`dataset`*</td>
-     <td>`Text`</td>
-     <td>Path of the target dataset (the one with the primary key)</td>
-   </tr>
-   <tr>
-     <td>`sourceFields`*</td>
-     <td>`List`</td>
-     <td>Source dataset field list</td>
-   </tr>
-   <tr>
-     <td>`targetFields`</td>
-     <td>`List`</td>
-     <td>Target dataset field list</td>
-   </tr>
-   <tr>
-     <td>`name`</td>
-     <td>`Text`</td>
-     <td>Foreign key name</td>
-   </tr>
-  </table>  
+<table>
+  <tr><th>Attribute</th><th>Type</th><th>Description</th></tr>
+  <tr>
+    <td>`dataset`*</td>
+    <td>`Text`</td>
+    <td>Path of the target dataset (the one with the primary key)</td>
+  </tr>
+  <tr>
+    <td>`sourceFields`*</td>
+    <td>`List`</td>
+    <td>Source dataset field list</td>
+  </tr>
+  <tr>
+    <td>`targetFields`</td>
+    <td>`List`</td>
+    <td>Target dataset field list</td>
+  </tr>
+  <tr>
+    <td>`name`</td>
+    <td>`Text`</td>
+    <td>Foreign key name</td>
+  </tr>
+</table>  

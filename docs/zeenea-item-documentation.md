@@ -31,6 +31,7 @@ When an Item comes from a connection (e.g., Dataset), it also includes other att
 In Zeenea, each type of Item can have specific attributes, depending on its nature:
 
 #### Datasets:
+
 * Type (Table, View, etc.)
 * List of foreign keys and relationships with other datasets
 * List of functional keys

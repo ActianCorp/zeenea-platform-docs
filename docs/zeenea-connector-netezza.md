@@ -9,7 +9,6 @@ title: Netezza
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Netezza.
 * Zeenea traffic flows towards the data source must be open.
 
-
 | Target| Protocol | Usual Ports |
 | :--- | :--- | :--- |
 | Netezza | JDBC | 5480 |
@@ -197,7 +196,6 @@ Dataset field.
   * Technical Name
   * Native type
   * Default Value
-
 
 ## Data Profiling
 

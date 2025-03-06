@@ -1,6 +1,7 @@
 ---
 title: Externalizing Embedded Connectors
 ---
+
 # Externalizing Embedded Connectors
 
 ## Introduction

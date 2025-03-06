@@ -29,7 +29,7 @@ It requires a scanner version 66 and can be downloaded here: [https://plugins.ze
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
- ## Declaring the Connection
+## Declaring the Connection
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
@@ -127,7 +127,6 @@ This functionality also applies to the Roles metadata of the datasets from the `
 
 Read more: [Filters](zeenea-filters.md)
 
-
 | Criteria | Description |
 | :--- | :--- |
 | schema | Schema name |
@@ -202,7 +201,7 @@ These requests will be executed, whether manually, in case of user action direct
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
- Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys.md)
 
 <table>
   <tr>

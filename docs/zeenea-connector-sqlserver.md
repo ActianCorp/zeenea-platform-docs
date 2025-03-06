@@ -32,11 +32,11 @@ Integrated authentication is available for Windows. It requires configuration, w
 
 Each time the scanner or plug-in is updated, it will be necessary to update the service with the same procedure as for installation.
 
- ## Declaring the Connection
+## Declaring the Connection
   
- Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
+Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
- Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections.md)
  
 In order to establish a connection with an SQL Server instance, specifying the following parameters in the dedicated file is required:
  
@@ -212,7 +212,7 @@ These requests will be executed, whether manually, in case of user action direct
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
- Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys.md)
 
 <table>
   <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>

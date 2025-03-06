@@ -31,5 +31,6 @@ Use the buttons in the bottom right corner of the display to adjust how the diag
 The **map** button can be used to navigate within the data model easily.
 
 ## Exporting the graph
+
 In the top right-hand corner, the export button will let you download the diagram as a PNG file.
  

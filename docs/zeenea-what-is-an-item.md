@@ -35,6 +35,7 @@ These items share common characteristics regarding the attributes on which the d
 * Contacts in order to identify the persons linked to the items as well as to understand the nature of this link
 
  ## Item Key
+
 An Item key allows for each Item in the catalog to be uniquely identified. Keys are especially useful when synchronizing the catalog with an external system, either via the APIs, or when using the Excel import feature.
 
 ## Orphan Item
@@ -51,6 +52,7 @@ Zeenea helps identify orphan datasets to keep catalog content up-to-date and avo
 The documentation of an orphan dataset can no longer be updated through its original connection. If this dataset has been moved, it is treated by Zeenea as a new entry.
 
 ## Property
+
 A property is a component of the metamodel used to store metadata specific to a given item. It allows to provide context and/or to categorize the items in the catalog. The properties are also used as search criteria or filters and thus provide more efficient access to items.
 
 Properties options when configuring them: 
@@ -72,6 +74,7 @@ The template will allow you to document each item in a unitary manner by highlig
 By choosing the right concepts, organizing them in a coherent way, and framing their input via appropriate typing, you optimize the efficiency of the Data Stewards' work but also the quality of their production. They will enable data consumers to quickly find the data they are interested in with its context.
 
 ## Topic
+
 A Topic is a collection of Catalog Items defined by the people in charge of managing the Catalog documentation. This collection will be presented to business users as soon as they arrive in the catalog to help them to: 
 
 * understand the organization of the catalog.
@@ -79,6 +82,7 @@ A Topic is a collection of Catalog Items defined by the people in charge of mana
 * discover the catalog through business, organization, etc.
 
 ## Visualization
+
 Visualizations are reports from source reporting solutions such as PowerBI or Tableau.
 
 Like Datasets, they are subject to automated discovery, via a connector and can be imported. Objects of type Visualization are documentable in the same way as other objects.

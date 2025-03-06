@@ -48,7 +48,6 @@ To edit an existing Responsibility, click the pencil icon next to the desired en
 
    ![](/img/zeenea-catalog-design-responsibility-edit.png)
 
-
 ## Deleting a Responsibility
 
 1. Click on the name of the desired responsibility in the **Responsibilities** section to open the editing screen.

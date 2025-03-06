@@ -9,7 +9,6 @@ title: Databricks Hive Metastore
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Databricks Hive Metastore.
 * Zeenea traffic flows towards the database must be open. 
 
-
 :::note[IMPORTANT]
 **The Databricks JDBC driver is not provided with the connector**. Download the Databricks JDBC driver for your Databricks instance and copy it to the `/lib-ext` folder of your scanner (**only the .jar file**). You can find the driver in the sources provided by the vendor on their website: https://www.databricks.com/spark/jdbc-drivers-download.
 :::

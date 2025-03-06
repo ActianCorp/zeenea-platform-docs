@@ -129,7 +129,6 @@ A data process is an Informatica workflow.
   * Updated At
   * Updated By
 
-
  ## Unique Identifier Keys
  
  A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.

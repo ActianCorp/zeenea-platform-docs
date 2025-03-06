@@ -139,32 +139,31 @@ Will collect the list of datasets accessible by the user.
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
  
 More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys.md).
-  
- <table>
-   <tr><th>Object</th><th>Identifier Key</th><th>Description</th></tr>
-   <tr>
-     <td>Dataset</td>
-     <td>code/application name/datamodel name/dataset name</td>
-     <td>
-       <ul>
-         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-         <li>**application name**</li>
-         <li>**datamodel name**</li>
-         <li>**dataset name**</li>
-       </ul>
-     </td>
-   </tr>
-   <tr>
-     <td>Field</td>
-     <td>code/application name/datamodel name/dataset name/field name</td>
-     <td>
-       <ul>
-         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-         <li>**application name**</li>
-         <li>**datamodel name**</li>
-         <li>**dataset name**</li>
-       </ul>
-     </td>
-   </tr>
- </table>
- 
+
+<table>
+  <tr><th>Object</th><th>Identifier Key</th><th>Description</th></tr>
+  <tr>
+    <td>Dataset</td>
+    <td>code/application name/datamodel name/dataset name</td>
+    <td>
+      <ul>
+        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+        <li>**application name**</li>
+        <li>**datamodel name**</li>
+        <li>**dataset name**</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Field</td>
+    <td>code/application name/datamodel name/dataset name/field name</td>
+    <td>
+      <ul>
+        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+        <li>**application name**</li>
+        <li>**datamodel name**</li>
+        <li>**dataset name**</li>
+      </ul>
+    </td>
+  </tr>
+</table>

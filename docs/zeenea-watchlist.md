@@ -7,6 +7,7 @@ title: Creating or Deleting a Watchlist
 Watchlists allow you to save your search filters in your dashboard, so you can quickly find the Items you need to process.
 
 ## Creating a Watchlist
+
 To create a new Watchlist: 
 
 1. Open Zeenea Studio.

@@ -149,7 +149,6 @@ Will collect the list of applications accessible by the user.
 
 Qlik Cloud connector is able to reconstruct the lineage of tables used in applications if they are used directly by them.
 
-
 <table>
   <tr>
     <th>Source System</th>

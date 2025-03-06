@@ -49,7 +49,6 @@ The CSV plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-con
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
-
 ## Parameters
 
 ### name

@@ -11,7 +11,6 @@ There are 3 types of user profiles that will give different permissions and acce
 * **Explorer**: this profile has access to all the features of Zeenea Explorer. It has access to the entire catalog in read-only mode. See [As a Data Explorer](./zeenea-data-explorer.md).
 
 To set up these profiles for your users, note that you will need a Super Administrator profile to access the Administration interface.
-  
 
 |   | Administration | Catalog Design | Documentation Edition | Zeenea Explorer |
 | :--- | :---: | :---: | :---: | :---: |

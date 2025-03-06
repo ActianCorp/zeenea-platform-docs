@@ -47,7 +47,6 @@ Here is a list of all the services and which are implemented in the preview
 | type | String | Any type | Ok | N/A | Item type value as defined above |  |
 | completion | Number | Any type | Ok | N/A | Completion rate of the documentation of the Item | Not implemented for contacts and data sources |
 
-
 ## BUILT-IN PROPERTIES
 
 | Property | Available on | Item type(s) | Read | Write | Description |

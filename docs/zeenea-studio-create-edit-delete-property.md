@@ -24,11 +24,13 @@ A property is a component of the metamodel used to store metadata specific to a 
 These fields are detailed in the following sections.
 
 ### Name
+
 A property is defined by a name.  
 
 This will be the name displayed to users, whether they are Data Explorers or Data Stewards. This name is therefore important and must have a rather straightforward meaning for users.
 
 ### Code
+
 A property is also defined by a code.  
 
 This code is a technical identifier and can be used in particular in API queries.
@@ -55,7 +57,7 @@ There are different types of properties (Short Text, URL, Number, etc.). This al
   | French | dd/mm/yyyy |
   | German | dd.mm.yyyy |
 
-### Completion calculation Importance
+### Completion Calculation Importance
 
 * **Ignore**: The Property is optional and is not taken into account in the completion level
 * **Standard**: The Property is taken into account in the calculation of completion level
@@ -67,7 +69,8 @@ There are different types of properties (Short Text, URL, Number, etc.). This al
 * **External sources and Zeenea interface**: The property can be updated via Zeenea Studio or by API
 * **External sources only**: The property can be modified by API only
 
-#### Search options
+#### Search Options
+
 For each property, it is possible to customize how you use it for searching in the Studio and Explorer.
 
 Be aware that misuse of these options can degrade the search engine performance of the search engine, as well as the user experience.
@@ -77,10 +80,12 @@ Below you will find a description of these options, as well as some advice on ho
 * Use property values as search keywords: This option allows users to type the value of a property into the search bar to find matching Items. Use this option best for "Short Text" properties corresponding to data of type "identifier" or short character strings. We do not recommend using this option when the property contains complex strings. That will degrade the relevance of the search results. Overusing this option may also downgrade the response times of the search engine and therefore downgrade the user experience. In particular, for "Select" or "Multiselect" properties, use the "Use property as a search filter" option.
 * Use property as a search filter: This option allows using the property as a search filter to refine the results. Use this option, if necessary, for "Select" or "Multiselect" properties. Avoid using this option for "Short Text" properties, especially if there are a lot of possible values. That may degrade the performance of the engine.
 
-#### Display options
+#### Display Options
+
 * **Feature property in the Catalog**: The value of the property, as well as its name, will be visible directly in the search results and highlighted in the Items details pages. Use this option to promote the most important properties for users, especially as a discriminator between Items with similar characteristics. "Highlighting too many properties can impair the readability of search results. Similarly, use this option best for "Select" or "Multiselect" properties.
 
-## Deleting a property
+## Deleting a Property
+
 It is possible to completely remove a property from the catalog, as well as the indexed values for this property.
 
 This operation is done from the **Properties** section of the **Catalog Design** page:
@@ -97,7 +102,8 @@ To be deleted, a property must meet four conditions:
 
 Before deleting the property, a confirmation window will ask you to confirm your choice. The indexed values for this property will be permanently deleted in a background task.
 
-## Source property management
+## Source Property Management
+
 When a new connector is installed, it also automatically creates a list of properties in the Metamodel section. These so-called "source" properties are created with default information (name, code, etc.), some of which are editable and some not.
 
 The following information is editable: 

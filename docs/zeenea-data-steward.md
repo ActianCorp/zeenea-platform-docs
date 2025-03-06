@@ -20,6 +20,7 @@ Before starting in Zeenea as a Data Steward, a few requirements must be met:
 * Once these conditions have been met, you can proceed with the steps below.
 
 ## Step 1: Log in to your Dashboard
+
 The dashboard is the home page of the Data Steward's Zeenea Studio application. 
 
 Once logged in, you will find on this page the main management indicators of your perimeter.

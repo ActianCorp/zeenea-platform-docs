@@ -8,7 +8,7 @@ title: Integration with Auth0
 Information required for this integration may be provided by both Zeenea and the Customer.  
 :::
 
-Click [here](https://auth0.com/docs/connections/enterprise/saml) for more information.
+See [Auth0 documentation](https://auth0.com/docs/connections/enterprise/saml) for more information.
 
 ## SAML
 

@@ -39,7 +39,8 @@ A unique key will be automatically generated based on the Item Type code and its
 Once the item has been created, you'll be able to edit its documentation.
 :::
 
-## Deleting an item
+## Deleting an Item
+
 You can delete an Item: 
 
 * From the item's detailed page, click on the "trash can" icon.

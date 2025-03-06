@@ -33,7 +33,7 @@ In order to establish a connection with a Databricks Unity Catalog instance, spe
 
 | Parameter| Expected Value |
 | :--- | :--- |
-| `name` | The name that will be displayed to catalog users for this connection. | 
+| `name` | The name that will be displayed to catalog users for this connection | 
 | `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `databricks-unitycatalog` and this value must not be modified. | 
 | `connection.url` | Databricks URL address (`https://url.cloud.databricks.com`). |
@@ -42,7 +42,7 @@ In order to establish a connection with a Databricks Unity Catalog instance, spe
 | `connection.oauth.client_secret` | Client secret |
 | `lineage.enabled` | Activates the lineage feature. Default value `false`. |
 | `filter` | To filter datasets during the inventory |
-| `tls.truststore.path` | The Trust Store file path. This file must be provided in case TLS encryption is activated (protocol https) and when certificates of servers are delivered by a specific authority. It must contain the certification chain.
+| `tls.truststore.path` | The Trust Store file path. This file must be provided in case TLS encryption is activated (protocol https) and when certificates of servers are delivered by a specific authority. It must contain the certification chain. |
 | `tls.truststore.password` |	Password of the trust store file |
 | `tls.truststore.type` | Type of the trust store file (`PKCS12` or `JKS`). Default value is discovered from the file extension. |
 | `proxy.scheme` | Depending on the proxy, `http` or `https` |

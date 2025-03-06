@@ -14,6 +14,7 @@ A link to the configuration template can be found here: [Zeenea Connector Downlo
 :::
  
 ## Supported Versions
+
 The Agile Data Engine connector is compatible with version 22.1 and later to take advantage of the Agile Data Engine version 2 metadata interface. 
 
 ## Installing the Plugin
@@ -82,8 +83,6 @@ In order to establish a connection with an Agile Data Engine instance, specifyin
     <td>List of regular expressions with comma separated representing target entity package to exclude</td>
   </tr>
 </table>
-
-
 
 ## User Permissions
 

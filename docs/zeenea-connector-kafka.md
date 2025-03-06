@@ -24,11 +24,11 @@ The Kafka connector is available as a plugin and can be downloaded here: [Zeenea
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
- ## Declaring the Connection
+## Declaring the Connection
   
- Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
+Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
- Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections.md)
  
 In order to establish a connection with a Kafka instance, specifying the following parameters in the dedicated file is required:
  
@@ -169,7 +169,7 @@ Topic field.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
- Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys.md)
 
 <table>
   <tr>

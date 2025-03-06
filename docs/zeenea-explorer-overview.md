@@ -9,11 +9,13 @@ Zeenea Explorer wants to further support users' exploratory approaches, beyond o
   ![](/img/zeenea-explorer.png)
 
 ## Who is Zeenea Explorer for?
+
 Zeenea Explorer is aimed directly at data teams, the end consumers of company data.
 
 The application aims to simplify their daily life by allowing them to search and discover quickly and easily the internal information within their company data or from open data.
 
 ## What are its main assets?
+
 Zeenea has separated the exploratory experience from its data catalog in its Zeenea Explorer application to provide a better user experience for data consumers.
 
 Zeenea Explorer is the front-office application of our data catalog.

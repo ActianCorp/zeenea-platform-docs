@@ -17,6 +17,7 @@ Only Super Admin users can activate the maintenance mode.
 ## Maintenance landing page
 
 ### Redirection of users
+
 During maintenance time, all users (Studio, Explorer, Administration) are redirected to the maintenance page after login, except Super Admins.
 
 Connected users are redirected as soon as an interaction with the application is detected (login, navigation, etc.).
@@ -24,6 +25,7 @@ Connected users are redirected as soon as an interaction with the application is
 Note that if a write action has been started and not finished before activating the maintenance mode (like a bulk action), it is not stopped when maintenance mode is activated.
 
 ### Content of the page
+
 The maintenance page contains a generic message inviting users to connect later:
 
 * Title: Maintenance in progress
@@ -32,6 +34,7 @@ The maintenance page contains a generic message inviting users to connect later:
   ![](/img/zeenea-maintenance-in-progress.png)
 
 ## Super Admin access during maintenance time
+
 When the maintenance mode is activated, Super Admins can access the application as usual (Studio, Explorer, Administration).
 
 On top of the applications, a tag indicates that the maintenance mode is activated.
@@ -39,7 +42,9 @@ On top of the applications, a tag indicates that the maintenance mode is activat
   ![](/img/zeenea-maintenance-mode-tag.png)
 
 ## Working with APIs during maintenance time
+
 API calls (read and write) are not blocked during maintenance time.
 
 ## Disabling the maintenance mode
+
 To disable the maintenance mode, return to the Administration and toggle the **Activate maintenance mode** button. You'll need to confirm before disabling.

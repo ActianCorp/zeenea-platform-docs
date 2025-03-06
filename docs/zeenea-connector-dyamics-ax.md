@@ -4,7 +4,6 @@ title: Dynamics AX
 
 # Adding a Dynamics AX Connection
 
-
 ## Prerequisites
 
 :::note
@@ -101,7 +100,7 @@ Dataset field.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
- Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys.md)
 
 <table>
   <tr><th>Object</th><th>Identifier Key</th><th>Description</th></tr>

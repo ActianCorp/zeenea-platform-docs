@@ -31,9 +31,11 @@ Supported extensions are: csv, parquet, orc, xml, json, avro
 ## Folder with Subfolders
 
 ### Rule 2
+
 When a folder contains a sub-folder, whose name doesn't follow partition naming conventions, that folder is not a dataset.
 
 ### Rule 3
+
 A file may be a dataset when it is within a folder containing sub-folders. The file must however possess a supported extension.
 
 <table>
@@ -50,6 +52,7 @@ A file may be a dataset when it is within a folder containing sub-folders. The f
 ## Folder with Partitions
 
 ### Rule 4
+
 A folder is a dataset when: 
 
 * All its subfolders' names follow the partition naming convention.
@@ -67,6 +70,7 @@ A folder is a dataset when:
 </table>
 
 ## Partition Naming Convention
+
 Subfolders are considered partitions if their names match this regular expression:
 
 `"(.*=.*)", "[0-9]{8}", "[0-9]{4}", "[0-9]{2}", "0?[1-9]|1[012]", "0?[1-9]|1[0-9]|2[0-9]|3[0-1]"`

@@ -39,7 +39,8 @@ These charts will display the 6 most common values in a text-type field.
 
 These are the most common in the sample, not in the entirety of the field.
 
-Vertical Bar Charts
+### Vertical Bar Charts
+
 These charts will show how the data is distributed in numerical fields. They provide information on the total value amount, spread from the minimum value to the maximum one. 
 
 ### Box plots
@@ -88,13 +89,13 @@ This feature is available for the following connectors:
 
 For each connector, below is the list of fields available for Data Profiling:
 
-  | Connector | Supported types |
-  | :--- | :--- |
-  | BigQuery | `INT64`<br />`FLOAT64`<br />`STRING`<br />`(mode != REPEATED)` |
-  | Greenplum<br />AWS Redshift<br />Snowflake<br />Sql Server | `INTEGER SERIAL`<br />`SMALLSERIAL TINYINT`<br />`SMALLINT MEDIUMINT INT`<br />`YEAR MONTH DAY HOUR`<br />`MINUTE SECOND INT2 INT4`<br />`TINYINT\(([0-9]*)\) if $1 > 1`<br />`BIGINT INT8 BIGSERIAL`<br />`FLOAT BINARY_FLOAT FLOAT\`<br />`(([0-9]*)\)`<br />`DOUBLE REAL DOUBLE PRECISION BINARY_DOUBLE`<br />`CHAR VARCHAR VARCHAR2`<br />`TEXT ENUM SET NCHAR`<br />`NCHAR2 NVARCHAR`<br />`NVARCHAR2 NTEXT CLOB`<br />`NCLOB CHARACTER VARYING\`<br />`([0-9]*\) VARCHAR\([0-9]*\)`<br />`NVARCHAR\([0-9]*\)`<br />`VARCHAR2\([0-9]*\)`<br />`NVARCHAR2\([0-9]*\)`<br />`CHARACTER\([0-9]*\) CHAR\([0-9]*\)`<br />`NCHAR\([0-9]*\) NCHAR2\([0-9]*\)` |
-  | PgSql | `int4`<br />`int8 oid tid xid cid oidvector`<br />`txid_snapshot`<br />`float4`<br />`float8`<br />`char name text json xml bpchar`<br />`varchar` |
-  | SqlDb2 | `INTEGER`<br />`BIGINT`<br />`REAL`<br />`DOUBLE`<br />`CHARACTER si CODEPAGE=0`<br />`VARCHAR si CODEPAGE=0`<br />`CLOB GRAPHIC VARGRAPHIC`<br />`DBCLOB XML` |
-  | DsnDb2 | `INTEGER`<br />`BIGINT`<br />`REAL FLOAT si LENGTH=4`<br />`DOUBLE FLOAT si LENGTH=8`<br />`DECFLOAT`<br />`CHAR VARCHAR LONGVAR`<br />`GRAPHIC VARG VARGRAPH`<br />`LONGVARG CLOB DBCLOB`<br />`XML` |
-  | Oracle | 	`BINARY_FLOAT`<br />`BINARY_DOUBLE FLOAT`<br />`CHAR CLOB NCHAR NCLOB`<br />`NVARCHAR2 VARCHAR2` |
-  | Netezza | `INT4 _INT4INT8 OID TID XID`<br />`CID OIDVECTOR`<br />`FLOAT4`<br />`FLOAT8`<br />`CHAR NAME TEXT BPCHAR`<br />`VARCHAR NCHAR NVARCHAR` |
-  | Teradata | 	`DH DM DS DY HM HS HR I MI`<br />`MO MS SC YM YR`<br />`I8`<br />`F`<br />`CF CO CV JN XM` |
+| Connector | Supported types |
+| :--- | :--- |
+| BigQuery | `INT64`<br />`FLOAT64`<br />`STRING`<br />`(mode != REPEATED)` |
+| Greenplum<br />AWS Redshift<br />Snowflake<br />Sql Server | `INTEGER SERIAL`<br />`SMALLSERIAL TINYINT`<br />`SMALLINT MEDIUMINT INT`<br />`YEAR MONTH DAY HOUR`<br />`MINUTE SECOND INT2 INT4`<br />`TINYINT\(([0-9]*)\) if $1 > 1`<br />`BIGINT INT8 BIGSERIAL`<br />`FLOAT BINARY_FLOAT FLOAT\`<br />`(([0-9]*)\)`<br />`DOUBLE REAL DOUBLE PRECISION BINARY_DOUBLE`<br />`CHAR VARCHAR VARCHAR2`<br />`TEXT ENUM SET NCHAR`<br />`NCHAR2 NVARCHAR`<br />`NVARCHAR2 NTEXT CLOB`<br />`NCLOB CHARACTER VARYING\`<br />`([0-9]*\) VARCHAR\([0-9]*\)`<br />`NVARCHAR\([0-9]*\)`<br />`VARCHAR2\([0-9]*\)`<br />`NVARCHAR2\([0-9]*\)`<br />`CHARACTER\([0-9]*\) CHAR\([0-9]*\)`<br />`NCHAR\([0-9]*\) NCHAR2\([0-9]*\)` |
+| PgSql | `int4`<br />`int8 oid tid xid cid oidvector`<br />`txid_snapshot`<br />`float4`<br />`float8`<br />`char name text json xml bpchar`<br />`varchar` |
+| SqlDb2 | `INTEGER`<br />`BIGINT`<br />`REAL`<br />`DOUBLE`<br />`CHARACTER si CODEPAGE=0`<br />`VARCHAR si CODEPAGE=0`<br />`CLOB GRAPHIC VARGRAPHIC`<br />`DBCLOB XML` |
+| DsnDb2 | `INTEGER`<br />`BIGINT`<br />`REAL FLOAT si LENGTH=4`<br />`DOUBLE FLOAT si LENGTH=8`<br />`DECFLOAT`<br />`CHAR VARCHAR LONGVAR`<br />`GRAPHIC VARG VARGRAPH`<br />`LONGVARG CLOB DBCLOB`<br />`XML` |
+| Oracle | 	`BINARY_FLOAT`<br />`BINARY_DOUBLE FLOAT`<br />`CHAR CLOB NCHAR NCLOB`<br />`NVARCHAR2 VARCHAR2` |
+| Netezza | `INT4 _INT4INT8 OID TID XID`<br />`CID OIDVECTOR`<br />`FLOAT4`<br />`FLOAT8`<br />`CHAR NAME TEXT BPCHAR`<br />`VARCHAR NCHAR NVARCHAR` |
+| Teradata | 	`DH DM DS DY HM HS HR I MI`<br />`MO MS SC YM YR`<br />`I8`<br />`F`<br />`CF CO CV JN XM` |

@@ -59,26 +59,32 @@ Please also note the following constraints:
 
 ## Other Notes
 
-### Duplicated entries in the file
+### Duplicated Entries in the File
+
 If the file contains several lines for the same item, Zeenea will treat them sequentially. 
 
-### Duplicated columns in the file
+### Duplicated Columns in the File
+
 If the file contains duplicated columns, the entire file will be discarded. 
 
-### Unmapped columns
+### Unmapped Columns
+
 The columns in the file must be mapped to existing attributes of the target Item Type. Unmapped columns will be ignored.
 
-### Multi-valued properties
+### Multi-Valued Properties
+
 Each value must be separated by a semicolon in the same column.
 
 Multi-valued properties in the file will be merged with the existing ones in the catalog. 
 
-### Special characters and formulas
+### Special Characters and Formulas
+
 Zeenea does not check for special characters. Files containing formulas will thus be treated.
 
-## Specific attributes
+## Specific Attributes
 
 ### Name
+
 By adding a value to the “name” column in the import file, you can set or update the functional name of a Dataset or of a Field, in which case the import works as follows: 
 
 * If the “name” column exists in the file but is empty, then it is ignored.
@@ -88,6 +94,7 @@ By adding a value to the “name” column in the import file, you can set or up
 * If the “name” column exists in the file, is not empty, and its value is different from the “source name”, then the functional name of the Dataset of Field in Zeenea is updated with the new value. Then, if the source name is updated, the functional name will remain the same. 
 
 ### Description
+
 To import or update an object's description, the header line must include a "description" column, and a "description type" column.
 
 The description type column can take the following values: RICH or SIMPLE.
@@ -104,11 +111,13 @@ Only the Zeenea description can be added/updated. The source description collect
 :::
 
 ### Summary
+
 To import or update an item's summary, the header line must include a "summary" column, and a "description type" column.
 
 If the description type value is "RICH", the summary will be updated. Otherwise, the cell will be ignored.
 
 ### Properties
+
 You may update values for the following properties: 
 
 * Short text
@@ -125,12 +134,14 @@ For each one of these values, the header must contain the name of the target pro
 * For URL-type properties, you can set or update its label by using the following format in the cell: `https://www.mycustomurl.com[label]`
 :::
 
-### "Relationship"-type properties
+### "Relationship"-Type Properties
+
 You may use the import file to add/update relations with custom objects. 
 
 For each property, the header must contain its name as a column, as well as the name of each custom object you wish to add a link.
 
 ### Responsibilities
+
 You may add in the header as many columns as there are existing responsibilities (i.e. "Data Owner", "Data Steward", etc...). 
 
 For each responsibility, contacts must be identified using their email address, as specified in Zeenea. 
@@ -140,6 +151,7 @@ If you wish to add multiple contacts for one responsibility, you will have to se
 If the user that performs the import does not have permission to edit unassigned items, he will be automatically added as curator to the newly imported items.
 
 ### Glossary Items
+
 The Import file must contain a column for each type of Glossary Item.
 
 For each Glossary Item you wish to link to another object, you will need to specify its key.  
@@ -147,6 +159,7 @@ For each Glossary Item you wish to link to another object, you will need to spec
 If you wish to add multiple Glossary Items for a single object, you will have to separate them using a semicolon. 
 
 ### Data Profiling
+
 When updating Fields, you may also update the data profiling attributes for each one of them (if the data profiling option is enabled at the connection level). 
 
 The “fingerprinting” column may take one of the following values: 
@@ -160,15 +173,18 @@ You may also publish the Data Profiling in the Explorer. To do so, you will have
 * false (hide data profiling in the Explorer)
 
 ### Catalog
+
 In the case of the Federated Catalog, change the value of the column "catalog code" to move an Item from one catalog to another.
 
 ### Shared
+
 In the case of the Federated Catalog, you can manage the sharing status of an Item by filling in the column "shared": 
 
 * true (share the Item)
 * false (disable the sharing)
 
-### Error management
+### Error Management
+
 Zeenea reads the file in a sequential manner (line by line) and, for each line, attempts to take care of as many attributes as possible. 
 
 Once the import has finished, you will be presented with a summary: 

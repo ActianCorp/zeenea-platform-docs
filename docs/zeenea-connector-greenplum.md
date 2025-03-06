@@ -40,7 +40,7 @@ In order to establish a connection with a Greenplum instance, specifying the fol
 
 | Parameter| Expected Value |
 | :--- | :--- |
-| `name` | The name that will be displayed to catalog users for this connection. | 
+| `name` | The name that will be displayed to catalog users for this connection | 
 | `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `greenplum` and this value must not be modified. | 
 | `connection.url` | Database address (example: `jdbc:postgresql://postgresql.example.com:5432/database`) |

@@ -207,7 +207,7 @@ Based on the version of Elasticsearch, it is one dataset per index (v6 onwards) 
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
- Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys.md)
 
 <table>
   <tr>

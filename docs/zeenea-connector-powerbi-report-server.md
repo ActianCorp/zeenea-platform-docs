@@ -110,29 +110,29 @@ An identification key is associated with each object in the catalog. In the case
  
 More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys.md).
   
- <table>
-   <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>
-   <tr>
-     <td>Visualization</td>
-     <td>code/type/identifier</td>
-     <td>
-       <ul>
-         <li>**code**: Unique identifier of the connection noted in the configuration file</li>
-         <li>**type**: Report or PowerBI Report</li>
-         <li>**identifier**: PBI Report Server technical object identifier</li>
-       </ul>
-     </td>
-   </tr>
-   <tr>
-     <td>Dataset</td>
-     <td>code/type/identifier</td>
-     <td>
-       <ul>
-         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-         <li>**type**: Dataset</li>
-         <li>**identifier**: PBI Report Server technical dataset identifier</li>
-       </ul>
-     </td>
-   </tr>
- </table>
+<table>
+  <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>
+  <tr>
+    <td>Visualization</td>
+    <td>code/type/identifier</td>
+    <td>
+      <ul>
+        <li>**code**: Unique identifier of the connection noted in the configuration file</li>
+        <li>**type**: Report or PowerBI Report</li>
+        <li>**identifier**: PBI Report Server technical object identifier</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Dataset</td>
+    <td>code/type/identifier</td>
+    <td>
+      <ul>
+        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+        <li>**type**: Dataset</li>
+        <li>**identifier**: PBI Report Server technical dataset identifier</li>
+      </ul>
+    </td>
+  </tr>
+</table>
  

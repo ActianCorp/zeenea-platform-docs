@@ -1,9 +1,11 @@
 ---
 title: Actian Zen
 ---
+
 # Adding an Actian Zen Connection
 
 ## Prerequisites
+
 * The current Scanner version requires Java 11. Either OpenJDK or Oracle JDK can be installed.
 * It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](./zeenea-scanner-setup.md).
 

@@ -26,6 +26,7 @@ The following information is required to create a Topic:
 * **Color**: The selected color will be applied to the Topic to give a visual cue to business users and help them find their way through the list
 
 ## Editing a Topic
+
 Once a new Topic is created, you can still modify some of its characteristics by clicking on the pencil icon presented in front of each custom type name in the **Topics** section.
 
 :::note

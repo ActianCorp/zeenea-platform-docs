@@ -26,7 +26,6 @@ You can display Fields or hide other types of Items thanks to the action button 
 
 ![](/img/zeenea-view-360-diagram2.png)
 
-
 ### Zoom features
 
 At the bottom-right of the diagram, you will find some action buttons to adjust the display of the graph.

@@ -23,12 +23,11 @@ The Spotfire plugin can be downloaded here: [Zeenea Connector Downloads](./zeene
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
-
- ## Declaring the Connection
+## Declaring the Connection
   
- Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
+Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
- Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections.md)
  
 In order to establish a connection with a Spotfire Server instance, specifying the following parameters in the dedicated file is required:
  
@@ -156,7 +155,6 @@ If connector's strategy is set to `database`, configured user must have read acc
 * `lib_properties`
 * `users`
  
-
 ## Data Extraction
 
 To extract information, the connector runs requests on the Web Services API. During the inventory, the connector collects the list of Spotfire Analysis reachable by the configured client. If connector's strategy is set to `database`, inventory will be made through data retrieved from Spotfire internal database. During the import of the selected Analysis, the connector gets the .dxp file of the Analysis and identifies datasets it contains. The metadata are sent to the catalog.
@@ -166,7 +164,6 @@ To extract information, the connector runs requests on the Web Services API. Dur
 ### Inventory
 
 Will collect the list of visualizations accessible by the user.
-
 
 ### Lineage
 
@@ -233,7 +230,7 @@ To represent the data flow from an external source. One Data Process will be cre
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
- Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys.md)
 
 <table>
   <tr>

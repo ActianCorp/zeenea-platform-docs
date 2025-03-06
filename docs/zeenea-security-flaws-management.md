@@ -21,7 +21,6 @@ For each published CVE, if it affects any part of Zeenea technical ecosystem (**
     Zeenea proceeds to a contextualized analysis of the exposure of its components and applies an adapted response: if the exposure is qualified as high, the correction will be made within 30 days following the availability of the patch. By default, our policy of regular component updates will allow products to cover even low risk within 3 months.
 
 When a component deployed inside a customer's infrastructure is subject to a security patch, we inform the customer of the availability of the corrected component by indicating that it is an exceptional security delivery.
- 
 
 (*) Vulnerabilities cover the entire perimeter: infrastructure, managed services, application dependencies, etc.
 

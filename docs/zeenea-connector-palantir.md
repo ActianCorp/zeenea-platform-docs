@@ -226,7 +226,6 @@ In order to establish a connection with a Palantir instance, specifying the foll
   </tr>
 </table>
 
-
 :::note
 A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 :::

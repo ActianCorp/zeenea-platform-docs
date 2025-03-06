@@ -4,7 +4,6 @@ title: SSAS - SQL Server Analysis Services
 
 # Adding an SSAS Connection
 
-
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with SSAS.
