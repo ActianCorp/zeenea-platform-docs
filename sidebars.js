@@ -22,6 +22,8 @@ const sidebars = {
       items: [
         'zeenea-concepts-and-definitions',
         'zeenea-supported-browsers',
+        'zeenea-documentation-feedback',
+        'zeenea-roadmap',
         {
           type: 'category',
           label: 'YOUR FIRST STEPS',
@@ -236,7 +238,6 @@ const sidebars = {
         'zeenea-dataset-detection',
         'zeenea-generating-har-file',
         'zeenea-synchronizing-users',
-        'zeenea-roadmap',
         'zeenea-glossary-hierarchy',
         'zeenea-auth0-integration',
         'zeenea-microsoft-teams',
