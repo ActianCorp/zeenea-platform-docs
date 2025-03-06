@@ -1,8 +1,8 @@
 ---
-title: Roadmap and Feedback
+title: Product Roadmap and Feedback
 ---
 
-# Follow our roadmap and propose your ideas
+# Follow our Roadmap and Propose Your Ideas
 
 ## Product Portal
 
