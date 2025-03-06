@@ -426,6 +426,6 @@ input[type="submit"]:hover {
 }
 
 mark {
-  background-color: red !important; 
-  color: green !important 
+  background-color: rgb(255, 244, 97) !important; 
+  color: black !important 
 }
