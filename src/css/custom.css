@@ -424,3 +424,8 @@ input[type="submit"]:hover {
   padding-left: 0px;
   padding-top: 50px;
 }
+
+mark {
+  background-color: red !important; 
+  color: green !important 
+}
