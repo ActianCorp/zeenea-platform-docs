@@ -40,10 +40,6 @@ const config = {
   plugins: [[ require.resolve('docusaurus-lunr-search'), {
     maxHits: 20
   }]],
-
-  plugins: [[ require.resolve('docusaurus-lunr-search'), {
-    maxHits: 20
-  }]],
   
   presets: [
     [
@@ -76,8 +72,17 @@ const config = {
           src: 'img/logos/actian-zeenea.png',
          },
         items: [
-          {to: 'docs/zeenea-intro', label: 'Docs', position: 'left'},
-          {to: 'https://docs.zeenea.com', label: 'API', position: 'left'},
+          {
+            to: 'docs/zeenea-intro',
+            label: 'Docs', 
+            position: 'left'
+          },
+          {
+            href: 'https://docs.zeenea.com', 
+            label: 'API  ',
+            position: 'left', 
+            className: "github-button"
+          },
           {
             href: "https://www.actian.com/",
             position: "right",
