@@ -143,7 +143,6 @@ The user must be able to run the following actions on the target bucket and the 
   ]
 }
 ```
-<font color="red">Changed `GetDatables` to `GetDataTables` above. Please verify.</font>
 
 ## Data Extraction
 
