@@ -38,7 +38,7 @@ const config = {
   //},
   
   plugins: [[ require.resolve('docusaurus-lunr-search'), {
-    maxHits: 30,
+    maxHits: 100,
     highlightResult: true,
   }]],
   
