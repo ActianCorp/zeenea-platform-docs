@@ -429,3 +429,8 @@ mark {
   background-color: rgb(255, 244, 97) !important; 
   color: black !important 
 }
+
+.algolia-autocomplete .ds-dropdown-menu .ds-suggestions {
+  overflow-y: scroll;
+  height: 100vh;
+}
