@@ -11,18 +11,18 @@ Public User Management APIs allow you to automatically synchronize your users fr
 These are the currently available operations:
 
 * **List permission sets**
-  * listPermissionSets [Deprecated - see SCIM API]
+  * `listPermissionSets` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
 * **Create or update a user**
-  * createUser [Deprecated - see SCIM API]
-  * upsertUser [Deprecated - see SCIM API]
+  * `createUser` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+  * `upsertUser` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
 * **Retrieve the information about a user**
-  * loadUserById [Deprecated - see SCIM API]
-  * loadUserByEmail [Deprecated - see SCIM API]
-  * createAllUsersExport
-  * loadUsersExportStatus
+  * `loadUserById` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+  * `loadUserByEmail` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+  * `createAllUsersExport`
+  * `loadUsersExportStatus`
 * **Delete a user**
-  * deleteUserById [Deprecated - see SCIM API]
-  * deleteUserByEmail [Deprecated - see SCIM API]
+  * `deleteUserById` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+  * `deleteUserByEmail` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
 
 **Note**: The full API documentation is available in the [Voyager](https://github.com/APIs-guru/graphql-voyager) tool.  
 
@@ -34,7 +34,7 @@ For more information, refer to the official [GraphQL documentation](https://grap
 
 Zeenea provides two tools for understanding and testing this GraphQL API: Voyager and Playground.
 
-### Voyager documentation
+### Voyager Documentation
 
 You can access the full documentation for Zeenea GraphQL APIs by accessing Voyager, at the following URL:
 
@@ -93,7 +93,7 @@ query{
 }
 ```
 
-Next, we'll retrieve the id of the relevant permission set. In this example, we will be using the "Data Steward" permission set, with the following id: ef18f11b-feda-461b-b51d-29dd761a9e5e. The API will return the newly created user's id. 
+Next, we'll retrieve the id of the relevant permission set. In this example, we will be using the "Data Steward" permission set, with the id `ef18f11b-feda-461b-b51d-29dd761a9e5e`. The API will return the newly created user's id. 
 
 ```
 mutation {
@@ -137,7 +137,7 @@ User "Nicolas Boisnic" with a "Data Steward" permission set has been created.
 
 ### Example 2: Extract a user's information
 
-In this example, we extract a user's information using their technical id "4b89b2de-1b0c-4239-87be-2355880557ab":
+In this example, we extract a user's information using their technical id `4b89b2de-1b0c-4239-87be-2355880557ab`:
 
 ```
 query {

@@ -57,7 +57,7 @@ The physical and logical layer of the catalog corresponds to all the technical a
 
 Refer to the following links for more details:
 
-* Read more: Configuring templates <font color="red">NOTE: This link is broken in Salesforce docs.</font>
+* Read more: [Configuring Templates](./zeenea-configuring-templates.md)
 * Read more: [Creating or Deleting a Custom Item Type](./zeenea-studio-create-delete-custom-item.md)
 * Read more: [Adding Input and Output Types to Data Processes](./zeenea-add-input-output-types.md)
 

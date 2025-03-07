@@ -5,7 +5,7 @@ title: Catalog API v1 (Deprecated)
 # Catalog API v1 (Deprecated)
 
 :::caution[NOTE]
-This API is deprecated., please see the Catalog API v2
+This API is deprecated. Please see [Catalog API v2](./zeenea-catalog-api-v2.md).
 :::
  
 
@@ -21,47 +21,47 @@ Here are some use cases (all associated requests are available at the end of thi
 
 Here are the currently available operations, grouped by usage: 
 
-* Retrieve Items' id or key using filters
-  * findItems
-* Replaced by the "items" operation in the Catalog API v2
+* Retrieve Items' `id` or `key` using filters
+  * `findItems`
+* Replaced by the `items` operation in the Catalog API v2
   * Load Item details:
-    * loadItem (deprecated, replaced by loadItemById)
-    * loadItemById
-    * loadItemByKey
-* Replaced by the "item" operation in the Catalog API v2
+    * `loadItem` (deprecated, replaced by loadItemById)
+    * `loadItemById`
+    * `loadItemByKey`
+* Replaced by the `item` operation in the Catalog API v2
   * Create an Item:
-    * createItem
-* Replaced by the "createItem" operation in the Catalog API v2
+    * `createItem`
+* Replaced by the `createItem` operation in the Catalog API v2
   * Update or delete an Item details (name, description or property value) using a single call
-    * updateItem
-    * updateItemByKey
-* Replaced by the "updateItem" operation in the Catalog API v2
+    * `updateItem`
+    * `updateItemByKey`
+* Replaced by the `updateItem` operation in the Catalog API v2
   * Update or delete an Item's name only:
-    * updateItemName
-    * updateItemNameByKey
-    * deleteItemName
-    * deleteItemNameByKey
-* Replaced by the "updateItem" operation in the Catalog API v2
+    * `updateItemName`
+    * `updateItemNameByKey`
+    * `deleteItemName`
+    * `deleteItemNameByKey`
+* Replaced by the `updateItem` operation in the Catalog API v2
   * Update or delete an Item's description only:
-    * updateItemDescription
-    * deleteItemDescription
-* Replaced by the "updateItem" operation in the Catalog API v2
+    * `updateItemDescription`
+    * `deleteItemDescription`
+* Replaced by the `updateItem` operation in the Catalog API v2
   * Update or delete a simple property value using the Item's id or key and the property id (can't be used with properties referencing other objects)
-    * updateItemPropertyValue
-    * updateItemPropertyValueByKey
-    * deleteItemPropertyValue
-    * deleteItemPropertyValueByKey
-* Replaced by the "updateItem" operation in the Catalog API v2
+    * `updateItemPropertyValue`
+    * `updateItemPropertyValueByKey`
+    * `deleteItemPropertyValue`
+    * `deleteItemPropertyValueByKey`
+* Replaced by the `updateItem` operation in the Catalog API v2
   * Add or remove a link between two Items in the catalog
-    * linkItems
-    * linkItemsByKey
-    * unlinkItems
-    * unlinkItemsByKey
-* Replaced by the "updateItem" operation in the Catalog API v2
+    * `linkItems`
+    * `linkItemsByKey`
+    * `unlinkItems`
+    * `unlinkItemsByKey`
+* Replaced by the `updateItem` operation in the Catalog API v2
   * Add or remove a contact or a curator on an Item
-    * linkItemContact
-    * unlinkItemContact
-* Replaced by the "createItem" operation in the Catalog API v2
+    * `linkItemContact`
+    * `unlinkItemContact`
+* Replaced by the `createItem` operation in the Catalog API v2
 
 For more information, see [API Lifecycle](./zeenea-api-lifecycle.md) can be found here.
 

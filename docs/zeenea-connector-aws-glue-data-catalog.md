@@ -80,7 +80,7 @@ In order to establish a connection with an AWS Glue instance, specifying the fol
   </tr>
   <tr>
     <td>`connection.aws.multi_account.list`</td>
-    <td>Define which account/region to connected to. It must be a <font color="red">list of :, separated by a space</font>.<br /><br /><br />Example : `123456789012:eu-west-2 987654321098:eu-west-2`<br /><br />*Since version 3.3.1*</td>
+    <td>Define which account/region to connected to. It must be a list of *account*:*region* entries, separated by a space.<br /><br /><br />Example : `123456789012:eu-west-2 987654321098:eu-west-2`<br /><br />*Since version 3.3.1*</td>
   </tr>
   <tr>
     <td>`connection.fetch_page_size`</td>

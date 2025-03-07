@@ -26,12 +26,12 @@ To create a new Item from Zeenea Studio:
 
 1. Click **New Item** button on the sidebar menu:
 
-  ![](/img/zeenea-new-item.png)
+    ![](/img/zeenea-new-item.png)
 
 2. Select the type of Item you want to create. You can use the search bar or the filtered tabulations.
 3. Enter its name and click **Confirm**.
 
-  ![](/img/zeenea-create-item-confirm.png)
+    ![](/img/zeenea-create-item-confirm.png)
 
 :::note
 A unique key will be automatically generated based on the Item Type code and its name. You can find this key in the detailed view of the newly created Item via the "Actions" menu. In case of a duplicate, an incremental number is automatically added to the key to ensure its unicity.

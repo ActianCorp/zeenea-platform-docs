@@ -103,7 +103,7 @@ Kill both instances of the scanner, and restart it.
 
 It is highly recommended to launch the scanner using a systemd service to avoid duplicates. 
  
-#### 2. java.lang.UnsatisfiedLinkError [...] failed to map segment from shared object: Operation not permitted
+#### 5. java.lang.UnsatisfiedLinkError [...] failed to map segment from shared object: Operation not permitted
 
 The user the scanner is executed with doesn't have the right to execute from the default /tmp folder.
 

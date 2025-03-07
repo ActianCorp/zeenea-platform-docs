@@ -6,7 +6,7 @@ title: Submitting a Suggestion
 
 In the Explorer, from the details page of an Item or from its overview panel, you can submit a suggestion to improve or enrich the documentation of this Item in Zeenea, or to report an error or a quality issue concerning this documentation.
 
-To submit a suggestion, click on the "Submit a suggestion" button at the top right of each details page, or in the "Suggestions" tab of an overview panel.
+To submit a suggestion, click on the **Submit a suggestion** button at the top right of each details page, or in the **Suggestions** tab of an overview panel.
 
 ![](/img/zeenea-submit-suggestion1.png)
 

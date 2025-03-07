@@ -181,10 +181,6 @@ The template will allow you to document each item in a unitary manner by highlig
 
 By choosing the right concepts, organizing them in a coherent way, and framing their input via appropriate typing, you optimize the efficiency of the Data Stewards' work but also the quality of their production. They will enable data consumers to quickly find the data they are interested in with its context.  
 
-<font color="red">Link broken in Community docs:</font>
-
- Read more: <font color="red">Configuring metamodels</font>
-
 ## Topic
 
 A Topic is a collection of Catalog Items defined by the people in charge of managing the Catalog metamodel.

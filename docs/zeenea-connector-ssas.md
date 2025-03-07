@@ -121,7 +121,7 @@ A field is a field within a dataset.
 * **Primary Key**
 * **Technical Data**: 
   * "Multidimensional" Mode:
-    * Field Type (dimension ou measure)
+    * Field Type (dimension or measure)
     * Measure Group
     * Aggregate Function
     * The table associated with the measure

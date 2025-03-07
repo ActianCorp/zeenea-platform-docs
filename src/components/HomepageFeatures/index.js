@@ -50,7 +50,7 @@ function Feature({title, doc, png, description}) {
           </center>
           </div>
         <br />
-          <Link className="button button--primary button--md xxxxx" to={doc}>
+          <Link className="button button--primary button--md" to={doc}>
             View &#8250;&#8250;
           </Link>
         </div>

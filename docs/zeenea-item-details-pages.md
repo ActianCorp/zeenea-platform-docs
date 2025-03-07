@@ -88,7 +88,7 @@ To report a documentation error or suggest an improvement, use the dedicated "su
 
 ## Specificities by Item Type
 
-## Datasets
+### Datasets
 
 Datasets may include the following elements depending on their actual completion level achieved through the Studio: 
 
@@ -98,7 +98,7 @@ Datasets may include the following elements depending on their actual completion
 * Source or connection. Example: bigquery public data
 * Summary: a description filled in from Zeenea Studio
 
-## Fields
+### Fields
 
 This section provides the list of Fields of the corresponding Dataset. You can use the contextual search to directly find a field via its name.
 

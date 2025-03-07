@@ -2,7 +2,7 @@
 title: SCIM API
 ---
 
-# SCIM (System for Cross-domain Identity Management) protocol support
+# SCIM (System for Cross-Domain Identity Management) Protocol Support
 
 ## Introduction
 
@@ -18,7 +18,7 @@ In order to implement SCIM in your company, contact an administrator of your ide
 
 * [SCIM specifications](https://scim.cloud/)
 
-## Authentification and headers
+## Authentication and Headers
 
 To connect with Zeenea SCIM API, you need to generate an API key from the Zeenea Administration interface. See the following article which describes how to do this: [Managing API Keys](./zeenea-managing-api-keys.md).
 
@@ -117,7 +117,7 @@ curl --request POST \
 
 You can modify a user's attributes from a PATCH request using the `/Users` endpoint with a user ID.
 
-Example request:
+#### Example request:
 
 ```
     curl --request PATCH \
@@ -169,7 +169,7 @@ Where does the user's internal ID go (`[???]` above)?
 
 Existing users can be retrieved by making a GET request to the /Users endpoint with a user ID.
 
-Example request:
+#### Example request:
 
 ```
 curl —-request GET \
@@ -197,7 +197,7 @@ This access point can also be used to carry out filtering requests on an existin
   
     `userName co "domain.com"`
 
-Example request:
+#### Example request:
 
 ```
 curl —-request GET \
@@ -226,7 +226,7 @@ You can use this service in particular to add or remove users from a group.
 
 The "Super Admin" group can not be modified by API.
 
-Example request:
+#### Example request:
 
 ```
 curl --request PATCH \
@@ -262,7 +262,7 @@ This access point can also be used to carry out filtering requests on an existin
 * Groups can only be filtered by displayName.
 * Group filtering supports all comparison operators (`eq`, `ne`, `co`, `sw`, `ew`, `ge`, `le`, `gt`, `lt`, `pr`), as well as `and`, `or`, `not` expressions.
 
-Example request:
+#### Example request:
 
 ```
 curl —-request GET \

@@ -136,14 +136,14 @@ The user must be able to run the following actions on the target bucket and the 
         "glue:GetDataflowGraph",
         "glue:GetJob",
         "glue:GetTables",
-        "glue:GetDatables"
+        "glue:GetDataTables"
       ],
       "Resource": "*"
     }
   ]
 }
 ```
-<font color="red">Is GetDatables a typo in the above example?</font>
+<font color="red">Changed `GetDatables` to `GetDataTables` above. Please verify.</font>
 
 ## Data Extraction
 

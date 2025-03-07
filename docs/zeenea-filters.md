@@ -106,7 +106,7 @@ Unit expressions have the form <font color="red">???</font> or <font color="red"
 
 ### is null
 
-The operation "is null" checks if the criteria have no value. It doesn’t have a second element.
+The operation `is null` checks if the criteria have no value. It doesn’t have a second element.
 
 #### Example
 
@@ -114,7 +114,7 @@ The operation "is null" checks if the criteria have no value. It doesn’t have 
 
 ### is not null
 
-The operation "is not null" checks if the criteria have a value. It doesn’t have a second element.
+The operation `is not null` checks if the criteria have a value. It doesn’t have a second element.
 
 #### Example
 
@@ -122,7 +122,7 @@ The operation "is not null" checks if the criteria have a value. It doesn’t ha
 
 ### = (is equal to)
 
-The operation " = " checks if the criteria is equal to a string of characters. It doesn’t have a second element.
+The operation ` = ` checks if the criteria is equal to a string of characters. It doesn’t have a second element.
 
 #### Example
 
@@ -130,7 +130,7 @@ The operation " = " checks if the criteria is equal to a string of characters. I
 
 ### != (is not equal to)
 
-The operation " != " checks if the criteria is not equal to a string of characters. It doesn’t have a second element.
+The operation ` != ` checks if the criteria is not equal to a string of characters. It doesn’t have a second element.
 
 #### Example
 
@@ -138,7 +138,7 @@ The operation " != " checks if the criteria is not equal to a string of characte
 
 ### starts with
 
-The operation " starts with " checks if the criteria starts with a certain value. The second element must be a string of characters.
+The operation ` starts with ` checks if the criteria starts with a certain value. The second element must be a string of characters.
 
 #### Example
 
@@ -146,7 +146,7 @@ The operation " starts with " checks if the criteria starts with a certain value
 
 ### ends with
 
-The operation " ends with " checks if the criteria ends with a certain value. The second element must be a string of characters.
+The operation ` ends with ` checks if the criteria ends with a certain value. The second element must be a string of characters.
 
 #### Example
 
@@ -154,7 +154,7 @@ The operation " ends with " checks if the criteria ends with a certain value. Th
 
 ### contains
 
-The operation " contains " checks if the criteria contain a certain value. The second element must be a string of characters.
+The operation ` contains ` checks if the criteria contain a certain value. The second element must be a string of characters.
 
 #### Example
 
@@ -162,7 +162,7 @@ The operation " contains " checks if the criteria contain a certain value. The s
 
 ### in
 
-The operation " in " checks if the criteria is part of a certain value. The second element must be a string of characters.
+The operation ` in ` checks if the criteria is part of a certain value. The second element must be a string of characters.
 
 #### Example
 
@@ -170,7 +170,7 @@ The operation " in " checks if the criteria is part of a certain value. The seco
 
 ### not in
 
-The operation " not in " checks if the criteria are not part of a certain value. The second element must be a string of characters.
+The operation ` not in ` checks if the criteria are not part of a certain value. The second element must be a string of characters.
 
 #### Example
 
@@ -178,13 +178,13 @@ The operation " not in " checks if the criteria are not part of a certain value.
 
 ### ~ (comparison to a pattern)
 
-The operator "~" checks if the criteria match with a pattern passed as the second operand. If the second operand is a string, the pattern is interpreted as a simple pattern.
+The operator ` ~ ` checks if the criteria match with a pattern passed as the second operand. If the second operand is a string, the pattern is interpreted as a simple pattern.
 
-* the star "*" represents any sequence of characters, possibly an empty sequence.
-* question mark " ? represents one and only one character.
-* "\*" represents a star.
-* "\? represents a question mark.
-* "\\" represents a backslash. If the second operand is a regular expression, then the pattern is interpreted with all the richness of regular expressions.
+* the asterisk ` * ` represents any sequence of characters, possibly an empty sequence.
+* a question mark ` ? ` represents one and only one character.
+* `\*` represents an asterisk.
+* `\?` represents a question mark.
+* `\\` represents a backslash. If the second operand is a regular expression, then the pattern is interpreted with all the richness of regular expressions.
 
 #### Example with a simple pattern
 
@@ -204,7 +204,7 @@ Unitary operations can be modified or assembled with Boolean operators to form m
 
 ### not, !
 
-It is possible to reverse the meaning of an operation by prefixing it with the keyword "not"
+It is possible to reverse the meaning of an operation by prefixing it with the keyword `not`
 
 #### Example
 
@@ -215,7 +215,7 @@ not schema starts with 'SYS'
 
 ### and, &&
 
-The "and" operator allows you to combine two expressions into an expression that is true when both operands are true.
+The `and` operator allows you to combine two expressions into an expression that is true when both operands are true.
 
 #### Example
 
@@ -226,7 +226,7 @@ schema = 'MUSIC' && table = 'ARTIST'
 
 ### or, ||
 
-The "or" operator allows you to combine two expressions into an expression that is true when one of the operands is true.
+The `or` operator allows you to combine two expressions into an expression that is true when one of the operands is true.
 
 #### Example
 

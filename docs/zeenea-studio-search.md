@@ -115,7 +115,7 @@ This option allows finding Items for which the selected attribute (contact, prop
   </tr>
   <tr>
     <td>Item</td>
-    <td>This filter allows you to select one or more types of items from the catalog. Native item types and custom item types are available [here?????](#).</td>
+    <td>This filter allows you to select one or more types of items from the catalog. Native item types and custom item types are available here.</td>
   </tr>
   <tr>
     <td>Item Lifecycle Event</td>

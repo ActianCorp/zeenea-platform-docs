@@ -14,12 +14,12 @@ A property is a component of the metamodel used to store metadata specific to a 
 
 2. Complete the following fields: 
 
-  * Name (unique and required)
-  * Code (unique and required)
-  * Description
-  * Type (required)
-  * Completion calculation importance (mandatory)
-  * Options (according to the type)
+     * Name (unique and required)
+     * Code (unique and required)
+     * Description
+     * Type (required)
+     * Completion calculation importance (mandatory)
+     * Options (according to the type)
 
 These fields are detailed in the following sections.
 
