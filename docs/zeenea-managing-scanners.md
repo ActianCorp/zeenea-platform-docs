@@ -58,7 +58,9 @@ By clicking on the "eye" icon next to a Scanner, you’ll be able to access more
 
 Unlike Zeenea Studio and Zeenea Explorer, the scanner must be updated manually.
 
-**Zeenea Support team may ask you to upgrade your scanner if you are facing an issue to validate if it is already fixed in the most recent version available.**
+:::note
+Zeenea Support team may ask you to upgrade your scanner if you are facing an issue to validate if it is already fixed in the most recent version available.
+:::
 
 ### Installation procedure: 
 

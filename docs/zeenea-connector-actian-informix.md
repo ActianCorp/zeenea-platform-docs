@@ -20,7 +20,7 @@ title: Actian Informix
 
      `jdbc-4.10.16.jar` (Version may differ)
 
-## Create the Configuration File
+## Step 3: Create the Configuration File
 
 1. In the `[scanner_install_dir]/connections` folder, create a new file named `informix.conf`. (The file can be named as desired, but the file extension must be `.conf`.)
 2. Copy and modify the content below based on your environment configuration, replacing `my_informix_connector_code`, `my_informix_connector_name`, `<HOSTNAME>`,`<PORT>`, `<DATABASE-NAME>`, `<USER>` and `<PASSWORD>` with the appropriate values for your environment.
@@ -45,7 +45,7 @@ title: Actian Informix
      }
      ```
 
-## Verify the Connection​
+## Step 4: Verify the Connection​
 
 1. Restart Zeenea Scanner.
 2. In Zeenea Administration, click Connections and verify that the new connection is listed:
@@ -53,13 +53,13 @@ title: Actian Informix
      ![](/img/zeenea-connection-informix.png)
 3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](./zeenea-troubleshooting.md).
 
-## View the Dataset​
+## Step 5: View the Dataset​
 
 1. Switch to Zeenea Studio by clicking the apps icon in the upper right and selecting Studio:
 
      ![](/img/zeenea-informix-schema.png)
 
-## Configure the Connection for Automatic Import​
+## Step 6: Configure the Connection for Automatic Import​
 
 If desired, you can configure a connection to automatically import data as follows:
 
