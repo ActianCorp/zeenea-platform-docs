@@ -53,6 +53,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/ActianCorp/zeenea-platform-docs/tree/suggestions',
+          showLastUpdateTime: true,
         },
         theme: {
           customCss: './src/css/custom.css',

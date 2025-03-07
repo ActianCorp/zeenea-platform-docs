@@ -86,8 +86,7 @@ In order to establish a connection with a SAS instance, specifying the following
     <td>`filter.job_name.excludes`</td>
     <td>
       <p>Comma-separated list of elements to exclude jobs during synchronization using the following keywords: `begins`, `contains`, `equals`, `between`</p>
-      <p>Example: `includes = "enterprise,equals:customers,contains:prod"`</p>
-      <p><font color="red">Should this be `excludes = "enterprise,equals:customers,contains:prod"`?</font></p>
+      <p>Example: `excludes = "enterprise,equals:customers,contains:prod"`</p>
     </td>
   </tr>
   <tr>
