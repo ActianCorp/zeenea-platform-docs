@@ -16,7 +16,7 @@ The "Category" item type is a concept that facilitates the organization of datas
 
 It will allow you to create groupings of datasets according to your organization and your domains.
 
-This Item Type is deprecated.
+This Item type is deprecated.
 
 Its characteristics:
 
@@ -79,6 +79,7 @@ In the detailed pages of this item, you can find a set of information, such as:
 * Description 
 * Properties 
 * Contacts
+* Operations
 * Input Datasets
 * Outputs Datasets
 
