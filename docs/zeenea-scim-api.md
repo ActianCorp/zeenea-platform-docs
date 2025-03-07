@@ -14,9 +14,11 @@ This documentation presents the specificities and limitations of the implementat
 
 In order to implement SCIM in your company, contact an administrator of your identity management platform in order to carry out the necessary configuration operations. Zeenea does not offer support for this configuration, as each platform has its own specific features, but the information provided below should make it easy to configure SCIM.
 
-### Related Resources
+Related Resources: [SCIM specifications](https://scim.cloud/)
 
-* [SCIM specifications](https://scim.cloud/)
+## Permissions
+
+The recommended permission scope for the SCIM API is **Admin**.
 
 ## Authentication and Headers
 

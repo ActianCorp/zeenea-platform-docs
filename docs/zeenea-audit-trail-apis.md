@@ -21,9 +21,11 @@ Below are some examples, detailing how these APIs could be used (the requests us
 
 The API technical documentation is provided in this section.
 
-## Technical Documentation
+## Permissions
 
-### Documentation and tools
+The recommended permission scope for the Audit Trail API is **Read-only**.
+
+## Documentation and Tools
 
 The full technical documentation for the Zeenea Audit Trail API can be retrieved by using a GET method (on any API Platform such as Postman) on the following URL: 
 
@@ -31,7 +33,7 @@ The full technical documentation for the Zeenea Audit Trail API can be retrieved
 https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/management/audit/docs 
 </pre>
 
-### Authentication
+## Authentication
 
 To use the API, you must be authenticated via an API Key on the following URL: 
 
@@ -49,7 +51,7 @@ Do the following:
 
     Where `$APISECRET` is the value of the API secret that you retrieved when creating the key.
 
-### Examples
+## Examples
 
 #### Example 1: I want to list all changes made on all objects contained in the Catalog, over the last two days.
 
@@ -131,7 +133,7 @@ The ID is string like `c89862e8-1002-4dff-92d6-fd7d5bb57b6c`.
 }
 ```
 
-### API Responses
+## API Responses
 
 Requested data will be returned by the API in the following format:
 
@@ -165,7 +167,7 @@ Please also note that, when multiple updates are done at the same time, the API 
 * For objects, the API will return one event per edited value.
 * For users, contacts, and permission sets: the API will only return one event, listing all updates ran concurrently. 
 
-### Performance
+## Performance
 
 For each call, the Audit Trail API can return a maximum of 100 events. If the API is to return additional items, the “cursorMark” attribute at the end of the pagination element will not be null. To retrieve those additional items, you will need to use that cursor.
 
@@ -190,7 +192,7 @@ For example, if I wish to retrieve all changes (on all items in the catalog) mad
 
 If the API response contains no more events, the cursorMark value will become null.
 
-### Limitations
+## Limitations
 
 For all "Link" type properties (curators, categories, business terms, data processes, visualizations, and natural keys), the API can only retrieve the updated values. 
 

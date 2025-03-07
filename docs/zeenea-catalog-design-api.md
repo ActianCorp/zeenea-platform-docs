@@ -13,6 +13,10 @@ List of available operations:
 * List all item types and their available links:
   * `listItemTypes`
 
+## Permissions
+
+The recommended permission scope for the Catalog Design API **Manage documentation** or **Read-only**.
+
 ## Using the API
 
 The Catalog Design API uses the GraphQL language. GraphQL is an easy-to-implement language, that also allows you to specify, for each request, the information that you will get in return and that is relevant to your use case. 

@@ -21,25 +21,25 @@ In order to harmonize the use of connector properties in applications, and to ap
 
 ![](/img/zeenea-dataset-template2.png)
 
-## Step 3: Editing the template of an object
+## Step 3: Edit the template of an object
 
 The left side of this screen allows to see what properties have already been added to the selected object template. The list of available and unused properties for this type of object is shown in the right side of the screen. 
 
 All elements can be moved through simple drag and drop functions.
 
-### Creating a section
+### Create a section
 
 1. From this screen, create sections by clicking on "Add new section".
 2. A new block will appear.
 3. You can name this new section by clicking on the title "New Section".
 
-### Deleting a section
+### Delete a section
 
 To delete a section, simply click on the cross button in the top right corner of the section. 
 
 The properties belonging to the section will be toggled directly to the right column "Properties". 
 
-### Adding properties to a section
+### Add properties to a section
 
 To add a property to a metamodel, simply drag and drop the properties into the sections you have previously defined.
 

@@ -17,3 +17,7 @@ where `[instance-name]` is the name of your instance.
 GraphQL is the GraphQL integrated development environment (IDE). It provides syntax highlighting and auto-completion, making it easy to get to grips with GraphQL syntax and discover the API.
 
 Access to GraphQL is restricted to catalog users, and the permissions applied are those of your user in Zeenea Explorer and Studio. It does not require any API key.
+
+## Permissions
+
+The recommended permission scope for the Catalog API v2 is **Manage documentation** or **Read-only**.

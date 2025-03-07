@@ -6,6 +6,10 @@ title: User Management API
 
 Public User Management APIs allow you to automatically synchronize your users from your authentication system (LDAP, Azure AD, etc.) to your list of users in Zeenea. This provides enhanced enterprise security and ensures compliance with your internal policies. 
 
+## Permissions
+
+The recommended permission scope for the  User Management API is **Admin**.
+
 ## List of Available Operations
 
 These are the currently available operations:
