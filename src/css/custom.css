@@ -425,11 +425,13 @@ input[type="submit"]:hover {
   padding-top: 50px;
 }
 
+/* Highlight search results in target page */
 mark {
   background-color: rgb(255, 244, 97) !important; 
   color: black !important 
 }
 
+/* Without this, the search results popup does not scroll */
 .algolia-autocomplete .ds-dropdown-menu .ds-suggestions {
   overflow-y: scroll;
   height: 100vh;
