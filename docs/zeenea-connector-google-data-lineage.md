@@ -13,8 +13,6 @@ title: Google Data Lineage
 A configuration template can be downloaded here: [google-data-lineage.conf](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GUgTd&d=%2Fa%2FNu000002lfPx%2FM0kQjkCnBJfcDLofYg0XHgM0m_C_fCX5jM4E6rfw4oc&asPdf=false)
 :::
 
-<font color="red">There are 2 configuration templates attached to the Community article. The only difference is that `filter = ""` is commented out in one. Was it intentional to include both?</font>
-
 ## Supported Versions
 
 The Data Lineage connector was developed and tested with the web version of the product. 

@@ -77,7 +77,7 @@ In order to collect metadata, the running user's permissions must allow them to 
 
 Here, the composite user must have been configured with the following rights:
 
-<font color="red">Image is missing.</font>
+<font color="red">Article in Community is missing. Can we find or recreate this image or replace it with text listing the rights?</font>
 
 ## Data Extraction
 

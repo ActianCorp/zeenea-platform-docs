@@ -200,9 +200,15 @@ The Matillion connector is able to retrieve the lineage with:
 
 To do so, an alias must be defined in the Redshift connection, as detailed below:
 
-  `alias = [":/"]`
- 
+ <font color="red">
+ `alias = ["<host>:<port>/<database>"]`
+ </font>
+
 In this instance, variables `<host>`, `<port>` and `<database>` need to be replaced with the actual Redshift values. 
+
+<font color="red">
+Original article was missing placeholders. Please verify the above example.
+</font>
 
 ### Snowflake
 
@@ -212,19 +218,23 @@ The `multi_catalog.enabled` parameter should have the same value as the paramete
 
 An alias should also be defined in the Snowflake connection. Its value depends on the value of `multi_catalog.enabled`.
 
-If `multi_catalog.enabled` is true:
+* If `multi_catalog.enabled` is `true`:
+      
+    <font color="red">
+        `alias = [ "-.snowflakecomputing.com" ]`
+    </font>
+    
+* If `multi_catalog.enabled` is `false`:
 
-`alias = [ "-.snowflakecomputing.com" ]`
+    <font color="red">
+          `alias = [ "-.snowflakecomputing.com/"" ]`
+    </font>
  
-If multi_catalog.enabled is false:
+Where <font color="red">[what?]</font> is the Snowflake organization identifier, <font color="red">[what?]</font> is the snowflake account identifier, and <font color="red">[what?]</font> is the database of the Snowflake connection.
 
-`alias = [ "-.snowflakecomputing.com/"" ]`
- 
 <font color="red">
-Text is missing placeholder:
+Text above missing placeholders for Snowflake organization identifier, account identifier, and db.
 </font>
-
-Where <font color="red">[what?]</font> is the Snowflake organization identifier, is the snowflake account identifier and is the database of the Snowflake connection.
 
 ## Collected Metadata
 

@@ -86,7 +86,7 @@ To extract information, the connector runs requests on views from the `pg_catalo
 
 ### Lineage
 
-The connector only handles lineage from SQL queries. M scripts are not handled.
+The connector only handles lineage from SQL queries. **M scripts are not handled**.
 
 The connector is capable of reconstructing the lineage of manipulated tables in transformations if they are present in the catalog. This functionality is available when SSAS manipulates datasets from the following technologies:
 
@@ -94,9 +94,9 @@ The connector is capable of reconstructing the lineage of manipulated tables in 
 
 In this case, it is necessary to specify an additional parameter in the original connections of these tables following the format:
 
-`alias = ["host:port/database"]`
+`alias = ["<host>:<port>/<database>"]`
  
-In that case, the variables host, port, and database should be replaced with the values from the original connections.
+where the variables `<host>`, `<port>`, and `<database>` are replaced with the values from the original connections.
 
 ### Dataset
 
@@ -180,7 +180,7 @@ An identification key is associated with each object in the catalog. In the case
       <ul>
         <li>**code**: Unique identifier of the connection noted in the configuration file</li>
         <li>**catalog**: Name of the catalog</li>
-        <li>**transformation**: Name of this transformation <font color="red">Article appears to be missing something. I added "transformation". Is this correct?</font></li>
+        <li>**transformation**: Name of this transformation</li>
       </ul>
     </td>
   </tr>

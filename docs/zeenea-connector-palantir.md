@@ -46,7 +46,8 @@ In order to establish a connection with a Palantir instance, specifying the foll
   </tr>
   <tr>
     <td>`connector_id`</td>
-    <td>The type of connector to be used for the connection. Here, the value must not be modified.<br /> <font color="red">Should this say "...value must be `palantir`" as with other connectors?</font></td>
+    <td>The type of connector to be used for the connection. Here, the value must be
+     `palantir` and must not be modified.</td>
   </tr>
   <tr>
     <td>`connection.url`</td>
