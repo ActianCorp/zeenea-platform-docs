@@ -124,7 +124,7 @@ According to the type of data source and the configuration made by your administ
 
 ### Visualizations
 
-Visualizations are reports. The Datasets linked to these Visualizations have been used to build them. The Datasets which allowed to build this item are available in the "Datasets" list.
+Visualizations are reports. The Datasets linked to these Visualizations have been used to build them. The Datasets which are allowed to build this item are available in the "Datasets" list.
 
 ### Data Processes
 
