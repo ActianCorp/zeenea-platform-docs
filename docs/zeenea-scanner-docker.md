@@ -41,7 +41,7 @@ Before building, you’ll need a startup script you image will use to run the Sc
 Here is an example of such a file. Save it as `entrypoint.sh`:
 
 <font color="red">
-Missing image
+Community article is missing image. Can we find or recreate this, or (better yet), add text as a code example instead?
 </font>
 
 Copy your Dockerfile and `entrypoint.sh`, based on the examples above, into `zeenea-docker`.

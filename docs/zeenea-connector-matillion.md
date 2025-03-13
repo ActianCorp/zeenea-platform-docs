@@ -221,19 +221,22 @@ An alias should also be defined in the Snowflake connection. Its value depends o
 * If `multi_catalog.enabled` is `true`:
       
     <font color="red">
-        `alias = [ "-.snowflakecomputing.com" ]`
+        `alias = [ "[org_id].snowflakecomputing.com" ]`
     </font>
     
 * If `multi_catalog.enabled` is `false`:
 
     <font color="red">
-          `alias = [ "-.snowflakecomputing.com/"" ]`
+          `alias = [ "[org_id].snowflakecomputing.com/" ]`
     </font>
  
-Where <font color="red">[what?]</font> is the Snowflake organization identifier, <font color="red">[what?]</font> is the snowflake account identifier, and <font color="red">[what?]</font> is the database of the Snowflake connection.
+Where <font color="red">`[org_id]`</font> is the Snowflake organization identifier, <font color="red">`[account_id]`</font> is the snowflake account identifier, and <font color="red">`[database_name]`</font> is the database of the Snowflake connection.
 
 <font color="red">
-Text above missing placeholders for Snowflake organization identifier, account identifier, and db.
+Example in Community docs is missing placeholders for Snowflake organization identifier, account identifier, and db. 
+
+1. I added `[org_id]`. Is this correct?
+2. Where do `[account_id]` and `[database_name]` go?
 </font>
 
 ## Collected Metadata

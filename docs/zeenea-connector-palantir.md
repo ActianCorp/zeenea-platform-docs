@@ -262,9 +262,9 @@ If a file is configured, the connector will connect to the file system to retrie
 If no file is provided to the connector, it will automatically discover available objects with the following calls:
 
 * If `from_datacatalog` option value is **false**:
-  * `/compass/api/all-resources (pagined)` <font color="red">Should `pagined` be `pageid`?</font>: To get the list of available resources
+  * `/compass/api/all-resources (pagined)` <font color="red">Is `pagined` correct or a typo (`pageid`?)?</font>: To get the list of available resources
 * If `from_datacatalog` option value is **true**:
-  * `/compass/api/collections (pagined)` <font color="red">Should `pagined` be `pageid`?</font>: To get the list of available collections
+  * `/compass/api/collections (pagined)` <font color="red">Is `pagined` correct or a typo (`pageid`?)?</font>: To get the list of available collections
   * `/compass/api/collections/{collection.rid}/children`: To get collections datasets
   * `/compass/api/resources/{rid}`: To get the name of a collection dataset
 * If with_ontology option value is **true**:
