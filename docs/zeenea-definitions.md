@@ -215,4 +215,4 @@ They are therefore present in the object's detail in the same way as the followi
 * contacts
 * properties
 
-Read more: [Importing Datasets or Visualizations](./zeenea-impoting-datasets-or-visualizations.md)
+Read more: [Importing Datasets or Visualizations](./zeenea-importing-datasets-or-visualizations.md)

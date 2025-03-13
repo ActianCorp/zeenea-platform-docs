@@ -6,7 +6,7 @@ title: Identifying Orphan Datasets
 
 At each inventory of a connection, Zeenea checks the status of each dataset imported into the catalog. A dataset can then become an orphan.
 
-Read more: [Orphan Dataset](./zeenea-concepts-and-definitions#orphan-dataset)
+Read more: [Orphan Dataset](./zeenea-definitions#orphan-dataset)
  
 ## Dataset Notifications
 
