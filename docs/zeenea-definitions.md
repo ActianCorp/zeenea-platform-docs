@@ -1,8 +1,8 @@
 ---
-title: Concepts and Definitions
+title: Definitions
 ---
 
-# Concepts and Definitions
+# Definitions
 
 This list highlights select Zeenea-specific terms you might encounter in the documentation. It focuses on terms with unique meanings within Zeenea.
 
@@ -215,4 +215,4 @@ They are therefore present in the object's detail in the same way as the followi
 * contacts
 * properties
 
-Read more: [Importing Datasets or Visualizations](./zeenea-impoting-datasets-or-visualizations.md)
+Read more: [Importing Datasets or Visualizations](./zeenea-importing-datasets-or-visualizations.md)

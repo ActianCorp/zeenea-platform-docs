@@ -21,7 +21,7 @@ As it is an example, feel free to adapt this recommendation to your context.
 Here is a simple Dockerfile example:
 
 <font color="red">
-Missing image
+Community article is missing image. Can we find or recreate this, or (better yet), add text as a code example instead?
 </font>
 
 Zeenea Scanner requires Java 11 to run &mdash; the image is based on Openjdk JRE 11 Slim.

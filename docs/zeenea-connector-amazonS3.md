@@ -93,9 +93,9 @@ The user must also be able to run the `s3:ListAllMyBuckets` action on all resour
 
 In the following examples, the user is cataloging the `zeenea-test-data` bucket:
 
-* Directly from the Amazon S3 interface:  
+* Directly from the Amazon S3 interface.  
 
-  <font color="red">Broken image in Community docs. Can this image be located or recreated?</font>
+[comment]: <> (Broken image in Community docs. Can this image be located or recreated?)
 
 * In JSON:
 

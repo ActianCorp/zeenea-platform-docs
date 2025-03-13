@@ -17,7 +17,7 @@ To document the technical lineage of a Visualization, you can specify the datase
 * Some connectors allow to import automatically all or part of this lineage.
 :::
 
-<font color="red">Broken image in Community docs. Can this image be located or recreated?</font>
+[comment]: <> (Broken image in Community docs. Can this image be located or recreated?)
 
 ## Viewing Associated Datasets
 
