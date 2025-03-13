@@ -123,7 +123,7 @@ You can modify a user's attributes from a PATCH request using the `/Users` endpo
 
 ```
     curl --request PATCH \
-    --location 'https://[instance_name].zeenea.app/api/scim/v2/Users/'; \
+    --location 'https://[instance_name].zeenea.app/api/scim/v2/Users/[user_id]'; \
     --header 'Authorization: Bearer ' \
     --header 'Content-Type: application/scim+json' \
     --data-raw '{
@@ -142,10 +142,10 @@ You can modify a user's attributes from a PATCH request using the `/Users` endpo
     }
 ```
 
-where `[instance_name]` is to be replaced by the name of your instance and <font color="red">`[???]`</font> is to be replaced by the user's internal Zeenea ID.
+where `[instance_name]` is to be replaced by the name of your instance and <font color="red">`[user_id]`</font> is to be replaced by the user's internal Zeenea ID.
 
 <font color="red">
-Where does the user's internal ID go (`[???]` above)?
+Community article is missing the user ID placeholder. I added `[user_id]` above. Is this correct?
 </font>
 
 ### Delete User
@@ -156,15 +156,15 @@ You can delete a user from a DELETE request using the /Users endpoint with a use
 
 ```
 curl --request DELETE \
---location 'https://[instance_name].zeenea.app/api/scim/v2/Users/'; \
+--location 'https://[instance_name].zeenea.app/api/scim/v2/Users/[user_id]'; \
 --header 'Authorization: Bearer ' \
 --header 'Content-Type: application/scim+json'
 ```
 
-where `[instance_name]` is to be replaced by the name of your instance and <font color="red">`[???]`</font> is to be replaced by the user's internal Zeenea ID.
+where `[instance_name]` is to be replaced by the name of your instance and <font color="red">`[user_id]`</font> is to be replaced by the user's internal Zeenea ID.
 
 <font color="red">
-Where does the user's internal ID go (`[???]` above)?
+Community article is missing the user ID placeholder. I added `[user_id]` above. Is this correct?
 </font>
 
 ### Get User
@@ -175,15 +175,15 @@ Existing users can be retrieved by making a GET request to the /Users endpoint w
 
 ```
 curl —-request GET \
---location 'https://[instance_name].zeenea.app/api/scim/v2/Users/’ \
+--location 'https://[instance_name].zeenea.app/api/scim/v2/Users/[user_id]’ \
 --header 'Authorization: Bearer ’ \
 --header 'Content-Type: application/scim+json'
 ```
 
-where `[instance_name]` is to be replaced by the name of your instance and <font color="red">`[???]` </font> is to be replaced by the user's internal Zeenea ID.
+where `[instance_name]` is to be replaced by the name of your instance and <font color="red">`[user_id]`</font> is to be replaced by the user's internal Zeenea ID.
 
 <font color="red">
-Where does the user's internal ID go (`[???]` above)?
+Community article is missing the user ID placeholder. I added `[user_id]` above. Is this correct?
 </font>
 
 ### List Users
@@ -232,7 +232,7 @@ The "Super Admin" group can not be modified by API.
 
 ```
 curl --request PATCH \
---location 'https://[instance_name].zeenea.app/api/scim/v2/Groups/'; \
+--location 'https://[instance_name].zeenea.app/api/scim/v2/Groups/[group_id]'; \
 --header 'Authorization: Bearer ' \
 --header 'Content-Type: application/scim+json' \
 --data-raw '{
@@ -249,10 +249,13 @@ curl --request PATCH \
 }'
 ```
 
-where `[instance_name]` is to be replaced by the name of your instance and <font color="red">`[???]` </font> is to be replaced by the group identifier and by a user identifier.
+where `[instance_name]` is to be replaced by the name of your instance, <font color="red">`[group_id]`</font> is to be replaced by the group identifier, and <font color="red">`[user_id]`</font> to be replaced by the user's internal Zeenea ID.
 
 <font color="red">
-Where does the group/user identifier go (`[???]` above)?
+Community article is missing the group and user ID placeholders. 
+
+1. I added `[group_id]` above. Is this correct?
+2. Where does `[user_id]` go?
 </font>
 
 ### List Groups

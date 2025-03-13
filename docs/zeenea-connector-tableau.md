@@ -147,7 +147,9 @@ Finally, create a PAT (Personal Access Token) and paste it into your Tableau Con
 
 ## Data Extraction
 
-In order to extract information from Tableau, the connector will scan all workbooks within the solution and transform them into **Visualization** objects in Zeenea. All related Data Sources are then collected and transferred to Zeenea. Data sources are referenced as **Datasets**. Fields are recreated as **Field** type objects in Zeenea. <font color="red">Is this a cut/paste error? Refers to Looker:</font> For each Looker Dataset, a **Data Process** is created to represent the lineage with the origin Dataset.
+[comment]: <> (Text refers to Looker. Is this a cut/paste error?)
+
+In order to extract information from Tableau, the connector will scan all workbooks within the solution and transform them into **Visualization** objects in Zeenea. All related Data Sources are then collected and transferred to Zeenea. Data sources are referenced as **Datasets**. Fields are recreated as **Field** type objects in Zeenea. For each Looker Dataset, a **Data Process** is created to represent the lineage with the origin Dataset.
 
 To identify the objects in the source system, the connector uses the technical identifiers produced by Tableau. In cases where these are changed (following a modification for example), this will lead to the duplication of the object in the catalog.
  
@@ -159,7 +161,7 @@ The inventory collects the list of reports (along with their data sources) that 
 
 ## Lineage
 
-<font color="red">Is this a cut/paste error? Refers to Looker:</font>
+[comment]: <> (Text refers to Looker. Is this a cut/paste error?)
 
 The Tableau connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the Looker dataset through a new Data Process object. This feature is available for the following systems and, for it to work, an additional parameter is needed in the source system connection as configured in the Tableau connection configuration panel.
 

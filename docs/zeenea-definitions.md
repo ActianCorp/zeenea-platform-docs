@@ -1,8 +1,8 @@
 ---
-title: Concepts and Definitions
+title: Definitions
 ---
 
-# Concepts and Definitions
+# Definitions
 
 This list highlights select Zeenea-specific terms you might encounter in the documentation. It focuses on terms with unique meanings within Zeenea.
 
