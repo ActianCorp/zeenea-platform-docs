@@ -150,7 +150,7 @@ Run the following command with the service name used during registration to obta
 
 The name will be the identifier of the Scanner. It will be used by Zeenea to distinctly identify the Scanner and allow the Connections associated with it to be identified.
 
-* Only name the scanner using alphanumeric characters, underscores (_), and and hyphens (-).
+* Only name the scanner using alphanumeric characters, underscores (_), and hyphens (-).
 * Don’t use special characters, spaces characters, ...
 * The name can be changed afterwards. However, in that event, Zeenea will keep track of a Scanner with the previous name with an offline status.
 
