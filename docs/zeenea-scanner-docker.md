@@ -20,9 +20,29 @@ As it is an example, feel free to adapt this recommendation to your context.
 
 Here is a simple Dockerfile example:
 
-<font color="red">
-Community article is missing image. Can we find or recreate this, or (better yet), add text as a code example instead?
-</font>
+```
+FROM alpine:3
+
+RUN     apk add --no-cache bash
+RUN     apk add openjdk11
+
+ARG     ZEENEA_VERSION
+
+WORKDIR /opt
+
+ARG     PACKAGE_FILE="zeenea-scanner-${ZEENEA_VERSION}.tar.gz"
+
+COPY    "docker/${PACKAGE_FILE}" "${PACKAGE_FILE}"
+
+RUN     tar xf "${PACKAGE_FILE}" && rm "${PACKAGE_FILE}" && mv zeenea-scanner-${ZEENEA_VERSION} zeenea-scanner
+
+COPY    "docker/application.conf" "zeenea-scanner/conf/application.conf"
+ADD     "connections/" "zeenea-scanner/connections"
+
+COPY    "docker/entrypoint.sh" "/opt/entrypoint.sh"
+ENTRYPOINT  ["/opt/entrypoint.sh"]
+CMD ["start"]
+```
 
 Zeenea Scanner requires Java 11 to run &mdash; the image is based on Openjdk JRE 11 Slim.
 
@@ -40,9 +60,55 @@ Before building, you’ll need a startup script you image will use to run the Sc
 
 Here is an example of such a file. Save it as `entrypoint.sh`:
 
-<font color="red">
-Community article is missing image. Can we find or recreate this, or (better yet), add text as a code example instead?
-</font>
+```
+#!/usr/bin/env bash
+
+
+function main() {
+    find_scanner_home
+
+    local cmd="$1"
+    if is_command "$cmd"; then
+        shift
+#        set -x
+        "$cmd" "$@"
+    else
+        echo "Invalid command $cmd"
+    fi
+}
+
+function is_command() {
+    if [[ "$(type -t $1)" == 'function' ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+function find_scanner_home() {
+    if [ "$(uname -s | cut -c1-5)" = "Linux" ]; then
+        SCRIPT=$(readlink -f "$0")
+        SCRIPTPATH=$(dirname "$SCRIPT")
+    elif [ "$(uname)" = "Darwin" ]; then
+        SCRIPTPATH="$(cd "$(dirname "$0")" && pwd -P)"
+    else
+        exit
+    fi
+
+    SCANNER_HOME="$(cd "zeenea-scanner" && pwd -P)"
+    echo "Scanner Root: $SCANNER_HOME"
+}
+
+function start() {
+  if [ -n "$1" ]; then
+    cd $SCANNER_HOME && ./bin/zeenea-scanner -Dconfig.file="$1"
+  else
+    cd $SCANNER_HOME && ./bin/zeenea-scanner
+  fi
+}
+
+main "$@"
+```
 
 Copy your Dockerfile and `entrypoint.sh`, based on the examples above, into `zeenea-docker`.
 

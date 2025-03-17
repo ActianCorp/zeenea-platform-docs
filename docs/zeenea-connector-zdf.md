@@ -207,7 +207,9 @@ If a git repository is declared, the repository is cloned into the working folde
 
 ## Format Details
 
-<font color="red">NOTE: Some attributes below have a "*" next to them, but there is no corresponding footnote.</font>
+:::note
+Attributes marked "*" are mandatory for Items to be ingested by the platform. If not defined in a file, the Item will be rejected.
+:::
 
 ### ZdfDataset
 
@@ -482,7 +484,7 @@ A field description.
   <tr>
     <td>`isMultivalued`</td>
     <td>`Boolean`</td>
-    <td>The field can contain <font color="red">[WHAT?]</font>. Default value `false`.</td>
+    <td>The field can contain multiple values. Default value `false`.</td>
 </tr>
   <tr>
     <td>`isPrimaryKey`</td>
