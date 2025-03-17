@@ -100,9 +100,7 @@ The expression format is defined in detail in the Java documentation.
 
 Unit expressions are the fundaments of a filter. They relate criteria to a literal value through an operator which indicates the comparison to do. The value of the expression is boolean, i.e., it can only contain the values "true" or "false".
 
-<font color="red">Need to fix missing text below:</font>
-
-Unit expressions have the form <font color="red">???</font> or <font color="red">???</font>.
+Unit expressions have the form `[criteria] [operation]` or `[criteria] [operation] [literal value]`.
 
 ### is null
 
