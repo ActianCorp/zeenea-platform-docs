@@ -8,10 +8,10 @@ Zeenea Studio and Explorer applications can run on any computer with an Internet
 
 | Browser| Notes |
 | :--- | :--- |
-| Google Chrome™, the most recent stable version | Path to the Windows DLL to be used. If the argument is not specified, the DLL will be defined using the `%JAVA_HOME%` environment variable or the path to the "java" executable found in Path. | Google Chrome applies updates automatically; Zeenea makes every effort to test and support the most recent version. There are no configuration recommendations for Chrome. | 
-| Mozilla® Firefox®, the most recent stable version | Zeenea makes every effort to test and support the most recent version of Firefox. There are no configuration recommendations for Firefox. |
-| Microsoft® Edge® | If you use Edge®, we recommend using the latest version that Zeenea supports. Apply all Microsoft software updates. |
-| Apple® Safari® versions 11.x and 12.x on Mac OS X | There are no configuration recommendations for Safari®. |
+| Google Chrome™<br />Most recent stable version | Zeenea makes every effort to test and support the most recent version of Chrome. There are no configuration recommendations for Chrome. |
+| Mozilla® Firefox®<br />Most recent stable version | Zeenea makes every effort to test and support the most recent version of Firefox. There are no configuration recommendations for Firefox. |
+| Microsoft® Edge® | If you use Edge, we recommend using the latest version that Zeenea supports. Apply all Microsoft software updates. |
+| Apple® Safari®<br />Versions 11.x and 12.x on Mac OS X | There are no configuration recommendations for Safari. |
 
 Recommendations for all browsers:
 
