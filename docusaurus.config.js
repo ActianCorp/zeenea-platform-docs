@@ -35,6 +35,14 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'fr'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+      },
+      fr: {
+        label: 'Français',
+      },
+    },
   },
   
   //plugins: [[ require.resolve('docusaurus-lunr-search'), {
@@ -75,13 +83,13 @@ const config = {
          },
         items: [
           {
+            type: 'localeDropdown',
+            position: 'left',
+          },
+          {
             to: 'docs/zeenea-intro',
             label: 'Docs', 
             position: 'left'
-          },
-          {
-            type: 'localeDropdown',
-            position: 'left',
           },
           {
             href: 'https://docs.zeenea.com', 
