@@ -27,7 +27,7 @@ The scheme below describes how access requests are handled in Zeenea:
 4. Once reviewed, an email notification is automatically sent to the sender with the status of their request.
 5. If approved, a machine-readable email is sent to the external workflow system to create a ticket and configure the permissions.
 
-  ![](/img/zeenea-access-requests.png)
+![](./_shared/zeenea-access-requests.png)
 
 ##  Enabling Access Requests
 
