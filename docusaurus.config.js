@@ -32,10 +32,10 @@ const config = {
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
-  //i18n: {
-  //  defaultLocale: 'en',
-  //  locales: ['en'],
-  //},
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr'],
+  },
   
   //plugins: [[ require.resolve('docusaurus-lunr-search'), {
   //  maxHits: 100,
@@ -78,6 +78,10 @@ const config = {
             to: 'docs/zeenea-intro',
             label: 'Docs', 
             position: 'left'
+          },
+          {
+            type: 'localeDropdown',
+            position: 'left',
           },
           {
             href: 'https://docs.zeenea.com', 

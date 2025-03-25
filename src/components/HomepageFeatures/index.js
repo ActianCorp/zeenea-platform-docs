@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
+import Translate, {translate} from '@docusaurus/Translate';
 
 const FeatureList = [
   {
@@ -30,7 +31,7 @@ const FeatureList = [
     png: "/img/home/list.png",
     description: (
       <>
-      Product releases, new features, and connector highlights.
+      <Translate>Product releases, new features, and connector highlights.</Translate>
      </>
     ),
   },

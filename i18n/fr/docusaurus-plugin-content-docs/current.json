@@ -1,0 +1,42 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docSidebar.category.GETTING STARTED": {
+    "message": "GETTING STARTED",
+    "description": "The label for category GETTING STARTED in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.YOUR FIRST STEPS": {
+    "message": "YOUR FIRST STEPS",
+    "description": "The label for category YOUR FIRST STEPS in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.CONCEPTS": {
+    "message": "CONCEPTS",
+    "description": "The label for category CONCEPTS in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.SCANNERS": {
+    "message": "SCANNERS",
+    "description": "The label for category SCANNERS in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.CONNECTORS": {
+    "message": "CONNECTORS",
+    "description": "The label for category CONNECTORS in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.ZEENEA STUDIO": {
+    "message": "ZEENEA STUDIO",
+    "description": "The label for category ZEENEA STUDIO in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.ZEENEA EXPLORER": {
+    "message": "ZEENEA EXPLORER",
+    "description": "The label for category ZEENEA EXPLORER in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.ZEENEA ADMINISTRATION": {
+    "message": "ZEENEA ADMINISTRATION",
+    "description": "The label for category ZEENEA ADMINISTRATION in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.APIs": {
+    "message": "APIs",
+    "description": "The label for category APIs in sidebar docSidebar"
+  }
+}
