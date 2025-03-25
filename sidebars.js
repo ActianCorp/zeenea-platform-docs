@@ -83,7 +83,7 @@ const sidebars = {
         'zeenea-connectors-list',
         'zeenea-connectors-install-as-plugin',
         'zeenea-externalizing-external-connectors',
-        //'zeenea-dataconnect-connector',
+        'zeenea-connector-actian-dataconnect',
         'zeenea-connector-actian-informix',
         'zeenea-connector-actian-ingres',
         'zeenea-connector-actian-zen',
