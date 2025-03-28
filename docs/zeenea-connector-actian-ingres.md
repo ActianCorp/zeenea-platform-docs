@@ -7,11 +7,11 @@ title: Actian Ingres
 ## Prerequisites
 
 * The current Scanner version requires Java 11. Either OpenJDK or Oracle JDK can be installed.
-* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](./zeenea-scanner-setup.md).
+* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](./zeenea-scanner-setup).
 
 ## Installing the Generic JDBC Connector Plugin
 
-1. Download the Generic JDBC connector plugin from [Zeenea Connector Downloads](./zeenea-connectors-list.md), or download directly at https://plugins.zeenea.app/jdbc-connector-plugin/jdbc-connector-plugin-74.zip.
+1. Download the Generic JDBC connector plugin from [Zeenea Connector Downloads](./zeenea-connectors-list), or download directly at https://plugins.zeenea.app/jdbc-connector-plugin/jdbc-connector-plugin-74.zip.
 2. Move the zip file to the `[scanner_install_dir]/plugins` folder. **Do not unzip the archive**.
 
 ## Installing Ingres Drivers
@@ -50,7 +50,7 @@ title: Actian Ingres
 2. In Zeenea Administration, click **Connections** and verify that the new connection is listed:
 
      ![](/img/zeenea-connection-added-ingres.png)
-3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](./zeenea-troubleshooting.md).
+3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](./zeenea-troubleshooting).
 
 ## Viewing the Dataset
  

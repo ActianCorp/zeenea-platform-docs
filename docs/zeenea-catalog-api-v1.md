@@ -5,7 +5,7 @@ title: Catalog API v1 (Deprecated)
 # Catalog API v1 (Deprecated)
 
 :::caution[NOTE]
-This API is deprecated. Please see [Catalog API v2](./zeenea-catalog-api-v2.md).
+This API is deprecated. Please see [Catalog API v2](./zeenea-catalog-api-v2).
 :::
  
 
@@ -63,7 +63,7 @@ Here are the currently available operations, grouped by usage:
     * `unlinkItemContact`
 * Replaced by the `createItem` operation in the Catalog API v2
 
-For more information, see [API Lifecycle](./zeenea-api-lifecycle.md) can be found here.
+For more information, see [API Lifecycle](./zeenea-api-lifecycle) can be found here.
 
 :::note
 The complete API documentation is available in the [Voyager](https://github.com/APIs-guru/graphql-voyager) tool which you can access from any of your environments by following this address:

@@ -6,7 +6,7 @@ title: Actian Informix
 ## Prerequisites
 
 * The current Scanner version requires Java 11. Either OpenJDK or Oracle JDK can be installed.
-* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](./zeenea-scanner-setup.md).
+* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](./zeenea-scanner-setup).
 
 ## Installing the Generic JDBC Connector Plugin
 
@@ -53,7 +53,7 @@ title: Actian Informix
 2. In Zeenea Administration, click Connections and verify that the new connection is listed:
 
      ![](/img/zeenea-connection-informix.png)
-3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](./zeenea-troubleshooting.md).
+3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](./zeenea-troubleshooting).
 
 ## Viewing the Dataset​
 

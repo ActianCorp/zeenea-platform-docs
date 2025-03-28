@@ -55,4 +55,4 @@ Note that when a property is removed from a metamodel, its indexed values are ke
 
 If you want to add a property and it is not present in the right column, you will have to create it first. 
 
-For more information, see [Creating, Editing, or Deleting a Property](./zeenea-studio-create-edit-delete-property.md).
+For more information, see [Creating, Editing, or Deleting a Property](./zeenea-studio-create-edit-delete-property).
