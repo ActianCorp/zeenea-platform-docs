@@ -1,4 +1,8 @@
-# Zeenea Data Discovery Platform Documentation
+---
+title: Providing Documentation Feedback
+---
+ 
+# Providing Documentation Feedback
 
 We welcome and encourage your feedback on the platform and documentation. Feedback from the user community plays an important role in improving the product.
 
