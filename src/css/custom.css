@@ -179,7 +179,8 @@ h3.featureLink {
 
 /* Footer */
 .footer__link-item {
-       color: red;
+       color: rgb(75, 113, 240);
+       font-size: 14px;
 }
   
 .footerColumn-left {
@@ -224,7 +225,7 @@ h3.featureLink {
 }
 
 [data-theme='light'] .footer {
-  background-color: #ebebeb;
+  background-color: #c5c5c5;
 }
 
 [data-theme='dark'] .pagination-nav__link {
@@ -435,4 +436,12 @@ mark {
 .algolia-autocomplete .ds-dropdown-menu .ds-suggestions {
   overflow-y: scroll;
   height: 100vh;
+}
+
+.footer__link-separator {
+  display: none;
+}
+
+#__docusaurus > footer > div > div.footer__bottom.text--center > div {
+ font-size: 14px; 
 }

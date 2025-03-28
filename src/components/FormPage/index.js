@@ -1,6 +1,7 @@
   // Formpage\index.js
   import { useLocation } from "react-router-dom";
-  
+  import Translate, {translate} from '@docusaurus/Translate';
+
   const React = require("react");
   const { useState } = React;
 
@@ -19,7 +20,7 @@
    return (
       <span>
         <a onClick={toggle} href="#" className="navbar__link">
-            <span className='pageFeedback'>&nbsp;&nbsp;Page&nbsp;Feedback</span>
+            <span className='pageFeedback'>&nbsp;&nbsp;<Translate>Feedback</Translate></span>
         </a>
         {isOpen ? ( 
           <form data-netlify="true" name="feedback" method="post">

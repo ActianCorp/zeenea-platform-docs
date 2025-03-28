@@ -19,7 +19,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           
           <Link className="button button--primary button--md" to="/docs/zeenea-intro">
-            <Translate>Learn More</Translate>
+            <Translate>Learn More</Translate> &#8250;&#8250;
           </Link>
         </div>
       </div>

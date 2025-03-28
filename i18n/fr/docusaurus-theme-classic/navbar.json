@@ -24,7 +24,7 @@
     "description": "Navbar item with label Community"
   },
   "item.label.Downloads": {
-    "message": "Downloads",
+    "message": "Téléchargements",
     "description": "Navbar item with label Downloads"
   }
 }

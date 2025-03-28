@@ -16,7 +16,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'API Reference',
+    title: <Translate>API Reference</Translate>,
     doc: "https://docs.zeenea.com",
     png: "/img/home/zeenea-api.png",
     description: (
@@ -26,7 +26,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Product Updates',
+    title: <Translate>Product Updates</Translate>,
     doc: "https://zeenea.com/product-updates/",
     png: "/img/home/list.png",
     description: (
@@ -52,7 +52,7 @@ function Feature({title, doc, png, description}) {
           </div>
         <br />
           <Link className="button button--primary button--md" to={doc}>
-            View &#8250;&#8250;
+          <Translate>View</Translate> &#8250;&#8250;
           </Link>
         </div>
 

@@ -1,7 +1,4 @@
 {
-  "Learn More": {
-    "message": "Voir"
-  },
   "theme.common.editThisPage": {
     "message": "Éditer cette page",
     "description": "The link label to edit the current page"
@@ -444,13 +441,25 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "Learn More ››": {
-    "message": "Learn More ››"
+  "Learn More": {
+    "message": "Voir"
   },
   "Zeenea Data Discovery Platform": {
     "message": "Zeenea Data Discovery Platform"
   },
   "Product releases, new features, and connector highlights.": {
-    "message": "Product releases, new features, and connector highlights."
+    "message": "Sorties de produits, nouvelles fonctionnalités et points forts des connecteurs."
+  },
+  "View": {
+    "message": "Voir"
+  },
+  "Product Updates": {
+    "message": "Sorties de Produits"
+  },
+  "API Reference": {
+    "message": "Référence API"
+  },
+  "Feedback": {
+    "message": "Commentaires"
   }
 }
