@@ -13,7 +13,7 @@ To configure a connection between your IS and Zeenea, you must first:
 
     :::note[Notes]
     * These steps are described in the sections: Zeenea Scanners: prerequisite and setup
-    * Go to the specific documentation of each connector to identify the prerequisites and the conditions of implementation: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
+    * Go to the specific documentation of each connector to identify the prerequisites and the conditions of implementation: [Zeenea Connector Downloads](./zeenea-connectors-list)
     ::: 
 
 ## Creating a connection
@@ -64,12 +64,12 @@ A connection can only be linked to one scanner at a time. It will be linked to t
 
 It is possible to view the detailed information of a connection, as defined at the scanner level, by clicking on "Settings" from the action menu of each connection. However, the secrets of the connection are not accessible from this interface and are kept by the scanner only.
 
-    ![](../static/img/zeenea-connection-configuration.png)
+    ![](./_shared/zeenea-connection-configuration.png)
 
 You can also manage the connection options: 
 
-* **Data Profiling**: Allows you to activate the calculation of statistical profiles for the connection's Dataset Fields. It is not available on all connectors. Please note that activating this option may have an impact on your host's billing. For more information on Data Profiling, see [Data Profiling](./zeenea-data-profiling.md).
-* **Data Sampling**: Enables data sampling for all the connection's imported Datasets. This option is not available for all connectors. For more information on Data Sampling, see [Data Sampling](./zeenea-data-sampling.md).
+* **Data Profiling**: Allows you to activate the calculation of statistical profiles for the connection's Dataset Fields. It is not available on all connectors. Please note that activating this option may have an impact on your host's billing. For more information on Data Profiling, see [Data Profiling](./zeenea-data-profiling).
+* **Data Sampling**: Enables data sampling for all the connection's imported Datasets. This option is not available for all connectors. For more information on Data Sampling, see [Data Sampling](./zeenea-data-sampling).
 * **Automatic import**: This option allows you to automatically import all new Items for a connection, without having to select them manually from the Studio. Beware of using an appropriate filter configuration at the connection level to avoid importing unwanted Objects.
  
 Activating any of these options does not automatically trigger the execution of the functionality. You must then launch execution from the actions menu (see below) or wait for a job scheduled in the Scanner.

@@ -4,7 +4,7 @@ title: Actian Zeenea Data Discovery Platform
 
 # Actian Zeenea Data Discovery Platform
 
-<font color="red">**This would be the French version**</font>
+<font color="red">**French version - needs translation**</font>
 
 Actian Zeenea provides an intelligent data discovery platform.
 
