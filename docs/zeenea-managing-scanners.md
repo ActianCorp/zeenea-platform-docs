@@ -6,7 +6,7 @@ title: Managing Scanners
 
 ## Adding a Scanner
 
-Scanners are added and set up outside of the Zeenea interface. Please see [Zeenea Scanner Setup](./zeenea-scanner-setup.md) for more information.
+Scanners are added and set up outside of the Zeenea interface. Please see [Zeenea Scanner Setup](./zeenea-scanner-setup) for more information.
 
 ## Deleting a Scanner
 
@@ -69,7 +69,7 @@ Zeenea Support team may ask you to upgrade your scanner if you are facing an iss
 4. Copy the file `agent-identifier` from the root directory of the current scanner and paste it into the root directory of the new scanner.
 5. Copy the file `application.conf` from the `conf` directory of the current scanner and paste it into the `conf` directory of the new scanner.
 6. Copy the connections configuration files from the `connections` directory of the current scanner and paste them in the `connections` directory of the new scanner.
-7. Go to the [Connectors List](./zeenea-connectors-list.md) and the copy up-to-date version of the plugins you use (without unzipping them) into the `plugins` directory of the new scanner.
+7. Go to the [Connectors List](./zeenea-connectors-list) and the copy up-to-date version of the plugins you use (without unzipping them) into the `plugins` directory of the new scanner.
 8. Start the new scanner. It should be visible on the Zeenea administration page and the connections must be correctly associated and ready to use again.
 
 ## Windows Environment (Scanner as a Windows Service)

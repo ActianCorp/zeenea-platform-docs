@@ -25,7 +25,7 @@ For each object, the Key can be retrieved directly from the **Actions** button i
   ![](/img/zeenea-action-button.png)
 
 ## Unique Keys and Import Files
-Keys are used to uniquely identify each object of the catalog when [importing](./zeenea-studio-import.md)/[exporting](./zeenea-studio-search-export.md) an Excel File. 
+Keys are used to uniquely identify each object of the catalog when [importing](./zeenea-studio-import)/[exporting](./zeenea-studio-search-export) an Excel File. 
 
 When importing data via an Excel file, if there is a value in the column "key", then: 
 

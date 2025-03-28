@@ -61,4 +61,4 @@ An operation is defined by a list of input and output Fields, and a description 
 If an operation references a Field that is not part of the input or output Datasets of the Data Process, it is displayed in red as an orphan.
 :::
 
-When filled in, Field to Field lineage is automatically displayed in the lineage. See [Data Lineage](./zeenea-data-lineage.md).
+When filled in, Field to Field lineage is automatically displayed in the lineage. See [Data Lineage](./zeenea-data-lineage).

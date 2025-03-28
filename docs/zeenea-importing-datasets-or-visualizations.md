@@ -12,7 +12,7 @@ To import Datasets or Visualizations  into Zeenea, you must first:
 3. Configure a connection to your storage system.
 4. Launch an inventory of this connection to allow the connector to automatically discover the Items available for import.
 
-These steps are described in the sections: [Zeenea Scanner Setup](./zeenea-scanner-setup.md) & [Managing Connections](./zeenea-managing-connections.md).
+These steps are described in the sections: [Zeenea Scanner Setup](./zeenea-scanner-setup) & [Managing Connections](./zeenea-managing-connections).
 
 ## Import datasets or visualizations
 

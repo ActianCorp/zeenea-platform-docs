@@ -155,6 +155,6 @@ In this first version of the Federated Catalog, the Catalog API does not yet sup
  
 #### Related Topics
 
-* [SCIM API](./zeenea-scim-api.md)
+* [SCIM API](./zeenea-scim-api)
 * [Catalog API](https://docs.zeenea.com/)
  

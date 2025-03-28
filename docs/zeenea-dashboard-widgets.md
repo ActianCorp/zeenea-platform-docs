@@ -24,5 +24,5 @@ Watchlists allow you to save your favorite filters and quickly find your lists o
 * Items for which you are Curator and for which user suggestions are pending
 
 ## Perimeter
-This component shows, by Item type, the number of Objects in your perimeter, as well as their completion rate, according to the rules defined by your Administrators. For more details, see [How the documentation completion level is calculated](./zeenea-doc-completion-level.md).
+This component shows, by Item type, the number of Objects in your perimeter, as well as their completion rate, according to the rules defined by your Administrators. For more details, see [How the documentation completion level is calculated](./zeenea-doc-completion-level).
 

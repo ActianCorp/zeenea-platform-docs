@@ -10,15 +10,15 @@ title: SSAS - SQL Server Analysis Services
 
 ## Installing the Plugin
 
-The SSAS plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+The SSAS plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
  
 In order to establish a connection with SSAS, the following parameters in the dedicated file are required:
  
@@ -146,7 +146,7 @@ A data process represents lineage between a cube/table and its sources.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
- Read more: [Identification Keys](./zeenea-identification-keys.md)
+ Read more: [Identification Keys](./zeenea-identification-keys)
 
 <table>
   <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>

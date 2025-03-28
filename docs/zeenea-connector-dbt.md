@@ -23,15 +23,15 @@ The DBT connector is currently **NOT** compatible with DBT Cloud.
 
 ## Installing the Plugin
 
-The dbt plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+The dbt plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
  ## Declaring the Connection
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
  
 In order to establish a connection with an DBT instance, specifying the following parameters in the dedicated file is required:
  
@@ -227,10 +227,10 @@ Table summarizing the possible values of the `alias` parameter to be completed i
 
 | Source System| Model | Example |
 | :--- | :--- | :---- |
-| [SQL Server](./zeenea-connector-sqlserver.md) | Server name:port/Database name | `alias = ["zeenea.database.windows.net:1433/db"]` * |
-| [Snowflake](./zeenea-connector-snowflake.md) | Server name/Database name | `alias = ["kn999999.eu-west-1.snowflakecomputing.com/ZEENEA""]` * |
-| [BigQuery](./zeenea-connector-google-bigquery.md) | `bigquery.googleapis.com/` + BigQuery project identifier | `alias = ["bigquery.googleapis.com/zeenea-project"]` |
-| [AWS Redshift](./zeenea-connector-aws-redshift.md) | Server name:port/Database name | `alias = ["zeenea.cthwlv3ueke2.eu-west-3.redshift.amazonaws.com:5439/database"]` * |
+| [SQL Server](./zeenea-connector-sqlserver) | Server name:port/Database name | `alias = ["zeenea.database.windows.net:1433/db"]` * |
+| [Snowflake](./zeenea-connector-snowflake) | Server name/Database name | `alias = ["kn999999.eu-west-1.snowflakecomputing.com/ZEENEA""]` * |
+| [BigQuery](./zeenea-connector-google-bigquery) | `bigquery.googleapis.com/` + BigQuery project identifier | `alias = ["bigquery.googleapis.com/zeenea-project"]` |
+| [AWS Redshift](./zeenea-connector-aws-redshift) | Server name:port/Database name | `alias = ["zeenea.cthwlv3ueke2.eu-west-3.redshift.amazonaws.com:5439/database"]` * |
 
 \* Do not fill in the database name if the configuration of the connectors is in `multi_catalog.enabled = true`.
 
@@ -250,7 +250,7 @@ Table summarizing the possible values of the `alias` parameter to be completed i
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys)
 
 <table>
   <tr>

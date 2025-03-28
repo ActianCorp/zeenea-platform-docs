@@ -9,7 +9,7 @@ toc_max_heading_level: 4
 
 Before you can use this connector, you must set up the custom items that will be fed by the connector.
 
-The connector will manage objects of a type that you will have to specify. This type must therefore be created beforehand. See the article [Creating or Deleting a Custom Item Type](./zeenea-studio-create-delete-custom-item.md).
+The connector will manage objects of a type that you will have to specify. This type must therefore be created beforehand. See the article [Creating or Deleting a Custom Item Type](./zeenea-studio-create-delete-custom-item).
 
 To be used with the connector, the type must be "Synchronize Items with a connector" (and not "Manual").
 
@@ -45,9 +45,9 @@ Unmapped file columns will be ignored.
 
 ## Installing the Plugin
 
-The CSV plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+The CSV plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Parameters
 

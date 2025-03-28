@@ -23,7 +23,7 @@ Because of its type (Hadoop Edge Node), the server is either on the same network
 | Hive Server | TCP / HTTP | 10000 |
 
 :::note
-A link to the configuration template is available from this page: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+A link to the configuration template is available from this page: [Zeenea Connector Downloads](./zeenea-connectors-list).
 :::
 
 ## Supported Versions
@@ -38,15 +38,15 @@ The HDFS connector supports versions included in the following distributions:
 
 From version 54 of the scanner, the HDFS connector is presented as a plugin. It can be downloaded here according to your Hadoop cluster version.
 
-It can be downloaded here and requires a scanner version 64 or later: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+It can be downloaded here and requires a scanner version 64 or later: [Zeenea Connector Downloads](./zeenea-connectors-list).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Declaring the Connection
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
  
 In order to establish a connection with HDFS, specifying the following parameters in the dedicated file is required:
  
@@ -158,7 +158,7 @@ Datasets are often stored on a file system that is itself dispatched over multip
 
 When doing an inventory, the HDFS connector detects datasets by following the usual datasets organization conventions in HDFS.
 
-Read more: [Dataset Detection on File Systems](./zeenea-dataset-detection.md)
+Read more: [Dataset Detection on File Systems](./zeenea-dataset-detection)
 
 ## Collected Metadata
 
@@ -192,7 +192,7 @@ A dataset is defined by the dataset definition algorithm.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys)
 
 <table>
   <tr>

@@ -135,7 +135,7 @@ Since version 54 of the scanner, the S3 connector benefits from the feature of r
 * `bucket`: name of the bucket
 * `key`: name of the object
 
-Read more: [Filters](zeenea-filters.md)
+Read more: [Filters](zeenea-filters)
  
 ## Data Extraction
 
@@ -143,7 +143,7 @@ A dataset from a file system may actually be stored in multiple files. Those fil
 
 When running the inventory, the Amazon S3 connector detects datasets with the usual dataset naming convention in Amazon S3.
 
-Read more: [Dataset Detection on File Systems](./zeenea-dataset-detection.md)
+Read more: [Dataset Detection on File Systems](./zeenea-dataset-detection)
  
 ## Collected Metadata
 
@@ -180,7 +180,7 @@ Dataset field.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](./zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](./zeenea-identification-keys).
 
 <table>
   <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>

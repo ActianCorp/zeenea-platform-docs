@@ -51,13 +51,13 @@ Before you start documenting items, they must be assigned to you as a Contact wi
 
 Then you should be able to try the following features:
 
-* [Adding contact item by item or in bulk](./zeenea-editing-items-in-bulk.md)
-* [Search and filters](./zeenea-studio-search.md)
+* [Adding contact item by item or in bulk](./zeenea-editing-items-in-bulk)
+* [Search and filters](./zeenea-studio-search)
 
 ## Step 4: Start documenting your perimeter
 
 Once your perimeter is defined, you can start its documentation.
 
-For more details on item documentation, see [Understanding the Documentation of an Item](./zeenea-item-documentation.md).
+For more details on item documentation, see [Understanding the Documentation of an Item](./zeenea-item-documentation).
 
   ![](/img/zeenea-perimeter.png)

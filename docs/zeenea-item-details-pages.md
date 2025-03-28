@@ -54,13 +54,13 @@ The featured properties can be of two kinds:
 
 This section allows visualizing all the relations of an Item with other Items in the catalog regardless of their types and to explore the graph of relations incrementally.
 
-For more details, see [View 360 Diagram](./zeenea-view-360-diagram.md).
+For more details, see [View 360 Diagram](./zeenea-view-360-diagram).
 
 ### Lineage
 
 Lineage can be viewed on items such as Datasets, Visualizations, or Data Processes. It describes the transformations and uses of the data throughout its lifecycle. 
 
-For more details, see [Data Lineage](./zeenea-data-lineage.md).
+For more details, see [Data Lineage](./zeenea-data-lineage).
 
 ### Data Model
 
@@ -68,7 +68,7 @@ Data models can only be viewed on Datasets.
 
 This section allows visualizing the schema of a data source centered from the current dataset point of view.
 
-For more details, see [Data Model Diagram](./zeenea-data-model-diagram.md).
+For more details, see [Data Model Diagram](./zeenea-data-model-diagram).
 
 ### Data Quality
 
@@ -78,7 +78,7 @@ This section allows visualizing the list of quality checks that are performed on
 
 To be able to browse data quality information, an integration with your data quality tool is required.
 
-For more details, see the [Synchronization with a Data Quality Management Tool](./zeenea-synchronization.md).
+For more details, see the [Synchronization with a Data Quality Management Tool](./zeenea-synchronization).
 
 ### Discussions
 
@@ -119,8 +119,8 @@ Click on a Field name to show its overview panel with more information.
 
 According to the type of data source and the configuration made by your administrators, you will also be able to browse:
 
-* **data profiling**: For Fields in the overview. For more information, see [Data Profiling](./zeenea-data-profiling.md).
-* **sample data**: For more information, see [Data Sampling](./zeenea-data-sampling.md).
+* **data profiling**: For Fields in the overview. For more information, see [Data Profiling](./zeenea-data-profiling).
+* **sample data**: For more information, see [Data Sampling](./zeenea-data-sampling).
 
 ### Visualizations
 
@@ -152,7 +152,7 @@ If alternative names are defined (synonym, acronym, variant), they are displayed
 
 A graphical widget also allows you to view the hierarchical links to other Glossary Objects.
 
-For more details, see [Hierarchical Graph of a Glossary Item](./zeenea-glossary-hierarchy.md).
+For more details, see [Hierarchical Graph of a Glossary Item](./zeenea-glossary-hierarchy).
 
 The "technical item/glossary item" associations can be viewed under the "Implementation" tab.
 

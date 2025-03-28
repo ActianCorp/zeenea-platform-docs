@@ -15,15 +15,15 @@ A configuration template can be downloaded here: [qlik-cloud.conf](https://actia
 
 ## Installing the Plugin
 
-The Qlik Cloud plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
+The Qlik Cloud plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list)
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
 
 In order to establish a connection with a Qlik Cloud instance, specifying the following parameters in the dedicated file is required:
 
@@ -126,7 +126,7 @@ Available filtering key for Qlik Cloud is the following :
 
 * `name`
 
-Read more: [Filters](zeenea-filters.md).
+Read more: [Filters](zeenea-filters).
 
 ## Data Extraction
 
@@ -155,11 +155,11 @@ Qlik Cloud connector is able to reconstruct the lineage of tables used in applic
     <th>Possible value of `alias` parameter to be set in source system configuration file</th>
   </tr>
   <tr>
-    <td>[BigQuery](./zeenea-connector-google-bigquery.md)</td>
+    <td>[BigQuery](./zeenea-connector-google-bigquery)</td>
     <td>`bigquery.googleapis.com/{project name}`</td>
   </tr>
   <tr>
-    <td>[Snowflake](./zeenea-connector-snowflake.md)</td>
+    <td>[Snowflake](./zeenea-connector-snowflake)</td>
     <td>`{snowflake account name}.snowflakecomputing.com/{database name}`</td>
   </tr>
 </table>
@@ -213,7 +213,7 @@ To represent the data flow from an external source, a Zeenea Data Process will b
  
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
  
-More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys).
   
  <table>
    <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>

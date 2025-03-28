@@ -7,7 +7,7 @@ title: Generic Dataset (Deprecated)
 ## Deprecated
 
 :::caution[NOTE]
-**This connector is deprecated. Use the new [ZDF Dataset](./zeenea-connector-zdf.md) connector instead**.
+**This connector is deprecated. Use the new [ZDF Dataset](./zeenea-connector-zdf) connector instead**.
 :::
 
 :::caution[DISCLAIMER]
@@ -32,15 +32,15 @@ This connector is compatible with Zeenea description files as illustrated by the
 
 ## Installing the Plugin
 
-This connector is presented as a plugin and can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
+This connector is presented as a plugin and can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list)
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
 
 For this specific connector, fill out the following parameters in the dedicated file:
 
@@ -127,7 +127,7 @@ Dataset field.
  
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
  
-More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys).
   
  <table>
    <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>

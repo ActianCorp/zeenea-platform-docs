@@ -21,19 +21,19 @@ The Power BI SaaS connector is compatible with the product online version.
 
 ## Installing the Plugin
 
-The Power BI SaaS plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
+The Power BI SaaS plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list)
 
 :::caution[ATTENTION]
 Updating the connector to version 1.7.0 from a previous version requires a data migration for the "Data process" type objects. Please contact customer service to assist you in this migration.
 :::
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
 
 In order to establish a connection with a PowerBI SaaS instance, specifying the following parameters in the dedicated file is required:
 
@@ -193,7 +193,7 @@ Starting with version 1.9.0 the connector has a rich filter available that enabl
 
 `contact.role_filter = "role in ('Owner', 'Read')"`
 
-Read more: [Filters](zeenea-filters.md)
+Read more: [Filters](zeenea-filters)
 
 ## Data Extraction
 
@@ -224,13 +224,13 @@ Table summarizing the possible values of the `alias` parameter to be completed i
 
 | Source System| Model | Example |
 | :--- | :--- | :---- |
-| [SQL Server](./zeenea-connector-sqlserver.md) | Server name:port/Database name | `alias = ["zeenea.database.windows.net:1433/db"]` * |
-| [BigQuery](./zeenea-connector-google-bigquery.md) | BigQuery project identifier	| `alias = ["zeenea-project"]` |
-| [AWS Redshift](./zeenea-connector-aws-redshift.md) | Server name:port/Database name | `alias = ["zeenea.cthwlv3ueke2.eu-west-3.redshift.amazonaws.com:5439/database"]` |
-| [AWS Athena](./zeenea-connector-aws-athena.md) | N/A | N/A |
-| [Snowflake](./zeenea-connector-snowflake.md) | Server name/Database name | `alias = ["kn999999.eu-west-1.snowflakecomputing.com/ZEENEA""]` * |
-| [Oracle](./zeenea-connector-oracle.md) | Server name:port/Service Name | `alias = ["oracle.example.com:1521/XE"]` |
-| [Denodo](./zeenea-connector-denodo.md) | Server name:ODBC port | `alias = ["denodo.database.com:9996"]` |
+| [SQL Server](./zeenea-connector-sqlserver) | Server name:port/Database name | `alias = ["zeenea.database.windows.net:1433/db"]` * |
+| [BigQuery](./zeenea-connector-google-bigquery) | BigQuery project identifier	| `alias = ["zeenea-project"]` |
+| [AWS Redshift](./zeenea-connector-aws-redshift) | Server name:port/Database name | `alias = ["zeenea.cthwlv3ueke2.eu-west-3.redshift.amazonaws.com:5439/database"]` |
+| [AWS Athena](./zeenea-connector-aws-athena) | N/A | N/A |
+| [Snowflake](./zeenea-connector-snowflake) | Server name/Database name | `alias = ["kn999999.eu-west-1.snowflakecomputing.com/ZEENEA""]` * |
+| [Oracle](./zeenea-connector-oracle) | Server name:port/Service Name | `alias = ["oracle.example.com:1521/XE"]` |
+| [Denodo](./zeenea-connector-denodo) | Server name:ODBC port | `alias = ["denodo.database.com:9996"]` |
 
 :::note
 The connector creates a data process object for each dataset from Power BI SaaS to represent the link with the source dataset (even if the source dataset is not present in the catalog).
@@ -292,7 +292,7 @@ To represent the data flow from an external source, a Zeenea Data Process will b
  
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
  
-More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys).
   
 <table>
   <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>

@@ -10,24 +10,24 @@ title: MongoDB
 * The traffic flows from Zeenea towards the MongoDB cluster must be open.
 
 :::note
-A link to the configuration template can be found here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+A link to the configuration template can be found here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 :::
 
 ## Supported Versions
 
-Since scanner version 26.9, the MongoDB plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
+Since scanner version 26.9, the MongoDB plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list)
 
 ## Installing the Plugin
 
 Since scanner version 26.9, the MongoDB plugin can be downloaded here: Connectors: download links
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
 
 In order to establish a connection to a MongoDB cluster, specifying the following parameters in the dedicated file is required:
 
@@ -192,7 +192,7 @@ Table fields.
  
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
  
-More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys).
   
  <table>
    <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>

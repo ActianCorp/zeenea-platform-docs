@@ -73,7 +73,7 @@ Our scanner is regularly updated to correct bugs and add improvements. **We reco
 
 Unless the binary is specifically provided to you by Zeenea, the Scanner can be downloaded as an archive by using a dedicated API entry point or via the Scanners monitoring page in Zeenea (Administration interface) where a download link is proposed.
 
-If you decide to download the Scanner using the API, you have to create a dedicated API key. See [Managing API Keys](./zeenea-managing-api-keys.md).
+If you decide to download the Scanner using the API, you have to create a dedicated API key. See [Managing API Keys](./zeenea-managing-api-keys).
 
 Then, use the previously created API key in the following command:
 
@@ -184,7 +184,7 @@ Example:
 
 ### Enter Identifiers
 
-The Scanner authenticates itself to the platform with an "Scanner" type API key containing a pair of information (id and secret). To generate an API key, refer to [Managing API Keys](./zeenea-managing-api-keys.md).
+The Scanner authenticates itself to the platform with an "Scanner" type API key containing a pair of information (id and secret). To generate an API key, refer to [Managing API Keys](./zeenea-managing-api-keys).
 
 The identifier and the secret must be entered in the node `api-key`, under `id` and `key` respectively.
 
@@ -288,11 +288,11 @@ grpc {
 
 You have to pay attention to the ability for the scanner to open a connection to the platforms it should communicate with: network routes should be enabled.
 
-For more about our connectors, see [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+For more about our connectors, see [Zeenea Connector Downloads](./zeenea-connectors-list).
 
 New connections are defined using a dedicated configuration file under the connections folder of the Scanner.
 
-Learn how to [create, manage or delete a connection](./zeenea-managing-connections.md).
+Learn how to [create, manage or delete a connection](./zeenea-managing-connections).
 
 ## Using a Secret Manager
 
@@ -519,5 +519,5 @@ WantedBy=multi-user.target
 * Access systemd logs: `journalctl`
 * Access to systemd logs limited to the service: `journalctl -u zeenea-scanner`
 
-If you experience issues while configuring your scanner, refer to [Troubleshooting Scanners and Connections](./zeenea-troubleshooting.md)
+If you experience issues while configuring your scanner, refer to [Troubleshooting Scanners and Connections](./zeenea-troubleshooting)
 

@@ -21,9 +21,9 @@ These insights are displayed graphically for each field of a dataset and will sh
 \*\* Only the number of values in a field is an actual statistic<br />
 \*\*\* Box-plots and bar charts are only available for numerical values
 
-    ![](../static/img/zeenea-data-profiling1.png)
+    ![](./_shared/zeenea-data-profiling1.png)
 
-    ![](../static/img/zeenea-data-profiling2.png)
+    ![](./_shared/zeenea-data-profiling2.png)
 
 ## Available Graphical Analysis
 
@@ -62,9 +62,9 @@ For the Data Profiling feature to work, you will need to make sure of the follow
 * The Data Profiling on the connection itself has been activated 
 * Data Profiling has been enabled in every field where it is relevant. This is done by Data Stewards, on Zeenea Studio, using the option "Activate Data Profiling for this Field".
 
-    ![](../static/img/zeenea-data-profiling3.png)
+    ![](./_shared/zeenea-data-profiling3.png)
 
-    ![](../static/img/zeenea-data-profiling4.png)
+    ![](./_shared/zeenea-data-profiling4.png)
 
 In the image above, the option "Publish Data Profiling in the Explorer" will allow your Data Explorers to have access to the various charts for each specific field. 
 

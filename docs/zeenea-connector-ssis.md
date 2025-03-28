@@ -21,15 +21,15 @@ The SSIS connector is compatible with SSIS 2019.
 
 ## Installing the Plugin
 
-The SSIS plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+The SSIS plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Declaring the Connection
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
  
 In order to establish a connection with SSIS, the following parameters in the dedicated file are required:
  
@@ -99,7 +99,7 @@ Microsoft Documentation: [SSIS Catalogue - Permissions ](https://learn.microsoft
 
 The SSIS connector benefits from the feature of rich filters in the configuration of the connector. The key that can be used to filter the elements is `package`.
 
-Read more: [Filters](zeenea-filters.md).
+Read more: [Filters](zeenea-filters).
 
 ## Data Extraction
 
@@ -134,11 +134,11 @@ The connector will synchronize all the transformations identified in the project
 
 The SSIS connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to data processes. This feature is available for the following JDBC connections:
 
-* [PostgreSQL](./zeenea-connector-postgresql.md)
-* [AWS Redshift](./zeenea-connector-aws-redshift.md)
-* [SQL Server](./zeenea-connector-sqlserver.md)
-* [Oracle](./zeenea-connector-oracle.md)
-* [Snowflake](./zeenea-connector-snowflake.md)
+* [PostgreSQL](./zeenea-connector-postgresql)
+* [AWS Redshift](./zeenea-connector-aws-redshift)
+* [SQL Server](./zeenea-connector-sqlserver)
+* [Oracle](./zeenea-connector-oracle)
+* [Snowflake](./zeenea-connector-snowflake)
 
 To do so, an additional parameter is needed in the JDBC connection, as detailed below:
 
@@ -162,7 +162,7 @@ A data process is the representation of an SSIS transformation.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
- Read more: [Identification Keys](./zeenea-identification-keys.md)
+ Read more: [Identification Keys](./zeenea-identification-keys)
 
 <table>
   <tr><th>Object</th><th>Identifier Key</th><th>Description</th></tr>

@@ -20,7 +20,7 @@ Zeenea Studio is the application designed for your data management teams to mana
 
 Thought to fit any organization, our data catalog is meant to be completely customizable, and the features of automation and suggestions are made to simplify your life!
 
-Read more: [Zeenea Studio Overview](./zeenea-studio-overview.md)
+Read more: [Zeenea Studio Overview](./zeenea-studio-overview)
 
 ### Zeenea Explorer
 
@@ -28,5 +28,5 @@ Zeenea Explorer provides data teams with a unique search experience within the d
 
 Just like a marketplace, your users access a user-friendly interface to search, understand and work collaboratively on their data and related uses.
 
-Read more: [Zeenea Explorer Overview](./zeenea-explorer-overview.md)
+Read more: [Zeenea Explorer Overview](./zeenea-explorer-overview)
  

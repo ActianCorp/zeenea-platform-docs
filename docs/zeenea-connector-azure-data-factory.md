@@ -10,7 +10,7 @@ title: Azure Data Factory
 * Zeenea traffic flows towards the data source must be open. 
 
 :::note
-A link to the configuration template can be found here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+A link to the configuration template can be found here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 :::
  
 ## Supported Versions
@@ -19,15 +19,15 @@ The Azure Data Factory connector is compatible with the product online version.
 
 ## Installing the Plugin
 
-The Azure plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+The Azure plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
  
 In order to establish a connection with an Azure Data Factory instance, specifying the following parameters in the dedicated file is required:
 
@@ -94,9 +94,9 @@ The table below summarizes the possible values of the `alias` parameter to be co
 
 | Source System| Model | Example |
 | :--- | :--- | :---- |
-| [SQL Server](./zeenea-connector-sqlserver.md) | Server name:port/Database name | `alias = ["zeenea.database.windows.net:1433/db"]` * |
-| [ADLS](./zeenea-connector-azure-data-lake.md) | Storage account.dfs.core.windows.net | `alias = [".dfs.core.windows.net"]` |
-| [Snowflake](./zeenea-connector-snowflake.md) | Server name/Database name | `alias = ["kn999999.eu-west-1.snowflakecomputing.com/ZEENEA""]` * |
+| [SQL Server](./zeenea-connector-sqlserver) | Server name:port/Database name | `alias = ["zeenea.database.windows.net:1433/db"]` * |
+| [ADLS](./zeenea-connector-azure-data-lake) | Storage account.dfs.core.windows.net | `alias = [".dfs.core.windows.net"]` |
+| [Snowflake](./zeenea-connector-snowflake) | Server name/Database name | `alias = ["kn999999.eu-west-1.snowflakecomputing.com/ZEENEA""]` * |
 
 (*) Do not fill in the database name if the configuration of the connector is in `multi_catalog.enabled = true`.
 
@@ -116,7 +116,7 @@ A data process is the representation of a pipeline.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys)
 
 <table>
   <tr><th>Object</th><th>Identifier Key</th><th>Description</th></tr>

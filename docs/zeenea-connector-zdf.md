@@ -22,15 +22,15 @@ These three connectors work the same way and share the same configuration parame
 
 These connectors are available in the zdf-connector-plugin.
 
-It can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+It can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ### Connection Settings
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
 
 ### Configuration Templates:
 
@@ -521,7 +521,7 @@ One of the attributes `identificationKey` or `path` must be filled in.
   <tr>
     <td>`identificationKey`</td>
     <td>`Text`</td>
-    <td>Dataset [identification key](./zeenea-identification-keys.md)</td>
+    <td>Dataset [identification key](./zeenea-identification-keys)</td>
   </tr>
   <tr>
     <td>`connectionCode`</td>

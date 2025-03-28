@@ -17,7 +17,7 @@ To create a Topic:
 3. Click the **Save filters** as button on the top-right of the screen and then select **New Topic**.
 4. Fill in the requested information and click **Confirm**. 
 
-    ![](../static/img/zeenea-topic-new.png)
+    ![](./_shared/zeenea-topic-new.png)
 
 The following information is required to create a Topic:
 
@@ -33,7 +33,7 @@ Once a new Topic is created, you can still modify some of its characteristics by
 The filters of the Topic cannot be modified. You can only modify the name, description, and color of a Topic.
 :::
 
-    ![](../static/img/zeenea-topic-edit.png)
+    ![](./_shared/zeenea-topic-edit.png)
 
 ## Deleting a Topic
 

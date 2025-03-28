@@ -10,7 +10,7 @@ title: Google Cloud Storage
 * Zeenea traffic flow towards Google Cloud Storage must be open. 
 
 :::note
-A link to the configuration template can be found here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+A link to the configuration template can be found here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 :::
 
 ## Supported Versions
@@ -21,15 +21,15 @@ The connector was successfully tested with the cloud-based application.
 
 From version 54 of the scanner, the Google Cloud Storage connector is presented as a plugin. 
 
-It can be downloaded here and requires a scanner version 64 or later: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+It can be downloaded here and requires a scanner version 64 or later: [Zeenea Connector Downloads](./zeenea-connectors-list).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
  
 In order to establish a connection with Google Cloud Storage, specifying the following parameters in the dedicated file is required:
 
@@ -71,13 +71,13 @@ Since version 54 of the scanner, the Google Cloud Storage connector benefits fro
 * bucket: name of the bucket
 * key: name of the object
 
-Read more: [Filters](zeenea-filters.md)
+Read more: [Filters](zeenea-filters)
 
 ## Data Extraction
 
 There is a specific set of rules that the connector must follow to rebuild hierarchy and datasets, in order to extract data.
 
-Read more: [Dataset Detection on File Systems](./zeenea-dataset-detection.md)
+Read more: [Dataset Detection on File Systems](./zeenea-dataset-detection)
 
 ## Collected Metadata
 
@@ -114,7 +114,7 @@ Dataset field.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](./zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](./zeenea-identification-keys).
 
 <table>
   <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>

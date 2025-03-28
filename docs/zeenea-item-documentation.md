@@ -147,4 +147,4 @@ Depending on your metamodel configuration, you can link physical or logical item
 
 Possible links between item types are defined at the metamodel level. So that you can not link a physical item with any glossary item. The type of link must be authorized by your metamodel.
 
-Read more: [Configuring the Glossary Metamodel](./zeenea-studio-configure-glossary-model.md)
+Read more: [Configuring the Glossary Metamodel](./zeenea-studio-configure-glossary-model)

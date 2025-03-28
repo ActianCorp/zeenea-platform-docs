@@ -15,15 +15,15 @@ The MicroStrategy connector is available for the SaaS and the on-prem product ve
 
 ## Installing the Plugin
 
-The Microstrategy connector is available as a plugin and can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
+The Microstrategy connector is available as a plugin and can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list)
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
 
 In order to establish a connection with a MicroStrategy instance, specifying the following parameters in the dedicated file is required:
 
@@ -127,11 +127,11 @@ The connector is able to reconstruct the lineage of tables used in the folders i
     <th>Possible value of `alias` parameter to be set in source system configuration file</th>
   </tr>
   <tr>
-    <td>[BigQuery](./zeenea-connector-google-bigquery.md)</td>
+    <td>[BigQuery](./zeenea-connector-google-bigquery)</td>
     <td>BigQuery project identifier. Example: `alias = ["project_id"]`</td>
   </tr>
   <tr>
-    <td>[PostgreSQL](./zeenea-connector-postgresql.md), [Oracle](./zeenea-connector-oracle.md), [Redshift](./zeenea-connector-aws-redshift.md), [SQLServer](./zeenea-connector-sqlserver.md)</td>
+    <td>[PostgreSQL](./zeenea-connector-postgresql), [Oracle](./zeenea-connector-oracle), [Redshift](./zeenea-connector-aws-redshift), [SQLServer](./zeenea-connector-sqlserver)</td>
     <td>Database address. Example: `alias = ["host:port/database"]`</td>
   </tr>
 </table>
@@ -196,7 +196,7 @@ A field can be an attribute, a metric, or a field from the dataset.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys).
  
  <table>
    <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>

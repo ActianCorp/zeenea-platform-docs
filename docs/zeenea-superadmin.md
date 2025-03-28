@@ -57,9 +57,9 @@ The physical and logical layer of the catalog corresponds to all the technical a
 
 Refer to the following links for more details:
 
-* Read more: [Configuring Templates](./zeenea-configuring-templates.md)
-* Read more: [Creating or Deleting a Custom Item Type](./zeenea-studio-create-delete-custom-item.md)
-* Read more: [Adding Input and Output Types to Data Processes](./zeenea-add-input-output-types.md)
+* Read more: [Configuring Templates](./zeenea-configuring-templates)
+* Read more: [Creating or Deleting a Custom Item Type](./zeenea-studio-create-delete-custom-item)
+* Read more: [Adding Input and Output Types to Data Processes](./zeenea-add-input-output-types)
 
 ### Define the Metamodel of Your Glossary
 
@@ -67,13 +67,13 @@ The glossary is used to represent all the business concepts of your company (bus
 
 Here you can create the item types you want, define their templates and create relationships between glossary item types or with physical layer item types.
 
-Read more: [Configuring the Glossary Metamodel](./zeenea-studio-configure-glossary-model.md)
+Read more: [Configuring the Glossary Metamodel](./zeenea-studio-configure-glossary-model)
 
 ## Define Responsibilities
 
 In Zeenea, a responsibility describes the nature of the relationship between an individual or an entity and an item of the catalog. This attribute thus allows any user to identify the relevant contact person for their needs from the detailed page of the item once it has been completed (Data Steward, Data Owner, etc.).
 
-Read more: [Creating, Editing, or Deleting Responsibilities](./zeenea-studio-create-delete-responsibility.md)
+Read more: [Creating, Editing, or Deleting Responsibilities](./zeenea-studio-create-delete-responsibility)
 
 ## Step 4: Start Importing and Documenting Your Items
 

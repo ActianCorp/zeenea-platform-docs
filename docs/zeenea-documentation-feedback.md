@@ -22,7 +22,7 @@ There are two ways to provide your feedback on the documentation:
 
 Entering page feedback is easy, and available to anyone. There is a **Page Feedback** button on the bottom of every page:
 
-  ![Page Feedback Button](../static/img/Feedback-Button.png)
+  ![Page Feedback Button](./_shared/Feedback-Button.png)
 
 Click this button to display a text field, enter your message, and click **Send Feedback**. Your message will be delivered to us. Feel free to include your email address in the message if you'd like to chat.
 
@@ -32,10 +32,10 @@ Users are encouraged to suggest content edits. Suggesting page edits requires yo
 
 There is a **Suggest Edits** button on the bottom of every page:
 
-  ![Suggest Edits Button](../static/img/Suggest-Edits-Button.png)
+  ![Suggest Edits Button](./_shared/Suggest-Edits-Button.png)
 
 Clicking this button opens the page in the ActianCorp zeenea-platform-docs repository in GitHub:
 
-  ![Suggest Edits Button](../static/img/GitHub-Repo.png)
+  ![Suggest Edits Button](./_shared/GitHub-Repo.png)
 
 Make any suggested edits, then create a pull request. We will review your changes, make any necessary edits, then merge the changes if appropriate.

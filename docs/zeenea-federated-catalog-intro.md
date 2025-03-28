@@ -36,5 +36,5 @@ Finally, Zeenea’s federated graph-powered EDM enables organizations to mirror 
  
 ## Related Resources
 
-* [Building a Federated Catalog](./zeenea-federated-catalog-building.md)
-* [Searching the Federated Catalog](./zeenea-searching-federated-catalog.md)
+* [Building a Federated Catalog](./zeenea-federated-catalog-building)
+* [Searching the Federated Catalog](./zeenea-searching-federated-catalog)

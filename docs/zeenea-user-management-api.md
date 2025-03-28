@@ -15,18 +15,18 @@ The recommended permission scope for the  User Management API is **Admin**.
 These are the currently available operations:
 
 * **List permission sets**
-  * `listPermissionSets` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+  * `listPermissionSets` [Deprecated. See [SCIM API](./zeenea-scim-api).]
 * **Create or update a user**
-  * `createUser` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
-  * `upsertUser` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+  * `createUser` [Deprecated. See [SCIM API](./zeenea-scim-api).]
+  * `upsertUser` [Deprecated. See [SCIM API](./zeenea-scim-api).]
 * **Retrieve the information about a user**
-  * `loadUserById` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
-  * `loadUserByEmail` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+  * `loadUserById` [Deprecated. See [SCIM API](./zeenea-scim-api).]
+  * `loadUserByEmail` [Deprecated. See [SCIM API](./zeenea-scim-api).]
   * `createAllUsersExport`
   * `loadUsersExportStatus`
 * **Delete a user**
-  * `deleteUserById` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
-  * `deleteUserByEmail` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+  * `deleteUserById` [Deprecated. See [SCIM API](./zeenea-scim-api).]
+  * `deleteUserByEmail` [Deprecated. See [SCIM API](./zeenea-scim-api).]
 
 **Note**: The full API documentation is available in the [Voyager](https://github.com/APIs-guru/graphql-voyager) tool.  
 

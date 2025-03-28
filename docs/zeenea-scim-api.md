@@ -22,7 +22,7 @@ The recommended permission scope for the SCIM API is **Admin**.
 
 ## Authentication and Headers
 
-To connect with Zeenea SCIM API, you need to generate an API key from the Zeenea Administration interface. See the following article which describes how to do this: [Managing API Keys](./zeenea-managing-api-keys.md).
+To connect with Zeenea SCIM API, you need to generate an API key from the Zeenea Administration interface. See the following article which describes how to do this: [Managing API Keys](./zeenea-managing-api-keys).
 
 Each SCIM request must provide authentication information to access the service.
 

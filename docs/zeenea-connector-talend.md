@@ -15,15 +15,15 @@ The Talend connector is compatible with Talend Open Studio version 7.3 and highe
 
 ## Installing the Plugin
 
-The Talend plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+The Talend plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Declaring the Connection
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
  
 In order to establish a connection with Talend, the following parameters in the dedicated file are required:
  
@@ -78,7 +78,7 @@ In order to collect metadata, the user the scanner is executed with must have en
 
 Since version 47 of the scanner, the Talend connector benefits from the feature of rich filters in the configuration of the connector. The key that can be used to filter the elements is `job`.
 
-Read more: [Filters](zeenea-filters.md)
+Read more: [Filters](zeenea-filters)
 
 ## Data Extraction
 
@@ -94,11 +94,11 @@ The connector will synchronize all transformations identified in the project and
 
 The Talend connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog in order to be linked to data processes. This feature is available for the following JDBC connections:
 
-* [PostgreSQL](./zeenea-connector-postgresql.md)
-* [AWS Redshift](./zeenea-connector-aws-redshift.md)
-* [SQL Server](./zeenea-connector-sqlserver.md)
-* [Oracle](./zeenea-connector-oracle.md)
-* [Snowflake](./zeenea-connector-snowflake.md)
+* [PostgreSQL](./zeenea-connector-postgresql)
+* [AWS Redshift](./zeenea-connector-aws-redshift)
+* [SQL Server](./zeenea-connector-sqlserver)
+* [Oracle](./zeenea-connector-oracle)
+* [Snowflake](./zeenea-connector-snowflake)
 
 To do so, an additional parameter is needed in the JDBC connection, as detailed below:
 
@@ -130,7 +130,7 @@ A data process is the representation of a Talend transformation.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys)
 
 <table>
   <tr><th>Object</th><th>Identifier Key</th><th>Description</th></tr>

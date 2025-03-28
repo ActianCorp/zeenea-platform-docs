@@ -10,7 +10,7 @@ A property is a component of the metamodel used to store metadata specific to a 
 
 1. Click the **New Property** button to access the property creation screen:
 
-    ![](../static/img/zeenea-property-new.png)
+    ![](./_shared/zeenea-property-new.png)
 
 2. Complete the following fields: 
 

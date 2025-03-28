@@ -10,7 +10,7 @@ title: Power BI Report Server
 * Zeenea traffic flows towards PowerBI Report Server must be opened.
 
 :::note
-A link to the configuration template can be found here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+A link to the configuration template can be found here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 :::
 
 ## Supported Versions
@@ -21,15 +21,15 @@ The Power BI Report Server module is compatible with all versions.
 
 From version 54 of the scanner, the Power BI Report Server connector is presented as a plugin.
 
-It can be downloaded here and requires a scanner version 64 or later: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
+It can be downloaded here and requires a scanner version 64 or later: [Zeenea Connector Downloads](./zeenea-connectors-list)
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
 
 For PowerBI Report Server, the following parameters are required:
 
@@ -108,7 +108,7 @@ A Zeenea Dataset is a Power BI Report Server dataset.
  
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
  
-More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys).
   
 <table>
   <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>

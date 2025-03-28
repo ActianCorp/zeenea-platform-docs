@@ -14,7 +14,7 @@ title: Couchbase
 | Couchbase | Java SDK | 8091 |
 
 :::note
-A link to the configuration template can be found here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+A link to the configuration template can be found here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 :::
 
 ## Supported Versions
@@ -23,15 +23,15 @@ The Couchbase connector was developed and tested with version 7.0.2. It is compa
 
 ## Installing the Plugin
 
-The Couchbase connector can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+The Couchbase connector can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
  ## Declaring the Connection
   
  Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
- Read more: [Managing Connections](./zeenea-managing-connections.md)
+ Read more: [Managing Connections](./zeenea-managing-connections)
  
 In order to establish a connection with a Couchbase instance, specifying the following parameters in the dedicated file is required:
  
@@ -147,7 +147,7 @@ Dataset field.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys)
 
 <table>
   <tr>

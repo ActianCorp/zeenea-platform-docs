@@ -10,7 +10,7 @@ Data sampling is a statistical analysis technique used to select, manipulate and
 
 In the data catalog, data samples enable data scientists, predictive modelers, and data analysts to gain a concrete insight into the content of a Dataset and the formats used, and thus to more quickly validate the suitability of a Dataset for their use case.
 
-      ![](../static/img/zeenea-data-sampling.png)
+      ![](./_shared/zeenea-data-sampling.png)
 
 ## How is data sampling carried out?
 

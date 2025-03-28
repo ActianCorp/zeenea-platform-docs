@@ -14,7 +14,7 @@ title: Teradata
 :::
 
 :::note
-A link to the configuration template can be found here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+A link to the configuration template can be found here: [Zeenea Connector Downloads](./zeenea-connectors-list).
 :::
 
 ## Supported Versions
@@ -27,13 +27,13 @@ From version 54 of the scanner, the Teradata connector is presented as a plugin.
 
 It requires a scanner version 66 and can be downloaded here: [https://plugins.zeenea.app/jdbc-connector-plugin/jdbc-connector-plugin-66.zip](https://plugins.zeenea.app/jdbc-connector-plugin/jdbc-connector-plugin-66.zip).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin).
 
 ## Declaring the Connection
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](./zeenea-managing-connections.md)
+Read more: [Managing Connections](./zeenea-managing-connections)
  
 In order to establish a connection with Teradata, specifying the following parameters in the dedicated file is required:
  
@@ -125,7 +125,7 @@ Since version 47 of the scanner, the Teradata connector benefits from the featur
 
 This functionality also applies to the Roles metadata of the datasets from the `roles` parameters to be completed with the `role` key. Example: `roles = "role in ('role1', 'role2')"`.
 
-Read more: [Filters](zeenea-filters.md)
+Read more: [Filters](zeenea-filters)
 
 | Criteria | Description |
 | :--- | :--- |
@@ -178,7 +178,7 @@ Dataset field.
 The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
 :::
 
-The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics in the following documentation: [Data Profiling](./zeenea-data-profiling.md).
+The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics in the following documentation: [Data Profiling](./zeenea-data-profiling).
  
 Read access on targeted tables is mandatory to activate the feature. For Teradata technologies, the connector executes the following request to get a data sample: 
 
@@ -195,13 +195,13 @@ SELECT
 
 The request above collects a data sample for each field where the feature is activated through the studio (`field1`, `field2`). The limit is 10.000 lines (`linesPercentage` parameter) deduced from a calculation with the number of rows set in the previous request.
 
-These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Zeenea Scanner Setup](./zeenea-scanner-setup.md).
+These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Zeenea Scanner Setup](./zeenea-scanner-setup).
 
 ## Object Identification Keys
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](./zeenea-identification-keys.md)
+Read more: [Identification Keys](./zeenea-identification-keys)
 
 <table>
   <tr>

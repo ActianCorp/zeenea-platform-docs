@@ -17,7 +17,7 @@ Zeenea offers 4 APIs:
 
 For each API, you will find dedicated documentation, allowing you to better understand the use cases, their current limits, and some examples of requests.
 
-The lifecycle of APIs is detailed here: [Zeenea API Lifecycle](./zeenea-api-lifecycle.md).
+The lifecycle of APIs is detailed here: [Zeenea API Lifecycle](./zeenea-api-lifecycle).
 
 ## API Authentication System
 

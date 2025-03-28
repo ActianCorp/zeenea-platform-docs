@@ -20,7 +20,7 @@ Bulk publishing can be done on:
 * a selection of items via the checkboxes in the search results
 * all the results of a search by using the checkbox in the column header
 
-    ![](../static/img/zeenea-editing-item-docs.png)
+    ![](./_shared/zeenea-editing-item-docs.png)
 
 :::note
 The update is performed asynchronously. You may need to refresh the page to see changes made to the selected items.
@@ -38,7 +38,7 @@ This feature is enabled if the following conditions are met:
 3. Select from the list a responsibility that will be associated with it.
 4. Click **Confirm** to close the window and update the selected items.
 
-    ![](../static/img/zeenea-contacts-add.png)
+    ![](./_shared/zeenea-contacts-add.png)
 
 :::note
 An item can be assigned several times to the same contact with different responsibilities. In the same way, several contacts may share a responsibility.
@@ -55,7 +55,7 @@ Click on the "Add People" button, then the "Add Contacts" button :
 1. Search for a user already existing in Zeenea.
 2. Click **Confirm** to close the window and update the selected items.
 
-    ![](../static/img/zeenea-curators-add.png)
+    ![](./_shared/zeenea-curators-add.png)
 
 ## Managing Properties
 
@@ -75,7 +75,7 @@ The property bulk editing feature works in "undo and replace" mode. The values p
 
 Leave a property empty to reset the value of this field for the selected items.
 
-    ![](../static/img/zeenea-properties-manage.png)
+    ![](./_shared/zeenea-properties-manage.png)
 
 ## Managing Glossary Items
 
@@ -95,7 +95,7 @@ The Glossary Items management feature merges the selected values with those alre
 
 It is not possible to delete values using this feature.
 
-  ![](../static/img/zeenea-glossary-item-manage.png)
+  ![](./_shared/zeenea-glossary-item-manage.png)
 
 ## Deleting items
 
@@ -110,7 +110,7 @@ Click the **Delete** button to open the window below.
 
 Click **Yes** to close the window and start the final deletion of the selected items.
 
-  ![](../static/img/zeenea-delete-items.png)
+  ![](./_shared/zeenea-delete-items.png)
 
 ## Sharing Items
 
