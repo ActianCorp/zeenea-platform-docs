@@ -24,6 +24,7 @@ const sidebars = {
         'zeenea-supported-browsers',
         'zeenea-documentation-feedback',
         'zeenea-roadmap',
+        'copyright',
         {
           type: 'category',
           label: 'YOUR FIRST STEPS',
