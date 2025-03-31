@@ -145,10 +145,6 @@ const config = {
                 </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               `,
           },
-          {
-            label: `Legal`,
-            href: '/legal',
-          },
         ],  
         copyright: `Copyright © ${new Date().getFullYear()} Actian Corporation. All rights reserved.`,
       },

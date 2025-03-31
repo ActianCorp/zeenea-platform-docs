@@ -1,5 +1,5 @@
 ---
-title: Copyright
+title: Copyright Information
 custom_edit_url: null
 ---
 
