@@ -8,7 +8,7 @@ Actian Zeenea provides an intelligent data discovery platform.
 
 This solution enables metadata management for search, exploration, data governance, compliance, and cloud transformation initiatives.
 
-     ![](/img/zeenea-platform.png)
+     ![](./_shared/zeenea-platform.png)
 
 ### Universal connectivity
 
@@ -96,7 +96,7 @@ Zeenea Studio is the application that enables data management teams to manage, m
 
 It is the back-office tool of the platform.
 
-  ![](/img/zeenea-studio-intro.png)
+  ![](./_shared/zeenea-studio-intro.png)
 
 ### Zeenea Explorer
 
@@ -104,4 +104,4 @@ With Zeenea Explorer, your business users have access to a user-friendly interfa
 
 Drawing inspiration from e-commerce websites, it offers very simple ergonomics based on research ans of data and collaboration around their uses.
 
-  ![](/img/zeenea-explorer.png)
+  ![](./_shared/zeenea-explorer.png)

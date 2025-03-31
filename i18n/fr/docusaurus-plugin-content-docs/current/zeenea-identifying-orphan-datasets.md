@@ -16,11 +16,11 @@ The latter is identified at different levels:
 
 On the overview in the search:
 
-  ![](/img/zeenea-orphaned-dataset1.png)
+  ![](./_shared/zeenea-orphaned-dataset1.png)
 
 On its detailed page:
 
-  ![](/img/zeenea-orphaned-dataset2.png)
+  ![](./_shared/zeenea-orphaned-dataset2.png)
 
 ## Deleting Orphan Datasets
 

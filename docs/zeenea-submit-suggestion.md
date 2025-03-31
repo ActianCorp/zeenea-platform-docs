@@ -8,11 +8,11 @@ In the Explorer, from the details page of an Item or from its overview panel, yo
 
 To submit a suggestion, click on the **Submit a suggestion** button at the top right of each details page, or in the **Suggestions** tab of an overview panel.
 
-![](/img/zeenea-submit-suggestion1.png)
+![](./_shared/zeenea-submit-suggestion1.png)
 
-![](/img/zeenea-submit-suggestion2.png)
+![](./_shared/zeenea-submit-suggestion2.png)
 
-![](/img/zeenea-submit-suggestion3.png)
+![](./_shared/zeenea-submit-suggestion3.png)
 
 Your suggestion must be between 20 and 1,000 characters long.
 
@@ -20,7 +20,7 @@ Once registered, you'll receive a confirmation email with a link to reconnect di
 
 If you make a mistake, you can delete your suggestion. Please note that other Explorer users cannot view your suggestions.
 
-![](/img/zeenea-submit-suggestion4.png)
+![](./_shared/zeenea-submit-suggestion4.png)
 
 ## Processing of your Suggestion
 

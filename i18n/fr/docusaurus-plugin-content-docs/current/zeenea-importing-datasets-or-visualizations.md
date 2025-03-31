@@ -18,7 +18,7 @@ These steps are described in the sections: [Zeenea Scanner Setup](./zeenea-scann
 
 If the requirements are met, you can access the import wizard by clicking the "Import" button from Zeenea Studio, and then clicking on “Select a connection”. Only specific profiles are allowed to import items into Zeenea.
 
-  ![](/img/zeenea-import-items.png)
+  ![](./_shared/zeenea-import-items.png)
 
 ### Step 1: Connection
 

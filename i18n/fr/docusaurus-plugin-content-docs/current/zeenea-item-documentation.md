@@ -117,7 +117,7 @@ The rich text editor supports the following options:
 * Images (as links or by upload)
 * Delete formatting
 
-![](/img/zeenea-edit-description.png)
+![](./_shared/zeenea-edit-description.png)
 
 In rich text mode, descriptions are converted to HTML format and therefore contain tags to manage formatting options, making mass exploitation complex and risky. For this reason, rich text descriptions cannot be imported into the Studio.
 

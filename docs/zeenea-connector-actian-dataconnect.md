@@ -46,13 +46,13 @@ For more information on how to install a plugin, please refer to the following a
  
 1. Switch to Zeenea Studio by clicking the apps icon in the upper right and selecting **Studio**:
 
-     ![](/img/zeenea-studio1.png)
+     ![](./_shared/zeenea-studio1.png)
 2.  In Zeenea Studio, click **Catalog** to view the scanned map files:
 
-     ![](/img/zeenea-studio-dataconnect.png)
+     ![](./_shared/zeenea-studio-dataconnect.png)
 
 ## Manually Syncing the Connection
 
 1. In Zeenea Administration, click **Connections**, then click the ellipsis button in the **Actions** column for your connection and click **Synchronize**:
 
-     ![](/img/zeenea-connection-dataconnect.png)
+     ![](./_shared/zeenea-connection-dataconnect.png)

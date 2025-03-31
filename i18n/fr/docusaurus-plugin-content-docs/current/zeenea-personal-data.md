@@ -45,7 +45,7 @@ The suggestion remains visible until it has been processed:
 
 Once accepted or rejected, the suggestion will not be proposed to users again.
 
-  ![](/img/zeenea-personal-data.png)
+  ![](./_shared/zeenea-personal-data.png)
  
 ### How to find Fields with pending suggestions?
 

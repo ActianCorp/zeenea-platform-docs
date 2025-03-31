@@ -10,7 +10,7 @@ This component allows visualizing all relations of a particular Item with the ot
 
 This component can be used on the Studio and the Explorer in the **View 360** section.
 
-![](/img/zeenea-view-360-diagram1.png)
+![](./_shared/zeenea-view-360-diagram1.png)
 
 ## Exploring the Graph
 
@@ -24,7 +24,7 @@ By default, dataset fields are hidden when opening the section: this is to make 
 
 You can display Fields or hide other types of Items thanks to the action button in the top right corner of the diagram.
 
-![](/img/zeenea-view-360-diagram2.png)
+![](./_shared/zeenea-view-360-diagram2.png)
 
 ### Zoom features
 

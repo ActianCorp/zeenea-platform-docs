@@ -10,7 +10,7 @@ The diagram displays relationships between datasets in their own database. It he
 
 This diagram is accessible from Studio and Explorer under the **Data Mode**l tab:
 
-  ![](/img/zeenea-data-model-tab.png)
+  ![](./_shared/zeenea-data-model-tab.png)
 
 ## Creating a data model
 

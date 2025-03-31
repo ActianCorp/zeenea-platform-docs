@@ -16,14 +16,14 @@ Creating, editing, and deleting responsibilities in Zeenea is done in the **Cata
 
 To access the Catalog Design page, click **Catalog Design** in the left pane:
 
-   ![](/img/zeenea-catalog-design-responsibilites.png)
+   ![](./_shared/zeenea-catalog-design-responsibilites.png)
 
 ## Creating a New Responsibility
 
 1. Click **Catalog Design** in the left pane.
 2. Click the **New Responsibility** button to access the responsibility creation screen:
 
-   ![](/img/zeenea-create-responsibility.png)
+   ![](./_shared/zeenea-create-responsibility.png)
 
 * Name: a Responsibility is defined by a unique name.
 * Read only: if checked, the responsibility is not available when adding a contact on an item.
@@ -46,7 +46,7 @@ It is also possible to import Responsibilities from a connector. These are ident
 
 To edit an existing Responsibility, click the pencil icon next to the desired entry:
 
-   ![](/img/zeenea-catalog-design-responsibility-edit.png)
+   ![](./_shared/zeenea-catalog-design-responsibility-edit.png)
 
 ## Deleting a Responsibility
 

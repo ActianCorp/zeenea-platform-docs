@@ -16,4 +16,4 @@ Language field can be defined with one of these values:
 * **es** (spanish)
 * **custom_1** (to translate category into data product with a default fallback to **en** for everything else)
 
-![](/img/zeenea-tenant-add.png)
+![](./_shared/zeenea-tenant-add.png)

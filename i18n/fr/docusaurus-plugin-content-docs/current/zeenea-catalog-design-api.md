@@ -42,7 +42,7 @@ Documentation in Voyager is split into two sections:
 
 Navigate between both groups by using the selection menu in the bottom of the screen:
 
-![](/img/zeenea-voyager.png)
+![](./_shared/zeenea-voyager.png)
 
 ### Playground
 
@@ -56,7 +56,7 @@ https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public
 To use the APIs with Playground, you will need a valid API Key in the "HTTP Headers" tab.
 :::
 
-![](/img/zeenea-playground-key.png)
+![](./_shared/zeenea-playground-key.png)
 
 ## Use Case Examples
 

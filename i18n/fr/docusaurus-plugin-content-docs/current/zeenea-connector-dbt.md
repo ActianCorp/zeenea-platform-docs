@@ -188,7 +188,7 @@ In order to collect metadata, the user must provide the dbt files to the connect
 
 These files can be in the file system of the computer where the scanner is installed. The file system can be local or a mounted network file system (an NFS mount, for instance). It can also be an Amazon S3 or a Google Cloud Storage bucket.
 
-![](/img/zeenea-dbt.png)
+![](./_shared/zeenea-dbt.png)
 
 ### Finding Projects
 

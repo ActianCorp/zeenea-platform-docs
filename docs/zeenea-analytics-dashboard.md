@@ -13,7 +13,7 @@ The analytical dashboard is divided into two sections:
 * Left: Catalog content analysis
 * Right: Catalog adoption analysis
 
-![](/img/zeenea-analytics-dashboard.png)
+![](./_shared/zeenea-analytics-dashboard.png)
 
 ## Content Analysis
 

@@ -6,7 +6,7 @@ title: Dashboard Widgets
 
 The Dashboard is the Studio's home page. It is made up of various graphical components or "widgets" enabling Data Stewards, or Curators, to monitor progress or facilitate the management of their scope of responsibility within the catalog.
 
-  ![](/img/zeenea-dashboard-widgets.png)
+  ![](./_shared/zeenea-dashboard-widgets.png)
 
 ## Last searches
 This component lists your last 5 searches.

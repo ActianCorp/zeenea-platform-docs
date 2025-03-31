@@ -8,7 +8,7 @@ Catalogs allow you to create sub-sections in your platform and define specific r
 
 Your subscription includes one default catalog by default. When the Federated Catalog option is activated, you can create additional catalogs. Please contact the Customer Success team if you are interested in this option.
 
-  ![](/img/zeenea-catalogs.png)
+  ![](./_shared/zeenea-catalogs.png)
 
 ## Creating a Catalog
 

@@ -14,4 +14,4 @@ To zoom in or out, use the menu at the bottom right of the graph or use the mous
 
 Example of graph:
 
-  ![](/img/zeenea-glossary-hierarchy.png)
+  ![](./_shared/zeenea-glossary-hierarchy.png)

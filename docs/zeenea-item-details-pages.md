@@ -20,7 +20,7 @@ For each contact, name, email address (if provided) and responsibility for the I
 
 The Curator badge defines who will be in charge of the documentation of the Item in Zeenea.
 
-  ![](/img/zeenea-details-people.png)
+  ![](./_shared/zeenea-details-people.png)
 
 ### Description
 
@@ -30,13 +30,13 @@ In general, this description is entered into Zeenea Studio by the Item's Curator
 
 However, in the case of an Item harvested from a storage system (Datasets, Visualizations, etc.), a description directly provided by the source can be used.
 
-  ![](/img/zeenea-details-description.png)
+  ![](./_shared/zeenea-details-description.png)
 
 ## Glossary
 
 These terms are filled in from Zeenea Studio by its users and bring a business outlook.
 
-  ![](/img/zeenea-details-glossary.png)
+  ![](./_shared/zeenea-details-glossary.png)
 
 ### Properties
 
@@ -48,7 +48,7 @@ The featured properties can be of two kinds:
 * Technical properties: these are linked to the source file. 
 * Some properties that are considered important by Data Stewards or Curators are given more prominence and are directly displayed as tags in the search or detailed pages.
 
-  ![](/img/zeenea-details-properties.png)
+  ![](./_shared/zeenea-details-properties.png)
 
 ### View 360
 
@@ -102,7 +102,7 @@ Datasets may include the following elements depending on their actual completion
 
 This section provides the list of Fields of the corresponding Dataset. You can use the contextual search to directly find a field via its name.
 
-  ![](/img/zeenea-details-fields.png)
+  ![](./_shared/zeenea-details-fields.png)
 
 You will access to main information directly in the table:
 
@@ -142,7 +142,7 @@ Glossary Items define business concepts used by your company.
 
 They provide information about the other items in the catalog to which they are linked and give a business outlook. 
 
-  ![](/img/zeenea-details-glossary-items.png)
+  ![](./_shared/zeenea-details-glossary-items.png)
 
 A glossary object can have one or more parent and/or child objects.
 
@@ -164,11 +164,11 @@ Click the **Export** button to export all the items of your search and get their
 
 Custom items are used to classify catalog assets or to give more context by associating standard Items, such as Datasets or Visualizations, with logical or organizational concepts. 
 
-  ![](/img/zeenea-details-custom-items.png)
+  ![](./_shared/zeenea-details-custom-items.png)
 
 Objects that have been associated with a Custom Item can be found under the "Linked Items" tab.
 
-  ![](/img/zeenea-details-linked-items.png)
+  ![](./_shared/zeenea-details-linked-items.png)
 
 In this section, you can browse all linked items and also search and filter to find specific ones.
 

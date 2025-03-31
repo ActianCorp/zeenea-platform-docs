@@ -49,17 +49,17 @@ title: Actian Ingres
 1. Restart Zeenea Scanner.
 2. In Zeenea Administration, click **Connections** and verify that the new connection is listed:
 
-     ![](/img/zeenea-connection-added-ingres.png)
+     ![](./_shared/zeenea-connection-added-ingres.png)
 3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](./zeenea-troubleshooting).
 
 ## Viewing the Dataset
  
 1. Switch to Zeenea Studio by clicking the apps icon in the upper right and selecting **Studio**:
 
-     ![](/img/zeenea-studio1.png)
+     ![](./_shared/zeenea-studio1.png)
 2.  In Zeenea Studio, click **Catalog** to view the tables from your Actian Ingres schema:
 
-     ![](/img/zeenea-studio2.png)
+     ![](./_shared/zeenea-studio2.png)
 
 ## Configuring the Connection for Automatic Import
 
@@ -67,7 +67,7 @@ If desired, you can configure a connection to automatically import data as follo
 
 1. In Zeenea Administration, click **Connections**, then click the ellipsis button in the **Actions** column for your connection:
 
-     ![](/img/zeenea-connection-settings1.png)
+     ![](./_shared/zeenea-connection-settings1.png)
 2. Toggle **Automatic import** on:
 
-     ![](/img/zeenea-connection-settings2.png)
+     ![](./_shared/zeenea-connection-settings2.png)

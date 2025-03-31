@@ -10,7 +10,7 @@ This indicator is calculated for each Item and is displayed in the search result
 
 ## How the documentation completion level is calculated
 
-  ![](/img/zeenea-doc-completion-level.png)
+  ![](./_shared/zeenea-doc-completion-level.png)
 
 The completion level is also calculated for the perimeter of a Curator (i.e. all the Items assigned to it) by Item Type. It can be viewed on the Dashboard.  
 

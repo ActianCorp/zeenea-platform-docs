@@ -41,9 +41,9 @@ In order to link a dataset to an Application called "Sales Application", we’ll
 * First, add the “Application” property on the Dataset template
 * Fill out that property with the desired value "Customer360"
 
-![](/img/zeenea-dataset-template.png)
+![](./_shared/zeenea-dataset-template.png)
 
-![](/img/zeenea-sales-application.png)
+![](./_shared/zeenea-sales-application.png)
 
 ### Example 2: Creating a Hierarchy Between Two Custom Items
 
@@ -53,17 +53,17 @@ In order to create a link between a Custom Item Application and another Custom I
 * Add the "Entity" property on the Application template.
 * For each Application, select the entity to which it belongs.
 
-![](/img/zeenea-application-template.png)
+![](./_shared/zeenea-application-template.png)
 
 ## Reviewing All Linked Objects
 
 By accessing the detailed page of a specific custom item (for example, an Application), you may review all objects that Application is linked to: 
 
-![](/img/zeenea-linked-items.png)
+![](./_shared/zeenea-linked-items.png)
 
 Moreover, if a Custom Item-specific property has been tagged as “Use as filter”, then you may filter your catalog using an Application: 
 
-![](/img/zeenea-use-as-filter.png)
+![](./_shared/zeenea-use-as-filter.png)
 
 If you’re using hierarchical links between Custom Items, you may also add use the Parent object as a filter (in our previous example, if you were to filter on the “Marketing” Entity, all objects linked to either the Entity itself or any Application whose parent is the “Marketing” entity). 
 

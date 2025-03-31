@@ -16,7 +16,7 @@ For more details, see the [API technical documentation](./zeenea-catalog-api-v2)
 
 In the Studio and Explorer, detailed information about the quality of a Dataset is available in the "Data quality" tab on the details page.
 
-  ![](/img/zeenea-data-quality-tab.png)
+  ![](./_shared/zeenea-data-quality-tab.png)
 
 In this tab, you will find a list of the checks carried out on the Dataset and the following information for each check: 
 

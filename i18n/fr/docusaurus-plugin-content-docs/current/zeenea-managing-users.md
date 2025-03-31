@@ -6,7 +6,7 @@ title: Managing Users
 
 Managing the repository of users is done through the administration interface in the **Users & Contacts** section.
 
-  ![](/img/zeenea-users.png)
+  ![](./_shared/zeenea-users.png)
 
 ## Creating a new user
 
@@ -17,7 +17,7 @@ Click the **New User** button and fill in the required fields:
 * First name/Lastname
 * Phone number
 
-  ![](/img/zeenea-create-user.png)
+  ![](./_shared/zeenea-create-user.png)
 
 :::note
 Once the user is created, you can not modify his email address. If necessary, you delete and then recreate the user. 

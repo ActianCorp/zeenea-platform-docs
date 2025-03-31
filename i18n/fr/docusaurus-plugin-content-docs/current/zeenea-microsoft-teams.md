@@ -12,5 +12,5 @@ Once activated, Zeenea updates the corresponding contact profiles in the Studio 
 
 Click on this link to automatically initiate a conversation in Microsoft Teams with the contact concerned about an Object in the catalog.
 
-  ![](/img/zeenea-teams-link.png)
+  ![](./_shared/zeenea-teams-link.png)
 

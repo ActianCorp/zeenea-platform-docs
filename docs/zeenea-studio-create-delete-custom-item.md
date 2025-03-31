@@ -17,7 +17,7 @@ These types of items can be used to create links between them and any other item
 3. Click the **New Custom Item Type** button.
 4. Enter the requested information and then click **Confirm**.
 
-  ![](/img/zeenea-custom-item-create.png)
+  ![](./_shared/zeenea-custom-item-create.png)
 
 ## General information
 
@@ -61,4 +61,4 @@ The creation of a custom item type automatically leads to the creation of an ass
 
 The properties resulting from the creation of custom types can be identified through the "Source" column.
 
-  ![](/img/zeenea-custom-item-property.png)
+  ![](./_shared/zeenea-custom-item-property.png)

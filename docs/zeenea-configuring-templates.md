@@ -19,7 +19,7 @@ The "Glossary Metamodel" section allows you to structure and manage the metamode
 Click on the icon in the "Actions" column next to each object type to access its template editing screen (below).
 In order to harmonize the use of connector properties in applications, and to apply specific treatments according to their semantics, Zeenea maintains a property library.
 
-![](/img/zeenea-dataset-template2.png)
+![](./_shared/zeenea-dataset-template2.png)
 
 ## Step 3: Edit the template of an object
 

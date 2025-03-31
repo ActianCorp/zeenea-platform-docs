@@ -22,7 +22,7 @@ To create a Watchlist, at least one Item type must be selected via the **Item** 
 Keywords entered in the search bar are ignored when creating your Watchlist.
 :::
 
-  ![](/img/zeenea-watchlist-new.png)
+  ![](./_shared/zeenea-watchlist-new.png)
 
 Once created, your Watchlist is automatically added to your dashboard with the corresponding count of Items.
 
@@ -30,7 +30,7 @@ Once created, your Watchlist is automatically added to your dashboard with the c
 You can't have more than 10 Watchlists.
 :::
 
-  ![](/img/zeenea-watchlist-new.png)
+  ![](./_shared/zeenea-watchlist-new.png)
 
 Click on the name of a Watchlist from your dashboard to apply its filters and view the corresponding list of Items.
 

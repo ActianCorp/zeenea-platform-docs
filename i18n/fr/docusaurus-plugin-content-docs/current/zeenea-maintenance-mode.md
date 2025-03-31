@@ -12,7 +12,7 @@ To activate the maintenance mode, go to the Maintenance mode section in the Admi
 
 Only Super Admin users can activate the maintenance mode.
 
-  ![](/img/zeenea-maintenance-mode.png)
+  ![](./_shared/zeenea-maintenance-mode.png)
 
 ## Maintenance landing page
 
@@ -31,7 +31,7 @@ The maintenance page contains a generic message inviting users to connect later:
 * Title: Maintenance in progress
 * Message: Your administrators carry out scheduled maintenance. Please check back soon!
 
-  ![](/img/zeenea-maintenance-in-progress.png)
+  ![](./_shared/zeenea-maintenance-in-progress.png)
 
 ## Super Admin access during maintenance time
 
@@ -39,7 +39,7 @@ When the maintenance mode is activated, Super Admins can access the application 
 
 On top of the applications, a tag indicates that the maintenance mode is activated.
 
-  ![](/img/zeenea-maintenance-mode-tag.png)
+  ![](./_shared/zeenea-maintenance-mode-tag.png)
 
 ## Working with APIs during maintenance time
 

@@ -6,7 +6,7 @@ title: Zeenea Explorer Overview
 
 Zeenea Explorer wants to further support users' exploratory approaches, beyond our search capabilities based on metadata indexing, scoring and filtering, already present in our first application Zeenea Studio.
 
-  ![](/img/zeenea-explorer.png)
+  ![](./_shared/zeenea-explorer.png)
 
 ## Who is Zeenea Explorer for?
 

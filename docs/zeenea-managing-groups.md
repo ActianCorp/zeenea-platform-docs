@@ -10,7 +10,7 @@ Groups replace Permission sets to manage user permissions in Zeenea. Existing pe
 
 Groups allow you to manage user permissions in Zeenea. You can manage groups from the Administration section.
 
-  ![](/img/zeenea-group-create.png)
+  ![](./_shared/zeenea-group-create.png)
 
 ## Creating a group
 
@@ -30,7 +30,7 @@ Users without groups can access the default catalog through the Explorer applica
 
 When the Federated Catalog option is activated, you can create Explorer groups to give a user read access to one or several catalogs.
 
-  ![](/img/zeenea-group-explorer-type.png)
+  ![](./_shared/zeenea-group-explorer-type.png)
 
 ## Creating a Data Steward-type group
 
@@ -81,7 +81,7 @@ For each of these permissions, you can adjust the perimeter of Data Stewards as 
 
 In case the Federated Catalog option is activated, you will have the same configuration options but split by catalog.
 
-  ![](/img/zeenea-group-catalog.png)
+  ![](./_shared/zeenea-group-catalog.png)
 
 ### Adding users to groups
 

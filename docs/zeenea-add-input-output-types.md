@@ -11,7 +11,7 @@ In the Catalog Design section, you have the possibility to create additional lin
 
 To do this, click the **Edit Item Type** button (pen icon) in front of the Data Process type to open the link editing mode.
 
-  ![](/img/zeenea-edit-item-type.png)
+  ![](./_shared/zeenea-edit-item-type.png)
 
 In this mode, select the Custom Item Types with which you wish to allow Data Stewards to create links as inputs to your Processes. Then select those for which you wish to create output links.
 

@@ -52,14 +52,14 @@ title: Actian Informix
 1. Restart Zeenea Scanner.
 2. In Zeenea Administration, click Connections and verify that the new connection is listed:
 
-     ![](/img/zeenea-connection-informix.png)
+     ![](./_shared/zeenea-connection-informix.png)
 3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](./zeenea-troubleshooting).
 
 ## Viewing the Dataset​
 
 1. Switch to Zeenea Studio by clicking the apps icon in the upper right and selecting Studio:
 
-     ![](/img/zeenea-informix-schema.png)
+     ![](./_shared/zeenea-informix-schema.png)
 
 ## Configuring the Connection for Automatic Import​
 
@@ -67,7 +67,7 @@ If desired, you can configure a connection to automatically import data as follo
 
 1. In Zeenea Administration, open the Connections page, then click the ellipsis button in the Actions column for your connection:
 
-     ![](/img/zeenea-informix-setup.png)
+     ![](./_shared/zeenea-informix-setup.png)
 2. Toggle Automatic import on:
 
-     ![](/img/zeenea-informix-import.png)
+     ![](./_shared/zeenea-informix-import.png)

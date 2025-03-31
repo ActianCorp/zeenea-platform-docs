@@ -27,7 +27,7 @@ The scheme below describes how access requests are handled in Zeenea:
 4. Once reviewed, an email notification is automatically sent to the sender with the status of their request.
 5. If approved, a machine-readable email is sent to the external workflow system to create a ticket and configure the permissions.
 
-  ![](/img/zeenea-access-requests.png)
+  ![](./_shared/zeenea-access-requests.png)
 
 ##  Enabling Access Requests
 
@@ -44,7 +44,7 @@ For each type, select or fill in the following parameters:
 
 In the case of the Federated Catalog, access requests are handled at the tenant and catalog levels. By default, all catalogs use the tenant configuration. But you can define a local configuration by toggling off the **Use global configuration** button.
 
-  ![](/img/zeenea-access-requests-enable.png)
+  ![](./_shared/zeenea-access-requests-enable.png)
 
 So far, access requests are enabled but not activated on any item yet.  
 
@@ -56,13 +56,13 @@ You can also deactivate the feature instantly by toggling the button again.
 
 Note that at least one contact must have access to the Studio to make the feature available in the Explorer. This ensures at least one person can review the access requests.
 
-  ![](/img/zeenea-access-requests-activate.png)
+  ![](./_shared/zeenea-access-requests-activate.png)
 
 ## Submitting an Access Requests on an Item
 
 When the feature is activated for an item, you can request access from its details page by clicking the "Request access" button on the top right.
 
-  ![](/img/zeenea-access-requests-submit.png)
+  ![](./_shared/zeenea-access-requests-submit.png)
 
 ## Access Request Form
 
@@ -80,7 +80,7 @@ Once submitted, the approver receives an email notification to invite them to re
 
 You can retrieve the list of your pending data access requests by clicking the "Access requests" link on the right of the Zeenea Explorer header.
 
-  ![](/img/zeenea-access-requests-data.png)
+  ![](./_shared/zeenea-access-requests-data.png)
 
 ### Canceling a Data Access Request
 
@@ -90,7 +90,7 @@ From the access request list, click the **Cancel** button to delete your request
 
 You can manage the access requests assigned to you from the "Access requests" section in the Studio.
 
-  ![](/img/zeenea-access-requests-review.png)
+  ![](./_shared/zeenea-access-requests-review.png)
 
 From this screen, you can directly approve or decline a request. In both cases, you can add a comment to the request.
 

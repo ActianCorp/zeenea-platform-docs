@@ -8,13 +8,13 @@ title: Product Roadmap and Feedback
 
 Zeenea gives you access to the Product Portal: https://portal.productboard.com/lgdd6pe36eh6gqhyinzgd3yz
 
-  ![](/img/zeenea-roadmap.png)
+  ![](./_shared/zeenea-roadmap.png)
 
 This portal lets you follow the different features we intend to develop and also submit your ideas, which could become our next features!
 
 The Portal has different lists of features, organized under tabs:
 
-  ![](/img/zeenea-portal-tabs.png)
+  ![](./_shared/zeenea-portal-tabs.png)
 
 These tabs let you see how far a feature is, from "Already there" (RELEASED) to "being considered" (UNDER CONSIDERATION).
 
@@ -28,7 +28,7 @@ First, select one of the three levels, from "nice to have" to "critical".
 
 Then, fill in a description field to explain why this feature is important to you. Our product managers will take advantage of this information and use it to fine-tune the feature.
 
-  ![](/img/zeenea-vote.png)
+  ![](./_shared/zeenea-vote.png)
 
 The description field, as well as the email field, will only be displayed once you have selected the importance level.
 
@@ -38,7 +38,7 @@ As you provide your email address, we will be able to automatically push notific
 
 Each portal provides a way to submit new ideas. A dedicated button is displayed in the upper right corner of the Portal page:
 
-  ![](/img/zeenea-submit-idea.png)
+  ![](./_shared/zeenea-submit-idea.png)
 
   Once clicked, describe as precisely as possible your need or idea.
 

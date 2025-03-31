@@ -22,7 +22,7 @@ Keys are case sensitive.
 ## Managing Keys using the Interface
 For each object, the Key can be retrieved directly from the **Actions** button in their detailed view in the Studio. 
 
-  ![](/img/zeenea-action-button.png)
+  ![](./_shared/zeenea-action-button.png)
 
 ## Unique Keys and Import Files
 Keys are used to uniquely identify each object of the catalog when [importing](./zeenea-studio-import)/[exporting](./zeenea-studio-search-export) an Excel File. 

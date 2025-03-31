@@ -8,7 +8,7 @@ The Zeenea File Import feature allows you to bulk-create and update items in the
 
 Once you've gathered and formatted the data you wish to add/update, click **Import** and then select a file in the Studio: 
 
-   ![](/img/zeenea-studio-import.png)
+   ![](./_shared/zeenea-studio-import.png)
 
 ## Prerequisites
 
@@ -42,7 +42,7 @@ You can delete any columns from the template if you do not wish to update their 
 
 During the import, Zeenea will map each column to a property. If even one column cannot be mapped to an existing property, the entire file will be discarded and the following screen will be displayed: 
 
-   ![](/img/zeenea-studio-import-failed.png)
+   ![](./_shared/zeenea-studio-import-failed.png)
 
 If the above conditions are fulfilled, a summary will be displayed allowing you to check the columns of the file that will be mapped or ignored. Click on "Import" to apply modifications.
 

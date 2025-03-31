@@ -6,7 +6,7 @@ title: Zeenea Studio Overview
 
 Zeenea Studio is Zeenea Data Catalog's back office management interface.
 
-  ![](/img/zeenea-studio-overview.png)
+  ![](./_shared/zeenea-studio-overview.png)
 
 Zeenea Studio is designed for your data management teams and more specifically for Data Stewards to manage, maintain and enrich the documentation of a data asset.
 

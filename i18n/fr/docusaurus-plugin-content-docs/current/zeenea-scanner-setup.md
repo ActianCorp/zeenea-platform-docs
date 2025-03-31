@@ -5,7 +5,7 @@ title: Zeenea Scanner Setup
 
 ## Architecture Overview
 
-   ![](/img/zeenea-scanner-architecture.png)
+   ![](./_shared/zeenea-scanner-architecture.png)
 
 * Each instance of Zeenea Scanner must be deployed in your infrastructure.
 * The Scanner's primary responsibility is to collect metadata from the systems you choose to connect to.

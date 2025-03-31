@@ -18,7 +18,7 @@ You enter the login/password combination which will have been sent to you by ema
 If you are logging in for the first time on a version without specific configuration, the default user IDs for this profile are: zeenea/zeenea
 :::
 
-  ![](/img/zeenea-login.png)
+  ![](./_shared/zeenea-login.png)
 
 ## Step 2: Configure the Zeenea Platform
 
@@ -26,11 +26,11 @@ Platform configuration is the main action reserved for Super Admin.
 
 It can be accessed by clicking **Administration** in the top menu.
 
-  ![](/img/zeenea-administration.png)
+  ![](./_shared/zeenea-administration.png)
 
 From this interface, you will be able to supervise the platform regarding the following elements: 
 
-  ![](/img/zeenea-permission-sets.png)
+  ![](./_shared/zeenea-permission-sets.png)
 
 * Users
 * Groups
@@ -45,7 +45,7 @@ As Super Admin you can also configure the documentation in Zeenea.
 
 This section is accessible from Zeenea Studio via the **Catalog Design** button in the left menu.
 
-  ![](/img/zeenea-catalog-design.png)
+  ![](./_shared/zeenea-catalog-design.png)
 
 Defining a metamodel is an important step to enable authorized persons to fill in the documentation in the catalog in a targeted and therefore efficient manner.
 

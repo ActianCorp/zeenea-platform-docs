@@ -11,7 +11,7 @@ Lineage is presented as a graphical component in the Studio and Explorer for Ite
 
 It may also be available on the detail pages of certain Custom Items if your metamodel configuration allows. Custom Items can be used to represent objects that cannot be synchronized by a connector (Excel files, legal reports, external sources) or to create a data flow at the logical level (ex: Application).
 
-  ![](/img/zeenea-data-lineage1.png)
+  ![](./_shared/zeenea-data-lineage1.png)
 
 ## How the diagram works
 
@@ -48,4 +48,4 @@ Click on the Field to highlight its specific lineage among the open Datasets.
 
 Click on the "+" buttons at the Dataset level to display the Field's lineage at an additional level upstream or downstream.
 
-  ![](/img/zeenea-data-lineage2.png)
+  ![](./_shared/zeenea-data-lineage2.png)

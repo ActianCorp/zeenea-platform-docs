@@ -16,7 +16,7 @@ This display is split into three sections:
 
 By clicking on an item in the list, you’ll be redirected to its detailed page, and will then be able to access all information regarding it. 
 
-![](/img/zeenea-studio-search.png)
+![](./_shared/zeenea-studio-search.png)
 
 ## Using the Search Engine
 

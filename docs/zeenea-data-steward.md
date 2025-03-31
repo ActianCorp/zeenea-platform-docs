@@ -27,7 +27,7 @@ Once logged in, you will find on this page the main management indicators of you
 
 It is therefore your main entry point to access the datasets for which you are responsible as Data Steward.
 
-  ![](/img/zeenea-data-steward.png)
+  ![](./_shared/zeenea-data-steward.png)
 
 ### Browse the catalog items 
 
@@ -38,7 +38,7 @@ It is therefore your main entry point to access the datasets for which you are r
 
 If you are responsible for curation and import on one or more connections, start selecting the items you want to document first using our import path.
 
-  ![](/img/zeenea-import-dialog.png)
+  ![](./_shared/zeenea-import-dialog.png)
 
 For more details on importing items into the catalog, read Importing "Datasets" or "Visualization" items into Zeenea
 
@@ -60,4 +60,4 @@ Once your perimeter is defined, you can start its documentation.
 
 For more details on item documentation, see [Understanding the Documentation of an Item](./zeenea-item-documentation).
 
-  ![](/img/zeenea-perimeter.png)
+  ![](./_shared/zeenea-perimeter.png)

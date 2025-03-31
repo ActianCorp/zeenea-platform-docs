@@ -18,13 +18,13 @@ Moreover, organizations can level up this federated catalog to an Enterprise Dat
 
 The EDM allows each domain to share its managed and valuable data products and assets with the federation without overwhelming end-users with less managed or less usable data assets.
 
-![](/img/zeenea-federated-catalog.png)
+![](./_shared/zeenea-federated-catalog.png)
 
 ## How it works
 
 Zeenea offers one shared platform supporting Federated Data Catalog and EDM use cases. All metadata is managed in a single knowledge graph, that can be split between various domains by creating several sub-catalogs on the same platform. Therefore, no technical integration or data mapping is required.
 
-![](/img/zeenea-federated-catalog2.png)
+![](./_shared/zeenea-federated-catalog2.png)
 
 Organizations can configure each connection to feed a specific catalog and manage user permissions by catalog so that each domain is responsible for curating its own assets and controls the visibility of these assets by the rest of the federation.
 
@@ -32,7 +32,7 @@ In the federated catalog or EDM, Zeenea Studio remains the back-office tool and 
 
 Finally, Zeenea’s federated graph-powered EDM enables organizations to mirror the Data Mesh at the metadata level and build a global, scalable, supervision plane that perfectly integrates with data production and consumption processes.
 
-![](/img/zeenea-federated-catalog3.png)
+![](./_shared/zeenea-federated-catalog3.png)
  
 ## Related Resources
 

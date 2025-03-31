@@ -22,11 +22,11 @@ After a few uses, your last searches will also appear when clicking on the searc
 
 Read more: [Search and discover items in Zeenea Explorer](./zeenea-explorer-search)
 
-  ![](/img/zeenea-discover.png)
+  ![](./_shared/zeenea-discover.png)
 
 You can also explore the content of the catalog by entering either through the topics your organization may have defined, the assets types or the glossary, grouping the Business Terms defined by your company and associated with your data assets.
 
-  ![](/img/zeenea-discover2.png)
+  ![](./_shared/zeenea-discover2.png)
 
 Read more: [Topic](./zeenea-definitions#topic)
 
@@ -38,7 +38,7 @@ You can then start filtering your search by using the filters displayed directly
 
 Read more: [Search and Filter in Zeenea Explorer](./zeenea-explorer-search)
 
-  ![](/img/zeenea-filter.png)
+  ![](./_shared/zeenea-filter.png)
 
 ## Browse the items
 
@@ -46,5 +46,5 @@ From the search results page, you can view the main information about the native
 
 You can view the full details of an item from the catalog by clicking on its name from the search results or from the detailed pages. 
 
-  ![](/img/zeenea-browse.png)
+  ![](./_shared/zeenea-browse.png)
 

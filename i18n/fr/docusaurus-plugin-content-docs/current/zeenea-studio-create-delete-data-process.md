@@ -10,11 +10,11 @@ title: Creating, Editing, or Deleting a Data Process
 2. In the page menu, click the **New Item** button and then click **Data Process**.
 3. Complete the required fields: name, description, contacts, and metamodel properties.
 
-  ![](/img/zeenea-data-process-new.png)
+  ![](./_shared/zeenea-data-process-new.png)
 
-  ![](/img/zeenea-data-process-new2.png)
+  ![](./_shared/zeenea-data-process-new2.png)
 
-  ![](/img/zeenea-data-process-new3.png)
+  ![](./_shared/zeenea-data-process-new3.png)
 
 :::note
 Data Processes can also be imported from an external source via a connector, or created using the Catalog API.
@@ -26,7 +26,7 @@ If you wish to delete a data process, click the **Actions** icon in the top righ
 
 Deleting a Data Process also results in deleting all its links to Datasets or other Items. Once deleted, the Data Process will no longer appear in the lineage of the corresponding Items.
 
-  ![](/img/zeenea-data-process-delete.png)
+  ![](./_shared/zeenea-data-process-delete.png)
 
 ## Build a data lineage from a Data Process
 
@@ -37,7 +37,7 @@ Add inputs or outputs to a Data Process
 3. Confirm.
 4. Repeat steps for outputs.
 
-  ![](/img/zeenea-data-process-inputs.png)
+  ![](./_shared/zeenea-data-process-inputs.png)
 
 ## Deleting inputs or outputs from a Data Process
 
@@ -55,7 +55,7 @@ Using the Catalog API, you can also declare lineage at the Field level. This inf
 
 An operation is defined by a list of input and output Fields, and a description of the corresponding transformation.
 
-  ![](/img/zeenea-data-process-operations.png)
+  ![](./_shared/zeenea-data-process-operations.png)
 
 :::note
 If an operation references a Field that is not part of the input or output Datasets of the Data Process, it is displayed in red as an orphan.
