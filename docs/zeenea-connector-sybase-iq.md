@@ -19,9 +19,7 @@ This connector was successfully tested with version 16.0.
 
 ## Installing the Plugin
 
-From version 54 of the scanner, the Sybase IQ connector is presented as a plugin.
-
-It can be downloaded here and requires a scanner version 64: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+The SybaseIQ connector has been moved to the JDBC plugin. It can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 

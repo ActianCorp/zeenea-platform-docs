@@ -10,7 +10,7 @@ title: Atlas
 * Zeenea traffic flows towards Atlas must be open. 
 
 :::note
-A configuration template can be downloaded here: [Atlas.conf](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GUYpU&d=%2Fa%2FNu000002le0s%2FXS5fr1f84X2DJW_pzGZqH_y_pZbJIhZvOEYX1qPaTmY&asPdf=false)
+A configuration template can be downloaded here: [Atlas.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/Atlas.conf)
 :::
 
 ## Supported Versions
@@ -63,6 +63,34 @@ In order to establish a connection with Atlas, specifying the following paramete
   <tr>
     <td>`connection.authentication_scheme`</td>
     <td>Method to be used for authentication with the Atlas server. Possible values: `Basic`, `Digest`, `Ntlm`, `Spnego`, `Kerberos`. Default value: `Basic`.</td>
+  </tr>
+  <tr>
+    <td>`connection.max_concurrent_request`</td>
+    <td>Maximum concurrent requests to Atlas (default: 16)</td>
+  </tr>
+  <tr>
+    <td>`connection.request_timeout`</td>
+    <td>Request timeout in seconds (default: 60 s)</td>
+  </tr>
+  <tr>
+    <td>`connection.request_page_size`</td>
+    <td>Request page size (default: 100)</td>
+  </tr>
+  <tr>
+    <td>`api.min_ext_info.atlas_types`</td>
+    <td>Allows adding the `minExtInfo` parameter when calling the Atlas entity retrieval service. Allowed values : `hive_table`, `hbase_table`, `hive_process`, `hdfs_path`, `spark_process`, `sqoop_process`, or `sqoop_dbdatastore`.</td>
+  </tr>
+  <tr>
+    <td>`cache.path`</td>
+    <td>Directory where caches are stored</td>
+  </tr>
+  <tr>
+    <td>`cache.inventory.enable`</td>
+    <td>Enable Inventory cache</td>
+  </tr>
+  <tr>
+    <td>`cache.inventory.expiration_delay`</td>
+    <td>Inventory Cache expiration Delay (format ISO-8601: PnDTnHnMn.nS)</td>
   </tr>
 </table>
 
