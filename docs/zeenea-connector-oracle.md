@@ -94,6 +94,18 @@ In order to establish a connection with an Oracle instance, specifying the follo
     <td>`lineage.view.enabled`</td>
     <td>Set to `true`to activate the lineage feature. Default value `false`.</td>
   </tr>
+  <tr>
+    <td>`cache.enabled`</td>
+    <td>Enable the cache functionality. When the cache is activated, the schema update performs four queries in total instead of four per imported table. The result is greater efficiency.</td>
+  </tr>
+  <tr>
+    <td>`cache.folder`</td>
+    <td>The size of the cache file produced depends on the number of tables in the database (and not on the number of tables imported into Zeenea). If the folder is not specified, the cache is stored in memory.</td>
+  </tr>
+  <tr>
+    <td>`cache.ttl`</td>
+    <td>Cache validity period (default 12h). As long as the cache is valid, requests that fill it are not executed.</td>
+  </tr>
 </table>
 
 ## Rich Filters
