@@ -8,8 +8,8 @@ As soon as an Item is modified, Zeenea adds an entry in the Item's activity tab 
 
 All this information can also be retrieved via APIs in:
 
-* Audit Trail APIs
-* The exploration and mutation APIs which allow you to manipulate the dates of the last updated Items thanks  to the findItems API as well as the LoadItemByKey API which allows to retrieve the updated date in the updatedAt field
+* [Audit Trail APIs](./zeenea-audit-trail-apis.md)
+* The [exploration and mutation APIs](./zeenea-catalog-api-v1.md) which allow you to manipulate the dates of the last updated Items thanks  to the findItems API as well as the LoadItemByKey API which allows to retrieve the updated date in the updatedAt field
 
 Please note that the date of the last update is not visible in Zeenea Explorer.
 
