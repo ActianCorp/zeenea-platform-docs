@@ -13,7 +13,7 @@ title: Actian DataConnect
 ## Creating the Configuration File
 
 1. In the `[scanner_install_dir]/connections` folder, create a new file named `dcconnector.conf`. (The file can be named as desired, but the file extension must be `.conf`.)
-2. Copy and modify the content below based on your environment configuration, replacing `<HOST-NAME>`, `<USER>`, and `<PASSWORD>` with the appropriate values for your environment.
+2. Copy and modify the content below based on your environment configuration:
 
      ```
      # code and name can be anything
