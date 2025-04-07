@@ -118,6 +118,7 @@ const sidebars = {
                 'zeenea-personal-data',
                 'zeenea-notifications',
                 'zeenea-discussion-threads',
+                'zeenea-data-catalog-item-updates',
               ]
             },
             'zeenea-analytics-dashboard',
