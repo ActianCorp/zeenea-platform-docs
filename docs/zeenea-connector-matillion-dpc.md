@@ -1,5 +1,5 @@
 ---
-title: Matillion  
+title: Matillion DPC
 ---
 
 # Adding a Matillion DPC Connection
@@ -9,7 +9,7 @@ title: Matillion
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Matillion DPC.
 
 :::note
-The configuration template can be downloaded here: [matillion-dpc.conf](#)
+The configuration template can be downloaded here: [matillion-dpc.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/matillion-dpc.conf)
 :::
 
 ## Supported Versions

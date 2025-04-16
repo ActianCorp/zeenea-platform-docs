@@ -240,7 +240,7 @@ const sidebars = {
           'zeenea-connector-looker',
           'zeenea-connector-mariadb',
           'zeenea-connector-matillion',
-          //'zeenea-connector-matillion-dpc',
+          'zeenea-connector-matillion-dpc',
           'zeenea-connector-microstrategy',
           'zeenea-connector-mongodb',
           'zeenea-connector-mysql',

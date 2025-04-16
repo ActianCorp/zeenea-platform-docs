@@ -48,6 +48,7 @@ hide_table_of_contents: true
 | [Zeenea Lineage](./zeenea-connector-generic-lineage.md) (*deprecated*)  | Lineage | 54 | [lineage-connector-plugin-1.0.0.zip](https://plugins.zeenea.app/lineage-connector-plugin/lineage-connector-plugin-1.0.0.zip) |
 | [Looker](./zeenea-connector-looker.md) | Looker | 70 | [looker-connector-plugin-3.4.3.zip](https://plugins.zeenea.app/looker-connector-plugin/looker-connector-plugin-3.4.3.zip) | 
 | [Matillion](./zeenea-connector-matillion.md) | Matillion | 54 | [matillion-connector-plugin-4.1.1.zip](https://plugins.zeenea.app/matillion-connector-plugin/matillion-connector-plugin-4.1.1.zip) | 
+| [Matillion DPC](./zeenea-connector-matillion-dpc.md) | Matillion | 76 | [matillion-connector-plugin-5.0.0.zip](https://plugins.zeenea.app/matillion-connector-plugin/matillion-connector-plugin-5.0.0.zip) | 
 | [MicroStrategy](./zeenea-connector-microstrategy.md)	| MicroStrategy | 54 | [microstrategy-connector-plugin-2.5.3.zip](https://plugins.zeenea.app/microstrategy-connector-plugin/microstrategy-connector-plugin-2.5.3.zip) | 
 | [MongoDB](./zeenea-connector-mongodb.md) | MongoDB	| 54 | [mongodb-connector-plugin-1.1.0.zip](https://plugins.zeenea.app/mongodb-connector-plugin/mongodb-connector-plugin-1.1.0.zip) | 
 | [OpenAPI](./zeenea-connector-openapi.md) | OpenAPI | 54 | [openapi-connector-plugin-2.0.1.zip](https://plugins.zeenea.app/openapi-connector-plugin/openapi-connector-plugin-2.0.1.zip) | 
