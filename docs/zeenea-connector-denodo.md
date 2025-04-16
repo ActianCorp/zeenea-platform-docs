@@ -10,7 +10,7 @@ title: Denodo
 * Zeenea traffic flows towards the data source must be open. 
 
 :::note
-A configuration template can be downloaded here: [denodo.conf](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GUdyq&d=%2Fa%2FNu000002lgPF%2FAAs4RvtrRAnrwYuW4MZlsaJ.9zatvae68tk6.Rg9ReM&asPdf=false)
+A configuration template can be downloaded here: [denodo.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/denodo.conf)
 :::
 
 ## Supported Versions
@@ -55,6 +55,7 @@ In order to establish a connection with a Denodo instance, specifying the follow
 | `proxy.port` | Proxy port |
 | `proxy.username` | Proxy Username |
 | `proxy.password` | Proxy account password |
+| `fingerprint.sampling_max_rows` | Max number of lines sampled from fingerprinting |
 
 ## User Permissions
 
