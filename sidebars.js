@@ -217,6 +217,7 @@ const sidebars = {
           'zeenea-connector-dataiku',
           'zeenea-connector-db2',
           'zeenea-connector-dbt',
+          'zeenea-connector-dbt-cloud',
           'zeenea-connector-denodo',
           'zeenea-connector-dynamics365',
           'zeenea-connector-dyamics-ax',

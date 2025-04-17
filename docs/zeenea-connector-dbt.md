@@ -1,13 +1,13 @@
 ---
-title: DBT
+title: dbt
 ---
 
-# Adding a DBT Connection
+# Adding a dbt Connection
 
 ## Prerequisites
 
-* A user with sufficient permissions is required to establish a connection with DBT.
-* Zeenea traffic flows towards DB2 must be open.  
+* A user with sufficient permissions is required to establish a connection with dbt.
+* Zeenea traffic flows towards dbt must be open.  
 
 :::note
 A configuration template can be downloaded here: [dbt.conf](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GUNpN&d=%2Fa%2FNu000002leSI%2FDJxA.g_pmwx5m9BHegpbWc3dqZOUOH2Dzv9MRK46yRk&asPdf=false)
@@ -15,10 +15,10 @@ A configuration template can be downloaded here: [dbt.conf](https://actian.file.
 
 ## Supported Versions
 
-The DBT connector was tested with version 1.3. It is compatible with version 1.3 and earlier. 
+The dbt connector was tested with version 1.3. It is compatible with version 1.3 and earlier. 
 
 :::note
-The DBT connector is currently **NOT** compatible with DBT Cloud.
+The dbt connector is currently **NOT** compatible with dbt Cloud. For dbt Cloud, see [dbt Cloud](./zeenea-connector-dbt-cloud.md).
 :::
 
 ## Installing the Plugin
@@ -33,7 +33,7 @@ Creating and configuring connectors is done through a dedicated configuration fi
  
 Read more: [Managing Connections](./zeenea-managing-connections.md)
  
-In order to establish a connection with an DBT instance, specifying the following parameters in the dedicated file is required:
+In order to establish a connection with an dbt instance, specifying the following parameters in the dedicated file is required:
  
 <table>
   <tr>
@@ -55,7 +55,7 @@ In order to establish a connection with an DBT instance, specifying the followin
   <tr>
     <td>`connection.path`</td>
     <td>
-      <p>Path to the DBT projects. Must be formatted like:</p>
+      <p>Path to the dbt projects. Must be formatted like:</p>
         <ul>
           <li>AWS S3: `s3://[bucket_name]/[optional_prefix]`</li>
           <li>Google Storage: `gs://[bucket_name]/[optional_prefix]`</li>
@@ -216,11 +216,11 @@ For a given project, the connector uses the profile defined by the `profile` ent
 
 ### Synchronization
 
-The connector will synchronize all DBT project's job and automatically represent them in the catalog.
+The connector will synchronize all dbt project's job and automatically represent them in the catalog.
 
 ### Lineage
 
-The DBT connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the DBT process. This feature is available for the following systems and, for it to work, an additional parameter is needed in **the configuration file of the source system connection** as configured in the DBT connection configuration panel. For example, if the DBT process uses a table coming from a SQL Server table, then a new alias parameter must be added in the SQL Server connection configuration file.
+The dbt connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the dbt process. This feature is available for the following systems and, for it to work, an additional parameter is needed in **the configuration file of the source system connection** as configured in the dbt connection configuration panel. For example, if the dbt process uses a table coming from a SQL Server table, then a new alias parameter must be added in the SQL Server connection configuration file.
 
 Table summarizing the possible values of the `alias` parameter to be completed in the data source configuration file:
 
