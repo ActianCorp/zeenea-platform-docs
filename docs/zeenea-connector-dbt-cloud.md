@@ -18,19 +18,19 @@ title: dbt Cloud
 ## Creating the Configuration File
 
 1. In the `[scanner_install_dir]/connections` folder, create a new file named `dbtCloud.conf`. (The file can be named as desired, but the file extension must be `.conf`.)
-2. Copy and modify the content below based on your environment configuration, replacing `<API-TOKEN>` and `<ACCOUNT-PREFIX>` with the appropriate values for your environment.
+2. Copy and modify the content below based on your environment configuration, replacing `<API-TOKEN>` and `<ACCOUNT-PREFIX>` with the appropriate values for your dbt Cloud account.
    
-```
-# code and name can be anything
-code = "DbtCloud-1"
-name = "Dbt Cloud 1"
-# Connector ID (do not change)
-connector_id = "dbt-cloud"
-enabled = true
-# enter the following based on your dbt cloud account
-dbt.api_token = "<API-TOKEN>"
-dbt.account_prefix = "<ACCOUNT-PREFIX>"
-```
+     ```
+     # code and name can be anything
+     code = "DbtCloud-1"
+     name = "Dbt Cloud 1"
+     # Connector ID (do not change)
+     connector_id = "dbt-cloud"
+     enabled = true
+     # enter the following based on your dbt cloud account
+     dbt.api_token = "<API-TOKEN>"
+     dbt.account_prefix = "<ACCOUNT-PREFIX>"
+     ```
 
 The `dbt.api_token` and `dbt.account_prefix` values can be found in your dbt account. The account prefix can be found in your Account page. The API token can be found in the section named "Personal tokens" under API tokens. For more information, see [dbt Developer Hub](https://docs.getdbt.com/dbt-cloud/api-v2#/authentication). 
 
