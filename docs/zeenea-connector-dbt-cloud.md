@@ -1,5 +1,5 @@
 ---
-title: DBT Cloud
+title: dbt Cloud
 ---
 
 # Adding a dbt Cloud Connection
