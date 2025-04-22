@@ -1,13 +1,13 @@
 ---
-title: dbt
+title: DBT
 ---
 
-# Adding a dbt Connection
+# Adding a DBT Connection
 
 ## Prerequisites
 
-* A user with sufficient permissions is required to establish a connection with dbt.
-* Zeenea traffic flows towards dbt must be open.  
+* A user with sufficient permissions is required to establish a connection with DBT.
+* Zeenea traffic flows towards DBT must be open.  
 
 :::note
 A configuration template can be downloaded here: [dbt.conf](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GUNpN&d=%2Fa%2FNu000002leSI%2FDJxA.g_pmwx5m9BHegpbWc3dqZOUOH2Dzv9MRK46yRk&asPdf=false)
@@ -15,15 +15,15 @@ A configuration template can be downloaded here: [dbt.conf](https://actian.file.
 
 ## Supported Versions
 
-The dbt connector was tested with version 1.3. It is compatible with version 1.3 and earlier. 
+The DBT connector was tested with version 1.3. It is compatible with version 1.3 and earlier. 
 
 :::note
-The dbt connector is currently **NOT** compatible with dbt Cloud. For dbt Cloud, see [dbt Cloud](./zeenea-connector-dbt-cloud.md).
+The DBT connector is currently **NOT** compatible with DBT Cloud.
 :::
 
 ## Installing the Plugin
 
-The dbt plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+The DBT plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
@@ -33,7 +33,7 @@ Creating and configuring connectors is done through a dedicated configuration fi
  
 Read more: [Managing Connections](./zeenea-managing-connections.md)
  
-In order to establish a connection with an dbt instance, specifying the following parameters in the dedicated file is required:
+In order to establish a connection with an DBT instance, specifying the following parameters in the dedicated file is required:
  
 <table>
   <tr>
@@ -55,7 +55,7 @@ In order to establish a connection with an dbt instance, specifying the followin
   <tr>
     <td>`connection.path`</td>
     <td>
-      <p>Path to the dbt projects. Must be formatted like:</p>
+      <p>Path to the DBT projects. Must be formatted like:</p>
         <ul>
           <li>AWS S3: `s3://[bucket_name]/[optional_prefix]`</li>
           <li>Google Storage: `gs://[bucket_name]/[optional_prefix]`</li>
@@ -184,7 +184,7 @@ In order to establish a connection with an dbt instance, specifying the followin
 
 ## Data Extraction
 
-In order to collect metadata, the user must provide the dbt files to the connector. 
+In order to collect metadata, the user must provide the DBT files to the connector. 
 
 These files can be in the file system of the computer where the scanner is installed. The file system can be local or a mounted network file system (an NFS mount, for instance). It can also be an Amazon S3 or a Google Cloud Storage bucket.
 
@@ -194,19 +194,19 @@ These files can be in the file system of the computer where the scanner is insta
 
 First, the connector walk though the file storage from the root given in the parameter `connection.path` and search for files with the name `dbt_project.yml`.
 
-For each `dbt_project.yml` file found, it will consider the folder to be a dbt project. The identifier of items from a project is prefixed by the path of the project folder relative to the connection.path in order to ensure the identifier unicity.
+For each `dbt_project.yml` file found, it will consider the folder to be a DBT project. The identifier of items from a project is prefixed by the path of the project folder relative to the connection.path in order to ensure the identifier unicity.
 
 ### Extracting Metadata
 
-Metadata is extracted from manifest.json and catalog.json. These two files are produced when running the dbt process. Their location is given by the optional target-path entry in `dbt_project.yml`. If not set, they will be found in the target subfolder of the project.
+Metadata is extracted from manifest.json and catalog.json. These two files are produced when running the DBT process. Their location is given by the optional target-path entry in `dbt_project.yml`. If not set, they will be found in the target subfolder of the project.
 
 The connector needs some extra information about the data source from the `profile.yml` file. This file can be shared by all project. It can be the same file used in production are a similar one with all connection information except the credentials.
 
 For a given project, the connector uses the profile defined by the `profile` entry in `dbt_project.yml`. The target used is either the target defined by `dbt.target` in the connector configuration or the default one defined in the profile.
 
-### Pre-required dbt commands
+### Pre-required DBT commands
 
-`manifest.json` and `catalog.json` are produced when running dbt. To ensure they are complete, the following commands should be executed.
+`manifest.json` and `catalog.json` are produced when running DBT. To ensure they are complete, the following commands should be executed.
 
 * **dbt seed**: https://docs.getdbt.com/reference/commands/seed
 * **dbt run**: https://docs.getdbt.com/reference/commands/run
@@ -216,11 +216,11 @@ For a given project, the connector uses the profile defined by the `profile` ent
 
 ### Synchronization
 
-The connector will synchronize all dbt project's job and automatically represent them in the catalog.
+The connector will synchronize all DBT project's job and automatically represent them in the catalog.
 
 ### Lineage
 
-The dbt connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the dbt process. This feature is available for the following systems and, for it to work, an additional parameter is needed in **the configuration file of the source system connection** as configured in the dbt connection configuration panel. For example, if the dbt process uses a table coming from a SQL Server table, then a new alias parameter must be added in the SQL Server connection configuration file.
+The DBT connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the DBT process. This feature is available for the following systems and, for it to work, an additional parameter is needed in **the configuration file of the source system connection** as configured in the DBT connection configuration panel. For example, if the DBT process uses a table coming from a SQL Server table, then a new alias parameter must be added in the SQL Server connection configuration file.
 
 Table summarizing the possible values of the `alias` parameter to be completed in the data source configuration file:
 
