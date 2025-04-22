@@ -16,7 +16,7 @@ Zeenea uses Google HTTP API to collect metadata.
 | BigQuery | HTTPS | 443 |
 
 :::note
-A link to the configuration template can be found here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+The configuration template can be downloaded here: [BigQuery.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/BigQuery.conf).
 :::
 
 ## Supported Versions
@@ -58,6 +58,10 @@ In order to establish a connection with BigQuery, specifying the following param
 | `proxy.port` | Proxy port |
 | `proxy.username` | Proxy username |
 | `proxy.password` | Proxy account password |
+| `fingerprint.sampling_amount` | Max number of lines sampled from fingerprinting |
+| `fingerprinting.max_blocks` | Max number of blocks read from fingerprinting |
+| `schema_analysis.retrieve_keys` | Retrieve Primary Keys and Foreign Keys |
+| `lineage.view.enabled` | Specifies whether Lineage View is enabled. Default value `true`. |
 
 #### For project level only
 
