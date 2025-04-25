@@ -30,7 +30,7 @@ The Hive connector supports versions included in the following distributions:
 
 * CDH-5
 * CDH-6
-* HortonWorks HDP 2.6
+* CDP
 
 ## Installing the Plugin
 
