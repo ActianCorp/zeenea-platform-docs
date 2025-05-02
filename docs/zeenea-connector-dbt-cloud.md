@@ -1,64 +1,134 @@
 ---
-title: dbt Cloud
+title: DBT Cloud
 ---
 
-# Adding a dbt Cloud Connection
+# Adding a DBT Cloud Connection
 
 ## Prerequisites
 
-* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](./zeenea-scanner-setup.md).
-* Scanner Version 78 or higher is required to use dbt Cloud connector. 
-* Java 11 is required to run the dbt Cloud connector.
+* A user with sufficient [permissions](#user-permissions) is required to establish a connection with DBT Cloud.
 
-## Installing the dbt Cloud Connector Plugin
+:::note
+The configuration template can be downloaded here: [dbt-cloud.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/dbt-cloud.conf).
+:::
 
-1. Download the dbt Cloud connector plugin from the [Zeenea Connector Downloads](./zeenea-connectors-list.md), or download directly at <font color="red">Need link</font>.
-2. Move the zip file to the `[scanner_install_dir]/plugins` folder. **Do not unzip the archive**.
+## Supported Versions
 
-## Creating the Configuration File
+The DBT Cloud module is compatible with the online version of the product. 
 
-1. In the `[scanner_install_dir]/connections` folder, create a new file named `dbtCloud.conf`. (The file can be named as desired, but the file extension must be `.conf`.)
-2. Copy and modify the content below based on your environment configuration, replacing `<API-TOKEN>` and `<ACCOUNT-PREFIX>` with the appropriate values for your dbt Cloud account.
-   
-     ```
-     # code and name can be anything
-     code = "DbtCloud-1"
-     name = "Dbt Cloud 1"
-     # Connector ID (do not change)
-     connector_id = "dbt-cloud"
-     enabled = true
-     # enter the following based on your dbt cloud account
-     dbt.api_token = "<API-TOKEN>"
-     dbt.account_prefix = "<ACCOUNT-PREFIX>"
-     ```
+## Installing the Plugin
 
-The `dbt.api_token` and `dbt.account_prefix` values can be found in your dbt account. The account prefix can be found in your Account page. The API token can be found in the section named "Personal tokens" under API tokens. For more information, see [dbt Developer Hub](https://docs.getdbt.com/dbt-cloud/api-v2#/authentication). 
+The DBT Cloud plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
 
-     ![](/img/zeenea-dbt-cloud1.png)
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
-     ![](/img/zeenea-dbt-cloud2.png)
+## Declaring the Connection
 
-## Verifying the Connection
+Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-1. Restart Zeenea Scanner.
-2. In Zeenea Administration, click **Connections** and verify that the new connection is listed without any error message:
+Read more: [Managing Connections](./zeenea-managing-connections.md)
 
-     ![](/img/zeenea-dbt-cloud3.png)
+In order to establish a connection with a DBT Cloud instance, the following parameters in the dedicated file are required:
 
-3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](./zeenea-troubleshooting.md).
+### Changes in version 4.1.0
 
-## Manually Syncing the Connection
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>Expected value</th>
+  </tr>
+  <tr>
+    <td>`name`</td>
+    <td>The name that will be displayed to catalog users for this connection.</td>
+  </tr>
+  <tr>
+    <td>`code`</td>
+    <td>The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner.</td>
+  </tr>
+  <tr>
+    <td>`connector_id`</td>
+    <td>The type of connector to be used for the connection. Here, the value must be `dbt-cloud` and this value must not be modified.</td>
+  </tr>
+  <tr>
+    <td>`connection.account_prefix`</td>
+    <td>DBT Cloud account prefix (when environment are hosted by DBT Cloud : https://[account_prefix].us1.dbt.com)</td>
+  </tr>
+  <tr>
+    <td>`connection.token`</td>
+    <td>DBT Cloud personal access token</td>
+  </tr>
+  <tr>
+    <td>`connection.url`</td>
+    <td>DBT Cloud url (when hosted somewhere else)</td>
+  </tr>
+  <tr>
+    <td>`connection.offset_size`</td>
+    <td>(Technical) Offset size when retrieving runs (20 by default)</td>
+  </tr>
+</table>
 
-To manually start a scan, go to Zeenea Administration and open the Connections page, then click the ellipsis button in the **Actions** column and click on **Synchronize**:
+## User Permissions
 
-     ![](/img/zeenea-dbt-cloud4.png)
+In order to collect metadata, the running user's permissions must allow them to access and read accounts, jobs and runs that need cataloging.
 
-## Confirming Data in Zeenea
+## Data Extraction
 
-Switch to Zeenea Studio and click **Catalog** to view the scanned data:
+The DBT Cloud connector feeds Zeenea Database with Data Processes. Like other Data Process connectors, it has a single job "synchronize" that discovers all items of interest and creates or updates their documentation in the catalog. DBT Cloud items of interest are Jobs and Runs. So, for each Runs from a Job in DBT Cloud, multiple Data Processes should be created in Zeenea.
 
-     ![](/img/zeenea-dbt-cloud5.png)
+To extract information, the connector runs REST requests on following endpoints:
 
-### What You’ll See
+* GET: `/api/v3/accounts/`: To get available accounts.
+* GET: `/api/v2/accounts/*/runs/`: To get run list from available account.
+* GET: `/api/v2/accounts/*/runs/*/artifacts/manifest.json`: To get the manifest file result of job's latest run.
 
-When you filter by your dbt Cloud Connector, you’ll see a variety of Datasets and DataProcesses. The connector captures Job-Run data. The connector gets the last successful Run for a Job. The connector will only scan Jobs that have had at least one successful Run. 
+## Synchronization
+
+This connector will harvest all job processes identified in the DBT Cloud instance for each account and latest run, and automatically represent them in Zeenea.
+
+## Lineage
+
+The DBT Cloud connector is able to retrieve the lineage with:
+
+* DBT Cloud for **Snowflake**
+* DBT Cloud for **Redshift**
+* DBT Cloud for **PostgreSQL**
+
+## Collected Metadata
+
+### Data Process
+
+A data process is a DBT Cloud job link between each nodes. 
+
+* **Name**
+* **Source Description**
+* **Input**: Input datasets
+* **Output**: Output datasets
+* **Technical Data**:
+  * Type
+  * Package
+  * Alias
+  * Unique ID
+  * Created At
+  * SQL File Path
+  * SQL Dialect
+  * SQL Query
+
+## Unique Identifier Keys
+ 
+A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
+ 
+More information about unique identification keys in this documentation: [Identification Keys](./zeenea-identification-keys.md).
+  
+ <table>
+   <tr><th>Object</th><th>Identifier Key</th><th>Description</th></tr>
+   <tr>
+     <td>Data process</td>
+     <td>code/name</td>
+     <td>
+       <ul>
+         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
+         <li>**name**: DBT Cloud unique id</li>
+       </ul>
+     </td>
+   </tr>
+ </table>
