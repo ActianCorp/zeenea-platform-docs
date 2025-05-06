@@ -68,8 +68,8 @@ In order to collect metadata, the user permissions must allow them to list and r
 
 Since version 54 of the scanner, the Google Cloud Storage connector benefits from the feature of rich filters in the configuration of the connector. The available keys to filter objects during the inventory are:
 
-* bucket: name of the bucket
-* key: name of the object
+* `bucket`: name of the bucket
+* `name`: name of the object
 
 Read more: [Filters](zeenea-filters.md)
 
