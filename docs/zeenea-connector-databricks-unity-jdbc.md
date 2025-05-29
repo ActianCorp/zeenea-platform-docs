@@ -14,8 +14,9 @@ title: Databricks Unity Catalog JDBC
 :::
 
 :::note
-A configuration template can be downloaded here: [databricks-jdbc.conf](URL_TO_FILL)
+A configuration template can be downloaded here: [databricks-jdbc.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/databricks-jdbc.conf)
 :::
+
 ## Supported Versions
 
 The Databricks Unity Catalog JDBC connector is compatible with the SaaS version of the product.
