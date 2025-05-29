@@ -1,25 +1,29 @@
 ---
-title: Databricks Unity Catalog
+title: Databricks Unity Catalog JDBC
 ---
 
-# Adding a Databricks Unity Catalog Connection
+# Adding a Databricks Unity Catalog JDBC Connection
 
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Databricks Unity Catalog. 
 * Zeenea traffic flows towards the data source must be open.
 
-:::note
-A configuration template can be downloaded here: [databricks-unitycatalog.conf](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GUal0&d=%2Fa%2FNu000002lgaX%2Fk_V_FIT5LAvVG29BZPY2.zJdnwWdJoCT4L38CsrYxRw&asPdf=false)
+:::note[IMPORTANT]
+**The Databricks JDBC driver is not provided with the connector**. Download the Databricks JDBC driver for your Databricks instance and copy it to the `/lib-ext` folder of your scanner (**only the .jar file**). You can find the driver in the sources provided by the vendor on their website: https://www.databricks.com/spark/jdbc-drivers-download.
 :::
 
+:::note
+A configuration template can be downloaded here: [databricks-jdbc.conf](URL_TO_FILL)
+:::
 ## Supported Versions
 
-The Databricks Unity Catalog connector is compatible with version API Rest versions 2.0 and 2.1. 
+The Databricks Unity Catalog JDBC connector is compatible with the SaaS version of the product.
+Our connector have been built and tested with Simba 2.7.3 driver on Databricks 16.4 LTS version.
 
 ## Installing the Plugin
 
-The Databricks Unity Catalog plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+The Databricks Unity Catalog JDBC plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
@@ -35,31 +39,22 @@ In order to establish a connection with a Databricks Unity Catalog instance, spe
 | :--- | :--- |
 | `name` | The name that will be displayed to catalog users for this connection | 
 | `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
-| `connector_id` | The type of connector to be used for the connection. Here, the value must be `databricks-unitycatalog` and this value must not be modified. | 
-| `connection.url` | Databricks URL address (`https://url.cloud.databricks.com`). |
+| `connector_id` | The type of connector to be used for the connection. Here, the value must be `databricks-jdbc` and this value must not be modified. | 
+| `connection.url` | JDBC URL (example: `jdbc:databricks://<tenant>.cloud.databricks.com:443`) |
 | `connection.oauth.endpoint`	| Databricks OAuth2 endpoint (Optional)<br /><br /> Example: `https://tenant.cloud.databricks.com/oidc/v1/token`. |
 | `connection.oauth.client_id` | Client identifier |
 | `connection.oauth.client_secret` | Client secret |
-| `lineage.enabled` | Activates the lineage feature. Default value `false`. |
+| `connection.http_path` | Cluster HTTP path |
 | `filter` | To filter datasets during the inventory |
-| `tls.truststore.path` | The Trust Store file path. This file must be provided in case TLS encryption is activated (protocol https) and when certificates of servers are delivered by a specific authority. It must contain the certification chain. |
-| `tls.truststore.password` |	Password of the trust store file |
-| `tls.truststore.type` | Type of the trust store file (`PKCS12` or `JKS`). Default value is discovered from the file extension. |
-| `proxy.scheme` | Depending on the proxy, `http` or `https` |
-| `proxy.hostname` | Proxy address |
-| `proxy.port` | Proxy port |
-| `proxy.username | Proxy username |
-| `proxy.password | Proxy account password |
 
 ## User Permissions
 
-In order to collect metadata, the running user's permissions must allow them to access and read databases that need cataloging. 
-
-Here, the user must have `SELECT` access to objects that need cataloging.
+In order to collect metadata, the running user's permissions must have `SELECT` access to system tables that contains all information we have to retrieve.
+User must have `SELECT` permission on the following Databricks schema : `system.information_schema`
  
 ## Rich Filters
 
-Databricks connector benefits from the feature of rich filters in the configuration of the connector. Available filtering keys for Databricks Unity Catalog are the following:
+Databricks connector benefits from the feature of rich filters in the configuration of the connector. Available filtering keys for Databricks Unity Catalog JDBC are the following:
 
 * catalog
 * schema
@@ -69,12 +64,14 @@ Read more: [Filters](zeenea-filters.md)
 
 ## Data Extraction
 
-To extract information, the connector runs REST requests on following endpoints:
+To extract information, the connector is querying the following system tables :
 
-* **GET** `/api/2.1/unity-catalog/catalogs`: To get available catalogs.
-* **GET**: `/api/2.1/unity-catalog/schema?catalog_name=main`: To get schema from available catalogs.
-* **GET**: `/api/2.1/unity-catalog/tables?catalog_name=main&schema_name=default`: To get tables and views from a catalog schema.
-* **GET**: `/api/2.1/unity-catalog/tables/main.default.table_name`: To get tables and views metadata.
+* `system.information_schema.tables` : To get available tables and retrieve metadata.
+* `system.information_schema.views` : To retrieve view's data
+* `system.information_schema.columns` : To retrieve table's schema
+* `system.information_schema.table_constraints` : To retrieve primary keys
+* `system.information_schema.key_column_usage` : To retrieve foreign keys
+* `system.information_schema.constraint_column_usage` : To retrieve foreign keys
 
 ## Collected Metadata
 
@@ -91,8 +88,6 @@ A dataset can be a table or a view.
 * **Technical Data**: 
   * Catalog Name
   * Schema Name
-  * Metastore ID
-  * Table ID
   * Type
   * Data Source Format
   * Storage Location
@@ -100,6 +95,7 @@ A dataset can be a table or a view.
   * Created by
   * Updated at
   * Updated by
+  * View query definition
 
 ## Field
 

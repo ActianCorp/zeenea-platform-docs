@@ -127,10 +127,11 @@ hide_table_of_contents: true
   </tr>
   <tr>
     <td>[Databricks Hive Metastore](./zeenea-connector-databricks-hive-metastore.md)<br />
-        [Databricks Unity Connector](./zeenea-connector-databricks-unity.md)</td>
+        [Databricks Unity Catalog REST](./zeenea-connector-databricks-unity-rest.md)<br />
+        [Databricks Unity Catalog JDBC](./zeenea-connector-databricks-unity-jdbc.md)</td>
     <td>Databricks</td>
     <td>84</td>
-    <td>[databricks-connector-plugin-1.4.3.zip](https://plugins.zeenea.app/databricks-connector-plugin/databricks-connector-plugin-1.4.3.zip)</td>
+    <td>[databricks-connector-plugin-2.0.0.zip](https://plugins.zeenea.app/databricks-connector-plugin/databricks-connector-plugin-2.0.0.zip)</td>
   </tr>
   <tr>
     <td>[Dataiku](./zeenea-connector-dataiku.md)</td>
