@@ -19,8 +19,9 @@ A configuration template can be downloaded here: [databricks-jdbc.conf](https://
 
 ## Supported Versions
 
-The Databricks Unity Catalog JDBC connector is compatible with the SaaS version of the product.
-Our connector have been built and tested with Simba 2.7.3 driver on Databricks 16.4 LTS version.
+The Databricks Unity Catalog JDBC connector is compatible with Databricks on AWS, Azure, and Google Cloud platforms. 
+
+Our connector has been built and tested with Simba 2.7.3 driver on Databricks 16.4 LTS version.
 
 ## Installing the Plugin
 
