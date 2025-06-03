@@ -39,7 +39,7 @@ From this interface, you will be able to supervise the platform regarding the fo
 * Scanners
 * API keys
 
-## Define the Data Catalog Metamodel
+## Step 3: Define the Data Catalog Metamodel
 
 As Super Admin you can also configure the documentation in Zeenea. 
 
@@ -69,12 +69,12 @@ Here you can create the item types you want, define their templates and create r
 
 Read more: [Configuring the Glossary Metamodel](./zeenea-studio-configure-glossary-model.md)
 
-## Define Responsibilities
+## Step 4: Define Responsibilities
 
 In Zeenea, a responsibility describes the nature of the relationship between an individual or an entity and an item of the catalog. This attribute thus allows any user to identify the relevant contact person for their needs from the detailed page of the item once it has been completed (Data Steward, Data Owner, etc.).
 
 Read more: [Creating, Editing, or Deleting Responsibilities](./zeenea-studio-create-delete-responsibility.md)
 
-## Step 4: Start Importing and Documenting Your Items
+## Step 5: Start Importing and Documenting Your Items
 
 Congrats! You have laid the foundations of the catalog. Carry on the journey As a Data Steward.
