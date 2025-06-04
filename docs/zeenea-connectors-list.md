@@ -40,7 +40,7 @@ hide_table_of_contents: true
         [*Generic JDBC*](./zeenea-connector-generic-jdbc.md)</td>
     <td>JDBC</td>
     <td>78</td>
-    <td>[jdbc-connector-plugin-1.0.2.zip](https://plugins.zeenea.app/jdbc-connector-plugin/jdbc-connector-plugin-1.0.2.zip)</td>
+    <td>[jdbc-connector-plugin-1.0.4.zip](https://plugins.zeenea.app/jdbc-connector-plugin/jdbc-connector-plugin-1.0.4.zip)</td>
   </tr>
   <tr>
     <td>[Agile Data Engine (Solita)](./zeenea-connector-agile-data-engine-solita.md)</td>
