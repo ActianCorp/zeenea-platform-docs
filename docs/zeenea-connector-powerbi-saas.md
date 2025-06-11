@@ -39,9 +39,12 @@ The user logged via Entra ID or Active Directory requires MS Fabric Admin role t
 
      For example: `https://login.microsoftonline.com/20057ce9-1386-4770-8b04-e7824ef632be/oauth2/v2.0/token`
  8. Click **Register**.
- 9. Once the app registration is complete, note the **Application (client) ID**. You'll need this later to authenticate with the service principal. 
+ 
+#### 2. Note the Application (client) ID
+ 
+Once the app registration is complete, note the **Application (client) ID**. You'll need this later to authenticate with the service principal. 
 
-#### 2. Add a Client Secret
+#### 3. Add a Client Secret
 
 You can add a client secret to provide a password-based credential for authentication.
 
@@ -53,7 +56,7 @@ You can add a client secret to provide a password-based credential for authentic
     Copy the value of the client secret immediately after creation, as you won't be able to retrieve it later. 
     :::
 
-#### 3. Grant Permissions
+#### 4. Grant Permissions
 
 1. Go to the Azure resource you want the service principal to access.
 2. Select **Access control (IAM)**.
@@ -62,7 +65,7 @@ You can add a client secret to provide a password-based credential for authentic
 5. Add member by selecting the service principal created by the registered application.
 6. Click **Save**. 
 
-#### 4. Create a Security Group using the Microsoft Entra Admin Center
+#### 5. Create a Security Group using the Microsoft Entra Admin Center
 
 1. Sign in to the Microsoft Entra admin center: https://entra.microsoft.com/. Access the Entra admin center with appropriate permissions (at least a Groups Administrator role).
 2. Go to **Identity** > **Groups** > **All groups**.
@@ -75,7 +78,7 @@ You can add a client secret to provide a password-based credential for authentic
 5. Click **Create** to finalize the group creation.
 6. Add the previously-created service principal to the security group as a direct member.
 
-#### 5. Configure Admin API Settings
+#### 6. Configure Admin API Settings
 
 1. Access the Admin Portal: https://app.powerbi.com/admin-portal/tenantSettings?experience=power-bi.
 2. Navigate to the Admin portal within your Azure subscription.
@@ -92,7 +95,7 @@ You can add a client secret to provide a password-based credential for authentic
     * Enable the switch that allows for enhanced Admin API responses with detailed metadata.
     * Assign the security group created in the previous step to the Admin API settings enabled.
 
-#### 6. Add the Service Principal
+#### 7. Add the Service Principal
 
 Add the Service Principal to PowerBI Online users for the workspace(s).
 
