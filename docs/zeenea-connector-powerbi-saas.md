@@ -12,7 +12,7 @@ title: Power BI SaaS
   * https://api.powerbi.com
 
 :::note 
-The Power BI SaaS plugin can be downloaded here: [powerbi.conf](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GUbtm&d=%2Fa%2FNu000002lg4H%2FaccvqwXA6moiD6Jy3bOWkDoT7IpIcp6CXYsZj0JT.MI&asPdf=false))
+A configuration template can be downloaded here: [powerbi.conf](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GUbtm&d=%2Fa%2FNu000002lg4H%2FaccvqwXA6moiD6Jy3bOWkDoT7IpIcp6CXYsZj0JT.MI&asPdf=false)
 :::
 
 ## Supported Versions
