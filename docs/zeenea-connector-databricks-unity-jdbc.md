@@ -48,6 +48,8 @@ In order to establish a connection with a Databricks Unity Catalog instance, spe
 | `connection.oauth.client_secret` | Client secret |
 | `connection.http_path` | Cluster HTTP path |
 | `filter` | To filter datasets during the inventory |
+| `fingerprint.sampling_max_rows` | Max sampling rows during fingerprinting (default 10,000) |
+| `lineage.enabled` | Enable lineage (default `true`)
 
 ## User Permissions
 
