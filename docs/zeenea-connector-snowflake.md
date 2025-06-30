@@ -66,13 +66,19 @@ In order to establish a connection with Snowflake, specifying the following para
 | `lineage.history.warehouse` | The name of the Warehouse where the queries are executed. |
 | `lineage.history.period` | Number of days to analyze the queries between the start of the extraction and this number. |
 | `filter` | To filter datasets during the inventory. See [Rich Filters](#rich-filters). |
-| `multi_catalog.enabled` | <p>To activate multi-database connection configuration. Default value `false`.</p><p>**The `multi catalog` mode makes the connector incompatible with the lineage features available from other connectors such as dbt, Tableau, PowerBI SaaS, etc.**</p> |
+| `multi_catalog.enabled` | To activate multi-database connection configuration. Default value `false`. |
 | `multi_account.enabled` | <p>**Plugin v73 and higher**.</p><p>To activate multi account support (`true` &#124; `false`). Default is `false`.</p><p>When multi account is activated, `multi_catalog` is activated as well and overrides `multi_catalog.enabled` parameter to `true`.</p><p>**Warning**: this parameter should not be changed after datasets have been imported because it changes the ways they are identified.</p> |
 | `multi_account.list` | <p>**Plugin v73 and higher**.</p><p>(Optional) List of accounts to be inventoried. It consists of a succession of Snowflake account identifiers separated by a space. Account identifiers must be in the form “-” (see [Snowflake documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier)).</p><p>If unset, the organization's account list is retrieved and used.</p> |
 
 :::note
 A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 :::
+
+You can have snowflake datasets with "multi-catalog = true"  /my_db/my_schema/my_table or /my_schema/my_table  .
+
+If the platform receives a reference like /my_schema/my_table and the imported dataset has the ZeePath /my_db/my_schema/my_table ,
+
+If the platform can't find the ZeePath directly, it removes the first segment and searches with /my_schema/my_table 
 
 ## User Permissions
 
