@@ -51,19 +51,102 @@ In order to establish a connection with a Matillion DPC instance, the following 
   </tr>
   <tr>
     <td>`connection.path`</td>
-    <td>The root path of matillions files</td>
+    <td>The root path of Matillion files</td>
   </tr>
   <tr>
     <td>`default.warehouse`</td>
-    <td>Replace the default value [Environment Default] for the parameters "warehouse" for every components</td>
+    <td>Replace the default value [Environment Default] for the parameter `warehouse` for every component</td>
   </tr>
   <tr>
     <td>`default.database`</td>
-    <td>Replace the default value [Environment Default] for the parameters "database" for every components</td>
+    <td>Replace the default value [Environment Default] for the parameter `database` for every component</td>
   </tr>
   <tr>
     <td>`default.schema`</td>
-    <td>Replace the default value [Environment Default] for the parameters "schema" for every components</td>
+    <td>Replace the default value [Environment Default] for the parameter `schema` for every component</td>
+  </tr>
+</table>
+
+### Changes in version 5.1.0
+
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>Expected value</th>
+  </tr>
+  <tr>
+    <td>`connection.path`</td>
+    <td>
+        <p>Path to file or folder containing description files.</p>
+        <p>This value is mandatory if no git repository is declared.</p>
+        <p>If a git repository is declared, the value can be null or a path relative to the repository root.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>`connection.git.repository`</td>
+    <td>
+        <p>Git repository URL. Optional, use `connection.path` instead.</p>
+        <p>URL of the git repository where to read the files.</p>
+        <p>Example: `https://github.com/acme/bigproject`</p>
+    </td>
+  </tr>
+  <tr>
+    <td>`connection.git.branch`</td>
+    <td>
+        <p>Git branch to use. Optional.</p>
+        <p>Branch to clone. By default, HEAD is used.</p>
+        <p>Example: `https://github.com/acme/bigproject`</p>
+    </td>
+  </tr>
+  <tr>
+    <td>`connection.git.token`</td>
+    <td>
+        <p>Git token. Optional.</p>
+        <p>Authentication Token. Replaces the usage of the username/password parameters.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>`connection.git.username`</td>
+    <td>
+        <p>Git username. Optional.</p>
+        <p>Git user name. Requires password. Replaces the usage of token parameter.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>`connection.git.password`</td>
+    <td>
+        <p>Git username. Optional.</p>
+        <p>Git user password. Requires username. Replaces the usage of token parameter.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>`connection.git.workdir`</td>
+    <td>Local working folder where the git repository will be cloned. Optional. Default: root directory.</td>
+  </tr>
+  <tr>
+    <td>`connection.git.cleandir`</td>
+    <td>
+        <p>Boolean (`true`/`false`) indicating whether the working folder should be deleted after processing. If deleted, the repository will be cloned at each operation, otherwise only an update will be performed. Default value: `false`.</p>
+        <p>If you configure Git:</p>
+        <ul>
+          <li>At least `connection.git.token` OR `connection.git.username` with `connection.git.password` must be provided.</li>
+          <li>At least `connection.git.repository` or `connection.path` must be provided.</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>`environment-variable`</td>
+    <td>
+        <p>Replace environment variable starting with `${` and ending with `}`</p>
+        <p>Configuration example:</p>
+        <p>
+          ```
+          environment-variables = {
+            "V_REPLICA_TABLE_NAME" : "album"
+          }
+          ```
+        </p>
+    </td>
   </tr>
 </table>
 

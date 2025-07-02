@@ -228,8 +228,8 @@ hide_table_of_contents: true
   <tr>
     <td>[Matillion DPC](./zeenea-connector-matillion-dpc.md)</td>
     <td>Matillion</td>
-    <td>76</td>
-    <td>[matillion-connector-plugin-5.0.0.zip](https://plugins.zeenea.app/matillion-connector-plugin/matillion-connector-plugin-5.0.0.zip)</td>
+    <td>85</td>
+    <td>[matillion-connector-plugin-5.1.1.zip](https://plugins.zeenea.app/matillion-connector-plugin/matillion-connector-plugin-5.1.1.zip)</td>
   </tr>
   <tr>
     <td>[MicroStrategy](./zeenea-connector-microstrategy.md)</td>
