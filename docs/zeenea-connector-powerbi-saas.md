@@ -7,99 +7,13 @@ title: Power BI SaaS
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with PowerBI SaaS.
-* For the PowerBI v2 plugin to connect to a tenant of PowerBI Online, a Service Principal account is needed to authenticate to MS Azure via a registered application using OAuth 2.0, an application ID, and a secret key. Refer to [Creating a Service Principal in Azure](#creating-a-service-principal-in-azure) below for details.
+* Zeenea's scanner traffic flows towards Power BI's instance and Azure must be open. Refer to the following:
+  * https://login.microsoftonline.com
+  * https://api.powerbi.com
 
 :::note 
-The configuration template can be downloaded here: [powerbi.conf](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GUbtm&d=%2Fa%2FNu000002lg4H%2FaccvqwXA6moiD6Jy3bOWkDoT7IpIcp6CXYsZj0JT.MI&asPdf=false) 
-
-<font color="red">Is this template still valid with the v2 plugin?</font>
+A configuration template can be downloaded here: [powerbi.conf](https://actian.file.force.com/sfc/dist/version/download/?oid=00D300000001XnW&ids=068Nu00000GUbtm&d=%2Fa%2FNu000002lg4H%2FaccvqwXA6moiD6Jy3bOWkDoT7IpIcp6CXYsZj0JT.MI&asPdf=false)
 :::
-
-### Creating a Service Principal in Azure
-
-To create a service principal in Azure, you'll first need to register an application in Azure Active Directory (Azure AD). This application registration will automatically create a corresponding service principal, which represents the application's identity in your Microsoft Entra tenant. You'll need to note the **Application (client) ID** and the **Client Secret** from the app registration, which will be needed for the Zeenea Scanner configuration. Finally, you'll need to grant the service principal the necessary roles and permissions to access the resources it needs.
-
-Access to the PowerBI Admin API must be enabled for service principals using the Microsoft Fabric Admin Portal or Power BI Admin Portal and linked to a security group created using the Microsoft Entra Admin Center.
-
-To configure **Admin API settings** in Azure, you typically need to enable service principal authentication for admin APIs within the Admin portal, especially when using features like Microsoft Fabric. This involves signing into the Microsoft Fabric Admin Portal, navigating to tenant settings, and enabling the switch for service principal access to read-only admin APIs. You also need to assign a specific security group created during application creation to the Admin API settings.
-
-:::note
-The user logged via Entra ID or Active Directory requires MS Fabric Admin role to complete the steps below.
-:::
-
-#### 1. Register an Application in Azure Entra ID (formerly known as Active Directory)
-
- 1. Log in to the Azure portal: https://portal.azure.com/
- 2. Go to **Azure Entra ID**.
- 3. Select **App registrations**.
- 4. Click **New registration**.
- 5. Enter a name for your application.
- 6. Choose the appropriate supported account types.
- 7. Select the redirect URI.
-
-     For example: `https://login.microsoftonline.com/20057ce9-1386-4770-8b04-e7824ef632be/oauth2/v2.0/token`
- 8. Click **Register**.
- 
-#### 2. Note the Application (client) ID
- 
-Once the app registration is complete, note the **Application (client) ID**. You'll need this later to authenticate with the service principal. 
-
-#### 3. Add a Client Secret
-
-You can add a client secret to provide a password-based credential for authentication.
-
-1. Go to **Certificates & secrets** under the app registration.
-2. Click **New client secret**.
-3. Enter a description and expiry date, then click **Add**.
-
-    :::caution[IMPORTANT]
-    Copy the value of the client secret immediately after creation, as you won't be able to retrieve it later. 
-    :::
-
-#### 4. Grant Permissions
-
-1. Go to the Azure resource you want the service principal to access.
-2. Select **Access control (IAM)**.
-3. Click **Add role assignment**.
-4. Choose the appropriate privileged administrator role (e.g., “Contributor”).
-5. Add member by selecting the service principal created by the registered application.
-6. Click **Save**. 
-
-#### 5. Create a Security Group using the Microsoft Entra Admin Center
-
-1. Sign in to the Microsoft Entra admin center: https://entra.microsoft.com/. Access the Entra admin center with appropriate permissions (at least a Groups Administrator role).
-2. Go to **Identity** > **Groups** > **All groups**.
-3. Click **New group**.
-4. Provide Group Details:
-    * Group type: Select **Security**.
-    * Group name: Enter a descriptive name for the group.
-    * Description: (Optional) Add a description for the group.
-    * Membership type: Choose **Assigned** for manually-assigned members or **Dynamic** for automatically-managed members based on rules.
-5. Click **Create** to finalize the group creation.
-6. Add the previously-created service principal to the security group as a direct member.
-
-#### 6. Configure Admin API Settings
-
-1. Access the Admin Portal: https://app.powerbi.com/admin-portal/tenantSettings?experience=power-bi.
-2. Navigate to the Admin portal within your Azure subscription.
-3. Go to the **Tenant Settings** section.
-4. Find the **Admin API settings** section within the tenant settings:
-
-    ![](/img/zeenea-ms-fabric1.png)
-
-    ![](/img/zeenea-ms-fabric2.png)
-
-    * Enable Service Principal Authentication.
-    * Enable the switch that allows service principals to access read-only Admin APIs.
-    * Enable the switch that allows service principals to access read-only Admin APIs used for updates.
-    * Enable the switch that allows for enhanced Admin API responses with detailed metadata.
-    * Assign the security group created in the previous step to the Admin API settings enabled.
-
-#### 7. Add the Service Principal
-
-Add the Service Principal to PowerBI Online users for the workspace(s).
-
-<font color="red">Under [User Permissions](#user-permissions) below, there is a bullet for "Add the service principal to Power BI group". Is this step what that is referring to, and is the info under that bullet still correct?</font>
 
 ## Supported Versions
 
@@ -107,14 +21,10 @@ The Power BI SaaS connector is compatible with the product online version.
 
 ## Installing the Plugin
 
-The Power BI SaaS plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md) <font color="red">Need link for v2 plugin for the Connector Downloads page.</font>
-
+The Power BI SaaS plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
 
 :::caution[ATTENTION]
 Updating the connector to version 1.7.0 from a previous version requires a data migration for the "Data process" type objects. Please contact customer service to assist you in this migration.
-
-<font color="red">Do you need to do this before updating to v2 if you haven't already done so for v1.7.0?</font>
-
 :::
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
@@ -126,8 +36,6 @@ Creating and configuring connectors is done through a dedicated configuration fi
 Read more: [Managing Connections](./zeenea-managing-connections.md)
 
 In order to establish a connection with a PowerBI SaaS instance, specifying the following parameters in the dedicated file is required:
-
-<font color="red">Are any additions/updates to parameters needed for v2?</font>
 
 <table>
   <tr>
@@ -220,8 +128,6 @@ In order to establish a connection with a PowerBI SaaS instance, specifying the 
 </table>
 
 ## User Permissions
-
-<font color="red">Some of this section appears to overlap with the new Creating a Service Principal section above. Are any changes required to this section?</font>
 
 In order to collect metadata, the running user's permissions must allow them to access and read reports that need cataloging.
 
