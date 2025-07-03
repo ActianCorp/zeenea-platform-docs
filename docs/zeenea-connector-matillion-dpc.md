@@ -69,6 +69,15 @@ In order to establish a connection with a Matillion DPC instance, the following 
 
 ### Changes in version 5.1.0
 
+The connector accepts 2 inputs: Git or a folder in which you can store your Matillion files. At least one of the two must be configured. By default, the Git configuration is selected (if it fails, it falls back to `connection.path`).
+
+To configure Git, you need to provide credentials and specify the location of your repository.
+
+You must provide at least one of the following to authenticate:
+
+* A Git token (`connection.git.token`)
+* Both a Git username (`connection.git.username`) AND a Git password (`connection.git.password`)
+
 <table>
   <tr>
     <th>Parameter</th>
@@ -125,14 +134,7 @@ In order to establish a connection with a Matillion DPC instance, the following 
   </tr>
   <tr>
     <td>`connection.git.cleandir`</td>
-    <td>
-        <p>Boolean (`true`/`false`) indicating whether the working folder should be deleted after processing. If deleted, the repository will be cloned at each operation, otherwise only an update will be performed. Default value: `false`.</p>
-        <p>If you configure Git:</p>
-        <ul>
-          <li>At least `connection.git.token` OR `connection.git.username` with `connection.git.password` must be provided.</li>
-          <li>At least `connection.git.repository` or `connection.path` must be provided.</li>
-        </ul>
-    </td>
+    <td>Boolean (`true`/`false`) indicating whether the working folder should be deleted after processing. If deleted, the repository will be cloned at each operation, otherwise only an update will be performed. Default value: `false` </td>
   </tr>
   <tr>
     <td>`environment-variable`</td>
