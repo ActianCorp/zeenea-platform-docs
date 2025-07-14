@@ -1,8 +1,12 @@
 ---
-title: Power BI SaaS  
+title: Power BI SaaS (Deprecated)
 ---
 
 # Adding a Power BI SaaS Connection
+
+:::note 
+The Power BI SaaS (V1) plugin has been deprecated. Please use the [Power BI SaaS (V2)](./zeenea-connector-powerbi-saas-v2.md) connector instead.
+:::
 
 ## Prerequisites
 
