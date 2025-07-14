@@ -262,13 +262,13 @@ hide_table_of_contents: true
     <td>[powerbi-report-connector-plugin-84.zip](https://plugins.zeenea.app/powerbi-report-connector-plugin/powerbi-report-connector-plugin-84.zip)</td>
   </tr>
   <tr>
-    <td>[Microsoft PowerBI SaaS (Deprecated)](./zeenea-connector-powerbi-saas.md)</td>
+    <td>[Microsoft PowerBI Online (Deprecated)](./zeenea-connector-powerbi-saas.md)</td>
     <td>PowerBI</td>
     <td>54</td>
     <td>[powerbi-connector-plugin-1.16.4.zip](https://plugins.zeenea.app/powerbi-connector-plugin/powerbi-connector-plugin-1.16.4.zip)</td>
   </tr>
     <tr>
-    <td>[Microsoft PowerBI SaaS V2](./zeenea-connector-powerbi-saas-v2.md)</td>
+    <td>[Microsoft PowerBI Online V2](./zeenea-connector-powerbi-saas-v2.md)</td>
     <td>PowerBI</td>
     <td>84</td>
     <td>[powerbi-v2-connector-plugin-1.1.0.zip](https://plugins.zeenea.app/powerbi-v2-connector-plugin/powerbi-v2-connector-plugin-1.1.0.zip)</td>
