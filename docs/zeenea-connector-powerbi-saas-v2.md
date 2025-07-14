@@ -1,28 +1,28 @@
 ---
-title: Power BI SaaS (V2)
+title: Power BI Online (V2)
 ---
 
-# Adding a Power BI SaaS (V2) Connection
+# Adding a Power BI Online (V2) Connection
 
 ## Prerequisites
 
-* A user with sufficient [permissions](#user-permissions) is required to establish a connection with PowerBI SaaS.
+* A user with sufficient [permissions](#user-permissions) is required to establish a connection with PowerBI Online.
 * Zeenea's scanner traffic flows towards Power BI's instance and Azure must be open. Refer to the following:
 
   * https://login.microsoftonline.com
   * https://api.powerbi.com
 
 :::note 
-The Power BI SaaS (V2) connector configuration file can be downloaded here: [powerbi-v2.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/powerbi-v2.conf))
+The Power BI Online (V2) connector configuration file can be downloaded here: [powerbi-v2.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/powerbi-v2.conf))
 :::
 
 ## Supported Versions
 
-The Power BI SaaS (V2) connector is compatible with the product online version. 
+The Power BI Online (V2) connector is compatible with the product online version. 
 
 ## Installing the Plugin
 
-The Power BI SaaS (V2) plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
+The Power BI Online (V2) plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
 
 :::caution[ATTENTION]
 Migrating from PowerBI (V1) connector to PowerBI (V2) connector requires specific operations. Please contact customer service to assist you in this migration.
@@ -36,7 +36,7 @@ Creating and configuring connectors is done through a dedicated configuration fi
 
 Read more: [Managing Connections](./zeenea-managing-connections.md)
 
-In order to establish a connection with a PowerBI SaaS instance, specifying the following parameters in the dedicated file is required:
+In order to establish a connection with a PowerBI Online instance, specifying the following parameters in the dedicated file is required:
 
 <table>
   <tr>
@@ -201,10 +201,10 @@ To configure Admin API settings in Azure, you typically need to enable service p
      * Enable the switch that allows for enhanced Admin API responses with detailed metadata. 
        * Assign the security group created in the previous step to the Admin API settings enabled.
 
-#### PowerBI SaaS Application : https://app.powerbi.com
+#### PowerBI Online Application : https://app.powerbi.com
 
 7. Give permission to PowerBI Workspaces:
-   * Access PowerBI SaaS Application
+   * Access PowerBI Online Application
    * Navigate to Workspaces section 
    * Grant "Viewer" permission set to the service principal to every Workspace that needs to be cataloged
      * Do not grant the "Viewer" permission set to security group, otherwise it won't work
@@ -291,7 +291,7 @@ Collects the list of reports accessible by the user.
 
 ### Lineage
 
-The Power BI SaaS (V2) connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the Power BI SaaS (V2) dataset through a new Data Process object. This feature is available for the following systems and, for it to work, an additional parameter is needed in **the configuration file of the source system connection** as configured in the Power BI SaaS (V2) connection configuration panel. For example, if the Power BI dataset comes from a SQL Server table, then a new alias parameter must be added in the SQL Server connection configuration file.
+The Power BI Online (V2) connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the Power BI Online (V2) dataset through a new Data Process object. This feature is available for the following systems and, for it to work, an additional parameter is needed in **the configuration file of the source system connection** as configured in the Power BI Online (V2) connection configuration panel. For example, if the Power BI dataset comes from a SQL Server table, then a new alias parameter must be added in the SQL Server connection configuration file.
 
 The following table summarizes the possible values of the `alias` parameter to be completed in the data source configuration file.
 
@@ -305,7 +305,7 @@ The following table summarizes the possible values of the `alias` parameter to b
 | [Denodo](./zeenea-connector-denodo.md) | Server name:ODBC port | `alias = ["denodo.database.com:9996"]` |
 
 :::note
-The connector creates a data process object for each dataset from Power BI SaaS (V2) to represent the link with the source dataset (even if the source dataset is not present in the catalog).
+The connector creates a data process object for each dataset from Power BI Online (V2) to represent the link with the source dataset (even if the source dataset is not present in the catalog).
 :::
 
 ### Visualization
@@ -357,7 +357,7 @@ Dataset field or measure.
 
 ### Data Process
 
-To represent the data flow from an external source, a Zeenea Data Process will be created for each Power BI SaaS Dataset.
+To represent the data flow from an external source, a Zeenea Data Process will be created for each Power BI Online Dataset.
 
 * **Name**: `IMPORT dataset_name`
 
@@ -375,7 +375,7 @@ More information about unique identification keys in this documentation: [Identi
     <td>
       <ul>
         <li>**code**: Unique identifier of the connection noted in the configuration file</li>
-        <li>**workspace_id**: Power BI SaaS workspace technical identifier</li>
+        <li>**workspace_id**: Power BI Online workspace technical identifier</li>
         <li>**report_id**: Power BI report technical identifier</li>
       </ul>
     </td>
@@ -386,7 +386,7 @@ More information about unique identification keys in this documentation: [Identi
     <td>
       <ul>
         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-        <li>**workspace_id**: Power BI SaaS Group technical identifier</li>
+        <li>**workspace_id**: Power BI Online Group technical identifier</li>
         <li>**dataset_id**: Power BI technical semantic model technical identifier</li>
         <li>**dataset_name**: Power BI table name from semantic model</li>
       </ul>
@@ -398,7 +398,7 @@ More information about unique identification keys in this documentation: [Identi
     <td>
       <ul>
         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-        <li>**workspace_id**: Power BI SaaS Group technical identifier</li>
+        <li>**workspace_id**: Power BI Online Group technical identifier</li>
         <li>**dataset_id**: Power BI semantic model technical identifier</li>
         <li>**dataset_name**: Power BI technical table name from semantic model</li>
         <li>**field_name**: PowerBI field technical name</li>
@@ -411,7 +411,7 @@ More information about unique identification keys in this documentation: [Identi
     <td>
       <ul>
         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-        <li>**workspace_id**: Power BI SaaS Group technical identifier</li>
+        <li>**workspace_id**: Power BI Online Group technical identifier</li>
         <li>**report_id**: Power BI report technical identifier</li>
         <li>**dataset_id**: Power BI technical semantic model technical identifier</li>
         <li>**dataset_name**: Power BI table name from semantic model</li>
