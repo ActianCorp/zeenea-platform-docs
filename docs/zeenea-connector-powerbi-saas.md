@@ -1,12 +1,16 @@
 ---
-title: Power BI SaaS  
+title: Power BI Online (Deprecated)
 ---
 
-# Adding a Power BI SaaS Connection
+# Adding a Power BI Online Connection
+
+:::note 
+The Power BI Online (V1) plugin has been deprecated. Please use the [Power BI Online (V2)](./zeenea-connector-powerbi-saas-v2.md) connector instead.
+:::
 
 ## Prerequisites
 
-* A user with sufficient [permissions](#user-permissions) is required to establish a connection with PowerBI SaaS.
+* A user with sufficient [permissions](#user-permissions) is required to establish a connection with PowerBI Online.
 * Zeenea's scanner traffic flows towards Power BI's instance and Azure must be open. Refer to the following:
   * https://login.microsoftonline.com
   * https://api.powerbi.com
@@ -17,11 +21,11 @@ A configuration template can be downloaded here: [powerbi.conf](https://actian.f
 
 ## Supported Versions
 
-The Power BI SaaS connector is compatible with the product online version. 
+The Power BI Online connector is compatible with the product online version. 
 
 ## Installing the Plugin
 
-The Power BI SaaS plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
+The Power BI Online plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
 
 :::caution[ATTENTION]
 Updating the connector to version 1.7.0 from a previous version requires a data migration for the "Data process" type objects. Please contact customer service to assist you in this migration.
@@ -35,7 +39,7 @@ Creating and configuring connectors is done through a dedicated configuration fi
 
 Read more: [Managing Connections](./zeenea-managing-connections.md)
 
-In order to establish a connection with a PowerBI SaaS instance, specifying the following parameters in the dedicated file is required:
+In order to establish a connection with a PowerBI Online instance, specifying the following parameters in the dedicated file is required:
 
 <table>
   <tr>
@@ -218,7 +222,7 @@ Collects the list of reports accessible by the user.
 
 ### Lineage
 
-The Power BI SaaS connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the Power BI SaaS dataset through a new Data Process object. This feature is available for the following systems and, for it to work, an additional parameter is needed in **the configuration file of the source system connection** as configured in the Power BI SaaS connection configuration panel. For example, if the Power BI dataset comes from a SQL Server table, then a new alias parameter must be added in the SQL Server connection configuration file.
+The Power BI Online connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the Power BI Online dataset through a new Data Process object. This feature is available for the following systems and, for it to work, an additional parameter is needed in **the configuration file of the source system connection** as configured in the Power BI Online connection configuration panel. For example, if the Power BI dataset comes from a SQL Server table, then a new alias parameter must be added in the SQL Server connection configuration file.
 
 Table summarizing the possible values of the `alias` parameter to be completed in the data source configuration file.
 
@@ -233,7 +237,7 @@ Table summarizing the possible values of the `alias` parameter to be completed i
 | [Denodo](./zeenea-connector-denodo.md) | Server name:ODBC port | `alias = ["denodo.database.com:9996"]` |
 
 :::note
-The connector creates a data process object for each dataset from Power BI SaaS to represent the link with the source dataset (even if the source dataset is not present in the catalog).
+The connector creates a data process object for each dataset from Power BI Online to represent the link with the source dataset (even if the source dataset is not present in the catalog).
 :::
 
 ### Visualization
@@ -284,7 +288,7 @@ Dataset field or measure.
 
 ### Data Process
 
-To represent the data flow from an external source, a Zeenea Data Process will be created for each Power BI SaaS Dataset.
+To represent the data flow from an external source, a Zeenea Data Process will be created for each Power BI Online Dataset.
 
 * **Name**: `import dataset_name`
 
@@ -302,7 +306,7 @@ More information about unique identification keys in this documentation: [Identi
     <td>
       <ul>
         <li>**code**: Unique identifier of the connection noted in the configuration file</li>
-        <li>**group id**: Power BI SaaS Group technical identifier</li>
+        <li>**group id**: Power BI Online Group technical identifier</li>
         <li>**id**: Power BI object technical identifier</li>
       </ul>
     </td>
@@ -313,7 +317,7 @@ More information about unique identification keys in this documentation: [Identi
     <td>
       <ul>
         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-        <li>**group id**: Power BI SaaS Group technical identifier</li>
+        <li>**group id**: Power BI Online Group technical identifier</li>
         <li>**id**: Power BI object technical identifier</li>
       </ul>
     </td>
@@ -324,7 +328,7 @@ More information about unique identification keys in this documentation: [Identi
     <td>
       <ul>
         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-        <li>**group id**: Power BI SaaS Group technical identifier</li>
+        <li>**group id**: Power BI Online Group technical identifier</li>
         <li>**id**: Power BI object technical identifier</li>
         <li>**field name**</li>
       </ul>

@@ -1,17 +1,17 @@
 ---
-title: Tableau (Deprecated)
+title: Tableau (V2)
 ---
 
-# Adding a Tableau Connection
-
-:::note 
-The Tableau (V1) plugin has been deprecated. Please use the [Tableau (V2)](./zeenea-connector-tableau-v2.md) connector instead.
-:::
+# Adding a Tableau (V2) Connection
 
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with the Tableau solution. Please read [User Permissions](#user-permissions) below.
 * The Zeenea traffic flows towards Tableau must be open. If you want to connect Zeenea to a Tableau installed on your own server, you must activate the Tableau API Metadata. See documentation here: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server
+
+:::note 
+The Tableau (V2) connector configuration file can be downloaded here: [tableau-v2.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/tableau-v2.conf)
+:::
 
 ## Supported Versions
 
@@ -20,11 +20,7 @@ The Tableau connector was tested on the SaaS solution.
 ## Installing the Plugin
 
 :::warning
-**This version of the connector is NOT compatible with previous versions (3.XX and earlier) of Tableau Connector!**
-
-All the items you may have already imported **MUST** be deleted and reimported.
-
-If you need to export your documentation before upgrading, please contact our support before proceeding.
+Migrating from Tableau (V1) connector to Tableau (V2) connector will need specific operations. Please contact customer service to assist you in this migration.
 :::
 
 The Tableau plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
@@ -80,26 +76,6 @@ In order to establish a connection with Tableau, specifying the following parame
     <td>(Optional; Advanced) Timeout delay of the GraphQL request. Delay in milliseconds.<br /> Default: `10000` ms.</td>
   </tr>
   <tr>
-    <td>`lineage`</td>
-    <td>
-      <p>(Optional) **Version 4.2.0 and later**</p>
-      <p>Three modes available:</p>
-      <ul>
-        <li>`full`: do the full lineage</li>
-        <li>`simplified`: ignore embedded data sources when they they are linked to a unique published data source. The workbook is then directly linked to this published data source.</li>
-        <li>`disabled`: only data sources linked to the workbook are loaded.</li>
-      </ul>
-      <p>For compatibility with earlier version, `true` is a synonym of `full` and `false` is a synonym of `disabled`. Use canonical names whenever possible.</p>
-      <p>This value should not be changed after having been enabled and items have been imported.</p>
-      <p>**Version 4.1.0 and earlier**</p>
-      <p>Default value `false`. Set to `true` to activate automatic lineage feature.</p>
-    </td>
-  </tr>
-  <tr>
-    <td>`multi_catalog.enabled`</td>
-    <td>(Optional) Default value `false`. Set to `true` if lineage source system is also configured with multi catalog option.</td>
-  </tr>
-  <tr>
     <td>`proxy.scheme`</td>
     <td>Depending on the proxy, `http` or `https`</td>
   </tr>
@@ -133,9 +109,7 @@ In order to establish a connection with Tableau, specifying the following parame
   </tr>
 </table>
 
-:::note
-A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
-:::
+
 
 ## User Permissions
 
@@ -143,19 +117,49 @@ A Personal Access Token must be generated to access the metadata.
 
 In order to generate this token, log into Tableau with a User having Site Administrator privilege.
 
-Then, make sure you can create a Personal Access Token for the site (see instructions here: https://help.tableau.com/current/pro/desktop/en-us/useracct.htm#create-and-revoke-personal-access-tokens).
+Then, make sure you can create a Personal Access Token for the site. See instructions here: https://help.tableau.com/current/pro/desktop/en-us/useracct.htm#create-and-revoke-personal-access-tokens.
 
 In case you are using Tableau Server, you also have to activate Tableau Metadata API. Instructions are provided here: https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server.
 
 Finally, create a PAT (Personal Access Token) and paste it into your Tableau Connection configuration file.
 
+## Universal Filters
+
+Use universal filter language to filter and root items with the following criteria:
+
+| Criteria | Description |
+| :--- | :--- |
+| `site`        | (String) Site if multi-site enabled
+| `id`          | (UUID) Item ID
+| `type`        | (String Enum) Item type (workbook/publisheddatasource)
+| `project_name`| (String) Project name
+| `name`        | (String) Item name
+
+#### Example:
+
+```
+filters = [
+  {
+    id="accept_zeenea_project"
+    action = ACCEPT
+    rules {
+      project_name = "Zeenea"
+    }
+  },
+  {
+    id = "default_reject"
+    action = REJECT
+  }
+]
+```
+
+Read more: [Universal Filters](./zeenea-universal-filters.md)
+
 ## Data Extraction
 
-[comment]: <> (Text refers to Looker. Is this a cut/paste error?)
+In order to extract information from Tableau, the connector will scan all workbooks within the solution and transform them into **Visualization** objects in Zeenea. All related Data Sources are then collected and transferred to Zeenea. Data sources are referenced as **Datasets**. Fields are recreated as **Field** type objects in Zeenea. For each Tableau Dataset, a **Data Process** is created to represent the lineage with the origin Dataset.
 
-In order to extract information from Tableau, the connector will scan all workbooks within the solution and transform them into **Visualization** objects in Zeenea. All related Data Sources are then collected and transferred to Zeenea. Data sources are referenced as **Datasets**. Fields are recreated as **Field** type objects in Zeenea. For each Looker Dataset, a **Data Process** is created to represent the lineage with the origin Dataset.
-
-To identify the objects in the source system, the connector uses the technical identifiers produced by Tableau. In cases where these are changed (following a modification for example), this will lead to the duplication of the object in the catalog.
+To identify the objects in the source system, the connector uses the technical identifiers produced by Tableau. In cases where these are changed (following a modification, for example), this will lead to the duplication of the object in the catalog.
  
 ## Collected Metadata
 
@@ -165,40 +169,21 @@ The inventory collects the list of reports (along with their data sources) that 
 
 ## Lineage
 
-[comment]: <> (Text refers to Looker. Is this a cut/paste error?)
+The Tableau connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the Tableau dataset through a new Data Process object. This feature is available for the following systems and, for it to work, an additional parameter is needed in the source system connection as configured in the Tableau connection configuration panel.
 
-The Tableau connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the Looker dataset through a new Data Process object. This feature is available for the following systems and, for it to work, an additional parameter is needed in the source system connection as configured in the Tableau connection configuration panel.
 
-<table>
-  <tr>
-    <th>Source System</th>
-    <th>Possible value of `alias` parameter to be set in source system configuration file</th>
-  </tr>
-  <tr>
-    <td>[BigQuery](./zeenea-connector-google-bigquery.md)</td>
-    <td>`bigquery-{project name}`</td>
-  </tr>
-  <tr>
-    <td>[Snowflake](./zeenea-connector-snowflake.md)</td>
-    <td>`snowflake-{database name}`</td>
-  </tr>
-  <tr>
-    <td>[Redshift](./zeenea-connector-aws-redshift.md)</td>
-    <td>`bigquery-{project name}`</td>
-  </tr>
-  <tr>
-    <td>[SQL Server](./zeenea-connector-sqlserver.md)</td>
-    <td>`redshift-{database name}`</td>
-  </tr>
-  <tr>
-    <td>[Oracle](./zeenea-connector-oracle.md)</td>
-    <td>`oracle-{database name}`</td>
-  </tr>
-</table>
+The Tableau (V2) connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the Tableau (V2) dataset through a new Data Process object.  This feature is available for the following systems and, for it to work, an additional parameter is needed in the source system connection as configured in the Tableau connection configuration panel. For example, if the Tableau dataset comes from a SQL Server table, then a new alias parameter must be added in the SQL Server connection configuration file.
 
-:::note
-The connector creates a data process object for each dataset from Tableau to represent the link with the source dataset (even if the source dataset is not present in the catalog).
-:::
+The following table summarizes the possible values of the `alias` parameter to be completed in the data source configuration file.
+
+| Source System| Model | Example |
+| :--- | :--- | :---- |
+| [SQL Server](./zeenea-connector-sqlserver.md) | Server name:port/Database name | `alias = ["zeenea.database.windows.net:1433/db"]` * |
+| [BigQuery](./zeenea-connector-google-bigquery.md) | BigQuery project identifier	| `alias = ["zeenea-project"]` |
+| [AWS Redshift](./zeenea-connector-aws-redshift.md) | Server name:port/Database name | `alias = ["zeenea.cthwlv3ueke2.eu-west-3.redshift.amazonaws.com:5439/database"]` |
+| [Snowflake](./zeenea-connector-snowflake.md) | Server name/Database name | `alias = ["kn999999.eu-west-1.snowflakecomputing.com/ZEENEA""]` * |
+| [Oracle](./zeenea-connector-oracle.md) | Server name:port/Service Name | `alias = ["oracle.example.com:1521/XE"]` |
+| [Denodo](./zeenea-connector-denodo.md) | Server name:ODBC port | `alias = ["denodo.database.com:9996"]` |
 
 ### Visualization
 
@@ -239,7 +224,7 @@ Dataset field. Can be used as a Tableau report metric.
 
 To represent the data flow from an external source, a Zeenea Data Process will be created for each Tableau Dataset.
 
-* **Name**: `import input/output dataset name`
+* **Name**: `IMPORT dataset_name`
 
 ## Object Identification Keys
 
@@ -251,42 +236,42 @@ Read more: [Identification Keys](./zeenea-identification-keys.md)
   <tr><th>Object</th><th>Identification Key</th><th>Description</th></tr>
   <tr>
     <td>Visualization</td>
-    <td>code/workbook identifier</td>
+    <td>code/workbook/`id`</td>
     <td>
       <ul>
         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-        <li>**workbook identifier**: Workbook Tableau technical identifier</li>
+        <li>**id**: Workbook Tableau technical identifier</li>
       </ul>
     </td>
   </tr>
   <tr>
     <td>Dataset</td>
-    <td>code/dataset/data source identifier</td>
+    <td>code/publisheddatasource/`id`</td>
     <td>
       <ul>
         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-        <li>**data source identifier**: Data Source Tableau technical identifier</li>
+        <li>**id**: Data Source Tableau technical identifier</li>
       </ul>
     </td>
   </tr>
   <tr>
     <td>Field</td>
-    <td>code/dataset/data source identifier/field identifier</td>
+    <td>code/publisheddatasource/`id`/`field_identifier`</td>
     <td>
       <ul>
         <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-        <li>**data source identifier**: Data Source Tableau technical identifier</li>
-        <li>**field identifier**: Field Tableau technical identifier</li>
+        <li>**id**: Data Source Tableau technical identifier</li>
+        <li>**field_identifier**: Field Tableau technical identifier</li>
       </ul>
     </td>
   </tr>
   <tr>
     <td>Data process</td>
-    <td>code/transformation/data source identifier</td>
+    <td>code/workbook/`id`/process<br />code/publisheddatasource/`id`/process</td>
     <td>
       <ul>
-        <li>**code**:  Unique identifier of the connection noted in the configuration file</li>
-        <li>**data source identifier**: Data Source Tableau technical identifier</li>
+        <li>**code**: Unique identifier of the connection noted in the configuration file</li>
+        <li>**id**: Workbook or Data Source Tableau technical identifier</li>
       </ul>
     </td>
   </tr>

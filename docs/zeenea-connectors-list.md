@@ -262,10 +262,16 @@ hide_table_of_contents: true
     <td>[powerbi-report-connector-plugin-84.zip](https://plugins.zeenea.app/powerbi-report-connector-plugin/powerbi-report-connector-plugin-84.zip)</td>
   </tr>
   <tr>
-    <td>[Microsoft PowerBI SaaS](./zeenea-connector-powerbi-saas.md)</td>
+    <td>[Microsoft PowerBI Online (Deprecated)](./zeenea-connector-powerbi-saas.md)</td>
     <td>PowerBI</td>
     <td>54</td>
     <td>[powerbi-connector-plugin-1.16.4.zip](https://plugins.zeenea.app/powerbi-connector-plugin/powerbi-connector-plugin-1.16.4.zip)</td>
+  </tr>
+    <tr>
+    <td>[Microsoft PowerBI Online V2](./zeenea-connector-powerbi-saas-v2.md)</td>
+    <td>PowerBI</td>
+    <td>84</td>
+    <td>[powerbi-v2-connector-plugin-1.1.0.zip](https://plugins.zeenea.app/powerbi-v2-connector-plugin/powerbi-v2-connector-plugin-1.1.0.zip)</td>
   </tr>
   <tr>
     <td>[Microsoft SSRS](./zeenea-connector-ssrs.md)<br />
@@ -317,10 +323,16 @@ hide_table_of_contents: true
     <td>[splunk-connector-plugin-1.0.0.zip](https://plugins.zeenea.app/splunk-connector-plugin/splunk-connector-plugin-1.0.0.zip)</td>
   </tr>
   <tr>
-    <td>[Tableau](./zeenea-connector-tableau.md)</td>
+    <td>[Tableau (Deprecated)](./zeenea-connector-tableau.md)</td>
     <td>Tableau</td>
     <td>54</td>
     <td>[tableau-connector-plugin-4.2.2.zip](https://plugins.zeenea.app/tableau-connector-plugin/tableau-connector-plugin-4.2.2.zip)</td>
+  </tr>
+  <tr>
+    <td>[Tableau V2](./zeenea-connector-tableau-v2.md)</td>
+    <td>Tableau V2</td>
+    <td>84</td>
+    <td>[tableau-v2-connector-plugin-1.1.3.zip](https://plugins.zeenea.app/tableau-v2-connector-plugin/tableau-v2-connector-plugin-1.1.3.zip)</td>
   </tr>
   <tr>
     <td>[Talend ETL](./zeenea-connector-talend.md)</td>
