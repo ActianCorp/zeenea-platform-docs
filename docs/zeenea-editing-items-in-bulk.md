@@ -6,9 +6,9 @@ title: Editing Items in Bulk
 
 ## Editing Item Documentation
 
-The bulk edition is available in the Catalog section by clicking the **Edit** button.
+The bulk edit is available in the Catalog section by clicking the **Edit** button.
 
-Bulk edition actions include:
+Bulk edit actions include:
 
 * Adding contacts
 * Adding curators
