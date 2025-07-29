@@ -7,7 +7,8 @@ title: Open Data Gouv
 
 ## Prerequisites
 `
-Data Gouv account and API key
+* A user API key is required to establish a connection with Data Gouv.
+* Zeenea traffic flows towards Open Data Gouv must be open. 
 
 ## Supported Versions
 
