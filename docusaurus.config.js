@@ -53,7 +53,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/ActianCorp/zeenea-platform-docs/tree/suggestions',
-          showLastUpdateTime: true,
+          showLastUpdateTime: false,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -66,18 +66,6 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       //Navbar items
-      image: 'img/Logos_Actian_3Color-White-Transparent.png',
-      navbar: {
-        //title: 'Integration Platform',
-        logo: {
-          alt: 'Actian Logo',
-          src: 'img/logos/actian-zeenea.png',
-         },
-      },
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      },
     }),
 };
 
