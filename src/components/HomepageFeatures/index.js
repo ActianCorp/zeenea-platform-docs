@@ -6,25 +6,15 @@ import Link from '@docusaurus/Link';
 const FeatureList = [
   {
     title: 'Actian Data Intelligence Platform documentation has moved.',
-    doc: "https://docs.actian.com/zeenea/",
-    description: (
-      <>
-      Be sure to update any bookmarks to the new URL: https://docs.actian.com/zeenea/
-      </>
-    ),
   },
 ];
 
-function Feature({title, doc, description}) {
+function Feature({title}) {
   return (
       <center>
-          <Heading as="h3"><b>{title}</b></Heading>
-          <p>{description}</p>
+         <h2>Actian Data Intelligence Platform documentation has moved.</h2>
         <br />
-          <Link className="button button--primary button--md" to={doc}>
-            Go to the new site &#8250;&#8250;
-          </Link>
-
+        Be sure to update any bookmarks to the new URL: <a href="https://docs.actian.com/zeenea/">https://docs.actian.com/zeenea/</a>
       </center>
 
   );
