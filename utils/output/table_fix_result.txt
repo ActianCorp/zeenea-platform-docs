@@ -1,0 +1,722 @@
+Found 195 markdown files in /Users/bipinpandey/intelligence_platform/docs
+
+=== BROKEN LINKS (19) ===
+  [Features/zeenea-explorer/zeenea-item-details-pages.md] [Data Model Diagram](./zeenea-data-model-diagram.md)
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Features/zeenea-explorer/zeenea-data-model-diagram.md
+  [Integration/Connectors/zeenea-dataset-detection.md] [](./images/zeenea-folders-rule1a.png)
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/Connectors/images/zeenea-folders-rule1a.png
+  [Integration/Connectors/zeenea-dataset-detection.md] [](./images/zeenea-folders-rule1b.png)
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/Connectors/images/zeenea-folders-rule1b.png
+  [Integration/Connectors/zeenea-dataset-detection.md] [](./images/zeenea-folders-rule3a.png)
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/Connectors/images/zeenea-folders-rule3a.png
+  [Integration/Connectors/zeenea-dataset-detection.md] [](./images/zeenea-folders-rule3b.png)
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/Connectors/images/zeenea-folders-rule3b.png
+  [Integration/Connectors/zeenea-dataset-detection.md] [](./images/zeenea-folders-rule4a.png)
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/Connectors/images/zeenea-folders-rule4a.png
+  [Integration/Connectors/zeenea-dataset-detection.md] [](./images/zeenea-folders-rule4b.png)
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/Connectors/images/zeenea-folders-rule4b.png
+  [Integration/api/intro.md] [here](./schema.graphql)
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/api/schema.graphql
+  [Integration/api/principles.md] [Item]({{Types.Item}})
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/api/{{Types.Item}}
+  [Integration/api/principles.md] [`property`]({{Types.Item.property}})
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/api/{{Types.Item.property}}
+  [Integration/api/principles.md] [`connection`]({{Types.Item.connection}})
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/api/{{Types.Item.connection}}
+  [Integration/api/principles.md] [Item]({{Types.Item}})
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/api/{{Types.Item}}
+  [Integration/api/principles.md] [Dataset]({{Types.Dataset}})
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/api/{{Types.Dataset}}
+  [Integration/api/principles.md] [Data Process]({{Types.DataProcess}})
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/api/{{Types.DataProcess}}
+  [Integration/api/principles.md] [ItemReference]({{Types.ItemRefernce}})
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/api/{{Types.ItemRefernce}}
+  [Integration/api/principles.md] [PropertyReference]({{Types.PropertyReference}})
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/api/{{Types.PropertyReference}}
+  [Integration/api/principles.md] [ConnectionReference]({{Types.ConnectionReference}})
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/api/{{Types.ConnectionReference}}
+  [Integration/api/principles.md] [ConnectionReference]({{Types.ConnectionReference}})
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/api/{{Types.ConnectionReference}}
+  [Integration/api/principles.md] [PageInfo]({{Types.Pageinfo}})
+       → resolved: /Users/bipinpandey/intelligence_platform/docs/Integration/api/{{Types.Pageinfo}}
+
+  Fixed Features/cross-application-features/zeenea-data-product.md:152  (separator)
+    Before: | :---- | :---- |
+    After:  | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:175  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:224  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:248  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:273  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:299  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:320  (separator)
+    Before: | :---- | :---- |
+    After:  | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:347  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:404  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:410  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:424  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:433  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:491  (separator)
+    Before: | :---- | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:517  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:533  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Features/cross-application-features/zeenea-data-product.md:559  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Features/zeenea-studio/catalog-design/zeenea-studio-create-edit-delete-property.md:51  (separator)
+    Before:   | :--- | :--- |
+    After:  | :--- | :--- |
+  Fixed Features/zeenea-studio/stewardship/zeenea-studio-search.md:103  (separator)
+    Before: |---------------|--------------|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-agile-data-engine-solita.md:30  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-agile-data-engine-solita.md:79  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-aliyun-dataworks-maxcompute.md:39  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-aliyun-dataworks-maxcompute.md:167  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-amazonS3.md:191  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-atlas.md:30  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-atlas.md:125  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-aws-athena.md:30  (separator)
+    Before: | ----------- | ---------------- |
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-aws-athena.md:117  (separator)
+    Before: | :------ | :------------- | :-------------- |
+    After:  | :--- | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-aws-dynamodb.md:30  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-aws-dynamodb.md:122  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-aws-glue-data-catalog.md:40  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-aws-glue-data-catalog.md:160  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-aws-glue-etl.md:40  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-aws-glue-etl.md:134  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-aws-redshift.md:18  (separator)
+    Before: | ----------------- | ----------------- | ----------------- |
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-aws-redshift.md:60  (separator)
+    Before: | ---------------------- | -------------------------------------------------------------------------
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-aws-redshift.md:280  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-azure-data-factory.md:91  (separator)
+    Before: | :--- | :--- | :---- |
+    After:  | :--- | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-azure-data-factory.md:117  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-azure-data-lake.md:133  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-azure-purview.md:41  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-azure-purview.md:194  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-azure-synapse.md:33  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-azure-synapse.md:109  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-cassandra.md:34  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-cassandra.md:93  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-couchbase.md:34  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-couchbase.md:105  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-databricks-hive-metastore.md:35  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-databricks-hive-metastore.md:101  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-databricks-unity-jdbc.md:121  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-databricks-unity-rest.md:120  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-dataiku.md:30  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-dataiku.md:111  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-db2.md:41  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-db2.md:147  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-dbt-cloud.md:31  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-dbt-cloud.md:93  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-dbt.md:33  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-dbt.md:102  (separator)
+    Before: | :--- | :--- | :---- |
+    After:  | :--- | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-dbt.md:129  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-denodo.md:123  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-dynamics-ax.md:28  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-dynamics-ax.md:85  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-dynamics365.md:40  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-dynamics365.md:144  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-elasticsearch.md:33  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-elasticsearch.md:163  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-generic-dataset.md:41  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-generic-dataset.md:110  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-generic-jdbc.md:33  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-generic-jdbc.md:88  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-generic-lineage.md:90  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-generic-lineage.md:163  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-google-bigquery.md:221  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-google-cloud-storage.md:115  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-google-data-catalog.md:46  (separator)
+    Before: | ---------------------------------- | -------------------------------------------------------------
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-google-data-catalog.md:218  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-google-data-lineage.md:30  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-google-data-lineage.md:123  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-google-dataplex.md:122  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-greenplum.md:128  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-hdfs.md:49  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-hdfs.md:119  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-hive.md:47  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-hive.md:122  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-impala.md:45  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-impala.md:182  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-influxdb.md:45  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-influxdb.md:263  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-informatica.md:30  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-informatica.md:88  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-kafka.md:35  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-kafka.md:109  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-local-filesystem.md:32  (separator)
+    Before: |-----------|----------------|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-local-filesystem.md:106  (separator)
+    Before: |----------|------------------------------------|-------------|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-looker.md:32  (separator)
+    Before: |----|-----|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-looker.md:112  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-looker.md:169  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-mariadb.md:54  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-mariadb.md:172  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-matillion-dpc.md:31  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-matillion-dpc.md:52  (separator)
+    Before: |-----------------------------|----------------|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-matillion-dpc.md:108  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-matillion.md:40  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-matillion.md:164  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-microstrategy.md:30  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-microstrategy.md:87  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-microstrategy.md:153  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-mongodb.md:30  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-mongodb.md:168  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-ms-fabric.md:34  (separator)
+    Before: |:----------------------------------|:----------------|
+    After:  | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-ms-fabric.md:362  (separator)
+    Before: |-----------------|---------------------------------------------------------------------------------
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-mysql.md:54  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-mysql.md:154  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-netezza.md:41  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-netezza.md:64  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-netezza.md:155  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-openapi.md:48  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-openapi.md:163  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-oracle-ebusiness-suite.md:40  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-oracle-ebusiness-suite.md:147  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-oracle-jd-edwards.md:40  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-oracle-jd-edwards.md:148  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-oracle-peoplesoft.md:40  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-oracle-peoplesoft.md:153  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-oracle-siebel.md:40  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-oracle-siebel.md:154  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-oracle.md:35  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-oracle.md:186  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-palantir.md:30  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-palantir.md:162  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-postgresql.md:18  (separator)
+    Before: | ----------------- | ----------------- | ----------------- |
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-postgresql.md:59  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-postgresql.md:257  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-powerbi-report-server.md:32  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-powerbi-report-server.md:83  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-powerbi-saas-v2.md:35  (separator)
+    Before: |:----------------------------------|:----------------|
+    After:  | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-powerbi-saas-v2.md:226  (separator)
+    Before: | :--- | :--- | :---- |
+    After:  | :--- | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-powerbi-saas-v2.md:297  (separator)
+    Before: |--------------|------------------------------------------------------------------------------------
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-powerbi-saas-v2_test.md:35  (separator)
+    Before: |:----------------------------------|:----------------|
+    After:  | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-powerbi-saas-v2_test.md:225  (separator)
+    Before: | :--- | :--- | :---- |
+    After:  | :--- | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-powerbi-saas-v2_test.md:296  (separator)
+    Before: |--------------|------------------------------------------------------------------------------------
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-powerbi-saas.md:38  (separator)
+    Before: |----------------------------------|----------------------------------------------------------------
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-powerbi-saas.md:154  (separator)
+    Before: | :--- | :--- | :---- |
+    After:  | :--- | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-powerbi-saas.md:225  (separator)
+    Before: |---------------|----------------------------------------|-------------|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-qlik-cloud.md:26  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-qlik-cloud.md:90  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-qlik-cloud.md:145  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-qlik-sense.md:15  (separator)
+    Before: | ----------------- | ----------------- | ----------------- |
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-qlik-sense.md:52  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-qlik-sense.md:146  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-salesforce.md:40  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-salesforce.md:154  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sap-analytics-cloud.md:44  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sap-analytics-cloud.md:106  (separator)
+    Before: | ------------------------------------------------------------------- | ----------------- | --------
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sap-analytics-cloud.md:188  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sap-bo.md:30  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sap-bw-bluetelligence.md:51  (separator)
+    Before: |-----------|----------------|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sap-bw-bluetelligence.md:74  (separator)
+    Before: | :------- | :---------- |
+    After:  | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-sap-bw-bluetelligence.md:151  (separator)
+    Before: |--------------|---------------------------------------|-------------|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sap-bw-safyr.md:45  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sap-bw-safyr.md:170  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sap-safyr.md:43  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sap-safyr.md:167  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sas-data-integration.md:44  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sas-data-integration.md:111  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sas-db.md:44  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sas-db.md:124  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-snowflake.md:300  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-splunk.md:30  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-splunk.md:96  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sqlserver.md:39  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sqlserver.md:165  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-ssas.md:25  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-ssas.md:115  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-ssis.md:32  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-ssis.md:123  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-ssrs.md:30  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-ssrs.md:99  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sybase-iq.md:35  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-sybase-iq.md:101  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-tableau-v2.md:33  (separator)
+    Before: | :-----------------------------| :----------------|
+    After:  | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-tableau-v2.md:120  (separator)
+    Before: | :--- | :--- | :---- |
+    After:  | :--- | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-tableau-v2.md:176  (separator)
+    Before: |--------------|---------------------------------------------------------------|-------------|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-tableau.md:39  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-tableau.md:95  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-tableau.md:153  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-talend.md:30  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-talend.md:105  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-teradata.md:37  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-teradata.md:150  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-tibco-data-virtualization.md:36  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-tibco-data-virtualization.md:111  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-tibco-spotfire-v2.md:30  (separator)
+    Before: | :----- | :---------- |
+    After:  | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-tibco-spotfire-v2.md:97  (separator)
+    Before: | :--- | :--- | 
+    After:  | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-tibco-spotfire-v2.md:159  (separator)
+    Before: |:----------- | :------------------ | :------------ |
+    After:  | :--- | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-tibco-spotfire.md:34  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-tibco-spotfire.md:89  (separator)
+    Before: | :--- | :--- | 
+    After:  | :--- | :--- |
+  Fixed Integration/Connectors/zeenea-connector-tibco-spotfire.md:151  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-zdf.md:45  (separator)
+    Before: |---|---|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-zdf.md:68  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-zdf.md:81  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-zdf.md:94  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-zdf.md:115  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-zdf.md:147  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-zdf.md:159  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-zdf.md:172  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-zdf.md:193  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-zdf.md:203  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connector-zdf.md:214  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-connectors-list.md:11  (separator)
+    Before: |---|---|---|---|
+    After:  | --- | --- | --- | --- |
+  Fixed Integration/Connectors/zeenea-dataset-detection.md:17  (separator)
+    Before: |-----------------------------------------|-----------------------------------------|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-dataset-detection.md:34  (separator)
+    Before: |-----------------------------------------|-----------------------------------------|
+    After:  | --- | --- |
+  Fixed Integration/Connectors/zeenea-dataset-detection.md:50  (separator)
+    Before: |-----------------------------------------|-----------------------------------------|
+    After:  | --- | --- |
+  Fixed Integration/api/errors.md:4  (separator)
+    Before: | ------------------------------------ | -----------------------------------------------------------
+    After:  | --- | --- | --- |
+  Fixed Integration/api/naming_conventions.md:6  (separator)
+    Before: | ------------------ | ------------------------------------------------------------- |
+    After:  | --- | --- |
+  Fixed Integration/api/naming_conventions.md:24  (separator)
+    Before: | ------------------------ | -------- | ------------------------------------------ | ---------- | --
+    After:  | --- | --- | --- | --- | --- |
+  Fixed Integration/api/naming_conventions.md:53  (separator)
+    Before: | ------------------ | --------------------- | --------------------------------------------------- |
+    After:  | --- | --- | --- | --- | --- | --- |
+  Fixed Integration/api/principles.md:342  (separator)
+    Before: | ------------------ | ------------------------------------------------------------- |
+    After:  | --- | --- |
+  Fixed Integration/api/principles.md:360  (separator)
+    Before: | ------------------------ | -------- | ------------------------------------------ | ---------- | --
+    After:  | --- | --- | --- | --- | --- |
+  Fixed Integration/api/principles.md:389  (separator)
+    Before: | ------------------ | --------------------- | --------------------------------------------------- |
+    After:  | --- | --- | --- | --- | --- | --- |
+  Fixed Integration/api/principles.md:444  (separator)
+    Before: | ------------------------------------ | -----------------------------------------------------------
+    After:  | --- | --- | --- |
+  Fixed Integration/api/zeenea-access-request-api.md:111  (separator)
+    Before: | :---- | :---- | :---- | :---- |
+    After:  | :--- | :--- | :--- | :--- |
+  Fixed Integration/api/zeenea-scim-api.md:47  (separator)
+    Before: | :--- | :--- | 
+    After:  | :--- | :--- |
+  Fixed Integration/api/zeenea-scim-api.md:64  (separator)
+    Before: | :--- | :--- | 
+    After:  | :--- | :--- |
+  Fixed Integration/authentication/zeenea-auth0-integration.md:26  (separator)
+    Before: |---|---|---|
+    After:  | --- | --- | --- |
+
+=== TABLE FIXES: Modified 99 files with 226 separator rows fixed ===

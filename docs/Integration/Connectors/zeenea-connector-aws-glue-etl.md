@@ -1,0 +1,135 @@
+# Adding an AWS Glue (ETL) Connection
+
+## Prerequisites
+
+* A user with sufficient [permissions](#user-permissions) is required to establish a connection with AWS Glue.
+* Zeenea traffic flows towards the database must be open. 
+
+The Agent's host server must have sufficient credentials to connect to AWS Glue. The available authentication methods are: 
+
+* Instance Role
+* Environment Variable
+* Configuration File
+
+| Target | Protocol	| Usual Ports |
+| :--- | :--- | :--- |
+| AWS Glue | HTTP | 443 |
+
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
+## Supported Versions
+
+The AWS Glue connector is compatible with the online application. 
+
+## Installing the Plugin
+
+You can download the AWS Glue plugin from [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+
+For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+
+ ## Declaring the Connection
+  
+Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
+
+For more information about managing connections, see [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md).
+ 
+To establish a connection with an AWS Glue instance, fill in the following parameters in the dedicated configuration file:
+ 
+| Parameter | Expected value |
+| --- | --- |
+| `name` | Specifies the display name for the connection.|
+| `code` | Specifies the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `connector_id` | Specifies the type of connector to be used for the connection. The value must be `aws-glue-etl` and must not be modified. |
+| `enabled` | Specifies whether to enable or disable the connection (`true` or `false`). <br />The default value is `true`. |
+| `catalog_code` | Specifies the catalog code associated with the connection (`default` when empty). |
+| `secret_manager.enabled` | Specifies whether to enable or disable the secret manager for the connection. <br />This configuration works only with Scanner 73 or later and requires a functional secret manager configured in the scanner configuration file. <br />The default value is `true`. |
+| `secret_manager.key` | Specifies the name of the secret. |
+| `connection.aws.url` | (Optional) Fill in this setting if you want to use a Glue instance other than Amazon's. |
+| `connection.aws.profile` | Specifies the AWS profile for authentication. |
+| `connection.aws.access_key_id` | Specifies the AWS access key identifier. |
+| `connection.aws.secret_access_key` | Specifies the AWS secret access key. |
+| `connection.aws.session_token` | Specifies the AWS session token. |
+| `connection.aws.region` | Specifies the AWS region. |
+| `connection.fetch_page_size` | (Advanced) Specifies the size of batch of items loaded by each request in inventory.<br />*Since version 1.0.3* |
+| `tls.truststore.path` | Specifies the TLS trust store file path. This file must be provided in case TLS encryption is activated (protocol `https`) and when certificates of AWS servers are delivered by a specific authority. It must contain the certification chain. |
+| `tls.truststore.password` | Specifies the password of the trust store file. |
+| `tls.truststore.type` | Specifies the type of the trust store file.<br />Possible values are `PKCS12` or `JKS`. Default value is discovered from the file extension. |
+| `tls.bypass_certificate_validation` | Specifies whether to bypass certificate validation. <br />The default value is `false` (recommended to keep `false`). |
+| `proxy.scheme` | Specifies the proxy protocol (`http` or `https`). |
+| `proxy.hostname` | Specifies the proxy address. |
+| `proxy.port` | Specifies the proxy port. |
+| `proxy.username` | Specifies the proxy username. |
+| `proxy.password` | Specifies the proxy account password. |
+
+## User Permissions
+
+To collect metadata, the running user's permissions must allow them to access and read jobs that need cataloging. 
+
+### Roles
+
+The user must be able to run the following actions on the target bucket and the objects it contains (JSON format):
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "glue:GetDataflowGraph",
+        "glue:GetJob",
+        "glue:GetTables",
+        "glue:GetDataTables"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+## Data Extraction
+
+To extract information, the connector runs requests on AWS API to collect jobs and metadata.
+
+!!! important
+    For lineage information to be exposed by the AWS API, it is necessary for Glue jobs to be auto-generated by Glue itself from the **Jobs (Legacy)** section. The metadata transmitted by the API are based on the automatic and standardized comments written in the scripts which are only present with this method.
+  
+## Collected Metadata
+
+### Synchronization
+
+The connector will synchronize all transformations identified in the project and automatically represent them in the catalog.
+
+### Lineage
+
+The AWS Glue connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to data processes. This feature is available for datasets imported from the AWS Glue (Datacatalog) connector and an additional parameter is needed in the affected AWS Glue (Datacatalog) connection configuration, as detailed below:
+
+`alias = ["region/database"]`
+ 
+In this instance, replace the variables region and database with the actual AWS Glue (Datacatalog) values.
+
+### Data Processes
+
+A data process is the representation of a Glue job. 
+
+* **Name**
+* **Source Description**
+* **Technical Data**:
+  * Creation Date
+  * Modification Date
+  * Worker Type
+  * Glue Version
+  * Script location
+
+## Object Identification Keys
+
+Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
+
+For more information about identifier keys, see [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+
+| Object | Identifier Key | Description |
+| --- | --- | --- |
+| Data process | code/region/job name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **region**: AWS Job's region<br/>- **job name** |

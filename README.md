@@ -1,37 +1,137 @@
-# Zeenea Data Discovery Platform Documentation
+# Actian Data Intelligence Platform — Documentation
 
-We welcome and encourage your feedback on the platform and documentation. Feedback from the user community plays an important role in improving the product.
+This repository contains the source for the **Actian Data Intelligence Platform** documentation site, published at:
 
-Let us know if:
+**[https://testdocs.actian.com/intelligence_platform/index.html](https://testdocs.actian.com/intelligence_platform/index.html)**
 
-* Anything is missing, unclear, or inaccurate in the documentation. 
-* There are topics you'd like to see.
-* You have suggestions for documentation improvements.
-* There's something that really helped and you'd like to see more of it!
+The site is built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) and covers the full Zeenea-powered data intelligence platform — catalog design, stewardship, connectors, APIs, scanners, and more.
 
-There are two ways to provide your feedback on the documentation: 
+---
 
-* Submit a message using the **Page Feedback** button.
-* Use the **Suggest Edits** button to edit the page in GitHub.
+## Repository Structure
 
-## Page Feedback
+```
+intelligence_platform/
+├── docs/                        # All documentation source files (Markdown)
+│   ├── index.md                 # Landing page
+│   ├── getting-started/         # First steps and definitions
+│   ├── Features/
+│   │   ├── actian-mcp-server/   # Actian MCP Server
+│   │   ├── cross-application-features/   # Lineage, data products, glossary, etc.
+│   │   ├── federated-catalog/   # Federated catalog docs
+│   │   ├── zeenea-administration/        # Admin: users, connections, scanners
+│   │   ├── zeenea-explorer/     # Explorer: search, AI, favorites
+│   │   └── zeenea-studio/       # Studio: catalog design and stewardship
+│   ├── Integration/
+│   │   ├── api/                 # REST & GraphQL API references
+│   │   ├── authentication/      # Auth0 and API key setup
+│   │   ├── Connectors/          # Per-connector configuration guides
+│   │   └── Scanners/            # Scanner setup, filters, plugins
+│   └── zeenea/                  # Zeenea platform introduction
+├── hooks/                       # MkDocs build hooks
+│   ├── bitbucket_edit_url.py    # Generates per-page GitHub edit links
+│   └── custom_lexers.py         # Custom syntax highlighter definitions
+├── theme_overrides/             # MkDocs Material theme customizations
+│   ├── main.html                # Base template override
+│   ├── home.html                # Custom landing page template
+│   └── assets/stylesheets/      # Custom CSS (landing page, dark mode, etc.)
+├── utils/                       # Helper scripts for content maintenance
+├── mkdocs.yml                   # MkDocs configuration
+└── requirements.txt             # Python dependencies
+```
 
-Entering page feedback is easy, and available to anyone. There is a **Page Feedback** button on the bottom of every page:
+---
 
-  ![Page Feedback Button](./static/img/Feedback-Button.png)
+## Local Setup
 
-Click this button to display a text field, enter your message, and click **Send Feedback**. Your message will be delivered to us. Feel free to include your email address in the message if you'd like to chat.
+### Prerequisites
 
-## Suggest Edits
+- Python 3.9+
+- pip
 
-Users are encouraged to suggest content edits. Suggesting page edits requires you to have a GitHub account. 
+### Install dependencies
 
-There is a **Suggest Edits** button on the bottom of every page:
+```bash
+pip install -r requirements.txt
+```
 
-  ![Suggest Edits Button](./static/img/Suggest-Edits-Button.png)
+### Serve locally
 
-Clicking this button opens the page in the ActianCorp zeenea-platform-docs repository in GitHub:
+```bash
+mkdocs serve
+```
 
-  ![Suggest Edits Button](./static/img/GitHub-Repo.png)
+Then open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser. The server watches for changes and auto-reloads.
 
-Make any suggested edits, then create a pull request. We will review your changes, make any necessary edits, then merge the changes if appropriate.
+### Build the static site
+
+```bash
+mkdocs build
+```
+
+The output is written to the `site/` directory.
+
+---
+
+## Contributing
+
+### Option 1 — Edit directly from the documentation site (recommended)
+
+Every page on the published site has a **pencil icon (✏)** in the top-right corner of the page content. Clicking it opens the source Markdown file in GitHub, pre-set to the `main` branch in edit mode.
+
+1. Navigate to the page you want to update at [https://testdocs.actian.com/intelligence_platform/](https://testdocs.actian.com/intelligence_platform/index.html)
+2. Click the **✏ Edit** icon on the top right of the page.
+3. Log in to GitHub if prompted.
+4. Make your changes in the GitHub editor.
+5. Commit your changes and open a **Pull Request** targeting the `main` branch.
+
+### Option 2 — Clone and edit locally
+
+```bash
+git clone https://github.com/ActianCorp/zeenea-platform-docs
+cd zeenea-platform-docs
+pip install -r requirements.txt
+mkdocs serve
+```
+
+Edit files under `docs/`, preview at [http://127.0.0.1:8000](http://127.0.0.1:8000), then push your changes and open a Pull Request.
+
+---
+
+## Authoring Guidelines
+
+- All pages go under `docs/` and use `.md` (Markdown) format.
+- Every page should begin with a YAML front matter block:
+  ```yaml
+  ---
+  title: Page Title
+  description: A brief one-sentence summary of this page.
+  tags: [relevant, tags]
+  ---
+  ```
+- Use `#` for a single top-level heading per page.
+- Use `!!! note`, `!!! tip`, `!!! important` for callout boxes (admonitions).
+- Fenced code blocks must specify a language tag (e.g., ` ```json `, ` ```bash `, ` ```yaml `).
+- Image references should always include alt text: `![Description of image](./images/example.png)`.
+- Cross-references between pages use relative `.md` paths: `[Link text](../other-page.md)`.
+- Navigation order is controlled by `.pages` files in each folder (via the `awesome-pages` plugin).
+
+---
+
+## Technology Stack
+
+| Component | Technology |
+| --- | --- |
+| Static site generator | [MkDocs](https://www.mkdocs.org/) |
+| Theme | [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) |
+| Versioning | [mike](https://github.com/jimporter/mike) |
+| Diagramming | [Mermaid.js](https://mermaid.js.org/), [PlantUML](https://plantuml.com/) |
+| API docs | [swagger-ui-tag](https://github.com/blueswen/mkdocs-swagger-ui-tag) |
+| Navigation | [awesome-pages](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin) |
+| Search | MkDocs Material built-in |
+
+---
+
+## License
+
+Copyright &copy; 2026, Actian. See [LICENSE](LICENSE) for details.
