@@ -149,5 +149,4 @@ plugins:
 
 # Hooks
 hooks:
-  - hooks/bitbucket_edit_url.py
   - hooks/custom_lexers.py
