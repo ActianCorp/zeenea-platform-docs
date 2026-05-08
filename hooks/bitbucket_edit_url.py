@@ -1,23 +1,24 @@
 """
-MkDocs hook to generate proper GitHub edit URLs.
+MkDocs hook to generate proper Bitbucket Server edit URLs.
 """
 
 def on_page_context(context, page, config, nav):
     """
-    Generate proper GitHub edit URLs for each page.
+    Generate proper Bitbucket edit URLs for each page.
     
-    GitHub format:
-    https://github.com/ActianCorp/zeenea-platform-docs/edit/main/docs/path/file.md
+    Bitbucket Server format:
+    https://server/browse/docs/path/file.md?mode=edit&at=refs%2Fheads%2Fbranch
     """
     repo_url = config.get('repo_url', '')
+    edit_uri = config.get('edit_uri', '')
     
     if repo_url and page.file.src_uri:
         # Get the file path relative to docs directory
         file_path = page.file.src_uri
         
-        # Construct GitHub edit URL
-        # Format: repo_url/edit/main/docs/file.md
-        edit_url = f"{repo_url}/edit/main/docs/{file_path}"
+        # Construct Bitbucket edit URL
+        # Format: repo_url/browse/docs/file.md?mode=edit&at=refs%2Fheads%2Fmain
+        edit_url = f"{repo_url}/browse/docs/{file_path}?mode=edit&at=refs%2Fheads%2Fmain"
         
         # Override the edit_url in context
         context['page'].edit_url = edit_url

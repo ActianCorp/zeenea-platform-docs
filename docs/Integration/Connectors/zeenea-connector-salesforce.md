@@ -4,9 +4,9 @@
 ## Prerequisites
 
 <!-- #p100030 -->
-!!! note
-    * To connect Zeenea to Salesforce, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
-    * You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** 
+> * To connect Zeenea to Salesforce, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
+> * You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 <!-- #p100036 -->
 ## Supported Versions
@@ -30,22 +30,21 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
 <!-- #p100090 -->
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 <!-- #p100096 -->
 In order to establish a connection with Salesforce, specifying the following parameters in the dedicated file is required:
 
 <!-- #p100102 -->
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to be used for the connection. Here, the value must be `safyr-salesforce` and this value must not be modified. |
 | `input.folder` | The complete path to the folder containing files from the Silwood Safyr extraction. |
 
 <!-- #p100117 -->
-!!! note
-    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 <!-- #p100123 -->
 ## Data Extraction
@@ -147,11 +146,11 @@ Dataset field.
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
 <!-- #p100432 -->
-More information about unique identification keys in this documentation: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 <!-- #p100438 -->
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/asset type/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **asset type**: Asset type as defined by Safyr<br/>- **dataset name** |
 | Field | code/asset type/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **asset type**: Asset type as defined by Safyr<br/>- **dataset name**<br/>- **field name** |
 

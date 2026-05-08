@@ -10,37 +10,6 @@
 {% endblock %}
 
 {% block announce %}
-<div>
-   <a href="https://www.actian.com/"> 
-  <img width="150" height="35" src="https://www.actian.com/wp-content/themes/hcl-actian/images/actian-logo.svg" alt="Actian Logo" target="_blank"></a>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<div class="dropdown">
-  <button class="dropbtn">Resources <i class="fa fa-caret-down"></i></button> 
-  <div class="dropdown-content">  
-  <a href="https://communities.actian.com/s/" target="_blank">Customer Support</a>
-  <a href="https://esd.actian.com/" target="_blank">Downloads</a>
-  <a href="https://communities.actian.com/" target="_blank">Community</a>
-
-</div>
-</div>
-
-<div style='float: right;display: inline-block;width: 140px;margin-top: -7px;'>
-  <span id='scLangSelectorContainer' style='z-index: 1000; position: absolute; right:200.95px;'/>
-</div>
-
-  <!-- Uncomment the following announcement if you need it -->
-  <!--
- <div class="md-banner--feedback" style="display:inline">
-
-  <strong>We value your feedback on this site.</strong> Please report any issues you find <a class="announcement__link" href="https://github.com/ACTIAN-TECH-SOFTWARE/digital-experience/issues">via Github</a>. 
-  
-  <div class="md-banner--feedback">Looking for v8.5 or v9.0? <a class="announcement__link"  href="https://help.actian.com/digital-experience/9.5/welcome_hcl_dx.html">Check the legacy Help Center.</a>
-</div>  
-</div>
--->
-
-</div>
 {% endblock %}
 
 {% block extrahead %}
@@ -50,5 +19,68 @@
     <meta name="robots" content="index, follow" />
   {% endif %}
   <meta property="og:image" content="https://opensource.actian.com/digital-experience/site-thumbnail.png" />
+{% endblock %}
+
+{% block content %}
+  {{ super() }}
+
+  {# Prev/next nav rendered INSIDE the content column #}
+  {% if "navigation.footer" in features %}
+    {% if page.previous_page or page.next_page %}
+      {% if page.meta and page.meta.hide %}
+        {% set hidden = "hidden" if "footer" in page.meta.hide %}
+      {% endif %}
+      <nav class="md-content-footer" aria-label="{{ lang.t('footer') }}" {{ hidden }}>
+        {% if page.previous_page %}
+          {% set direction = lang.t("footer.previous") %}
+          <a href="{{ page.previous_page.url | url }}" class="md-content-footer__link md-content-footer__link--prev" aria-label="{{ direction }}: {{ page.previous_page.title | e }}">
+            <div class="md-content-footer__button md-icon">
+              {% set icon = config.theme.icon.previous or "material/arrow-left" %}
+              {% include ".icons/" ~ icon ~ ".svg" %}
+            </div>
+            <div class="md-content-footer__title">
+              <span class="md-content-footer__direction">
+                {{ direction }}
+              </span>
+              <div class="md-ellipsis">
+                {{ page.previous_page.title }}
+              </div>
+            </div>
+          </a>
+        {% endif %}
+        {% if page.next_page %}
+          {% set direction = lang.t("footer.next") %}
+          <a href="{{ page.next_page.url | url }}" class="md-content-footer__link md-content-footer__link--next" aria-label="{{ direction }}: {{ page.next_page.title | e }}">
+            <div class="md-content-footer__title">
+              <span class="md-content-footer__direction">
+                {{ direction }}
+              </span>
+              <div class="md-ellipsis">
+                {{ page.next_page.title }}
+              </div>
+            </div>
+            <div class="md-content-footer__button md-icon">
+              {% set icon = config.theme.icon.next or "material/arrow-right" %}
+              {% include ".icons/" ~ icon ~ ".svg" %}
+            </div>
+          </a>
+        {% endif %}
+      </nav>
+    {% endif %}
+  {% endif %}
+{% endblock %}
+
+{% block footer %}
+  {# Only the copyright/social meta — prev/next is now inside content #}
+  <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        {% include "partials/copyright.html" %}
+        {% if config.extra.social %}
+          {% include "partials/social.html" %}
+        {% endif %}
+      </div>
+    </div>
+  </footer>
 {% endblock %}
 

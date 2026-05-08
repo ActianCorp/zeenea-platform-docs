@@ -9,8 +9,7 @@
   * [https://login.microsoftonline.com](https://login.microsoftonline.com)
   * [https://api.powerbi.com](https://api.powerbi.com)
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -26,12 +25,12 @@ For more information about how to install a plugin, see [Installing and Configur
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-For more information about managing connections, see [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md).
 
 To establish a connection with a Microsoft Fabric instance, fill in the following parameters in the dedicated configuration file:
 
 | Parameter                         | Expected value |
-| :--- | :--- |
+|:----------------------------------|:----------------|
 | `name` | Specifies the display name for the connection. |
 | `code` | Specifies the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | Specifies the type of connector to be used for the connection. The value must be `ms-fabric` and must not be modified. |
@@ -44,6 +43,8 @@ To establish a connection with a Microsoft Fabric instance, fill in the followin
 | `connection.oauth.client_id` | Specifies the application ID (client) as defined in Azure. |
 | `connection.oauth.client_secret` | Specifies the client secret. |
 | `connection.tenant_domain` | Specifies the tenant domain. This is used when authenticating with the SQL analytics endpoint. You can enter either the domain name (for example, `mycompany.com`) or the tenant ID. To find the tenant ID, select your user profile and then select the information button next to the Tenant Name field. |
+| `report_strategy` | Specifies the strategy to retrieve report metadata. The available strategies are:<br />- `pbir`: Uses the Fabric _Get Report Definition_ API (for PBIR formatted reports).<br />- `pbix`: Uses the Power BI Export API (requires elevated permissions).<br />- `pbir_first`: Uses the Fabric API first. If it fails, it uses the PBIX export. <br />The default value is `pbir_first`.|
+| `inventory_on_reports_only` | Specifies whether to inventory only reports. If set to `true`, only reports will be inventoried. However, when a report is imported, all linked datasets will also be imported. This option is useful when working with a large number of items. <br/>The default value is `false`. |
 | `dsn.configuration` | Specifies the list of DSNs configured in PowerBI Desktop. Must be provided to extract lineage to external sources from DSNs. See the template to complete the field. |
 | `cache.enabled` | Specifies whether to enable cache usage. <br />The default value is `false`. |
 | `cache.path` | (Optional) Specifies a custom disk storage path for the cache. <br />The default value is the scanner cache folder. |
@@ -88,8 +89,7 @@ To configure Admin API settings in Azure, you typically need to enable service p
    * Go to **Certificates & secrets** under the app registration. 
    * Click **New client secret**. 
    * Enter a description and expiry date, then click **Add**.
-  !!! important
-      Copy the value of the client secret immediately after creation, as you won't be able to retrieve it later.
+  > **Important:** Copy the value of the client secret immediately after creation, as you won't be able to retrieve it later. 
 4. **Grant Permissions**:
    * Go to the Azure resource you want the service principal to access.
    * Select **Access control (IAM)**.
@@ -136,8 +136,7 @@ To configure Admin API settings in Azure, you typically need to enable service p
    * Access PowerBI Online Application.
    * Navigate to **Workspaces** section. 
    * Grant the **Member** permission set to the service principal for every Workspace that you want to catalog.
-     !!! note
-         Do not grant the **Member** permission set to a security group; otherwise, it will not work correctly.
+     > **Note:** Do not grant the **Member** permission set to a security group; otherwise, it will not work correctly.
 
 ## Rich Filters
 
@@ -356,10 +355,10 @@ Fields are fields or measures in a semantic model table, or a field in a warehou
  
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
 
-For more information about identifier keys, see [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../Stewardship/zeenea-identification-keys.md).
   
 | Object          | Identification Key                                                                                          | Description |
-| --- | --- | --- |
+|-----------------|-------------------------------------------------------------------------------------------------------------|-------------|
 | Visualization   | code/workspace\_id/report/report\_id | - **code**: Unique identifier of the connection noted in the configuration file  <br/> - **workspace_id**: Fabric workspace technical identifier  <br/> - **report_id**: Power BI report technical identifier |
 | Dataset         | code/workspace\_id/dataset/dataset\_id/dataset\_name | - **code**:  Unique identifier of the connection noted in the configuration file  <br/> - **workspace_id**: Fabric workspace technical identifier  <br/> - **dataset_id**: Power BI technical semantic model technical identifier  <br/> - **dataset_name**: Power BI table name from semantic model |
 | Dataset Field   | code/workspace\_id/report/report\_id/dataset/field\_name  <br/> code/workspace\_id/dataset/dataset\_id/dataset\_name/field\_name | - **code**:  Unique identifier of the connection noted in the configuration file  <br/> - **workspace_id**: Fabric workspace technical identifier  <br/> - **dataset_id**: Power BI semantic model technical identifier  <br/> - **dataset_name**: Power BI technical table name from semantic model  <br/> - **field_name**: PowerBI field technical name |

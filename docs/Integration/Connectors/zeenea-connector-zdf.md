@@ -4,8 +4,7 @@
 
 Zeenea Descriptor Format (ZDF) plugin describes a set of three connectors allowing the management of datasets, visualizations and data processes based on declarative files.
 
-!!! note
-    These connectors must be used in very specific cases where a traditional connector is not an option. By using a description of the items instead of the discoverability mechanism used by regular connectors, you must ensure that you comply with the assertions that other connectors respect, such as the existence of elements.<br />For more information about these connectors, contact your Customer Success Manager.
+> **Note:** These connectors must be used in very specific cases where a traditional connector is not an option. By using a description of the items instead of the discoverability mechanism used by regular connectors, you must ensure that you comply with the assertions that other connectors respect, such as the existence of elements.<br />For more information about these connectors, contact your Customer Success Manager.
 
 ## Adding a Connection
 
@@ -23,7 +22,7 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 ### Configuration Templates:
 
@@ -42,7 +41,7 @@ The following links can be used to download configuration templates:
 To connect to an instance, the parameters of the connection file must be completed with the following values:
 
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `zdf-dataset`, `zdf-visualization`, or `zdf-lineage`. Once defined, this value must not be modified. |
@@ -65,7 +64,7 @@ It operates according to the inventory/import/update cycle. The objects inventor
 Description files are in JSON format. The root is an object containing two attributes.
 
 | Attribute | Type | Description |
-| --- | --- | --- |
+|---|---|---|
 | datasets | `List<ZdfDataset>` | Dataset list |
 | lineage | `List<ZdfProcess>` | List of lineage links linked to datasets |
 
@@ -78,7 +77,7 @@ It operates according to the inventory/import/update cycle. The objects inventor
 Description files are in JSON format. The root is an object containing two attributes.
 
 | Attribute | Type | Description |
-| --- | --- | --- |
+|---|---|---|
 | visualizations | `List<ZdfVisualization>` | Visualization list |
 | lineage | `List<ZdfProcess>` | List of lineage links between visualizations' internal datasets and external datasets |
 
@@ -91,7 +90,7 @@ It works with a single synchronization operation.
 Description files are in JSON format. The root is an object containing an attribute.
 
 | Attribute | Type | Description |
-| --- | --- | --- |
+|---|---|---|
 | lineage | `List<ZdfProcess>` | List of lineage links between the Data Process and its datasets |
 
 ## Description File Discovery
@@ -104,15 +103,14 @@ If a git repository is declared, the repository is cloned into the working folde
 
 ## Format Details
 
-!!! note
-    Attributes marked "*" are mandatory for Items to be ingested by the platform. If not defined in a file, the Item will be rejected.
+> **Note:** Attributes marked "*" are mandatory for Items to be ingested by the platform. If not defined in a file, the Item will be rejected.
 
 ### ZdfDataset
 
 Dataset description.
 
 | Attribute | Type | Description |
-| --- | --- | --- |
+|---|---|---|
 | `path` | `Text` | Path identifying the dataset in relation to the connection.<br/>If not specified, the path will be `/dataset/`. Example: `/crm_db/sap/customer`. |
 | `name`* | `Text` | Dataset name |
 | `description` | `Text` | Dataset description |
@@ -144,7 +142,7 @@ Dataset description.
 A visualization description.
 
 | Attribute | Type | Description |
-| --- | --- | --- |
+|---|---|---|
 | `path` | `Text` | Path identifying the view in the connection.<br/> If not specified, the path will be `/report/` (example: `/report/sales_evolutions`). |
 | `name`* | `Text` | Visualization name |
 | `description` | `Text` | Visualization description |
@@ -156,7 +154,7 @@ A visualization description.
 Process description.
 
 | Attribute | Type | Description |
-| --- | --- | --- |
+|---|---|---|
 | `path` | `Text` | Path identifying the process in relation to the connection.<br/>If not specified, the path will be `/transformation/`.<br/>Example: `/transformation/47ccd226-11e1-11ef-9b10-00155d60aaf0` |
 | `name`* | `Text` | Process name |
 | `description` | `Text` | Process description |
@@ -169,7 +167,7 @@ Process description.
 A field description.
 
 | Attribute | Type | Description |
-| --- | --- | --- |
+|---|---|---|
 | `name`* | `Text` | Field name |
 | `description` | `Text` | Field description |
 | `nativeType` | `Text` | Native type of the field.<br/>If unset, the `dataType` value is used. |
@@ -190,8 +188,8 @@ The link can be represented either with the identification key, or with the conn
 One of the attributes `identificationKey` or `path` must be filled in.
 
 | Attribute | Type | Description |
-| --- | --- | --- |
-| `identificationKey` | `Text` | Dataset [identification key](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md) |
+|---|---|---|
+| `identificationKey` | `Text` | Dataset [identification key](./zeenea-identification-keys.md) |
 | `connectionCode` | `Text` | Connection code. Leave blank if this is the current connection. It is possible to use one of the connection aliases. |
 | `zeepath` | `Text` | Dataset path |
 
@@ -200,7 +198,7 @@ One of the attributes `identificationKey` or `path` must be filled in.
 A contact description.
 
 | Attribute | Type | Description |
-| --- | --- | --- |
+|---|---|---|
 | `role`* | `Text` | Contact role |
 | `email`* | `Text` | Contact email address |
 | `firstname` | `Text` | Contact first name |
@@ -211,7 +209,7 @@ A contact description.
 A foreign key description.
 
 | Attribute | Type | Description |
-| --- | --- | --- |
+|---|---|---|
 | `dataset`* | `Text` | Path of the target dataset (the one with the primary key) |
 | `sourceFields`* | `List` | Source dataset field list |
 | `targetFields` | `List` | Target dataset field list |

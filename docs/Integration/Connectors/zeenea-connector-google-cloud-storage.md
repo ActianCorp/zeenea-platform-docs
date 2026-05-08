@@ -5,8 +5,7 @@
 * In order to establish a connection to Google Cloud Storage, a user with sufficient [permissions](#user-permissions) is required.
 * Zeenea traffic flow towards Google Cloud Storage must be open. 
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -24,7 +23,7 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
  
 In order to establish a connection with Google Cloud Storage, specifying the following parameters in the dedicated file is required:
 
@@ -72,7 +71,7 @@ Read more: [Filters](../Scanners/zeenea-filters.md)
 
 There is a specific set of rules that the connector must follow to rebuild hierarchy and datasets, in order to extract data.
 
-Read more: [Dataset Detection on File Systems](zeenea-dataset-detection.md)
+Read more: [Dataset Detection on File Systems](../New_files/zeenea-dataset-detection.md)
 
 ## Collected Metadata
 
@@ -109,9 +108,9 @@ Dataset field.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/path/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **path**: Full path including project id<br/>- **dataset name** |
 | Field | code/path/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **path**: Full path including project id<br/>- **dataset name**<br/>- **field name** |

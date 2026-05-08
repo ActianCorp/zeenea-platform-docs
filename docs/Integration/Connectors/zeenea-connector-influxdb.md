@@ -10,8 +10,7 @@
   Zeenea traffic flows towards InfluxDB must be open. 
 
 <!-- #p100054 -->
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 <!-- #p100060 -->
 ## Supported Versions
@@ -35,14 +34,14 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
 <!-- #p100114 -->
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 <!-- #p100120 -->
 In order to establish a connection with InfluxDB, specifying the following parameters in the dedicated file is required:
 
 <!-- #p100126 -->
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `InfluxDB` and this value must not be modified. |
@@ -256,11 +255,11 @@ A field is an InfluxDB measure field (or tag).
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
 <!-- #p100837 -->
-More information about unique identification keys in this documentation: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 <!-- #p100843 -->
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/database/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **database**: Database measure<br/>- **dataset name** |
 | Field | code/database/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **database**: Database measure<br/>- **dataset name**<br/>- **field name** |
 

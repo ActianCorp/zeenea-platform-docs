@@ -5,13 +5,11 @@
 * In order to establish a connection with Teradata, a user with sufficient [permissions](#user-permissions) is required.
 * Zeenea traffic flows towards the database must be opened.  
 
-!!! important
-    The Teradata driver is not delivered with the connector with scanner version 34 and later. Download the Teradata driver related to your Teradata instance and move it into the `/lib-ext` folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://downloads.teradata.com/download/connectivity/jdbc-driver](https://downloads.teradata.com/download/connectivity/jdbc-driver).
+> **Important:** The Teradata driver is not delivered with the connector with scanner version 34 and later. Download the Teradata driver related to your Teradata instance and move it into the `/lib-ext` folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://downloads.teradata.com/download/connectivity/jdbc-driver](https://downloads.teradata.com/download/connectivity/jdbc-driver).
 
 <br />
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -29,12 +27,12 @@ For more information on how to install a plugin, please refer to the following a
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
  
 In order to establish a connection with Teradata, specifying the following parameters in the dedicated file is required:
  
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `Teradata` and this value must not be modified. |
@@ -49,13 +47,11 @@ In order to establish a connection with Teradata, specifying the following param
 | `cache.folder` | The size of the cache file produced depends on the number of tables in the database (and not on the number of tables imported into Zeenea). If the folder is not specified, the cache is stored in memory. |
 | `cache.ttl` | Cache validity period (default `12h`). As long as the cache is valid, requests that fill it are not executed. |
 
-!!! note
-    In order to read data with the desired encoding CHARSET, you have to add "CHARSET=" parameter to the JDBC URL.
+> **Note:** In order to read data with the desired encoding CHARSET, you have to add "CHARSET=" parameter to the JDBC URL.
 Here is an exhaustive list of all encoding types :
 [https://teradata-docs.s3.amazonaws.com/doc/connectivity/jdbc/reference/current/jdbcug_chapter_2.html#URL_CHARSET](https://teradata-docs.s3.amazonaws.com/doc/connectivity/jdbc/reference/current/jdbcug_chapter_2.html#URL_CHARSET)
 
-!!! note
-    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 ## User Permissions
 
@@ -118,10 +114,9 @@ Dataset field.
 
 ## Data Profiling
 
-!!! important
-    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+> **Important:** The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
 
-The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics in the following documentation: [Data Profiling](../../Features/cross-application-features/zeenea-data-profiling.md).
+The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics in the following documentation: [Data Profiling](../Zeenea_Explorer/zeenea-data-profiling.md).
  
 Read access on targeted tables is mandatory to activate the feature. For Teradata technologies, the connector executes the following request to get a data sample: 
 
@@ -144,9 +139,9 @@ These requests will be executed, whether manually, in case of user action direct
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
 
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/schema/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Dataset schema<br/>- **dataset name** |
 | Field | code/schema/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Dataset schema<br/>- **dataset name**<br/>- **field name** |

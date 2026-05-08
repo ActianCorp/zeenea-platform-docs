@@ -9,8 +9,7 @@
 - <!-- #p100039 -->
   Zeenea traffic flows towards the data source must be open. 
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 <!-- #p100051 -->
 ## Supported Versions
@@ -34,14 +33,14 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
 <!-- #p100105 -->
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 <!-- #p100111 -->
 In order to establish a connection with SAP Analytics Cloud, specifying the following parameters in the dedicated file is required:
 
 <!-- #p100117 -->
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `sap-sac` and this value must not be modified. |
@@ -58,8 +57,7 @@ In order to establish a connection with SAP Analytics Cloud, specifying the foll
 | `proxy.password` | Proxy account password |
 
 <!-- #p100132 -->
-!!! note
-    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 <!-- #p100138 -->
 ## User Permissions
@@ -103,7 +101,7 @@ Summary table of possible values of the `alias` parameter to be completed in the
 <!-- multiline -->
 | <!-- #p100234 -->                                                   | <!-- #p100243 --> | <!-- #p100252 --> |
 | Source System                                                       | Model             | Example           |
-| --- | --- | --- |
+| ------------------------------------------------------------------- | ----------------- | ----------------- |
 | <!-- #p100267 -->                                                   | <!-- #p100276 --> | <!-- #p100285 --> |
 | [SAP BW](zeenea-connector-sap-bw-safyr.md# "title: SAP BW (Safyr)") | N/A               | N/A               |
 |                                                                     |                   |                   |
@@ -181,11 +179,11 @@ The connector does not return any information about the story fields. They are n
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
 <!-- #p100528 -->
-More information about unique identification keys in this documentation: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 <!-- #p100534 -->
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Visualization | code/story/technical identifier | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **technical identifier**: SAP technical identifier of the story |
 | Dataset | code/model/technical identifier | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **technical identifier**: SAP technical identifier of the model |
 | Data process | code/transformation/technical identifier | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **technical identifier**: SAP technical identifier of the model |

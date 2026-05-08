@@ -6,8 +6,7 @@
 * Zeenea traffic flows towards SQL Server must be open.
 * The only authentication mode supported by this connector requires the user's username and password.
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
  
 ## Supported Versions
 
@@ -31,12 +30,12 @@ Each time the scanner or plugin is updated, you must update the service using th
   
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-For more information about managing connections, see [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md).
 
 To establish a connection with an SQL Server instance, fill in the following parameters in the dedicated configuration file:
  
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `SqlServer` and this value must not be modified. |
@@ -133,10 +132,9 @@ A data process represents the request to build a view.
  
 ## Data Profiling
 
-!!! important
-    The Data Profiling feature, which can be enabled on this connection, allows Explorers to better understand the type of data stored in each field. This feature, which can be activated in the Scanner, runs by default on a weekly schedule, every Saturday. However, depending on the number of fields for which you enable this feature, the calculation can quickly become costly. Before enabling it, ensure that the estimated impact of this feature is acceptable and that the default frequency is appropriate.
+> **Important:** The Data Profiling feature, which can be enabled on this connection, allows Explorers to better understand the type of data stored in each field. This feature, which can be activated in the Scanner, runs by default on a weekly schedule, every Saturday. However, depending on the number of fields for which you enable this feature, the calculation can quickly become costly. Before enabling it, ensure that the estimated impact of this feature is acceptable and that the default frequency is appropriate.
 
-The statistical profiles feature, also known as _Data Profiling_, is available for this connector. The impact of this feature must be evaluated before activating it on any of your connections. For more information about the resulting statistics, see [Data Profiling](../../Features/cross-application-features/zeenea-data-profiling.md).
+The statistical profiles feature, also known as _Data Profiling_, is available for this connector. The impact of this feature must be evaluated before activating it on any of your connections. For more information about the resulting statistics, see [Data Profiling](../Zeenea_Explorer/zeenea-data-profiling.md).
 
 To activate this feature, read access to the target tables is required. For SQL Server technologies, the connector executes the following request to get a data sample: 
 
@@ -159,9 +157,9 @@ These requests will be executed, whether manually, in case of user action direct
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
  
-For more information about identifier keys, see [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/schema/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Dataset schema<br/>- **dataset name** |
 | Field | code/schema/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Dataset schema<br/>- **dataset name**<br/>- **field name** |

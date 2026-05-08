@@ -4,8 +4,7 @@
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Matillion DPC.
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -21,14 +20,14 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 In order to establish a connection with a Matillion DPC instance, the following parameters in the dedicated file are required:
 
 ### Changes in version 4.1.0
 
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `matillion-dpc` and this value must not be modified. |
@@ -49,7 +48,7 @@ You must provide at least one of the following to authenticate:
 * Both a Git username (`connection.git.username`) AND a Git password (`connection.git.password`)
 
 | Parameter                    | Expected value |
-| --- | --- |
+|-----------------------------|----------------|
 | `connection.path` | Path to file or folder containing description files. <br/> This value is mandatory if no git repository is declared. <br/> If a git repository is declared, the value can be null or a path relative to the repository root. |
 | `connection.git.repository` | Git repository URL. Optional, use `connection.path` instead. <br/> URL of the git repository where to read the files. <br/> Example: `https://github.com/acme/bigproject` |
 | `connection.git.branch` | Git branch to use. Optional. <br/> Branch to clone. By default, HEAD is used. <br/> Example: `https://github.com/acme/bigproject` |
@@ -102,8 +101,8 @@ A data process is a Matillion transformation.
  
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
  
-More information about unique identification keys in this documentation: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
   
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Data process | code/name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **name**: job name |

@@ -5,8 +5,7 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with MicroStrategy.
 * Zeenea traffic flows towards MicroStrategy must be open.
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -22,12 +21,12 @@ For more information about how to install a plugin, see [Installing and Configur
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for changes and resynchronizes automatically.
 
-For more information about managing connections, see [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md).
 
 To establish a connection with a MicroStrategy instance, fill in the following parameters in the dedicated configuration file:
 
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | Specifies the display name for the connection. |
 | `code` | Specifies the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | Specifies the type of connector to be used for the connection. The value must be `microstrategy` and must not be modified. |
@@ -78,13 +77,12 @@ Will collect the list of portfolios accessible by the user.
 
 ### Lineage
 
-!!! note
-    Available only with MicroStrategy version 2021 update 7 or later. The Modeling Service must be configured and enabled on the machine.
+> **Note:** Available only with MicroStrategy version 2021 update 7 or later. The Modeling Service must be configured and enabled on the machine.
 
 The connector is able to reconstruct the lineage of tables used in the folders if they are present in the catalog. This feature is available when MicroStrategy uses datasets from the technologies mentioned below. In this case, it is necessary to specify an additional parameter in the original connections of these tables as referenced in the MicroStrategy connection configuration.
 
 | Source System | Possible value of `alias` parameter to be set in source system configuration file |
-| --- | --- |
+|---|---|
 | [BigQuery](./zeenea-connector-google-bigquery.md) | BigQuery project identifier. Example: `alias = ["project_id"]` |
 | [PostgreSQL](./zeenea-connector-postgresql.md), [Oracle](./zeenea-connector-oracle.md), [Redshift](./zeenea-connector-aws-redshift.md), [SQLServer](./zeenea-connector-sqlserver.md) | Database address. Example: `alias = ["host:port/database"]` |
 
@@ -94,8 +92,7 @@ The following API calls are made to obtain the lineage information:
 * `GET /api/model/datasources/[source-system-id]`: Allows you to retrieve the ID of the connection that is associated with it.
 * `GET /api/model/connections/[connection-id]`: Allows to build the connection code for the Zeenea lineage.
 
-!!! note
-    The connector will create a data process object for each MicroStrategy dataset in order to link it with the original dataset(s) even if the original dataset(s) are not present in the catalog.
+> **Note:** The connector will create a data process object for each MicroStrategy dataset in order to link it with the original dataset(s) even if the original dataset(s) are not present in the catalog.
 
 ### Visualization
 
@@ -147,10 +144,10 @@ A field can be an attribute, a metric, or a field from the dataset.
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
 
-For more information about identifier keys, see [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../Stewardship/zeenea-identification-keys.md).
  
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Visualization | code/project id/dossier id | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **project id**: MicroStrategy project technical identifier<br/>- **dossier id**: MicroStrategy dossier technical identifier |
 | Dataset | code/project id/dataset id | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **project id**: MicroStrategy project technical identifier<br/>- **dataset id**: MicroStrategy dataset technical identifier |
 | Field | code/project id/dataset id/field id | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **project id**: MicroStrategy project technical identifier<br/>- **dataset id**: MicroStrategy dataset technical identifier<br/>- **field id**: MicroStrategy field technical identifier |

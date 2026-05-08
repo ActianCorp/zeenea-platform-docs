@@ -10,14 +10,12 @@
   Zeenea traffic flows towards the database must be open.
 
 <!-- #p100057 -->
-!!! important
-    The MariaDB driver is not delivered with the connector. Download the MariaDB driver related to your MariaDB instance and move it into the `/lib-ext` folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://mariadb.com/downloads/connectors/connectors-data-access/](https://mariadb.com/downloads/connectors/connectors-data-access/).
+> **Important:** The MariaDB driver is not delivered with the connector. Download the MariaDB driver related to your MariaDB instance and move it into the `/lib-ext` folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://mariadb.com/downloads/connectors/connectors-data-access/](https://mariadb.com/downloads/connectors/connectors-data-access/).
 
 <br />
 
 <!-- #p100066 -->
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 <!-- #p100072 -->
 ## Supported Versions
@@ -44,14 +42,14 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
 <!-- #p100132 -->
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 <!-- #p100138 -->
 In order to establish a connection with a MariaDB instance, specifying the following parameters in the dedicated file is required:
 
 <!-- #p100144 -->
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `mariadb` and this value must not be modified. |
@@ -165,11 +163,11 @@ Dataset field.
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
 <!-- #p100486 -->
-More information about unique identification keys in this documentation: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 <!-- #p100492 -->
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/schema/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Dataset schema<br/>- **dataset name** |
 | Field | code/schema/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Dataset schema<br/>- **dataset name**<br/>- **field name** |
 

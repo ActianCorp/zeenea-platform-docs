@@ -5,8 +5,7 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Data Factory. 
 * Zeenea traffic flows towards the data source must be open. 
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
  
 ## Supported Versions
 
@@ -22,7 +21,7 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
  
 In order to establish a connection with an Azure Data Factory instance, specifying the following parameters in the dedicated file is required:
 
@@ -88,7 +87,7 @@ The Azure Data Factory connector is able to retrieve the lineage between dataset
 The table below summarizes the possible values of the `alias` parameter to be completed in the data source configuration file.
 
 | Source System| Model | Example |
-| :--- | :--- | :--- |
+| :--- | :--- | :---- |
 | [SQL Server](./zeenea-connector-sqlserver.md) | Server name:port/Database name | `alias = ["zeenea.database.windows.net:1433/db"]` * |
 | [ADLS](./zeenea-connector-azure-data-lake.md) | Storage account.dfs.core.windows.net | `alias = [".dfs.core.windows.net"]` |
 | [Snowflake](./zeenea-connector-snowflake.md) | Server name/Database name | `alias = ["kn999999.eu-west-1.snowflakecomputing.com/ZEENEA""]` * |
@@ -111,8 +110,8 @@ A data process is the representation of a pipeline.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
 
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Data process | code/dataprocess id | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **dataprocess id**: The pipeline's Azure identifier |

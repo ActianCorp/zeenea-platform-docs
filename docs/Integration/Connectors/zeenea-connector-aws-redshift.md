@@ -15,14 +15,13 @@
 <!-- multiline -->
 | <!-- #p100060 --> | <!-- #p100069 --> | <!-- #p100078 --> |
 | Target            | Protocol          | Usual Ports       |
-| --- | --- | --- |
+| ----------------- | ----------------- | ----------------- |
 | <!-- #p100090 --> | <!-- #p100099 --> | <!-- #p100108 --> |
 | AWS Redshift      | JDBC              | 5439              |
 |                   |                   |                   |
 
 <!-- #p100126 -->
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 <!-- #p100132 -->
 ## Supported Versions
@@ -49,7 +48,7 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
 <!-- #p100192 -->
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 <!-- #p100198 -->
 In order to establish a connection with Redshift, specifying the following parameters in the dedicated file is required:
@@ -57,7 +56,7 @@ In order to establish a connection with Redshift, specifying the following param
 <!-- multiline -->
 | <!-- #p100204 -->      | <!-- #p100213 -->                                                                                                                                                                                                 |
 | Parameter              | Expected Value                                                                                                                                                                                                    |
-| --- | --- |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <!-- #p100228 -->      | <!-- #p100237 -->                                                                                                                                                                                                 |
 | `name`                 | The name that will be displayed to catalog users for this connection                                                                                                                                              |
 |                        |                                                                                                                                                                                                                   |
@@ -237,8 +236,7 @@ A data process represents the request to build a view.
 ## Data Profiling
 
 <!-- #p100891 -->
-!!! important
-    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+> **Important:** The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
 
 <!-- #p100900 -->
 The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics in the following documentation: Data Profiling.
@@ -273,11 +271,11 @@ These requests will be executed, whether manually, in case of user action direct
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
 <!-- #p100978 -->
-Read more: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
 
 <!-- #p100984 -->
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/schema/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Dataset schema<br/>- **dataset name** |
 | Field | code/schema/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Dataset schema<br/>- **dataset name**<br/>- **field name** |
 | Data process | code/view/schema/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Dataset schema<br/>- **dataset name/**: View name |

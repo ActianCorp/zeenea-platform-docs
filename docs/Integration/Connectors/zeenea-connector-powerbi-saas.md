@@ -11,8 +11,7 @@ The Power BI Online (V1) plugin has been deprecated. You can use the [Power BI O
   * [https://login.microsoftonline.com](https://login.microsoftonline.com)
   * [https://api.powerbi.com](https://api.powerbi.com)
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -30,12 +29,12 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 In order to establish a connection with a PowerBI Online instance, specifying the following parameters in the dedicated file is required:
 
 | Parameter                        | Expected value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| --- | --- |
+|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`                           | The name that will be displayed to catalog users for this connection.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `code`                           | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner.                                                                                                                                                                                                                                                                                           |
 | `connector_id`                   | The connector type to use for the connection. Here, the value must be `powerbi` and this value must not be modified.                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -71,8 +70,7 @@ The user must be able to do the following:
 
   1. **Create an Azure AD group**. See the documentation above to create a group with reading access to all the workspaces. More information on how to create Azure AD Group can be found here: https://docs.microsoft.com/en-us/power-bi/enterprise/read-only-apis-service-principal-authentication.
   2. **Add a service principal to the Azure AD group**.
-!!! note
-    The service principal must not have specific rights (e.g., `Tenant.Read.All`) related to Power BI in the Azure AD configuration as this could generate conflict with security group rights on the Power BI side.
+> **Note:** The service principal must not have specific rights (e.g., `Tenant.Read.All`) related to Power BI in the Azure AD configuration as this could generate conflict with security group rights on the Power BI side.
 
 ### API Scanner Authorization
 
@@ -151,7 +149,7 @@ The Power BI Online connector is able to retrieve the lineage between datasets t
 Table summarizing the possible values of the `alias` parameter to be completed in the data source configuration file.
 
 | Source System| Model | Example |
-| :--- | :--- | :--- |
+| :--- | :--- | :---- |
 | [SQL Server](./zeenea-connector-sqlserver.md) | Server name:port/Database name | `alias = ["zeenea.database.windows.net:1433/db"]` * |
 | [BigQuery](./zeenea-connector-google-bigquery.md) | BigQuery project identifier	| `alias = ["zeenea-project"]` |
 | [AWS Redshift](./zeenea-connector-aws-redshift.md) | Server name:port/Database name | `alias = ["zeenea.cthwlv3ueke2.eu-west-3.redshift.amazonaws.com:5439/database"]` |
@@ -160,8 +158,7 @@ Table summarizing the possible values of the `alias` parameter to be completed i
 | [Oracle](./zeenea-connector-oracle.md) | Server name:port/Service Name | `alias = ["oracle.example.com:1521/XE"]` |
 | [Denodo](./zeenea-connector-denodo.md) | Server name:ODBC port | `alias = ["denodo.database.com:9996"]` |
 
-!!! note
-    The connector creates a data process object for each dataset from Power BI Online to represent the link with the source dataset (even if the source dataset is not present in the catalog).
+> **Note:** The connector creates a data process object for each dataset from Power BI Online to represent the link with the source dataset (even if the source dataset is not present in the catalog).
 
 ### Visualization
 
@@ -219,10 +216,10 @@ To represent the data flow from an external source, a Zeenea Data Process will b
  
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
  
-More information about unique identification keys in this documentation: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
   
 | Object        | Identification Key                    | Description |
-| --- | --- | --- |
+|---------------|----------------------------------------|-------------|
 | Visualization | code/group id.report.id               | - **code**: Unique identifier of the connection noted in the configuration file  <br/> - **group id**: Power BI Online Group technical identifier  <br/> - **id**: Power BI object technical identifier |
 | Dataset       | code/group id.dataset.id              | - **code**: Unique identifier of the connection noted in the configuration file  <br/> - **group id**: Power BI Online Group technical identifier  <br/> - **id**: Power BI object technical identifier |
 | Field         | code/group id.dataset.id/field name   | - **code**: Unique identifier of the connection noted in the configuration file  <br/> - **group id**: Power BI Online Group technical identifier  <br/> - **id**: Power BI object technical identifier  <br/> - **field name** |

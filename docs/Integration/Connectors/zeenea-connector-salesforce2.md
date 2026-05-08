@@ -5,8 +5,7 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Salesforce.
 * Zeenea traffic flows towards the data source must be open. 
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -22,7 +21,7 @@ For more information about how to install a plugin, see [Installing and Configur
   
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-For more information about managing connections, see [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md).
 
 To establish a connection with a Salesforce instance, fill in the following parameters in the dedicated configuration file:
  
@@ -33,7 +32,8 @@ To establish a connection with a Salesforce instance, fill in the following para
 | `connector_id` | The type of connector to be used for the connection. The value must be `salesforce` and must not be modified. |
 | `connection.endpoint` | Salesforce SOAP API endpoint instance URL (for example: `https://login.salesforce.com/services/Soap/u/63.0`). |
 | `connection.username` | Username from Salesforce (for example: `some-username@agentforce.com`). |
-| `connection.password` | Password for the provided username, which is the concatenation of the Password and Security Token (for example: `<PASSWORD><SECURITY_TOKEN>`). |
+| `connection.password` | Password for the provided username. |
+| `connection.token` | Security Token created for the user. |
 | `inventory.additional_objects` | List of items to explicitly include in the inventory (for example: `Account,ServiceContract,ContractLineItem`). |
 | `inventory.managed_prefixes` | Item prefix to explicitly include items in the inventory (for example: `prefix1_,prefix2_`). |
 | `inventory.audit_fields` | Include Salesforce audit fields (CreatedById, CreatedDate, LastModifiedById, LastModifiedDate). The default value is `false`. |
@@ -90,7 +90,7 @@ Dataset field.
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
  
-For more information about identifier keys, see [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 | Object | Identifier Key | Description |
 | :--- | :--- | :--- |

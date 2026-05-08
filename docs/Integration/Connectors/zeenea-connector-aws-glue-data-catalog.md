@@ -15,8 +15,7 @@ The Agent's host server must have sufficient credentials to connect to AWS Glue.
 | :--- | :--- | :--- |
 | AWS Glue | HTTP | 443 |
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -32,12 +31,12 @@ For more information about how to install a plugin, see [Installing and Configur
   
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-For more information about managing connections, see [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md).
  
 To establish a connection with an AWS Glue instance, fill in the following parameters in the dedicated configuration file:
  
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | Specifies the display name for the connection. |
 | `code` | Specifies the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | Specifies the type of connector to be used for the connection. The value must be `aws.glue` and must not be modified. |
@@ -107,8 +106,7 @@ filter = """
 """
 ```
 
-!!! note
-    The `filter` attribute can contain either a raw value or a file URL to the content. (for example, `file:///path/to/zeenea/connections/aws-glue-inventory-filter.json`). When you use a side-file, any changes to the filter are applied without restarting the scanner.
+> **Note:** The `filter` attribute can contain either a raw value or a file URL to the content. (for example, `file:///path/to/zeenea/connections/aws-glue-inventory-filter.json`). When you use a side-file, any changes to the filter are applied without restarting the scanner.
 
 For more information about filters, see [Filters](../Scanners/zeenea-filters.md).
 
@@ -154,9 +152,9 @@ Dataset field.
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
 
-For more information about identifier keys, see [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/aws region/dataset identifier | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **aws region**: AWS region code<br/>- **dataset identifier**: Table name<br/> Database schema name<br/>S3 bucket key |
 | Field | code/aws region/dataset identifier/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **aws region**: AWS region code<br/>- **dataset identifier**: <br/>Database schema name<br/>S3 bucket key<br/>- **field name** |

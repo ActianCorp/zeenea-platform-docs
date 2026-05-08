@@ -10,8 +10,7 @@
   Zeenea traffic flows towards the data source must be open.
 
 <!-- #p100054 -->
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 <!-- #p100060 -->
 ## Supported Versions
@@ -38,14 +37,14 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
 <!-- #p100120 -->
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 <!-- #p100126 -->
 In order to establish a connection with a OpenAPI interface, specifying the following parameters in the dedicated file is required:
 
 <!-- #p100132 -->
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `openapi` and this value must not be modified. |
@@ -68,8 +67,7 @@ In order to establish a connection with a OpenAPI interface, specifying the foll
 | `proxy.password` | Proxy account password |
 
 <!-- #p100147 -->
-!!! note
-    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 <!-- #p100153 -->
 ## User Permissions
@@ -156,11 +154,11 @@ Dataset attribute.
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
 <!-- #p100414 -->
-More information about unique identification keys in this documentation: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 <!-- #p100420 -->
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/component name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **component name**: Exposed object's name |
 | Field | code/component name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **component name**: Exposed object's name<br/>- **field name**: Complete path of the attribute |
 

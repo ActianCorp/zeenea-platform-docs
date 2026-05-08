@@ -5,8 +5,7 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Matillion.
 * Zeenea traffic flows towards the ELT must be open.
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -22,7 +21,7 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 In order to establish a connection with a Matillion instance, the following parameters in the dedicated file are required:
 
@@ -37,7 +36,7 @@ The `filter.includes` and `filter.exclude`s parameters are replaced by the singl
 The `filter.versions` parameter is replaced by the `versions` parameter, which works in exactly the same way.
 
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `matillion` and this value must not be modified. |
@@ -158,9 +157,9 @@ A data process is a Matillion transformation.
  
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
  
-More information about unique identification keys in this documentation: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
   
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Data process | code/group/project/transformation | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **group**: group name<br/>- **project**: project name<br/>- **transformation**: transformation name |
  

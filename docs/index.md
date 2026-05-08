@@ -1,97 +1,104 @@
----
-title: Home
-template: home-blocks.html
-hide:
-  - navigation
-  - toc
-  - feedback
----
+Actian Data Intelligence Platform
+=================================
 
-<!-- Hero Section -->
-<div class="actian-hero">
-  <blockquote class="hero-quote">
-    Actian Data Intelligence Platform turns your data catalog into AI Intelligence.
-  </blockquote>
-  
-  <div class="hero-cta">
-    <a href="./zeenea/zeenea-intro.html" class="primary-link">View docs →</a>
-  </div>
-</div>
+Actian provides an intelligent Data Intelligence Platform.
 
-<!-- Value Propositions -->
-<div class="value-props-section">
-  <div class="value-props-grid">
-    <div class="value-prop-item">
-      <h3 class="jumbo-heading">Discover</h3>
-      <p class="value-prop-text">Discover, understand, and access all your data instantly—so your teams spend less time hunting and more time building AI that delivers.</p>
-    </div>
-    <div class="value-prop-item">
-      <h3 class="jumbo-heading">Trust</h3>
-      <p class="value-prop-text">Build trust, mitigate risk, and ensure compliance with automated governance that scales at the speed of your AI initiatives.</p>
-    </div>
-    <div class="value-prop-item">
-      <h3 class="jumbo-heading">Activate</h3>
-      <p class="value-prop-text">Activate data with agents and automations that ensure quality, reliability, and readiness across every AI initiative.</p>
-    </div>
-  </div>
-</div>
+This solution enables metadata management for search, exploration, data governance, compliance, and cloud transformation initiatives.
 
-<!-- Get Started Section -->
-<div class="get-started-section">
-  <div class="side-by-side">
-    <div class="content-side">
-      <h2 class="jumbo-heading">Get Started Quickly</h2>
-      <p class="section-description">
-        Unlock data. Build trust. Turn AI into real enterprise outcomes. Enterprise data intelligence that empowers data teams and AI agents to discover, trust, and activate data at scale.
-      </p>
-      <div class="section-cta">
-        <a href="./getting-started/zeenea-supported-browsers.html" class="primary-link">Explore documentation →</a>
-      </div>
-    </div>
-    <div class="code-side">
-      <div class="code-block">
-        <pre><code>Unlock data. 
-Build trust. 
-Turn AI into real enterprise outcomes.</code></pre>
-      </div>
-      <div class="code-block">
-        <pre><code>Enterprise data 
-intelligence that 
-empowers data 
-teams and AI agents 
-to discover, trust, 
-and activate data at scale.</code></pre>
-      </div>
-    </div>
-  </div>
-</div>
+  ![](./data-intelligence/images/zeenea-platform.jpg)
 
-<!-- Features Section -->
-<div class="features-section">
-  <div class="features-header">
-    <h3 class="jumbo-heading">Ease of use for data producers & consumers</h3>
-    <p class="features-subtitle">
-      From cataloging to audit trails to agentic AI, Digital Experience helps you simplify and accelerate your data and AI goals. Optimize operations, maximize investments, ensure compliance with agentic AI.
-    </p>
-  </div>
-  
-  <div class="features-grid">
-    <div class="feature-item">
-      <h4 class="feature-title">Optimize Operations</h4>
-      <p class="feature-description">Automate, accelerate, & optimize your team operations instantly</p>
-      <a href="./Features/zeenea-studio/zeenea-studio-overview.html" class="primary-link">Explore features →</a>
-    </div>
-    
-    <div class="feature-item">
-      <h4 class="feature-title">Maximize Investments</h4>
-      <p class="feature-description">Measure, control, & maximize your existing investments effortlessly</p>
-      <a href="./Integration/Connectors/zeenea-connectors-list.html" class="primary-link">View integrations →</a>
-    </div>
-    
-    <div class="feature-item">
-      <h4 class="feature-title">Ensure Compliance</h4>
-      <p class="feature-description">Govern, secure, & comply with regulatory requirements automatically</p>
-      <a href="./Features/zeenea-studio/stewardship/zeenea-dashboard-widgets.html" class="primary-link">Learn about governance →</a>
-    </div>
-  </div>
-</div>
+### Universal connectivity
+
+Actian Data Intelligence Platform connects to all your data sources in seconds.
+
+Our platform's built-in scanners and APIs enable organizations to automatically collect, consolidate, and link metadata from their data ecosystem. Our connectivity includes a wide variety of data sources such as the Cloud, ERP/CRM, NoSQL, Processing, Relational, Visualization, and more.
+
+### Cloud-native design
+
+Our Data Intelligence Platform is cloud-native and developed as-a-Service (SaaS) to help enterprises reduce risks, optimize costs, and simplify data access across the organization. Our architecture makes it easy for you to deploy a variety of environments in the cloud – hybrid, inter-cloud, or multi-cloud.
+
+### Powered by knowledge graph technologies
+
+Our platform is powered by enhanced knowledge graph capabilities, providing rich and in-depth search results, optimized data discovery, and intelligent recommendations. Through machine learning algorithms, it provides structure for all your data and enables the creation of multilateral relations between your data assets.
+
+### A safe & secure platform
+
+Keeping our customers' data safe and secure has always been a top priority at Actian Zeenea, this is why we are SOC 2 Type II and ISO 27001 compliant. This demonstrates our ongoing commitment to maintaining the highest data security standards.
+
+## Platform Capabilities
+
+### Flexible Metamodel
+
+Via powerful knowledge graph technology, add, configure, and overlay documentation properties on your data through a flexible metamodel template. Simply drag & drop your properties, tags, and other metadata into your documentation templates and use our dynamic diagram to visualize your metamodels and their relations with other catalog objects, including domains, data products, custom assets, and more.
+
+### Automated Data Stewardship
+
+Actian Data Intelligence Platform provides a connected and automated metadata management solution that enables Data Stewards to overcome the challenges associated with handling increasingly large volumes of data.
+
+Our platform helps organizations maximize the value of their data by reducing the time spent on complex and time-consuming documentation tasks, and by breaking data silos to increase enterprise data knowledge.
+
+### Smart Data Discovery
+
+Strongly inspired by marketplaces and e-commerce websites, Zeenea offers smart searching capabilities for data consumers to quickly find the relevant data for their business use cases.
+
+Our Data Intelligence Platform provides a multi-dimensional search engine, able to retrieve the right information whether you know what you are looking for (high intent) or not (low intent).
+
+### Business Glossary
+
+Zeenea's Business Glossary features enable the creation and sharing of a consistent business language across all data consumers within the organization. Through an easy-to-use interface that is supported by automation capabilities, data Management teams can:
+
+* Define rules, policies, and KPIs
+* Design reliable glossary models
+* Get suggestions for business terms
+* View the relations between glossary items
+
+###  Data Lineage
+
+Zeenea's Data Lineage capabilities enable data teams to get a complete view of their data's lifecycle – from its collection to its use, storage, and preservation over time. Automatically map the relationships between systems, applications, and reports to provide a context-rich data ecosystem for your organization.
+
+Through an interactive and user-friendly lineage graph, better understand your data, easily identify transformations, and ensure regulatory compliance.
+
+### Data Quality
+
+Zeenea automatically synchronizes with your data quality solutions, enabling your users to view their datasets' quality metrics from the discovery phase of their data use cases.
+
+Our platform helps organizations make better business decisions by enabling data users to quickly detect and take action on a dataset's quality to uncover its trustworthiness before an issue arises.
+
+## Use Cases
+
+### Data Catalog
+
+Zeenea Data Platform enables Data Managers and Data Producers to master the organization's data landscape by providing advanced back-office capabilities:
+
+* Information modelling (metadata model)
+* Automation, suggestions, productivity
+* Data Stewardship workflows
+* Expert system
+
+Zeenea's federated graph-powered EDM enables organizations to mirror the Data Mesh at the metadata level and build a global, scalable, supervision plane that is perfectly integrated with data production and consumption processes.
+
+### Enterprise Data Marketplace
+
+The Enterprise Data Marketplace (EDM) is an e-commerce-like solution, where Data Producers publish their products and Data Consumers explore, understand, and acquire these published products.
+
+The Marketplace sits on top of the Data Catalog to share and exchange the most valuable Domain Data packaged as Data Products.
+
+## Applications
+
+Zeenea provides dedicated applications and user experiences (UX) for different user personas.
+
+### Zeenea Studio
+
+Zeenea Studio enables data management teams to manage, maintain, and enrich the documentation of their company's data assets.
+
+It serves as the back-office tool of the platform.
+
+  ![](./data-intelligence/images/zeenea-studio-intro.png)
+
+### Zeenea Explorer
+
+With Zeenea Explorer, business users can access a user-friendly interface and customized exploration paths to make their data discovery more efficient.
+
+It offers a simple and intuitive interface designed for efficient data exploration and collaboration.
+
+  ![](./data-intelligence/images/zeenea-explorer.png)

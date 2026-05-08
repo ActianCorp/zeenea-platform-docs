@@ -5,8 +5,7 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with SSRS.  
 * Zeenea traffic flows towards the data source must be open. 
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -22,19 +21,18 @@ For more information on how to install a plugin, please refer to the following a
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
  
 In order to establish a connection with an SSRS instance, specifying the following parameters in the dedicated file is required:
  
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `ssrs` and this value must not be modified. |
 | `connection.path` | Path of the directory containing SSRS projects to synchronize with the catalog |
 
-!!! note
-    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 ## User Permissions
 
@@ -93,10 +91,10 @@ Dataset field.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
 
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Visualization | code/report id | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **report id**: SSRS technical report identifier |
 | Dataset | code/report id/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **report id**: SSRS technical report identifier<br/>- **dataset name** |
 | Field | code/report id/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **report id**: SSRS technical report identifier<br/>- **dataset name**<br/>- **field name** |

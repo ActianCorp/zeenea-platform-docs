@@ -5,8 +5,7 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with DynamoDB.
 * Zeenea traffic flows towards the data source must be open. 
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -22,12 +21,12 @@ For more information about how to install a plugin, see [Installing and Configur
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-For more information about managing connections, see [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md).
 
 To establish a connection with a DynamoDB instance, fill in the following parameters in the dedicated configuration file:
 
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | Specifies the display name for the connection. |
 | `code` | Specifies the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | Specifies the type of connector to be used for the connection. The value must be `aws-dynamodb` and must not be modified. |
@@ -116,10 +115,10 @@ Dataset field.
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
 
-For more information about identifier keys, see [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/region/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **region**: AWS object region<br/>- **dataset name**: Table name |
 | Field | code/region/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **region**: AWS object region<br/>- **dataset name**: Table name<br/>- **field name** |
 

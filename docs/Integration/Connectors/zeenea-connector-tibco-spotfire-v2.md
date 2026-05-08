@@ -5,8 +5,7 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Spotfire.
 * Zeenea traffic flows towards the server must be open.
 
-!!! note
-    You can find the configuration file template in [tibco-spotfire-v2.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/tibco-spotfire-v2.conf).
+> **Note:** You can find the configuration file template in [tibco-spotfire-v2.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/tibco-spotfire-v2.conf).
 
 ## Supported Versions
 
@@ -22,12 +21,12 @@ For more information about how to install a plugin, see [Installing and Configur
   
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-For more information about managing connections, see [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md).
  
 To establish a connection with a Spotfire Server instance, fill in the following parameters in the dedicated configuration file: 
  
 | Parameter | Expected value |
-| :--- | :--- |
+| :----- | :---------- |
 | `name` | Specifies the display name for the connection. |
 | `code` | Defines the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. The value must be `tibco-spotfire-v2` and must not be modified. |
@@ -94,7 +93,7 @@ Datasets from other connections must be imported into the catalog before they ca
 This feature is available for the following systems. To enable it, an additional parameter is needed in the source system connection as configured in the Spotfire server.
 
 | Source System| **Possible value of `alias` parameter to be assigned in the source system configuration file** |
-| :--- | :--- |
+| :--- | :--- | 
 | [AWS Redshift](./zeenea-connector-aws-redshift.md) | `host:port/db` |
 | [Tibco Data Virtualization](./zeenea-connector-tibco-data-virtualization.md) | `IP` |
 
@@ -153,10 +152,10 @@ Dataset field.
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
  
-For more information about identifier keys, see [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 | Object      | Identification Key  | Description   |
-| :--- | :--- | :--- |
+|:----------- | :------------------ | :------------ |
 | Visualization | `code/visualization/path/analysis name`  | - **code**: Unique identifier of the connection noted in the configuration file<br />- **path**: Spotfire path to the analysis<br />- **analysis name** |
 | Dataset | `code/dataset/path/analysis name/dataset name` | - **code**: Unique identifier of the connection noted in the configuration file<br />- **path**: Spotfire path to the analysis<br />- **analysis name**<br />- **dataset name** |
 | Field | `code/dataset/path/analysis name/dataset name/field name` | - **code**: Unique identifier of the connection noted in the configuration file<br />- **path**: Spotfire path to the analysis<br />- **analysis name**<br />- **dataset name**<br />- **field name** |

@@ -13,8 +13,7 @@ This connector is deprecated. You can use the new [ZDF Lineage](zeenea-connector
 The technical user the scanner is executed with must have sufficient [permissions](#p100171 "title: Generic Lineage (Deprecated)") to be able to process the metadata. 
 
 <!-- #p100057 -->
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 <!-- #p100063 -->
 ## Supported Versions
@@ -80,14 +79,14 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
 <!-- #p100147 -->
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 <!-- #p100153 -->
 In order to establish a connection with an lineage connector, specifying the following parameters in the dedicated file is required:
 
 <!-- #p100159 -->
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `lineage` and this value must not be modified. |
@@ -156,10 +155,10 @@ A data process represents a transformation as described in the descriptor file.
   A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
   <!-- #p100327 -->
-  More information about unique identification keys in this documentation: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+  More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
   <!-- #p100333 -->
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Data process | code/transformation/transformation name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **transformation name**: Name of the transformation as defined in the JSON file. Must be unique. |
 

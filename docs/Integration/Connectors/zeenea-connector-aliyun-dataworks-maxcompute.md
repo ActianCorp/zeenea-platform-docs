@@ -10,8 +10,7 @@
   Zeenea traffic flows towards the data source must be open.
 
 <!-- #p100054 -->
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 <!-- #p100060 -->
 ## Installing the Plugin
@@ -29,14 +28,14 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
 <!-- #p100102 -->
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 <!-- #p100108 -->
 In order to establish a connection with a Aliyun DataWorks MaxCompute instance, specifying the following parameters in the dedicated file is required:
 
 <!-- #p100114 -->
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `aliyun-dataworks-maxcompute` and this value must not be modified. |
@@ -160,11 +159,11 @@ To represent the data flow between tables, a Zeenea Data Process will be created
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
 <!-- #p100474 -->
-More information about how it works can be found here: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 <!-- #p100480 -->
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/table ID | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **table ID**: Unique ID defined by the source system |
 | Field | code/column ID | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **column ID**: Unique ID defined by the source system |
 | Data process | code/import/output table ID | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **output table ID**: Unique ID of the output table |

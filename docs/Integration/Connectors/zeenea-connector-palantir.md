@@ -5,8 +5,7 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Palantir. 
 * Zeenea traffic flows towards the data source must be open.
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -22,12 +21,12 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 In order to establish a connection with a Palantir instance, specifying the following parameters in the dedicated file is required:
 
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `palantir` and must not be modified. |
@@ -65,8 +64,7 @@ In order to establish a connection with a Palantir instance, specifying the foll
 | `proxy.username` | Proxy username |
 | `proxy.password` | Proxy account password |
 
-!!! note
-    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
  
 ## User Permissions
 
@@ -156,10 +154,10 @@ Dataset field.
  
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
  
-More information about unique identification keys in this documentation: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
   
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/ri.foundry.main.dataset.rid | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **rid**: Palantir Foundry dataset technical identifier |
 | Field | code/ri.foundry.main.dataset.rid/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **rid**: Palantir Foundry dataset technical identifier<br/>- **field name** |
  

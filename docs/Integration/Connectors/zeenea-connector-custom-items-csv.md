@@ -4,7 +4,7 @@
 
 Before you can use this connector, you must set up the custom items that will be fed by the connector.
 
-The connector will manage objects of a type that you will have to specify. This type must therefore be created beforehand. See the article [Creating or Deleting a Custom Item Type](../../Features/zeenea-studio/catalog-design/zeenea-studio-create-delete-custom-item.md).
+The connector will manage objects of a type that you will have to specify. This type must therefore be created beforehand. See the article [Creating or Deleting a Custom Item Type](../Zeenea_Studio/zeenea-studio-create-delete-custom-item.md).
 
 To be used with the connector, the type must be "Synchronize Items with a connector" (and not "Manual").
 

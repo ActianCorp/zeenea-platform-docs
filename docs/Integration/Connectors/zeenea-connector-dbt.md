@@ -5,15 +5,13 @@
 * A user with sufficient permissions is required to establish a connection with DBT.
 * Zeenea traffic flows towards DBT must be open.  
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
 The DBT connector was tested with version 1.3. It is compatible with version 1.3 and earlier. 
 
-!!! note
-    The DBT connector is currently **NOT** compatible with DBT Cloud.
+> **Note:** The DBT connector is currently **NOT** compatible with DBT Cloud.
 
 ## Installing the Plugin
 
@@ -25,12 +23,12 @@ For more information on how to install a plugin, please refer to the following a
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
  
 In order to establish a connection with an DBT instance, specifying the following parameters in the dedicated file is required:
  
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `dbt` and this value must not be modified. |
@@ -99,7 +97,7 @@ Table summarizing the possible values of the `alias` parameter to be completed i
 
 
 | Source System| Model | Example |
-| :--- | :--- | :--- |
+| :--- | :--- | :---- |
 | [SQL Server](./zeenea-connector-sqlserver.md) | Server name:port/Database name | `alias = ["zeenea.database.windows.net:1433/db"]` * |
 | [Snowflake](./zeenea-connector-snowflake.md) | Server name/Database name | `alias = ["kn999999.eu-west-1.snowflakecomputing.com/ZEENEA""]` * |
 | [BigQuery](./zeenea-connector-google-bigquery.md) | `bigquery.googleapis.com/` + BigQuery project identifier | `alias = ["bigquery.googleapis.com/zeenea-project"]` |
@@ -123,8 +121,8 @@ Table summarizing the possible values of the `alias` parameter to be completed i
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
 
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/path/type.package_name.resource_name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **path**: (Optional) Path to the project folder<br/>- **type**: Kind of materialization<br/>- **package_name**: Package name<br/>- **resource_name**: Resource name |

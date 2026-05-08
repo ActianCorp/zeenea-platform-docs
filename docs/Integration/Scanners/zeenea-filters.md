@@ -43,6 +43,7 @@ The following connectors are compatible with the filtering system presented here
 * Denodo
 * Matillion
 * Palantir
+* PostgreSQL
 * PowerBI
 * Qlik Cloud
 * SAP BO

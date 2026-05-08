@@ -5,8 +5,7 @@
 * In order to establish a connection with Snowflake, a user with sufficient [permissions](#user-permissions) is required.
 * A route between the Zeenea scanner and the database must be open to allow traffic between the two.
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -20,18 +19,17 @@ It can be downloaded here and requires a scanner version 64 or later: [Zeenea Co
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
  
-!!! note
-    For users of Java 17 and later, the Snowflake driver use old private Java API. A special option should be added on the scanner command line in order to provide access to this API.
-
-    `-J--add-opens=java.base/java.nio=ALL-UNNAMED`
-
-    You can pass it directly to zeenea-scanner. If on Linux, it can be added to the `conf/application.ini` file. Create it if it doesn't exist already.
+> **Note:** For users of Java 17 and later, the Snowflake driver use old private Java API. A special option should be added on the scanner command line in order to provide access to this API.
+>
+> `-J--add-opens=java.base/java.nio=ALL-UNNAMED`
+>
+> You can pass it directly to zeenea-scanner. If on Linux, it can be added to the `conf/application.ini` file. Create it if it doesn't exist already.
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
  
 In order to establish a connection with Snowflake, specifying the following parameters in the dedicated file is required:
 
@@ -64,8 +62,7 @@ In order to establish a connection with Snowflake, specifying the following para
 | `multi_account.enabled` | **Plugin v73 and higher**.<br />To activate multi account support (`true` or `false`). Default is `false`.<br />When multi account is activated, `multi_catalog` is activated as well and overrides `multi_catalog.enabled` parameter to `true`.<br />**Warning**: this parameter should not be changed after datasets have been imported because it changes the ways they are identified. |
 | `multi_account.list` | **Plugin v73 and higher**.<br />(Optional) List of accounts to be inventoried. It consists of a succession of Snowflake account identifiers separated by a space. Account identifiers must be in the form “-” (see [Snowflake documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier)).<br />If unset, the organization's account list is retrieved and used. |
 
-!!! note
-    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 You can have snowflake datasets with "multi-catalog = true"  /my\_db/my\_schema/my\_table or /my\_schema/my\_table  .
 
@@ -267,10 +264,9 @@ A data process can be the representation of a Snowpipe, a view construction requ
  
 ## Data Profiling
 
-!!! important
-    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+> **Important:** The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
 
-The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics here: [Data Profiling](../../Features/cross-application-features/zeenea-data-profiling.md).
+The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics here: [Data Profiling](../Zeenea_Explorer/zeenea-data-profiling.md).
 
 Read access on targeted tables is mandatory to activate the feature. For Snowflake technologies, the connector executes the following request to get a data sample: 
 
@@ -294,9 +290,9 @@ You can find the details of how this feature works directly in the [Snowflake do
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/schema/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Dataset schema<br/>- **dataset name** |
 | Field | code/schema/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Dataset schema<br/>- **dataset name**<br/>- **field name** |

@@ -9,8 +9,7 @@ The Tableau (V1) plugin has been deprecated. You can use the [Tableau (V2)](./ze
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with the Tableau solution. Please read [User Permissions](#user-permissions) below.
 * The Zeenea traffic flows towards Tableau must be open. If you want to connect Zeenea to a Tableau installed on your own server, you must activate the Tableau API Metadata. See documentation here: [https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server](https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server)
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -18,10 +17,10 @@ The Tableau connector was tested on the SaaS solution.
 
 ## Installing the Plugin
 
-!!! warning
-    * This version of the connector is NOT compatible with previous versions (3.XX and earlier) of Tableau Connector.
-    * All the items you may have already imported **MUST** be deleted and reimported.
-    * If you need to export your documentation before upgrading, please contact our support before proceeding.
+> **Warning:** 
+> * This version of the connector is NOT compatible with previous versions (3.XX and earlier) of Tableau Connector.
+> * All the items you may have already imported **MUST** be deleted and reimported.
+> * If you need to export your documentation before upgrading, please contact our support before proceeding.
 
 The Tableau plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
 
@@ -31,12 +30,12 @@ For more information on how to install a plugin, please refer to the following a
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
  
 In order to establish a connection with Tableau, specifying the following parameters in the dedicated file is required:
  
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `Tableau` and this value must not be modified. |
@@ -56,8 +55,7 @@ In order to establish a connection with Tableau, specifying the following parame
 | `tls.truststore.password` | Password of the trust store file |
 | `tls.truststore.type` | Type of the trust store file (`PKCS12` or `JKS`). Default value is discovered from the file extension. |
 
-!!! note
-    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 ## User Permissions
 
@@ -92,15 +90,14 @@ The inventory collects the list of reports (along with their data sources) that 
 The Tableau connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the Looker dataset through a new Data Process object. This feature is available for the following systems and, for it to work, an additional parameter is needed in the source system connection as configured in the Tableau connection configuration panel.
 
 | Source System | Possible value of `alias` parameter to be set in source system configuration file |
-| --- | --- |
+|---|---|
 | [BigQuery](./zeenea-connector-google-bigquery.md) | `bigquery-{project name}` |
 | [Snowflake](./zeenea-connector-snowflake.md) | `snowflake-{database name}` |
 | [Redshift](./zeenea-connector-aws-redshift.md) | `bigquery-{project name}` |
 | [SQL Server](./zeenea-connector-sqlserver.md) | `redshift-{database name}` |
 | [Oracle](./zeenea-connector-oracle.md) | `oracle-{database name}` |
 
-!!! note
-    The connector creates a data process object for each dataset from Tableau to represent the link with the source dataset (even if the source dataset is not present in the catalog).
+> **Note:** The connector creates a data process object for each dataset from Tableau to represent the link with the source dataset (even if the source dataset is not present in the catalog).
 
 ### Visualization
 
@@ -147,10 +144,10 @@ To represent the data flow from an external source, a Zeenea Data Process will b
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
 
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Visualization | code/workbook identifier | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **workbook identifier**: Workbook Tableau technical identifier |
 | Dataset | code/dataset/data source identifier | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **data source identifier**: Data Source Tableau technical identifier |
 | Field | code/dataset/data source identifier/field identifier | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **data source identifier**: Data Source Tableau technical identifier<br/>- **field identifier**: Field Tableau technical identifier |

@@ -30,8 +30,7 @@ By default, a plugin named `external script` is provided in the scanner package 
 
 This plugin will let you execute an external script of your choice.
 
-!!! note
-    You will find a `readme` file containing script examples in the scanner package under the new `hooks` folder.
+> **Note:** You will find a `readme` file containing script examples in the scanner package under the new `hooks` folder.
 
 ## Installation and configuration
 

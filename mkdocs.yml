@@ -9,15 +9,17 @@ site_dir: site
 # Theme Configuration
 theme:
   name: material
-  logo: assets/dx_logo.png?v=2
+  logo: assets/img/logos/actian-logo.svg
   language: en
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.indexes
     - navigation.top
     - navigation.instant
     - navigation.prune
     - navigation.path
+    - navigation.footer
     - search.highlight
     - search.share
     - search.suggest
@@ -26,26 +28,24 @@ theme:
     - content.code.annotate
     - content.action.edit
   palette:
-    - scheme: slate
-      primary: custom
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
     - scheme: default
       primary: custom
       accent: indigo
       toggle:
-        icon: material/brightness-7
+        icon: material/brightness-4
         name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
   custom_dir: theme_overrides/
   icon:
     repo: fontawesome/brands/github
     edit: fontawesome/regular/pen-to-square
-  font:
-    text: Roboto
-    code: Roboto Mono
-  favicon: assets/favicon.png
+  font: false
+  favicon: assets/img/logos/favicon.ico
   
   # Static files
   static_templates:
@@ -90,12 +90,25 @@ extra:
   analytics: 
     provider: custom
     property: G-7LF0XY95M1
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/thumb-up-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/thumb-down-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback!
 
 
 # Repository
 repo_url: https://github.com/ActianCorp/zeenea-platform-docs
-repo_name: ActianCorp/zeenea-platform-docs
-edit_uri: "edit/main/docs/"
+repo_name: zeenea-platform-docs
+edit_uri: edit/main/docs/
 
 # Customization
 extra_css:
@@ -103,6 +116,7 @@ extra_css:
   - stylesheets/minichat.css
   - stylesheets/dx_style.css
   - assets/stylesheets/actian-landing.css?v=4
+  - stylesheets/extra.css
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/marked/marked.min.js
@@ -119,14 +133,8 @@ plugins:
   - search:
       lang: en
       separator: '[\s\-\.,:!=\[\]()\"/]+|(?!\d)\.(?!\d)|\.(?!\d)|[0-9]+'
-      jieba_dict: null
-      use_headings: true
-      indexing: 'full'
-      prebuild_index: true
-      min_search_length: 2
   - awesome-pages
-  - tags:
-      tags_file: tags.md
+  - tags
   - swagger-ui-tag
   - mike:
       canonical_version: latest

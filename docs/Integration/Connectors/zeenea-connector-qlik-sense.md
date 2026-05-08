@@ -12,13 +12,12 @@
 <!-- multiline -->
 | <!-- #p100051 --> | <!-- #p100060 --> | <!-- #p100069 --> |
 | Target            | Protocol          | Usual Ports       |
-| --- | --- | --- |
+| ----------------- | ----------------- | ----------------- |
 | <!-- #p100081 --> | <!-- #p100090 --> | <!-- #p100099 --> |
 | Qlik Sense Server | HTTP/HTTPS        | 80/443            |
 |                   |                   |                   |
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 <!-- #p100114 -->
 ## Supported Versions
@@ -42,14 +41,14 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
 <!-- #p100168 -->
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 <!-- #p100174 -->
 In order to establish a connection with a Qlik Sense instance, specifying the following parameters in the dedicated file is required:
 
 <!-- #p100180 -->
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `qlik-sense` and this value must not be modified. |
@@ -66,8 +65,7 @@ In order to establish a connection with a Qlik Sense instance, specifying the fo
 | `proxy.password` | Proxy account password |
 
 <!-- #p100195 -->
-!!! note
-    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 <!-- #p100201 -->
 ## User Permissions
@@ -139,10 +137,10 @@ A visualization is a sheet from an application.
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
 <!-- #p100402 -->
-More information about unique identification keys in this documentation: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 <!-- #p100408 -->
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Visualization | code/application id/sheet id | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **application id**<br/>- **sheet id** |
 

@@ -5,13 +5,11 @@
 * In order to establish a connection with Sybase IQ, a user with sufficient [permissions](#user-permissions) is required.
 * Zeenea traffic flows towards Sybase IQ must be open. 
 
-!!! important
-    The Sybase IQ driver is not delivered with the connector with scanner version 34 and later. Download the Sybase IQ driver related to your Sybase IQ instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [http://www.sybase.com/products/allproductsa-z/softwaredeveloperkit/jconnect](http://www.sybase.com/products/allproductsa-z/softwaredeveloperkit/jconnect)
+> **Important:** The Sybase IQ driver is not delivered with the connector with scanner version 34 and later. Download the Sybase IQ driver related to your Sybase IQ instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [http://www.sybase.com/products/allproductsa-z/softwaredeveloperkit/jconnect](http://www.sybase.com/products/allproductsa-z/softwaredeveloperkit/jconnect)
 
 <br />
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -27,12 +25,12 @@ For more information on how to install a plugin, please refer to the following a
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
  
 In order to establish a connection with SybaseIQ, specifying the following parameters in the dedicated file is required:
  
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `SybaseIQ` and this value must not be modified. |
@@ -42,8 +40,7 @@ In order to establish a connection with SybaseIQ, specifying the following param
 | `connection.username` | Username |
 | `connection.password` | User password |
 
-!!! note
-    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 ## User Permissions
 
@@ -95,9 +92,9 @@ Dataset field.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
- Read more: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md)
+ Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
 
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/schema/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Dataset schema<br/>- **dataset name** |
 | Field | code/schema/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Dataset schema<br/>- **dataset name**<br/>- **field name** |

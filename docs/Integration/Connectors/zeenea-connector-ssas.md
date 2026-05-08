@@ -4,8 +4,7 @@
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with SSAS.
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Installing the Plugin
 
@@ -17,12 +16,12 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
  
 In order to establish a connection with SSAS, the following parameters in the dedicated file are required:
  
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `ssas` and this value must not be modified. |
@@ -30,8 +29,7 @@ In order to establish a connection with SSAS, the following parameters in the de
 | `connection.url` | URL to the data pump `MSMDPUMP.dll` |
 | `connection.server_mode` | Server or project mode for SSAS. Accepted values are:<br/>- Empty or `tabular`: The target server/project is configured in "Tabular" mode.<br/>- `multidimensional`: The target server/project is configured in "Multidimensional" mode. |
 
-!!! note
-    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 ## User Permissions
 
@@ -109,10 +107,10 @@ A data process represents lineage between a cube/table and its sources.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
- Read more: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md)
+ Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
 
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/catalog/[table or cube] | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **catalog**: Name of the catalog<br/>- **table or cube**: Name of the table or cube |
 | Field | code/catalog/[table or cube]/column | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **catalog**: Name of the catalog<br/>- **table or cube**: Name of the table or cube<br/>- **column name**: Name of the column, the measure, or the dimension |
 | Data process | code/catalog/dataprocess/import [table or cube] | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **catalog**: Name of the catalog<br/>- **transformation**: Name of this transformation |

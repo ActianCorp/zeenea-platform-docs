@@ -19,8 +19,7 @@ Traffic flows toward S3 must be open.
 | :--- | :--- | :--- |
 | AWS S3 | HTTPS | 443 |
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
  
 ## Supported Versions
 
@@ -36,7 +35,7 @@ For more information about how to install a plugin, see [Installing and Configur
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 In order to establish a connection with Amazon S3, specifying the following parameters in the dedicated file is required:
 
@@ -148,7 +147,7 @@ A dataset from a file system may actually be stored in multiple files. Those fil
 
 When running the inventory, the Amazon S3 connector detects datasets with the usual dataset naming convention in Amazon S3.
 
-Read more: [Dataset Detection on File Systems](zeenea-dataset-detection.md)
+Read more: [Dataset Detection on File Systems](../New_files/zeenea-dataset-detection.md)
  
 ## Collected Metadata
 
@@ -185,9 +184,9 @@ Dataset field.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/path/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **path**: Full path including the bucket<br/>- **dataset name** |
 | Field | code/path/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **path**: Full path including the bucket<br/>- **dataset name**<br/>- **field name** |

@@ -5,8 +5,7 @@
 * To connect to a MongoDB cluster, a user with sufficient [permissions](#p100255 "title: MongoDB") is required.
 * The traffic flows from Zeenea towards the MongoDB cluster must be open.
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -22,12 +21,12 @@ For more information about how to install a plugin, see [Installing and Configur
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for changes and resynchronizes automatically.
 
-For more information about managing connections, see [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md).
 
 To establish a connection to a MongoDB cluster, fill in the following parameters in the dedicated configuration file:
 
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | Specifies the display name for the connection. |
 | `code` | Defines the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. The value must be `Mongodb` and must not be modified. |
@@ -83,8 +82,7 @@ Unfortunately, we do not know which resources are consumed, because this mode is
 
 The Sample mode is usually recommended, however it may not detect rare fields. More accurately, a rare field may appear temporarily when a schema is being updated, and disappear at the next update. This has not been observed or reported, but, statistically, it is a possibility. 
 
-!!! note
-    We recommend trying the Sample mode first, as it is faster and lighter. If it is not applicable to your configuration, switching to the MapReduce mode remains possible.
+> **Note:** We recommend trying the Sample mode first, as it is faster and lighter. If it is not applicable to your configuration, switching to the MapReduce mode remains possible.
 
 ## Logging Details
 
@@ -162,10 +160,10 @@ Table fields.
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
 
-For more information about identifier keys, see [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/database name/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **database name**<br/>- **dataset name** |
 | Field | code/database name/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **database name**<br/>- **dataset name**<br/>- **field name** |
 

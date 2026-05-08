@@ -5,13 +5,11 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Databricks Unity Catalog. 
 * Zeenea traffic flows towards the data source must be open.
 
-!!! important
-    The Databricks JDBC driver is not provided with the connector. Download the Databricks JDBC driver for your Databricks instance and copy it to the `/lib-ext` folder of your scanner (**only the .jar file**). You can find the driver in the sources provided by the vendor on their website: [https://www.databricks.com/spark/jdbc-drivers-download](https://www.databricks.com/spark/jdbc-drivers-download).
+> **Important:** The Databricks JDBC driver is not provided with the connector. Download the Databricks JDBC driver for your Databricks instance and copy it to the `/lib-ext` folder of your scanner (**only the .jar file**). You can find the driver in the sources provided by the vendor on their website: [https://www.databricks.com/spark/jdbc-drivers-download](https://www.databricks.com/spark/jdbc-drivers-download).
 
 <br />
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -29,7 +27,7 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
  
 In order to establish a connection with a Databricks Unity Catalog instance, specifying the following parameters in the dedicated file is required:
 
@@ -115,9 +113,9 @@ Dataset field.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-More information about unique identification keys in this documentation: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md)
+More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
 
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/catalog/schema/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br />- **catalog**: Object catalog<br />- **schema**: Object schema<br />- **dataset name**: Table or view name |
 | Field | code/catalog/schema/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br />- **catalog**: Object catalog<br />- **schema**: Object schema<br />- **dataset name**: Table or view name<br />- **field name** |

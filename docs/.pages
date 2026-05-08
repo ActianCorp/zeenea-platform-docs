@@ -1,7 +1,6 @@
-title: Documentation
 nav:
     - index.md
-    - zeenea
-    - getting-started
+    - Getting_Started
     - Features
     - Integration
+    - misc

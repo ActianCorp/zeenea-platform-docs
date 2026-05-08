@@ -8,8 +8,7 @@
   * [https://login.microsoftonline.com](https://login.microsoftonline.com)
   * [https://api.powerbi.com](https://api.powerbi.com)
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -17,22 +16,22 @@ The Power BI Online (V2) connector is compatible with the product online version
 
 ## Installing the Plugin
 
-The Power BI Online (V2) plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
+You can download the Power BI Online (V2) plugin from [Zeenea Connector Downloads](./zeenea-connectors-list.md).
 
-> **ATTENTION:** Migrating from PowerBI (V1) connector to PowerBI (V2) connector requires specific operations. Please contact customer service to assist you in this migration.
+> **ATTENTION:** The Power BI Online (V2) connector is now integrated into the Microsoft Fabric plugin. If you are upgrading from a previous version, make sure to download the appropriate plugin and delete the existing Power BI plugin archive. <br />Migrating from Power BI (V1) connector to PowerBI (V2) connector requires specific operations. Contact customer service to assist you in this migration.
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
-Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
+Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+For more information about managing connections, see [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md).
 
-In order to establish a connection with a PowerBI Online instance, specifying the following parameters in the dedicated file is required:
+To establish a connection with a PowerBI Online instance, fill in the following parameters in the dedicated configuration file:
 
 | Parameter                         | Expected value |
-| :--- | :--- |
+|:----------------------------------|:----------------|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `powerbi-v2` and this value must not be modified. |
@@ -50,6 +49,7 @@ In order to establish a connection with a PowerBI Online instance, specifying th
 | `proxy.username` | Proxy username |
 | `proxy.password` | Proxy account password |
 | `contact.role_filter` | Enables you to extract only the contacts that do have a role matching the filter. To achieve this, use the `role` key to filter the contacts. Example:  <br/> `contact.role_filter = "role in ('Owner', 'Read')"` |
+| `inventory_on_reports_only` | Specifies whether to inventory only reports. If set to `true`, only reports will be inventoried. However, when a report is imported, all linked datasets will also be imported. This option is useful when working with a large number of items. <br/>The default value is `false`.  |
 | `filters` | Universal filters. Refer to [Universal Filters](#universal-filters) below. |
 
 
@@ -85,8 +85,7 @@ To configure Admin API settings in Azure, you typically need to enable service p
    * Go to **Certificates & secrets** under the app registration. 
    * Click **New client secret**. 
    * Enter a description and expiry date, then click **Add**.
-  !!! important
-      Copy the value of the client secret immediately after creation, as you won't be able to retrieve it later.
+  > **Important:** Copy the value of the client secret immediately after creation, as you won't be able to retrieve it later. 
 4. **Grant Permissions**:
    * Go to the Azure resource you want the service principal to access.
    * Select **Access control (IAM)**.
@@ -133,8 +132,7 @@ To configure Admin API settings in Azure, you typically need to enable service p
    * Access PowerBI Online Application.
    * Navigate to **Workspaces** section. 
    * Grant the **Member** permission set to the service principal for every Workspace that you want to catalog.
-     !!! note
-         Do not grant the **Member** permission set to a security group; otherwise, it will not work correctly.
+     > **Note:** Do not grant the **Member** permission set to a security group; otherwise, it will not work correctly.
 
 ## Rich Filters
 
@@ -223,7 +221,7 @@ The Power BI Online (V2) connector is able to retrieve the lineage between datas
 The following table summarizes the possible values of the `alias` parameter to be completed in the data source configuration file.
 
 | Source System| Model | Example |
-| :--- | :--- | :--- |
+| :--- | :--- | :---- |
 | [SQL Server](./zeenea-connector-sqlserver.md) | Server name:port/Database name | `alias = ["zeenea.database.windows.net:1433/db"]` * |
 | [BigQuery](./zeenea-connector-google-bigquery.md) | BigQuery project identifier	| `alias = ["zeenea-project"]` |
 | [AWS Redshift](./zeenea-connector-aws-redshift.md) | Server name:port/Database name | `alias = ["zeenea.cthwlv3ueke2.eu-west-3.redshift.amazonaws.com:5439/database"]` |
@@ -231,8 +229,7 @@ The following table summarizes the possible values of the `alias` parameter to b
 | [Oracle](./zeenea-connector-oracle.md) | Server name:port/Service Name | `alias = ["oracle.example.com:1521/XE"]` |
 | [Denodo](./zeenea-connector-denodo.md) | Server name:ODBC port | `alias = ["denodo.database.com:9996"]` |
 
-!!! note
-    The connector creates a data process object for each dataset from Power BI Online (V2) to represent the link with the source dataset (even if the source dataset is not present in the catalog).
+> **Note:** The connector creates a data process object for each dataset from Power BI Online (V2) to represent the link with the source dataset (even if the source dataset is not present in the catalog).
 
 ### Visualization
 
@@ -289,12 +286,12 @@ To represent the data flow from an external source, a Zeenea Data Process will b
 
 ## Object Identification Keys
  
-An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
- 
-More information about unique identification keys in this documentation: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
+
+For more information about identifier keys, see [Identification Keys](../Stewardship/zeenea-identification-keys.md).
   
 | Object       | Identification Key                                                                                          | Description |
-| --- | --- | --- |
+|--------------|-------------------------------------------------------------------------------------------------------------|-------------|
 | Visualization | code/workspace\_id/report/report\_id | - **code**: Unique identifier of the connection noted in the configuration file  <br/> - **workspace_id**: Power BI Online workspace technical identifier  <br/> - **report_id**: Power BI report technical identifier |
 | Dataset       | code/workspace\_id/dataset/dataset\_id/dataset\_name | - **code**:  Unique identifier of the connection noted in the configuration file  <br/> - **workspace_id**: Power BI Online Group technical identifier  <br/> - **dataset_id**: Power BI technical semantic model technical identifier  <br/> - **dataset_name**: Power BI table name from semantic model |
 | Field         | code/workspace\_id/report/report\_id/dataset/field\_name  <br/> code/workspace\_id/dataset/dataset\_id/dataset\_name/field\_name | - **code**:  Unique identifier of the connection noted in the configuration file  <br/> - **workspace_id**: Power BI Online Group technical identifier  <br/> - **dataset_id**: Power BI semantic model technical identifier  <br/> - **dataset_name**: Power BI technical table name from semantic model  <br/> - **field_name**: PowerBI field technical name |

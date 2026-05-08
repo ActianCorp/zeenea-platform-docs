@@ -10,9 +10,8 @@
 | Kafka Broker | TCP | 9092 |
 | Kafka Schema Registry | HTTP, HTTPS | 80, 443, 8081 |
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
-
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> 
 ## Supported Versions
 
 The connector was developed and tested with Kafka Server version 2.8.0 and is compatible with 3.0 and earlier.
@@ -27,12 +26,12 @@ For more information on how to install a plugin, please refer to the following a
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
  
 In order to establish a connection with a Kafka instance, specifying the following parameters in the dedicated file is required:
  
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `kafka` and this value must not be modified. |
@@ -54,8 +53,7 @@ In order to establish a connection with a Kafka instance, specifying the followi
 | `tls.keystore.type` | Type of the sey store file (`PKCS12` or `JKS`). Default value is discovered from the file extension. |
 | `tls.key.password` | Password of the private key (if different from the key store password) |
 
-!!! note
-    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 ## Data Extraction
 
@@ -103,9 +101,9 @@ Topic field.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-Read more: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
 
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/topic/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **dataset name**: Topic name |
 | Field | code/topic/dataset name/schema type/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **dataset name**: Topic name<br/>- **schema type**: : `key` or `value` depending on the source of the schema registry field. `value` with the `topic_sample` strategy.<br/>- **field name** |

@@ -5,8 +5,7 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Dataplex.
 * Zeenea traffic flows towards the data source must be open.  
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -22,7 +21,7 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
  
 In order to establish a connection with a Dataplex instance, specifying the following parameters in the dedicated file is required:
 
@@ -116,9 +115,9 @@ Dataset field.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 | Object | Identifier Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/project/location/lake/zone/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **project**: Object project<br/>- **location**: Project location<br/>- **lake**: Object lake<br/>- **zone**: Object zone<br/>- **dataset name** |
 | Field | code/project/location/lake/zone/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **project**: Object project<br/>- **location**: Project location<br/>- **lake**: Object lake<br/>- **zone**: Object zone<br/>- **dataset name**<br/>- **field name** |

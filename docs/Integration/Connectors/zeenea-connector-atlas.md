@@ -5,8 +5,7 @@
 * In order to establish a connection to an Atlas data catalog, the user must have sufficient permissions.
 * Zeenea traffic flows towards Atlas must be open. 
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -22,12 +21,12 @@ For more information on how to install a plugin, please refer to the following a
   
  Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
- Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+ Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
  
 In order to establish a connection with Atlas, specifying the following parameters in the dedicated file is required:
  
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `Atlas` and this value must not be modified. |
@@ -64,13 +63,12 @@ The available types are listed below:
 
 In order to gather metadata from Atlas, the connector first references **datasets** and **fields**, but it will also retrieve the Data Process used in Atlas to build a Dataset. This allows Zeenea to build the entirety of the **process**, and the lineage.
 
-!!! important
-    The Atlas connector behavior is very specific, and must be taken into account when deploying the connector. When a dataset is imported or updated, the connector will also import:
-    1. The selected Dataset
-    2. Any Data Process of which the selected dataset is an output
-    3. Any Data Process of which the selected Dataset is an input
-
-    Note that, in the case of updates, they are by default scheduled to be done daily.
+> **Important:** The Atlas connector behavior is very specific, and must be taken into account when deploying the connector. When a dataset is imported or updated, the connector will also import: 
+> 1. The selected Dataset
+> 2. Any Data Process of which the selected dataset is an output
+> 3. Any Data Process of which the selected Dataset is an input
+>
+> Note that, in the case of updates, they are by default scheduled to be done daily.
 
 ## Collected Metadata
 
@@ -119,10 +117,10 @@ All documented lineages in Atlas.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
- Read more: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md)
+ Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
 
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/type/dataset identifier | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **type**: Object type, possible values: `hbase_table`, `hdfs_path`, `hive_table`<br/>- **dataset identifier**: Atlas attribute `qualifiedName` |
 | Field | code/type/dataset identifier/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **type**: Object type, possible values: `hbase_table`, `hdfs_path`, `hive_table`<br/>- **dataset identifier**: Atlas attribute `qualifiedName`<br/>- **field name** |
 | Data process | code/type/data process identifier | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **type**: Object type, possible values: `hive_process`, `spark_process`, `sqoop_process`<br/>- **data process identifier**: Technical data process identifier calculated from data process outputs |

@@ -10,8 +10,7 @@
   Zeenea traffic flows towards the data source must be open.  
 
 <!-- #p100054 -->
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 <!-- #p100060 -->
 ## Supported Versions
@@ -35,7 +34,7 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
 <!-- #p100114 -->
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
 
 <!-- #p100120 -->
 In order to establish a connection with Google Data Catalog instance, specifying the following parameters in the dedicated file is required:
@@ -43,7 +42,7 @@ In order to establish a connection with Google Data Catalog instance, specifying
 <!-- multiline -->
 | <!-- #p100126 -->                  | <!-- #p100135 -->                                                                                                                                                                                                 |
 | Parameter                          | Expected Value                                                                                                                                                                                                    |
-| --- | --- |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <!-- #p100150 -->                  | <!-- #p100159 -->                                                                                                                                                                                                 |
 | `name`                             | The name that will be displayed to catalog users for this connection                                                                                                                                              |
 |                                    |                                                                                                                                                                                                                   |
@@ -211,11 +210,11 @@ connector.google_data_catalog.tags = """
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
 <!-- #p100882 -->
-More information about how it works can be found here: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
 
 <!-- #p100888 -->
 | Object | Identification Key | Description |
-| --- | --- | --- |
+|---|---|---|
 | Dataset | code/bigquery/project id/dataset id/table id | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **project id**: BigQuery project id<br/>- **dataset id**: BigQuery dataset name<br/>- **table id**: Table name |
 | Field | code/bigquery/project id/dataset id/table id/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **project id**: BigQuery project name<br/>- **dataset id**: BigQuery dataset name<br/>- **table id**: Table name<br/>- **field name** |
 

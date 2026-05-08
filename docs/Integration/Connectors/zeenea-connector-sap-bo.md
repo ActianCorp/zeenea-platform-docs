@@ -5,8 +5,7 @@
 * You must have a user account with sufficient [permissions](#user-permissions) to connect to SAP BO.
 * Zeenea traffic flows towards the database must be open. 
 
-!!! note
-    You can find the configuration file template in the [GitHub repository](https://github.com/zeenea/connector-conf-templates/blob/main/templates/sap-bo.conf).
+> **Note:** You can find the configuration file template in the [GitHub repository](https://github.com/zeenea/connector-conf-templates/blob/main/templates/sap-bo.conf).
 
 ## Supported Versions
 
@@ -22,12 +21,12 @@ For more information about how to install a plugin, see [Installing and Configur
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-For more information about managing connections, see [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md).
 
 To establish a connection with SAP BO, fill in the following parameters in the dedicated configuration file: 
 
 | Parameter | Expected value |
-| --- | --- |
+|---|---|
 | `name` | Specifies the display name for the connection. |
 | `code` | Defines the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified. Otherwise, the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. The value must be `sap-bo` and must not be modified. |
@@ -84,8 +83,7 @@ The SAP BO connector supports rich filters in the configuration of the connector
 
 
 
-!!! note
-    The filter can contain either a raw value or a file URL to the content (for example, `file:///path/to/zeenea/connections/filter.json`). When you use a side-file, any changes to the filter are applied without restarting the scanner.
+> **Note:** The filter can contain either a raw value or a file URL to the content (for example, `file:///path/to/zeenea/connections/filter.json`). When you use a side-file, any changes to the filter are applied without restarting the scanner.
 
 For more information about filters, see [Filters](../Scanners/zeenea-filters.md).
 
