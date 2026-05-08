@@ -2,782 +2,890 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/index.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/tags.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/actian-mcp-server/zeenea-amcp-claude.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-add-remove-item-contacts.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/actian-mcp-server/zeenea-amcp-overview.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-curators.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/actian-mcp-server/zeenea-amcp-remote-authentication.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-curators_test.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/cross-application-features/zeenea-access-requests.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-dashboard-widgets.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/cross-application-features/zeenea-data-lineage.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-data-catalog-item-updates.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/cross-application-features/zeenea-data-product.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-discussion-threads.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/cross-application-features/zeenea-data-profiling.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-doc-completion-level.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/cross-application-features/zeenea-data-sampling.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-editing-items-in-bulk.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/cross-application-features/zeenea-glossary-hierarchy.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-identification-keys.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/cross-application-features/zeenea-microsoft-teams.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-identifying-orphan-datasets.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/cross-application-features/zeenea-query-language.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-item-documentation.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/cross-application-features/zeenea-synchronization.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-notifications.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/cross-application-features/zeenea-view-360-diagram.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-personal-data.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/federated-catalog/zeenea-federated-catalog-building.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-studio-create-delete-data-process.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/federated-catalog/zeenea-federated-catalog-intro.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-studio-create-delete-item.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/federated-catalog/zeenea-searching-federated-catalog.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-studio-create-edit-delete-topic.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-administration/zeenea-maintenance-mode.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-studio-import.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-administration/zeenea-managing-api-keys.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-studio-search-export.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-administration/zeenea-managing-catalogs.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-studio-search.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-administration/zeenea-managing-connections.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-understanding-keys.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-administration/zeenea-managing-groups.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Stewardship/zeenea-watchlist.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-administration/zeenea-managing-scanners.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Administration/zeenea-maintenance-mode.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-administration/zeenea-managing-users.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Administration/zeenea-managing-api-keys.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-administration/zeenea-user-profiles-and-permissions.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Administration/zeenea-managing-catalogs.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-explorer/zeenea-ask-ai.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Administration/zeenea-managing-connections.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-explorer/zeenea-explorer-export-search-results.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Administration/zeenea-managing-groups.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-explorer/zeenea-explorer-overview.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Administration/zeenea-managing-notifications.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-explorer/zeenea-explorer-search.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Administration/zeenea-managing-scanners.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-explorer/zeenea-favorite-items.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Administration/zeenea-managing-users.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-explorer/zeenea-item-details-pages.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Administration/zeenea-user-profiles-and-permissions.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-explorer/zeenea-searching-topics.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-access-requests.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-explorer/zeenea-submit-suggestion.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-ask-ai.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/zeenea-analytics-dashboard.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-data-lineage.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/zeenea-studio-overview.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-data-model-diagram.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/catalog-design/zeenea-add-input-output-types.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-data-product.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/catalog-design/zeenea-configuring-templates.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-data-profiling.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/catalog-design/zeenea-custom-item-best-practices.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-data-sampling.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/catalog-design/zeenea-studio-configure-glossary-model.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-explorer-export-search-results.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/catalog-design/zeenea-studio-create-delete-custom-item.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-explorer-overview.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/catalog-design/zeenea-studio-create-delete-responsibility.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-explorer-search.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/catalog-design/zeenea-studio-create-edit-delete-property.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-favorite-items.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-add-remove-item-contacts.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-glossary-hierarchy.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-curators.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-item-details-pages.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-dashboard-widgets.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-microsoft-teams.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-data-catalog-item-updates.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-query-language.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-discussion-threads.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-searching-federated-catalog.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-doc-completion-level.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-searching-federated-catalog_test1.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-editing-items-in-bulk.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-searching-topics.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-identification-keys.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-submit-suggestion.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-identifying-orphan-datasets.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-synchronization.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-importing-datasets-or-visualizations.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Explorer/zeenea-view-360-diagram.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-item-documentation.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Studio/zeenea-add-input-output-types.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-notifications.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Studio/zeenea-analytics-dashboard.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-personal-data.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Studio/zeenea-configuring-templates.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-studio-create-delete-data-process.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Studio/zeenea-custom-item-best-practices.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-studio-create-delete-item.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Studio/zeenea-importing-datasets-or-visualizations.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-studio-create-edit-delete-topic.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Studio/zeenea-studio-configure-glossary-model.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-studio-import.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Studio/zeenea-studio-create-delete-custom-item.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-studio-search-export.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Studio/zeenea-studio-create-delete-responsibility.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-studio-search.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Studio/zeenea-studio-create-edit-delete-property.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-understanding-keys.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/Zeenea_Studio/zeenea-studio-overview.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/zeenea-studio/stewardship/zeenea-watchlist.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/actian_mcp_server/zeenea-amcp-claude.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/zeenea-security-flaws-management.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/actian_mcp_server/zeenea-amcp-overview.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Features/actian_mcp_server/zeenea-amcp-remote-authentication.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Getting_Started/copyright.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Getting_Started/zeenea-definitions.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Getting_Started/zeenea-supported-browsers.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Getting_Started/Your_First_Step/zeenea-data-explorer.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Getting_Started/Your_First_Step/zeenea-data-steward.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Getting_Started/Your_First_Step/zeenea-superadmin.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/errors.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/intro.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/naming_conventions.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/principles.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/samples.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/zeenea-access-request-api.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/zeenea-api-lifecycle.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/zeenea-audit-trail-apis.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/zeenea-catalog-api-v1.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/zeenea-catalog-api-v2.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/zeenea-catalog-design-api.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/zeenea-data-product-api.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/zeenea-data-product-api_test.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/zeenea-graphql-api-v2-limitations.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/zeenea-public-apis.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/zeenea-scim-api.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/zeenea-security-flaws-management.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/APIs/zeenea-user-management-api.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-actian-dataconnect.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-actian-informix.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-actian-ingres.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-actian-zen.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-agile-data-engine-solita.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-aliyun-dataworks-maxcompute.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-amazonS3.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-atlas.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-aws-athena.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-aws-dynamodb.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-aws-glue-data-catalog.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-aws-glue-etl.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-aws-redshift.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-azure-data-factory.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-azure-data-lake.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-azure-purview.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-azure-synapse.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-cassandra.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-couchbase.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-custom-items-csv.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-databricks-hive-metastore.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-databricks-unity-jdbc.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-databricks-unity-rest.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-dataiku.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-db2.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-dbt-cloud.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-dbt.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-denodo.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-dynamics-ax.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-dynamics365.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-elasticsearch.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-generic-dataset.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-generic-jdbc.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-generic-lineage.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-google-bigquery.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-google-cloud-storage.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-google-data-catalog.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-google-data-lineage.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-google-dataplex-v2.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-google-dataplex.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-greenplum.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-hdfs.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-hive.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-impala.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-influxdb.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-informatica.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-kafka.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-local-filesystem.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-looker.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-mariadb.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-matillion-dpc.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-matillion.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-microstrategy.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-mongodb.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-ms-fabric.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-mysql.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-netezza.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-openapi.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-oracle-ebusiness-suite.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-oracle-jd-edwards.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-oracle-peoplesoft.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-oracle-siebel.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-oracle.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-palantir.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-postgresql.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-powerbi-report-server.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-powerbi-saas-v2.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-powerbi-saas-v2_test.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-powerbi-saas.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-qlik-cloud.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-qlik-sense.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-salesforce.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-salesforce2.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-sap-analytics-cloud.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-sap-bo.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-sap-bw-bluetelligence.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-sap-bw-safyr.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-sap-safyr.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-sas-data-integration.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-sas-db.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-snowflake.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-splunk.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-sqlserver.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-ssas.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-ssis.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-ssrs.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-sybase-iq.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-tableau-v2.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-tableau.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-talend.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-teradata.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-tibco-data-virtualization.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-tibco-spotfire-v2.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-tibco-spotfire.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connector-zdf.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connectors-install-as-plugin.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-connectors-list.html</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-dataset-detection.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Connectors/zeenea-externalizing-external-connectors.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Scanners/zeenea-configure-hook.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Scanners/zeenea-filters.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Scanners/zeenea-scanner-docker.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Scanners/zeenea-scanner-setup.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Scanners/zeenea-silwood-safyr.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Scanners/zeenea-troubleshooting.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
          <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/Scanners/zeenea-universal-filters.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/errors.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/data-intelligence-intro.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/intro.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/data-intelligence-platform-rebranding.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/naming_conventions.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/data-intelligence-reference-architecture.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/principles.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/api.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/samples.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/authentication.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/zeenea-access-request-api.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/catalog-design.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/zeenea-api-lifecycle.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/connectors.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/zeenea-audit-trail-apis.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/cross-application-features.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/zeenea-catalog-api-v1.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/federated-catalog.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/zeenea-catalog-api-v2.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/scanners.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/zeenea-catalog-design-api.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/stewardship.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/zeenea-data-product-api.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-adding-datasets-to-visualizations.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/zeenea-graphql-api-v2-limitations.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-administration.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/zeenea-public-apis.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-advanced-search.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/zeenea-scim-api.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-auth0-integration.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/api/zeenea-user-management-api.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-data-catalog.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/Integration/authentication/zeenea-auth0-integration.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-dataset-detection.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/getting-started/copyright.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-explorer.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/getting-started/zeenea-definitions.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-federated-catalog-building.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/getting-started/zeenea-supported-browsers.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-federated-catalog-building_test1.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/getting-started/your-first-steps/zeenea-data-explorer.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-federated-catalog-intro.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/getting-started/your-first-steps/zeenea-data-steward.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-generating-har-file.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/getting-started/your-first-steps/zeenea-superadmin.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-property-library.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
     <url>
-         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/zeenea/zeenea-intro.html</loc>
-         <lastmod>2026-03-09</lastmod>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-studio.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-synchronizing-users.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-tenant-management.html</loc>
+         <lastmod>2026-05-08</lastmod>
+    </url>
+    <url>
+         <loc>https://help.actian-software.com/digital-experience/9.5/latest/latest/misc/New_files/zeenea-what-is-an-item.html</loc>
+         <lastmod>2026-05-08</lastmod>
     </url>
 </urlset>
