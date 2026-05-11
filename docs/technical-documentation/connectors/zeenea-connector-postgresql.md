@@ -48,7 +48,7 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
 <!-- #p100192 -->
-Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
 <!-- #p100198 -->
 In order to establish a connection with a PostgreSQL instance, fill out the following parameters in the dedicated file:
@@ -85,7 +85,7 @@ You can filter by the following criteria:
 * `schema`: Schema name
 * `table`: Table or view name
 
-For more information about filters, see [Filters](../Scanners/zeenea-filters.md).
+For more information about filters, see [Filters](../scanners/zeenea-filters.md).
 
 <!-- #p100243 -->
 ## Data Extraction
@@ -229,7 +229,7 @@ A data process represents the request to build a view.
 > **Important:** The Data Profiling feature, which can be enabled on this connection, allows Explorers to better understand the type of data stored in each field. This feature, which can be activated in the Scanner, runs by default on a weekly schedule, every Saturday. However, depending on the number of fields for which you enable this feature, the calculation can quickly become costly. Before enabling it, ensure that the estimated impact of this feature is acceptable and that the default frequency is appropriate.
 
 <!-- #p100702 -->
-The statistical profiles feature, also known as _Data Profiling_, is available for this connector. The impact of this feature must be evaluated before activating it on any of your connections. For more information about the resulting statistics, see [Data Profiling](../Zeenea_Explorer/zeenea-data-profiling.md).
+The statistical profiles feature, also known as _Data Profiling_, is available for this connector. The impact of this feature must be evaluated before activating it on any of your connections. For more information about the resulting statistics, see [Data Profiling](../../features-applications/cross-application-features/zeenea-data-profiling.md).
 
 <!-- #p100708 -->
 To activate this feature, read access to the target tables is required. For PostgreSQL technologies, the connector executes the following request to get a data sample: 
@@ -252,14 +252,14 @@ SELECT
 The request above collects a data sample for each field where the feature is activated through the studio (`field1`, `field2`). The limit is 10.000 lines (`linesPercentage` parameter) deduced from a calculation with the number of rows set in the previous request.
 
 <!-- #p100759 -->
-These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Zeenea Scanner Setup](../Scanners/zeenea-scanner-setup.md).
+These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Zeenea Scanner Setup](../scanners/zeenea-scanner-setup.md).
 
 <!-- #p100765 -->
 ## Unique Identifier Keys
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
  
-For more information about identifier keys, see [Identification Keys](../Stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
 
 <!-- #p100786 -->
 | Object | Identifier Key  | Description |

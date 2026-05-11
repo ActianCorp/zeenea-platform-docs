@@ -31,7 +31,7 @@ For more information on how to install a plugin, please refer to the following a
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
  
 In order to establish a connection with DB2, specifying the following parameters in the dedicated file is required:
  
@@ -75,7 +75,7 @@ For the Linux, Unix, Windows version, the user must have read access to the foll
 
 Since version 48 of the scanner, the DB2 connector benefits from the feature of rich filters in the configuration of the connector.
 
-Read more: [Filters](../Scanners/zeenea-filters.md)
+Read more: [Filters](../scanners/zeenea-filters.md)
 
 | Criteria | Description | Databases |
 | :--- | :--- | :--- |
@@ -139,7 +139,7 @@ Dataset field.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
- Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
+ Read more: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md)
 
 | Object | Identification Key | Description |
 |---|---|---|

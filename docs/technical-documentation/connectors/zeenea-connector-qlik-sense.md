@@ -41,7 +41,7 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
 <!-- #p100168 -->
-Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
 <!-- #p100174 -->
 In order to establish a connection with a Qlik Sense instance, specifying the following parameters in the dedicated file is required:
@@ -137,7 +137,7 @@ A visualization is a sheet from an application.
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
 <!-- #p100402 -->
-More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
 
 <!-- #p100408 -->
 | Object | Identifier Key | Description |

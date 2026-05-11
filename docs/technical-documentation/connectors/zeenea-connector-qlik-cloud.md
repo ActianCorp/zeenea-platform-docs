@@ -17,7 +17,7 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
 In order to establish a connection with a Qlik Cloud instance, specifying the following parameters in the dedicated file is required:
 
@@ -62,7 +62,7 @@ Available filtering key for Qlik Cloud is the following :
 
 * `name`
 
-Read more: [Filters](../Scanners/zeenea-filters.md).
+Read more: [Filters](../scanners/zeenea-filters.md).
 
 ## Data Extraction
 
@@ -137,7 +137,7 @@ To represent the data flow from an external source, a Zeenea Data Process will b
  
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
  
-More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
   
 | Object | Identification Key | Description |
 |---|---|---|

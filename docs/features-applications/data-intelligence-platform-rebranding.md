@@ -94,7 +94,7 @@ The following email elements can be customized:
 
 The structure, layout, and wording of notification emails remain unchanged.
 
-To fully control notification rebranding, use notification webhooks. For more information about webhook configuration, see [Managing Notifications](../Zeenea_Administration/zeenea-managing-notifications.md).
+To fully control notification rebranding, use notification webhooks. For more information about webhook configuration, see [Managing Notifications](./administration/zeenea-managing-notifications.md).
 
 ### Support Link
 

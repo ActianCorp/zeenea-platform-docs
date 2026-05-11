@@ -2,7 +2,7 @@
 
 The Actian Data Intelligence Platform provides a flexible notification system that keeps users informed about key activities. In addition to built-in email notifications, you can configure webhooks to support custom notification workflows.
 
-If you want to customize the visual branding of notification emails, such as logos and colors, see [Platform Rebranding](../data-intelligence/data-intelligence-platform-rebranding.md).
+If you want to customize the visual branding of notification emails, such as logos and colors, see [Platform Rebranding](../data-intelligence-platform-rebranding.md).
 
 ## Configure Notification Settings
 
@@ -16,7 +16,8 @@ If you want to customize the visual branding of notification emails, such as log
    > **Note:** By default, built-in email notifications are enabled and webhook notifications are disabled. 
 4. Click **Save**.
 
-> **Important**: The webhook system does not keep a history of sent notifications. You cannot resend a notification if delivery fails.
+!!! warning "Important"
+    The webhook system does not keep a history of sent notifications. You cannot resend a notification if delivery fails.
 
 ![](./images/zeenea-managing-notifications.png)
 

@@ -23,7 +23,7 @@ For more information on how to install a plugin, please refer to the following a
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
  
 In order to establish a connection with Tableau, specifying the following parameters in the dedicated file is required:
  
@@ -91,7 +91,7 @@ filters = [
 ]
 ```
 
-Read more: [Universal Filters](../Scanners/zeenea-universal-filters.md)
+Read more: [Universal Filters](../scanners/zeenea-universal-filters.md)
 
 ## Data Extraction
 
@@ -168,7 +168,7 @@ To represent the data flow from an external source, a Zeenea Data Process will b
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md)
 
 | Object       | Identification Key                                            | Description |
 |--------------|---------------------------------------------------------------|-------------|

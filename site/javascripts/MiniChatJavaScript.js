@@ -1,6 +1,6 @@
 /// Mini Chat JavaScript
 // API URL for backend communication
-const API_URL = 'https://actianzeenea.hcltechswnp.com';
+const API_URL = 'https://actianzeenea.hcltechswnp.com/data-intel';
 
 
 // Generate a random session ID for the chat
@@ -153,7 +153,7 @@ function addWelcomeMessage() {
   welcomeMessage.className = 'mini-chat-message ai';
   const messageText = document.createElement('div');
   messageText.className = 'message-text';
-  messageText.innerHTML = '<p>Hi, 😊 Welcome to Zeenea! How can I assist you today?</p>';
+  messageText.innerHTML = '<p>Hi, 😊 Welcome to Data Intelligence Platform! How can I assist you today?</p>';
   welcomeMessage.appendChild(messageText);
   messagesContainer.appendChild(welcomeMessage);
 }
@@ -259,7 +259,7 @@ function createMiniChatElements() {
   miniChatContainer.innerHTML = `
     <div class="mini-chat-resize-handle"></div>
     <div class="mini-chat-header">
-      <h3>Zeenea</h3>
+      <h3>Data Intelligence Platform</h3>
       <div class="mini-chat-header-controls">
         <button id="mini-chat-refresh" class="mini-chat-control-btn" title="Start new conversation">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -273,7 +273,7 @@ function createMiniChatElements() {
     <div id="mini-chat-messages" class="mini-chat-messages">
       <div class="mini-chat-message ai">
         <div class="message-text">
-          <p>Hi, 😊 Welcome to Zeenea! How can I assist you today?</p>
+          <p>Hi, 😊 Welcome to Data Intelligence Platform! How can I assist you today?</p>
         </div>
       </div>
     </div>
@@ -282,18 +282,11 @@ function createMiniChatElements() {
         <textarea id="mini-chat-input" class="mini-chat-input" placeholder="Type your query here..." rows="1"></textarea>
         <button id="mini-chat-send" class="mini-chat-send" disabled>➤</button>
       </div>
-      <div class="mini-chat-disclaimer">
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-        </svg>
-        This app can make mistakes. Check important information.
-      </div>
     </div>
     <div class="mini-chat-quick-actions">
       <button class="mini-chat-quick-action">What is this product?</button>
-      <button class="mini-chat-quick-action">How to setup Zeenea Scanner</button>
+      <button class="mini-chat-quick-action">How to setup Scanner?</button>
       <button class="mini-chat-quick-action">How do I get started?</button>
-      <button class="mini-chat-quick-action">How do I install the Oracle connector plugin?</button>
     </div>
    
   `;

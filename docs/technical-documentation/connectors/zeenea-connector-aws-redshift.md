@@ -48,7 +48,7 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
 <!-- #p100192 -->
-Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
 <!-- #p100198 -->
 In order to establish a connection with Redshift, specifying the following parameters in the dedicated file is required:
@@ -110,7 +110,7 @@ If the data profiling feature was enabled, the user must have read access to imp
 Since version 47 of the scanner, the Redshift connector benefits from the feature of rich filters in the configuration of the connector. This functionality also applies if on the metadata "Roles" of the datasets.
 
 <!-- #p100501 -->
-Read more: [Filters](../Scanners/zeenea-filters.md)
+Read more: [Filters](../scanners/zeenea-filters.md)
 
 <!-- #p100507 -->
 ## Data Extraction
@@ -271,7 +271,7 @@ These requests will be executed, whether manually, in case of user action direct
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
 <!-- #p100978 -->
-Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md)
 
 <!-- #p100984 -->
 | Object | Identification Key | Description |

@@ -4,7 +4,7 @@
 
 * Scanner **Version 76 or higher** is required to use DataConnect Connector.
 * **Java 11** is required to run and build the DataConnect Connector.
-* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](../Scanners/zeenea-scanner-setup.md).
+* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](../scanners/zeenea-scanner-setup.md).
 
 ## Creating the Configuration File
 
@@ -36,7 +36,7 @@ For more information on how to install a plugin, please refer to the following a
 
 1. Restart Zeenea Scanner.
 2. In Zeenea Administration, click **Connections** and verify that the new connection is listed.
-3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](../Scanners/zeenea-troubleshooting.md).
+3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](../scanners/zeenea-troubleshooting.md).
 
 ## Viewing the Dataset
  

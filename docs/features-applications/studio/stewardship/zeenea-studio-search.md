@@ -126,4 +126,4 @@ Depending on the type of property, the user interface can be of two types:
 
 In any case, you can select one or more values of the same property to apply a filter.
 
-For more information about Zeenea query language, see [Zeenea Query Language](../Zeenea_Explorer/zeenea-query-language.md).
+For more information about Zeenea query language, see [Zeenea Query Language](../../cross-application-features/zeenea-query-language.md).

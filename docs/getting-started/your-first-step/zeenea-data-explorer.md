@@ -3,7 +3,7 @@
 
 As a Data Explorer, you have access to our dedicated Data discovery application: Zeenea Explorer.
 
-Read more: [Zeenea Explorer Overview](../Zeenea_Explorer/zeenea-explorer-overview.md)
+Read more: [Zeenea Explorer Overview](../../features-applications/explorer/zeenea-explorer-overview.md)
 
 ## Log in to the platform
 
@@ -17,7 +17,7 @@ From the home page, you can make your first search through the items in the cata
 
 After a few uses, your last searches will also appear when clicking on the search bar.
 
-Read more: [Search and discover items in Zeenea Explorer](../Zeenea_Explorer/zeenea-explorer-search.md)
+Read more: [Search and discover items in Zeenea Explorer](../../features-applications/explorer/zeenea-explorer-search.md)
 
   ![](./images/zeenea-discover.png)
 
@@ -25,7 +25,7 @@ You can also explore the content of the catalog by entering either through the t
 
   ![](./images/zeenea-discover2.png)
 
-Read more: [Zeenea Definitions](../Getting_Started/zeenea-definitions.md)
+Read more: [Zeenea Definitions](../zeenea-definitions.md)
 
 ## Filter
 
@@ -33,7 +33,7 @@ After launching a search, the search results page will appear.
 
 You can then start filtering your search by using the filters displayed directly on the interface.
 
-Read more: [Search and Filter in Zeenea Explorer](../Zeenea_Explorer/zeenea-explorer-search.md)
+Read more: [Search and Filter in Zeenea Explorer](../../features-applications/explorer/zeenea-explorer-search.md)
 
   ![](./images/zeenea-filter.png)
 

@@ -20,7 +20,7 @@ The Actian Data Intelligence Platform supports data products and data contracts 
 
 * Define your data products and data contracts with YAML descriptors containing all relevant information for discovery and consumption (name, description, terms and conditions, custom properties, and so on).
 
-* Synchronize data products and their data contracts from your CI/CD pipelines by using our dedicated [Data Product API](../APIs/zeenea-data-product-api.md).
+* Synchronize data products and their data contracts from your CI/CD pipelines by using our dedicated [Data Product API](../../technical-documentation/api/zeenea-data-product-api.md).
 
 * Manage data products and all their components in the Studio to enrich their documentation and publish them into the enterprise marketplace.
 
@@ -572,7 +572,7 @@ Additional metadata options to more accurately define the data type.
 | `authoritativeDefinitions.description` | No | No | Optional description. |
 |    |      |    |         |
 
-For detailed API specification, see [Data Product API](../APIs/zeenea-data-product-api.md).
+For detailed API specification, see [Data Product API](../../technical-documentation/api/zeenea-data-product-api.md).
 
 ## Manage Data Product Documentation in Studio
 

@@ -51,9 +51,9 @@ The physical and logical layer of the catalog corresponds to all the technical a
 
 Refer to the following links for more details:
 
-* Read more: [Configuring Templates](../Zeenea_Studio/zeenea-configuring-templates.md)
-* Read more: [Creating or Deleting a Custom Item Type](../Zeenea_Studio/zeenea-studio-create-delete-custom-item.md)
-* Read more: [Adding Input and Output Types to Data Processes](../Zeenea_Studio/zeenea-add-input-output-types.md)
+* Read more: [Configuring Templates](../../features-applications/studio/catalog-design/zeenea-configuring-templates.md)
+* Read more: [Creating or Deleting a Custom Item Type](../../features-applications/studio/catalog-design/zeenea-studio-create-delete-custom-item.md)
+* Read more: [Adding Input and Output Types to Data Processes](../../features-applications/studio/catalog-design/zeenea-add-input-output-types.md)
 
 ### Define the Metamodel of Your Glossary
 
@@ -61,13 +61,13 @@ The glossary is used to represent all the business concepts of your company (bus
 
 Here you can create the item types you want, define their templates and create relationships between glossary item types or with physical layer item types.
 
-Read more: [Configuring the Glossary Metamodel](../Zeenea_Studio/zeenea-studio-configure-glossary-model.md)
+Read more: [Configuring the Glossary Metamodel](../../features-applications/studio/catalog-design/zeenea-studio-configure-glossary-model.md)
 
 ## Step 4: Define Responsibilities
 
 In Zeenea, a responsibility describes the nature of the relationship between an individual or an entity and an item of the catalog. This attribute thus allows any user to identify the relevant contact person for their needs from the detailed page of the item once it has been completed (Data Steward, Data Owner, etc.).
 
-Read more: [Creating, Editing, or Deleting Responsibilities](../Zeenea_Studio/zeenea-studio-create-delete-responsibility.md)
+Read more: [Creating, Editing, or Deleting Responsibilities](../../features-applications/studio/catalog-design/zeenea-studio-create-delete-responsibility.md)
 
 ## Step 5: Start Importing and Documenting Your Items
 

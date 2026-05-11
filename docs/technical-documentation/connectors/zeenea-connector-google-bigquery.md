@@ -34,7 +34,7 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
  
 In order to establish a connection with BigQuery, specifying the following parameters in the dedicated file is required:
 
@@ -93,7 +93,7 @@ If the data profiling feature is enabled, another technical account is used. The
 
 Since version 47 of the scanner, the BigQuery connector benefits from the feature of rich filters in the configuration of the connector. This functionality also applies if on the metadata "Roles" of the datasets.
 
-Read more: [Filters](../Scanners/zeenea-filters.md)
+Read more: [Filters](../scanners/zeenea-filters.md)
 
 The filter can apply to the following criteria:
 
@@ -157,7 +157,7 @@ Dataset field.
 
 > **Important:** The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
 
-The data profiling feature allows you to calculate statistical profiles on your datasets.More information on this feature can be found here: [Data Profiling](../Zeenea_Explorer/zeenea-data-profiling.md).
+The data profiling feature allows you to calculate statistical profiles on your datasets.More information on this feature can be found here: [Data Profiling](../../features-applications/cross-application-features/zeenea-data-profiling.md).
 
 To activate this feature, the account used must have a read access on the relevant tables. 
 
@@ -207,13 +207,13 @@ SELECT
 
 The above requests will collect a data sample on fields where the feature has been enabled (fields 1 and 2). The sample contains a maximum of 10,000 lines (defined in the percentLines parameter).
 
-This request can either be manually executed from the Admin portal, or it can be scheduled, according to the collect-fingerprint variable in the `application.conf` file. For more information, see [Zeenea Scanner Setup](../Scanners/zeenea-scanner-setup.md).
+This request can either be manually executed from the Admin portal, or it can be scheduled, according to the collect-fingerprint variable in the `application.conf` file. For more information, see [Zeenea Scanner Setup](../scanners/zeenea-scanner-setup.md).
 
 ## Object Identification Keys
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
 
 | Object | Identification Key | Description |
 |---|---|---|

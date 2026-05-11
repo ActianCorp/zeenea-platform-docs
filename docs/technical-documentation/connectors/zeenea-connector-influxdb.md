@@ -34,7 +34,7 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
 <!-- #p100114 -->
-Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
 <!-- #p100120 -->
 In order to establish a connection with InfluxDB, specifying the following parameters in the dedicated file is required:
@@ -255,7 +255,7 @@ A field is an InfluxDB measure field (or tag).
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
 <!-- #p100837 -->
-More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
 
 <!-- #p100843 -->
 | Object | Identifier Key | Description |

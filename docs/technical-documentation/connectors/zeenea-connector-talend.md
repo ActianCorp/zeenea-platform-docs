@@ -21,7 +21,7 @@ For more information on how to install a plugin, please refer to the following a
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
  
 In order to establish a connection with Talend, the following parameters in the dedicated file are required:
  
@@ -45,7 +45,7 @@ In order to collect metadata, the user the scanner is executed with must have en
 
 Since version 47 of the scanner, the Talend connector benefits from the feature of rich filters in the configuration of the connector. The key that can be used to filter the elements is `job`.
 
-Read more: [Filters](../Scanners/zeenea-filters.md)
+Read more: [Filters](../scanners/zeenea-filters.md)
 
 ## Data Extraction
 
@@ -97,7 +97,7 @@ A data process is the representation of a Talend transformation.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../Stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md)
 
 | Object | Identifier Key | Description |
 |---|---|---|

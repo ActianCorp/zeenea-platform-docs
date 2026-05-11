@@ -23,7 +23,7 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
 In order to establish a connection with a local file system, specifying the following parameters in the dedicated file is required:
 
@@ -58,7 +58,7 @@ A dataset from a file system may actually be stored in multiple files. Those fil
 
 When running the inventory, the local file system connector detects datasets with the usual dataset naming convention in file systems. 
 
-Read more: [Dataset Detection on File Systems](../New_files/zeenea-dataset-detection.md)
+Read more: [Dataset Detection on File Systems](./zeenea-dataset-detection.md)
 
 ## Collected Metadata
 
@@ -99,7 +99,7 @@ Dataset field.
  
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
  
-More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
   
 | Object   | Identifier Key                     | Description |
 |----------|------------------------------------|-------------|

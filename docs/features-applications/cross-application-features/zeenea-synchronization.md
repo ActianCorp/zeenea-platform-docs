@@ -6,7 +6,7 @@ Thanks to this synchronization, you can check the quality level of your Datasets
 
 To implement this integration, Zeenea offers a flexible approach based on our GraphQL API.
 
-For more details, see the [API technical documentation](../APIs/zeenea-catalog-api-v2.md).
+For more details, see the [API technical documentation](../../technical-documentation/api/zeenea-catalog-api-v2.md).
 
 ## Browse data quality information
 

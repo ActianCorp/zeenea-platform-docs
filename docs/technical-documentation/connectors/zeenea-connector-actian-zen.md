@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * The current Scanner version requires Java 11. Either OpenJDK or Oracle JDK can be installed.
-* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](../Scanners/zeenea-scanner-setup.md).
+* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](../scanners/zeenea-scanner-setup.md).
 
 ## Installing the Generic JDBC Connector Plugin
 
@@ -49,4 +49,4 @@
 1. Restart Zeenea Scanner.
 2. In Zeenea Administration, click **Connections** and verify that the new connection is listed:
    ![](./images/zeenea-connection-added-zen.png)
-3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](../Scanners/zeenea-troubleshooting.md).
+3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](../scanners/zeenea-troubleshooting.md).

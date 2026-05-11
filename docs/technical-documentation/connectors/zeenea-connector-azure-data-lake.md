@@ -23,7 +23,7 @@ For more information about how to install a plugin, see [Installing and Configur
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-For more information about managing connections, see [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md).
 
 To establish a connection with an Azure Gen 2 cluster, fill in the following parameters in the dedicated configuration file:
 
@@ -86,13 +86,13 @@ or with a regex (slashes in regex must be escaped):
 
 `not path ~ /(^|.*\/)test\/.*/`
  
-For more information about filters, see [Filters](../Scanners/zeenea-filters.md).
+For more information about filters, see [Filters](../scanners/zeenea-filters.md).
  
 ## Data Extraction
 
 To extract data, the connector needs to follow specified rules in order to rebuild the hierarchy and the datasets.
 
-For more information, see [Dataset Detection on File Systems](../New_files/zeenea-dataset-detection.md).
+For more information, see [Dataset Detection on File Systems](./zeenea-dataset-detection.md).
  
 ## Collected Metadata
 
@@ -126,7 +126,7 @@ A dataset is identified according to the connector's rules.
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
  
-For more information about identifier keys, see [Identification Keys](../Stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
 
 | Object | Identification Key | Description |
 |---|---|---|

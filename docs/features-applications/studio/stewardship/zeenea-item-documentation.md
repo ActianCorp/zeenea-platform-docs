@@ -154,7 +154,7 @@ Depending on your metamodel configuration, you can link physical or logical item
 
 Possible links between item types are defined at the metamodel level. So that you can not link a physical item with any glossary item. The type of link must be authorized by your metamodel.
 
-For more information about configuring the glossary metamodel, see [Configuring the Glossary Metamodel](../Zeenea_Studio/zeenea-studio-configure-glossary-model.md).
+For more information about configuring the glossary metamodel, see [Configuring the Glossary Metamodel](../../studio/catalog-design/zeenea-studio-configure-glossary-model.md).
 
 ## User Suggestions
 
@@ -170,7 +170,7 @@ You can then apply the suggestion manually, if necessary.
 
 When a suggestion is accepted or declined, the author is automatically notified by email and can see whether it was accepted or declined, along with the associated comment.
 
-For more information about submitting a suggestion, see [Submitting a Suggestion](../Zeenea_Explorer/zeenea-submit-suggestion.md).
+For more information about submitting a suggestion, see [Submitting a Suggestion](../../explorer/zeenea-submit-suggestion.md).
 
 
 

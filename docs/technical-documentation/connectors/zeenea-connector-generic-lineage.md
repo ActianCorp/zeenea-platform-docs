@@ -79,7 +79,7 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
 <!-- #p100147 -->
-Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
 <!-- #p100153 -->
 In order to establish a connection with an lineage connector, specifying the following parameters in the dedicated file is required:
@@ -155,7 +155,7 @@ A data process represents a transformation as described in the descriptor file.
   A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
   <!-- #p100327 -->
-  More information about unique identification keys in this documentation: [Identification Keys](../Stewardship/zeenea-identification-keys.md).
+  More information about unique identification keys in this documentation: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
 
   <!-- #p100333 -->
 | Object | Identifier Key | Description |

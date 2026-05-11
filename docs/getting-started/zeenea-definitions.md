@@ -31,7 +31,7 @@ The elements of a Category item are the following:
 ## Connection
 A Connection represents a system to which Zeenea is connected. It allows the scanner to retrieve metadata from your information source with which you are connected and incorporate them into Zeenea. 
 
-Connections are therefore associated with specific solutions (Oracle, Teradata, HDFS, Amazon S3, Table, Power BI...) through [Zeenea connectors](../Connectors/zeenea-connectors-list.md).
+Connections are therefore associated with specific solutions (Oracle, Teradata, HDFS, Amazon S3, Table, Power BI...) through [Zeenea connectors](../technical-documentation/connectors/zeenea-connectors-list.md).
 
 ## Custom item
 Custom items allow you to document entirely new concepts, without being limited by native or default Item Types in Zeenea. They offer ideal support for modeling abstract concepts, complementary to the metadata structurally proposed by Zeenea.
@@ -164,7 +164,7 @@ Properties options when configuring them:
 * Mandatory or important status.
 * Display properties in the result list under the item it is associated with.
 
-Read more about it: [Creating, Editing, or deleting a property](../Zeenea_Studio/zeenea-studio-create-edit-delete-property.md)
+Read more about it: [Creating, Editing, or deleting a property](../features-applications/studio/catalog-design/zeenea-studio-create-edit-delete-property.md)
 
 ## Template
 
@@ -230,4 +230,4 @@ They are therefore present in the object's detail in the same way as the followi
 * contacts
 * properties
 
-Read more: [Importing Datasets or Visualizations](../Zeenea_Studio/zeenea-importing-datasets-or-visualizations.md)
+Read more: [Importing Datasets or Visualizations](../features-applications/studio/stewardship/zeenea-importing-datasets-or-visualizations.md)

@@ -21,7 +21,7 @@ For more information about the lifecycle of APIs, see [Zeenea API Lifecycle](./z
 
 To use the APIs, you must authenticate using an API key. Follow these steps to authenticate:
 
-1. Create a new API key in Zeenea Administration. For detailed steps, see [Create an API key](../Zeenea_Administration/zeenea-managing-api-keys.md#create-an-api-key).
+1. Create a new API key in Zeenea Administration. For detailed steps, see [Create an API key](../../features-applications/administration/zeenea-managing-api-keys.md#create-an-api-key).
 2. In your HTTP requests, add the following header: 
 
    `"X-API-SECRET": "$APISECRET"`

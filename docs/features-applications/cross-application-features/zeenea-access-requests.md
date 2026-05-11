@@ -430,5 +430,5 @@ The configuration changes regarding data access requests are traced in the audit
 
 The data access requests and their processing are recorded in the audit log. You can list audit events using the Audit API.
 
-For more information about Audit API, see [Audit Trail API](../APIs/zeenea-audit-trail-apis.md).
+For more information about Audit API, see [Audit Trail API](../../technical-documentation/api/zeenea-audit-trail-apis.md).
 

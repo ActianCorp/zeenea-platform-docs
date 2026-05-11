@@ -21,7 +21,7 @@ For more information about how to install a plugin, see [Installing and Configur
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-For more information about managing connections, see [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md).
 
 To establish a connection with a Databricks Unity Catalog instance, fill in the following parameters in the dedicated configuration file:
 
@@ -59,7 +59,7 @@ Databricks connector benefits from the feature of rich filters in the configurat
 * `schema`
 * `table`
 
-For more information about filters, see [Filters](../Scanners/zeenea-filters.md).
+For more information about filters, see [Filters](../scanners/zeenea-filters.md).
 
 ## Data Extraction
 
@@ -131,7 +131,7 @@ A data process represents a Databricks job.
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
 
-For more information about identifier keys, see [Identification Keys](../Stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
 
 | Object | Identifier Key | Description |
 |---|---|---|

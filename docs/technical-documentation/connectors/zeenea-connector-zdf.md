@@ -22,7 +22,7 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
 ### Configuration Templates:
 
@@ -189,7 +189,7 @@ One of the attributes `identificationKey` or `path` must be filled in.
 
 | Attribute | Type | Description |
 |---|---|---|
-| `identificationKey` | `Text` | Dataset [identification key](./zeenea-identification-keys.md) |
+| `identificationKey` | `Text` | Dataset [identification key](../../features-applications/studio/stewardship/zeenea-identification-keys.md) |
 | `connectionCode` | `Text` | Connection code. Leave blank if this is the current connection. It is possible to use one of the connection aliases. |
 | `zeepath` | `Text` | Dataset path |
 

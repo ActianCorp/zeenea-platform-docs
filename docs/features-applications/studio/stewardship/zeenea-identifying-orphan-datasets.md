@@ -2,7 +2,7 @@
 
 At each inventory of a connection, Zeenea checks the status of each dataset imported into the catalog. A dataset can then become an orphan.
 
-Read more: [Orphan Dataset](../Getting_Started/zeenea-definitions.md##Orphan%20Dataset)
+Read more: [Orphan Dataset](../../../getting-started/zeenea-definitions.md##Orphan%20Dataset)
  
 ## Dataset Notifications
 

@@ -1,17 +1,21 @@
-Actian Data Intelligence Platform
-=================================
+---
+title: Home
+---
+
+# Data Intelligence Platform
+
 
 Actian provides an intelligent Data Intelligence Platform.
 
 This solution enables metadata management for search, exploration, data governance, compliance, and cloud transformation initiatives.
 
-  ![](./data-intelligence/images/zeenea-platform.jpg)
+  ![](./images/zeenea-platform.jpg)
 
 ### Universal connectivity
 
 Actian Data Intelligence Platform connects to all your data sources in seconds.
 
-Our platform's built-in scanners and APIs enable organizations to automatically collect, consolidate, and link metadata from their data ecosystem. Our connectivity includes a wide variety of data sources such as the Cloud, ERP/CRM, NoSQL, Processing, Relational, Visualization, and more.
+Our platform’s built-in scanners and APIs enable organizations to automatically collect, consolidate, and link metadata from their data ecosystem. Our connectivity includes a wide variety of data sources such as the Cloud, ERP/CRM, NoSQL, Processing, Relational, Visualization, and more.
 
 ### Cloud-native design
 
@@ -23,7 +27,7 @@ Our platform is powered by enhanced knowledge graph capabilities, providing rich
 
 ### A safe & secure platform
 
-Keeping our customers' data safe and secure has always been a top priority at Actian Zeenea, this is why we are SOC 2 Type II and ISO 27001 compliant. This demonstrates our ongoing commitment to maintaining the highest data security standards.
+Keeping our customers’ data safe and secure has always been a top priority at Actian Zeenea, this is why we are SOC 2 Type II and ISO 27001 compliant. This demonstrates our ongoing commitment to maintaining the highest data security standards.
 
 ## Platform Capabilities
 
@@ -45,7 +49,7 @@ Our Data Intelligence Platform provides a multi-dimensional search engine, able 
 
 ### Business Glossary
 
-Zeenea's Business Glossary features enable the creation and sharing of a consistent business language across all data consumers within the organization. Through an easy-to-use interface that is supported by automation capabilities, data Management teams can:
+Zeenea’s Business Glossary features enable the creation and sharing of a consistent business language across all data consumers within the organization. Through an easy-to-use interface that is supported by automation capabilities, data Management teams can:
 
 * Define rules, policies, and KPIs
 * Design reliable glossary models
@@ -54,15 +58,15 @@ Zeenea's Business Glossary features enable the creation and sharing of a consist
 
 ###  Data Lineage
 
-Zeenea's Data Lineage capabilities enable data teams to get a complete view of their data's lifecycle – from its collection to its use, storage, and preservation over time. Automatically map the relationships between systems, applications, and reports to provide a context-rich data ecosystem for your organization.
+Zeenea’s Data Lineage capabilities enable data teams to get a complete view of their data’s lifecycle – from its collection to its use, storage, and preservation over time. Automatically map the relationships between systems, applications, and reports to provide a context-rich data ecosystem for your organization.
 
 Through an interactive and user-friendly lineage graph, better understand your data, easily identify transformations, and ensure regulatory compliance.
 
 ### Data Quality
 
-Zeenea automatically synchronizes with your data quality solutions, enabling your users to view their datasets' quality metrics from the discovery phase of their data use cases.
+Zeenea automatically synchronizes with your data quality solutions, enabling your users to view their datasets’ quality metrics from the discovery phase of their data use cases.
 
-Our platform helps organizations make better business decisions by enabling data users to quickly detect and take action on a dataset's quality to uncover its trustworthiness before an issue arises.
+Our platform helps organizations make better business decisions by enabling data users to quickly detect and take action on a dataset’s quality to uncover its trustworthiness before an issue arises.
 
 ## Use Cases
 
@@ -75,7 +79,7 @@ Zeenea Data Platform enables Data Managers and Data Producers to master the orga
 * Data Stewardship workflows
 * Expert system
 
-Zeenea's federated graph-powered EDM enables organizations to mirror the Data Mesh at the metadata level and build a global, scalable, supervision plane that is perfectly integrated with data production and consumption processes.
+Zeenea’s federated graph-powered EDM enables organizations to mirror the Data Mesh at the metadata level and build a global, scalable, supervision plane that is perfectly integrated with data production and consumption processes.
 
 ### Enterprise Data Marketplace
 
@@ -89,11 +93,11 @@ Zeenea provides dedicated applications and user experiences (UX) for different u
 
 ### Zeenea Studio
 
-Zeenea Studio enables data management teams to manage, maintain, and enrich the documentation of their company's data assets.
+Zeenea Studio enables data management teams to manage, maintain, and enrich the documentation of their company’s data assets.
 
 It serves as the back-office tool of the platform.
 
-  ![](./data-intelligence/images/zeenea-studio-intro.png)
+  ![](./images/zeenea-studio-intro.png)
 
 ### Zeenea Explorer
 
@@ -101,4 +105,4 @@ With Zeenea Explorer, business users can access a user-friendly interface and cu
 
 It offers a simple and intuitive interface designed for efficient data exploration and collaboration.
 
-  ![](./data-intelligence/images/zeenea-explorer.png)
+  ![](./images/zeenea-explorer.png)

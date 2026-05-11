@@ -10,7 +10,7 @@ You can use the Access Request API to:
 
 You can create a new Access Request API key in Zeenea Administration.
 
-To create the API Key, follow the instructions in [Create an API key](../Zeenea_Administration/zeenea-managing-api-keys.md#create-an-api-key).
+To create the API Key, follow the instructions in [Create an API key](../../features-applications/administration/zeenea-managing-api-keys.md#create-an-api-key).
 
 > **Important:** When creating the API key, you must select the **Access request** permission scope. This permission scope is required to manage access requests through the API.
 

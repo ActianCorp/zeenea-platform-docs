@@ -60,4 +60,4 @@ Recurring information on the overview panel includes, among others :
 * Associated contacts
 * Related Glossary Items
 
-For more information about Zeenea query language, see [Zeenea Query Language](../Zeenea_Explorer/zeenea-query-language.md).
+For more information about Zeenea query language, see [Zeenea Query Language](../cross-application-features/zeenea-query-language.md).

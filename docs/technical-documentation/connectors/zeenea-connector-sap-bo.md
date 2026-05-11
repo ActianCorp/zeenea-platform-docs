@@ -21,7 +21,7 @@ For more information about how to install a plugin, see [Installing and Configur
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-For more information about managing connections, see [Managing Connections](../Zeenea_Administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md).
 
 To establish a connection with SAP BO, fill in the following parameters in the dedicated configuration file: 
 
@@ -85,7 +85,7 @@ The SAP BO connector supports rich filters in the configuration of the connector
 
 > **Note:** The filter can contain either a raw value or a file URL to the content (for example, `file:///path/to/zeenea/connections/filter.json`). When you use a side-file, any changes to the filter are applied without restarting the scanner.
 
-For more information about filters, see [Filters](../Scanners/zeenea-filters.md).
+For more information about filters, see [Filters](../scanners/zeenea-filters.md).
 
 ## Metadata Extraction
 

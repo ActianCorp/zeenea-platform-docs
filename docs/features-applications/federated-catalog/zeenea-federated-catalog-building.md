@@ -46,7 +46,7 @@ By default, connections are attached to the common catalog. To change this, you 
 
 > **Note:** The configuration is applied only at the connection level. Therefore, you can share a single scanner and its plugins across multiple catalogs. In this case, scanner job scheduling will be shared among all catalogs.
 
-From scanner version 79, some connectors support feeding different catalogs from the same connection using [Universal Filters](../Scanners/zeenea-universal-filters.md).
+From scanner version 79, some connectors support feeding different catalogs from the same connection using [Universal Filters](../../technical-documentation/scanners/zeenea-universal-filters.md).
 
 ### Importing Items
 
@@ -141,7 +141,7 @@ Please note that you can retrieve and manage shared items using the "Shared" fil
 
 #### Related Topics
 
-* [Searching in the Federated Catalog](../Zeenea_Explorer/zeenea-searching-federated-catalog.md)
+* [Searching in the Federated Catalog](./zeenea-searching-federated-catalog.md)
  
 ## Step 9: Working with APIs
 
@@ -151,6 +151,6 @@ In this first version of the Federated Catalog, the Catalog API does not yet sup
  
 #### Related Topics
 
-* [SCIM API](../APIs/zeenea-scim-api.md)
+* [SCIM API](../../technical-documentation/api/zeenea-scim-api.md)
 * [Catalog API](https://docs.zeenea.com/)
  

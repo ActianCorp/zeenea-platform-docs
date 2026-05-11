@@ -18,7 +18,7 @@ Please contact our sales team if you need more information.
     * Go to the Tools/Licensing menu in Safyr.
     * Complete the **Apply for a License** section.
     * Generate a hardware ID from your machine.
-    * Include that information in an email to [license@silwoodtechnology.com](license@silwoodtechnology.com) as requested in the form.
+    * Include that information in an email to [license@silwoodtechnology.com](mailto:license@silwoodtechnology.com) as requested in the form.
     * Silwood will return a license key which will extend the trial duration, and enable options like export from SAP BW or the ability to export metadata from Safyr using Silwood Premium JSON file export format. This format will be used by Zeenea to ingest the metadata into the data catalog.
 
 ## Hardware Requirements
@@ -40,4 +40,4 @@ To install Safyr on a Windows PC, follow the instructions in the [Safyr Getting 
 
 In order to regularly produce the output files, you also need to configure the scheduled tasks following the instructions described in [Safyr Task Automation Guide](http://www.silwoodtechnology.com/support/files/SafyrTaskAutomationGuide.pdf).
 
-If you are already using Safyr with a license, you can also contact Silwood support for help: [support@silwoodtechnology.com](support@silwoodtechnology.com)
+If you are already using Safyr with a license, you can also contact Silwood support for help: [support@silwoodtechnology.com](mailto:support@silwoodtechnology.com)
