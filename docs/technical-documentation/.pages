@@ -1,0 +1,7 @@
+nav:
+    - data-intelligence-reference-architecture.md
+    - zeenea-security-flaws-management.md
+    - api
+    - authentication
+    - connectors
+    - scanners

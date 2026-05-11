@@ -25,60 +25,27 @@ For more information about managing connections, see [Managing Connections](../.
 
 To establish a connection with Looker, fill in the following parameters in the dedicated configuration file using a **JSON-Style** format:
 
-<!-- multiline -->
 | Parameter | Expected value |
 |----|-----|
-| `name`                      | Specifies the display name for the connection.                                    |
-|                             |                                                                                   |
-| `code`                      | Defines the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner.                                    |
-|                             |                                                                                   |
-| `connector_id`              | The type of connector to be used for the connection. The value must be `looker` and must not be modified. |
-|                             |                                                                                   |
-| `enabled`                   | A boolean value to enable or disable the connection. The default value is `true`. |
-|                             |                                                                                   |
-| `catalog_code`              | Defines the catalog code associated with the connection ("default" when empty).   |
-|                             |                                                                                   |
-| ```                         | Configuration for a secret manager. <br />This configuration works only with Scanner version 73 or later and requires a functional secret manager configured in the scanner configuration file.<br />                                                                                  |
-| secret_manager {            | Where:                                                                            |
-|    enabled =                | * `enabled`: A boolean value to enable or disable the secret manager. The default value is `true`. |
-|    key =                    | * `key `: Specifies the name of the secret. |
-| }                           |                                       |
-| ```                         |                                       |
-|                             |                                       |
-| ```                         | Connection settings<br />               |
-| connection {                | Where:                 |
-|	 tenant =                   | * `tenant`: The tenant address. In URL address, it is the name of your server before `.cloud.looker.com`. |
-|	 oauth {                    | * `client_id`: Token name obtained within the Looker account menu. |
-|		 client_id =              | * `client_secret`: Token secret               |
-|		 client_secret =          | * `timeout`: (Optional) Customizable HTTP client timeout depending on Looker repository volume, in ms. The default value is `10000` (10 sec).               |
-|	 }                          | * `fetch_offset_size`: (Optional) Customizable offset size for the dashboard inventory. The default value is `100`.               |
-|	  timeout =                 |                |
-|	  fetch_offset_size =       |                |
-| }                           |                |
-| ```                         |                |
-|                             |                |
-| `lineage`                   | (Optional) A boolean value to activate the automatic lineage feature. The default value is `true`. |
-|                             |                |
-| ```                         | Proxy configuration<br />               |
-| proxy {                     | Where:                  |
-|      scheme =               | * `scheme`: Defines the proxy protocol (`http` or `https`).               |
-|      hostname =             | * `hostname`: Specifies the proxy address.               |
-|      port =                 | * `port`: Sets the proxy port.               |
-|      username =             | * `username`: Provides the proxy username.               |
-|      password =             | * `password`: Provides the proxy account password.               |
-|  }                          |                |
-| ```                         |                |
-|                             |                |
-| ```                         | TLS Truststore settings<br />               |
-| tls {                       | Where:                  |
-|   truststore {              | * `path`: Specifies the TLS trust store file path. This file must be provided in case TLS encryption is activated (protocol `https`) and when certificates of Looker servers (or/and configured proxy) are delivered by a specific authority. It must contain the certification chain.               |
-|     path =                  | * `password`: Provides the password of the trust store file.               |
-|     password =              | * `type`: Defines the type of the trust store file (`PKCS12` or `JKS`). The default value is discovered from the file extension.               |
-|     type =                  |                |
-|   }                         |                |
-| }                           |                |
-| ```                         |                |
-|                             |                |
+| `name` | Specifies the display name for the connection. |
+|  |  |
+| `code` | Defines the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+|  |  |
+| `connector_id` | The type of connector to be used for the connection. The value must be `looker` and must not be modified. |
+|  |  |
+| `enabled` | A boolean value to enable or disable the connection. The default value is `true`. |
+|  |  |
+| `catalog_code` | Defines the catalog code associated with the connection ("default" when empty). |
+|  |  |
+| <code>secret_manager {<br>&nbsp;&nbsp;&nbsp;enabled =<br>&nbsp;&nbsp;&nbsp;key =<br>}</code> | Configuration for a secret manager. <br />This configuration works only with Scanner version 73 or later and requires a functional secret manager configured in the scanner configuration file.<br /><br />Where:<br />• `enabled`: A boolean value to enable or disable the secret manager. The default value is `true`.<br />• `key`: Specifies the name of the secret. |
+|  |  |
+| <code>connection {<br>&nbsp;&nbsp;&nbsp;tenant =<br>&nbsp;&nbsp;&nbsp;oauth {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client_id =<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client_secret =<br>&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;timeout =<br>&nbsp;&nbsp;&nbsp;fetch_offset_size =<br>}</code> | Connection settings<br /><br />Where:<br />• `tenant`: The tenant address. In URL address, it is the name of your server before `.cloud.looker.com`.<br />• `client_id`: Token name obtained within the Looker account menu.<br />• `client_secret`: Token secret.<br />• `timeout`: (Optional) Customizable HTTP client timeout depending on Looker repository volume, in ms. The default value is `10000` (10 sec).<br />• `fetch_offset_size`: (Optional) Customizable offset size for the dashboard inventory. The default value is `100`. |
+|  |  |
+| `lineage` | (Optional) A boolean value to activate the automatic lineage feature. The default value is `true`. |
+|  |  |
+| <code>proxy {<br>&nbsp;&nbsp;&nbsp;scheme =<br>&nbsp;&nbsp;&nbsp;hostname =<br>&nbsp;&nbsp;&nbsp;port =<br>&nbsp;&nbsp;&nbsp;username =<br>&nbsp;&nbsp;&nbsp;password =<br>}</code> | Proxy configuration<br /><br />Where:<br />• `scheme`: Defines the proxy protocol (`http` or `https`).<br />• `hostname`: Specifies the proxy address.<br />• `port`: Sets the proxy port.<br />• `username`: Provides the proxy username.<br />• `password`: Provides the proxy account password. |
+|  |  |
+| <code>tls {<br>&nbsp;&nbsp;&nbsp;truststore {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path =<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password =<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type =<br>&nbsp;&nbsp;&nbsp;}<br>}</code> | TLS Truststore settings<br /><br />Where:<br />• `path`: Specifies the TLS trust store file path. This file must be provided in case TLS encryption is activated (protocol `https`) and when certificates of Looker servers (or/and configured proxy) are delivered by a specific authority. It must contain the certification chain.<br />• `password`: Provides the password of the trust store file.<br />• `type`: Defines the type of the trust store file (`PKCS12` or `JKS`). The default value is discovered from the file extension. |
 
 ## User Permissions
 
