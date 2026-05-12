@@ -169,53 +169,25 @@ The following sections provide detailed attribute-level information for the full
 
 #### Fundamentals
 
-<!-- multiline -->
 | Key | Required | Supported | Description |
 | :---- | :---- | :---- | :---- |
 | `apiVersion` | Yes | Yes | Version of the standard used to build data product. <br />Default value is `v1.0.0`. <br />The platform ingests ODPS attributes in a best-effort approach based on the v0.9.0. <br />This information is not displayed in the UI. |
-|    |      |    |         |
 | `kind` | Yes | Yes | The kind of file this is. Valid value is `DataProduct`. |
-|    |      |    |         |
 | `id` | Yes | Yes | A unique identifier used to reduce the risk of dataset name collisions, such as a UUID. <br />This attribute must be in the format of a UUID. Otherwise, the file will not be processed. <br />The `id` is used in the key of the item. |
-|    |      |    |         |
 | `name` | No | Yes | Name of the data product. |
-|    |      |    |         |
 | `version` | No | Yes | Current version of the data product. <br />Not required, but highly recommended. <br />The version is used in the key of the item. <br />This information is used (with the UUID) to identify the related data product. Two different data products can have the same UUID but a different version. |
-|    |      |    |         |
 | `status` | Yes | No | Current status of the data product. <br />Valid values are `proposed`, `draft`, `active`, `deprecated`, `retired`. |
-|    |      |    |         |
 | `domain` | No | No | Business domain |
-|    |      |    |         |
 | `tenant` | No | No | Organization identifier |
-|    |      |    |         |
 | `authoritativeDefinitions` | No | Yes | List of links to sources that provide more details on the data contract. <br />See _Ancillary Objects: Authoritative Definitions_ below. |
-|    |      |    |         |
 | `description` | No | Yes | Object containing the descriptions. |
-|    |      |    |         |
-| `description.purpose` | No | Yes | Intended purpose for the provided data. <br />Mapped to the source description of the data product. <br />Syntax example: |
-|    |      |    | ```       |
-|    |      |    | description: |    
-|    |      |    |   purpose: Yet Another Product. |
-|    |      |    | ```        |
-|    |      |    |         |
+| `description.purpose` | No | Yes | Intended purpose for the provided data.<br>Mapped to the source description of the data product.<br>Syntax example:<br>&nbsp;&nbsp;description:<br>&nbsp;&nbsp;&nbsp;&nbsp;purpose: Yet Another Product. |
 | `description.limitations` | No | Yes | Technical, compliance, and legal limitations for data use. <br />Using this attribute will create a `limitations` source property (Rich text). |
-|    |      |    |         |
 | `description.usage` | No | Yes | Recommended usage of the data. <br />Using this attribute will create a `usage` source property (Rich text). |
-|    |      |    |         |
 | `description.authoritativeDefinitions` | No | No | See _Authoritative Definitions_ below. |
-|    |      |    |         |
 | `description.customProperties` | No | No | See _Custom Properties_ below. |
-|    |      |    |         |
 | `customProperties` | No | Yes | See _Custom Properties_ below. |
-|    |      |    |         |
-| `tags` | No | Yes | Tags as a list. <br />Syntax example: |
-|    |      |    | ```       |
-|    |      |    | tags:      |    
-|    |      |    |   - Managed |
-|    |      |    |   - AML |
-|    |      |    |   - Compliance |
-|    |      |    | ```        |
-|    |      |    |         |
+| `tags` | No | Yes | Tags as a list.<br>Syntax example:<br>&nbsp;&nbsp;tags:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Managed<br>&nbsp;&nbsp;&nbsp;&nbsp;- AML<br>&nbsp;&nbsp;&nbsp;&nbsp;- Compliance |
 
 #### Product Information
 
@@ -267,49 +239,21 @@ The following sections provide detailed attribute-level information for the full
 
 **Custom Properties**
 
-<!-- multiline -->
 | Key | Required | Supported | Description |
 | :---- | :---- | :---- | :---- |
-| `customProperties` | No | Yes | A list of key/value pairs for custom properties. <br />The `customProperties` attribute is used to create or value source properties (Short text), link technical items described in the YAML file with existing glossary items, or with existing custom items. <br />Custom properties cannot be used to value template properties created in the UI. <br />Syntax example: |
-|    |      |    | ```       |
-|    |      |    | customProperties:      |    
-|    |      |    |    - property: zeeneaProperties        |
-|    |      |    |      value:              |
-|    |      |    |         sensitivity: Yes        |
-|    |      |    |    - property: zeeneaGlossaryRefs        |
-|    |      |    |       value:        |
-|    |      |    |          - terms/Customer ID        |
-|    |      |    |    - property: zeeneaCustomItemRefs        |
-|    |      |    |       value:        |
-|    |      |    |          - regulation/GDPR        |
-|    |      |    | ```        |
-|    |      |    |         |
+| `customProperties` | No | Yes | A list of key/value pairs for custom properties.<br>The `customProperties` attribute is used to create or value source properties (Short text), link technical items described in the YAML file with existing glossary items, or with existing custom items.<br>Custom properties cannot be used to value template properties created in the UI.<br>Syntax example:<br>&nbsp;&nbsp;customProperties:<br>&nbsp;&nbsp;&nbsp;&nbsp;- property: zeeneaProperties<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensitivity: Yes<br>&nbsp;&nbsp;&nbsp;&nbsp;- property: zeeneaGlossaryRefs<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- terms/Customer ID<br>&nbsp;&nbsp;&nbsp;&nbsp;- property: zeeneaCustomItemRefs<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- regulation/GDPR |
 | `customProperties.property` | No | Yes | The name of the key. Names should be in camel case, the same as if they were permanent properties in the contract. <br />Possible values are `zeeneaProperties`, `zeeneaGlossaryRefs`, `zeeneaCustomItemRefs`. |
-|    |      |    |         |
 | `customProperties.value` | No | Yes | The value of the key. <br />Mapping in the Intelligence platform: <br />- In case of a property, the value is the name and value of the property. <br />- In case of a link, the value is the key of the targeted item. <br />Targeted item must already exist in the Intelligence platform and the link must be allowed at the metamodel level. |
-|    |      |    |         |
 | `customProperties.description` | No | No | Optional description. |
-|    |      |    |         |
 
 **Authoritative Definitions**
 
-<!-- multiline -->
 | Key | Required | Supported | Description |
 | :---- | :---- | :---- | :---- |
 | `authoritativeDefinitions` | No | Yes | A list of type/link pairs for authoritative definitions. |
-|    |      |    |         |
-| `authoritativeDefinitions.type` | Yes | Yes | Type of definition for authority. <br />Recommended values are `businessDefinition`, `transformationImplementation`, `videoTutorial`, `tutorial`, and `implementation`. At the root level, a type can also be `canonicalUrl` to indicate a reference to the product's last version. <br />Using this attribute will create a `Links` source property (URL type and multivalued). <br />Syntax example: |
-|    |      |    | ```       |
-|    |      |    |   authoritativeDefinitions: |    
-|    |      |    |     - type: privacy-policy |
-|    |      |    |       url: https://example.com |
-|    |      |    | ```        |
-|    |      |    | `type` will be used as the label and `url` as the value of the hyperlink. |
-|    |      |    |         |
+| `authoritativeDefinitions.type` | Yes | Yes | Type of definition for authority.<br>Recommended values are `businessDefinition`, `transformationImplementation`, `videoTutorial`, `tutorial`, and `implementation`. At the root level, a type can also be `canonicalUrl` to indicate a reference to the product's last version.<br>Using this attribute will create a `Links` source property (URL type and multivalued).<br>Syntax example:<br>&nbsp;&nbsp;authoritativeDefinitions:<br>&nbsp;&nbsp;&nbsp;&nbsp;- type: privacy-policy<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: https://example.com<br>`type` will be used as the label and `url` as the value of the hyperlink. |
 | `authoritativeDefinitions.url` | Yes | Yes | URL to the authority. |
-|    |      |    |         |
 | `authoritativeDefinitions.description` | No | No | Optional description. |
-|    |      |    |         |
 
 ### ODCS Support
 
@@ -340,59 +284,25 @@ The following sections provide detailed attribute-level information for the full
 
 #### Fundamentals
 
-<!-- multiline -->
 | Key | Required | Supported | Description |
 | :---- | :---- | :---- | :---- |
 | `apiVersion` | Yes | Yes | Version of the standard used to build data contract. <br />Default value is `v3.0.2`. <br />The platform ingests ODCS attributes in a best-effort approach based on the v3.0.2. <br />This information is not displayed in the UI. |
-|    |      |    |         |
 | `kind` | Yes | Yes | The kind of file this is. Valid value is `DataContract`. |
-|    |      |    |         |
 | `id` | Yes | Yes | A unique identifier used to reduce the risk of dataset name collisions, such as a UUID. <br />This attribute must be in the format of a UUID. Otherwise, the file will not be processed. <br />The `id` is used in the key of the item. |
-|    |      |    |         |
 | `name` | No | No | Name of the data contract. |
-|    |      |    |         |
 | `version` | Yes | Yes | Current version of the data contract. <br />This information is not displayed in the UI but is used (with the UUID) to identify the related output port when referring to it as an input port of another product. |
-|    |      |    |         |
 | `status` | Yes | No | Current status of the data contract. <br />Valid values are `proposed`, `draft`, `active`, `deprecated`, `retired`. |
-|    |      |    |         |
 | `tenant` | No | No | Indicates the property the data is primarily associated with. Value is case-insensitive. |
-|    |      |    |         |
-| `tags` | No | Yes | A list of tags that may be assigned to the elements (object or property); the tags keyword may appear at any level. Tags may be used to better categorize an element. For example, `finance`, `sensitive`, `employee_record`. <br />Syntax example: |
-|    |      |    | ```       |
-|    |      |    | tags:      |    
-|    |      |    |   - Managed |
-|    |      |    |   - AML |
-|    |      |    |   - Compliance |
-|    |      |    | ```        |
-|    |      |    |         |
+| `tags` | No | Yes | A list of tags that may be assigned to the elements (object or property); the tags keyword may appear at any level. Tags may be used to better categorize an element. For example, `finance`, `sensitive`, `employee_record`.<br>Syntax example:<br>&nbsp;&nbsp;tags:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Managed<br>&nbsp;&nbsp;&nbsp;&nbsp;- AML<br>&nbsp;&nbsp;&nbsp;&nbsp;- Compliance |
 | `domain` | No | No | Name of the logical data domain. |
-|    |      |    |         |
 | `dataProduct` | No | No | Name of the data product. |
-|    |      |    |         |
-| `authoritativeDefinitions` | No | Yes | List of links to sources that provide more details on the data contract. <br />Using this attribute will create a `Links` source property (URL type and multivalued). <br />Syntax example:|
-|    |      |    | ```       |
-|    |      |    |   authoritativeDefinitions: |    
-|    |      |    |     - type: privacy-policy |
-|    |      |    |       url: https://example.com |
-|    |      |    | ```        |
-|    |      |    | `type` will be used as the label and `url` as the value of the hyperlink.        |
-|    |      |    |         |
+| `authoritativeDefinitions` | No | Yes | List of links to sources that provide more details on the data contract.<br>Using this attribute will create a `Links` source property (URL type and multivalued).<br>Syntax example:<br>&nbsp;&nbsp;authoritativeDefinitions:<br>&nbsp;&nbsp;&nbsp;&nbsp;- type: privacy-policy<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: https://example.com<br>`type` will be used as the label and `url` as the value of the hyperlink. |
 | `description` | No | Yes | Object containing the description. |
-|    |      |    |         |
-| `description.purpose` | No | Yes | Intended purpose for the provided data. <br />Mapped to the source description of the output port. <br />Syntax example: |
-|    |      |    | ```       |
-|    |      |    | description: |    
-|    |      |    |   purpose: Yet Another Product, with datasets from data contracts. |
-|    |      |    | ```        |
-|    |      |    |         |
+| `description.purpose` | No | Yes | Intended purpose for the provided data.<br>Mapped to the source description of the output port.<br>Syntax example:<br>&nbsp;&nbsp;description:<br>&nbsp;&nbsp;&nbsp;&nbsp;purpose: Yet Another Product, with datasets from data contracts. |
 | `description.limitations` | No | Yes | Technical, compliance, and legal limitations for data use. <br />Using this attribute will create a `limitations` source property (Rich text). |
-|    |      |    |         |
 | `description.usage` | No | Yes | Recommended usage of the data. <br />Using this attribute will create a `usage` source property (Rich text). |
-|    |      |    |         |
 | `description.authoritativeDefinitions` | No | No | List of links to sources that provide more details on the dataset. Examples would be a link to privacy statement, terms and conditions, license agreements, data catalog, or another tool. |
-|    |      |    |         |
 | `description.customProperties` | No | No | Custom properties that are not part of the standard. |
-|    |      |    |         |
 
 #### Schema
 
@@ -426,60 +336,26 @@ The following sections provide detailed attribute-level information for the full
 
 Some keys are more applicable when the described property is a column.
 
-<!-- multiline -->
 | Key | Required | Supported | Description |
 | :---- | :---- | :---- | :---- |
 | `primaryKey` | No | Yes | Boolean value specifying whether the field is primary or not. <br />Default is `false`. |
-|    |      |    |         |
 | `primaryKeyPosition` | No | No | If field is a primary key, the position of the primary key element. Starts from 1. <br />Example of `account_id, name` being primary key columns, `account_id` has primaryKeyPosition 1 and `name` primaryKeyPosition 2. Default to -1. |
-|    |      |    |         |
 | `logicalType` | No | Yes | The logical field datatype. <br />One of `string`, `date`, `number`, `integer`, `object`, `array` or `boolean`. |
-|    |      |    |         |
 | `logicalTypeOptions` | No | No | Additional optional metadata to describe the logical type. For more information about supported options for each `logicalType`, see [Logical Type Options](https://bitol-io.github.io/open-data-contract-standard/latest/#logical-type-options). |
-|    |      |    |         |
 | `description` | No | Yes | Description of the element. |
-|    |      |    |         |
 | `required` | No | Yes | Indicates if the element may contain Null values. <br />Possible values are `true` and `false`. Default is `false`. |
-|    |      |    |         |
 | `unique` | No | No | Indicates if the element contains unique values. <br />Possible values are `true` and `false`. Default is `false`. |
-|    |      |    |         |
 | `partitioned` | No | No | Indicates if the element is partitioned. <br />Possible values are `true` and `false`. |
-|    |      |    |         |
 | `partitionKeyPosition` | No | No | If element is used for partitioning, the position of the partition element. Starts from 1. <br />Example of `country, year` being partition columns, `country` has partitionKeyPosition 1 and `year` partitionKeyPosition 2. Default to -1. |
-|    |      |    |         |
 | `classification` | No | No | Can be anything, like confidential, restricted, and public to more advanced categorization. |
-|    |      |    |         |
 | `authoritativeDefinitions` | No | Yes | List of links to sources that provide more detail on element logic or values<br /> Examples would be URL to a git repo, documentation, a data catalog, or another tool. |
-|    |      |    |         |
 | `encryptedName` | No | No | The element name within the dataset that contains the encrypted element value. <br />For example, unencrypted element `email_address` might have an encryptedName of `email_address_encrypt`. |
-|    |      |    |         |
 | `transformSourceObjects` | No | No | List of objects in the data source used in the transformation. |
-|    |      |    |         |
 | `transformLogic` | No | No | Logic used in the column transformation. |
-|    |      |    |         |
 | `transformDescription` | No | No | Describes the transform logic in very simple terms. |
-|    |      |    |         |
 | `examples` | No | No | List of sample element values. |
-|    |      |    |         |
 | `criticalDataElement` | No | No | True or false indicator. <br />If the element is considered a critical data element (CDE), the value is true; otherwise, false. |
-|    |      |    |         |
-| `items` | No | Yes | List of items in an array (only applicable when `logicalType: array`). <br />Use this syntax to create nested fields. <br />Syntax example:  |
-|    |      |    | ```       |
-|    |      |    | schema:      |    
-|    |      |    |  - name: AnotherObject |
-|    |      |    |    logicalType: object |
-|    |      |    |    properties: |
-|    |      |    |      - name: x |
-|    |      |    |        logicalType: array |
-|    |      |    |        items: |
-|    |      |    |          logicalType: object |
-|    |      |    |          properties: |
-|    |      |    |            - name: id |
-|    |      |    |              logicalType: string  |
-|    |      |    |            - name: zip |
-|    |      |    |              logicalType: string |
-|    |      |    | ```        |
-|    |      |    |         |
+| `items` | No | Yes | List of items in an array (only applicable when `logicalType: array`).<br>Use this syntax to create nested fields.<br>Syntax example:<br>&nbsp;&nbsp;schema:<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: AnotherObject<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logicalType: object<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- name: x<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logicalType: array<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logicalType: object<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- name: id<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logicalType: string<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- name: zip<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logicalType: string |
 
 **Logical Type Options**
 
@@ -526,51 +402,22 @@ Additional metadata options to more accurately define the data type.
 
 **Custom Properties**
 
-<!-- multiline -->
 | Key | Required | Supported | Description |
 | :---- | :---- | :---- | :---- |
-| `customProperties` | No | Yes | A list of key/value pairs for custom properties. Initially created to support the REF ruleset property. <br />The `customProperties` attribute is used to create or value source properties (Short text), link technical items described in the YAML file with existing glossary items, or with existing custom items. <br />Custom properties cannot be used to value template properties created in the UI. <br />Syntax example: |
-|    |      |    | ```       |
-|    |      |    |  customProperties: |    
-|    |      |    |    - property: zeeneaProperties |
-|    |      |    |      value:       |
-|    |      |    |         sensitivity: Yes |
-|    |      |    |    - property: zeeneaGlossaryRefs |
-|    |      |    |       value:        |
-|    |      |    |          - terms/Customer ID        |
-|    |      |    |    - property: zeeneaCustomItemRefs |
-|    |      |    |       value:        |
-|    |      |    |          - regulation/GDPR        |
-|    |      |    | ```        |
-|    |      |    |         |
+| `customProperties` | No | Yes | A list of key/value pairs for custom properties. Initially created to support the REF ruleset property.<br>The `customProperties` attribute is used to create or value source properties (Short text), link technical items described in the YAML file with existing glossary items, or with existing custom items.<br>Custom properties cannot be used to value template properties created in the UI.<br>Syntax example:<br>&nbsp;&nbsp;customProperties:<br>&nbsp;&nbsp;&nbsp;&nbsp;- property: zeeneaProperties<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensitivity: Yes<br>&nbsp;&nbsp;&nbsp;&nbsp;- property: zeeneaGlossaryRefs<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- terms/Customer ID<br>&nbsp;&nbsp;&nbsp;&nbsp;- property: zeeneaCustomItemRefs<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- regulation/GDPR |
 | `customProperties.property` | No | Yes | The name of the key. Names should be in camel case, the same as if they were permanent properties in the contract. <br />Possible values are `zeeneaProperties`, `zeeneaGlossaryRefs`, `zeeneaCustomItemRefs`. |
-|    |      |    |         |
 | `customProperties.value` | No | Yes | The value of the key. <br />Mapping in the Intelligence platform: <br />- In case of a property, the value is the name and value of the property. <br />- In case of a link, the value is the key of the targeted item. <br />Targeted item must already exist in the Intelligence platform and the link must be allowed at the metamodel level. |
-|    |      |    |         |
 | `contractCreatedTs` | No | No | Timestamp in UTC of when the data contract was created, using ISO 8601. |
-|    |      |    |         |
 
 **Authoritative Definitions**
 
-<!-- multiline -->
 | Key | Required | Supported | Description |
 | :---- | :---- | :---- | :---- |
 | `authoritativeDefinitions` | No | Yes | A list of type/link pairs for authoritative definitions. |
-|    |      |    |         |
 | `authoritativeDefinitions.id` | No | No | A unique identifier for the element used to create stable, refactor-safe references. <br />Recommended for elements that will be referenced. For more information, see [References](https://bitol-io.github.io/open-data-contract-standard/latest/references/). |
-|    |      |    |         |
-| `authoritativeDefinitions.type` | Yes | Yes | Type of definition for authority. <br />Recommended values are `businessDefinition`, `transformationImplementation`, `videoTutorial`, `tutorial`, and `implementation`. At the root level, a type can also be `canonicalUrl` to indicate a reference to the data contract's latest version. <br />Using this attribute will create a `Links` source property (URL type and multivalued).<br />Syntax example: |
-|    |      |    | ```       |
-|    |      |    |   authoritativeDefinitions: |    
-|    |      |    |     - type: privacy-policy |
-|    |      |    |       url: https://example.com |
-|    |      |    | ```        |
-|    |      |    | `type` will be used as the label and `url` as the value of the hyperlink. |
-|    |      |    |         |
+| `authoritativeDefinitions.type` | Yes | Yes | Type of definition for authority.<br>Recommended values are `businessDefinition`, `transformationImplementation`, `videoTutorial`, `tutorial`, and `implementation`. At the root level, a type can also be `canonicalUrl` to indicate a reference to the data contract's latest version.<br>Using this attribute will create a `Links` source property (URL type and multivalued).<br>Syntax example:<br>&nbsp;&nbsp;authoritativeDefinitions:<br>&nbsp;&nbsp;&nbsp;&nbsp;- type: privacy-policy<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: https://example.com<br>`type` will be used as the label and `url` as the value of the hyperlink. |
 | `authoritativeDefinitions.url` | Yes | Yes | URL to the authority. |
-|    |      |    |         |
 | `authoritativeDefinitions.description` | No | No | Optional description. |
-|    |      |    |         |
 
 For detailed API specification, see [Data Product API](../../technical-documentation/api/zeenea-data-product-api.md).
 

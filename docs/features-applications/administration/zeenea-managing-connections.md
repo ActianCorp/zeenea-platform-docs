@@ -12,11 +12,6 @@ To configure a connection between your IS and Zeenea, follow these steps:
 > * For more information about scanner installation, see [Zeenea Scanner Setup](../../technical-documentation/scanners/zeenea-scanner-setup.md).
 > * Go to the specific documentation of each connector to identify the prerequisites and the conditions of implementation: [Zeenea Connector Downloads](../../technical-documentation/connectors/zeenea-connectors-list.md).
 
-
-!!! info "Note"
-* For more information about scanner installation, see [Zeenea Scanner Setup](../../technical-documentation/scanners/zeenea-scanner-setup.md).
-* Go to the specific documentation of each connector to identify the prerequisites and the conditions of implementation: [Zeenea Connector Downloads](../../technical-documentation/connectors/zeenea-connectors-list.md).
-
 ## Creating a Connection
 
 A new connection is created by adding a new configuration file to the scanner:
@@ -120,6 +115,7 @@ From the actions menu, you have the possibility to trigger certain actions of th
     * Remain available for reading in the catalog for all users along with the Items already imported. 
 
 Reasons for a connection in error include the following: 
+
 * The configuration file is no longer present in the scanner.
 * The configuration file has a syntax error (missing mandatory parameter or badly written property name).
 * The authentication settings to the target system provided in the configuration file are incorrect.
