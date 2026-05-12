@@ -36,7 +36,8 @@ To create data products, you must follow this sequence of API calls:
 
     > **Important:** Ensure that the data products and data contracts YAML descriptors are compressed in a ZIP file. The ZIP file can contain multiple data products and data contracts.
 
-    If the request is successful, the endpoint returns an HTTP 200 status code.
+   If the request is successful, the endpoint returns an HTTP 200 status code.
+
 3. Trigger file processing with a `POST` request to the following endpoint:
     ```
     https://[your-tenant].zeenea.app/api/synchronization/data-product-uploads/{id}/process
@@ -80,7 +81,7 @@ To create data products, you must follow this sequence of API calls:
     * **processed**: The number of data product YAML descriptors parsed by the platform.
     * **upserted**: The number of data products upserted.
     * **status**: The status of the job. The following are the possible values:
-       * **Created**: The URL has been created and is awaiting upload.
-       * **Processing**: The files are being processed. 
-       * **Processed**: The files have been processed.
+        * **Created**: The URL has been created and is awaiting upload.
+        * **Processing**: The files are being processed. 
+        * **Processed**: The files have been processed.
 

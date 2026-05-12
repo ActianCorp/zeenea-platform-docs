@@ -31,6 +31,7 @@ A rule is defined by several key properties that work together. You must specify
 ### Example: Include Only a Specific Workspace
 
 The logic is:
+
 1. **Rule 1:** If an item is in the "Zeenea" workspace, `ACCEPT` it and root it to "Zeenea Catalog".
 2. **Rule 2:** If it is not in the "Zeenea" workspace, `REJECT` it.
 

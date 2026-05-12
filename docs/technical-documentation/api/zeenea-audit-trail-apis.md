@@ -5,15 +5,15 @@ The Audit Trail API allows you to list all added, updated, and deleted metadata 
 Following are some examples, detailing how these APIs could be used (the requests used are detailed in the "Using the API" section):
 
 * Data catalog items audit trail:
-  * Example 1: I want to list all changes made on all objects contained in the Catalog, over the last two days.
-  * Example 2: I want to list all changes made by a specific user on all Items in the Catalog, over a given time range.
-  * Example 3: I want to list all changes made on the “Customers” dataset in 2021.
+   * Example 1: I want to list all changes made on all objects contained in the Catalog, over the last two days.
+   * Example 2: I want to list all changes made by a specific user on all Items in the Catalog, over a given time range.
+   * Example 3: I want to list all changes made on the “Customers” dataset in 2021.
 * Users and Contacts audit trail:
-  * Example 4: I want to list all changes made to users and contacts over the last month.
-  * Example 5: I want to list all changes made to groups/permission sets in 2021.
+   * Example 4: I want to list all changes made to users and contacts over the last month.
+   * Example 5: I want to list all changes made to groups/permission sets in 2021.
 * Data access requests audit trail:
-  * Example 6: I want to list all access requests and their status transitions over the last month.
-  * Example 7: I want to list all changes made to the data access request policies in 2024.
+   * Example 6: I want to list all access requests and their status transitions over the last month.
+   * Example 7: I want to list all changes made to the data access request policies in 2024.
 
 The API technical documentation is provided in this section.
 
@@ -224,6 +224,6 @@ and:
 
 * For Custom Items, the Audit Trail API won’t retrieve their IDs, but only their names (which can be edited).
 * Scanner and API Keys-related events can’t be retrieved for the following reasons:
-  * The only scanner event that can be tracked by the API is when a new item is created.
-  * The API key ID is not retrieved by the API. 
+   * The only scanner event that can be tracked by the API is when a new item is created.
+   * The API key ID is not retrieved by the API. 
 * The API cannot retrieve events that occurred before its roll-out date (December 20th, 2021). 
