@@ -1,3 +1,11 @@
+// Redirect logo clicks to docs.actian.com
+window.document$.subscribe(function() {
+    document.querySelectorAll("a.md-header__button.md-logo, a.md-nav__button.md-logo").forEach(function(el) {
+        el.href = "https://docs.actian.com";
+        el.target = "_self";
+    });
+});
+
 // Mimic the onetrust style insert
 
 window.addEventListener("load", (_) => {
