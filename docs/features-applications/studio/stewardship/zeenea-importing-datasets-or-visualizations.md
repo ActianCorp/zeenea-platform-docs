@@ -21,6 +21,7 @@ If the requirements are met, you can access the import wizard by clicking the "I
 First, select the connection corresponding to the items to be imported.
 
 Some specifics about this step: 
+
 * Only connections that work with an inventory are proposed, namely those of the "dataset" or "visualization" type. The other "synchronized" connections are automatically imported in an all-or-nothing mode. 
 * Connections with automatic import activated are grayed out. If necessary, it is possible to force an automatic import from the administration interface.
 

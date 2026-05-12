@@ -12,13 +12,9 @@
 - <!-- #p100048 -->
   In order to catalog datasets stored on PostgreSQL, Zeenea uses the JDBC API to extract metadata. The flow towards the PostgreSQL server must be open.
 
-<!-- multiline -->
-| <!-- #p100060 --> | <!-- #p100069 --> | <!-- #p100078 --> |
 | Target            | Protocol          | Usual Ports       |
 | ----------------- | ----------------- | ----------------- |
-| <!-- #p100090 --> | <!-- #p100099 --> | <!-- #p100108 --> |
 | PostgreSQL        | JDBC              | 5432              |
-|                   |                   |                   |
 
 <!-- #p100126 -->
 > **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).

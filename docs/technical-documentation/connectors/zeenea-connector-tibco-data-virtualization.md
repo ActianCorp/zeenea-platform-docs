@@ -6,6 +6,7 @@
 * Zeenea traffic flows towards the database must be open.
 
 > **Important:**
+> 
 > * The TDV connector is compatible with **scanner version 34** and later.
 > * **The Tibco driver is not delivered with the connector**. Download the Tibco driver related to your TDV instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://edelivery.tibco.com/storefront/eval/tibco-data-virtualization/prod11801.html](https://edelivery.tibco.com/storefront/eval/tibco-data-virtualization/prod11801.html)
 

@@ -31,6 +31,7 @@ Ask AI is available only in topics tagged as **AI Ready**. This tag is applied a
 2. Select an **AI Ready** topic.  
 3. Type your question in natural language.  
    > **Note:** For best search results: 
+   >
    >  * **Provide context**: Ask specific questions. For example, _Which datasets contain customer demographic information?_ works better than just _demographics_.
    >  * **Ask complete questions**: Frame your query as a full question rather than using keyword fragments.
 4. Review the search results and AI summary. 

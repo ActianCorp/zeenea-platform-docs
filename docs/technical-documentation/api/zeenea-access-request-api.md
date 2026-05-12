@@ -3,6 +3,7 @@
 The Actian Data Intelligence Platform provides a dedicated public REST API for managing access requests.
 
 You can use the Access Request API to:
+
 * Update the status of an access request after approval.
 * Retrieve the current status of an access request.
 
@@ -33,6 +34,7 @@ If the access has been granted, send a `POST` request to the following endpoint 
 `https://[your_tenant].zeenea.app/api/rest/access-requests/[accessRequestKey]/grant`
 
 Where:
+
 * `[your_tenant]`: Your tenant name.
 * `[accessRequestKey]`: The accessRequestKey sent by the platform to the webhook. 
 
@@ -53,6 +55,7 @@ If an issue occurs during the granting process, send a `POST` request to the fol
 `https://[your_tenant].zeenea.app/api/rest/access-requests/[accessRequestKey]/error`
 
 Where:
+
 * `[your_tenant]`: Your tenant name.
 * `[accessRequestKey]`: The accessRequestKey sent by the platform to the webhook. 
 
@@ -76,6 +79,7 @@ You can retrieve the status of a specific access request with a `GET` request to
 `https://[your_tenant].zeenea.app/api/rest/access-requests/[accessRequestKey]/status`
 
 Where:
+
 * `[your_tenant]`: Your tenant name.
 * `[accessRequestKey]`: The accessRequestKey sent by the platform to the webhook. 
 

@@ -18,6 +18,7 @@ The Tableau connector was tested on the SaaS solution.
 ## Installing the Plugin
 
 > **Warning:** 
+> 
 > * This version of the connector is NOT compatible with previous versions (3.XX and earlier) of Tableau Connector.
 > * All the items you may have already imported **MUST** be deleted and reimported.
 > * If you need to export your documentation before upgrading, please contact our support before proceeding.

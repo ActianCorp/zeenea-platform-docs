@@ -69,70 +69,73 @@ To configure Admin API settings in Azure, you typically need to enable service p
 #### Microsoft Azure Portal : [https://portal.azure.com/](https://portal.azure.com/)
 
 1. **Register an Application in Azure Entra ID (fka Active Directory)**:
-   * Log in to the Azure portal.
-   * Go to Azure Entra ID.
-   * Select **App registrations**.
-   * Click **New registration**.
-   * Enter a name for your application.
-   * Choose the appropriate supported account types.
-   * Select the redirect URI.
-     * Example: `https://login.microsoftonline.com/20057ce9-1386-4770-8b04-e7824ef632be/oauth2/v2.0/token`
-   * Click **Register**. 
+    * Log in to the Azure portal.
+    * Go to Azure Entra ID.
+    * Select **App registrations**.
+    * Click **New registration**.
+    * Enter a name for your application.
+    * Choose the appropriate supported account types.
+    * Select the redirect URI.
+      * Example: `https://login.microsoftonline.com/20057ce9-1386-4770-8b04-e7824ef632be/oauth2/v2.0/token`
+    * Click **Register**. 
 2. **Note the Application (client) ID**: 
-   * Once the app registration is complete, note the Application (client) ID. You'll need this later to authenticate with the service principal. 
+    * Once the app registration is complete, note the Application (client) ID. You'll need this later to authenticate with the service principal. 
 3. **Add a Client Secret**: 
-   * You can add a client secret to provide a password-based credential for authentication. 
-   * Go to **Certificates & secrets** under the app registration. 
-   * Click **New client secret**. 
-   * Enter a description and expiry date, then click **Add**.
+    * You can add a client secret to provide a password-based credential for authentication. 
+    * Go to **Certificates & secrets** under the app registration. 
+    * Click **New client secret**. 
+    * Enter a description and expiry date, then click **Add**.
   > **Important:** Copy the value of the client secret immediately after creation, as you won't be able to retrieve it later. 
 4. **Grant Permissions**:
-   * Go to the Azure resource you want the service principal to access.
-   * Select **Access control (IAM)**.
-   * Click **Add role assignment**.
-   * Choose the appropriate privileged administrator role (for example, "Contributor").
-   * Add members by selecting the service principal created by the registered application.
-   * Click **Save**. 
+    * Go to the Azure resource you want the service principal to access.
+    * Select **Access control (IAM)**.
+    * Click **Add role assignment**.
+    * Choose the appropriate privileged administrator role (for example, "Contributor").
+    * Add members by selecting the service principal created by the registered application.
+    * Click **Save**. 
 
 #### Microsoft Entra Admin Center: [https://entra.microsoft.com/](https://entra.microsoft.com/)
 
 **Create Security Group using the Microsoft Entra Admin Center:**
+
    * Sign in to the Microsoft Entra admin center. Access the Entra admin center with appropriate permissions (at least a Groups Administrator role).
    * Navigate to Groups: Go to **Identity** > **Groups** > **ALL groups**.
    * Create a new group: Click on **New group**.
    * Provide Group Details:
-     * Group type: Select **Security**.
-     * Group name: Enter a descriptive name for the group.
-     * Description: (Optional) Add a description for the group.
-     * Membership type: Choose **Assigned** for manually assigned members or **Dynamic** for automatically managed members based on rules.
+      * Group type: Select **Security**.
+      * Group name: Enter a descriptive name for the group.
+      * Description: (Optional) Add a description for the group.
+      * Membership type: Choose **Assigned** for manually assigned members or **Dynamic** for automatically managed members based on rules.
    * Choose Create: Select **Create** to finalize the group creation.
    * Add previously created service principal to the security group as a direct member.
 
 #### Microsoft Fabric Admin Portal or PowerBI Admin Portal : [https://app.powerbi.com/admin-portal/tenantSettings?experience=power-bi](https://app.powerbi.com/admin-portal/tenantSettings?experience=power-bi)
 
 **Configure Admin API Settings:**
+
    * Access the Admin Portal: Navigate to the Admin portal within your Azure subscription. 
    * Navigate to Tenant Settings:
-     * Within the Admin portal, locate the **Tenant Settings** section. 
+      * Within the Admin portal, locate the **Tenant Settings** section. 
    * Locate Developer Settings:
-     * Find the **Developer settings** section within the tenant settings. 
+      * Find the **Developer settings** section within the tenant settings. 
    * Enable Service Principal Authentication:
-     * Enable the switch that allows service principals to call Fabric public APIs.
+      * Enable the switch that allows service principals to call Fabric public APIs.
    * Locate Admin API Settings:
-     * Find the **Admin API settings** section within the tenant settings. 
+      * Find the **Admin API settings** section within the tenant settings. 
    * Enable Service Principal Authentication:
-     * Enable the switch that allows service principals to access read-only Admin APIs.
-     * Enable the switch that allows service principals to access read-only Admin APIs used for updates
-     * Enable the switch that allows for enhanced Admin API responses with detailed metadata. 
-       * Assign the security group created in the previous step to the Admin API settings enabled.
+      * Enable the switch that allows service principals to access read-only Admin APIs.
+      * Enable the switch that allows service principals to access read-only Admin APIs used for updates
+      * Enable the switch that allows for enhanced Admin API responses with detailed metadata. 
+        * Assign the security group created in the previous step to the Admin API settings enabled.
 
 #### PowerBI Online Application : [https://app.powerbi.com](https://app.powerbi.com)
 
 **Give permission to PowerBI Workspaces:**
+
    * Access PowerBI Online Application.
    * Navigate to **Workspaces** section. 
    * Grant the **Member** permission set to the service principal for every Workspace that you want to catalog.
-     > **Note:** Do not grant the **Member** permission set to a security group; otherwise, it will not work correctly.
+   > **Note:** Do not grant the **Member** permission set to a security group; otherwise, it will not work correctly.
 
 ## Rich Filters
 

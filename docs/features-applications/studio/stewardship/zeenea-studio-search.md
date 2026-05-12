@@ -5,6 +5,7 @@
 The Catalog section of the Studio lists all items contained in Zeenea. 
 
 This display is split into three sections:
+
 * The filters on the left
 * The list of all items in the center
 * An overview screen on the right, whenever an item is selected.

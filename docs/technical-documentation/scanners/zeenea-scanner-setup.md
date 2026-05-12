@@ -460,6 +460,7 @@ zeenea-scanner.service
   * Debian, Ubuntu: `/lib/systemd/system`
  
 > **Note:**
+> 
 > * The user and group named in the file must have been created.
 > * The path to Zeenea must match or be adapted.
 > * The parameters passed to the Zeenea process must be adapted to your context.

@@ -35,6 +35,7 @@ You can access your favorite items from the main navigation.
 ## Remove an Item from Favorite
 
 To remove an item from your favorites, click the filled star icon from any of the following locations:
+
 * Search Results Page
 * Item Details Page
 * Side Overview Panel

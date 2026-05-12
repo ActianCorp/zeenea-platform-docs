@@ -9,13 +9,9 @@
 - <!-- #p100039 -->
   Zeenea traffic flows towards the data source must be open. 
 
-<!-- multiline -->
-| <!-- #p100051 --> | <!-- #p100060 --> | <!-- #p100069 --> |
 | Target            | Protocol          | Usual Ports       |
 | ----------------- | ----------------- | ----------------- |
-| <!-- #p100081 --> | <!-- #p100090 --> | <!-- #p100099 --> |
 | Qlik Sense Server | HTTP/HTTPS        | 80/443            |
-|                   |                   |                   |
 
 > **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 

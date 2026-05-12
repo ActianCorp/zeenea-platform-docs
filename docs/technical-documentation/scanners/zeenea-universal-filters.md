@@ -3,6 +3,7 @@
 This document describes Zeenea's scanner universal filtering system, a powerful tool designed to give you precise control over which assets are imported from your data sources.
 
 With filters, you can create a set of rules to include or exclude specific items based on their names, ids, or other attributes. This is the perfect way to keep your data catalog clean and relevant, for example by:
+
 * Including only production assets.
 * Excluding temporary tables or test reports.
 * Focusing on assets from specific teams or projects.
@@ -11,6 +12,7 @@ With filters, you can create a set of rules to include or exclude specific items
 This feature is available for **Scanner version 79 and above**.
 
 It is available for the following plugins: 
+
 * PowerBI V2
 * Tableau V2
 * DBT Cloud
@@ -53,6 +55,7 @@ filters = [
 ## Building Your Rules
 
 Each rule you create is an object with four parts:
+
 *   `id`: A unique name you give the rule for easy identification.
 *   `action`: The action to perform: `ACCEPT` (to keep the item) or `REJECT` (to discard it).
 *   `catalog`: The catalog identifier where items are rooted (optional)
@@ -91,6 +94,7 @@ The `rules` block is where you set the conditions based on an item's attributes 
    ```
 3. **Advanced Pattern Matching (Regular Expressions)**
    For maximum power and precision, you can use regular expressions by adding the `regex:` prefix. This is an advanced feature for complex matching needs.
+   
    * **Example 1: Match one of several prefixes**
      The pattern `(HR|IT|MARKET)_` matches anything that starts with `HR_`, `IT_`, or `MARKET_`.
      **Example:**

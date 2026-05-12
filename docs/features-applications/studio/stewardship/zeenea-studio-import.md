@@ -30,6 +30,7 @@ The import file must meet the following criteria:
   * Publishing of the Data Profiling (Fields only)
 
 In the case of the Federated Catalog, you can also import the following attributes:
+
 * **Sharing status**: Whether the Item is shared or not with other catalogs
 * **Catalog code**: The code of the catalog the Item belongs to
 
@@ -118,6 +119,7 @@ You can use the import file to update values for property types.
 For each value, the header must contain the name of the target property as a column. 
 
 > **Note:** 
+> 
 > * Only properties defined in Zeenea can be set or updated. Properties harvested through a connector are ignored.
 > * For `URL` type properties, you can set or update its label by using the following format in the cell: `https://www.mycustomurl.com[label]`
 

@@ -4,6 +4,7 @@
 The file-based SAP BW connector automatically extracts metadata using the Bluetelligence Metadata API and generates five XML-formatted export files.
 
 The following are the five export files:
+
 * **Details File**<br />Contains **object level** information on **Datasets**. Every `<entity>` element (except TRFN) represents a separate Dataset. Transformations (TRFN) are imported as **Data Processes**.
 * **Relations File**<br />Contains **object level** information on how each entities are connected. The `<edge>` elements indicate the source and target Datasets.
 * **Buildups File**<br />Contains **field level** information for **Datasets**. The `<parent>` element has an `id` property that points to an entity in the Details file.

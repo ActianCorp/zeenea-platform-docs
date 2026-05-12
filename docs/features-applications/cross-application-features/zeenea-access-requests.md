@@ -42,7 +42,7 @@ You can create new access request policies in Zeenea Administration.
 3. Click the **Create policy** button.<br />The **Create an Access Request Policy** window opens. 
    ![](./images/zeenea-access-requests-policy.png)
 4. Complete the following fields:
-   * In the **General information** section:
+    * In the **General information** section:
       * **Name** (required): Enter a unique name for the access request policy.
       * **Code** (required): Enter a unique identifier.
       * **Description**: Provide a brief explanation of the policy.
@@ -54,7 +54,7 @@ You can create new access request policies in Zeenea Administration.
         * Data products
         * All custom item types
       ![](./images/zeenea-access-requests-policy-create-general-info.png)
-   * In the **Approval workflow** section:
+    * In the **Approval workflow** section:
       * **Format of the request reason** (required): Select one of the following formats:
         * **Free text**: Type the reason for the request manually.
         * **Select a use case**: Choose from a predefined list of use cases.
@@ -63,7 +63,7 @@ You can create new access request policies in Zeenea Administration.
       * **Approvers** (required): Select the roles responsible for approving access requests.
       * **Enable email notifications for requesters and approvers**: Use the toggle to manage email notifications.
       ![](./images/zeenea-access-requests-policy-create-approval.png)
-   * In the **Mailhook and webhook** section:
+    * In the **Mailhook and webhook** section:
       * **Hook type**: Select one of the following types from the drop-down list:
         * **No external workflow**: No external actions (such as sending an email or calling a webhook) are triggered when an access request is approved. In this case, you must manually grant the required permissions in the source system.
         * **Email**: For more information about configuration, see [Configure the Email Channel for the Authorization Workflow](#configure-the-email-channel-for-the-authorization-workflow-mailhook).
@@ -73,6 +73,7 @@ You can create new access request policies in Zeenea Administration.
         * Rejected
         * Approved
         > **Note:** The payload format is the same for all messages.
+      
       ![](./images/zeenea-access-requests-policy-create-hook.png)
 5. Click **Create policy**.<br />A new access request policy is created.
  
@@ -378,6 +379,7 @@ When cancelled, the request is removed from the list of pending requests for the
 
 You can view the current status of an access request in both Studio and Explorer.
 The possible statuses are:
+
 * **Pending**: The request is awaiting review by the data owner.
 * **Approved**: The request has been approved, but the access has not yet been granted.
 * **Rejected**: The request has been rejected by the data owner.
@@ -390,6 +392,7 @@ The possible statuses are:
 In Studio, the data owner can view the current status and all status change activities of an access request.
 
 **To View the status details**
+
 1. Open Zeenea Studio.
 2. Go to the **Access requests** section.<br />The **Access requests** window opens, displaying the list of access requests.
 3. Click an access request from the list.<br />The **Access Request Details** side panel opens, displaying the request's current **Status** and **Activity** history, including any comments.  
@@ -400,6 +403,7 @@ In Studio, the data owner can view the current status and all status change acti
 In Explorer, the data requester can view the current status and all status change activities of an access request.
 
 **To View the status details**
+
 1. Open Zeenea Explorer.
 2. Click the **Access requests** button in the upper-right corner of the Explorer header.
 3. Click an access request from the list.<br />The **Access Request Details** side panel opens, displaying the request's current **Status** and **Activity** history, including any comments.  

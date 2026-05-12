@@ -3,6 +3,7 @@
 ## Prerequisites
 
 > **Note:** 
+> 
 > * To connect Zeenea to Dynamics AX, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
 > * You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 

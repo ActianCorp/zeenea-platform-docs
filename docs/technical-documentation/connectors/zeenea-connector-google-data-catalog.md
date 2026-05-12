@@ -39,49 +39,21 @@ Read more: [Managing Connections](../../features-applications/administration/zee
 <!-- #p100120 -->
 In order to establish a connection with Google Data Catalog instance, specifying the following parameters in the dedicated file is required:
 
-<!-- multiline -->
-| <!-- #p100126 -->                  | <!-- #p100135 -->                                                                                                                                                                                                 |
-| Parameter                          | Expected Value                                                                                                                                                                                                    |
-| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <!-- #p100150 -->                  | <!-- #p100159 -->                                                                                                                                                                                                 |
-| `name`                             | The name that will be displayed to catalog users for this connection                                                                                                                                              |
-|                                    |                                                                                                                                                                                                                   |
-| <!-- #p100174 -->                  | <!-- #p100183 -->                                                                                                                                                                                                 |
+| Parameter                | Expected Value       |
+| ------------------------- | ------------------------- |
+| `name`                             | The name that will be displayed to catalog users for this connection  |
 | `code`                             | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
-|                                    |                                                                                                                                                                                                                   |
-| <!-- #p100198 -->                  | <!-- #p100213 -->                                                                                                                                                                                                 |
-| `connector_id`                     | The type of connector to be used for the connection. Here, the value must be `google-cloud.data-catalog`. **This value must not be modified**.                                                                    |
-|                                    |                                                                                                                                                                                                                   |
-| <!-- #p100228 -->                  | <!-- #p100288 -->                                                                                                                                                                                                 |
-| `connection.json_key`              | <p>JSON Key.</p><p>**Careful**: use three double quotes to encapsulate the JSON key.</p><p>Example: `"""{my:"json"}"""`</p>                                                                                       |
-|                                    |                                                                                                                                                                                                                   |
-| <!-- #p100303 -->                  | <!-- #p100318 -->                                                                                                                                                                                                 |
-| `proxy.scheme`                     | Depending on the proxy, `http` or `https`                                                                                                                                                                         |
-|                                    |                                                                                                                                                                                                                   |
-| <!-- #p100333 -->                  | <!-- #p100342 -->                                                                                                                                                                                                 |
-| `proxy.hostname`                   | Proxy address                                                                                                                                                                                                     |
-|                                    |                                                                                                                                                                                                                   |
-| <!-- #p100357 -->                  | <!-- #p100366 -->                                                                                                                                                                                                 |
-| `proxy.port`                       | Proxy port                                                                                                                                                                                                        |
-|                                    |                                                                                                                                                                                                                   |
-| <!-- #p100381 -->                  | <!-- #p100390 -->                                                                                                                                                                                                 |
-| `proxy.username`                   | Proxy username                                                                                                                                                                                                    |
-|                                    |                                                                                                                                                                                                                   |
-| <!-- #p100405 -->                  | <!-- #p100414 -->                                                                                                                                                                                                 |
-| `proxy.password`                   | Proxy account password                                                                                                                                                                                            |
-|                                    |                                                                                                                                                                                                                   |
-| <!-- #p100429 -->                  | <!-- #p100459 -->                                                                                                                                                                                                 |
-| `quota.read_per_minute`            | Reads per minute quota value.<br /><br />Default value: `6000` (default value of Google Data Catalog).                                                                                                            |
-|                                    |                                                                                                                                                                                                                   |
-| <!-- #p100474 -->                  | <!-- #p100504 -->                                                                                                                                                                                                 |
-| `quota.search_per_user_per_minute` | Search quota value per user per minute.<br /><br />Default value: `180` (default value in Google Data Catalog).                                                                                                   |
-|                                    |                                                                                                                                                                                                                   |
-| <!-- #p100519 -->                  | <!-- #p100549 -->                                                                                                                                                                                                 |
-| `quota.timeout_minute`             | Maximum waiting time when waiting for the availability of a quota.<br /><br />Default value: `10` minutes.                                                                                                        |
-|                                    |                                                                                                                                                                                                                   |
-| <!-- #p100564 -->                  | <!-- #p100573 -->                                                                                                                                                                                                 |
-| `quota.max_retry`                  | Maximum number of retries when a request encounters a quota expiration error                                                                                                                                      |
-|                                    |                                                                                                                                                                                                                   |
+| `connector_id`                     | The type of connector to be used for the connection. Here, the value must be `google-cloud.data-catalog`. **This value must not be modified**.     |
+| `connection.json_key`              | <p>JSON Key.</p><p>**Careful**: use three double quotes to encapsulate the JSON key.</p><p>Example: `"""{my:"json"}"""`</p>       |
+| `proxy.scheme`                     | Depending on the proxy, `http` or `https`   |
+| `proxy.hostname`                   | Proxy address              |
+| `proxy.port`                       | Proxy port                 |
+| `proxy.username`                   | Proxy username             |
+| `proxy.password`                   | Proxy account password    |
+| `quota.read_per_minute`            | Reads per minute quota value.<br /><br />Default value: `6000` (default value of Google Data Catalog).     |
+| `quota.search_per_user_per_minute` | Search quota value per user per minute.<br /><br />Default value: `180` (default value in Google Data Catalog).   |
+| `quota.timeout_minute`             | Maximum waiting time when waiting for the availability of a quota.<br /><br />Default value: `10` minutes.  |
+| `quota.max_retry`                  | Maximum number of retries when a request encounters a quota expiration error            |
 
 <!-- #p100588 -->
 ## User Permissions

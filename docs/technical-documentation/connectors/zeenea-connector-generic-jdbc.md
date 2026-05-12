@@ -33,7 +33,7 @@ In order to establish a connection with a JDBC instance, specifying the followin
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `generic-jdbc` and this value must not be modified. |
 | `connection.url` | Database address |
-| `connection.jdbc_driver_name` | **Scanner 69 and later.**<br/>(Optional) The long name of the JDBC Driver to use.<br/>Examples:<br/>  * `org.postgresql.Driver`<br/>  * `com.mysql.jdbc.Driver`<br/>  * `org.mariadb.jdbc.Driver`<br/>  * `com.microsoft.sqlserver.jdbc.SQLServerDriver`<br/>  * `oracle.jdbc.driver.OracleDriver`<br/>  * `com.ibm.db2.jcc.DB2Driver` |
+| `connection.jdbc_driver_name` | **Scanner 69 and later.**<br/>(Optional) The long name of the JDBC Driver to use.<br/>Examples:<br/>  - `org.postgresql.Driver`<br/>  - `com.mysql.jdbc.Driver`<br/>  - `org.mariadb.jdbc.Driver`<br/>  - `com.microsoft.sqlserver.jdbc.SQLServerDriver`<br/>  - `oracle.jdbc.driver.OracleDriver`<br/>  - `com.ibm.db2.jcc.DB2Driver` |
 | `connection.username` | Username |
 | `connection.password` | User password |
 
@@ -84,5 +84,5 @@ More information about unique identification keys in this documentation: [Identi
   
 | Object | Identifier Key | Description |
 |---|---|---|
-| Dataset | code/schema/dataset name | * **code**: Unique identifier of the connection noted in the configuration file<br/>* **schema**: Object schema<br/>* **dataset name**: Table or view name |
-| Field | code/database name/dataset name/field name | * **code**: Unique identifier of the connection noted in the configuration file<br/>* **schema**: Object schema<br/>* **dataset name**: Table or view name<br/>* **field name** |
+| Dataset | code/schema/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Object schema<br/>- **dataset name**: Table or view name |
+| Field | code/database name/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **schema**: Object schema<br/>- **dataset name**: Table or view name<br/>- **field name** |

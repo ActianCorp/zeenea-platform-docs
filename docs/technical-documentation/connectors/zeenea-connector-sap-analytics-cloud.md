@@ -98,13 +98,9 @@ The connector is able to reconstruct the lineage of the tables used in the stori
 <!-- #p100228 -->
 Summary table of possible values of the `alias` parameter to be completed in the data source configuration file.
 
-<!-- multiline -->
-| <!-- #p100234 -->                                                   | <!-- #p100243 --> | <!-- #p100252 --> |
 | Source System                                                       | Model             | Example           |
 | ------------------------------------------------------------------- | ----------------- | ----------------- |
-| <!-- #p100267 -->                                                   | <!-- #p100276 --> | <!-- #p100285 --> |
 | [SAP BW](zeenea-connector-sap-bw-safyr.md# "title: SAP BW (Safyr)") | N/A               | N/A               |
-|                                                                     |                   |                   |
 
 <!-- #p100300 -->
 ### Visualization

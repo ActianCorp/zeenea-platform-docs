@@ -8,13 +8,14 @@
 * Zeenea traffic flows towards the data source must be open.
 
 > **Important:**
+> 
 > * The SAS proprietary libraries are not provided with the connector.<br />Please download them and place them in the `/lib-ext` folder of the scanner: [https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/omaref/p0522mtdjome30n1j0t0ku3ziwoy.htm](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/omaref/p0522mtdjome30n1j0t0ku3ziwoy.htm)
 > * If you are using **Java 11** to run your scanner, you'll also need to download and copy these libraries to the `/lib-ext` folder :
 >    * [glassfish-corba-internal-api-4.2.4.jar](https://repo1.maven.org/maven2/org/glassfish/corba/glassfish-corba-internal-api/4.2.4/glassfish-corba-internal-api-4.2.4.jar)
->   * [glassfish-corba-omgapi-4.2.4.jar](https://repo1.maven.org/maven2/org/glassfish/corba/glassfish-corba-omgapi/4.2.4/glassfish-corba-omgapi-4.2.4.jar)
->   * [glassfish-corba-orb-4.2.4.jar](https://repo1.maven.org/maven2/org/glassfish/corba/glassfish-corba-orb/4.2.4/glassfish-corba-orb-4.2.4.jar)
->   * [pfl-basic-4.1.2.jar](https://repo1.maven.org/maven2/org/glassfish/pfl/pfl-basic/4.1.2/pfl-basic-4.1.2.jar)
->   * [pfl-tf-4.1.2.jar](https://repo1.maven.org/maven2/org/glassfish/pfl/pfl-tf/4.1.2/pfl-tf-4.1.2.jar)
+>    * [glassfish-corba-omgapi-4.2.4.jar](https://repo1.maven.org/maven2/org/glassfish/corba/glassfish-corba-omgapi/4.2.4/glassfish-corba-omgapi-4.2.4.jar)
+>    * [glassfish-corba-orb-4.2.4.jar](https://repo1.maven.org/maven2/org/glassfish/corba/glassfish-corba-orb/4.2.4/glassfish-corba-orb-4.2.4.jar)
+>    * [pfl-basic-4.1.2.jar](https://repo1.maven.org/maven2/org/glassfish/pfl/pfl-basic/4.1.2/pfl-basic-4.1.2.jar)
+>    * [pfl-tf-4.1.2.jar](https://repo1.maven.org/maven2/org/glassfish/pfl/pfl-tf/4.1.2/pfl-tf-4.1.2.jar)
 
 <br />
 
