@@ -8,8 +8,14 @@ To configure a connection between your IS and Zeenea, follow these steps:
 2. Install the connector plugin appropriate for your storage system.
 
 > **Note:**
+> 
 > * For more information about scanner installation, see [Zeenea Scanner Setup](../../technical-documentation/scanners/zeenea-scanner-setup.md).
 > * Go to the specific documentation of each connector to identify the prerequisites and the conditions of implementation: [Zeenea Connector Downloads](../../technical-documentation/connectors/zeenea-connectors-list.md).
+
+
+!!! info "Note"
+* For more information about scanner installation, see [Zeenea Scanner Setup](../../technical-documentation/scanners/zeenea-scanner-setup.md).
+* Go to the specific documentation of each connector to identify the prerequisites and the conditions of implementation: [Zeenea Connector Downloads](../../technical-documentation/connectors/zeenea-connectors-list.md).
 
 ## Creating a Connection
 

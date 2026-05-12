@@ -1,8 +1,8 @@
 nav:
     - zeenea-configuring-templates.md
+    - zeenea-studio-create-delete-custom-item.md
     - zeenea-studio-create-edit-delete-property.md
     - zeenea-studio-create-delete-responsibility.md
-    - zeenea-studio-create-delete-custom-item.md
-    - zeenea-custom-item-best-practices.md
-    - zeenea-add-input-output-types.md
     - zeenea-studio-configure-glossary-model.md
+    - zeenea-add-input-output-types.md
+    - zeenea-custom-item-best-practices.md

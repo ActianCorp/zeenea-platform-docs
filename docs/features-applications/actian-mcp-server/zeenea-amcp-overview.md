@@ -63,6 +63,7 @@ The `search_items` tool retrieves a list of catalog items based on filter criter
 You can use this tool to find any native item in the catalog, such as datasets, fields, visualizations, or data processes.
 
 The available filters are:
+
 * **`item_type_code`**: The type of item (for example, `dataset`, `field`, `visualization`). You can fetch available item types and their codes using the `get_metamodel_item_types` tool.
 * **`name`**: The name of the item (partial match).
 * **`description`**: Text in the description (partial match).

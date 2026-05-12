@@ -1,22 +1,22 @@
 nav:
+    - zeenea-dashboard-widgets.md
+    - zeenea-studio-search.md
+    - zeenea-importing-datasets-or-visualizations.md
     - zeenea-item-documentation.md
-    - zeenea-data-catalog-item-updates.md
     - zeenea-studio-create-delete-item.md
     - zeenea-studio-create-delete-data-process.md
     - zeenea-studio-create-edit-delete-topic.md
+    - zeenea-watchlist.md
+    - zeenea-editing-items-in-bulk.md
     - zeenea-add-remove-item-contacts.md
     - zeenea-curators.md
     - zeenea-identification-keys.md
     - zeenea-understanding-keys.md
-    - zeenea-identifying-orphan-datasets.md
-    - zeenea-importing-datasets-or-visualizations.md
-    - zeenea-studio-import.md
-    - zeenea-editing-items-in-bulk.md
-    - zeenea-studio-search.md
-    - zeenea-studio-search-export.md
     - zeenea-doc-completion-level.md
-    - zeenea-dashboard-widgets.md
-    - zeenea-watchlist.md
+    - zeenea-studio-search-export.md
+    - zeenea-studio-import.md
+    - zeenea-identifying-orphan-datasets.md
+    - zeenea-personal-data.md
     - zeenea-notifications.md
     - zeenea-discussion-threads.md
-    - zeenea-personal-data.md
+    - zeenea-data-catalog-item-updates.md

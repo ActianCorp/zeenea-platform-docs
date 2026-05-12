@@ -1,8 +1,7 @@
 nav:
-    - data-intelligence-platform-rebranding.md
-    - actian-mcp-server
     - administration
-    - cross-application-features
-    - explorer
-    - federated-catalog
     - studio
+    - explorer
+    - cross-application-features
+    - actian-mcp-server
+    - federated-catalog
