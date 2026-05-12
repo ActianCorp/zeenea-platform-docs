@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with the Databricks Unity Catalog. 
 * Zeenea traffic flows towards the data source must be open.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -89,17 +91,18 @@ A dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**: 
-  * Catalog Name
-  * Schema Name
-  * Metastore ID
-  * Table ID
-  * Type
-  * Data Source Format
-  * Storage Location
-  * Created at
-  * Created by
-  * Updated at
-  * Updated by
+
+    * Catalog Name
+    * Schema Name
+    * Metastore ID
+    * Table ID
+    * Type
+    * Data Source Format
+    * Storage Location
+    * Created at
+    * Created by
+    * Updated at
+    * Updated by
 
 ### Field
 
@@ -112,8 +115,9 @@ Dataset field.
 * **Multivalued**: Depending on field type.
 * **Primary Key**: Depending on the "Primary Key" attribute.
 * **Technical Data**: 
-  * Technical Name
-  * Native type
+
+    * Technical Name
+    * Native type
 
 ### Data Process
 
@@ -122,10 +126,11 @@ A data process represents a Databricks job.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Job ID
-  * Job Name
-  * Job URL
-  * SQL Query
+
+    * Job ID
+    * Job Name
+    * Job URL
+    * SQL Query
 
 ## Object Identification Keys
 

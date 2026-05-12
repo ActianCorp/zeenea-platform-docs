@@ -5,7 +5,9 @@
 * In order to establish a connection with Snowflake, a user with sufficient [permissions](#user-permissions) is required.
 * A route between the Zeenea scanner and the database must be open to allow traffic between the two.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -19,11 +21,13 @@ It can be downloaded here and requires a scanner version 64 or later: [Zeenea Co
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
  
-> **Note:** For users of Java 17 and later, the Snowflake driver use old private Java API. A special option should be added on the scanner command line in order to provide access to this API.
->
-> `-J--add-opens=java.base/java.nio=ALL-UNNAMED`
->
-> You can pass it directly to zeenea-scanner. If on Linux, it can be added to the `conf/application.ini` file. Create it if it doesn't exist already.
+!!! note
+    For users of Java 17 and later, the Snowflake driver use old private Java API. A special option should be added on the scanner command line in order to provide access to this API.
+
+    `-J--add-opens=java.base/java.nio=ALL-UNNAMED`
+
+    You can pass it directly to zeenea-scanner. If on Linux, it can be added to the `conf/application.ini` file. Create it if it doesn't exist already.
+
 
 ## Declaring the Connection
 
@@ -62,7 +66,9 @@ In order to establish a connection with Snowflake, specifying the following para
 | `multi_account.enabled` | **Plugin v73 and higher**.<br />To activate multi account support (`true` or `false`). Default is `false`.<br />When multi account is activated, `multi_catalog` is activated as well and overrides `multi_catalog.enabled` parameter to `true`.<br />**Warning**: this parameter should not be changed after datasets have been imported because it changes the ways they are identified. |
 | `multi_account.list` | **Plugin v73 and higher**.<br />(Optional) List of accounts to be inventoried. It consists of a succession of Snowflake account identifiers separated by a space. Account identifiers must be in the form “-” (see [Snowflake documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier)).<br />If unset, the organization's account list is retrieved and used. |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 You can have snowflake datasets with "multi-catalog = true"  /my\_db/my\_schema/my\_table or /my\_schema/my\_table  .
 
@@ -225,11 +231,12 @@ Here, a dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Catalog: Database catalog
-  * Last Alter Time: Last time the table was updated
-  * Schema: Database schema
-  * Table: Table name
-  * Type:
+
+    * Catalog: Database catalog
+    * Last Alter Time: Last time the table was updated
+    * Schema: Database schema
+    * Table: Table name
+    * Type:
     * base table
     * temporary table
     * view
@@ -245,10 +252,11 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `FALSE`.
 * **Primary Key**: Depending on the field's "Primary Key" attribute
 * **Technical Data**: 
-  * Technical Name: field technical name
-  * Native type: field native type
-  * Privacy Category
-  * Semantic Category
+
+    * Technical Name: field technical name
+    * Native type: field native type
+    * Privacy Category
+    * Semantic Category
  
 ### Data Process
 
@@ -257,14 +265,17 @@ A data process can be the representation of a Snowpipe, a view construction requ
 * **Name**
 * **Source Description**
 * **Snowpipe Technical data**:
-  * Is Auto-ingest Enabled
-  * Definition
-  * Last Forwarded File Path
-  * Notification Channel Name
+
+    * Is Auto-ingest Enabled
+    * Definition
+    * Last Forwarded File Path
+    * Notification Channel Name
  
 ## Data Profiling
 
-> **Important:** The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+!!! warning "Important"
+    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+
 
 The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics here: [Data Profiling](../../features-applications/cross-application-features/zeenea-data-profiling.md).
 

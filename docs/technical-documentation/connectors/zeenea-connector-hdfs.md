@@ -18,7 +18,9 @@ Because of its type (Hadoop Edge Node), the server is either on the same network
 | HDFS DataNode | IPC | 50020 |
 | Hive Server | TCP / HTTP | 10000 |
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -93,8 +95,9 @@ A dataset is defined by the dataset definition algorithm.
 * **Name**
 * **Source Description**: Not supported. Default value `Empty`.
 * **Technical Data**:
-  * File format: source file format
-  * File path: source file path
+
+    * File format: source file format
+    * File path: source file path
 
 ### Fields
 
@@ -105,8 +108,9 @@ A dataset is defined by the dataset definition algorithm.
 * **Multivalued**: Depending on the field settings (`ORC` and `parquet`). No by default.
 * **Primary Key**:  Not supported. No by default.
 * **Technical Data**:
-  * Technical Name
-  * Native type: Field native type
+
+    * Technical Name
+    * Native type: Field native type
 
 ## Object Identification Keys
 

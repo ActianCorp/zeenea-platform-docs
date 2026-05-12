@@ -4,10 +4,10 @@
 ## Prerequisites
 
 <!-- #p100030 -->
-> **Note:** 
-> 
-> * To connect Zeenea to Salesforce, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
-> * You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    * To connect Zeenea to Salesforce, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
+    * You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 <!-- #p100036 -->
 ## Supported Versions
@@ -45,7 +45,9 @@ In order to establish a connection with Salesforce, specifying the following par
 | `input.folder` | The complete path to the folder containing files from the Silwood Safyr extraction. |
 
 <!-- #p100117 -->
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 <!-- #p100123 -->
 ## Data Extraction

@@ -104,7 +104,9 @@ Descriptions are imported in **raw text** mode only (with no formatting apart fr
 
 It is, therefore, possible to change a rich description back to a simple description by changing the value of the **description type** column. In this case, any HTML tags in the description will be transcribed as raw text in the applications.
 
-> **Note:** Only the Zeenea description can be added/updated. The source description collected by the connector can't be edited.
+!!! note
+    Only the Zeenea description can be added/updated. The source description collected by the connector can't be edited.
+
 
 ### Summary
 
@@ -118,10 +120,10 @@ You can use the import file to update values for property types.
 
 For each value, the header must contain the name of the target property as a column. 
 
-> **Note:** 
-> 
-> * Only properties defined in Zeenea can be set or updated. Properties harvested through a connector are ignored.
-> * For `URL` type properties, you can set or update its label by using the following format in the cell: `https://www.mycustomurl.com[label]`
+!!! note
+    * Only properties defined in Zeenea can be set or updated. Properties harvested through a connector are ignored.
+    * For `URL` type properties, you can set or update its label by using the following format in the cell: `https://www.mycustomurl.com[label]`
+
 
 ### "Relationship"-Type Properties
 

@@ -43,7 +43,9 @@ You can delete a custom item type from its edit screen if it meets the following
 * There are no (or no more) items of this type in the catalog.
 * The property from this custom type is not used in a metamodel.
 
-> **Important:** Deleting a custom type automatically deletes its associated property as well as all indexed values for that property.
+!!! warning "Important"
+    Deleting a custom type automatically deletes its associated property as well as all indexed values for that property.
+
 
 ## Custom Item associated property
 

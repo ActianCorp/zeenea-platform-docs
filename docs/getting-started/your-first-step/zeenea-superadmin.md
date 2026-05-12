@@ -10,7 +10,9 @@ You have specific rights and permissions as a Super Admin of the Zeenea suite.
 
 You enter the login/password combination which will have been sent to you by email.
 
-> **Note:** If you are logging in for the first time on a version without specific configuration, the default user IDs for this profile are: zeenea/zeenea
+!!! note
+    If you are logging in for the first time on a version without specific configuration, the default user IDs for this profile are: zeenea/zeenea
+
 
   ![](./images/zeenea-login.png)
 

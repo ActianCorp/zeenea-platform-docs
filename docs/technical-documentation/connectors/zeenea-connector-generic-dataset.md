@@ -6,8 +6,10 @@ This connector is deprecated. You can use the new [ZDF Dataset](./zeenea-connect
 
 <br />
 
-> **Disclaimer:** This connector should only be used in very specific cases where a conventional connector is unable to connect to the platform managing the data sets. The indirection offered by this connector will enable you to create and then document datasets from a description. By contract, Zeenea defines a Dataset as a data container that physically exists on a platform. If you decide to use this connector, you must respect this contract in order to provide your end-users with a consistent experience.
-> For more information, contact your customer success manager.
+!!! note "Disclaimer"
+    This connector should only be used in very specific cases where a conventional connector is unable to connect to the platform managing the data sets. The indirection offered by this connector will enable you to create and then document datasets from a description. By contract, Zeenea defines a Dataset as a data container that physically exists on a platform. If you decide to use this connector, you must respect this contract in order to provide your end-users with a consistent experience.
+    For more information, contact your customer success manager.
+
 
 ## Prerequisites
 
@@ -65,25 +67,26 @@ A dataset can be a table or a view. This is a first level object in the JSON str
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Type
-  * Label
-  * Format
-  * Number Of Rows
-  * DiskUsage
-  * Location
-  * Project
-  * Catalog
-  * Schema
-  * Database
-  * ReplicationFactor
-  * Tags
-  * SourceSystem
-  * Origin
-  * Creation Date
-  * Update Date
-  * Created By
-  * Updated By
-  * Comments
+
+    * Type
+    * Label
+    * Format
+    * Number Of Rows
+    * DiskUsage
+    * Location
+    * Project
+    * Catalog
+    * Schema
+    * Database
+    * ReplicationFactor
+    * Tags
+    * SourceSystem
+    * Origin
+    * Creation Date
+    * Update Date
+    * Created By
+    * Updated By
+    * Comments
 
 ### Field
 
@@ -96,9 +99,10 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `FALSE`.
 * **Primary Key**: Depends on "Primary key" property
 * **Technical Data**:
-  * Format
-  * Length
-  * Encoding
+
+    * Format
+    * Length
+    * Encoding
 
 ## Object Identification Keys
  

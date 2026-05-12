@@ -10,8 +10,9 @@
 | Kafka Broker | TCP | 9092 |
 | Kafka Schema Registry | HTTP, HTTPS | 80, 443, 8081 |
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
-> 
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 ## Supported Versions
 
 The connector was developed and tested with Kafka Server version 2.8.0 and is compatible with 3.0 and earlier.
@@ -53,7 +54,9 @@ In order to establish a connection with a Kafka instance, specifying the followi
 | `tls.keystore.type` | Type of the sey store file (`PKCS12` or `JKS`). Default value is discovered from the file extension. |
 | `tls.key.password` | Password of the private key (if different from the key store password) |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 ## Data Extraction
 
@@ -78,11 +81,12 @@ A dataset is a topic.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Topic Format (topic_sample)
-  * Schema Key Type (schema_registry)
-  * Schema Key Version (schema_registry)
-  * Schema Value Type (schema_registry)
-  * Schema Value Version (schema_registry)
+
+    * Topic Format (topic_sample)
+    * Schema Key Type (schema_registry)
+    * Schema Key Version (schema_registry)
+    * Schema Value Type (schema_registry)
+    * Schema Value Version (schema_registry)
 
 ### Field
 
@@ -95,7 +99,8 @@ Topic field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Not supported. Default value `false`.
 * **Technical Metadata**:
-  * Schema Name (schema_registry)
+
+    * Schema Name (schema_registry)
  
 ## Object Identification Keys
 

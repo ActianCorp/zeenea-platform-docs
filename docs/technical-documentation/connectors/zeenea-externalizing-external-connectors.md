@@ -35,7 +35,9 @@ Previously embedded Connectors were:
 | Google BigQuery | Google Cloud BigQuery |
 | Local Filesystem | Local Filesystem |
  
-> **Note:** A Plugin can contain several Connectors.
+!!! note
+    A Plugin can contain several Connectors.
+
 
 ## Migration Procedure
 
@@ -47,4 +49,5 @@ Upgrading the Scanner by itself remains unchanged. You only have to add these st
 2. Copy this file, without uncompressing it, to the `./plugins` folder.
 3. Start your Scanner and observe its log file. You should see the Connector being taken into account, then the Connections being configured.
 
-> **Note:** You'll only need to migrate your Connectors once. Future Scanner upgrades won't require you to follow these steps.
+!!! note
+    You'll only need to migrate your Connectors once. Future Scanner upgrades won't require you to follow these steps.

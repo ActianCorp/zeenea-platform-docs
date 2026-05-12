@@ -9,7 +9,9 @@
 | :--- | :--- | :--- |
 | Couchbase | Java SDK | 8091 |
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -77,8 +79,9 @@ A dataset is a collection.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Bucket
-  * Scope
+
+    * Bucket
+    * Scope
 
 ### Field
 
@@ -91,8 +94,8 @@ Dataset field.
 * **Multivalued**: Depending on field settings
 * **Primary Key**: N/A
 * Technical metadata:
-  * Technical name
-  * Native type
+    * Technical name
+    * Native type
  
 ## Unique Identification Keys
 

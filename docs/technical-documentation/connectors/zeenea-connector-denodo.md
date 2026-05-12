@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Denodo.
 * Zeenea traffic flows towards the data source must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -91,12 +93,13 @@ A dataset is a Denodo derived view.
 * **Name**
 * **Source Description**
 * **Technical Data**: 
-  * Display Name
-  * Model Name
-  * Modification Date: Last dataset configuration modification date
-  * Path
-  * Tags
-  * Categories
+
+    * Display Name
+    * Model Name
+    * Modification Date: Last dataset configuration modification date
+    * Path
+    * Tags
+    * Categories
 
 ### Field
 
@@ -109,8 +112,9 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Not supported. Default value `false`.
 * **Technical Data**: 
-  * Technical Name
-  * Native type
+
+    * Technical Name
+    * Native type
  
 ## Unique Identifier Keys
 

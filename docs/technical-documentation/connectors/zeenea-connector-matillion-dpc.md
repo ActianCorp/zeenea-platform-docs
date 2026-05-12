@@ -4,7 +4,9 @@
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Matillion DPC.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -92,10 +94,11 @@ A data process is a Matillion transformation.
 * **Input**: Input datasets
 * **Output**: Output datasets
 * **Technical Data**:
-  * YAML job definition
-  * Warehouse
-  * Database
-  * Schema
+
+    * YAML job definition
+    * Warehouse
+    * Database
+    * Schema
 
 ## Unique Identifier Keys
  

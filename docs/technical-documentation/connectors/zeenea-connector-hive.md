@@ -16,7 +16,9 @@ The server is either on the same network as the Hive Server and technical servic
 | :--- | :--- | :--- |
 | Hive Server | TCP / HTTP | 10000 |
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -93,9 +95,10 @@ A dataset is a table identified as a dataset by the rules of the connector.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Database: Name of the Database containing the table
-  * File path
-  * Table: Table name
+
+    * Database: Name of the Database containing the table
+    * File path
+    * Table: Table name
 
 ### Fields
 
@@ -108,8 +111,9 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `FALSE `.
 * **Primary Key**: Not supported. Default value `FALSE `.
 * **Technical Data**:
-  * Technical Name: field technical name
-  * Native type: field native type
+
+    * Technical Name: field technical name
+    * Native type: field native type
 
 ## Object Identification Keys
 

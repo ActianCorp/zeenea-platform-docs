@@ -13,7 +13,9 @@ Your selection must comply with the following constraints:
 * The selected objects must all be of the same type (Data Sets, Data Processes, etc.).
 * The number of Items selected must be less than 100,000.
 
-> **Note:** The export functionality depends on technical constraints set by Excel; as such, properties containing more than 32,000 characters may generate an error message, as they would then exceed the maximum number of characters per cell allowed by Microsoft Excel.
+!!! note
+    The export functionality depends on technical constraints set by Excel; as such, properties containing more than 32,000 characters may generate an error message, as they would then exceed the maximum number of characters per cell allowed by Microsoft Excel.
+
 
 Once you've finished exporting, click the **Download file** button to download the file (`.xlsx` format) to your computer.
 

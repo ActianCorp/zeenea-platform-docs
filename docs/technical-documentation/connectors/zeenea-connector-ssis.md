@@ -7,7 +7,9 @@
 
 The only authentication mode supported by this connector requires the user's username and password.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
  
 ## Supported Versions
 
@@ -107,10 +109,11 @@ A data process is the representation of an SSIS transformation.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Process Name
-  * Process Creation Date
-  * Process Last Modification Date
-  * Process Creator Name
+
+    * Process Name
+    * Process Creation Date
+    * Process Last Modification Date
+    * Process Creator Name
 
 ## Unique Identifier Keys
 

@@ -9,11 +9,15 @@
 | :--- | :--- | :--- |
 | Netezza | JDBC | 5480 |
 
-> **Important:** The Netezza driver is not included with the connector. Download the Netezza driver that matches your Netezza instance and place it in the `/lib-ext` folder of your scanner. You can find the driver in the resources provided by the vendor in their [Installing and uninstalling the client tools software](https://www.ibm.com/docs/en/netezza?topic=support-installing-uninstalling-client-tools-software) documentation.
+!!! warning "Important"
+    The Netezza driver is not included with the connector. Download the Netezza driver that matches your Netezza instance and place it in the `/lib-ext` folder of your scanner. You can find the driver in the resources provided by the vendor in their [Installing and uninstalling the client tools software](https://www.ibm.com/docs/en/netezza?topic=support-installing-uninstalling-client-tools-software) documentation.
+
 
 <br />
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -100,9 +104,10 @@ A dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Catalog: Source catalog
-  * Schema: Source schema
-  * Table: table name
+
+    * Catalog: Source catalog
+    * Schema: Source schema
+    * Table: table name
 
 ### Field
 
@@ -115,13 +120,16 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary key**: Depending on the "Primary Key" field attribute
 * **Technical Data**:
-  * Technical Name
-  * Native type
-  * Default Value
+
+    * Technical Name
+    * Native type
+    * Default Value
 
 ## Data Profiling
 
-> **Important:** The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+!!! warning "Important"
+    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+
 
 The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics in the following documentation: [Data Profiling](../../features-applications/cross-application-features/zeenea-data-profiling.md).
 

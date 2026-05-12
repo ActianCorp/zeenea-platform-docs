@@ -77,7 +77,9 @@ For example, if you want to search for datasets named `albums` in the `music` sc
  
 You should see a list of datasets named `albums` in the `music` schema in all connections.
 
-> **Note:** Results are currently limited to a maximum of five items to avoid overloading the agent context. This limit will be increased or removed when the feature comes out of Beta.
+!!! note
+    Results are currently limited to a maximum of five items to avoid overloading the agent context. This limit will be increased or removed when the feature comes out of Beta.
+
 
 ## Deployment Options
 

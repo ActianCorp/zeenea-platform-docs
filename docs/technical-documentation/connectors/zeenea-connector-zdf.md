@@ -4,7 +4,9 @@
 
 Zeenea Descriptor Format (ZDF) plugin describes a set of three connectors allowing the management of datasets, visualizations and data processes based on declarative files.
 
-> **Note:** These connectors must be used in very specific cases where a traditional connector is not an option. By using a description of the items instead of the discoverability mechanism used by regular connectors, you must ensure that you comply with the assertions that other connectors respect, such as the existence of elements.<br />For more information about these connectors, contact your Customer Success Manager.
+!!! note
+    These connectors must be used in very specific cases where a traditional connector is not an option. By using a description of the items instead of the discoverability mechanism used by regular connectors, you must ensure that you comply with the assertions that other connectors respect, such as the existence of elements.<br />For more information about these connectors, contact your Customer Success Manager.
+
 
 ## Adding a Connection
 
@@ -103,7 +105,9 @@ If a git repository is declared, the repository is cloned into the working folde
 
 ## Format Details
 
-> **Note:** Attributes marked "*" are mandatory for Items to be ingested by the platform. If not defined in a file, the Item will be rejected.
+!!! note
+    Attributes marked "*" are mandatory for Items to be ingested by the platform. If not defined in a file, the Item will be rejected.
+
 
 ### ZdfDataset
 

@@ -4,10 +4,10 @@
 ## Prerequisites
 
 <!-- #p100030 -->
-> **Note:** 
-> 
-> * To connect Zeenea to E-Business Suite, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
-> * You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    * To connect Zeenea to E-Business Suite, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
+    * You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 <!-- #p100045 -->
 ## Supported Versions

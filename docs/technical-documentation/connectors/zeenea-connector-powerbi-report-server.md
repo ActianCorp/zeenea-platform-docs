@@ -5,7 +5,9 @@
 * To connect to Power Bi Report Server, a user with sufficient [permissions](#user-permissions) is required.
 * Zeenea traffic flows towards PowerBI Report Server must be opened.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -37,7 +39,9 @@ For PowerBI Report Server, the following parameters are required:
 | `connection.username` | Username |
 | `connection.password` | User password |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
  
 ## User Permissions
 
@@ -60,9 +64,9 @@ A visualization object is a Power BI Report Server report.
 * **Name**
 * **Source Description**
 * Technical metadata:
-  * PowerBI Id
-  * PowerBI Path
-  * PowerBI Type
+    * PowerBI Id
+    * PowerBI Path
+    * PowerBI Type
 
 ### Dataset
 

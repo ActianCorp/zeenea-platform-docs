@@ -5,7 +5,9 @@
 * To connect to a MongoDB cluster, a user with sufficient [permissions](#p100255 "title: MongoDB") is required.
 * The traffic flows from Zeenea towards the MongoDB cluster must be open.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -82,7 +84,9 @@ Unfortunately, we do not know which resources are consumed, because this mode is
 
 The Sample mode is usually recommended, however it may not detect rare fields. More accurately, a rare field may appear temporarily when a schema is being updated, and disappear at the next update. This has not been observed or reported, but, statistically, it is a possibility. 
 
-> **Note:** We recommend trying the Sample mode first, as it is faster and lighter. If it is not applicable to your configuration, switching to the MapReduce mode remains possible.
+!!! note
+    We recommend trying the Sample mode first, as it is faster and lighter. If it is not applicable to your configuration, switching to the MapReduce mode remains possible.
+
 
 ## Logging Details
 
@@ -140,8 +144,9 @@ Datasets are MongoDB collections.
 * **Name**: Collection name
 * **Source Description**: Not supported
 * **Technical Data**:
-  * Database: Database name
-  * Collection: Collection name
+
+    * Database: Database name
+    * Collection: Collection name
 
 ### Field
 
@@ -153,8 +158,9 @@ Table fields.
 * **Nullable**: Constant, `TRUE`
 * **Multivalued**: `TRUE` if the field contains a list
 * **Technical Data**:
-  * Technical Name: Field technical name
-  * Native type: Field native type
+
+    * Technical Name: Field technical name
+    * Native type: Field native type
 
 ## Object Identification Keys
 

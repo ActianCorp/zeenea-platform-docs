@@ -2,10 +2,10 @@
 
 ## Prerequisites
 
-> **Note:** 
-> 
-> * To connect Zeenea to Dynamics AX, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
-> * You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    * To connect Zeenea to Dynamics AX, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
+    * You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -32,7 +32,9 @@ In order to establish a connection with Dynamics AX, the following parameters in
 | `connector_id` | The connector type to use for the connection. Here, the value must be `safyr-dynamicsax` and this value must not be modified. |
 | `input.folder` | The complete path to the folder containing files from the Silwood Safyr extraction |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 ## Data Extraction
 
@@ -51,10 +53,11 @@ A dataset is a Dynamics AX object.
 * **Name**
 * **Source Description**
 * **Technical Data**: 
-  * Type
-  * Row Count
-  * Physical Name
-  * Logical Name
+
+    * Type
+    * Row Count
+    * Physical Name
+    * Logical Name
  
 ### Field
 
@@ -67,13 +70,14 @@ Dataset field.
 * **Multivalued**: Depending on field properties
 * **Primary Key**: Depending on field properties
 * **Technical Data**: 
-  * Technical Name
-  * Native type
-  * Size
-  * Data Element
-  * Domain
-  * Physical Name
-  * Logical Name
+
+    * Technical Name
+    * Native type
+    * Size
+    * Data Element
+    * Domain
+    * Physical Name
+    * Logical Name
 
 ## Unique Identifier Keys
 

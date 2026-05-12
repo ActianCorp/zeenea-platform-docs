@@ -10,7 +10,9 @@
   Zeenea traffic flows towards the data source must be open.
 
 <!-- #p100054 -->
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 <!-- #p100060 -->
 ## Installing the Plugin
@@ -104,13 +106,13 @@ A dataset can be a table or a view.
 - <!-- #p100270 -->
   **Technical Data**:
 
-  - <!-- #p100276 -->
+    - <!-- #p100276 -->
     Type
 
-  - <!-- #p100285 -->
+    - <!-- #p100285 -->
     Creation Date
 
-  - <!-- #p100294 -->
+     - <!-- #p100294 -->
     Last Modification Date
 
 <!-- #p100312 -->
@@ -140,8 +142,8 @@ Dataset field.
 - <!-- #p100405 -->
   **Technical Data**: 
 
-  - <!-- #p100411 -->
-    Native type
+     - <!-- #p100411 -->
+      Native type
 
 <!-- #p100429 -->
 ### Data Processes

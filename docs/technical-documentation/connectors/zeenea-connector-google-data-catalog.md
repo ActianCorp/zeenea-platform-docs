@@ -10,7 +10,9 @@
   Zeenea traffic flows towards the data source must be open.  
 
 <!-- #p100054 -->
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 <!-- #p100060 -->
 ## Supported Versions

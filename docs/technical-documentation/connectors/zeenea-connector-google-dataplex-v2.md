@@ -6,7 +6,9 @@
 
 * Zeenea traffic flows towards the data source must be open.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -119,12 +121,13 @@ A dataset is a Google Dataplex object.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Project Id
-  * Location Id
-  * Entry Id
-  * Created At
-  * Updated At
-  * Type
+
+    * Project Id
+    * Location Id
+    * Entry Id
+    * Created At
+    * Updated At
+    * Type
 
 ### Field
 Dataset field.
@@ -136,8 +139,9 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Depending on the "Primary Key" field attribute.
 * **Technical Data**:
-  * Technical Name
-  * Native type
+
+    * Technical Name
+    * Native type
 
 ## Unique Identifier Keys
 

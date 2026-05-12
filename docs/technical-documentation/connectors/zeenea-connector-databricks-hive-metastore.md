@@ -5,11 +5,15 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Databricks Hive Metastore.
 * Zeenea traffic flows towards the database must be open. 
 
-> **Important:** The Databricks JDBC driver is not provided with the connector. Download the Databricks JDBC driver for your Databricks instance and copy it to the `/lib-ext` folder of your scanner (**only the .jar file**). You can find the driver in the sources provided by the vendor on their website: [https://www.databricks.com/spark/jdbc-drivers-download](https://www.databricks.com/spark/jdbc-drivers-download).
+!!! warning "Important"
+    The Databricks JDBC driver is not provided with the connector. Download the Databricks JDBC driver for your Databricks instance and copy it to the `/lib-ext` folder of your scanner (**only the .jar file**). You can find the driver in the sources provided by the vendor on their website: [https://www.databricks.com/spark/jdbc-drivers-download](https://www.databricks.com/spark/jdbc-drivers-download).
+
 
 <br />
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -66,14 +70,15 @@ A dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Catalog Name
-  * Schema Name
-  * Type
-  * Data Source Format
-  * Storage Location
-  * Partitioned By
-  * Created By
-  * Created At
+
+    * Catalog Name
+    * Schema Name
+    * Type
+    * Data Source Format
+    * Storage Location
+    * Partitioned By
+    * Created By
+    * Created At
 
 ### Field
 
@@ -86,8 +91,9 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Depending on the "Primary Key" field attribute
 * **Technical Data**:
-  * Technical Name
-  * Native type
+
+    * Technical Name
+    * Native type
  
 ## Unique Identifier Keys
 

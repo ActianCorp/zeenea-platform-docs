@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Salesforce.
 * Zeenea traffic flows towards the data source must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -68,7 +70,8 @@ Will collect the list of datasets accessible by the user.
 * **Primary keys**
 * **Foreign keys**
 * **Technical Data**:
-  * Key Prefix
+
+    * Key Prefix
 
 ### Field
 
@@ -83,8 +86,9 @@ Dataset field.
 * **Multivalued**
 * **Primary Key**
 * **Technical Data**:
-  * References
-  * Formula
+
+    * References
+    * Formula
  
 ## Unique Identifier Keys
 

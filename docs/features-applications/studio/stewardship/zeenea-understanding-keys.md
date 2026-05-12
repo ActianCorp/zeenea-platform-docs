@@ -44,7 +44,6 @@ To define a Dataset Business Key, head to the “Fields” tab. You’ll then be
 
 You can also remove a field from a Business Key by clicking on the “Delete” icon. 
 
-> **Note:**
-> 
-> * Primary Keys and Foreign keys are defined in the source system and cannot be manually edited.
-> * Business Keys cannot be updated via an Excel import or a bulk edit.
+!!! note
+    * Primary Keys and Foreign keys are defined in the source system and cannot be manually edited.
+    * Business Keys cannot be updated via an Excel import or a bulk edit.

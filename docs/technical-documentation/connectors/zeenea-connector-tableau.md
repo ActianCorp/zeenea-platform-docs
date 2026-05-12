@@ -9,7 +9,9 @@ The Tableau (V1) plugin has been deprecated. You can use the [Tableau (V2)](./ze
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with the Tableau solution. Please read [User Permissions](#user-permissions) below.
 * The Zeenea traffic flows towards Tableau must be open. If you want to connect Zeenea to a Tableau installed on your own server, you must activate the Tableau API Metadata. See documentation here: [https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server](https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server)
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -17,11 +19,11 @@ The Tableau connector was tested on the SaaS solution.
 
 ## Installing the Plugin
 
-> **Warning:** 
-> 
-> * This version of the connector is NOT compatible with previous versions (3.XX and earlier) of Tableau Connector.
-> * All the items you may have already imported **MUST** be deleted and reimported.
-> * If you need to export your documentation before upgrading, please contact our support before proceeding.
+!!! warning
+    * This version of the connector is NOT compatible with previous versions (3.XX and earlier) of Tableau Connector.
+    * All the items you may have already imported **MUST** be deleted and reimported.
+    * If you need to export your documentation before upgrading, please contact our support before proceeding.
+
 
 The Tableau plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
 
@@ -56,7 +58,9 @@ In order to establish a connection with Tableau, specifying the following parame
 | `tls.truststore.password` | Password of the trust store file |
 | `tls.truststore.type` | Type of the trust store file (`PKCS12` or `JKS`). Default value is discovered from the file extension. |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 ## User Permissions
 
@@ -98,7 +102,9 @@ The Tableau connector is able to retrieve the lineage between datasets that have
 | [SQL Server](./zeenea-connector-sqlserver.md) | `redshift-{database name}` |
 | [Oracle](./zeenea-connector-oracle.md) | `oracle-{database name}` |
 
-> **Note:** The connector creates a data process object for each dataset from Tableau to represent the link with the source dataset (even if the source dataset is not present in the catalog).
+!!! note
+    The connector creates a data process object for each dataset from Tableau to represent the link with the source dataset (even if the source dataset is not present in the catalog).
+
 
 ### Visualization
 
@@ -107,12 +113,13 @@ A Visualization is a Tableau workbook.
 * **Name**
 * **Description**
 * **Technical Data**:
-  * Project
-  * Workbook
-  * Workbook URL
-  * Created at
-  * Updated at
-  * Contact: Link to the already created contact in the catalog
+
+    * Project
+    * Workbook
+    * Workbook URL
+    * Created at
+    * Updated at
+    * Contact: Link to the already created contact in the catalog
   
 ### Dataset
 
@@ -132,8 +139,9 @@ Dataset field. Can be used as a Tableau report metric.
 * **Multivalued**: `false` (default)
 * **Primary Key**: `false` (default)
 * **Technical Data**:
-  * Technical Name
-  * Native type: Field native type
+
+    * Technical Name
+    * Native type: Field native type
 
 ### Data Process
 

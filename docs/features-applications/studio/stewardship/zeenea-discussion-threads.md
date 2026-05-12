@@ -2,7 +2,9 @@
 
 The discussion system is available in Zeenea Studio and Explorer from the **Datasets** object detail pages. This feature allows users to interact within discussion threads.
 
-> **Note:** Threads are made visible to all Zeenea Studio and Explorer users and are permanent over time.
+!!! note
+    Threads are made visible to all Zeenea Studio and Explorer users and are permanent over time.
+
 
 From this section, any logged-in user can:
 

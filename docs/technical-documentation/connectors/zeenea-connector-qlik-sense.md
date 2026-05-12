@@ -13,7 +13,9 @@
 | ----------------- | ----------------- | ----------------- |
 | Qlik Sense Server | HTTP/HTTPS        | 80/443            |
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 <!-- #p100114 -->
 ## Supported Versions
@@ -61,7 +63,9 @@ In order to establish a connection with a Qlik Sense instance, specifying the fo
 | `proxy.password` | Proxy account password |
 
 <!-- #p100195 -->
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 <!-- #p100201 -->
 ## User Permissions

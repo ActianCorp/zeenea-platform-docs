@@ -44,7 +44,9 @@ As soon as you have appropriate groups and users to curate your catalogs, you ca
 
 By default, connections are attached to the common catalog. To change this, you can update the connection configuration file in the scanner and specify the **catalog_code** parameter for the target catalog.
 
-> **Note:** The configuration is applied only at the connection level. Therefore, you can share a single scanner and its plugins across multiple catalogs. In this case, scanner job scheduling will be shared among all catalogs.
+!!! note
+    The configuration is applied only at the connection level. Therefore, you can share a single scanner and its plugins across multiple catalogs. In this case, scanner job scheduling will be shared among all catalogs.
+
 
 From scanner version 79, some connectors support feeding different catalogs from the same connection using [Universal Filters](../../technical-documentation/scanners/zeenea-universal-filters.md).
 

@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Talend.
 * Zeenea traffic flows towards the ETL must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -35,7 +37,9 @@ In order to establish a connection with Talend, the following parameters in the 
 | `filter` | To filter data processes during the synchronization. See [Rich Filters](#rich-filters). |
 | `multi_catalog.enabled` | Set to `true` if the dataset source system is also configured as `multi catalog`. Default value `false`. |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 ## User Permissions
 
@@ -86,12 +90,13 @@ A data process is the representation of a Talend transformation.
 * **Name**
 * **Description**
 * **Technical Data**:
-  * Job name
-  * Job ID
-  * Job objective
-  * Job version
-  * Job creation date
-  * Job last modification date
+
+    * Job name
+    * Job ID
+    * Job objective
+    * Job version
+    * Job creation date
+    * Job last modification date
 
 ## Unique Identifier Keys
 

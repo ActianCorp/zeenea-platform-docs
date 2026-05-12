@@ -19,10 +19,14 @@ Zeenea provides a **machine-to-machine** authentication mechanism based on API k
 8. Click **Create API key** button. <br />Your new API key is generated.
 9. Copy the API key and store it in a secure location.
 
-> **Important:** The API key is displayed only once and cannot be retrieved later.
+!!! warning "Important"
+    The API key is displayed only once and cannot be retrieved later.
+
  
 ## Delete an API key
 
 You can delete an existing API key at any time from the **API Key** section in the administration interface.
 
-> **Important:** Be careful when deleting the API key, because the services (script, scanners, or others) that use this key for authentication will no longer be able to connect to the Zeenea platform.
+!!! warning "Important"
+    Be careful when deleting the API key, because the services (script, scanners, or others) that use this key for authentication will no longer be able to connect to the Zeenea platform.
+

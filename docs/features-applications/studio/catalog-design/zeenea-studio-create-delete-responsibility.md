@@ -29,7 +29,9 @@ The following information is required to create a new responsibility:
 * **Code**: A technical identifier used particularly in APIs to uniquely identify a responsibility.
 * **Read-only**: When selected, the responsibility is not available when adding a contact to an object.
 
-> **Note:** Responsibilities can also be imported from a connector. These are identified in the Responsibility list with the label **External source**. These responsibilities are non-editable, except for their name. Source responsibilities also have a code prefixed by `$z_`.
+!!! note
+    Responsibilities can also be imported from a connector. These are identified in the Responsibility list with the label **External source**. These responsibilities are non-editable, except for their name. Source responsibilities also have a code prefixed by `$z_`.
+
 
 ## Editing Responsibilities
 

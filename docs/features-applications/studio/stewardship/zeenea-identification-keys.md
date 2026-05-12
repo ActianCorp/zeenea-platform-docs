@@ -11,7 +11,9 @@ For Glossary Items, the key is created by combining the object type code (define
 For manually created Data Processes, the key will always be a combination of "data-process" and the name of the object : a Data Process named "Quality Check" will have the following key "data-process/Quality Check".
 * In case multiple items of the same type share the same name, their keys will be incremented.
 
-> **Note:** Keys are case sensitive.
+!!! note
+    Keys are case sensitive.
+
 
 ## Managing Keys using the Interface
 For each object, the Key can be retrieved directly from the **Actions** button in their detailed view in the Studio. 
@@ -28,7 +30,9 @@ When importing data via an Excel file, if there is a value in the column "key", 
 
 If the "key" column is empty, then an item is created and its key automatically generated, based on the rules defined above. 
 
-> **Note:** Importing the same file multiple times can generate duplicates. 
+!!! note
+    Importing the same file multiple times can generate duplicates.
+
 
 ## Unique Keys and API
 Keys are used to uniquely identify items using the API. 

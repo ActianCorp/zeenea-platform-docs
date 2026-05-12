@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection to a local file system.
 * Zeenea traffic flows towards the data source must be open.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -75,11 +77,12 @@ Will collect the list of tables and views accessible to the user.
 * **Multivalued**: `false`
 * **Primary Key**: Tags are considered to be part of the primary key.
 * **Technical Data**:
-  * File path
-  * File Format
-  * Created
-  * Updated
-  * Owner
+
+    * File path
+    * File Format
+    * Created
+    * Updated
+    * Owner
 
 ### Field
 
@@ -92,8 +95,9 @@ Dataset field.
 * **Multivalued**: not supported, `false` by default
 * **Primary Key**: not supported, `false` by default
 * **Technical Data**:
-  * Technical Name
-  * Native type
+
+    * Technical Name
+    * Native type
 
 ## Unique Identifier Keys
  

@@ -78,9 +78,11 @@ Follow these steps to authenticate using your API key:
 }
 ```
 
-> **Important:** The item ID can be retrievable with the help of the Exploration APIs or it can be found in the URL of a specific item. As an example, after having accessed an item, its ID was retrieved from its URL:
-> <pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/studio/dataset/c89862e8-1002-4dff-92d6-fd7d5bb57b6c/general</pre>
-> The ID is string like `c89862e8-1002-4dff-92d6-fd7d5bb57b6c`.
+!!! warning "Important"
+    The item ID can be retrievable with the help of the Exploration APIs or it can be found in the URL of a specific item. As an example, after having accessed an item, its ID was retrieved from its URL:
+    <pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/studio/dataset/c89862e8-1002-4dff-92d6-fd7d5bb57b6c/general</pre>
+    The ID is string like `c89862e8-1002-4dff-92d6-fd7d5bb57b6c`.
+
 
 
 #### Example 4: I want to list all changes made to users and contacts over the last month. 
@@ -148,7 +150,9 @@ Requested data will be returned by the API in the following format:
   ]
   
 ```
-> **Note:** In case you wish to access more details on a specific item, we recommend using the Exploration APIs.
+!!! note
+    In case you wish to access more details on a specific item, we recommend using the Exploration APIs.
+
 
 Note that, when multiple updates are done at the same time, the API will behave differently depending on the type of items: 
 

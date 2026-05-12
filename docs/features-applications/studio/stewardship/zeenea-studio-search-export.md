@@ -13,7 +13,9 @@ To be exported, your selection must comply with the following:
 
 When the selected Items are of the "Dataset" type, you can export the metadata for these Datasets or their Fields. In this case, the Fields are sorted by Dataset and then according to their native index.
 
-> **Note:** Microsoft Excel's technical constraints bind the Export feature. In particular, exported properties containing more than 32,000 characters will result in an error message, as they would exceed the maximum number of characters per cell allowed by Excel. 
+!!! note
+    Microsoft Excel's technical constraints bind the Export feature. In particular, exported properties containing more than 32,000 characters will result in an error message, as they would exceed the maximum number of characters per cell allowed by Excel.
+
 
 Once the export is over, click **Download** to retrieve the `.xlsx` file on your computer. 
 

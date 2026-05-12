@@ -15,7 +15,9 @@ The Agent's host server must have sufficient credentials to connect to AWS Glue.
 | :--- | :--- | :--- |
 | AWS Glue | HTTP | 443 |
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -106,7 +108,9 @@ filter = """
 """
 ```
 
-> **Note:** The `filter` attribute can contain either a raw value or a file URL to the content. (for example, `file:///path/to/zeenea/connections/aws-glue-inventory-filter.json`). When you use a side-file, any changes to the filter are applied without restarting the scanner.
+!!! note
+    The `filter` attribute can contain either a raw value or a file URL to the content. (for example, `file:///path/to/zeenea/connections/aws-glue-inventory-filter.json`). When you use a side-file, any changes to the filter are applied without restarting the scanner.
+
 
 For more information about filters, see [Filters](../scanners/zeenea-filters.md).
 
@@ -127,15 +131,16 @@ A dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * AWS Region
-  * Database Name
-  * Location
-  * Owner
-  * CreateTime
-  * UpdateTime
-  * LastAccessTime
-  * LastAnalyzeTime
-  * TableType
+
+    * AWS Region
+    * Database Name
+    * Location
+    * Owner
+    * CreateTime
+    * UpdateTime
+    * LastAccessTime
+    * LastAnalyzeTime
+    * TableType
 
 ### Field
 

@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Google Data Lineage API.
 * Zeenea traffic flows towards the data source must be open.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -106,11 +108,12 @@ A data process is a Google Data Lineage transformation.
 * **Input**: Input datasets
 * **Output**: Output datasets
 * **Technical Data**:
-  * Project : Project identifier of the process
-  * Location : Location identifier of the process
-  * Origin : Google job's origin
-  * Job ID : BigQuery job identifier
-  * Id : Process identifier
+
+    * Project : Project identifier of the process
+    * Location : Location identifier of the process
+    * Origin : Google job's origin
+    * Job ID : BigQuery job identifier
+    * Id : Process identifier
 
 ## Unique Identification Keys
 

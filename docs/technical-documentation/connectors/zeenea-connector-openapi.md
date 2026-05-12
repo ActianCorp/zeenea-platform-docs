@@ -10,7 +10,9 @@
   Zeenea traffic flows towards the data source must be open.
 
 <!-- #p100054 -->
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 <!-- #p100060 -->
 ## Supported Versions
@@ -67,7 +69,9 @@ In order to establish a connection with a OpenAPI interface, specifying the foll
 | `proxy.password` | Proxy account password |
 
 <!-- #p100147 -->
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 <!-- #p100153 -->
 ## User Permissions

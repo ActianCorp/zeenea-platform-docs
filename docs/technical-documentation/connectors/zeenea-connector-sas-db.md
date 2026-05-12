@@ -1,25 +1,29 @@
 # Adding an SAS Database Connection
 
-> **Note:** The current version of this connector is not final and it will be updated. 
+!!! note
+    The current version of this connector is not final and it will be updated.
+
 
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with SAS.
 * Zeenea traffic flows towards the data source must be open.
 
-> **Important:**
-> 
-> * The SAS proprietary libraries are not provided with the connector.<br />Please download them and place them in the `/lib-ext` folder of the scanner: [https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/omaref/p0522mtdjome30n1j0t0ku3ziwoy.htm](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/omaref/p0522mtdjome30n1j0t0ku3ziwoy.htm)
-> * If you are using **Java 11** to run your scanner, you'll also need to download and copy these libraries to the `/lib-ext` folder :
->    * [glassfish-corba-internal-api-4.2.4.jar](https://repo1.maven.org/maven2/org/glassfish/corba/glassfish-corba-internal-api/4.2.4/glassfish-corba-internal-api-4.2.4.jar)
->    * [glassfish-corba-omgapi-4.2.4.jar](https://repo1.maven.org/maven2/org/glassfish/corba/glassfish-corba-omgapi/4.2.4/glassfish-corba-omgapi-4.2.4.jar)
->    * [glassfish-corba-orb-4.2.4.jar](https://repo1.maven.org/maven2/org/glassfish/corba/glassfish-corba-orb/4.2.4/glassfish-corba-orb-4.2.4.jar)
->    * [pfl-basic-4.1.2.jar](https://repo1.maven.org/maven2/org/glassfish/pfl/pfl-basic/4.1.2/pfl-basic-4.1.2.jar)
->    * [pfl-tf-4.1.2.jar](https://repo1.maven.org/maven2/org/glassfish/pfl/pfl-tf/4.1.2/pfl-tf-4.1.2.jar)
+!!! warning "Important"
+    * The SAS proprietary libraries are not provided with the connector.<br />Please download them and place them in the `/lib-ext` folder of the scanner: [https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/omaref/p0522mtdjome30n1j0t0ku3ziwoy.htm](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/omaref/p0522mtdjome30n1j0t0ku3ziwoy.htm)
+    * If you are using **Java 11** to run your scanner, you'll also need to download and copy these libraries to the `/lib-ext` folder :
+       * [glassfish-corba-internal-api-4.2.4.jar](https://repo1.maven.org/maven2/org/glassfish/corba/glassfish-corba-internal-api/4.2.4/glassfish-corba-internal-api-4.2.4.jar)
+       * [glassfish-corba-omgapi-4.2.4.jar](https://repo1.maven.org/maven2/org/glassfish/corba/glassfish-corba-omgapi/4.2.4/glassfish-corba-omgapi-4.2.4.jar)
+       * [glassfish-corba-orb-4.2.4.jar](https://repo1.maven.org/maven2/org/glassfish/corba/glassfish-corba-orb/4.2.4/glassfish-corba-orb-4.2.4.jar)
+       * [pfl-basic-4.1.2.jar](https://repo1.maven.org/maven2/org/glassfish/pfl/pfl-basic/4.1.2/pfl-basic-4.1.2.jar)
+       * [pfl-tf-4.1.2.jar](https://repo1.maven.org/maven2/org/glassfish/pfl/pfl-tf/4.1.2/pfl-tf-4.1.2.jar)
+
 
 <br />
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -52,7 +56,9 @@ In order to establish a connection with a SAS instance, specifying the following
 | `filter.job_name.excludes` | Comma-separated list of elements to exclude jobs during synchronization using the following keywords: `begins`, `contains`, `equals`, `between`<br/>Example: `excludes = "enterprise,equals:customers,contains:prod"` |
 | `filter` | To filter data processes during the inventory. See [Rich Filters](#rich-filters) |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 ## User Permissions
 
@@ -88,15 +94,16 @@ A dataset is an SAS table.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Repository
-  * SAS ID
-  * Folder
-  * Owner
-  * Creation Time
-  * Type
-  * Library
-  * Last Modification Time
-  * Last Modified By
+
+    * Repository
+    * SAS ID
+    * Folder
+    * Owner
+    * Creation Time
+    * Type
+    * Library
+    * Last Modification Time
+    * Last Modified By
 
 ### Field
 
@@ -109,8 +116,9 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary key**: Depending on the "Primary Key" field attribute
 * **Technical Data**: 
-  * Technical Name
-  * Native type
+
+    * Technical Name
+    * Native type
 
 ## Unique Identifier Keys
  

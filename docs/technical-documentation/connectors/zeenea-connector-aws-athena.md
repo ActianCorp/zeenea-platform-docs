@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Athena. 
 * Zeenea traffic flows towards the data source must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -86,11 +88,12 @@ A dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**: 
-  * Creation Date
-  * Location
-  * Table Type
-  * Format
-  * Partitioned By
+
+    * Creation Date
+    * Location
+    * Table Type
+    * Format
+    * Partitioned By
 
 ### Field
 
@@ -103,8 +106,9 @@ Dataset field.
 * **Multivalued**: Not supported. The default value is `false`.
 * **Primary key**: Depends on the `Primary Key` field attribute.
 * **Technical Data**: 
-  * Technical Name
-  * Native type
+
+    * Technical Name
+    * Native type
 
 ## Object Identification Keys
 

@@ -9,7 +9,9 @@
    * [https://login.microsoftonline.com](https://login.microsoftonline.com)
    * [https://api.powerbi.com](https://api.powerbi.com)
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -199,47 +201,47 @@ For more information about universal filters, see [Universal Filters](../scanner
 To extract basic metadata information, the connector runs successively the following API requests:
 
 * **GET** ` https://api.powerbi.com/v1.0/myorg/admin/workspaces/modified`: 
-  * Response: To get the workspaces list excluding personal workspaces.
+    * Response: To get the workspaces list excluding personal workspaces.
 * **POST** ` https://api.powerbi.com/v1.0/myorg/admin/workspaces/getInfo`:
-  * Parameter: Workspaces list (100 workspaces limit)
-  * Response: Scan identifier
+    * Parameter: Workspaces list (100 workspaces limit)
+    * Response: Scan identifier
 * **GET** `https://api.powerbi.com/v1.0/myorg/admin/workspaces/scanStatus/`:
-  * Parameter: Scan identifier
-  * Response: Scan status: `NOT_STARTED`, `RUNNING`, `SUCCEEDED`
+    * Parameter: Scan identifier
+    * Response: Scan status: `NOT_STARTED`, `RUNNING`, `SUCCEEDED`
 * **GET** `https://api.powerbi.com/v1.0/myorg/admin/workspaces/scanResult/`:
-  * Parameter: Scan identifier
-  * Response: Object with all the metadata of report from scanned workspaces
+    * Parameter: Scan identifier
+    * Response: Object with all the metadata of report from scanned workspaces
   
 To get PowerBI reports, the connector runs these API requests:
   
 * **GET** `https://api.powerbi.com/v1.0/myorg/admin/apps`:
-  * Response: Object with all the apps in the organization
+    * Response: Object with all the apps in the organization
 * **GET** `https://api.powerbi.com/v1.0/myorg/groups/<workspace_id>/reports/<report_id>/pages`:
-  * Parameters: Workspace ID and Report ID
-  * Response: Object with all the pages within the specified report from the specified workspace
+    * Parameters: Workspace ID and Report ID
+    * Response: Object with all the pages within the specified report from the specified workspace
 * **GET** `https://api.powerbi.com/v1.0/myorg/groups/<workspace_id>/reports/<report_id>/export`:
-  * Parameters: Workspace ID and Report ID
-  * Response: PBIX file of the specified report from the specified workspace
+    * Parameters: Workspace ID and Report ID
+    * Response: PBIX file of the specified report from the specified workspace
   
 To get additional Fabric metadata,  the connector runs these API requests:
 
 * **GET** `https://api.fabric.microsoft.com/v1/admin/domains`:
-  * Response: Domain metadata
+    * Response: Domain metadata
 * **GET** `https://api.fabric.microsoft.com/v1/workspaces/<workspace_id>/warehouses/<warehouse_id>`:
-  * Parameters: Workspace ID and Warehouse ID
-  * Response: Metadata about the warehouse
+    * Parameters: Workspace ID and Warehouse ID
+    * Response: Metadata about the warehouse
 * **GET** `https://api.fabric.microsoft.com/v1/workspaces/<workspace_id>/lakehouses/<lakehouse_id>`:
-  * Parameters: Workspace ID and Lakehouse ID
-  * Response: Metadata about the lakehouse
+    * Parameters: Workspace ID and Lakehouse ID
+    * Response: Metadata about the lakehouse
 * **GET** `https://api.fabric.microsoft.com/v1/workspaces/<workspace_id>/items/<item_id>`:
-  * Parameters: Workspace ID and Item ID
-  * Response: Metadata about the specified item
+    * Parameters: Workspace ID and Item ID
+    * Response: Metadata about the specified item
 * **GET** `https://api.fabric.microsoft.com/v1/workspaces/<workspace_id>/items/<item_id>/shortcuts`:
-  * Parameters: Workspace ID and Item ID
-  * Response: Shortcut metadata
+    * Parameters: Workspace ID and Item ID
+    * Response: Shortcut metadata
 * **GET** `https://api.fabric.microsoft.com/v1/workspaces/<workspace_id>/reports/<report_id>/getDefinition`:
-  * Parameters: Workspace ID and Report ID
-  * Response: Additional metadata about a report in Fabric
+    * Parameters: Workspace ID and Report ID
+    * Response: Additional metadata about a report in Fabric
 
 ## Collected Metadata
 
@@ -263,16 +265,17 @@ A visualization object is a Power BI report.
 * **Source Description**
 * **Contacts**
 * **Technical Data**:
-  * Report WebURL: Link to the report.
-  * Report Type
-  * Workspace Name
-  * Application: URL to the PowerBI application which this report is attached.
-  * Source Server Name
-  * Created By
-  * Creation Date
-  * Modified By
-  * Modified Date
-  * Report's page
+
+    * Report WebURL: Link to the report.
+    * Report Type
+    * Workspace Name
+    * Application: URL to the PowerBI application which this report is attached.
+    * Source Server Name
+    * Created By
+    * Creation Date
+    * Modified By
+    * Modified Date
+    * Report's page
 
 ### Dataset
 
@@ -283,34 +286,37 @@ A dataset is a table inside a Power BI semantic model, a Fabric warehouse table,
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * PowerBI Dataset: Name of the PowerBI dataset.
-  * Workspace: Link to PowerBI workspace.
-  * Semantic Model: Link to PowerBI semantic model.
-  * Power Query
+
+    * PowerBI Dataset: Name of the PowerBI dataset.
+    * Workspace: Link to PowerBI workspace.
+    * Semantic Model: Link to PowerBI semantic model.
+    * Power Query
   
 #### Warehouse Table
 
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Workspace URL: Link to PowerBI workspace.
-  * Workspace: The name of the workspace.
-  * Domain: The name of the domain to which the workspace belongs.
-  * Domain path: The domain hierarchy if sub-domains are utilized.
-  * Warehouse: The name of the warehouse.
+
+    * Workspace URL: Link to PowerBI workspace.
+    * Workspace: The name of the workspace.
+    * Domain: The name of the domain to which the workspace belongs.
+    * Domain path: The domain hierarchy if sub-domains are utilized.
+    * Warehouse: The name of the warehouse.
 
 #### Lakehouse Table
 
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Workspace URL: Link to PowerBI workspace.
-  * Workspace: The name of the workspace.
-  * Domain: The name of the domain to which the workspace belongs.
-  * Domain path: The domain hierarchy if sub-domains are utilized.
-  * Lakehouse: The name of the lakehouse.
-  * Shortcut type: The type of the target for a shortcut.
-  * Shortcut target location: The location of the dataset.
+
+    * Workspace URL: Link to PowerBI workspace.
+    * Workspace: The name of the workspace.
+    * Domain: The name of the domain to which the workspace belongs.
+    * Domain path: The domain hierarchy if sub-domains are utilized.
+    * Lakehouse: The name of the lakehouse.
+    * Shortcut type: The type of the target for a shortcut.
+    * Shortcut target location: The location of the dataset.
   
 ### Field
 
@@ -325,10 +331,11 @@ Fields are fields or measures in a semantic model table, or a field in a warehou
 * **Multivalued**: Not supported. The default value is `false`.
 * **Primary Key**: Not supported. The default value is `false`.
 * **Technical Data**: 
-  * Technical Name
-  * Native type
-  * Type
-  * Expression
+
+    * Technical Name
+    * Native type
+    * Type
+    * Expression
 
 #### Warehouse Table Field
 
@@ -339,8 +346,9 @@ Fields are fields or measures in a semantic model table, or a field in a warehou
 * **Multivalued**: Not supported. The default value is `false`.
 * **Primary Key**
 * **Technical Data**: 
-  * Native type
-  * Type
+
+    * Native type
+    * Type
 
 #### Lakehouse Table Field
 
@@ -350,8 +358,9 @@ Fields are fields or measures in a semantic model table, or a field in a warehou
 * **Can be null**
 * **Multivalued**: Not supported. The default value is `false`.
 * **Technical Data**: 
-  * Native type
-  * Type
+
+    * Native type
+    * Type
 
 
 ## Object Identification Keys

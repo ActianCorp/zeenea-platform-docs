@@ -4,7 +4,9 @@
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with SSAS.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Installing the Plugin
 
@@ -29,7 +31,9 @@ In order to establish a connection with SSAS, the following parameters in the de
 | `connection.url` | URL to the data pump `MSMDPUMP.dll` |
 | `connection.server_mode` | Server or project mode for SSAS. Accepted values are:<br/>- Empty or `tabular`: The target server/project is configured in "Tabular" mode.<br/>- `multidimensional`: The target server/project is configured in "Multidimensional" mode. |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 ## User Permissions
 
@@ -66,9 +70,10 @@ A dataset corresponds to a table for a SSAS server in "Tabular" mode or a cube f
 * **Name**
 * **Source Description**
 * **Technical Data**: 
-  * Catalog
-  * Creation date
-  * Last modification date
+
+    * Catalog
+    * Creation date
+    * Last modification date
  
 ### Field
 
@@ -81,13 +86,14 @@ A field is a field within a dataset.
 * **Multivalued (Mode "Multidimensional" only)**
 * **Primary Key**
 * **Technical Data**: 
-  * "Multidimensional" Mode:
+
+    * "Multidimensional" Mode:
     * Field Type (dimension or measure)
     * Measure Group
     * Aggregate Function
     * The table associated with the measure
     * Column associated with the measure
-  * "Tabular" Mode:
+    * "Tabular" Mode:
     * Is Hidden
     * Is Unique
     * Last Modification Date
@@ -100,7 +106,8 @@ A data process represents lineage between a cube/table and its sources.
 * **Input**: Datasets as input to the process
 * **Output**: Dataset as output to the process
 * **Technical  Data**:
-  * "Tabular" Mode:
+
+    * "Tabular" Mode:
     * SQL Query used
 
 ## Object Identification Keys

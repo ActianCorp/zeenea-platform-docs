@@ -9,7 +9,9 @@ The Tibco Spotfire (V1) plugin has been deprecated. You can use the [Tibco Spotf
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Spotfire.
 * Zeenea traffic flows towards the server must be open.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -46,7 +48,9 @@ In order to establish a connection with a Spotfire Server instance, specifying t
 | `tls.truststore.password` | Password of the trust store file |
 | `tls.truststore.type` | Type of the trust store file (`PKCS12` or `JKS`). Default value is discovered from the file extension. |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 ## User Permissions
 
@@ -88,7 +92,9 @@ The Spotfire connector is able to retrieve the lineage between datasets that hav
 | [AWS Redshift](./zeenea-connector-aws-redshift.md) | `host:port/db` |
 | [Tibco Data Virtualization](./zeenea-connector-tibco-data-virtualization.md) | `IP` |
 
-> **Note:** The connector creates a data process object for each dataset from Spotfire to represent the link with the source dataset even if the source dataset is not present in the catalog.
+!!! note
+    The connector creates a data process object for each dataset from Spotfire to represent the link with the source dataset even if the source dataset is not present in the catalog.
+
 
 ### Visualization
 
@@ -97,19 +103,20 @@ A Visualization is a Spotfire Analysis.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Path
-  * Parent Id
-  * Created By Domain Name
-  * Modified By Domain Name
-  * Creation Date
-  * Modification Date
-  * Page Count
-  * Visualization Count
-  * Table Count
-  * Column Count
-  * Embed All Source Data
-  * Size
-  * Total Table Load Time
+
+    * Path
+    * Parent Id
+    * Created By Domain Name
+    * Modified By Domain Name
+    * Creation Date
+    * Modification Date
+    * Page Count
+    * Visualization Count
+    * Table Count
+    * Column Count
+    * Embed All Source Data
+    * Size
+    * Total Table Load Time
 
 ### Dataset
 
@@ -129,8 +136,9 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Not supported. Default value `false`.
 * **Technical Data**:
-  * Technical Name
-  * Native type: field native type
+
+    * Technical Name
+    * Native type: field native type
 
 ### Data Process
 

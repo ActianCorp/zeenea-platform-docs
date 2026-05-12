@@ -29,9 +29,11 @@ To create a new Item from Zeenea Studio:
 
     ![](./images/zeenea-create-item-confirm.png)
 
-> **Note:** A unique key will be automatically generated based on the Item Type code and its name. You can find this key in the detailed view of the newly created Item via the "Actions" menu. In case of a duplicate, an incremental number is automatically added to the key to ensure its unicity.
->
-> Once the item has been created, you'll be able to edit its documentation.
+!!! note
+    A unique key will be automatically generated based on the Item Type code and its name. You can find this key in the detailed view of the newly created Item via the "Actions" menu. In case of a duplicate, an incremental number is automatically added to the key to ensure its unicity.
+
+    Once the item has been created, you'll be able to edit its documentation.
+
 
 ## Deleting an Item
 

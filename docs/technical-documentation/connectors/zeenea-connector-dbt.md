@@ -5,13 +5,17 @@
 * A user with sufficient permissions is required to establish a connection with DBT.
 * Zeenea traffic flows towards DBT must be open.  
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
 The DBT connector was tested with version 1.3. It is compatible with version 1.3 and earlier. 
 
-> **Note:** The DBT connector is currently **NOT** compatible with DBT Cloud.
+!!! note
+    The DBT connector is currently **NOT** compatible with DBT Cloud.
+
 
 ## Installing the Plugin
 
@@ -110,12 +114,13 @@ Table summarizing the possible values of the `alias` parameter to be completed i
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Project
-  * Doc Generation Time
-  * Owner
-  * Database
-  * Schema
-  * Type
+
+    * Project
+    * Doc Generation Time
+    * Owner
+    * Database
+    * Schema
+    * Type
  
 ## Unique Identification Keys
 

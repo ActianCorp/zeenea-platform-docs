@@ -64,7 +64,9 @@ To establish a connection with SAP BW, fill in the following parameters in the d
 | `description_language` | Description language for all items. Default language is English ("E").  <br />All available languages are defined in SAP and must respect the language from the Buildup Descriptions file. |
 | `filters` | Defines filtering rules to include or exclude specific items using universal filters. See [Universal Filters](#universal-filters). |
 
-> **Note:** You can find the configuration file template in [bluetelligence-sap-bw.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/bluetelligence-sap-bw.conf).
+!!! note
+    You can find the configuration file template in [bluetelligence-sap-bw.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/bluetelligence-sap-bw.conf).
+
 
 ## Universal Filters
 
@@ -114,20 +116,22 @@ A dataset can be one of the following SAP BW objects: Data Store Object, Advance
 * **Name and ID**
 * **Description**
 * **Technical Data**:
-  * UID
-  * Type
-  * Info Area
-  * Label
-  * Space
-  * System
+
+    * UID
+    * Type
+    * Info Area
+    * Label
+    * Space
+    * System
 
 ### Data Process
 A data process is the following SAP BW object: Transformation.
 
 * **Name and ID**
 * **Technical Data**:
-  * UID
-  * Type
+
+    * UID
+    * Type
 
 ### Field
 Dataset field. 
@@ -135,11 +139,12 @@ Dataset field.
 * **Name and ID**
 * **Description**
 * **Technical Data**: 
-  * Data Type
-  * Associated Object
-  * Navigation Attribute
-  * Semantics
-  * Length
+
+    * Data Type
+    * Associated Object
+    * Navigation Attribute
+    * Semantics
+    * Length
 
 ## Unique Identifier Keys
  

@@ -12,7 +12,9 @@
 
   ![](./images/zeenea-data-process-new3.png)
 
-> **Note:** Data Processes can also be imported from an external source via a connector, or created using the Catalog API.
+!!! note
+    Data Processes can also be imported from an external source via a connector, or created using the Catalog API.
+
 
 ## Deleting a Data Process
 
@@ -51,6 +53,8 @@ An operation is defined by a list of input and output Fields, and a description 
 
   ![](./images/zeenea-data-process-operations.png)
 
-> **Note:** If an operation references a Field that is not part of the input or output Datasets of the Data Process, it is displayed in red as an orphan.
+!!! note
+    If an operation references a Field that is not part of the input or output Datasets of the Data Process, it is displayed in red as an orphan.
+
 
 When filled in, Field to Field lineage is automatically displayed in the lineage. See [Data Lineage](../../cross-application-features/zeenea-data-lineage.md).

@@ -5,7 +5,9 @@
 * You must have a user account with sufficient [permissions](#user-permissions) to connect to SAP BO.
 * Zeenea traffic flows towards the database must be open. 
 
-> **Note:** You can find the configuration file template in the [GitHub repository](https://github.com/zeenea/connector-conf-templates/blob/main/templates/sap-bo.conf).
+!!! note
+    You can find the configuration file template in the [GitHub repository](https://github.com/zeenea/connector-conf-templates/blob/main/templates/sap-bo.conf).
+
 
 ## Supported Versions
 
@@ -83,7 +85,9 @@ The SAP BO connector supports rich filters in the configuration of the connector
 
 
 
-> **Note:** The filter can contain either a raw value or a file URL to the content (for example, `file:///path/to/zeenea/connections/filter.json`). When you use a side-file, any changes to the filter are applied without restarting the scanner.
+!!! note
+    The filter can contain either a raw value or a file URL to the content (for example, `file:///path/to/zeenea/connections/filter.json`). When you use a side-file, any changes to the filter are applied without restarting the scanner.
+
 
 For more information about filters, see [Filters](../scanners/zeenea-filters.md).
 
@@ -112,8 +116,9 @@ A visualization is a Webi Document.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * SAP ID
-  * UUID
+
+    * SAP ID
+    * UUID
 
 ### Datasets
 
@@ -122,9 +127,10 @@ A dataset is a Data Provider or an SAP Universe.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * SAP Identifier
-  * RowNumber (Data Provider)
-  * Universe type (SAP Universe)
+
+    * SAP Identifier
+    * RowNumber (Data Provider)
+    * Universe type (SAP Universe)
 
 ### Fields
 

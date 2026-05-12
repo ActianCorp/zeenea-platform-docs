@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Data Factory. 
 * Zeenea traffic flows towards the data source must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
  
 ## Supported Versions
 
@@ -62,7 +64,7 @@ During synchronize:
 #### API Azure Data Factory
 
 * **GET**`https://login.microsoftonline.com:443/{tenantId}/oauth2/token`
-  * Resource: https://management.azure.com
+    * Resource: https://management.azure.com
 * **GET** `https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.DataFactory/factories/{factoryName}?api-version=2018-06-01`
 * **GET** `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/pipelines?api-version=2018-06-01`
 * **GET** `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataFactory/factories/{factoryName}/linkedservices?api-version=2018-06-01`
@@ -72,7 +74,7 @@ During synchronize:
 #### Azure Key Vault
 
 * **GET** `https://login.microsoftonline.com:443/{tenantId}/oauth2/token`
-  * Resource: https://vault.azure.net
+    * Resource: https://vault.azure.net
 * **GET** `https://{azureKeyVaultUrl}/secrets/{secretName}?api-version=7.4`
 * **GET** `https://{azureKeyVaultUrl}/secrets/{secretName}/{secretVersion}?api-version=7.4`
  
@@ -101,10 +103,11 @@ A data process is the representation of a pipeline.
 * **Name**
 * **Source Description**
 * **Technical Data**: 
-  * Datafactory Name
-  * Azure Group Name
-  * Dataprocess Id
-  * Dataprocess Modification Date
+
+    * Datafactory Name
+    * Azure Group Name
+    * Dataprocess Id
+    * Dataprocess Modification Date
  
 ## Unique Identification Keys
 

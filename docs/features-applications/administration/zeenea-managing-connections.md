@@ -7,10 +7,10 @@ To configure a connection between your IS and Zeenea, follow these steps:
 1. Install a scanner.
 2. Install the connector plugin appropriate for your storage system.
 
-> **Note:**
-> 
-> * For more information about scanner installation, see [Zeenea Scanner Setup](../../technical-documentation/scanners/zeenea-scanner-setup.md).
-> * Go to the specific documentation of each connector to identify the prerequisites and the conditions of implementation: [Zeenea Connector Downloads](../../technical-documentation/connectors/zeenea-connectors-list.md).
+!!! note
+    * For more information about scanner installation, see [Zeenea Scanner Setup](../../technical-documentation/scanners/zeenea-scanner-setup.md).
+    * Go to the specific documentation of each connector to identify the prerequisites and the conditions of implementation: [Zeenea Connector Downloads](../../technical-documentation/connectors/zeenea-connectors-list.md).
+
 
 ## Creating a Connection
 
@@ -134,7 +134,9 @@ To delete a connection from a scanner :
 2. Delete the configuration file corresponding to the connection you want to delete.
 3. Restart the scanner. 
 
-> **Important:** Deleting the configuration file from the scanner does not delete the items imported into the catalog. Users will still be able to access the items imported from this connection, but these items will no longer be updated automatically and it will no longer be possible to import new ones into the catalog.
+!!! warning "Important"
+    Deleting the configuration file from the scanner does not delete the items imported into the catalog. Users will still be able to access the items imported from this connection, but these items will no longer be updated automatically and it will no longer be possible to import new ones into the catalog.
+
 
 ### From the Administration Interface  
 
@@ -149,4 +151,5 @@ To relocate a connection to another scanner:
 3. Restart the scanner.
 4. Check in the detailed view of the destination scanner that the connection has been relocated. 
 
-> **Note:** Operations on the scanners are only taken into account by the Zeenea platform every 10 seconds. It may take a few seconds for changes to appear on the interface.
+!!! note
+    Operations on the scanners are only taken into account by the Zeenea platform every 10 seconds. It may take a few seconds for changes to appear on the interface.

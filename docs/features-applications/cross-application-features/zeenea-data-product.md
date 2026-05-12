@@ -163,7 +163,9 @@ The following table shows the level of support the Actian Data Intelligence Plat
 * **Partially Supported**: Some attributes are supported, but not the entire list.  
 * **Not Supported**: None of the attributes in this section are mapped to Actian concepts.
 
-> **Note:** Unsupported attributes or sections are ignored when the YAML file is ingested by the platform.
+!!! note
+    Unsupported attributes or sections are ignored when the YAML file is ingested by the platform.
+
 
 The following sections provide detailed attribute-level information for the fully and partially supported sections.
 
@@ -278,7 +280,9 @@ The following table shows the level of support the Actian Data Intelligence Plat
 * **Partially Supported**: Some attributes are supported, but not the entire list.  
 * **Not Supported**: None of the attributes in this section are mapped to Actian concepts.
 
-> **Note:** Unsupported attributes or sections are ignored when the YAML file is ingested by the platform.
+!!! note
+    Unsupported attributes or sections are ignored when the YAML file is ingested by the platform.
+
 
 The following sections provide detailed attribute-level information for the fully and partially supported sections.
 
@@ -489,7 +493,9 @@ The Datasets tab lists all the datasets and their fields that compose the output
 **Data Model Tab**
 
 The Data model tab shows the relations between the datasets of the output ports.  
-> **Note:** These links can be specified through the YAML descriptors or through the Catalog API.
+!!! note
+    These links can be specified through the YAML descriptors or through the Catalog API.
+
 
 **Data Quality Tab and Status**
 

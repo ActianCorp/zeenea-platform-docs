@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Spotfire.
 * Zeenea traffic flows towards the server must be open.
 
-> **Note:** You can find the configuration file template in [tibco-spotfire-v2.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/tibco-spotfire-v2.conf).
+!!! note
+    You can find the configuration file template in [tibco-spotfire-v2.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/tibco-spotfire-v2.conf).
+
 
 ## Supported Versions
 
@@ -105,19 +107,20 @@ A visualization represents a Spotfire analysis.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Path
-  * Parent Id
-  * Created By Domain Name
-  * Modified By Domain Name
-  * Creation Date
-  * Modification Date
-  * Page Count
-  * Visualization Count
-  * Table Count
-  * Column Count
-  * Embed All Source Data
-  * Size
-  * Total Table Load Time
+
+    * Path
+    * Parent Id
+    * Created By Domain Name
+    * Modified By Domain Name
+    * Creation Date
+    * Modification Date
+    * Page Count
+    * Visualization Count
+    * Table Count
+    * Column Count
+    * Embed All Source Data
+    * Size
+    * Total Table Load Time
 
 ### Dataset
 
@@ -126,11 +129,12 @@ A dataset is a data set used in a Spotfire analysis.
 * **Name**
 * **Source Description**: Description not retrieved
 * **Technical Data**:
-  * Database type
-  * Catalog name
-  * Schema name
-  * Table type
-  * Dataset group
+
+    * Database type
+    * Catalog name
+    * Schema name
+    * Table type
+    * Dataset group
   
   
 ### Fields
@@ -144,9 +148,10 @@ Dataset field.
 * **Multivalued**: Not supported. Default value is `false`.
 * **Primary Key**: Not supported. Default value is `false`.
 * **Technical Data**:
-  * Technical Name
-  * Type
-  * Native type
+
+    * Technical Name
+    * Type
+    * Native type
 
 ## Unique Identifier Keys
 

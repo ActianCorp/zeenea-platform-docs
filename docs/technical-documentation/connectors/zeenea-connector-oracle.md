@@ -5,11 +5,15 @@
 * In order to connect an Oracle Database, an Oracle user with sufficient [permissions](#user-permissions) is required.
 * Zeenea traffic flows towards the database must be open.
 
-> **Important:** The Oracle JDBC driver is no longer provided with the connector starting from scanner version 41 (and beyond). Download the Oracle driver for your Oracle instance and move it to the /lib-ext folder of your scanner. You can find the driver in the sources provided by the vendor on their website: [https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html](https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html).
+!!! warning "Important"
+    The Oracle JDBC driver is no longer provided with the connector starting from scanner version 41 (and beyond). Download the Oracle driver for your Oracle instance and move it to the /lib-ext folder of your scanner. You can find the driver in the sources provided by the vendor on their website: [https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html](https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html).
+
 
 <br />
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -118,10 +122,11 @@ One dataset per table or view.
 * **Primary key**: Yes, shown on the impacted Field type assets
 * **Foreign keys**: Yes, not shown
 * **Technical Data**:
-  * schema name
-  * table name
-  * Table structure last update (LAST_DDL_TIME)
-  * Type, possible values:
+
+    * schema name
+    * table name
+    * Table structure last update (LAST_DDL_TIME)
+    * Type, possible values:
     * `CLUSTER`
     * `FUNCTION`
     * `INDEX`
@@ -152,7 +157,9 @@ A data process represents the request to build a view.
 
 ## Data Profiling
 
-> **Important:** The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+!!! warning "Important"
+    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+
 
 The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics in the following documentation: [Data Profiling](../../features-applications/cross-application-features/zeenea-data-profiling.md).
 

@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Azure Data Lake. 
 * Zeenea traffic flows towards the Data Lake must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -73,8 +75,8 @@ There is no specific authorization to be configured for Azure Gen 2. The connect
 
 Since version 54 of the scanner, the ADLS connector benefits from the feature of rich filters in the configuration of the connector. You can use the following keys to filter objects during inventory:
 
-  * `container`: The name of the container.
-  * `path`: The path of the file in the container.
+    * `container`: The name of the container.
+    * `path`: The path of the file in the container.
 
 Paths don't start with slashes for all file systems for consistency reasons between connectors. (The choice was made based on S3 choice where the slash has no specific meaning and is only a convention).
 
@@ -107,8 +109,9 @@ A dataset is identified according to the connector's rules.
 * **Name**
 * **Source Description**: Not supported
 * **Technical Data**: 
-  * File Format
-  * File Path
+
+    * File Format
+    * File Path
 
 ### Fields
 
@@ -119,8 +122,9 @@ A dataset is identified according to the connector's rules.
 * **Multivalued**: Depending on the field settings (`ORC` and `parquet`). Default value `No`.
 * **Primary Key**: Not supported. Default value `No`.
 * **Technical Data**: 
-  * Technical Name: Field technical name
-  * Native type: Field native type
+
+    * Technical Name: Field technical name
+    * Native type: Field native type
  
 ## Unique Identifier Keys
 

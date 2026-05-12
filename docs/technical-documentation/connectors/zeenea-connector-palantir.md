@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Palantir. 
 * Zeenea traffic flows towards the data source must be open.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -64,7 +66,9 @@ In order to establish a connection with a Palantir instance, specifying the foll
 | `proxy.username` | Proxy username |
 | `proxy.password` | Proxy account password |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
  
 ## User Permissions
 
@@ -97,15 +101,15 @@ If a file is configured, the connector will connect to the file system to retrie
 If no file is provided to the connector, it will automatically discover available objects with the following calls:
 
 * If `from_datacatalog` option value is **false**:
-  * `/compass/api/all-resources`: To get the list of available resources
+    * `/compass/api/all-resources`: To get the list of available resources
 * If `from_datacatalog` option value is **true**:
-  * `/compass/api/collections`: To get the list of available collections
-  * `/compass/api/collections/{collection.rid}/children`: To get collections datasets
-  * `/compass/api/resources/{rid}`: To get the name of a collection dataset
+    * `/compass/api/collections`: To get the list of available collections
+    * `/compass/api/collections/{collection.rid}/children`: To get collections datasets
+    * `/compass/api/resources/{rid}`: To get the name of a collection dataset
 * If with_ontology option value is **true**:
-  * `/phonograph2/api/objects/registry/ontology/all`: To get the list of available objects
-  * `/ontology-metadata/api/ontology/ontology/bulkLoadEntities`: To get objects datasets
-  * `/compass/api/resources/{rid}`: To get the name of an object dataset
+    * `/phonograph2/api/objects/registry/ontology/all`: To get the list of available objects
+    * `/ontology-metadata/api/ontology/ontology/bulkLoadEntities`: To get objects datasets
+    * `/compass/api/resources/{rid}`: To get the name of an object dataset
 
 The import is done with the following calls:
 
@@ -124,16 +128,17 @@ Inventory can be conducted from a file stored on the cloud/local storage, or the
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Project
-  * Location
-  * Dataset Format
-  * Organization
-  * Creation Date
-  * Modification Date
-  * From
-  * Collections
-  * Object Types
-  * Marking
+
+    * Project
+    * Location
+    * Dataset Format
+    * Organization
+    * Creation Date
+    * Modification Date
+    * From
+    * Collections
+    * Object Types
+    * Marking
 
 ### Field
 
@@ -146,9 +151,10 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary key**: Not supported. Default value `false`.
 * **Technical Data**:
-  * Technical Name
-  * Native type: field native type
-  * Object Types
+
+    * Technical Name
+    * Native type: field native type
+    * Object Types
 
 ## Object Identification Keys
  

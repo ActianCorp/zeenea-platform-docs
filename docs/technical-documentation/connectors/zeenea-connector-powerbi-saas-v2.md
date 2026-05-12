@@ -8,7 +8,9 @@
    * [https://login.microsoftonline.com](https://login.microsoftonline.com)
    * [https://api.powerbi.com](https://api.powerbi.com)
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -18,7 +20,9 @@ The Power BI Online (V2) connector is compatible with the product online version
 
 You can download the Power BI Online (V2) plugin from [Zeenea Connector Downloads](./zeenea-connectors-list.md).
 
-> **ATTENTION:** The Power BI Online (V2) connector is now integrated into the Microsoft Fabric plugin. If you are upgrading from a previous version, make sure to download the appropriate plugin and delete the existing Power BI plugin archive. <br />Migrating from Power BI (V1) connector to PowerBI (V2) connector requires specific operations. Contact customer service to assist you in this migration.
+!!! warning "Attention"
+    The Power BI Online (V2) connector is now integrated into the Microsoft Fabric plugin. If you are upgrading from a previous version, make sure to download the appropriate plugin and delete the existing Power BI plugin archive. <br />Migrating from Power BI (V1) connector to PowerBI (V2) connector requires specific operations. Contact customer service to assist you in this migration.
+
 
 For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
@@ -192,24 +196,24 @@ Read more: [Universal Filters](../scanners/zeenea-universal-filters.md)
 To extract information, the connector runs successively the following API requests:
 
 * **GET** ` https://api.powerbi.com/v1.0/myorg/admin/workspaces/modified`: 
-  * Response: To get the workspaces list excluding personal workspaces.
+    * Response: To get the workspaces list excluding personal workspaces.
 * **POST** ` https://api.powerbi.com/v1.0/myorg/admin/workspaces/getInfo`:
-  * Parameter: Workspaces list (100 workspaces limit)
-  * Response: Scan identifier
+    * Parameter: Workspaces list (100 workspaces limit)
+    * Response: Scan identifier
 * **GET** `https://api.powerbi.com/v1.0/myorg/admin/workspaces/scanStatus/`:
-  * Parameter: Scan identifier
-  * Response: Scan status: `NOT_STARTED`, `RUNNING`, `SUCCEEDED`
+    * Parameter: Scan identifier
+    * Response: Scan status: `NOT_STARTED`, `RUNNING`, `SUCCEEDED`
 * **GET** `https://api.powerbi.com/v1.0/myorg/admin/workspaces/scanResult/`:
-  * Parameter: Scan identifier
-  * Response: Object with all the metadata of report from scanned workspaces
+    * Parameter: Scan identifier
+    * Response: Object with all the metadata of report from scanned workspaces
 * **GET** `https://api.powerbi.com/v1.0/myorg/admin/apps`:
-  * Response: Object with all the apps in the organization
+    * Response: Object with all the apps in the organization
 * **GET** `https://api.powerbi.com/v1.0/myorg/groups/<workspace_id>/reports/<report_id>/pages`:
-  * Parameters: Workspace ID and Report ID
-  * Response: Object with all the pages within the specified report from the specified workspace
+    * Parameters: Workspace ID and Report ID
+    * Response: Object with all the pages within the specified report from the specified workspace
 * **GET** `https://api.powerbi.com/v1.0/myorg/groups/<workspace_id>/reports/<report_id>/export`:
-  * Parameters: Workspace ID and Report ID
-  * Response: PBIX file of the specified report from the specified workspace
+    * Parameters: Workspace ID and Report ID
+    * Response: PBIX file of the specified report from the specified workspace
 
 ## Collected Metadata
 
@@ -232,7 +236,9 @@ The following table summarizes the possible values of the `alias` parameter to b
 | [Oracle](./zeenea-connector-oracle.md) | Server name:port/Service Name | `alias = ["oracle.example.com:1521/XE"]` |
 | [Denodo](./zeenea-connector-denodo.md) | Server name:ODBC port | `alias = ["denodo.database.com:9996"]` |
 
-> **Note:** The connector creates a data process object for each dataset from Power BI Online (V2) to represent the link with the source dataset (even if the source dataset is not present in the catalog).
+!!! note
+    The connector creates a data process object for each dataset from Power BI Online (V2) to represent the link with the source dataset (even if the source dataset is not present in the catalog).
+
 
 ### Visualization
 
@@ -242,16 +248,17 @@ A visualization object is a Power BI report.
 * **Source Description**
 * **Contacts**
 * **Technical Data**:
-  * Report WebURL: Link to the report
-  * Report Type
-  * Workspace Name
-  * Application: URL to the PowerBI application which this report is attached
-  * Source Server Name
-  * Created By
-  * Creation Date
-  * Modified By
-  * Modified Date
-  * Report's page
+
+    * Report WebURL: Link to the report
+    * Report Type
+    * Workspace Name
+    * Application: URL to the PowerBI application which this report is attached
+    * Source Server Name
+    * Created By
+    * Creation Date
+    * Modified By
+    * Modified Date
+    * Report's page
 
 ### Dataset
 
@@ -260,10 +267,11 @@ A dataset is a table inside a PowerBI semantic model.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * PowerBI Dataset: Name of the PowerBI dataset
-  * Workspace: Link to PowerBI workspace
-  * Semantic Model: Link to PowerBI semantic model
-  * Power Query
+
+    * PowerBI Dataset: Name of the PowerBI dataset
+    * Workspace: Link to PowerBI workspace
+    * Semantic Model: Link to PowerBI semantic model
+    * Power Query
 
 ### Field
 
@@ -276,10 +284,11 @@ Dataset field or measure.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Not supported. Default value `false`.
 * **Technical Data**: 
-  * Technical Name
-  * Native type
-  * Type
-  * Expression
+
+    * Technical Name
+    * Native type
+    * Type
+    * Expression
 
 ### Data Process
 

@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Agile Data Engine.
 * Zeenea traffic flows towards the data source must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
  
 ## Supported Versions
 
@@ -64,9 +66,9 @@ A data process is an Agile Data Engine workflow load.
 * **Name**: Workflow load identifier
 * **Source Description**
 * **Technical Data**: 
-  * Workflow Name
-  * Workflow Cron
-  * Target Entity Package
+    * Workflow Name
+    * Workflow Cron
+    * Target Entity Package
  
 ## Unique Identifier Keys
 

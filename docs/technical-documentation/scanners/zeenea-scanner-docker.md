@@ -1,6 +1,8 @@
 # Creating a Docker Image for your Scanner
 
-> **Disclaimer:** This Docker documentation is provided as an example. Adapt it to your context, following the online documentation about how to run a Zeenea Scanner.
+!!! note "Disclaimer"
+    This Docker documentation is provided as an example. Adapt it to your context, following the online documentation about how to run a Zeenea Scanner.
+
 
 ## Introduction
 

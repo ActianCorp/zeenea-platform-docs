@@ -5,11 +5,15 @@
 * In order to establish a connection to IBM DB2, the user must have sufficient [permissions](#user-permissions).
 * Zeenea traffic flows towards DB2 must be open.  
 
-> **Important:** The DB2 driver is not delivered with the connector with scanner version 34 and later. Download the DB2 driver related to your DB2 instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://www.ibm.com/support/pages/db2-jdbc-driver-versions-and-downloads](https://www.ibm.com/support/pages/db2-jdbc-driver-versions-and-downloads). <br />For the **DB2 for i** version, use the jt400 driver: [https://www.ibm.com/docs/fr/was/9.0.5?topic=variables-configuring-toolbox-java](https://www.ibm.com/docs/fr/was/9.0.5?topic=variables-configuring-toolbox-java).
+!!! warning "Important"
+    The DB2 driver is not delivered with the connector with scanner version 34 and later. Download the DB2 driver related to your DB2 instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://www.ibm.com/support/pages/db2-jdbc-driver-versions-and-downloads](https://www.ibm.com/support/pages/db2-jdbc-driver-versions-and-downloads). <br />For the **DB2 for i** version, use the jt400 driver: [https://www.ibm.com/docs/fr/was/9.0.5?topic=variables-configuring-toolbox-java](https://www.ibm.com/docs/fr/was/9.0.5?topic=variables-configuring-toolbox-java).
+
 
 <br />
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -100,10 +104,11 @@ A dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Catalog: source catalog
-  * Schema: source schema
-  * Table: table name
-  * Type:
+
+    * Catalog: source catalog
+    * Schema: source schema
+    * Table: table name
+    * Type:
     * Alias
     * Clone table
     * Accelerator-only table
@@ -131,9 +136,10 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Depending on the "Primary Key" field attribute
 * **Technical Data**:
-  * Catalog: source catalog
-  * Last Alter Time: last modification date
-  * Table: source table name
+
+    * Catalog: source catalog
+    * Last Alter Time: last modification date
+    * Table: source table name
  
 ## Object Identification Keys
 

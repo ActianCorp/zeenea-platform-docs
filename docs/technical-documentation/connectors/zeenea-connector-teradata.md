@@ -5,11 +5,15 @@
 * In order to establish a connection with Teradata, a user with sufficient [permissions](#user-permissions) is required.
 * Zeenea traffic flows towards the database must be opened.  
 
-> **Important:** The Teradata driver is not delivered with the connector with scanner version 34 and later. Download the Teradata driver related to your Teradata instance and move it into the `/lib-ext` folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://downloads.teradata.com/download/connectivity/jdbc-driver](https://downloads.teradata.com/download/connectivity/jdbc-driver).
+!!! warning "Important"
+    The Teradata driver is not delivered with the connector with scanner version 34 and later. Download the Teradata driver related to your Teradata instance and move it into the `/lib-ext` folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://downloads.teradata.com/download/connectivity/jdbc-driver](https://downloads.teradata.com/download/connectivity/jdbc-driver).
+
 
 <br />
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -47,11 +51,15 @@ In order to establish a connection with Teradata, specifying the following param
 | `cache.folder` | The size of the cache file produced depends on the number of tables in the database (and not on the number of tables imported into Zeenea). If the folder is not specified, the cache is stored in memory. |
 | `cache.ttl` | Cache validity period (default `12h`). As long as the cache is valid, requests that fill it are not executed. |
 
-> **Note:** In order to read data with the desired encoding CHARSET, you have to add "CHARSET=" parameter to the JDBC URL.
+!!! note
+    In order to read data with the desired encoding CHARSET, you have to add "CHARSET=" parameter to the JDBC URL.
+
 Here is an exhaustive list of all encoding types :
 [https://teradata-docs.s3.amazonaws.com/doc/connectivity/jdbc/reference/current/jdbcug_chapter_2.html#URL_CHARSET](https://teradata-docs.s3.amazonaws.com/doc/connectivity/jdbc/reference/current/jdbcug_chapter_2.html#URL_CHARSET)
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 ## User Permissions
 
@@ -91,11 +99,12 @@ Here, a dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Schema
-  * Table
-  * Last Alter Time
-  * Type
-  * Roles
+
+    * Schema
+    * Table
+    * Last Alter Time
+    * Type
+    * Roles
 
 ### Field
 
@@ -108,13 +117,16 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Depending on field settings
 * **Technical Data**:
-  * Technical Name: field technical name
-  * Native type: field native type
-  * Field Size
+
+    * Technical Name: field technical name
+    * Native type: field native type
+    * Field Size
 
 ## Data Profiling
 
-> **Important:** The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+!!! warning "Important"
+    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+
 
 The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics in the following documentation: [Data Profiling](../../features-applications/cross-application-features/zeenea-data-profiling.md).
  

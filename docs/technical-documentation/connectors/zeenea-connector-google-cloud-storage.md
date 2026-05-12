@@ -5,7 +5,9 @@
 * In order to establish a connection to Google Cloud Storage, a user with sufficient [permissions](#user-permissions) is required.
 * Zeenea traffic flow towards Google Cloud Storage must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -86,9 +88,10 @@ A dataset is a data source that has been identified as such, as per the rules of
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Bucket: Source bucket
-  * File format
-  * File location
+
+    * Bucket: Source bucket
+    * File format
+    * File location
 
 ### Field
 
@@ -101,8 +104,9 @@ Dataset field.
 * **Multivalued**: Depending on the field settings (`ORC` and `parquet`). Default value `No`.
 * **Primary Key**: Not supported. Default value `No`.
 * **Technical Data**:
-  * Technical Name: Field technical name
-  * Native type: Field native type
+
+    * Technical Name: Field technical name
+    * Native type: Field native type
  
 ## Object Identification Keys
 

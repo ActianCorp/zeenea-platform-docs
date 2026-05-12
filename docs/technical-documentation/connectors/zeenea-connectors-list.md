@@ -1,12 +1,12 @@
 # Zeenea Connector Downloads
 
-> **Note:** 
-> 
-> * Some plugins require a minimum version of the scanner.
-> * The latest version of the scanner can be downloaded from your instance: `https://[instance-name].zeenea.app/admin/settings/scanners`
-> * A plugin can contain several connectors.
-> * Template files for configuring each connector are available in the [Github repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
-> * For more information about installation, see [Zeenea Scanner Setup](../scanners/zeenea-scanner-setup.md).
+!!! note
+    * Some plugins require a minimum version of the scanner.
+    * The latest version of the scanner can be downloaded from your instance: `https://[instance-name].zeenea.app/admin/settings/scanners`
+    * A plugin can contain several connectors.
+    * Template files for configuring each connector are available in the [Github repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+    * For more information about installation, see [Zeenea Scanner Setup](../scanners/zeenea-scanner-setup.md).
+
 
 | Connector | Plugin | Scanner minimum version | Download Link |
 |---|---|---|---|

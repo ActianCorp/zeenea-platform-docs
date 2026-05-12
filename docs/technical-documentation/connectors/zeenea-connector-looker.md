@@ -4,12 +4,16 @@
 
 To connect to the Looker platform, the running user must have access to the required Dashboards.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
 The Looker connector is compatible with the SaaS Looker instances hosted on Google Cloud (`*.cloud.looker.com`). 
-> **Note:** Legacy AWS-hosted Looker instances (URLs without `cloud`) are not supported.
+!!! note
+    Legacy AWS-hosted Looker instances (URLs without `cloud`) are not supported.
+
 
 ## Installing the Plugin
 
@@ -77,7 +81,9 @@ The Looker connector is able to retrieve the lineage between datasets that have 
 |---|---|
 | [BigQuery](./zeenea-connector-google-bigquery.md) | BigQuery project name |
 
-> **Note:** The connector creates a data process object for each dataset from Looker to represent the link with the source dataset (even if the source dataset is not present in the catalog).
+!!! note
+    The connector creates a data process object for each dataset from Looker to represent the link with the source dataset (even if the source dataset is not present in the catalog).
+
 
 ### Visualization
 
@@ -87,10 +93,11 @@ A Visualization is a Looker Dashboard.
 * **Source Description**: Dashboard label
 * **Datasets**: All datasets referenced in the Dashboard
 * **Technical Data**:
-  * Creation date: Creation date
-  * Parent space: space containing the Dashboard
-  * Last visualization date: Last visualization date
-  * Number of views by web UI: Number of views by web UI
+
+    * Creation date: Creation date
+    * Parent space: space containing the Dashboard
+    * Last visualization date: Last visualization date
+    * Number of views by web UI: Number of views by web UI
 
 ### Dataset
 
@@ -99,10 +106,11 @@ A dataset is a Data source used in a Looker Dashboard.
 * **Name**
 * **Source Description**: Dataset label
 * **Technical Data**:
-  * Explore name: Explore name Looker
-  * Schema name: Schema name as it’s described in the database called
-  * Model name: Model name
-  * Connection name: Connection name
+
+    * Explore name: Explore name Looker
+    * Schema name: Schema name as it’s described in the database called
+    * Model name: Model name
+    * Connection name: Connection name
 
 ### Field
 
@@ -115,7 +123,8 @@ Dataset field. Can be used as a Dashboard report data.
 * **Multivalued**: `false` (default)
 * **Primary Key**: `false` (default)
 * **Technical Data**:
-  * Field type: Is the field whether a dimension or a measure
+
+    * Field type: Is the field whether a dimension or a measure
 
 ### Data Process
 

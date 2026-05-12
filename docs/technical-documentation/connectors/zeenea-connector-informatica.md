@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Informatica Data Integration.
 * Zeenea traffic flows towards the data source must be open.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -71,11 +73,12 @@ A data process is an Informatica workflow.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * ID
-  * Created At
-  * Created By
-  * Updated At
-  * Updated By
+
+    * ID
+    * Created At
+    * Created By
+    * Updated At
+    * Updated By
 
 ## Unique Identifier Keys
  

@@ -23,7 +23,9 @@ It is also possible to directly extend all available lineage levels. To do this,
 * Open all lineage levels
 * Click on a diagram element to open its documentation preview (description, properties, etc.)
 
-> **Note:** The same Item can be represented several times in the lineage if it is involved in several branches of the graph.
+!!! note
+    The same Item can be represented several times in the lineage if it is involved in several branches of the graph.
+
 
 ## Actions menu
 

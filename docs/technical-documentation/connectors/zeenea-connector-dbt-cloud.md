@@ -4,7 +4,9 @@
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with DBT Cloud.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -73,14 +75,15 @@ A data process is a DBT Cloud job link between each nodes.
 * **Input**: Input datasets
 * **Output**: Output datasets
 * **Technical Data**:
-  * Type
-  * Package
-  * Alias
-  * Unique ID
-  * Created At
-  * SQL File Path
-  * SQL Dialect
-  * SQL Query
+
+    * Type
+    * Package
+    * Alias
+    * Unique ID
+    * Created At
+    * SQL File Path
+    * SQL Dialect
+    * SQL Query
 
 ## Unique Identifier Keys
  

@@ -14,13 +14,17 @@ To create a new Watchlist:
 
 To create a Watchlist, at least one Item type must be selected via the **Item** filter or via a **Scope** in the search bar.
 
-> **Note:** Keywords entered in the search bar are ignored when creating your Watchlist.
+!!! note
+    Keywords entered in the search bar are ignored when creating your Watchlist.
+
 
   ![](./images/zeenea-watchlist-new.png)
 
 Once created, your Watchlist is automatically added to your dashboard with the corresponding count of Items.
 
-> **Note:** You can't have more than 10 Watchlists.
+!!! note
+    You can't have more than 10 Watchlists.
+
 
   ![](./images/zeenea-watchlist-new.png)
 

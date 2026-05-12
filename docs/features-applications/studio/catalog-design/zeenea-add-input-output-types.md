@@ -10,4 +10,5 @@ To do this, click the **Edit Item Type** button (pen icon) in front of the Data 
 
 In this mode, select the Custom Item Types with which you wish to allow Data Stewards to create links as inputs to your Processes. Then select those for which you wish to create output links.
 
-> **Note:** It is impossible to delete the link with the Dataset type. To remove a link with a custom type, first, make sure that there are no more links in your catalog between Treatments and Objects of the selected type.
+!!! note
+    It is impossible to delete the link with the Dataset type. To remove a link with a custom type, first, make sure that there are no more links in your catalog between Treatments and Objects of the selected type.

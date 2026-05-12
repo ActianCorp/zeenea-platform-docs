@@ -5,11 +5,15 @@
 * In order to establish a connection with Sybase IQ, a user with sufficient [permissions](#user-permissions) is required.
 * Zeenea traffic flows towards Sybase IQ must be open. 
 
-> **Important:** The Sybase IQ driver is not delivered with the connector with scanner version 34 and later. Download the Sybase IQ driver related to your Sybase IQ instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [http://www.sybase.com/products/allproductsa-z/softwaredeveloperkit/jconnect](http://www.sybase.com/products/allproductsa-z/softwaredeveloperkit/jconnect)
+!!! warning "Important"
+    The Sybase IQ driver is not delivered with the connector with scanner version 34 and later. Download the Sybase IQ driver related to your Sybase IQ instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [http://www.sybase.com/products/allproductsa-z/softwaredeveloperkit/jconnect](http://www.sybase.com/products/allproductsa-z/softwaredeveloperkit/jconnect)
+
 
 <br />
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -40,7 +44,9 @@ In order to establish a connection with SybaseIQ, specifying the following param
 | `connection.username` | Username |
 | `connection.password` | User password |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 ## User Permissions
 
@@ -71,8 +77,9 @@ Here, a dataset is a table.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Schema: source schema
-  * Table: table name
+
+    * Schema: source schema
+    * Table: table name
 
 ### Field
 
@@ -85,8 +92,9 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `FALSE`.
 * **Primary Key**: Based on the "Primary Key" field attribute
 * **Technical Data**:
-  * Technical Name
-  * Native type: Field native type
+
+    * Technical Name
+    * Native type: Field native type
 
 ## Object Identification Keys
 

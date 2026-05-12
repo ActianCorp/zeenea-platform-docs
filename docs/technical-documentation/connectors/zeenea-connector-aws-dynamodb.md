@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with DynamoDB.
 * Zeenea traffic flows towards the data source must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -91,10 +93,11 @@ A dataset is a DynamoDB table.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * AWS Region
-  * Creation Date
-  * Items Count
-  * Table Size
+
+    * AWS Region
+    * Creation Date
+    * Items Count
+    * Table Size
 
 ### Field
 
@@ -107,9 +110,10 @@ Dataset field.
 * **Multivalued**: Not supported. The default value is `false`.
 * **Primary Key**: Depends on the `Primary Key` field attribute.
 * **Technical Data**:
-  * Technical Name
-  * Native type: Field native type
-  * Field Kind
+
+    * Technical Name
+    * Native type: Field native type
+    * Field Kind
 
 ## Object Identification Keys
 

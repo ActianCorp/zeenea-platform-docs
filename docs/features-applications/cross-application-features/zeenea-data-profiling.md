@@ -46,7 +46,9 @@ Box plots give a comprehensive view of statistical information, simply and visua
 
 They especially focus on the first and third quartile as well as the median. The whiskers themselves are calculated by multiplying the IQR (Inter Quartile Range) by 1.5. 
 
-> **Note:** If the data doesn't extend beyond their extremities, then the whiskers take the minimum and maximum value of the data.
+!!! note
+    If the data doesn't extend beyond their extremities, then the whiskers take the minimum and maximum value of the data.
+
 
 ## Enabling Data Profiling
 

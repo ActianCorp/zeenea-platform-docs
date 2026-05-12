@@ -41,7 +41,9 @@ Select the **Show already imported** checkbox to view the items already imported
 
 You can now add one or more Curators to datasets when importing them. These will be the Stewards in charge of documenting the imported datasets. 
 
-> **Note:** If a user requesting the import does not have permission to edit unassigned items, they will be automatically set as a curator for these newly-imported items.
+!!! note
+    If a user requesting the import does not have permission to edit unassigned items, they will be automatically set as a curator for these newly-imported items.
+
 
 ### Step 4: Contact (Optional)
 
@@ -55,7 +57,9 @@ For datasets only, it is possible to specify a category among those already crea
 
 Before final confirmation, a summary of the operations to be carried out is proposed in the last stage.
 
-> **Important:** After confirmation, the window is closed and the import is performed asynchronously. The operation may take several minutes depending on the number of items selected.
+!!! warning "Important"
+    After confirmation, the window is closed and the import is performed asynchronously. The operation may take several minutes depending on the number of items selected.
+
 
 ## Specificities of certain imports
 

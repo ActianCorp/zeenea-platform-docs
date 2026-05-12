@@ -13,7 +13,9 @@ This connector is deprecated. You can use the new [ZDF Lineage](zeenea-connector
 The technical user the scanner is executed with must have sufficient [permissions](#p100171 "title: Generic Lineage (Deprecated)") to be able to process the metadata. 
 
 <!-- #p100057 -->
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 <!-- #p100063 -->
 ## Supported Versions

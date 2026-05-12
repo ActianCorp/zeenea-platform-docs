@@ -8,9 +8,9 @@ There are two ways to authenticate the Zeenea Agent on S3:
 
 * Either the Agent's host server has sufficient credentials to connect to S3 (recommended way). 
   In this case, available authentication methods are: 
-  * Instance Role
-  * Environment Variable
-  * Configuration File
+    * Instance Role
+    * Environment Variable
+    * Configuration File
 * Or, the API Keys are managed by Zeenea. In this case, the keys need to be entered in the connection configuration file.
 
 Traffic flows toward S3 must be open. 
@@ -19,7 +19,9 @@ Traffic flows toward S3 must be open.
 | :--- | :--- | :--- |
 | AWS S3 | HTTPS | 443 |
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
  
 ## Supported Versions
 
@@ -162,9 +164,10 @@ A dataset is defined by the Dataset Definition Algorithm.
 * **Name**
 * **Source Description**: Not supported, `NULL` by default
 * **Technical Data**: 
-  * Bucket: Data Source bucket
-  * File Format: Source File Format
-  * File Location: Source File Location
+
+    * Bucket: Data Source bucket
+    * File Format: Source File Format
+    * File Location: Source File Location
  
 ### Field
 
@@ -177,8 +180,9 @@ Dataset field.
 * **Multivalued**: Depending on the field settings (`ORC` and `parquet`). Default value `No`.
 * **Primary Key**: Not supported. Default value `No`.
 * **Technical Data**: 
-  * Technical Name: field technical name
-  * Native type: field native type
+
+    * Technical Name: field technical name
+    * Native type: field native type
  
 ## Object Identification Keys
 

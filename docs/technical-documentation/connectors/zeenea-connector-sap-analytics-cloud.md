@@ -9,7 +9,9 @@
 - <!-- #p100039 -->
   Zeenea traffic flows towards the data source must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 <!-- #p100051 -->
 ## Supported Versions
@@ -57,7 +59,9 @@ In order to establish a connection with SAP Analytics Cloud, specifying the foll
 | `proxy.password` | Proxy account password |
 
 <!-- #p100132 -->
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 <!-- #p100138 -->
 ## User Permissions

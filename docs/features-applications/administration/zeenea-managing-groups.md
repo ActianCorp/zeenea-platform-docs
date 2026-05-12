@@ -1,6 +1,8 @@
 # Managing Groups
 
-> **Note:** Groups replace Permission sets to manage user permissions in Zeenea. Existing permission sets have already been automatically migrated to Groups with the same descriptions and scopes. 
+!!! note
+    Groups replace Permission sets to manage user permissions in Zeenea. Existing permission sets have already been automatically migrated to Groups with the same descriptions and scopes.
+
 
 Groups allow you to manage user permissions in Zeenea. You can manage groups from the Administration section.
 
@@ -87,4 +89,5 @@ You can edit a group at any time to adjust its basic information (name, descript
 
 You can delete a group only if there are no users left in this group.
 
-> **Note:** You can not edit or delete the Super Admin group for security reasons.
+!!! note
+    You can not edit or delete the Super Admin group for security reasons.

@@ -65,6 +65,7 @@ Moreover, if a Custom Item-specific property has been tagged as “Use as filter
 
 If you’re using hierarchical links between Custom Items, you may also add use the Parent object as a filter (in our previous example, if you were to filter on the “Marketing” Entity, all objects linked to either the Entity itself or any Application whose parent is the “Marketing” entity). 
 
-> **Important:** Zeenea does not restrict link creation between Custom Items. It is the Data Steward(s) responsibility to ensure that each link created is relevant to the use case, and that the organization remains comprehensible. 
->
-> Customized objects allow the documentation of native technical objects to be completed by the addition of logical or organizational concepts and therefore complement the glossary which represents the semantic layer.
+!!! warning "Important"
+    Zeenea does not restrict link creation between Custom Items. It is the Data Steward(s) responsibility to ensure that each link created is relevant to the use case, and that the organization remains comprehensible.
+
+    Customized objects allow the documentation of native technical objects to be completed by the addition of logical or organizational concepts and therefore complement the glossary which represents the semantic layer.

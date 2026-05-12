@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Matillion.
 * Zeenea traffic flows towards the ELT must be open.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -145,13 +147,14 @@ A data process is a Matillion transformation.
 * **Input**: Input datasets
 * **Output**: Output datasets
 * **Technical Data**:
-  * Group
-  * Project
-  * Version
-  * Id
-  * Name
-  * Description
-  * Creation Date
+
+    * Group
+    * Project
+    * Version
+    * Id
+    * Name
+    * Description
+    * Creation Date
 
 ## Unique Identifier Keys
  

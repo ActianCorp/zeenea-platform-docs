@@ -18,7 +18,9 @@ Bulk publishing can be done on:
 
     ![](./images/zeenea-editing-item-docs.png)
 
-> **Note:** The update is performed asynchronously. You may need to refresh the page to see changes made to the selected items.
+!!! note
+    The update is performed asynchronously. You may need to refresh the page to see changes made to the selected items.
+
 
 ## Adding Contacts
 
@@ -36,7 +38,9 @@ To add contacts:
 
     ![](./images/zeenea-contacts-add.png)
 
-> **Note:** An item can be assigned several times to the same contact with different responsibilities. In the same way, several contacts may share a responsibility.
+!!! note
+    An item can be assigned several times to the same contact with different responsibilities. In the same way, several contacts may share a responsibility.
+
 
 ## Adding Curators
 
@@ -65,7 +69,9 @@ To manage properties:
 3. Click the "Confirm" button to close the window and start the update.
 4. Once one por more properties are submitted, the values can be filled in in the same way as on the detailed page of an item.
 
-> **Important:** The property bulk editing feature works in "undo and replace" mode. The values previously filled in on the selected items will therefore be overwritten.
+!!! warning "Important"
+    The property bulk editing feature works in "undo and replace" mode. The values previously filled in on the selected items will therefore be overwritten.
+
 
 Leave a property empty to reset the value of this field for the selected items.
 

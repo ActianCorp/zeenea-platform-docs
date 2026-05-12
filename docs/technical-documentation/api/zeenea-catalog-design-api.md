@@ -48,7 +48,9 @@ If you wish to test your queries before running them, you can use the Playground
 https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/catalog/playground 
 </pre>
 
-> **Note:** To use the APIs with Playground, you will need a valid API Key in the "HTTP Headers" tab.
+!!! note
+    To use the APIs with Playground, you will need a valid API Key in the "HTTP Headers" tab.
+
 
 ![](./images/zeenea-playground-key.png)
 

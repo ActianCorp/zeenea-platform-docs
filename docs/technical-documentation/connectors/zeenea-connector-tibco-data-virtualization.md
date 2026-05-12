@@ -5,14 +5,16 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Tibco Data Virtualization (TDV).
 * Zeenea traffic flows towards the database must be open.
 
-> **Important:**
-> 
-> * The TDV connector is compatible with **scanner version 34** and later.
-> * **The Tibco driver is not delivered with the connector**. Download the Tibco driver related to your TDV instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://edelivery.tibco.com/storefront/eval/tibco-data-virtualization/prod11801.html](https://edelivery.tibco.com/storefront/eval/tibco-data-virtualization/prod11801.html)
+!!! warning "Important"
+    * The TDV connector is compatible with **scanner version 34** and later.
+    * **The Tibco driver is not delivered with the connector**. Download the Tibco driver related to your TDV instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://edelivery.tibco.com/storefront/eval/tibco-data-virtualization/prod11801.html](https://edelivery.tibco.com/storefront/eval/tibco-data-virtualization/prod11801.html)
+
 
 <br />
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -42,7 +44,9 @@ In order to establish a connection with a TDV instance, the following parameters
 | `connection.password` | User password |
 | `lineage` | Option for lineage feature activation. Default value `false`. |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 ## User Permissions
 
@@ -76,11 +80,12 @@ A dataset is a published view.
 * **Name**
 * **Description**
 * **Technical Data**:
-  * Composite Container Name
-  * Catalog Name
-  * Schema Name
-  * Creation Date
-  * Last Modification Date
+
+    * Composite Container Name
+    * Catalog Name
+    * Schema Name
+    * Creation Date
+    * Last Modification Date
 
 ### Field
 
@@ -93,9 +98,10 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary key**: Depending on the "Primary Key" field attribute
 * **Technical Data**:
-  * Technical Name
-  * Native type: field native type
-  * Column Length:
+
+    * Technical Name
+    * Native type: field native type
+    * Column Length:
     * For CHAR or VARCHAR columns, the max length allowed.
     * For DECIMAL or NUMERIC columns, the total number of digits is the column length value.
     * If it is not one of these four types, the value is NULL.

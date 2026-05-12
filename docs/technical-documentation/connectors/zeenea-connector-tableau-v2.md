@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with the Tableau solution. Please read [User Permissions](#user-permissions) below.
 * The Zeenea traffic flows towards Tableau must be open. If you want to connect Zeenea to a Tableau installed on your own server, you must activate the Tableau API Metadata. See documentation here: [https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server](https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server)
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -13,7 +15,9 @@ The Tableau connector was tested on the SaaS solution.
 
 ## Installing the Plugin
 
-> **Warning:** Migrating from Tableau (V1) connector to Tableau (V2) connector will need specific operations. Please contact customer service to assist you in this migration.
+!!! warning
+    Migrating from Tableau (V1) connector to Tableau (V2) connector will need specific operations. Please contact customer service to assist you in this migration.
+
 
 The Tableau plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
 
@@ -130,12 +134,13 @@ A Visualization is a Tableau workbook.
 * **Name**
 * **Description**
 * **Technical Data**:
-  * Project
-  * Workbook
-  * Workbook URL
-  * Created at
-  * Updated at
-  * Contact: Link to the already created contact in the catalog
+
+    * Project
+    * Workbook
+    * Workbook URL
+    * Created at
+    * Updated at
+    * Contact: Link to the already created contact in the catalog
   
 ### Dataset
 
@@ -155,8 +160,9 @@ Dataset field. Can be used as a Tableau report metric.
 * **Multivalued**: `false` (default)
 * **Primary Key**: `false` (default)
 * **Technical Data**:
-  * Technical Name
-  * Native type: Field native type
+
+    * Technical Name
+    * Native type: Field native type
 
 ### Data Process
 

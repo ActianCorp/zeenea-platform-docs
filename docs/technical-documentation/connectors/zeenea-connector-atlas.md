@@ -5,7 +5,9 @@
 * In order to establish a connection to an Atlas data catalog, the user must have sufficient permissions.
 * Zeenea traffic flows towards Atlas must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -63,12 +65,14 @@ The available types are listed below:
 
 In order to gather metadata from Atlas, the connector first references **datasets** and **fields**, but it will also retrieve the Data Process used in Atlas to build a Dataset. This allows Zeenea to build the entirety of the **process**, and the lineage.
 
-> **Important:** The Atlas connector behavior is very specific, and must be taken into account when deploying the connector. When a dataset is imported or updated, the connector will also import: 
-> 1. The selected Dataset
-> 2. Any Data Process of which the selected dataset is an output
-> 3. Any Data Process of which the selected Dataset is an input
->
-> Note that, in the case of updates, they are by default scheduled to be done daily.
+!!! warning "Important"
+    The Atlas connector behavior is very specific, and must be taken into account when deploying the connector. When a dataset is imported or updated, the connector will also import:
+    1. The selected Dataset
+    2. Any Data Process of which the selected dataset is an output
+    3. Any Data Process of which the selected Dataset is an input
+
+    Note that, in the case of updates, they are by default scheduled to be done daily.
+
 
 ## Collected Metadata
 
@@ -83,17 +87,18 @@ The Datasets are data sources.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * GUID: Atlas technical id
-  * Qualified Name: Atlas technical name
-  * Created: creation date
-  * Created By
-  * Data Source Type: Data source type
-  * Owner
-  * Updated: date of last update
-  * Updated By
-  * Database: optional
-  * Table: optional
-  * Display Name: optional
+
+    * GUID: Atlas technical id
+    * Qualified Name: Atlas technical name
+    * Created: creation date
+    * Created By
+    * Data Source Type: Data source type
+    * Owner
+    * Updated: date of last update
+    * Updated By
+    * Database: optional
+    * Table: optional
+    * Display Name: optional
 
 ### Field
 

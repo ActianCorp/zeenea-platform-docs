@@ -4,10 +4,10 @@
 ## Prerequisites
 
 <!-- #p100030 -->
-> **Note:** 
-> 
-> * To connect Zeenea to SAP, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
-> * You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    * To connect Zeenea to SAP, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
+    * You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 <!-- #p100036 -->
 ## Supported Versions
@@ -22,7 +22,9 @@ The SAP connector is compatible with SAP and SAP/4HANA.
 The Silwood Safyr plugin can be downloaded here:  [Zeenea Connector Downloads](zeenea-connectors-list.md# "title: Zeenea Connector Downloads")
 
 <!-- #p100066 -->
-> **ATTENTION:** Updating the connector to version 3.1.1 from a previous version impacts data processes identification and requires a manual deleting of existing data processes. If you documented your SAP data processes, please contact customer service to assist you in this migration.
+!!! warning "Attention"
+    Updating the connector to version 3.1.1 from a previous version impacts data processes identification and requires a manual deleting of existing data processes. If you documented your SAP data processes, please contact customer service to assist you in this migration.
+
 
 <!-- #p100075 -->
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
@@ -49,7 +51,9 @@ In order to establish a connection with SAP, specifying the following parameters
 | `lineage` | To activate the lineage feature for tables and views |
 
 <!-- #p100126 -->
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 <!-- #p100132 -->
 ## Data Extraction

@@ -74,13 +74,17 @@ You can customize how each property is used for searching in Studio and Explorer
 * **Use property values as search keywords**: This option is only available for **Short Text** property type. It allows users to type the value of a property into the search bar to find matching items. 
 * **Use property as a search filter**: This option is only available for **Select**, **Multi-select**, **Date**, and **Tag** property types. It allows using the property as a search filter to refine the results.
 
-> **Important:** Misuse of these options can degrade the search engine performance and negatively impact the user experience.
+!!! warning "Important"
+    Misuse of these options can degrade the search engine performance and negatively impact the user experience.
+
 
 #### Display Settings
 
 * **Feature property in the Catalog**: This option is available for all property types except **Rich Text**. The property name and its value are displayed directly in the search results and highlighted on the items details pages. Use this option to emphasize the most important properties for users, especially as a way to distinguish items with similar characteristics. Highlighting too many properties can impair the readability of search results.
 
-> **Note:** It does not affect filter availability, which is controlled by **Use property as a search filter** option under Search settings.
+!!! note
+    It does not affect filter availability, which is controlled by **Use property as a search filter** option under Search settings.
+
 
 ## Deleting a Property
 
@@ -116,5 +120,7 @@ Other information is read-only:
 * Type
 * Importance in completion calculation
 
-> **Note:** Once the name or description has been modified, the value from the connector can be restored by clearing the corresponding form field.
+!!! note
+    Once the name or description has been modified, the value from the connector can be restored by clearing the corresponding form field.
+
  

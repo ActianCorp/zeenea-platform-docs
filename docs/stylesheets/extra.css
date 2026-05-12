@@ -1,4 +1,15 @@
 /* =============================================================
+   Home page — centered content
+   Targets pages where both sidebars are hidden (hide: navigation + toc)
+   ============================================================= */
+.md-sidebar--primary[hidden] ~ .md-content .md-content__inner {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* =============================================================
    Actian MCP Server — Mintlify-style UI
    Inter (body) · JetBrains Mono (code) · Light + dark mode
    ============================================================= */

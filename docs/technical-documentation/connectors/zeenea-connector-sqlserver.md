@@ -6,7 +6,9 @@
 * Zeenea traffic flows towards SQL Server must be open.
 * The only authentication mode supported by this connector requires the user's username and password.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
  
 ## Supported Versions
 
@@ -103,10 +105,11 @@ A dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Schema
-  * Table
-  * Rows
-  * Type:
+
+    * Schema
+    * Table
+    * Rows
+    * Type:
     * USER_TABLE
     * VIEW
 
@@ -121,8 +124,9 @@ Table or view field.
 * **Multivalued**: Not supported. Default value `FALSE`.
 * **Primary Key**: Depending on the field "Primary Key" attribute
 * **Technical Data**:
-  * Technical Name
-  * Native type: Field native type
+
+    * Technical Name
+    * Native type: Field native type
  
 ### Data Process
 
@@ -132,7 +136,9 @@ A data process represents the request to build a view.
  
 ## Data Profiling
 
-> **Important:** The Data Profiling feature, which can be enabled on this connection, allows Explorers to better understand the type of data stored in each field. This feature, which can be activated in the Scanner, runs by default on a weekly schedule, every Saturday. However, depending on the number of fields for which you enable this feature, the calculation can quickly become costly. Before enabling it, ensure that the estimated impact of this feature is acceptable and that the default frequency is appropriate.
+!!! warning "Important"
+    The Data Profiling feature, which can be enabled on this connection, allows Explorers to better understand the type of data stored in each field. This feature, which can be activated in the Scanner, runs by default on a weekly schedule, every Saturday. However, depending on the number of fields for which you enable this feature, the calculation can quickly become costly. Before enabling it, ensure that the estimated impact of this feature is acceptable and that the default frequency is appropriate.
+
 
 The statistical profiles feature, also known as _Data Profiling_, is available for this connector. The impact of this feature must be evaluated before activating it on any of your connections. For more information about the resulting statistics, see [Data Profiling](../../features-applications/cross-application-features/zeenea-data-profiling.md).
 

@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with SSRS.  
 * Zeenea traffic flows towards the data source must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -32,7 +34,9 @@ In order to establish a connection with an SSRS instance, specifying the followi
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `ssrs` and this value must not be modified. |
 | `connection.path` | Path of the directory containing SSRS projects to synchronize with the catalog |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 ## User Permissions
 
@@ -57,7 +61,8 @@ A visualization is an SSRS report.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Author
+
+    * Author
 
 ### Dataset
 
@@ -66,12 +71,13 @@ A dataset is an SSRS reports dataset.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Source Report
-  * Datasource Name
-  * Data Provider
-  * Connection String
-  * Number of filters
-  * Number of Query Parameters
+
+    * Source Report
+    * Datasource Name
+    * Data Provider
+    * Connection String
+    * Number of filters
+    * Number of Query Parameters
 
 ### Field
 
@@ -84,8 +90,9 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Not supported. Default value `false`.
 * **Technical Data**:
-  * Technical Name
-  * Native type: Field native type
+
+    * Technical Name
+    * Native type: Field native type
 
 ## Unique Identifier Keys
 

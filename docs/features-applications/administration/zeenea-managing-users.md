@@ -15,7 +15,9 @@ Click the **New User** button and fill in the required fields:
 
   ![](./images/zeenea-create-user.png)
 
-> **Note:** Once the user is created, you can not modify his email address. If necessary, you delete and then recreate the user.
+!!! note
+    Once the user is created, you can not modify his email address. If necessary, you delete and then recreate the user.
+
 
 When you create a new user, a new contact is automatically created in the Zeenea repository.
 

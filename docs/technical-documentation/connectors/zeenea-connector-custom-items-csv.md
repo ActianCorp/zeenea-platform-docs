@@ -133,8 +133,8 @@ Note: The type will be added for metamodel properties mapped to columns. It is n
 * `id`: represents the identifier of the imported object. Optional. By default, id = name.
 * `name`: name of the imported object. Mandatory.
 * `code`: In the case of the `csv-custom-item` connector, define the custom type to use for the imported object.<br />Mandatory for `csv-custom-item`. Not allowed for csv-business-term. Refers to a column in the file or directly defined in the mapping (with default only). Example:
-  * `code from 'nature' default 'application'`
-  * `code default 'regulation'`
+    * `code from 'nature' default 'application'`
+    * `code default 'regulation'`
 * `description`: identify the column intended to feed the description of the object. Optional.
 
 #### Properties of the metamodel

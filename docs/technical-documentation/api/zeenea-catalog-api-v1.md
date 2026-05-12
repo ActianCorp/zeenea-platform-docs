@@ -1,6 +1,8 @@
 # Catalog API v1 (Deprecated)
 
-> **Note:** This API is deprecated. Please see [Catalog API v2](./zeenea-catalog-api-v2.md).
+!!! note
+    This API is deprecated. Please see [Catalog API v2](./zeenea-catalog-api-v2.md).
+
  
 
 Thanks to this Catalog API, dedicated to the exploration and mutation of Items, you can synchronize metadata from an external system into Zeenea, or pull information from your data catalog to another system.
@@ -59,7 +61,9 @@ Here are the currently available operations, grouped by usage:
 
 For more information, see [API Lifecycle](./zeenea-api-lifecycle.md) can be found here.
 
-> **Note:** The complete API documentation is available in the [Voyager](https://github.com/APIs-guru/graphql-voyager) tool which you can access from any of your environments by following this address:
+!!! note
+    The complete API documentation is available in the [Voyager](https://github.com/APIs-guru/graphql-voyager) tool which you can access from any of your environments by following this address:
+
 ><pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/catalog/voyager</pre>
 
 ## Representation of the properties
@@ -86,7 +90,9 @@ The Exploration API can retrieve Items from multiple levels using a single reque
 
 ## Sample requests
 
-> **Note:** All returns shown below were obtained in the Playground testing tool.
+!!! note
+    All returns shown below were obtained in the Playground testing tool.
+
  
 ### Example 1: Retrieve a Dataset name, along with all Fields contained within
 
@@ -150,7 +156,9 @@ The above request will return the following:
 }
 ```
 
-> **Note:** If the "name" property has not been changed (i.e. if the functional name is the same as the source name in the interface), then queries will return a null value on this attribute.
+!!! note
+    If the "name" property has not been changed (i.e. if the functional name is the same as the source name in the interface), then queries will return a null value on this attribute.
+
 
 ### Example 2: From a Dataset, retrieve all other Datasets implementing the same Business terms
 

@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with MicroStrategy.
 * Zeenea traffic flows towards MicroStrategy must be open.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -77,7 +79,9 @@ Will collect the list of portfolios accessible by the user.
 
 ### Lineage
 
-> **Note:** Available only with MicroStrategy version 2021 update 7 or later. The Modeling Service must be configured and enabled on the machine.
+!!! note
+    Available only with MicroStrategy version 2021 update 7 or later. The Modeling Service must be configured and enabled on the machine.
+
 
 The connector is able to reconstruct the lineage of tables used in the folders if they are present in the catalog. This feature is available when MicroStrategy uses datasets from the technologies mentioned below. In this case, it is necessary to specify an additional parameter in the original connections of these tables as referenced in the MicroStrategy connection configuration.
 
@@ -92,7 +96,9 @@ The following API calls are made to obtain the lineage information:
 * `GET /api/model/datasources/[source-system-id]`: Allows you to retrieve the ID of the connection that is associated with it.
 * `GET /api/model/connections/[connection-id]`: Allows to build the connection code for the Zeenea lineage.
 
-> **Note:** The connector will create a data process object for each MicroStrategy dataset in order to link it with the original dataset(s) even if the original dataset(s) are not present in the catalog.
+!!! note
+    The connector will create a data process object for each MicroStrategy dataset in order to link it with the original dataset(s) even if the original dataset(s) are not present in the catalog.
+
 
 ### Visualization
 
@@ -101,16 +107,17 @@ A visualization object is a MicroStrategy portfolio.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Project Id
-  * Project Name
-  * Dossier Id
-  * Dossier Name
-  * Link To The Dossier
-  * Certified
-  * Creation Date
-  * Last Modification Date
-  * Dossier Category
-  * Owner
+
+    * Project Id
+    * Project Name
+    * Dossier Id
+    * Dossier Name
+    * Link To The Dossier
+    * Certified
+    * Creation Date
+    * Last Modification Date
+    * Dossier Category
+    * Owner
 
 ### Dataset
 
@@ -119,8 +126,9 @@ A dataset is a table used in a visualization object.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Dataset Id
-  * Dataset Name
+
+    * Dataset Id
+    * Dataset Name
 
 ### Field
 
@@ -133,12 +141,13 @@ A field can be an attribute, a metric, or a field from the dataset.
 * **Multivalued**: nNot supported. Default value `false`.
 * **Primary Key**: Not supported. Default value `false`.
 * **Technical Data**:
-  * Technical name
-  * Native type
-  * Type: can be `attribute`, `metric`, or `attribute form`
-  * dataType
-  * baseFormCategory
-  * baseFormType
+
+    * Technical name
+    * Native type
+    * Type: can be `attribute`, `metric`, or `attribute form`
+    * dataType
+    * baseFormCategory
+    * baseFormType
 
 ## Object Identification Keys
 

@@ -93,7 +93,9 @@ You can also convert your descriptions to "rich text" format, to add formatting,
 
 The rich text format is suitable for documenting key catalog objects (Glossary Items, reference Items, etc.).
 
-> **Note:** This rich text editor is not available for Field Items, which can only be accessed from Explorer previews.
+!!! note
+    This rich text editor is not available for Field Items, which can only be accessed from Explorer previews.
+
 
 The rich text editor supports the following options:
 

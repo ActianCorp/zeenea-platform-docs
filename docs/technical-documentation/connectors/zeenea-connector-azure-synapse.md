@@ -5,13 +5,17 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Synapse.
 * Zeenea traffic flows towards the database must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
 The Synapse connector is compatible with the online software version.
 
-> **Note:** The connector is compatible with Lake Database datasets. Please use the SQL Server connector for dedicated SQL Serverless pools.
+!!! note
+    The connector is compatible with Lake Database datasets. Please use the SQL Server connector for dedicated SQL Serverless pools.
+
  
 ## Installing the Plugin
 
@@ -78,10 +82,11 @@ A dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Workspace Name
-  * Format Type
-  * Source Provider
-  * Source Location
+
+    * Workspace Name
+    * Format Type
+    * Source Provider
+    * Source Location
 
 ### Field
 
@@ -94,8 +99,9 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Depending on the "Primary Key" field attribute
 * **Technical Data**:
-  * Technical Name
-  * Native type
+
+    * Technical Name
+    * Native type
  
 ## Unique Identification Keys
 

@@ -5,11 +5,15 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with a data source through the standard JDBC interface.
 * Zeenea traffic flows towards the data source must be open.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
-> **Important:** The JDBC connector requires the installation of the relevant JDBC driver in the /lib-ext folder of the scanner to be compatible with the required source system. 
+!!! warning "Important"
+    The JDBC connector requires the installation of the relevant JDBC driver in the /lib-ext folder of the scanner to be compatible with the required source system.
+
 
 ## Installing the Plugin
 
@@ -58,9 +62,10 @@ A dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**: 
-  * Catalog
-  * Schema
-  * Type
+
+    * Catalog
+    * Schema
+    * Type
 
 ### Field
 
@@ -73,8 +78,9 @@ Dataset field.
 * **Multivalued**: Depending on field settings
 * **Primary Key**: Depending on the "Primary Key" attribute
 * **Technical Data**: 
-  * Technical Name
-  * Native type
+
+    * Technical Name
+    * Native type
 
 ## Unique Identifier Keys
  

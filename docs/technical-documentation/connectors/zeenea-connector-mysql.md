@@ -10,12 +10,16 @@
   Zeenea traffic flows towards the database must be open.
 
 <!-- #p100054 -->
-> **Important:** The MySQL driver is not delivered with the connector. Download the MySQL driver related to your MySQL instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://dev.mysql.com/downloads/connector/j/](https://dev.mysql.com/downloads/connector/j/)
+!!! warning "Important"
+    The MySQL driver is not delivered with the connector. Download the MySQL driver related to your MySQL instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://dev.mysql.com/downloads/connector/j/](https://dev.mysql.com/downloads/connector/j/)
+
 
 <br />
 
 <!-- #p100063 -->
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 <!-- #p100069 -->
 ## Supported Versions

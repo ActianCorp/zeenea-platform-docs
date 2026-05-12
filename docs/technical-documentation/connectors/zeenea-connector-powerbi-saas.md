@@ -8,10 +8,12 @@ The Power BI Online (V1) plugin has been deprecated. You can use the [Power BI O
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with PowerBI Online.
 * Zeenea's scanner traffic flows towards Power BI's instance and Azure must be open. Refer to the following:
-  * [https://login.microsoftonline.com](https://login.microsoftonline.com)
-  * [https://api.powerbi.com](https://api.powerbi.com)
+    * [https://login.microsoftonline.com](https://login.microsoftonline.com)
+    * [https://api.powerbi.com](https://api.powerbi.com)
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -21,7 +23,9 @@ The Power BI Online connector is compatible with the product online version.
 
 The Power BI Online plugin can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list.md)
 
-> **ATTENTION:** Updating the connector to version 1.7.0 from a previous version requires a data migration for the "Data process" type objects. Please contact customer service to assist you in this migration.
+!!! warning "Attention"
+    Updating the connector to version 1.7.0 from a previous version requires a data migration for the "Data process" type objects. Please contact customer service to assist you in this migration.
+
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
@@ -70,7 +74,9 @@ The user must be able to do the following:
 
   1. **Create an Azure AD group**. See the documentation above to create a group with reading access to all the workspaces. More information on how to create Azure AD Group can be found here: https://docs.microsoft.com/en-us/power-bi/enterprise/read-only-apis-service-principal-authentication.
   2. **Add a service principal to the Azure AD group**.
-> **Note:** The service principal must not have specific rights (e.g., `Tenant.Read.All`) related to Power BI in the Azure AD configuration as this could generate conflict with security group rights on the Power BI side.
+!!! note
+    The service principal must not have specific rights (e.g., `Tenant.Read.All`) related to Power BI in the Azure AD configuration as this could generate conflict with security group rights on the Power BI side.
+
 
 ### API Scanner Authorization
 
@@ -127,14 +133,14 @@ To extract information, the connector runs successively the following API reques
 
 * **GET**` https://api.powerbi.com/v1.0/myorg/admin/workspaces/modified`: To get the workspaces list excluding personal workspaces.
 * **POST**` https://api.powerbi.com/v1.0/myorg/admin/workspaces/getInfo`:
-  * Parameter: Workspaces list (100 workspaces limit)
-  * Response: Scan identifier
+    * Parameter: Workspaces list (100 workspaces limit)
+    * Response: Scan identifier
 * **GET** `https://api.powerbi.com/v1.0/myorg/admin/workspaces/scanStatus/`:
-  * Parameter: Scan identifier
-  * Response: Scan status: `NOT_STARTED`, `RUNNING`, `SUCCEEDED`
+    * Parameter: Scan identifier
+    * Response: Scan status: `NOT_STARTED`, `RUNNING`, `SUCCEEDED`
 * **GET** `https://api.powerbi.com/v1.0/myorg/admin/workspaces/scanResult/`:
-  * Parameter: Scan identifier
-  * Response: Object with all the metadata of report from scanned workspaces
+    * Parameter: Scan identifier
+    * Response: Object with all the metadata of report from scanned workspaces
 
 ## Collected Metadata
 
@@ -158,7 +164,9 @@ Table summarizing the possible values of the `alias` parameter to be completed i
 | [Oracle](./zeenea-connector-oracle.md) | Server name:port/Service Name | `alias = ["oracle.example.com:1521/XE"]` |
 | [Denodo](./zeenea-connector-denodo.md) | Server name:ODBC port | `alias = ["denodo.database.com:9996"]` |
 
-> **Note:** The connector creates a data process object for each dataset from Power BI Online to represent the link with the source dataset (even if the source dataset is not present in the catalog).
+!!! note
+    The connector creates a data process object for each dataset from Power BI Online to represent the link with the source dataset (even if the source dataset is not present in the catalog).
+
 
 ### Visualization
 
@@ -168,18 +176,19 @@ A visualization object is a Power BI report.
 * **Source Description**
 * **Contacts**
 * **Technical Data**:
-  * Report WebURL: Link to the report
-  * Report Type
-  * Workspace Name
-  * Application: URL to the PowerBI application which this report is attached
-  * Source Server Name
-  * Endorsement
-  * Certified By
-  * Created By
-  * Creation Date
-  * Modified By
-  * Modified Date
-  * Report's page
+
+    * Report WebURL: Link to the report
+    * Report Type
+    * Workspace Name
+    * Application: URL to the PowerBI application which this report is attached
+    * Source Server Name
+    * Endorsement
+    * Certified By
+    * Created By
+    * Creation Date
+    * Modified By
+    * Modified Date
+    * Report's page
 
 ### Dataset
 
@@ -188,8 +197,9 @@ A dataset is a table included in a dataset PowerBI.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * PowerBI Dataset: Name of the PowerBI dataset
-  * Power Query
+
+    * PowerBI Dataset: Name of the PowerBI dataset
+    * Power Query
 
 ### Field
 
@@ -202,9 +212,10 @@ Dataset field or measure.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Not supported. Default value `false`.
 * **Technical Data**: 
-  * Technical Name
-  * Native type
-  * DAX Measure
+
+    * Technical Name
+    * Native type
+    * DAX Measure
 
 ### Data Process
 

@@ -11,7 +11,9 @@ Zeenea uses Google HTTP API to collect metadata.
 | :--- | :--- | :--- |
 | BigQuery | HTTPS | 443 |
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -74,10 +76,10 @@ In order to collect metadata, the user permissions must allow them to list and r
 To extract metadata, the technical account must have the following predefined roles: 
 
 * For the BigQueryOrganization connector:
-  * On the project where the service account is being managed:
+    * On the project where the service account is being managed:
     * Project/Browser (roles/Browser)
     * BigQuery Metadata viewer (roles/bigquery.metadataviewer)
-  * On all projects that need to be cataloged:
+    * On all projects that need to be cataloged:
     * BigQuery Metadata Viewer (roles/bigquery.metadataviewer)
 * For the BigQuery connector:
    * On the project that needs to be cataloged:
@@ -120,24 +122,25 @@ A dataset is a Denodo derived view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Dataset Id
-  * Table Id
-  * Project
-  * Dataset
-  * Table
-  * Type
-  * Created
-  * Expiration
-  * Last modified
-  * Long-Term Storage Size (bytes)
-  * Number of rows
-  * Size (bytes)
-  * Data location
-  * Is partitioned
-  * Partitioned by
-  * Partitioned on field
-  * Clustered by
-  * Labels
+
+    * Dataset Id
+    * Table Id
+    * Project
+    * Dataset
+    * Table
+    * Type
+    * Created
+    * Expiration
+    * Last modified
+    * Long-Term Storage Size (bytes)
+    * Number of rows
+    * Size (bytes)
+    * Data location
+    * Is partitioned
+    * Partitioned by
+    * Partitioned on field
+    * Clustered by
+    * Labels
 
 ### Field
 
@@ -150,12 +153,15 @@ Dataset field.
 * **Multivalued**: `TRUE` if the field type is `STRUCT`, `FALSE` otherwise
 * **Primary Key**: Depending on field settings
 * **Technical Data**:
-  * Technical Name: Field technical name
-  * Native type: Field native type
+
+    * Technical Name: Field technical name
+    * Native type: Field native type
  
 ## Data Profiling
 
-> **Important:** The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+!!! warning "Important"
+    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+
 
 The data profiling feature allows you to calculate statistical profiles on your datasets.More information on this feature can be found here: [Data Profiling](../../features-applications/cross-application-features/zeenea-data-profiling.md).
 

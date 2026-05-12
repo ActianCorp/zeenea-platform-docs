@@ -61,7 +61,9 @@ If you wish to test your queries before running them, you can use the Playground
   https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/catalog/playground/search
 </pre>
 
-> **Note:** In order to use the APIs with Playground, you will need a valid API Key in the "HTTP Headers" tab. 
+!!! note
+    In order to use the APIs with Playground, you will need a valid API Key in the "HTTP Headers" tab.
+
  
 ## Limits
 
@@ -236,8 +238,8 @@ Note that the file contains the following information:
 * Last login: Last login date of the user (UTC)
 * Logins count: Total count of logins of the user since its creation
 
-> **Note:**
-> 
+!!! note
+
 >* If the user belongs to several groups, the file will return only the first one.
 >* For the Federated Catalog, only information concerning the default catalog is displayed in the user's permission details.
 

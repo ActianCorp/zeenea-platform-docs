@@ -9,7 +9,9 @@
 | :--- | :--- | :--- |
 | Cassandra | datastax | 9042 |
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -60,11 +62,12 @@ A dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Keyspace
-  * Replication Strategy
-  * Item Type
-  * Clustering Order
-  * Base Table Name
+
+    * Keyspace
+    * Replication Strategy
+    * Item Type
+    * Clustering Order
+    * Base Table Name
 
 ### Field
 
@@ -77,10 +80,10 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Depending on the "Primary Key" field attribute
 * Technical metadata:
-  * Technical name
-  * Native type
-  * Clustering Order
-  * Field kind: regular, clustering, partition
+    * Technical name
+    * Native type
+    * Clustering Order
+    * Field kind: regular, clustering, partition
  
 ## Object Identification Keys
 

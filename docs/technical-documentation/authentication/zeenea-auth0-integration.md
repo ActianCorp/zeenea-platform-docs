@@ -1,6 +1,8 @@
 # Integration with Auth0
 
-> **Note:** Information required for this integration may be provided by both Zeenea and the Customer.
+!!! note
+    Information required for this integration may be provided by both Zeenea and the Customer.
+
 
 See [Auth0 documentation](https://auth0.com/docs/connections/enterprise/saml) for more information.
 
@@ -16,7 +18,9 @@ As an alternative, you can use the following link for configuration purposes. It
 
 [https://login.prod.zeenea.app/samlp/metadata?connection=CONNECTION](https://login.prod.zeenea.app/samlp/metadata?connection=CONNECTION)
 
-> **Note:** In the example above, “CONNECTION” refers to the name of your Zeenea instance. This connection **MUST** have been created before requesting this resource otherwise, the metadata file won't be accessible.
+!!! note
+    In the example above, “CONNECTION” refers to the name of your Zeenea instance. This connection **MUST** have been created before requesting this resource otherwise, the metadata file won't be accessible.
+
 
 ### Customer Credentials
 

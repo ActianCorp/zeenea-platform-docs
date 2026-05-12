@@ -22,7 +22,9 @@ You can mark an item as a favorite from multiple locations in Zeenea Explorer:
   2. Click the empty star icon at the top of the panel.<br />The star changes to filled, indicating the item is marked as a favorite.
      ![](./images/zeenea-favorite-items-side-overview-panel.png)
 
-> **Note:** Only searchable items can be marked as favorites.
+!!! note
+    Only searchable items can be marked as favorites.
+
 
 ## View Your Favorite Items
 

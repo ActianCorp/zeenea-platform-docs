@@ -9,7 +9,9 @@ Ask AI combines advanced natural language processing with the semantic layer of 
 * **Smart Ranking**: Results are prioritized and ranked by relevance.  
 * **AI Summary**: Generates a cohesive narrative summary from the descriptions of the top search results.
 
-> **Note:** Ask AI searches through item descriptions within topics. The quality of your search results depends on the completeness and accuracy of these descriptions.
+!!! note
+    Ask AI searches through item descriptions within topics. The quality of your search results depends on the completeness and accuracy of these descriptions.
+
 
 ## Getting Started with Ask AI
 
@@ -19,7 +21,9 @@ To enable the Ask AI feature, you must submit a request through the Actian Suppo
 
 Ask AI is available only in topics tagged as **AI Ready**. This tag is applied automatically to topics where most items have comprehensive descriptions.
 
-> **Note:** If a topic is not tagged **AI Ready**, it does not have sufficient description coverage. Ask AI is disabled for that topic to ensure quality results.
+!!! note
+    If a topic is not tagged **AI Ready**, it does not have sufficient description coverage. Ask AI is disabled for that topic to ensure quality results.
+
 
 <br/>
 
@@ -39,7 +43,9 @@ Ask AI is available only in topics tagged as **AI Ready**. This tag is applied a
 
 ![](./images/zeenea-ask-ai-summary.png) 
 
-> **Note:** When you submit negative feedback, you will be prompted to provide additional details. Only your search query and feedback text are retained for review by the product team.
+!!! note
+    When you submit negative feedback, you will be prompted to provide additional details. Only your search query and feedback text are retained for review by the product team.
+
   
 ![](./images/zeenea-ask-ai-feedback.png)
 
@@ -94,7 +100,9 @@ This dual-VPC architecture ensures that AI processing is completely isolated fro
     - For semantic search, item names and descriptions are sent to Nova micro to generate embeddings stored within your Zeenea application VPC, enabling similarity-based search and retrieval.
 1. The AI-generated answers are returned to your Zeenea session and displayed.
 
-> **Note:** Prompts and completions sent to the Bedrock VPC are not logged or stored after processing.
+!!! note
+    Prompts and completions sent to the Bedrock VPC are not logged or stored after processing.
+
 
 ### Security and Compliance
 

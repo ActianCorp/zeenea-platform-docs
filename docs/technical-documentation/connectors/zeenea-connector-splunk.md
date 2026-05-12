@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Splunk.
 * Zeenea traffic flows towards the data source must be open.
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Supported Versions
 
@@ -42,7 +44,9 @@ In order to establish a connection with a Splunk instance, specifying the follow
 | `proxy.username` | Proxy username |
 | `proxy.password` | Proxy account password |
 
-> **Note:** A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+!!! note
+    A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
 
 ## User Permissions
 
@@ -68,9 +72,10 @@ Will collect the list of datasets accessible by the user.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-  * Display Name
-  * Model Name
-  * Modification Date: Last dataset configuration modification date
+
+    * Display Name
+    * Model Name
+    * Modification Date: Last dataset configuration modification date
 
 ### Field
 
@@ -81,8 +86,9 @@ Will collect the list of datasets accessible by the user.
 * **Multivalued**: Depending on field settings
 * **Primary key**: Not supported. Default value `false`.
 * **Technical Data**: 
-  * Technical Name
-  * Native type
+
+    * Technical Name
+    * Native type
 
 ## Unique Identifier Keys
  

@@ -5,7 +5,9 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Qlik Cloud.
 * Zeenea traffic flows towards the data source must be open. 
 
-> **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+!!! note
+    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
+
 
 ## Installing the Plugin
 
@@ -90,7 +92,9 @@ Qlik Cloud connector is able to reconstruct the lineage of tables used in applic
 | [BigQuery](./zeenea-connector-google-bigquery.md) | `bigquery.googleapis.com/{project name}` |
 | [Snowflake](./zeenea-connector-snowflake.md) | `{snowflake account name}.snowflakecomputing.com/{database name}` |
 
-> **Warning:** If transformations are performed on the source data, Qlik Cloud will convert the data into Qlik files that cannot be interpreted by the connector. As a result, lineage will not be functional.
+!!! warning
+    If transformations are performed on the source data, Qlik Cloud will convert the data into Qlik files that cannot be interpreted by the connector. As a result, lineage will not be functional.
+
 
 ### Visualization
 
@@ -100,12 +104,13 @@ A Visualization is a Qlik application.
 * **Source Description**: Application description
 * **Contacts**
 * **Technical Data**:
-  * Application Name: Application name
-  * Application URL: Application URL
-  * Created At: Application creation datetime
-  * Modified At: Application update datetime
-  * Reloaded At: Application last reload datetime
-  * Created By: User name who created the application
+
+    * Application Name: Application name
+    * Application URL: Application URL
+    * Created At: Application creation datetime
+    * Modified At: Application update datetime
+    * Reloaded At: Application last reload datetime
+    * Created By: User name who created the application
 
 ### Dataset
 
@@ -114,8 +119,9 @@ A Dataset is a table from application's datamodel:
 * **Name**: Table name
 * **Source Description**: Table description
 * **Technical Data**:
-  * Byte Size: Byte size of table data
-  * Number of Rows: Number of rows of loaded table
+
+    * Byte Size: Byte size of table data
+    * Number of Rows: Number of rows of loaded table
 
 ### Field
 
