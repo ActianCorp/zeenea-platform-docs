@@ -3,7 +3,7 @@ nav:
     - zeenea-connectors-install-as-plugin.md
     - zeenea-externalizing-external-connectors.md
     - zeenea-dataset-detection.md
-    - Actian DataConnect:zeenea-connector-actian-dataconnect.md
+    - Actian DataConnect: zeenea-connector-actian-dataconnect.md
     - zeenea-connector-actian-informix.md
     - zeenea-connector-actian-ingres.md
     - zeenea-connector-actian-zen.md
