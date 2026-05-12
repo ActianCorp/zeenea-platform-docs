@@ -5,9 +5,9 @@ The Catalog Design API allows you to retrieve and update details of your metamod
 List of available operations:
 
 * Retrieve information about a property by its name:
-   * `findEditablePropertyDefinitionsByName`
+     * `findEditablePropertyDefinitionsByName`
 * List all item types and their available links:
-   * `listItemTypes`
+     * `listItemTypes`
 
 ## Permissions
 

@@ -11,18 +11,18 @@ The recommended permission scope for the  User Management API is **Admin**.
 These are the currently available operations:
 
 * **List permission sets**
-   * `listPermissionSets` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+      * `listPermissionSets` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
 * **Create or update a user**
-   * `createUser` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
-   * `upsertUser` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+     * `createUser` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+     * `upsertUser` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
 * **Retrieve the information about a user**
-   * `loadUserById` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
-   * `loadUserByEmail` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
-   * `createAllUsersExport`
-   * `loadUsersExportStatus`
+     * `loadUserById` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+     * `loadUserByEmail` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+     * `createAllUsersExport`
+     * `loadUsersExportStatus`
 * **Delete a user**
-   * `deleteUserById` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
-   * `deleteUserByEmail` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+     * `deleteUserById` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
+     * `deleteUserByEmail` [Deprecated. See [SCIM API](./zeenea-scim-api.md).]
 
 **Note**: The full API documentation is available in the [Voyager](https://github.com/APIs-guru/graphql-voyager) tool.  
 
@@ -221,9 +221,9 @@ Note that the file contains the following information:
 * Permission set built-in: Boolean (true/false) - Indicates if it is a Zeenea built-in permission set
 * Custom item documentation permission: Whether the user can edit Custom Items (true/false)
 * Custom item documentation scope: 
-   * All: User can edit all Custom Items
-   * UserOwned: The user can only edit Custom Items that are assigned to him
-   * UserOwnedAndUnassigned: The user can edit Custom Items that are assigned to him and unassigned Custom Items
+      * All: User can edit all Custom Items
+      * UserOwned: The user can only edit Custom Items that are assigned to him
+      * UserOwnedAndUnassigned: The user can edit Custom Items that are assigned to him and unassigned Custom Items
 * Item documentation permission: Whether the user can edit Datasets, Fields, Visualizations, Data Processes, and Categories (true/false)
 * Item documentation scope
 * Glossary documentation permission: Whether the user can edit Glossary Items

@@ -55,23 +55,23 @@ You can create new access request policies in Zeenea Administration.
              * All custom item types
       ![](./images/zeenea-access-requests-policy-create-general-info.png)
     * In the **Approval workflow** section:
-        * **Format of the request reason** (required): Select one of the following formats:
-          * **Free text**: Type the reason for the request manually.
-          * **Select a use case**: Choose from a predefined list of use cases.
-          > **Note:** A **Use case** is a built-in item type. By documenting use cases in the catalog, curators can provide more context for data owners when reviewing access requests and automate the setup of user permissions.
-        * **Extra field from use case template**: The field appears when you select **Select a use case**. Select a property from the available **Multi-select** or **Tag** type properties in the Use case item type template. For more information, see [Extra Field from Use Case Template](#extra-field-from-use-case-template).
-        * **Approvers** (required): Select the roles responsible for approving access requests.
-        * **Enable email notifications for requesters and approvers**: Use the toggle to manage email notifications.
-        ![](./images/zeenea-access-requests-policy-create-approval.png)
+         * **Format of the request reason** (required): Select one of the following formats:
+             * **Free text**: Type the reason for the request manually.
+             * **Select a use case**: Choose from a predefined list of use cases.
+             > **Note:** A **Use case** is a built-in item type. By documenting use cases in the catalog, curators can provide more context for data owners when reviewing access requests and automate the setup of user permissions.
+         * **Extra field from use case template**: The field appears when you select **Select a use case**. Select a property from the available **Multi-select** or **Tag** type properties in the Use case item type template. For more information, see [Extra Field from Use Case Template](#extra-field-from-use-case-template).
+         * **Approvers** (required): Select the roles responsible for approving access requests.
+         * **Enable email notifications for requesters and approvers**: Use the toggle to manage email notifications.
+      ![](./images/zeenea-access-requests-policy-create-approval.png)
     * In the **Mailhook and webhook** section:
-        * **Hook type**: Select one of the following types from the drop-down list:
-           * **No external workflow**: No external actions (such as sending an email or calling a webhook) are triggered when an access request is approved. In this case, you must manually grant the required permissions in the source system.
-           * **Email**: For more information about configuration, see [Configure the Email Channel for the Authorization Workflow](#configure-the-email-channel-for-the-authorization-workflow-mailhook).
-           * **Webhook**: For more information about configuration, see [Configure the Webhook Channel for the Authorization Workflow](#configure-the-webhook-channel-for-the-authorization-workflow).
-        * **Select statuses**: When you activate a mailhook or webhook, select the events you want to receive:
-          * Pending
-          * Rejected
-          * Approved
+         * **Hook type**: Select one of the following types from the drop-down list:
+             * **No external workflow**: No external actions (such as sending an email or calling a webhook) are triggered when an access request is approved. In this case, you must manually grant the required permissions in the source system.
+             * **Email**: For more information about configuration, see [Configure the Email Channel for the Authorization Workflow](#configure-the-email-channel-for-the-authorization-workflow-mailhook).
+             * **Webhook**: For more information about configuration, see [Configure the Webhook Channel for the Authorization Workflow](#configure-the-webhook-channel-for-the-authorization-workflow).
+         * **Select statuses**: When you activate a mailhook or webhook, select the events you want to receive:
+            * Pending
+            * Rejected
+            * Approved
         > **Note:** The payload format is the same for all messages.      
       ![](./images/zeenea-access-requests-policy-create-hook.png)
 5. Click **Create policy**.<br />A new access request policy is created.

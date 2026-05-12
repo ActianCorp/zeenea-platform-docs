@@ -111,14 +111,14 @@ Run the following command with the service name used during registration to obta
 #### Scanner 68 and Previous
 
 1. Download Windows binaries:
-   1. Go to [https://downloads.apache.org/commons/daemon/binaries/](https://downloads.apache.org/commons/daemon/binaries/).
-   2. In the `windows` folder, download the archive `commons-daemon-1.3.4-bin-windows.zip`.
+     1. Go to [https://downloads.apache.org/commons/daemon/binaries/](https://downloads.apache.org/commons/daemon/binaries/).
+     2. In the `windows` folder, download the archive `commons-daemon-1.3.4-bin-windows.zip`.
 2. Unzip the archive.
 3. Copy the following files under the root folder of the Scanner:
-   * `prunmgr.exe`
-   * Depending on your architecture:
-     * If 32-bit, copy `prunsrv.exe` there.
-     * If 64-bit, copy `prunsrv.exe` from "/amd64" folder there.
+     * `prunmgr.exe`
+     * Depending on your architecture:
+         * If 32-bit, copy `prunsrv.exe` there.
+         * If 64-bit, copy `prunsrv.exe` from "/amd64" folder there.
 4. Using the MS DOS terminal, change your current directory to the root folder of the Scanner. Then execute the launch script by using this command `./bin/zeenea-service.bat` with, as a parameter, the path to jvm.dll (should be under the following JRE's folder `/bin/server/jvm.dll`)
       1. Command : `./bin/zeenea-service.bat "C:/path/to/dll/jvm.dll` 
             `([--JvmMs 123] [--JvmMx 123] [--JvmSs 123]` These are optional arguments to customize the amount of memory the JVM may allocate to different purposes. See JVM documentation for more information.
@@ -130,6 +130,7 @@ Run the following command with the service name used during registration to obta
 `prunsrv.exe` : Command line application to manage (edit) services.
 
 > **Note:**
+> 
 > 1. You can rename `prunmgr.exe` to `ZeeneaScanner.exe` if you intend to run the application from Windows Explorer (instead of the Command Line). It will act as if it was this command: `./prunmgr.exe //MS//ZeeneaScanner`.
 > 2. You can manage your service status using command available from procrun. See [here](https://commons.apache.org/proper/commons-daemon/procrun.html) for more information.
 > 3. Specific service log files are available in the `/service-logs` folder in your Scanner folder tree.
@@ -456,8 +457,8 @@ zeenea-scanner.service
 
 * If installing manually: `/etc/systemd/system`
 * If installing via packaging system:
-  * RHEL, CentOS: `/usr/lib/systemd/system`
-  * Debian, Ubuntu: `/lib/systemd/system`
+     * RHEL, CentOS: `/usr/lib/systemd/system`
+     * Debian, Ubuntu: `/lib/systemd/system`
  
 > **Note:**
 > 
