@@ -1,99 +1,99 @@
 nav:
-    - zeenea-connectors-list.md
+    - zeenea-dataset-detection.md
+    - Connector Downloads: zeenea-connectors-list.md
     - zeenea-connectors-install-as-plugin.md
     - zeenea-externalizing-external-connectors.md
-    - zeenea-dataset-detection.md
     - Actian DataConnect: zeenea-connector-actian-dataconnect.md
-    - zeenea-connector-actian-informix.md
-    - zeenea-connector-actian-ingres.md
-    - zeenea-connector-actian-zen.md
-    - zeenea-connector-agile-data-engine-solita.md
-    - zeenea-connector-aliyun-dataworks-maxcompute.md
-    - zeenea-connector-amazonS3.md
-    - zeenea-connector-atlas.md
-    - zeenea-connector-aws-athena.md
-    - zeenea-connector-aws-dynamodb.md
-    - zeenea-connector-aws-glue-data-catalog.md
-    - zeenea-connector-aws-glue-etl.md
-    - zeenea-connector-aws-redshift.md
-    - zeenea-connector-azure-data-factory.md
-    - zeenea-connector-azure-data-lake.md
-    - zeenea-connector-azure-purview.md
-    - zeenea-connector-azure-synapse.md
-    - zeenea-connector-cassandra.md
-    - zeenea-connector-couchbase.md
-    - zeenea-connector-custom-items-csv.md
-    - zeenea-connector-databricks-hive-metastore.md
-    - zeenea-connector-databricks-unity-jdbc.md
-    - zeenea-connector-databricks-unity-rest.md
-    - zeenea-connector-dataiku.md
-    - zeenea-connector-db2.md
-    - zeenea-connector-dbt-cloud.md
-    - zeenea-connector-dbt.md
-    - zeenea-connector-denodo.md
-    - zeenea-connector-dynamics-ax.md
-    - zeenea-connector-dynamics365.md
-    - zeenea-connector-elasticsearch.md
-    - zeenea-connector-generic-dataset.md
-    - zeenea-connector-generic-jdbc.md
-    - zeenea-connector-generic-lineage.md
-    - zeenea-connector-google-bigquery.md
-    - zeenea-connector-google-cloud-storage.md
-    - zeenea-connector-google-data-catalog.md
-    - zeenea-connector-google-data-lineage.md
-    - zeenea-connector-google-dataplex-v2.md
-    - zeenea-connector-google-dataplex.md
-    - zeenea-connector-greenplum.md
-    - zeenea-connector-hdfs.md
-    - zeenea-connector-hive.md
-    - zeenea-connector-impala.md
-    - zeenea-connector-influxdb.md
-    - zeenea-connector-informatica.md
-    - zeenea-connector-kafka.md
-    - zeenea-connector-local-filesystem.md
-    - zeenea-connector-looker.md
-    - zeenea-connector-mariadb.md
-    - zeenea-connector-matillion-dpc.md
-    - zeenea-connector-matillion.md
-    - zeenea-connector-microstrategy.md
-    - zeenea-connector-mongodb.md
-    - zeenea-connector-ms-fabric.md
-    - zeenea-connector-mysql.md
-    - zeenea-connector-netezza.md
-    - zeenea-connector-openapi.md
-    - zeenea-connector-oracle-ebusiness-suite.md
-    - zeenea-connector-oracle-jd-edwards.md
-    - zeenea-connector-oracle-peoplesoft.md
-    - zeenea-connector-oracle-siebel.md
-    - zeenea-connector-oracle.md
-    - zeenea-connector-palantir.md
-    - zeenea-connector-postgresql.md
-    - zeenea-connector-powerbi-report-server.md
-    - zeenea-connector-powerbi-saas-v2.md
-    - zeenea-connector-powerbi-saas.md
-    - zeenea-connector-qlik-cloud.md
-    - zeenea-connector-qlik-sense.md
-    - zeenea-connector-salesforce.md
-    - zeenea-connector-salesforce2.md
-    - zeenea-connector-sap-analytics-cloud.md
-    - zeenea-connector-sap-bo.md
-    - zeenea-connector-sap-bw-bluetelligence.md
-    - zeenea-connector-sap-bw-safyr.md
-    - zeenea-connector-sap-safyr.md
-    - zeenea-connector-sas-data-integration.md
-    - zeenea-connector-sas-db.md
-    - zeenea-connector-snowflake.md
-    - zeenea-connector-splunk.md
-    - zeenea-connector-sqlserver.md
-    - zeenea-connector-ssas.md
-    - zeenea-connector-ssis.md
-    - zeenea-connector-ssrs.md
-    - zeenea-connector-sybase-iq.md
-    - zeenea-connector-tableau-v2.md
-    - zeenea-connector-tableau.md
-    - zeenea-connector-talend.md
-    - zeenea-connector-teradata.md
-    - zeenea-connector-tibco-data-virtualization.md
-    - zeenea-connector-tibco-spotfire-v2.md
-    - zeenea-connector-tibco-spotfire.md
-    - zeenea-connector-zdf.md
+    - Actian Informix: zeenea-connector-actian-informix.md
+    - Actian Ingres: zeenea-connector-actian-ingres.md
+    - Actian Zen: zeenea-connector-actian-zen.md
+    - Agile Data Engine (Solita): zeenea-connector-agile-data-engine-solita.md
+    - Aliyun DataWorks MaxCompute: zeenea-connector-aliyun-dataworks-maxcompute.md
+    - Amazon S3: zeenea-connector-amazonS3.md
+    - Atlas: zeenea-connector-atlas.md
+    - AWS Athena: zeenea-connector-aws-athena.md
+    - AWS DynamoDB: zeenea-connector-aws-dynamodb.md
+    - AWS Glue (Data Catalog): zeenea-connector-aws-glue-data-catalog.md
+    - AWS Glue (ETL): zeenea-connector-aws-glue-etl.md
+    - AWS Redshift: zeenea-connector-aws-redshift.md
+    - Azure Data Factory: zeenea-connector-azure-data-factory.md
+    - Azure Data Lake: zeenea-connector-azure-data-lake.md
+    - Azure Purview: zeenea-connector-azure-purview.md
+    - Azure Synapse Analytics: zeenea-connector-azure-synapse.md
+    - Cassandra: zeenea-connector-cassandra.md
+    - Couchbase: zeenea-connector-couchbase.md
+    - Custom Item - CSV (Deprecated): zeenea-connector-custom-items-csv.md
+    - Databricks Hive Metastore: zeenea-connector-databricks-hive-metastore.md
+    - Databricks Unity Catalog JDBC: zeenea-connector-databricks-unity-jdbc.md
+    - Databricks Unity Catalog REST: zeenea-connector-databricks-unity-rest.md
+    - Dataiku: zeenea-connector-dataiku.md
+    - DB2: zeenea-connector-db2.md
+    - DBT: zeenea-connector-dbt.md
+    - DBT Cloud: zeenea-connector-dbt-cloud.md
+    - Denodo: zeenea-connector-denodo.md
+    - Dynamics AX: zeenea-connector-dynamics-ax.md
+    - Dynamics 365 (Safyr): zeenea-connector-dynamics365.md
+    - Elasticsearch: zeenea-connector-elasticsearch.md
+    - Generic Dataset (Deprecated): zeenea-connector-generic-dataset.md
+    - Generic JDBC: zeenea-connector-generic-jdbc.md
+    - Generic Lineage: zeenea-connector-generic-lineage.md
+    - Google BigQuery: zeenea-connector-google-bigquery.md
+    - Google Cloud Storage: zeenea-connector-google-cloud-storage.md
+    - Google Data Catalog: zeenea-connector-google-data-catalog.md
+    - Google Data Lineage: zeenea-connector-google-data-lineage.md
+    - Google Dataplex: zeenea-connector-google-dataplex.md
+    - Google Dataplex (V2): zeenea-connector-google-dataplex-v2.md
+    - Greenplum: zeenea-connector-greenplum.md
+    - HDFS: zeenea-connector-hdfs.md
+    - Hive: zeenea-connector-hive.md
+    - Impala: zeenea-connector-impala.md
+    - InfluxDB: zeenea-connector-influxdb.md
+    - Informatica Data Integration: zeenea-connector-informatica.md
+    - Kafka: zeenea-connector-kafka.md
+    - Local File System: zeenea-connector-local-filesystem.md
+    - Looker: zeenea-connector-looker.md
+    - MariaDB: zeenea-connector-mariadb.md
+    - Matillion: zeenea-connector-matillion.md
+    - Matillion DPC: zeenea-connector-matillion-dpc.md
+    - Microsoft Fabric: zeenea-connector-ms-fabric.md
+    - MicroStrategy: zeenea-connector-microstrategy.md
+    - MongoDB: zeenea-connector-mongodb.md
+    - MySQL: zeenea-connector-mysql.md
+    - Netezza: zeenea-connector-netezza.md
+    - OpenAPI: zeenea-connector-openapi.md
+    - Oracle: zeenea-connector-oracle.md
+    - Oracle E-Business Suite (Safyr): zeenea-connector-oracle-ebusiness-suite.md
+    - Oracle JD Edwards (Safyr): zeenea-connector-oracle-jd-edwards.md
+    - Oracle PeopleSoft (Safyr): zeenea-connector-oracle-peoplesoft.md
+    - Oracle Siebel (Safyr): zeenea-connector-oracle-siebel.md
+    - Palantir Foundry: zeenea-connector-palantir.md
+    - PostgreSQL: zeenea-connector-postgresql.md
+    - Power BI Report Server: zeenea-connector-powerbi-report-server.md
+    - Power BI Online (Deprecated): zeenea-connector-powerbi-saas.md
+    - Power BI Online (V2): zeenea-connector-powerbi-saas-v2.md
+    - Qlik Cloud: zeenea-connector-qlik-cloud.md
+    - Qlik Sense: zeenea-connector-qlik-sense.md
+    - Salesforce: zeenea-connector-salesforce2.md
+    - Salesforce (Safyr): zeenea-connector-salesforce.md
+    - SAP Analytics Cloud: zeenea-connector-sap-analytics-cloud.md
+    - SAP BO: zeenea-connector-sap-bo.md
+    - SAP BW (Safyr): zeenea-connector-sap-bw-safyr.md
+    - SAP BW (Bluetelligence): zeenea-connector-sap-bw-bluetelligence.md
+    - SAP (Safyr): zeenea-connector-sap-safyr.md
+    - SAS Data Integration: zeenea-connector-sas-data-integration.md
+    - SAS Database: zeenea-connector-sas-db.md
+    - Snowflake: zeenea-connector-snowflake.md
+    - Splunk: zeenea-connector-splunk.md
+    - SQL Server: zeenea-connector-sqlserver.md
+    - SSAS: zeenea-connector-ssas.md
+    - SSIS: zeenea-connector-ssis.md
+    - SSRS: zeenea-connector-ssrs.md
+    - Sybase IQ: zeenea-connector-sybase-iq.md
+    - Tableau (Deprecated): zeenea-connector-tableau.md
+    - Tableau (V2): zeenea-connector-tableau-v2.md
+    - Talend: zeenea-connector-talend.md
+    - Teradata: zeenea-connector-teradata.md
+    - Tibco Data Virtualization: zeenea-connector-tibco-data-virtualization.md
+    - Tibco Spotfire (Deprecated): zeenea-connector-tibco-spotfire.md
+    - Tibco Spotfire (V2): zeenea-connector-tibco-spotfire-v2.md
+    - Zeenea Descriptor Format (ZDF): zeenea-connector-zdf.md

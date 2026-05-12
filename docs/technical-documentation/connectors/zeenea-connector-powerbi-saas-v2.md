@@ -5,8 +5,8 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with PowerBI Online.
 * Zeenea's scanner traffic flows towards Power BI's instance and Azure must be open. Refer to the following:
 
-  * [https://login.microsoftonline.com](https://login.microsoftonline.com)
-  * [https://api.powerbi.com](https://api.powerbi.com)
+   * [https://login.microsoftonline.com](https://login.microsoftonline.com)
+   * [https://api.powerbi.com](https://api.powerbi.com)
 
 > **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 

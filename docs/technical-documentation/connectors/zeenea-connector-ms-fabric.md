@@ -6,8 +6,8 @@
 * The Fabric connector uses Fabric and Power BI APIs to obtain metadata.<br />The main metadata scan is performed using Power BI APIs, and most of the setup for the Fabric connector is common with the Power BI connector.
 * Zeenea's scanner traffic flows towards PowerBI/Fabric's instance and Azure must be open. See following:
 
-  * [https://login.microsoftonline.com](https://login.microsoftonline.com)
-  * [https://api.powerbi.com](https://api.powerbi.com)
+   * [https://login.microsoftonline.com](https://login.microsoftonline.com)
+   * [https://api.powerbi.com](https://api.powerbi.com)
 
 > **Note:** You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 

@@ -41,7 +41,7 @@ In order to establish a connection with Redshift, specifying the following param
 | `connection.username`  | Username      |
 | `connection.password`  | User password  |
 | `lineage.view.enabled` | To activate the lineage feature. Default value `false`.         |
-| `filter`               | To filter datasets during the inventory.See [Rich Filters](#rich-filters).     |
+| `filter`               | To filter datasets during the inventory. See [Rich Filters](#rich-filters).     |
 
 ## User Permissions
 

@@ -1,7 +1,7 @@
 nav:
-    - scanners
-    - connectors
-    - authentication
-    - api
-    - data-intelligence-reference-architecture.md
-    - zeenea-security-flaws-management.md
+    - Scanners: scanners
+    - Connectors: connectors
+    - Authentication: authentication
+    - API: api
+    - Actian Data Intelligence Reference Architecture: data-intelligence-reference-architecture.md
+    - Security Flaws Management Policy: zeenea-security-flaws-management.md

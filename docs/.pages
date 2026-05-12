@@ -1,5 +1,5 @@
 nav:
     - Home: index.md
     - Getting Started: getting-started
-    - features-applications
-    - technical-documentation
+    - Features & Applications: features-applications
+    - Technical Documentation: technical-documentation

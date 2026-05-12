@@ -34,8 +34,7 @@ To create data products, you must follow this sequence of API calls:
     ```
 2. Upload the YAML files with a `PUT` request to the URL obtained from the previous response. Include the headers `x-amz-server-side-encryption` and `x-amz-server-side-encryption-aws-kms-key-id` from the previous response.  
 
-   > **Important:** Ensure that the data products and data contracts YAML descriptors are compressed in a ZIP file. The ZIP file can contain multiple data products and data contracts.
-
+    > **Important:** Ensure that the data products and data contracts YAML descriptors are compressed in a ZIP file. The ZIP file can contain multiple data products and data contracts.
 
     If the request is successful, the endpoint returns an HTTP 200 status code.
 3. Trigger file processing with a `POST` request to the following endpoint:
