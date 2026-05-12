@@ -1,7 +1,7 @@
 nav:
-    - administration
-    - studio
-    - explorer
-    - Cross-Application Features:cross-application-features
-    - actian-mcp-server
-    - federated-catalog
+    - Administration: administration
+    - Studio: studio
+    - Explorer: explorer
+    - Cross-Application Features: cross-application-features
+    - Actian MCP Server: actian-mcp-server
+    - Federated Catalog: federated-catalog
