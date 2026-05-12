@@ -40,7 +40,7 @@ You can delete an Item:
 * From the item's detailed page, click on the "trash can" icon.
 * Using the mass edition feature.
 * Consequences of deleting:
-  * Deleting a Dataset automatically deletes all its Fields.
-  * Deleting a Visualization results in the deletion of all associated Datasets from the same connection, as well as the fields of these Datasets.
-  * The deletion of an Item from the catalog entails the irreversible destruction of its documentation. This Item can nevertheless be reimported afterward from the import wizard if necessary.
-  * The deletion of an Item from the catalog also entails the removal of all links between it and other Items in the catalog, in particular for Glossary Items and Custom Items.
+     * Deleting a Dataset automatically deletes all its Fields.
+     * Deleting a Visualization results in the deletion of all associated Datasets from the same connection, as well as the fields of these Datasets.
+     * The deletion of an Item from the catalog entails the irreversible destruction of its documentation. This Item can nevertheless be reimported afterward from the import wizard if necessary.
+     * The deletion of an Item from the catalog also entails the removal of all links between it and other Items in the catalog, in particular for Glossary Items and Custom Items.

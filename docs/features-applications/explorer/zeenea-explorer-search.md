@@ -18,8 +18,8 @@ When you click on the search bar, a drop-down menu appears:
 
 * Search suggestions based on your recent activity or that of other users
 * A list of advanced search operators: 
-  * "INFIELD:": Allows you to limit the search to information specific to the Fields in your Datasets
-  * "AND": Allows you to search for Objects matching all keywords
+     * "INFIELD:": Allows you to limit the search to information specific to the Fields in your Datasets
+     * "AND": Allows you to search for Objects matching all keywords
 
 ## Filters
 

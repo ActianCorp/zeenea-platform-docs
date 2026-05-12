@@ -68,10 +68,10 @@ The attributes you can use as keys inside the `rules` block (for example, `schem
 
 The `rules` block is where you set the conditions based on an item's attributes (like `schema`, `table`, `workspace_name`, etc.). You can match values in three powerful ways.
 
-1. **Exact Matching**
+1. **Exact Matching**<br />
      This is the default. If you provide a value without any special characters, Zeenea will look for an exact match.
 
-     **Example:**
+     **Example:**<br />
      This condition only matches if the schema is exactly `production`.
 
       ```
@@ -79,13 +79,13 @@ The `rules` block is where you set the conditions based on an item's attributes 
         schema = "production"
       }
       ```
-2. **Pattern Matching with Wildcards (`*` and `?`)**
+2. **Pattern Matching with Wildcards (`*` and `?`)**<br />
      You can use wildcards for more flexible matching. This is the most common way to match patterns.
    
        *  `*` matches any number of characters.
        *  `?` matches any single character.
 
-       **Example:**
+       **Example:**<br />
        This condition matches any table starting with `FACT_` in the `analytics` schema.
       ```
       rules {
@@ -93,21 +93,21 @@ The `rules` block is where you set the conditions based on an item's attributes 
         table = "FACT_*"
       }
       ```
-3. **Advanced Pattern Matching (Regular Expressions)**
+3. **Advanced Pattern Matching (Regular Expressions)**<br />
      For maximum power and precision, you can use regular expressions by adding the `regex:` prefix. This is an advanced feature for complex matching needs.
    
-     * **Example 1: Match one of several prefixes**
+     * **Example 1: Match one of several prefixes**<br />
          The pattern `(HR|IT|MARKET)_` matches anything that starts with `HR_`, `IT_`, or `MARKET_`.
-         **Example:**
+         **Example:**<br />
          This condition accepts tables from the HR, IT, or Market departments.
          ```
          rules {
            table = "regex:(HR|IT|MARKET)_.*"
          }
          ```
-     * **Example 2: Exclude a prefix**
+     * **Example 2: Exclude a prefix**<br />
          The pattern `^(?!TMP_).*` is a very useful one that means "does not start with `TMP_`".
-         **Example:**
+         **Example:**<br />
          This condition matches tables that DO NOT start with `TMP_`.
          ```
          rules {

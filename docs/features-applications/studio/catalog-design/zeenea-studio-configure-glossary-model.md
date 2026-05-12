@@ -18,10 +18,10 @@ For each object type define the following information:
 * Icon
 * Color
 * Options:
-   * Creation settings: Specify from which channel(s) you will create Items for this type (UI and/or API)
-   * Children Item Types: For each item type in the glossary, you can define parent-child links to create hierarchies between types (or within types). For instance: Business Objects can have one or several Business Attributes.<br>
+     * Creation settings: Specify from which channel(s) you will create Items for this type (UI and/or API)
+     * Children Item Types: For each item type in the glossary, you can define parent-child links to create hierarchies between types (or within types). For instance: Business Objects can have one or several Business Attributes.<br>
      ![](./images/zeenea-glossary-item-hierarchy.png)
-   * Implementation rules: You can also define how each glossary item type will be reflected or implemented in the catalog's physical layer by specifying a link to one or several technical item types. For instance, Business Objects can be implemented by Datasets while Business Attributes can be implemented by Fields.
+     * Implementation rules: You can also define how each glossary item type will be reflected or implemented in the catalog's physical layer by specifying a link to one or several technical item types. For instance, Business Objects can be implemented by Datasets while Business Attributes can be implemented by Fields.
   
 Children "Item Types" and "Implementation rules" restrict the possible options for Data Stewards while linking items in the Studio. It helps Data Stewards to keep the catalog consistent.
 

@@ -27,6 +27,8 @@ This feature is enabled if the following conditions are met:
 * There is at least one Responsibility defined in Zeenea
 * At least one item is selected
 
+To add contacts:
+
 1. Click the **Add People** button, then click the **Add Contacts** button.
 2. Search for a contact already referenced in Zeenea.
 3. Select from the list a responsibility that will be associated with it.
@@ -56,6 +58,8 @@ This feature is enabled if the following conditions are met:
 * Only one type of item is selected.
 * At least one item is selected.
 
+To manage properties:
+
 1. Click **Manage Properties**.
 2. Select the properties to be integrated in the selected items from right to left via drag and drop.
 3. Click the "Confirm" button to close the window and start the update.
@@ -75,6 +79,8 @@ This feature is enabled if the following conditions are met:
 * At least one item is selected
 * At least one Glossary Item exists
 * The selected Item Type supports links with at least one Glossary Type
+
+To manage glossary items:
 
 1. Click **Manage Glossary Items** button.
 2. Choose a Glossary Item among those already registered.

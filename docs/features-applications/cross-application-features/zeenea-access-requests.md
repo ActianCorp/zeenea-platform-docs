@@ -73,6 +73,7 @@ You can create new access request policies in Zeenea Administration.
             * Rejected
             * Approved
         > **Note:** The payload format is the same for all messages.      
+      
       ![](./images/zeenea-access-requests-policy-create-hook.png)
 5. Click **Create policy**.<br />A new access request policy is created.
  

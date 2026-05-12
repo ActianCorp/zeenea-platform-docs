@@ -15,19 +15,19 @@ The import file must meet the following criteria:
 * The file size must be less than `50 Mb`.
 * The file can only contain one type of Item, selected directly from the import menu on the Studio. You can import documentation about any type of Item in Zeenea.
 * The import file must have a header: 
-  * The file must contain one column per attribute (property, responsibility, etc.) that you want to modify. Columns that can not be mapped with an attribute of the Item Type metamodel will be ignored during import.
-  * The import file must contain a column named **key** to identify the imported Items. For more information, see [Identification Keys](zeenea-identification-keys.md). 
+     * The file must contain one column per attribute (property, responsibility, etc.) that you want to modify. Columns that can not be mapped with an attribute of the Item Type metamodel will be ignored during import.
+     * The import file must contain a column named **key** to identify the imported Items. For more information, see [Identification Keys](zeenea-identification-keys.md). 
 * The import file can also have the following attributes, depending on the type of Item being imported:  
-  * **name**: The name of the Item.
-  * **description**: The description of the Item.
-  * **summary**: The summary of the item description.
-  * **contacts**: For each responsibility, a column with its name will be added to the template. Note that curators can be imported using the **curator** column. 
-  * **Template properties**: for each property, a column will be added to the template. 
-  * **policy code**: The policy code to assign an access request policy to the Item, if required.
-  * **Links with Custom Items** or **Glossary Items**: for each type of Item that can be associated, a column will be added to the template. 
-  * **Inputs** and **Outputs** (Only for Data Processes): These columns can be used to import or update a lineage, and can only contain Dataset unique keys or Custom Item unique keys (depending on your metamodel configuration). 
-  * Calculation of the Data Profiling (Fields only)
-  * Publishing of the Data Profiling (Fields only)
+     * **name**: The name of the Item.
+     * **description**: The description of the Item.
+     * **summary**: The summary of the item description.
+     * **contacts**: For each responsibility, a column with its name will be added to the template. Note that curators can be imported using the **curator** column. 
+     * **Template properties**: for each property, a column will be added to the template. 
+     * **policy code**: The policy code to assign an access request policy to the Item, if required.
+     * **Links with Custom Items** or **Glossary Items**: for each type of Item that can be associated, a column will be added to the template. 
+     * **Inputs** and **Outputs** (Only for Data Processes): These columns can be used to import or update a lineage, and can only contain Dataset unique keys or Custom Item unique keys (depending on your metamodel configuration). 
+     * Calculation of the Data Profiling (Fields only)
+     * Publishing of the Data Profiling (Fields only)
 
 In the case of the Federated Catalog, you can also import the following attributes:
 

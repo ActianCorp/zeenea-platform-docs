@@ -51,8 +51,8 @@ Use this option to apply a new filter set to an existing Topic. You can update t
 3. Adjust the filters as needed.
 4. Select **Save Filters** in the upper‑right corner, and then select **Update existing topic**.
 5. Select the Topic you want to update.
-   * Select the same Topic to update its filters.
-   * Select a different Topic to replace its filters.
+     * Select the same Topic to update its filters.
+     * Select a different Topic to replace its filters.
 6. Select **Confirm**.
 
 ### Create a New Topic From Updated Filters
