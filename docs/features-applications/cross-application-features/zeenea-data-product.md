@@ -187,7 +187,7 @@ The following sections provide detailed attribute-level information for the full
 | `description.authoritativeDefinitions` | No | No | See _Authoritative Definitions_ below. |
 | `description.customProperties` | No | No | See _Custom Properties_ below. |
 | `customProperties` | No | Yes | See _Custom Properties_ below. |
-| `tags` | No | Yes | Tags as a list.<br>Syntax example:<br>&nbsp;&nbsp;tags:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Managed<br>&nbsp;&nbsp;&nbsp;&nbsp;- AML<br>&nbsp;&nbsp;&nbsp;&nbsp;- Compliance |
+| `tags` | No | Yes | Tags as a list.<br>Syntax example:<br><code>&nbsp;&nbsp;tags:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Managed<br>&nbsp;&nbsp;&nbsp;&nbsp;- AML<br>&nbsp;&nbsp;&nbsp;&nbsp;- Compliance</code> |
 
 #### Product Information
 

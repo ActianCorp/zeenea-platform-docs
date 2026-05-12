@@ -9,8 +9,7 @@ Zeenea provides a **machine-to-machine** authentication mechanism based on API k
 3. Go to the **API Keys** section.
 4. Click the **Create API Key** button.<br />A **Create API key** window opens. 
 5. In the **Name** field, enter a unique name for your API key. <br />This name helps you identify the key in the interface later.
-6. Choose a **Permission scope** for the API key:
-    
+6. Choose a **Permission scope** for the API key:    
     * **Read-only**: Allows read permission on all catalog items.
     * **Manage documentation**: Allows read and write permissions on all catalog items (create, update, delete).
     * **Admin**: Allows read and write permissions on catalog items, users, and the metamodel.

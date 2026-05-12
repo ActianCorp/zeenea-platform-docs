@@ -1,6 +1,7 @@
 # Zeenea Connector Downloads
 
 > **Note:** 
+> 
 > * Some plugins require a minimum version of the scanner.
 > * The latest version of the scanner can be downloaded from your instance: `https://[instance-name].zeenea.app/admin/settings/scanners`
 > * A plugin can contain several connectors.
