@@ -38,9 +38,12 @@ You can create new access request policies in Zeenea Administration.
 **To create an access request policy**
 
 1. Open Zeenea Administration.
+   
 2. Go to the **Policies** section.
+   
 3. Click the **Create policy** button.<br />The **Create an Access Request Policy** window opens. 
    ![](./images/zeenea-access-requests-policy.png)
+   
 4. Complete the following fields:
     * In the **General information** section:
          * **Name** (required): Enter a unique name for the access request policy.
@@ -74,7 +77,8 @@ You can create new access request policies in Zeenea Administration.
             * Approved
         > **Note:** The payload format is the same for all messages.      
       
-      ![](./images/zeenea-access-requests-policy-create-hook.png)
+       ![](./images/zeenea-access-requests-policy-create-hook.png)
+              
 5. Click **Create policy**.<br />A new access request policy is created.
  
 ### Edit an Access Request Policy
