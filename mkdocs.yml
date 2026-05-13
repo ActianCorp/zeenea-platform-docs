@@ -121,6 +121,7 @@ extra_javascript:
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js
   - javascripts/mermaid-init.js
   - javascripts/search_enhancement.js
+  - javascripts/cn-nav.js
   - javascripts/extra.js
   - path: javascripts/current.js
     defer: true
