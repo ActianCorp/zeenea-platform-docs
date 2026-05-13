@@ -6,8 +6,8 @@
 * The Fabric connector uses Fabric and Power BI APIs to obtain metadata.<br />The main metadata scan is performed using Power BI APIs, and most of the setup for the Fabric connector is common with the Power BI connector.
 * Zeenea's scanner traffic flows towards PowerBI/Fabric's instance and Azure must be open. See following:
 
-   * [https://login.microsoftonline.com](https://login.microsoftonline.com)
-   * [https://api.powerbi.com](https://api.powerbi.com)
+     * [https://login.microsoftonline.com](https://login.microsoftonline.com)
+     * [https://api.powerbi.com](https://api.powerbi.com)
 
 !!! note
     You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
@@ -75,30 +75,30 @@ To configure Admin API settings in Azure, you typically need to enable service p
 #### Microsoft Azure Portal : [https://portal.azure.com/](https://portal.azure.com/)
 
 1. **Register an Application in Azure Entra ID (fka Active Directory)**:
-    * Log in to the Azure portal.
-    * Go to Azure Entra ID.
-    * Select **App registrations**.
-    * Click **New registration**.
-    * Enter a name for your application.
-    * Choose the appropriate supported account types.
-    * Select the redirect URI.
-      * Example: `https://login.microsoftonline.com/20057ce9-1386-4770-8b04-e7824ef632be/oauth2/v2.0/token`
-    * Click **Register**. 
+     * Log in to the Azure portal.
+     * Go to Azure Entra ID.
+     * Select **App registrations**.
+     * Click **New registration**.
+     * Enter a name for your application.
+     * Choose the appropriate supported account types.
+     * Select the redirect URI.
+          * Example: `https://login.microsoftonline.com/20057ce9-1386-4770-8b04-e7824ef632be/oauth2/v2.0/token`
+     * Click **Register**. 
 2. **Note the Application (client) ID**: 
-    * Once the app registration is complete, note the Application (client) ID. You'll need this later to authenticate with the service principal. 
+     * Once the app registration is complete, note the Application (client) ID. You'll need this later to authenticate with the service principal. 
 3. **Add a Client Secret**: 
-    * You can add a client secret to provide a password-based credential for authentication. 
-    * Go to **Certificates & secrets** under the app registration. 
-    * Click **New client secret**. 
-    * Enter a description and expiry date, then click **Add**.
-  > **Important:** Copy the value of the client secret immediately after creation, as you won't be able to retrieve it later. 
+     * You can add a client secret to provide a password-based credential for authentication. 
+     * Go to **Certificates & secrets** under the app registration. 
+     * Click **New client secret**. 
+     * Enter a description and expiry date, then click **Add**.
+     > **Important:** Copy the value of the client secret immediately after creation, as you won't be able to retrieve it later. 
 4. **Grant Permissions**:
-    * Go to the Azure resource you want the service principal to access.
-    * Select **Access control (IAM)**.
-    * Click **Add role assignment**.
-    * Choose the appropriate privileged administrator role (for example, "Contributor").
-    * Add members by selecting the service principal created by the registered application.
-    * Click **Save**. 
+     * Go to the Azure resource you want the service principal to access.
+     * Select **Access control (IAM)**.
+     * Click **Add role assignment**.
+     * Choose the appropriate privileged administrator role (for example, "Contributor").
+     * Add members by selecting the service principal created by the registered application.
+     * Click **Save**. 
 
 #### Microsoft Entra Admin Center: [https://entra.microsoft.com/](https://entra.microsoft.com/)
 
