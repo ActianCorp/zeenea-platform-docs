@@ -98,13 +98,12 @@ A data process is an SAS job.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-
-    * Technical Name
-    * Repository
-    * SAS ID
-    * Creation Time
-    * Folder
-    * Created By
+     * Technical Name
+          * Repository
+          * SAS ID
+          * Creation Time
+          * Folder
+          * Created By
 
 ## Unique Identifier Keys
  

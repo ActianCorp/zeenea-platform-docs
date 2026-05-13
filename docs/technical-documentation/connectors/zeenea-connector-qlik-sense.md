@@ -97,40 +97,20 @@ To extract information, the connector runs requests on the Qlik Sense API.
 <!-- #p100270 -->
 Will collect the list of sheets applications accessible by the user.  
 
-<!-- #p100276 -->
 ### Visualization
 
-<!-- #p100282 -->
 A visualization is a sheet from an application. 
 
-- <!-- #p100291 -->
-  **Name**: Sheet name
+* **Name**: Sheet name
+* **Source Description**: Sheet description
+* **Contacts**
+* **Technical Data**:
+     * Application Name
+     * Sheet Url
+     * Creation Date
+     * Modification Date
+     * Publish Date
 
-- <!-- #p100303 -->
-  **Source Description**: Sheet description
-
-- <!-- #p100315 -->
-  **Contacts**
-
-- <!-- #p100327 -->
-  **Technical Data**:
-
-  - <!-- #p100333 -->
-    Application Name
-
-  - <!-- #p100342 -->
-    Sheet Url
-
-  - <!-- #p100351 -->
-    Creation Date
-
-  - <!-- #p100360 -->
-    Modification Date
-
-  - <!-- #p100369 -->
-    Publish Date
-
-<!-- #p100387 -->
 ## Unique Identifier Keys
 
 <!-- #p100393 -->
