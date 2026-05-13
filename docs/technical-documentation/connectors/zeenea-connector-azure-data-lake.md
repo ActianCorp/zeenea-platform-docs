@@ -75,8 +75,8 @@ There is no specific authorization to be configured for Azure Gen 2. The connect
 
 Since version 54 of the scanner, the ADLS connector benefits from the feature of rich filters in the configuration of the connector. You can use the following keys to filter objects during inventory:
 
-    * `container`: The name of the container.
-    * `path`: The path of the file in the container.
+* `container`: The name of the container.
+* `path`: The path of the file in the container.
 
 Paths don't start with slashes for all file systems for consistency reasons between connectors. (The choice was made based on S3 choice where the slash has no specific meaning and is only a convention).
 

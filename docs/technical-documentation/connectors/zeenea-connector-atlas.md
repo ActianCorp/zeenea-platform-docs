@@ -19,7 +19,7 @@ Since scanner version 26.0, the Atlas plugin can be downloaded here: Connectors:
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
- ## Declaring the Connection
+## Declaring the Connection
   
  Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
@@ -67,6 +67,7 @@ In order to gather metadata from Atlas, the connector first references **dataset
 
 !!! warning "Important"
     The Atlas connector behavior is very specific, and must be taken into account when deploying the connector. When a dataset is imported or updated, the connector will also import:
+    
     1. The selected Dataset
     2. Any Data Process of which the selected dataset is an output
     3. Any Data Process of which the selected Dataset is an input

@@ -85,11 +85,11 @@ The connector can reconstruct the lineage of imported dataset from databases suc
 - **Name**
 - **Source Description**
 - **Technical Data**:
-  - Type
-  - Format Type
-  - Project Key
-  - Updated At
-  - Updated By
+     * Type
+     * Format Type
+     * Project Key
+     * Updated At
+     * Updated By
 
 ### Field
 
@@ -102,8 +102,8 @@ Dataset field.
 - **Multivalued**: Not supported. Default value `false`.
 - **Primary Key**: Not supported. Default value `false`.
 - **Technical Data**:
-  - Technical Name
-  - Native type
+      - Technical Name
+      - Native type
 
 ## Object Identification Keys
 

@@ -29,7 +29,7 @@ You can download the AWS Glue plugin from [Zeenea Connector Downloads](./zeenea-
 
 For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
- ## Declaring the Connection
+## Declaring the Connection
   
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 

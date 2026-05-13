@@ -9,17 +9,17 @@ Whether you're revisiting key datasets, monitoring critical documentation, or ke
 You can mark an item as a favorite from multiple locations in Zeenea Explorer:
 
 * **From the Search Results Page**
-  1. Go to your search results.
-  2. Hover over an item row.<br />An empty star icon appears on the right side.
-  3. Click the empty star icon to mark it as a favorite.<br />The star changes to filled, indicating the item is marked as a favorite.
+   1. Go to your search results.
+   2. Hover over an item row.<br />An empty star icon appears on the right side.
+   3. Click the empty star icon to mark it as a favorite.<br />The star changes to filled, indicating the item is marked as a favorite.
      ![](./images/zeenea-favorite-items-search-results-page.png)
 * **From the Item Details Page**
-  1. Open the item details page.
-  2. Click the empty star icon at the top of the page.<br />The star changes to filled, indicating the item is marked as a favorite.
+   1. Open the item details page.
+   2. Click the empty star icon at the top of the page.<br />The star changes to filled, indicating the item is marked as a favorite.
      ![](./images/zeenea-favorite-items-item-details-page.png)
 * **From the Side Overview Panel**
-  1. Select an item to open the side overview panel.
-  2. Click the empty star icon at the top of the panel.<br />The star changes to filled, indicating the item is marked as a favorite.
+   1. Select an item to open the side overview panel.
+   2. Click the empty star icon at the top of the panel.<br />The star changes to filled, indicating the item is marked as a favorite.
      ![](./images/zeenea-favorite-items-side-overview-panel.png)
 
 !!! note

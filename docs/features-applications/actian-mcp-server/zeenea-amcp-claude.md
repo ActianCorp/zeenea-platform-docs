@@ -15,27 +15,25 @@ Before you begin, ensure that you have the following:
 2. Open **Claude Desktop**.
 3. Go to **Settings > Developer > Edit Config**.  
 4. Add the following configuration:
-
-  ```json
-  {
-    "mcpServers": {
-      "zeenea-dev": {
-        "command": "npx",
-        "args": [
-          "mcp-remote",
-          "https://<tenant id>.zeenea.app/api/mcp-server/mcp",
-          "--header",
-          "X-API-SECRET:${API_SECRET}"
-        ],
-        "env": {
-          "API_SECRET": "<Paste your API key here>"
+    ```json
+    {
+      "mcpServers": {
+        "zeenea-dev": {
+          "command": "npx",
+          "args": [
+            "mcp-remote",
+            "https://<tenant id>.zeenea.app/api/mcp-server/mcp",
+            "--header",
+            "X-API-SECRET:${API_SECRET}"
+          ],
+          "env": {
+            "API_SECRET": "<Paste your API key here>"
+          }
         }
       }
     }
-  }
 
-  ```
-
-4. Restart **Claude Desktop**. <br />The server is available with API Key authentication.  
-5. Verify that the connection is established by opening a new chat window, navigating to the Tools menu, and checking that the `Zeenea-mcp` tool is toggled on.  
-6. You can now use Actian MCP tools directly in **Claude Desktop**.
+    ```
+5. Restart **Claude Desktop**. <br />The server is available with API Key authentication.  
+6. Verify that the connection is established by opening a new chat window, navigating to the Tools menu, and checking that the `Zeenea-mcp` tool is toggled on.  
+7. You can now use Actian MCP tools directly in **Claude Desktop**.

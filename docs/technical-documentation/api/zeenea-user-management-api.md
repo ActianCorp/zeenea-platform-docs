@@ -239,8 +239,7 @@ Note that the file contains the following information:
 * Logins count: Total count of logins of the user since its creation
 
 !!! note
-
->* If the user belongs to several groups, the file will return only the first one.
->* For the Federated Catalog, only information concerning the default catalog is displayed in the user's permission details.
+    * If the user belongs to several groups, the file will return only the first one.
+    * For the Federated Catalog, only information concerning the default catalog is displayed in the user's permission details.
 
 

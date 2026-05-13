@@ -156,6 +156,7 @@ Example:
 * **Column identifiers**: A column is identified either by the header label (in the form of a string), or by its index preceded by the `#` sign. The indices start at 0 for the first column.
 
     Examples: 
+    
     * `#0`
     * `col_property_1`
 

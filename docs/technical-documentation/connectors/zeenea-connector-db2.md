@@ -31,7 +31,7 @@ It can be downloaded here: [Zeenea Connector Downloads](./zeenea-connectors-list
 
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
- ## Declaring the Connection
+## Declaring the Connection
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
@@ -104,26 +104,25 @@ A dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-
-    * Catalog: source catalog
-    * Schema: source schema
-    * Table: table name
-    * Type:
-    * Alias
-    * Clone table
-    * Accelerator-only table
-    * Created temporary table or Created global temporary table
-    * Hierarchy table or History table
-    * Detached table
-    * Nickname
-    * Materialized query table
-    * Table that was implicitly created for XML columns
-    * Archive table
-    * Table
-    * Typed table
-    * View
-    * Typed view
-    * Auxiliary table
+     * Catalog: source catalog
+     * Schema: source schema
+     * Table: table name
+     * Type:
+          * Alias
+          * Clone table
+          * Accelerator-only table
+          * Created temporary table or Created global temporary table
+          * Hierarchy table or History table
+          * Detached table
+          * Nickname
+          * Materialized query table
+          * Table that was implicitly created for XML columns
+          * Archive table
+          * Table
+          * Typed table
+          * View
+          * Typed view
+          * Auxiliary table
 
 ### Field
 
@@ -136,10 +135,9 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Depending on the "Primary Key" field attribute
 * **Technical Data**:
-
-    * Catalog: source catalog
-    * Last Alter Time: last modification date
-    * Table: source table name
+     * Catalog: source catalog
+     * Last Alter Time: last modification date
+     * Table: source table name
  
 ## Object Identification Keys
 

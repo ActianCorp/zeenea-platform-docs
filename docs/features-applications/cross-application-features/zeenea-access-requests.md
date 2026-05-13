@@ -113,6 +113,7 @@ When a property is selected, the access request form updates so requesters can u
 
 
 For example, you can use this option to manage access requests for user groups instead of individual users:
+
 1.	Assign user groups to each use case using a multi-select property.
 2.	When requesting access, the end user can select the user group for which they are requesting access.
 3.	This information is displayed to the data owner for review and then forwarded to the source system or IT department through the configured mailhook or webhook.
@@ -342,15 +343,15 @@ When the feature is activated for an item, you can request access from the item 
 1. In Zeenea Explorer, go to the item details page.
 2. Click the **Request Access** button on the top right.<br />A **Create a new access request** dialog opens.
 3. Provide the following information:
-   * If the **Use case** field is displayed:
-     * **Use Case** (required): Select the use case from the drop-down list.
-     * If an extra input field is configured (for example, **User group**) (required): Select the necessary values from the multi-select list.
-     * **Reason** (optional): Enter the reason or project for which you need access to the data. 
-       ![](./images/zeenea-access-requests-policy-submit-usecase.png)
-   * If the **Use case** field is not displayed:
-     * **Reason** (required): Enter the reason or project for which you need access to the data.
-     * **Audience** (required): Select for whom you are requesting access (Myself or Service account). 
-       ![](./images/zeenea-access-requests-policy-submit.png)
+     * If the **Use case** field is displayed:
+         * **Use Case** (required): Select the use case from the drop-down list.
+         * If an extra input field is configured (for example, **User group**) (required): Select the necessary values from the multi-select list.
+         * **Reason** (optional): Enter the reason or project for which you need access to the data. 
+         ![](./images/zeenea-access-requests-policy-submit-usecase.png)
+     * If the **Use case** field is not displayed:
+         * **Reason** (required): Enter the reason or project for which you need access to the data.
+         * **Audience** (required): Select for whom you are requesting access (Myself or Service account). 
+         ![](./images/zeenea-access-requests-policy-submit.png)
 4. Click **Create**.
 
 Once the request is submitted, the approver receives an email notification to invite them to review it. After the review, you will receive an email notification with the status of your request (approved or rejected) and an optional comment from the approver.

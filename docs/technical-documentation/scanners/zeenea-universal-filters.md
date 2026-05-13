@@ -98,6 +98,7 @@ The `rules` block is where you set the conditions based on an item's attributes 
    
      * **Example 1: Match one of several prefixes**<br />
          The pattern `(HR|IT|MARKET)_` matches anything that starts with `HR_`, `IT_`, or `MARKET_`.
+
          **Example:**<br />
          This condition accepts tables from the HR, IT, or Market departments.
          ```
@@ -107,6 +108,7 @@ The `rules` block is where you set the conditions based on an item's attributes 
          ```
      * **Example 2: Exclude a prefix**<br />
          The pattern `^(?!TMP_).*` is a very useful one that means "does not start with `TMP_`".
+         
          **Example:**<br />
          This condition matches tables that DO NOT start with `TMP_`.
          ```
