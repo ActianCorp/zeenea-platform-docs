@@ -68,6 +68,8 @@ The filter can apply to the following criteria:
 | table | Table or view name |
 | type | The name of the type of the object. Possible values are: `TABLE`, `VIEW`, or `MATERIALIZED VIEW`. |
 | objclass | The number that identify the type of the object.<br/>Possible values are:<br/>- `4905` (TABLE)<br/>- `4961` (TABLE)<br/>- `4906` (VIEW)<br/>- `4908` (MATERIALIZED VIEW) |
+
+
 ## User Permissions
 
 In order to collect metadata, the running user's permissions must allow them to access and read databases that need cataloging. 

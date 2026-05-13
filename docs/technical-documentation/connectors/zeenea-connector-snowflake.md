@@ -107,6 +107,7 @@ When activated, the list of accounts to scan can be determined by two ways:
     Example:
     
     `multi_account.list = "abcdefg-kn67972 abcdefg-kh90823"`
+
 * If no list is provided, the connector execute the following SQL query to get the accounts available in the organization:
     
     ```
@@ -231,15 +232,14 @@ Here, a dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-
-    * Catalog: Database catalog
-    * Last Alter Time: Last time the table was updated
-    * Schema: Database schema
-    * Table: Table name
-    * Type:
-    * base table
-    * temporary table
-    * view
+     * Catalog: Database catalog
+     * Last Alter Time: Last time the table was updated
+     * Schema: Database schema
+     * Table: Table name
+     * Type:
+          * base table
+          * temporary table
+          * view
 
 ### Field
 
@@ -252,11 +252,10 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `FALSE`.
 * **Primary Key**: Depending on the field's "Primary Key" attribute
 * **Technical Data**: 
-
-    * Technical Name: field technical name
-    * Native type: field native type
-    * Privacy Category
-    * Semantic Category
+     * Technical Name: field technical name
+     * Native type: field native type
+     * Privacy Category
+     * Semantic Category
  
 ### Data Process
 
@@ -265,11 +264,10 @@ A data process can be the representation of a Snowpipe, a view construction requ
 * **Name**
 * **Source Description**
 * **Snowpipe Technical data**:
-
-    * Is Auto-ingest Enabled
-    * Definition
-    * Last Forwarded File Path
-    * Notification Channel Name
+     * Is Auto-ingest Enabled
+     * Definition
+     * Last Forwarded File Path
+     * Notification Channel Name
  
 ## Data Profiling
 

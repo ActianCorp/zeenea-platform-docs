@@ -133,16 +133,14 @@ Indexes are unpartitioned using the procedure described in Partitioned Virtual I
 Based on the version of Elasticsearch, it is one dataset per index (v6 onwards) or one dataset per type (v5).
 
 * **Name**:
-
-    * The index name for v6 and onwards
-    * An `Index/Type` template for v6
+     * The index name for v6 and onwards
+     * An `Index/Type` template for v6
 * **Source Description**: not managed
 * **Technical Data**:
-
-    * Index: Index name
-    * Type: type name (mapping)
-    * Dataset size: in octets
-    * Number of records: in the table
+     * Index: Index name
+     * Type: type name (mapping)
+     * Dataset size: in octets
+     * Number of records: in the table
 
 ### Field
 
@@ -153,9 +151,8 @@ Based on the version of Elasticsearch, it is one dataset per index (v6 onwards) 
 * **Multivalued**: `true`
 * **Primary Key**: Not managed
 * **Technical Data**: 
-
-    * Technical Name
-    * Native type
+     * Technical Name
+     * Native type
  
 ## Object Identification Keys
 

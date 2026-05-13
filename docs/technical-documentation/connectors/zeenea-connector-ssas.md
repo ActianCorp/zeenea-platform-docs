@@ -70,10 +70,9 @@ A dataset corresponds to a table for a SSAS server in "Tabular" mode or a cube f
 * **Name**
 * **Source Description**
 * **Technical Data**: 
-
-    * Catalog
-    * Creation date
-    * Last modification date
+     * Catalog
+     * Creation date
+     * Last modification date
  
 ### Field
 
@@ -86,17 +85,16 @@ A field is a field within a dataset.
 * **Multivalued (Mode "Multidimensional" only)**
 * **Primary Key**
 * **Technical Data**: 
-
-    * "Multidimensional" Mode:
-    * Field Type (dimension or measure)
-    * Measure Group
-    * Aggregate Function
-    * The table associated with the measure
-    * Column associated with the measure
-    * "Tabular" Mode:
-    * Is Hidden
-    * Is Unique
-    * Last Modification Date
+     * "Multidimensional" Mode:
+          * Field Type (dimension or measure)
+          * Measure Group
+          * Aggregate Function
+          * The table associated with the measure
+          * Column associated with the measure
+     * "Tabular" Mode:
+          * Is Hidden
+          * Is Unique
+          * Last Modification Date
 
 ### Data Process
 
@@ -106,9 +104,8 @@ A data process represents lineage between a cube/table and its sources.
 * **Input**: Datasets as input to the process
 * **Output**: Dataset as output to the process
 * **Technical  Data**:
-
-    * "Tabular" Mode:
-    * SQL Query used
+     * "Tabular" Mode:
+          * SQL Query used
 
 ## Object Identification Keys
 

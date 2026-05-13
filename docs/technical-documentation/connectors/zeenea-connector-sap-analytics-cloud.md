@@ -106,73 +106,39 @@ Summary table of possible values of the `alias` parameter to be completed in the
 | ------------------------------------------------------------------- | ----------------- | ----------------- |
 | [SAP BW](zeenea-connector-sap-bw-safyr.md# "title: SAP BW (Safyr)") | N/A               | N/A               |
 
-<!-- #p100300 -->
 ### Visualization
 
-<!-- #p100306 -->
 A visualization is an SAP Analytics Cloud story.
 
-- <!-- #p100315 -->
-  **Name**
+* **Name**
+* **Source Description**
+* **Technical Data**:
+     * SAP Identifier
+     * URL
+     * Created At
+     * Updated At
+     * Created By
+     * Updated By
 
-- <!-- #p100327 -->
-  **Source Description**
-
-- <!-- #p100339 -->
-  **Technical Data**:
-
-  - <!-- #p100345 -->
-    SAP Identifier
-
-  - <!-- #p100354 -->
-    URL
-
-  - <!-- #p100363 -->
-    Created At
-
-  - <!-- #p100372 -->
-    Updated At
-
-  - <!-- #p100381 -->
-    Created By
-
-  - <!-- #p100390 -->
-    Updated By
-
-<!-- #p100408 -->
 ### Dataset
 
-<!-- #p100414 -->
 A dataset is an SAP Analytics Cloud model. 
 
-- <!-- #p100423 -->
-  **Name**
+* **Name**
+* **Source Description**
+* **Technical Data**:
+     * SAP Identifier
 
-- <!-- #p100435 -->
-  **Source Description**
-
-- <!-- #p100447 -->
-  **Technical Data**:
-
-  - <!-- #p100453 -->
-    SAP Identifier
-
-<!-- #p100471 -->
 ### Data Process
 
-<!-- #p100477 -->
 To represent the data flow from an external source, a Zeenea Data Process will be created for each SAP Analytics Cloud model.
 
-- <!-- #p100489 -->
-  **Name**: `import dataset_name`
+* **Name**: `import dataset_name`
 
-<!-- #p100501 -->
 ### Fields
 
-<!-- #p100507 -->
 The connector does not return any information about the story fields. They are not exposed by the SAP Analytics Cloud API.
 
-<!-- #p100513 -->
 ## Unique Identifier Keys
 
 <!-- #p100519 -->

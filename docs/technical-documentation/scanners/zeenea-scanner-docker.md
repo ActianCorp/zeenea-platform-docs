@@ -114,7 +114,7 @@ Then, build your own Docker image:
 
 ## Prepare your Scanner configuration
 
-1. Create four folders wherever you want:
+1. Create four folders wherever you want:<br>
    `mkdir -p {conf,connections,plugins,logs}`
 2. Copy the file `application.conf.template` from the previously downloaded scanner into the `conf` folder with `application.conf` as its new name.
 3. Modify `application.conf` as needed. See [Managing Scanners](../../features-applications/administration/zeenea-managing-scanners.md).

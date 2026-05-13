@@ -76,14 +76,14 @@ In order to collect metadata, the user permissions must allow them to list and r
 To extract metadata, the technical account must have the following predefined roles: 
 
 * For the BigQueryOrganization connector:
-    * On the project where the service account is being managed:
-    * Project/Browser (roles/Browser)
-    * BigQuery Metadata viewer (roles/bigquery.metadataviewer)
-    * On all projects that need to be cataloged:
-    * BigQuery Metadata Viewer (roles/bigquery.metadataviewer)
+     * On the project where the service account is being managed:
+          * Project/Browser (roles/Browser)
+          * BigQuery Metadata viewer (roles/bigquery.metadataviewer)
+     * On all projects that need to be cataloged:
+          * BigQuery Metadata Viewer (roles/bigquery.metadataviewer)
 * For the BigQuery connector:
-   * On the project that needs to be cataloged:
-     * BigQuery Metadata Viewer (roles/bigquery.metadataviewer)
+     * On the project that needs to be cataloged:
+          * BigQuery Metadata Viewer (roles/bigquery.metadataviewer)
 
 The running user will also need this specific authorization: bigquery.jobs.create (required in order to retrieve Primary Keys & Foreign Keys)
 

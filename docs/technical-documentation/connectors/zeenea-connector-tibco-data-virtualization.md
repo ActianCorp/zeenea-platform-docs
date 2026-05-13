@@ -80,12 +80,11 @@ A dataset is a published view.
 * **Name**
 * **Description**
 * **Technical Data**:
-
-    * Composite Container Name
-    * Catalog Name
-    * Schema Name
-    * Creation Date
-    * Last Modification Date
+     * Composite Container Name
+     * Catalog Name
+     * Schema Name
+     * Creation Date
+     * Last Modification Date
 
 ### Field
 
@@ -98,13 +97,12 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary key**: Depending on the "Primary Key" field attribute
 * **Technical Data**:
-
-    * Technical Name
-    * Native type: field native type
-    * Column Length:
-    * For CHAR or VARCHAR columns, the max length allowed.
-    * For DECIMAL or NUMERIC columns, the total number of digits is the column length value.
-    * If it is not one of these four types, the value is NULL.
+     * Technical Name
+     * Native type: field native type
+     * Column Length:
+          * For CHAR or VARCHAR columns, the max length allowed.
+          * For DECIMAL or NUMERIC columns, the total number of digits is the column length value.
+          * If it is not one of these four types, the value is NULL.
 
 ## Object Identification Keys
 

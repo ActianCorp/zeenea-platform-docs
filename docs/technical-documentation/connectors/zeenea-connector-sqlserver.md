@@ -105,13 +105,12 @@ A dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-
-    * Schema
-    * Table
-    * Rows
-    * Type:
-    * USER_TABLE
-    * VIEW
+     * Schema
+     * Table
+     * Rows
+     * Type:
+          * USER_TABLE
+          * VIEW
 
 ### Fields
 
@@ -124,9 +123,8 @@ Table or view field.
 * **Multivalued**: Not supported. Default value `FALSE`.
 * **Primary Key**: Depending on the field "Primary Key" attribute
 * **Technical Data**:
-
-    * Technical Name
-    * Native type: Field native type
+     * Technical Name
+     * Native type: Field native type
  
 ### Data Process
 

@@ -88,8 +88,8 @@ It lists the groups with the `/group` endpoint.
 1. List group from the endpoint `/group`.
 2. For each group, list the projects with the `/group/name/{group_name}/project` endpoint.
 3. For each project, list the versions with the `/group/name/{group_name}/project/name/{project_name}/version` endpoint.
-   1. If only a single version is returned, it is selected for synchronization.
-   2. If several versions are returned, the connector will select the version configured for the connection. If no version is configured, "default" version will be considered.
+     1. If only a single version is returned, it is selected for synchronization.
+     2. If several versions are returned, the connector will select the version configured for the connection. If no version is configured, "default" version will be considered.
 4. For the selected version, list the transformations with the `/group/name/{group_name}/project/name/{project_name}/version/name/{version_name}/transformation` endpoint.
 
 For each transformation, the connector gathers metadata from two endpoints:

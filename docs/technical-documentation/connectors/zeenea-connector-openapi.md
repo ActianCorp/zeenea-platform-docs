@@ -1,50 +1,34 @@
 # Adding an OpenAPI Connection
 
-<!-- #p100021 -->
 ## Prerequisites
 
-- <!-- #p100030 -->
-  A user with sufficient [permissions](#p100153 "title: OpenAPI") is required to establish a connection with OpenAPI.
+* A user with sufficient [permissions](#p100153 "title: OpenAPI") is required to establish a connection with OpenAPI.
+* Zeenea traffic flows towards the data source must be open.
 
-- <!-- #p100039 -->
-  Zeenea traffic flows towards the data source must be open.
-
-<!-- #p100054 -->
 !!! note
     You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
 
-<!-- #p100060 -->
 ## Supported Versions
 
-<!-- #p100066 -->
 The OpenAPI connector was developed  and tested with OpenAPI requirements 3.0.0 and 3.0.1 and should be compatible later.
 
-<!-- #p100072 -->
 The OpenAPI connector accepts JSON and YAML formats.
 
-<!-- #p100078 -->
 ## Installing the Plugin
 
-<!-- #p100087 -->
 The OpenAPI plugin can be downloaded here: [Zeenea Connector Downloads](zeenea-connectors-list.md# "title: Zeenea Connector Downloads")
 
-<!-- #p100096 -->
 For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
-<!-- #p100102 -->
 ## Declaring the Connection
 
-<!-- #p100111 -->
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-<!-- #p100120 -->
 Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
-<!-- #p100126 -->
 In order to establish a connection with a OpenAPI interface, specifying the following parameters in the dedicated file is required:
 
-<!-- #p100132 -->
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
@@ -68,99 +52,55 @@ In order to establish a connection with a OpenAPI interface, specifying the foll
 | `proxy.username` | Proxy username |
 | `proxy.password` | Proxy account password |
 
-<!-- #p100147 -->
 !!! note
     A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 
-<!-- #p100153 -->
 ## User Permissions
 
-<!-- #p100159 -->
 In order to collect metadata, the running user's permissions must allow them to access and read datasets that need cataloging. 
 
-<!-- #p100165 -->
 Here, the user must have read access to the specification API file.
 
-<!-- #p100171 -->
 ## Data Extraction
 
-<!-- #p100177 -->
 To extract information, the connector identifies the datasets exposed by the API from each GET endpoint defined in the specification file. Then, it defined the object's data model as described in the file.
 
-<!-- #p100183 -->
 ## Collected Metadata
 
-<!-- #p100189 -->
 ### Inventory
 
-<!-- #p100195 -->
 The inventory collects the list of unique GET endpoints described in the JSON specification file.  
 
-<!-- #p100201 -->
 ### Dataset
 
-- <!-- #p100210 -->
-  **Name**
+* **Name**
+* **Source Description**
+* **Technical Data**:
+     * Endpoint
+     * Swagger Name
+     * Specification Version
 
-- <!-- #p100222 -->
-  **Source Description**
-
-- <!-- #p100234 -->
-  **Technical Data**:
-
-  - <!-- #p100240 -->
-    Endpoint
-
-  - <!-- #p100249 -->
-    Swagger Name
-
-  - <!-- #p100258 -->
-    Specification Version
-
-<!-- #p100276 -->
 ### Field
 
-<!-- #p100282 -->
 Dataset attribute. 
 
-- <!-- #p100291 -->
-  **Name**
+* **Name**
+* **Source Description**: Not supported
+* **Type**
+* **Can be null**: Depending on field settings
+* **Multivalued**: Depending on field settings
+* **Primary key**: Not supported. Default value `false`.
+* **Technical Data**:
+     * Technical Name
+     * Native type
 
-- <!-- #p100303 -->
-  **Source Description**: Not supported
-
-- <!-- #p100315 -->
-  **Type**
-
-- <!-- #p100327 -->
-  **Can be null**: Depending on field settings
-
-- <!-- #p100339 -->
-  **Multivalued**: Depending on field settings
-
-- <!-- #p100354 -->
-  **Primary key**: Not supported. Default value `false`.
-
-- <!-- #p100366 -->
-  **Technical Data**:
-
-  - <!-- #p100372 -->
-    Technical Name
-
-  - <!-- #p100381 -->
-    Native type
-
-<!-- #p100399 -->
 ## Unique Identification Keys
 
-<!-- #p100405 -->
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-<!-- #p100414 -->
 More information about unique identification keys in this documentation: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
 
-<!-- #p100420 -->
 | Object | Identification Key | Description |
 |---|---|---|
 | Dataset | code/component name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **component name**: Exposed object's name |

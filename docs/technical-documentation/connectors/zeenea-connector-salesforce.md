@@ -49,100 +49,48 @@ In order to establish a connection with Salesforce, specifying the following par
     A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 
-<!-- #p100123 -->
 ## Data Extraction
 
-<!-- #p100129 -->
 To extract information, the connector identifies metadata from the JSON files of the Silwood Safyr extraction.
 
-<!-- #p100135 -->
 ## Collected Metadata
 
-<!-- #p100141 -->
 ### Inventory
 
-<!-- #p100147 -->
 Will collect the list of objects accessible by the user.  
 
-<!-- #p100153 -->
 ### Dataset
 
-<!-- #p100159 -->
 A dataset is a Salesforce object. 
 
-- <!-- #p100168 -->
-  **Name**
+* **Name**
+* **Source Description**
+* **Technical Data**:
+     * Type
+     * Row Count
+     * Metadata Changed
+     * Physical Name
+     * Logical Name
 
-- <!-- #p100180 -->
-  **Source Description**
-
-- <!-- #p100192 -->
-  **Technical Data**:
-
-  - <!-- #p100198 -->
-    Type
-
-  - <!-- #p100207 -->
-    Row Count
-
-  - <!-- #p100216 -->
-    Metadata Changed
-
-  - <!-- #p100225 -->
-    Physical Name
-
-  - <!-- #p100234 -->
-    Logical Name
-
-<!-- #p100252 -->
 ### Field
 
-<!-- #p100258 -->
 Dataset field.
 
-- <!-- #p100267 -->
-  **Name**
+* **Name**
+* **Source Description**
+* **Type**
+* **Can be null**: Depending on field properties
+* **Multivalued**: Depending on field properties
+* **Primary Key**: Depending on field properties
+* **Technical Data**:
+     * Technical Name
+     * Native type
+     * Size
+     * Data Element
+     * Domain
+     * Physical Name
+     * Logical Name
 
-- <!-- #p100279 -->
-  **Source Description**
-
-- <!-- #p100291 -->
-  **Type**
-
-- <!-- #p100303 -->
-  **Can be null**: Depending on field properties
-
-- <!-- #p100315 -->
-  **Multivalued**: Depending on field properties
-
-- <!-- #p100327 -->
-  **Primary Key**: Depending on field properties
-
-- <!-- #p100339 -->
-  **Technical Data**:
-
-  - <!-- #p100345 -->
-    Technical Name
-
-  - <!-- #p100354 -->
-    Native type
-
-  - <!-- #p100363 -->
-    Size
-
-  - <!-- #p100372 -->
-    Data Element
-
-  - <!-- #p100381 -->
-    Domain
-
-  - <!-- #p100390 -->
-    Physical Name
-
-  - <!-- #p100399 -->
-    Logical Name
-
-<!-- #p100417 -->
 ## Unique Identifier Keys
 
 <!-- #p100423 -->

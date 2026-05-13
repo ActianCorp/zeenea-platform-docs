@@ -76,86 +76,38 @@ Will collect the list of objects accessible by the user.
 <!-- #p100168 -->
 The connector is able to reconstruct the lineage of tables referenced in views.
 
-<!-- #p100174 -->
 ### Dataset
 
-<!-- #p100180 -->
 A dataset is an SAP object (table or view). 
 
-- <!-- #p100189 -->
-  **Name**
+* **Name**
+* **Source Description**
+* **Technical Data**:
+     * Type
+     * Row Count
+     * Metadata Changed
+     * Physical Name
+     * Logical Name
 
-- <!-- #p100201 -->
-  **Source Description**
-
-- <!-- #p100213 -->
-  **Technical Data**:
-
-  - <!-- #p100219 -->
-    Type
-
-  - <!-- #p100228 -->
-    Row Count
-
-  - <!-- #p100237 -->
-    Metadata Changed
-
-  - <!-- #p100246 -->
-    Physical Name
-
-  - <!-- #p100255 -->
-    Logical Name
-
-<!-- #p100273 -->
 ### Field
 
-<!-- #p100279 -->
 Dataset field. 
 
-- <!-- #p100288 -->
-  **Name**
-
-- <!-- #p100300 -->
-  **Source Description**
-
-- <!-- #p100312 -->
-  **Type**
-
-- <!-- #p100324 -->
-  **Can be null**: Depending on field properties
-
-- <!-- #p100336 -->
-  **Multivalued**: Depending on field properties
-
-- <!-- #p100348 -->
-  **Primary key**: Depending on field properties
-
-- <!-- #p100360 -->
-  **Technical Data**: 
-
-  - <!-- #p100366 -->
-    Technical Name
-
-  - <!-- #p100375 -->
-    Native type
-
-  - <!-- #p100384 -->
-    Type: Unit, Measure, Dimension or Characteristic
-
-  - <!-- #p100393 -->
-    Size
-
-  - <!-- #p100402 -->
-    Data Element
-
-  - <!-- #p100411 -->
-    Metadata Changed
-
-  - <!-- #p100420 -->
-    Physical Name
-
-  - <!-- #p100429 -->
-    Logical Name
+* **Name**
+* **Source Description**
+* **Type**
+* **Can be null**: Depending on field properties
+* **Multivalued**: Depending on field properties
+* **Primary key**: Depending on field properties
+* **Technical Data**: 
+     * Technical Name
+     * Native type
+     * Type: Unit, Measure, Dimension or Characteristic
+     * Size
+     * Data Element
+     * Metadata Changed
+     * Physical Name
+     * Logical Name
 
 <!-- #p100447 -->
 ## Unique Identifier Keys

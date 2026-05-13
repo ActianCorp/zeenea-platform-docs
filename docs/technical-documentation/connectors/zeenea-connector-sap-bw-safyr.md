@@ -81,85 +81,38 @@ Will collect the list of objects accessible by the user.
 <!-- #p100210 -->
 The connector is able to reconstruct the lineage of **cubes** referenced in **cubes** as well as the lineage representing the **cubes** that are used by the **queries**.
 
-<!-- #p100216 -->
 ### Dataset
 
-<!-- #p100222 -->
 A dataset can be the following SAP BW object: Data Store Object, Advanced Data Store Object, HANA Composite Provider, Info Sources, Data Sources, Cube, Query, or HANA Calculation View. 
 
-- <!-- #p100231 -->
-  **Name**
+* **Name**
+* **Source Description**
+* **Technical Data**:
+     * Type
+     * Metadata Changed
+     * Physical Name
+     * Logical Name
 
-- <!-- #p100243 -->
-  **Source Description**
-
-- <!-- #p100255 -->
-  **Technical Data**:
-
-  - <!-- #p100261 -->
-    Type
-
-  - <!-- #p100270 -->
-    Metadata Changed
-
-  - <!-- #p100279 -->
-    Physical Name
-
-  - <!-- #p100288 -->
-    Logical Name
-
-<!-- #p100306 -->
 ### Field
 
-<!-- #p100312 -->
 Dataset field. 
 
-- <!-- #p100321 -->
-  **Name**
+* **Name**
+* **Source Description**
+* **Type**
+* **Can be null**: Depending on field properties
+* **Multivalued**: Depending on field properties
+* **Primary key**: Depending on field properties
+* **Technical Data**: 
+     * Technical Name
+     * Native type
+     * Type: Unit, Measure, Dimension or Characteristic
+     * Size
+     * Data Element
+     * Metadata Changed
+     * Physical Name
+     * Logical Name
 
-- <!-- #p100333 -->
-  **Source Description**
-
-- <!-- #p100345 -->
-  **Type**
-
-- <!-- #p100357 -->
-  **Can be null**: Depending on field properties
-
-- <!-- #p100369 -->
-  **Multivalued**: Depending on field properties
-
-- <!-- #p100381 -->
-  **Primary key**: Depending on field properties
-
-- <!-- #p100393 -->
-  **Technical Data**: 
-
-  - <!-- #p100399 -->
-    Technical Name
-
-  - <!-- #p100408 -->
-    Native type
-
-  - <!-- #p100417 -->
-    Type: Unit, Measure, Dimension or Characteristic
-
-  - <!-- #p100426 -->
-    Size
-
-  - <!-- #p100435 -->
-    Data Element
-
-  - <!-- #p100444 -->
-    Metadata Changed
-
-  - <!-- #p100453 -->
-    Physical Name
-
-  - <!-- #p100462 -->
-    Logical Name
-
-<!-- #p100480 -->
 ## Unique Identifier Keys
 
 <!-- #p100486 -->

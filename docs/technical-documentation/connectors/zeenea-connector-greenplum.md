@@ -68,19 +68,18 @@ A dataset can be a table or a view.
 * **Name**
 * **Source Description**
 * **Technical Data**:
-
-    * Table: table name
-    * Type:
-    * table
-    * view
-    * materialized view
-    * index
-    * sequence
-    * foreign table
-    * TOAST table
-    * composite type
-    * partitioned table
-    * partitioned index
+     * Table: table name
+     * Type:
+          * table
+          * view
+          * materialized view
+          * index
+          * sequence
+          * foreign table
+          * TOAST table
+          * composite type
+          * partitioned table
+          * partitioned index
 
 ### Field
 
@@ -93,9 +92,8 @@ Dataset field.
 * **Multivalued**: Not supported. Default value `false`.
 * **Primary Key**: Depending on the "Primary Key" field attribute
 * **Technical Data**:
-
-    * Technical Name
-    * Native type
+     * Technical Name
+     * Native type
 
 ## Data Profiling
 

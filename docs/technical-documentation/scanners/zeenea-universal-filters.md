@@ -96,7 +96,7 @@ The `rules` block is where you set the conditions based on an item's attributes 
 3. **Advanced Pattern Matching (Regular Expressions)**<br />
      For maximum power and precision, you can use regular expressions by adding the `regex:` prefix. This is an advanced feature for complex matching needs.
    
-     * **Example 1: Match one of several prefixes**<br />
+       * **Example 1: Match one of several prefixes**<br />
          The pattern `(HR|IT|MARKET)_` matches anything that starts with `HR_`, `IT_`, or `MARKET_`.
 
          **Example:**<br />
@@ -106,7 +106,7 @@ The `rules` block is where you set the conditions based on an item's attributes 
            table = "regex:(HR|IT|MARKET)_.*"
          }
          ```
-     * **Example 2: Exclude a prefix**<br />
+       * **Example 2: Exclude a prefix**<br />
          The pattern `^(?!TMP_).*` is a very useful one that means "does not start with `TMP_`".
          
          **Example:**<br />

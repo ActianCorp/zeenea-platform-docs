@@ -122,22 +122,21 @@ One dataset per table or view.
 * **Primary key**: Yes, shown on the impacted Field type assets
 * **Foreign keys**: Yes, not shown
 * **Technical Data**:
-
-    * schema name
-    * table name
-    * Table structure last update (LAST_DDL_TIME)
-    * Type, possible values:
-    * `CLUSTER`
-    * `FUNCTION`
-    * `INDEX`
-    * `PACKAGE`
-    * `PACKAGE BODY`
-    * `PROCEDURE`
-    * `SEQUENCE`
-    * `SYNONYM`
-    * `TABLE`
-    * `TRIGGER`
-    * `VIEW`
+     * schema name
+     * table name
+     * Table structure last update (LAST_DDL_TIME)
+     * Type, possible values:
+          * `CLUSTER`
+          * `FUNCTION`
+          * `INDEX`
+          * `PACKAGE`
+          * `PACKAGE BODY`
+          * `PROCEDURE`
+          * `SEQUENCE`
+          * `SYNONYM`
+          * `TABLE`
+          * `TRIGGER`
+          * `VIEW`
 
 ### Field
 

@@ -106,115 +106,54 @@ To extract information, the connector runs requests on the following views from 
 - <!-- #p100309 -->
   `pg_type`
 
-<!-- #p100321 -->
 ## Collected Metadata
 
-<!-- #p100327 -->
 ### Inventory
 
-<!-- #p100333 -->
 Will collect the list of tables and views accessible by the user.  
 
-<!-- #p100339 -->
 ### Lineage
 
-<!-- #p100345 -->
 From version 56 of the plugin, the connector has the lineage feature on the views. This feature allows you to automatically recreate the lineage in your catalog of the tables that were used to build the view.
 
-<!-- #p100351 -->
 ### Dataset
 
-<!-- #p100357 -->
 A dataset can be a table or a view. 
 
-- <!-- #p100366 -->
-  **Name**
+* **Name**
+* **Source Description**
+* **Technical Data**:
+     * Catalog: Source catalog
+     * Schema: Source schema
+     * Table: table name
+     * Type:
+           * table
+           * view
+           * materialized view
+           * index
+           * sequence
+           * foreign table
+           * TOAST table
+           * composite type
+           * partitioned table
+           * partitioned index
 
-- <!-- #p100378 -->
-  **Source Description**
-
-- <!-- #p100390 -->
-  **Technical Data**:
-
-  - <!-- #p100396 -->
-    Catalog: Source catalog
-
-  - <!-- #p100405 -->
-    Schema: Source schema
-
-  - <!-- #p100414 -->
-    Table: table name
-
-  - <!-- #p100423 -->
-    Type:
-
-    - <!-- #p100429 -->
-      table
-
-    - <!-- #p100438 -->
-      view
-
-    - <!-- #p100447 -->
-      materialized view
-
-    - <!-- #p100456 -->
-      index
-
-    - <!-- #p100465 -->
-      sequence
-
-    - <!-- #p100474 -->
-      foreign table
-
-    - <!-- #p100483 -->
-      TOAST table
-
-    - <!-- #p100492 -->
-      composite type
-
-    - <!-- #p100501 -->
-      partitioned table
-
-    - <!-- #p100510 -->
-      partitioned index
-
-<!-- #p100534 -->
 ### Field
 
-<!-- #p100540 -->
 Dataset field. 
 
-- <!-- #p100549 -->
-  **Name**
+* **Name**
+* **Source Description**
+* **Type**
+* **Can be null**: Depending on field settings
+* **Multivalued**: Not supported. Default value `false`.
+* **Primary Key**: Depending on the "Primary Key" field attribute
+* **Technical Data**:
+     * Technical Name
+     * Native type: field native type
 
-- <!-- #p100561 -->
-  **Source Description**
-
-- <!-- #p100573 -->
-  **Type**
-
-- <!-- #p100585 -->
-  **Can be null**: Depending on field settings
-
-- <!-- #p100600 -->
-  **Multivalued**: Not supported. Default value `false`.
-
-- <!-- #p100612 -->
-  **Primary Key**: Depending on the "Primary Key" field attribute
-
-- <!-- #p100624 -->
-  **Technical Data**:
-
-  - <!-- #p100630 -->
-    Technical Name
-
-  - <!-- #p100639 -->
-    Native type: field native type
-
-<!-- #p100657 -->
 ### Data Process
 
-<!-- #p100663 -->
 A data process represents the request to build a view.
 
 - <!-- #p100675 -->
