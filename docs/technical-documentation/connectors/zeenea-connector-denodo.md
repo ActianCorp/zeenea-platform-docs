@@ -8,8 +8,8 @@
 !!! warning "Important"
     The Denodo JDBC driver is not included with the connector. Download the Denodo JDBC driver that matches your Denodo instance and copy the `.jar` file to the `/lib-ext` folder of your scanner. You can download the driver for your Denodo version from the resources provided by Denodo:
 
-         * [Denodo 8](https://community.denodo.com/drivers/jdbc/8.0)
-         * [Denodo 9](https://community.denodo.com/drivers/jdbc/9)
+     * [Denodo 8](https://community.denodo.com/drivers/jdbc/8.0)
+     * [Denodo 9](https://community.denodo.com/drivers/jdbc/9)
 
 <br />
 
