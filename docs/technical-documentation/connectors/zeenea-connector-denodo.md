@@ -5,6 +5,13 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Denodo.
 * Zeenea traffic flows towards the data source must be open. 
 
+!!! warning "Important"
+    The Denodo JDBC driver is not included with the connector. Download the Denodo JDBC driver that matches your Denodo instance and copy the `.jar` file to the `/lib-ext` folder of your scanner. You can download the driver for your Denodo version from the resources provided by Denodo:
+         * [Denodo 8](https://community.denodo.com/drivers/jdbc/8.0)
+         * [Denodo 9](https://community.denodo.com/drivers/jdbc/9)
+
+<br />
+
 !!! note
     You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
 
@@ -42,6 +49,7 @@ In order to establish a connection with a Denodo instance, specifying the follow
 | `connection.jdbc.username` | Optional - see configuration template |
 | `connection.jdbc.password` | Optional - see configuration template |
 | `connection.jdbc.class_name` | Optional - see configuration template |
+| `lineage.enabled` | Activates the lineage feature. <br />The default value is `false`.<br /> The JDBC driver must be provided. For more information, see [Prerequisites](#prerequisites). |
 | `filter` | To filter datasets during the inventory. See [Filters](#filters) |
 | `tls.truststore.path` | The Trust Store file path. This file must be provided in case TLS encryption is activated (protocol https) and when certificates of Denodo servers are delivered by a specific authority. It must contain the certification chain. |
 | `tls.truststore.password` |	Password of the trust store file |
