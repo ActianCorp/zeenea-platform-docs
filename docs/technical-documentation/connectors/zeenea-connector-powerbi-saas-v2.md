@@ -44,6 +44,7 @@ To establish a connection with a PowerBI Online instance, fill in the following 
 | `connection.oauth.client_id` | Application ID (client) as defined in Azure |
 | `connection.oauth.client_secret` | Client secret |
 | `connection.oauth.endpoint` | API Scanner endpoint. Must respect following format: `https://login.microsoftonline.com/<tenants-technical-identifier>/oauth2/v2.0/token` |
+| `connection.timeout` | Specifies the maximum time, in milliseconds, that the system waits for a server response before terminating the connection to prevent indefinite hangs. The default value is 30000 ms. |
 | `dsn.configuration` | To define the list of DSNs configured in PowerBI Desktop. Must be filled in to get the lineage to external sources from DSNs. See the template to complete the field. |
 | `cache.enabled` | Enable cache usage (default value is `false`) |
 | `cache.path` | (Optional) To customize the cache disk storage path. Default value is the scanner cache folder. |
@@ -54,6 +55,7 @@ To establish a connection with a PowerBI Online instance, fill in the following 
 | `proxy.password` | Proxy account password |
 | `contact.role_filter` | Enables you to extract only the contacts that do have a role matching the filter. To achieve this, use the `role` key to filter the contacts. Example:  <br/> `contact.role_filter = "role in ('Owner', 'Read')"` |
 | `inventory_on_reports_only` | Specifies whether to inventory only reports. If set to `true`, only reports will be inventoried. However, when a report is imported, all linked datasets will also be imported. This option is useful when working with a large number of items. <br/>The default value is `false`.  |
+| `time_between_scan` | During a metadata scan, the connector checks the status of the scan at regular intervals. By default, the connector checks the status every 3 seconds (3000 ms). To change the polling frequency, specify the interval in milliseconds. |
 | `filters` | Universal filters. Refer to [Universal Filters](#universal-filters) below. |
 
 
