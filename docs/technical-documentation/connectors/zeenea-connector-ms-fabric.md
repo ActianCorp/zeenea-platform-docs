@@ -44,10 +44,10 @@ To establish a connection with a Microsoft Fabric instance, fill in the followin
 | `connection.url` | Specifies the connection address. <br />The default value is `https://api.powerbi.com`. |
 | `connection.oauth.client_id` | Specifies the application ID (client) as defined in Azure. |
 | `connection.oauth.client_secret` | Specifies the client secret. |
-| `connection.timeout` | Specifies the maximum time, in milliseconds, that the system waits for a server response before terminating the connection to prevent indefinite hangs. The default value is 30000 ms. |
+| `connection.timeout` | Specifies the maximum time, in milliseconds, that the system waits for a server response before terminating the connection to prevent indefinite hangs. The default value is `30000` ms. |
 | `report_strategy` | Specifies the strategy to retrieve report metadata. The available strategies are:<br />- `pbir`: Uses the Fabric _Get Report Definition_ API (for PBIR formatted reports).<br />- `pbix`: Uses the Power BI Export API (requires elevated permissions).<br />- `pbir_first`: Uses the Fabric API first. If it fails, it uses the PBIX export. <br />The default value is `pbir_first`.|
 | `inventory_on_reports_only` | Specifies whether to inventory only reports. If set to `true`, only reports will be inventoried. However, when a report is imported, all linked datasets will also be imported. This option is useful when working with a large number of items. <br/>The default value is `false`. |
-| `time_between_scan` | During a metadata scan, the connector checks the status of the scan at regular intervals. By default, the connector checks the status every 3 seconds (3000 ms). To change the polling frequency, specify the interval in milliseconds. |
+| `time_between_scan` | During a metadata scan, the connector checks the status of the scan at regular intervals. By default, the connector checks the status every 3 seconds (`3000` ms). To change the polling frequency, specify the interval in milliseconds. |
 | `dsn.configuration` | Specifies the list of DSNs configured in PowerBI Desktop. Must be provided to extract lineage to external sources from DSNs. See the template to complete the field. |
 | `cache.enabled` | Specifies whether to enable cache usage. <br />The default value is `false`. |
 | `cache.path` | (Optional) Specifies a custom disk storage path for the cache. <br />The default value is the scanner cache folder. |
