@@ -80,6 +80,7 @@ This feature is available for the following connectors:
 * Snowflake
 * SQL Server
 * DB2
+* Denodo
 * Oracle
 * Netezza
 * Teradata

@@ -39,6 +39,7 @@ Data sampling is available from the scanner 59th version for BigQuery and JDBC c
 * BigQuery
 * BigQuery Organization
 * DB2
+* Denodo 
 * Generic JDBC
 * Greenplum
 * MariaDB
