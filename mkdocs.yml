@@ -105,7 +105,7 @@ extra:
 
 # Repository
 repo_url: https://github.com/ActianCorp/zeenea-platform-docs
-repo_name: zeenea-platform-docs
+repo_name: data-intelligence-platform
 edit_uri: edit/main/docs/
 
 # Customization
