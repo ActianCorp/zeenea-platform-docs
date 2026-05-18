@@ -10,10 +10,12 @@ Follow these steps to install or update your plugin connector:
     
     !!! warning "Important"
         Do not unzip the archive.
+
 4. In case of an update, make sure to delete the previous version of the plugin (both the ZIP file and the folder) before proceeding.
 5. In case of installing a new connector, configure the new connector as specified in its dedicated documentation. 
     
     !!! note
         You can find links to all connector configuration documentation in [Zeenea Connector Downloads](./zeenea-connectors-list.md).
+
 6. Restart the scanner.
 

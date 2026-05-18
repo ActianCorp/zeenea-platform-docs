@@ -66,8 +66,8 @@ You can create new access request policies in Zeenea Administration.
              
              * **Select a use case**: Choose from a predefined list of use cases.
              
-               !!! note
-                   A **Use case** is a built-in item type. By documenting use cases in the catalog, curators can provide more context for data owners when reviewing access requests and automate the setup of user permissions.
+            !!! note
+                A **Use case** is a built-in item type. By documenting use cases in the catalog, curators can provide more context for data owners when reviewing access requests and automate the setup of user permissions.
 
          * **Extra field from use case template**: The field appears when you select **Select a use case**. Select a property from the available **Multi-select** or **Tag** type properties in the Use case item type template. For more information, see [Extra Field from Use Case Template](#extra-field-from-use-case-template).
           
