@@ -32,8 +32,6 @@ To assign curators to multiple items at once, follow these steps:
     !!! note
         Only the items for which you have curator permissions will be updated.  
 
-<br />
-
 !!! note
     You can also use the **File Import** feature to assign curators to multiple items by filling in the **curator** column in the XLSX file. <br />For more information, see [Importing a File in Zeenea](zeenea-studio-import.md).
 

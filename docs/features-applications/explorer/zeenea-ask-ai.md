@@ -37,8 +37,8 @@ Ask AI is available only in topics tagged as **AI Ready**. This tag is applied a
 
     !!! note
         For best search results: 
-          * **Provide context**: Ask specific questions. For example, _Which datasets contain customer demographic information?_ works better than just _demographics_.
-          * **Ask complete questions**: Frame your query as a full question rather than using keyword fragments.
+        * **Provide context**: Ask specific questions. For example, _Which datasets contain customer demographic information?_ works better than just _demographics_.
+        * **Ask complete questions**: Frame your query as a full question rather than using keyword fragments.
          
 4. Review the search results and AI summary. 
 5. Select the thumbs-up or thumbs-down button to provide feedback on the AI-generated summary. This feature is disabled by default, but your Customer Success Manager can enable it upon request.
