@@ -450,6 +450,7 @@ You can manage the access requests assigned to you from the **Access requests** 
    
    !!! note
        In both cases, you can add a comment.
+
 5. Click **Confirm**.
 6. If the External workflow type option is activated in Administration, Zeenea Studio automatically sends an email to the specified email or calls the webhook when a request is approved.
    ![](./images/zeenea-access-requests-policy-review.png)
