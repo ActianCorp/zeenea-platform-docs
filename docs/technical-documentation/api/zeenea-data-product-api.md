@@ -38,7 +38,8 @@ To create data products, you must follow this sequence of API calls:
 
 2. Upload the YAML files with a `PUT` request to the URL obtained from the previous response. Include all headers returned in the previous response when performing the upload request.  
 
-    > **Important:** Ensure that the data products and data contracts YAML descriptors are compressed in a ZIP file. The ZIP file can contain multiple data products and data contracts.
+    !!! warning "Important"
+        Ensure that the data products and data contracts YAML descriptors are compressed in a ZIP file. The ZIP file can contain multiple data products and data contracts.
 
     If the request is successful, the endpoint returns an HTTP 200 status code.
 

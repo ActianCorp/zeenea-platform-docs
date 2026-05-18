@@ -29,7 +29,8 @@ To assign curators to multiple items at once, follow these steps:
 4. Select one or more curators from the list of available users.
 5. Click **Confirm**.
    
-   > **Note:** Only the items for which you have curator permissions will be updated.  
+    !!! note
+        Only the items for which you have curator permissions will be updated.  
 
 <br />
 
