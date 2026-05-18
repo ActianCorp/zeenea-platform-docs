@@ -17,6 +17,7 @@ To generate an API key in Zeenea Administration, follow these steps:
 3. Click the **Create API key** button.<br />A **Create API key** window opens. 
 4. Fill in the required fields and click **Create API key** button. 
 5. Once the API key is generated, copy and store it in a secure location, such as a secrets manager or encrypted file. 
+    
     !!! warning "Important"
         The secret is displayed only once and cannot be retrieved later.
 

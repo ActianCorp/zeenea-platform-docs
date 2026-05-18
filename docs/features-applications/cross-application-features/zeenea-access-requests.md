@@ -61,7 +61,9 @@ You can create new access request policies in Zeenea Administration.
          * **Format of the request reason** (required): Select one of the following formats:
              * **Free text**: Type the reason for the request manually.
              * **Select a use case**: Choose from a predefined list of use cases.
-             > **Note:** A **Use case** is a built-in item type. By documenting use cases in the catalog, curators can provide more context for data owners when reviewing access requests and automate the setup of user permissions.
+             
+               !!! note
+                   A **Use case** is a built-in item type. By documenting use cases in the catalog, curators can provide more context for data owners when reviewing access requests and automate the setup of user permissions.
          * **Extra field from use case template**: The field appears when you select **Select a use case**. Select a property from the available **Multi-select** or **Tag** type properties in the Use case item type template. For more information, see [Extra Field from Use Case Template](#extra-field-from-use-case-template).
          * **Approvers** (required): Select the roles responsible for approving access requests.
          * **Enable email notifications for requesters and approvers**: Use the toggle to manage email notifications.
@@ -75,7 +77,8 @@ You can create new access request policies in Zeenea Administration.
             * Pending
             * Rejected
             * Approved
-        > **Note:** The payload format is the same for all messages.      
+        
+        !!! note The payload format is the same for all messages.      
       
        ![](./images/zeenea-access-requests-policy-create-hook.png)
               
@@ -426,6 +429,7 @@ You can manage the access requests assigned to you from the **Access requests** 
 2. Go to the **Access requests** section.<br />An **Access requests** window opens, displaying the list if pending access requests assigned to you.
 3. Click an access request to open a side panel with more details.
 4. After reviewing the details, click **Approve** or **Reject** button from the **Actions** column.<br />An **Approve the access request** or **Reject the access request** dialog opens.
+   
    !!! note
        In both cases, you can add a comment.
 5. Click **Confirm**.
