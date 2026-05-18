@@ -426,7 +426,8 @@ You can manage the access requests assigned to you from the **Access requests** 
 2. Go to the **Access requests** section.<br />An **Access requests** window opens, displaying the list if pending access requests assigned to you.
 3. Click an access request to open a side panel with more details.
 4. After reviewing the details, click **Approve** or **Reject** button from the **Actions** column.<br />An **Approve the access request** or **Reject the access request** dialog opens.
-   > **Note:** In both cases, you can add a comment.
+   !!! note
+       In both cases, you can add a comment.
 5. Click **Confirm**.
 6. If the External workflow type option is activated in Administration, Zeenea Studio automatically sends an email to the specified email or calls the webhook when a request is approved.
    ![](./images/zeenea-access-requests-policy-review.png)

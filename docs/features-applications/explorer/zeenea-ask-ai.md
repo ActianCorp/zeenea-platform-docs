@@ -37,6 +37,7 @@ Ask AI is available only in topics tagged as **AI Ready**. This tag is applied a
 
     !!! note
         For best search results: 
+
         * **Provide context**: Ask specific questions. For example, _Which datasets contain customer demographic information?_ works better than just _demographics_.
         * **Ask complete questions**: Frame your query as a full question rather than using keyword fragments.
          
