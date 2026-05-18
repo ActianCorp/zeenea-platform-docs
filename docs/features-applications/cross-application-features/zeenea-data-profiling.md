@@ -94,6 +94,7 @@ For each connector, below is the list of fields available for Data Profiling:
 | PgSql | `int4`<br />`int8 oid tid xid cid oidvector`<br />`txid_snapshot`<br />`float4`<br />`float8`<br />`char name text json xml bpchar`<br />`varchar` |
 | SqlDb2 | `INTEGER`<br />`BIGINT`<br />`REAL`<br />`DOUBLE`<br />`CHARACTER si CODEPAGE=0`<br />`VARCHAR si CODEPAGE=0`<br />`CLOB GRAPHIC VARGRAPHIC`<br />`DBCLOB XML` |
 | DsnDb2 | `INTEGER`<br />`BIGINT`<br />`REAL FLOAT si LENGTH=4`<br />`DOUBLE FLOAT si LENGTH=8`<br />`DECFLOAT`<br />`CHAR VARCHAR LONGVAR`<br />`GRAPHIC VARG VARGRAPH`<br />`LONGVARG CLOB DBCLOB`<br />`XML` |
+| Denodo | `INT`<br />`LONG`<br />`FLOAT`<br />`DOUBLE`<br />`DECIMAL`<br />`TEXT` |
 | Oracle | 	`BINARY_FLOAT`<br />`BINARY_DOUBLE FLOAT`<br />`CHAR CLOB NCHAR NCLOB`<br />`NVARCHAR2 VARCHAR2` |
 | Netezza | `INT4 _INT4INT8 OID TID XID`<br />`CID OIDVECTOR`<br />`FLOAT4`<br />`FLOAT8`<br />`CHAR NAME TEXT BPCHAR`<br />`VARCHAR NCHAR NVARCHAR` |
 | Teradata | 	`DH DM DS DY HM HS HR I MI`<br />`MO MS SC YM YR`<br />`I8`<br />`F`<br />`CF CO CV JN XM` |
