@@ -27,7 +27,7 @@ For more information on how to install a plugin, please refer to: [Installing an
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
 In order to establish a connection with BigQuery, specifying the following parameters in the dedicated file is required:
 
@@ -154,7 +154,7 @@ A column in a BigQuery table or view.
 
 An identification key is associated with each object in the catalog. In the case of objects created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
 
 | Object | Identification Key | Description |
 | :--- | :--- | :--- |
