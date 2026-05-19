@@ -31,7 +31,7 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../Features/zeenea-administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
 In order to establish a connection with Snowflake, specifying the following parameters in the dedicated file is required:
 
@@ -256,7 +256,7 @@ A data process can be the representation of a Snowpipe, a view construction requ
 !!! important
     The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each field. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency is appropriate, before enabling it.
 
-The statistical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics here: [Data Profiling](../../Features/cross-application-features/zeenea-data-profiling.md).
+The statistical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics here: [Data Profiling](../../features-applications/cross-application-features/zeenea-data-profiling.md).
 
 Read access on targeted tables is mandatory to activate the feature. For Snowflake technologies, the connector executes the following request to get a data sample:
 
@@ -268,7 +268,7 @@ The request above defines the number of rows in the table `tableName`.
 
 The request above collects a data sample for each field where the feature is activated through the studio (`field1`, `field2`). The limit is 10,000 lines (`linesPercentage` parameter) deduced from a calculation with the number of rows set in the previous request.
 
-These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described here: [Zeenea Scanner Setup](../Scanners/zeenea-scanner-setup.md).
+These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described here: [Zeenea Scanner Setup](../scanners/zeenea-scanner-setup.md).
 
 ## Data Classification
 
@@ -280,7 +280,7 @@ You can find the details of how this feature works directly in the [Snowflake do
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](../../Features/zeenea-studio/stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
 
 | Object | Identification Key | Description |
 | --- | --- | --- |
