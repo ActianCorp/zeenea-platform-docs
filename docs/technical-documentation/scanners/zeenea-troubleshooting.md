@@ -22,6 +22,12 @@ Here is the recommended procedure when a problem is encountered:
 
 ## Common Errors and Solutions
 
+!!! warning "Most common cause — The scanner is not running"
+
+    Before proceeding, verify that the Zeenea Scanner process is running. The scanner is a long-running background process and must run continuously. For more information, see [Zeenea Scanner Setup](./zeenea-scanner-setup.md).
+
+    **Symptom:** Imports and other actions do not complete, and the UI remains on _"Your request has been taken into account"_. The scanner runs UI-triggered jobs on startup and does not wait for the next scheduled run. Starting the scanner allows pending requests to complete. If the scanner is not running, imports and synchronization cannot proceed.
+
 #### 1. The connection I just added does not appear in my Administration interface or is indicated "in error" in the Administration interface.
 
 Check the scanner's logs to view the list of connections it found and scanned, and any errors in the configuration files of connections that were ignored. 
@@ -112,3 +118,11 @@ ExecStart=[...] -Djava.io.tmpdir=/a/path/to/another/folder/
 ```
 
 This folder should be owned by the user the scanner starts with.
+
+#### 6. My import does not complete, and the UI remains on _"Your request has been taken into account"_
+
+This issue usually indicates that the Zeenea Scanner is not running. The scanner is a long-running background process and must run continuously for imports and synchronization to work.
+
+* Verify that the scanner process is running on the machine where it is installed.
+* The scanner runs UI-triggered jobs on startup and does not wait for the next scheduled run. Starting the scanner allows pending requests to complete.
+* To prevent this in production, run the scanner as a managed service (for example, using systemd) to ensure it remains running and restarts automatically. For more information, see [Zeenea Scanner Setup](./zeenea-scanner-setup.md).
