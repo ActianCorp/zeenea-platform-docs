@@ -39,25 +39,27 @@ The `filter.versions` parameter is replaced by the `versions` parameter, which w
 
 | Parameter | Expected value |
 |---|---|
-| `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
-| `connector_id` | The type of connector to be used for the connection. Here, the value must be `matillion` and this value must not be modified. |
-| `connection.url` | Matillion instance URL |
-| `connection.username` | Username |
-| `connection.password` | Password |
-| `multi_catalog.enabled` | Indicates whether the backing database is configured with the multi catalog option or not. The value should be the same as in the corresponding connection. |
-| `tls.truststore.path` | The Trust Store file path. This file must be provided in case TLS encryption is activated (protocol https) and when certificates of Matillion servers are delivered by a specific authority. It must contain the certification chain. |
-| `tls.truststore.password` | Password of the trust store file |
-| `tls.truststore.type` | Type of the trust store file (`PKCS12` or `JKS`). Default value is discovered from the file extension. |
-| `filter` | **Since version 4.1.0**.<br /> Filter the jobs (transformation only for now) that should be synchronized. See [Filters](#filters) below. |
-| `filter.includes` | **Up to version 4.0.0 (replaced by filter)**.<br />List of regular expression with comma separated representing elements to include. |
-| `filter.excludes` | **Up to version 4.0.0 (replaced by filter)**.<br />List of regular expression with comma separated representing elements to exclude. |
-| **Since version 4.1.0**: <br/>`filter`<br/><br/>**Since version 4.0.0**:<br/>`filter.versions` | - List of version rules separated by a comma.<br/>- Only one version of a project is synchronized.<br/>- The rules are used to define which version of a project should be synchronized.<br/>- Each rule consists of three segments separated by a slash `/`.<br/>- The first segment is a pattern that should match the group name.<br/>- The second segment is a pattern that should match the project name.<br/>- The last one is the version name to use. It can uses variable if capturing groups have been defined in the other regex.<br/>- If the project matches no rule, the synchronized version will be `default`.<br/>Example:<br/>`versions="g1/p1/v1,group(\d+)/project(\d+)/version_$1_$2,.*/.*/other_default"`<br/>- The synchronized version of project `p1` from group `g1` is `v1`.<br/>- The version of project p25 from group `g42` is `v_42_25`.<br/>- The version of others projects is `other_default`. |
-| `proxy.scheme ` | Depending on the proxy, `http` or `https`. |
-| `proxy.hostname ` | Proxy address |
-| `proxy.port` | Proxy port |
-| `proxy.username` | Proxy username |
-| `proxy.password` | Proxy account password |
+| `name` | Specifies the display name for the connection. |
+| `code` | Specifies the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `connector_id` | Specifies the type of connector to be used for the connection. The value must be `matillion` and must not be modified. |
+| `connection.url` | Specifies the matillion instance URL. |
+| `connection.username` | Specifies the username for the connection. |
+| `connection.password` | Specifies the password for the connection. |
+| `multi_catalog.enabled` | Indicates whether the backing database is configured with the multi‑catalog option. The value must match the configuration of the corresponding connection. |
+| `lineage.view.enabled` | Set to true to enable lineage on views. The default value is `false`. |
+| `filter` | **Since version 4.1.0**.<br /> Filters the jobs to synchronize (currently limited to transformation jobs). See [Filters](#filters). |
+| `versions` | **Since version 4.1.0**.<br /> Specifies a comma‑separated list of version rules used to determine which version of a project is synchronized.<br />Each rule consists of three segments separated by a forward slash (`/`):<br />• The first segment is a pattern that matches the group name.<br />• The second segment is a pattern that matches the project name.<br />• The third segment specifies the version name to use. This segment can include variables if capturing groups are defined in the other regex.<br />If a project does not match any rule, the synchronized version is "default".<br /><br />For example:<br />`versions="g1/p1/v1,group(\d+)/project(\d+)/version_$1_$2,.*/.*/other_default"`<br />Where:<br />1. `g1/p1/v1`: Synchronizes version `v1` of project `p1` in group `g1`.<br />2. `g(\d+)/p(\d+)/v_$1_$2`: For all projects `"p<num>"` (for example,`p1`, `p2`) in groups `"g<num>"` (for example, `g1`, `g2`), synchronizes the version `v_<num_group>_<num_project>`.<br />3. For all other groups and projects, uses the version `other_default`. |
+| `filter.includes` | **Up to version 4.0.0 (replaced by filter)**.<br />Specifies a comma‑separated list of regular expressions that define the elements to include. |
+| `filter.excludes` | **Up to version 4.0.0 (replaced by filter)**.<br />Specifies a comma‑separated list of regular expressions that define the elements to exclude. |
+| `filter.versions` | **Up to version 4.0.0 (replaced by versions)**.<br />- Specifies a comma‑separated list of version rules.<br/>- Only one version of a project is synchronized.<br/>- The rules are used to define which version of a project should be synchronized.<br/>- Each rule consists of three segments separated by a slash `/`.<br/>- The first segment is a pattern that should match the group name.<br/>- The second segment is a pattern that should match the project name.<br/>- The last one is the version name to use. It can uses variable if capturing groups have been defined in the other regex.<br/>- If the project matches no rule, the synchronized version will be `default`.<br/>Example:<br/>`versions="g1/p1/v1,group(\d+)/project(\d+)/version_$1_$2,.*/.*/other_default"`<br/>- The synchronized version of project `p1` from group `g1` is `v1`.<br/>- The version of project p25 from group `g42` is `v_42_25`.<br/>- The version of others projects is `other_default`. |
+| `tls.truststore.path` | Specifies the Trust Store file path. This file must be provided in case TLS encryption is activated (protocol `https`) and when certificates of Matillion servers are delivered by a specific authority. It must contain the certification chain. |
+| `tls.truststore.password` | Specifies the password of the trust store file. |
+| `tls.truststore.type` | Specifies the type of the trust store file (`PKCS12` or `JKS`). Default value is discovered from the file extension. |
+| `proxy.scheme ` | Specifies the proxy protocol (`http` or `https`). |
+| `proxy.hostname ` | Specifies the proxy address. |
+| `proxy.port` | Specifies the proxy port. |
+| `proxy.username` | Specifies the proxy username. |
+| `proxy.password` | Specifies the proxy account password. |
 
 ## User Permissions
 
