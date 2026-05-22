@@ -20,7 +20,7 @@
     * On startup, the scanner immediately checks for and runs the jobs triggered from the UI (for example, manually launched imports). It does **not** wait for the next scheduled run to process them.
     * Scheduling (the `automation` node) triggers recurring synchronization jobs only. It does not control imports triggered from the UI.
 
-    **Symptom if the scanner is not running:** Imports and other actions do not complete, and the UI remains on _"Your request has been taken into account"_. If this occurs, verify that the scanner process is running. For more information, see [Troubleshooting Scanners and Connections](./zeenea-troubleshooting.md).
+    **Symptom if the scanner is not running:** Imports and other actions do not complete, and the UI remains on _"Your request has been taken into account"_. If this occurs, verify that the scanner process is running.
 
 
 ## Requirements for Installation
