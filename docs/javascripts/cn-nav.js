@@ -47,7 +47,8 @@
             { name: 'Adding Input and Output Types', href: 'features-applications/studio/catalog-design/zeenea-add-input-output-types.html' },
             { name: 'Custom Items - Best Practices', href: 'features-applications/studio/catalog-design/zeenea-custom-item-best-practices.html' }
           ]},
-          { name: 'Stewardship', href: 'features-applications/studio/stewardship/zeenea-dashboard-widgets.html', pages: [
+          { name: 'Stewardship', href: 'features-applications/studio/stewardship/zeenea-ai-steward.html', pages: [
+            { name: 'Zeenea AI Steward', href: 'features-applications/studio/stewardship/zeenea-ai-steward.html' },
             { name: 'Dashboard Widgets', href: 'features-applications/studio/stewardship/zeenea-dashboard-widgets.html' },
             { name: 'Searching and Filtering', href: 'features-applications/studio/stewardship/zeenea-studio-search.html' },
             { name: 'Importing Datasets or Visualizations', href: 'features-applications/studio/stewardship/zeenea-importing-datasets-or-visualizations.html' },
