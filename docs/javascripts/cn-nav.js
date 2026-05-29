@@ -235,6 +235,7 @@
           { name: 'Data Product API', href: 'technical-documentation/api/zeenea-data-product-api.html' },
           { name: 'Access Request API', href: 'technical-documentation/api/zeenea-access-request-api.html' },
           { name: 'SCIM Protocol Support', href: 'technical-documentation/api/zeenea-scim-api.html' },
+          { name: 'SCIM User Management', href: 'technical-documentation/api/scim-user-provisioning.html' },
           { name: 'User Management API', href: 'technical-documentation/api/zeenea-user-management-api.html' }
         ]},
         { name: 'Data Intelligence Reference Architecture', href: 'technical-documentation/data-intelligence-reference-architecture.html' },

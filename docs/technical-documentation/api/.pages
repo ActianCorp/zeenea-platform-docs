@@ -9,4 +9,5 @@ nav:
     - zeenea-data-product-api.md
     - zeenea-access-request-api.md
     - zeenea-scim-api.md
+    - scim-user-provisioning.md
     - zeenea-user-management-api.md
