@@ -2,18 +2,9 @@
 
 Data Catalog Platform // Auth0 + IdP + SCIM
 
----
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Authentication &amp; User Provisioning — Architecture Diagrams (Light)</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
+.scim-diag {
   --bg:        #f5f6fa;
   --surface:   #ffffff;
   --surface2:  #eef0f7;
@@ -30,41 +21,23 @@ Data Catalog Platform // Auth0 + IdP + SCIM
   --red:       #c7303f;
   --teal:      #0369a1;
   --lime:      #2d6a4f;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
   background: var(--bg);
   color: var(--text);
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 14px;
   line-height: 1.5;
-  min-height: 100vh;
   padding: 28px 32px;
+  border-radius: 8px;
+  margin-top: 16px;
 }
-header {
-  margin-bottom: 28px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 20px;
-}
-header h1 {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -0.01em;
-  margin-bottom: 4px;
-}
-header p {
-  font-size: 12px;
-  color: var(--text-dim);
-  font-family: 'IBM Plex Mono', monospace;
-}
-.tabs {
+.scim-diag * { box-sizing: border-box; }
+.scim-diag .tabs {
   display: flex;
   gap: 6px;
   margin-bottom: 24px;
   flex-wrap: wrap;
 }
-.tab {
+.scim-diag .tab {
   padding: 6px 14px;
   border-radius: 4px;
   font-size: 11.5px;
@@ -77,12 +50,12 @@ header p {
   transition: all 0.15s;
   letter-spacing: 0.02em;
 }
-.tab:hover { color: var(--text-mid); border-color: #8896b8; }
-.tab.active { background: var(--blue-dim); border-color: var(--blue); color: var(--blue); }
-.panel { display: none; }
-.panel.active { display: block; }
-svg { width: 100%; height: auto; display: block; }
-.note {
+.scim-diag .tab:hover { color: var(--text-mid); border-color: #8896b8; }
+.scim-diag .tab.active { background: var(--blue-dim); border-color: var(--blue); color: var(--blue); }
+.scim-diag .panel { display: none; }
+.scim-diag .panel.active { display: block; }
+.scim-diag svg { width: 100%; height: auto; display: block; }
+.scim-diag .note {
   margin-top: 16px;
   background: var(--surface2);
   border-left: 3px solid var(--blue);
@@ -92,21 +65,20 @@ svg { width: 100%; height: auto; display: block; }
   color: var(--text-mid);
   line-height: 1.65;
 }
-.note strong { color: var(--text); }
-.note.amber { border-color: var(--amber); background: #fffbf0; }
-.note.green  { border-color: var(--green);  background: #f0faf5; }
-.legend {
+.scim-diag .note strong { color: var(--text); }
+.scim-diag .note.amber { border-color: var(--amber); background: #fffbf0; }
+.scim-diag .note.green  { border-color: var(--green);  background: #f0faf5; }
+.scim-diag .legend {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   margin-top: 14px;
 }
-.leg { display: flex; align-items: center; gap: 7px; font-size: 11px; color: var(--text-dim); font-family: 'IBM Plex Mono', monospace; }
-.leg-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+.scim-diag .leg { display: flex; align-items: center; gap: 7px; font-size: 11px; color: var(--text-dim); font-family: 'IBM Plex Mono', monospace; }
+.scim-diag .leg-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
 </style>
-</head>
-<body>
 
+<div class="scim-diag">
 
 <div class="tabs">
   <div class="tab active" onclick="show('overview', this)">01 — Architecture Overview</div>
@@ -643,11 +615,12 @@ svg { width: 100%; height: auto; display: block; }
 
 <script>
 function show(id, tab) {
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  var wrap = tab.closest('.scim-diag');
+  wrap.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  wrap.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  wrap.querySelector('#' + id).classList.add('active');
   tab.classList.add('active');
 }
 </script>
-</body>
-</html>
+
+</div>
