@@ -26,7 +26,6 @@ theme:
     - search.focus
     - content.code.copy
     - content.code.annotate
-    - content.action.edit
   palette:
     - scheme: default
       primary: custom
@@ -42,7 +41,7 @@ theme:
         name: Switch to light mode
   custom_dir: theme_overrides/
   icon:
-    repo: fontawesome/brands/github
+    repo: material/lifebuoy
     edit: fontawesome/regular/pen-to-square
   font: false
   favicon: assets/img/logos/favicon.ico
@@ -104,9 +103,8 @@ extra:
 
 
 # Repository
-repo_url: https://github.com/ActianCorp/zeenea-platform-docs
-repo_name: data-intelligence-platform
-edit_uri: edit/main/docs/
+repo_url: https://support.actian.com/csm?id=csm_index
+repo_name: Support
 
 # Customization
 extra_css:
