@@ -135,13 +135,50 @@ body,
   fill: #1f2937 !important;
 }
 
-/* GitHub / repo icon in header — accent blue */
+/* Support link — compact filled pill, Actian blue */
 .md-source,
 .md-header__button.md-source {
-  color: var(--color-accent) !important;
+  color: #ffffff !important;
+  background: #238ffb !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 0.2em 1em !important;
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: fit-content !important;
+  height: auto !important;
+  line-height: 1.4 !important;
+  transition: background 0.15s;
 }
-.md-source:hover {
-  opacity: 0.8;
+
+.md-source:hover,
+.md-header__button.md-source:hover {
+  background: #1a7de0 !important;
+  opacity: 1;
+}
+
+[data-md-color-scheme="slate"] .md-source,
+[data-md-color-scheme="slate"] .md-header__button.md-source {
+  color: #ffffff !important;
+  background: #238ffb !important;
+}
+
+[data-md-color-scheme="slate"] .md-source:hover,
+[data-md-color-scheme="slate"] .md-header__button.md-source:hover {
+  background: #1a7de0 !important;
+}
+
+/* Header source */
+.md-header__source .md-source__icon {
+  display: none !important;
+}
+
+.md-header__source .md-source__repository {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  display: inline !important;
+  white-space: nowrap;
 }
 
 /* Search — prevent invisible flash on open */

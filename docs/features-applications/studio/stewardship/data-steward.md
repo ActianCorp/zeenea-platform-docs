@@ -1,8 +1,8 @@
-# Zeenea AI Steward
+# Data Steward
 
 ## Overview
 
-The **Zeenea AI Steward** is a conversational data-catalog assistant embedded directly inside **Zeenea Studio**. It appears as a side panel next to whatever the user is doing in the catalog and helps them **explore, understand, document, and actively maintain** their catalog through natural language.
+The **Data Steward** is a conversational data-catalog assistant embedded directly inside **Zeenea Studio**. It appears as a side panel next to whatever the user is doing in the catalog and helps them **explore, understand, document, and actively maintain** their catalog through natural language.
 
 Unlike a generic chatbot, the Steward:
 
@@ -66,7 +66,7 @@ The panel state is remembered per user (position, size, expanded/compact, whethe
 
 | Area | Purpose |
 | --- | --- |
-| **Header** | Title "Zeenea AI Steward", memory shortcut, expand/collapse, close |
+| **Header** | Title "Data Steward", memory shortcut, expand/collapse, close |
 | **New chat / threads toggle** | Open a fresh thread, list past conversations, delete old ones |
 | **Message stream** | The conversation, including tool-call indicators and approval cards |
 | **"Looking at" strip** | Always shows the item or catalog the Steward considers as current focus |
@@ -330,7 +330,7 @@ The Steward enforces several layers of safety:
 
 | **Label seen in the panel** | **Meaning** |
 | --- | --- |
-| **Zeenea AI Steward** | Panel title |
+| **Data Steward** | Panel title |
 | **Looking at** | Currently focused item or catalog |
 | **New chat** | Start a fresh conversation thread |
 | **Tenant Memory** | Persistent instructions shared by everyone in the tenant |
@@ -344,4 +344,4 @@ The Steward enforces several layers of safety:
 | **Stop generating** | Cancel the in-flight response |
 
 !!! note "Summary"
-    The **Zeenea AI Steward** is a context-aware chat companion inside Zeenea Studio that turns natural-language requests into safe, approved catalog actions — from searching and explaining items, to writing descriptions, fixing completion gaps, linking glossary terms, and running large governance batches — without ever leaving the page the user is on.
+    The **Data Steward** is a context-aware chat companion inside Zeenea Studio that turns natural-language requests into safe, approved catalog actions — from searching and explaining items, to writing descriptions, fixing completion gaps, linking glossary terms, and running large governance batches — without ever leaving the page the user is on.
