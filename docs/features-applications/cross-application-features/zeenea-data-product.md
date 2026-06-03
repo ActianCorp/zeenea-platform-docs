@@ -2,212 +2,337 @@
 
 ## Introduction to Data Products and Data Contracts
 
-A **data product** is a reusable, active, and standardized data asset designed to deliver measurable value to its users, whether internal or external, by applying the rigorous principles of product thinking and management. It comprises one or more data artifacts (e.g., datasets, models, pipelines) and is enriched with metadata, including governance policies, data quality rules, data contracts, and, where applicable, a software bill of materials (SBOM) to document its dependencies and components. Ownership of a data product is aligned to a specific domain or use case, ensuring accountability, stewardship, and its continuous evolution throughout its lifecycle. Adhering to FAIR principles (findable, accessible, interoperable, and reusable) a data product is designed to be discoverable, scalable, reusable, and aligned with both business and regulatory standards, driving innovation and efficiency in modern data ecosystems.
+A **data product** is a reusable, active, and standardized data asset designed to deliver measurable value to its users, whether internal or external, by applying the rigorous principles of product thinking and management. It includes one or more data artifacts, such as datasets, models, and pipelines. It is enriched with metadata, including governance policies, data quality rules, data contracts, and, where applicable, a software bill of materials (SBOM) to document its dependencies and components. Ownership of a data product is aligned to a specific domain or use case, ensuring accountability, stewardship, and continuous evolution throughout its lifecycle.
 
-A data product embeds different types of components, in particular:
+Adhering to FAIR principles (findable, accessible, interoperable, and reusable), a data product is designed to be discoverable, scalable, reusable, and aligned with both business and regulatory standards, driving innovation and efficiency in modern data ecosystems.
 
-* **Input ports**: An input port is a standardized interface through which a data product receives data from upstream sources. It defines how external data enters the data product. Input ports enable the controlled, traceable ingestion of data, facilitating lineage tracking and quality checks before the data is transformed and served to consumers.
+A data product includes the following components:
 
-* **Output ports**: An output port is a standardized interface through which a data product exposes its data to consumers. It defines how the data can be accessed (e.g., via APIs, SQL tables, event streams), along with its format, schema, and protocols. Output ports ensure that data products are interoperable, discoverable, and easy to consume by other teams or systems while enforcing access controls and contracts. A data contract is associated with each output port.
+* **Input ports**: An input port is a standardized interface through which a data product receives data from upstream sources. It defines how external data enters the data product. Input ports enable the controlled, traceable ingestion of data, facilitating lineage tracking and quality checks before the data is transformed and served to consumers.  
 
-* **Internal components**: Internal components include datasets and processes that are not supposed to be consumed by end-users and are necessary to produce the output ports. These components are not represented in the current version of the platform.
+* **Output ports**: An output port is a standardized interface through which a data product exposes its data to consumers. It defines how the data can be accessed (for example, through  APIs, SQL tables, or event streams), along with its format, schema, and protocols. Output ports ensure that data products are interoperable, discoverable, and easy for other teams or systems to consume, while enforcing access controls and contracts. Each output port is associated with a data contract.  
 
-A **data contract** is a formal agreement between a data product owner (also known as a producer) and its consumers that defines the structure, meaning, quality expectations, and access terms of the data exposed. It includes a schema definition. It can include data quality rules, Service Level Agreements (SLAs), ownership, rights, and more. In product-oriented data engineering and management, data contracts ensure reliable data consumption, prevent breaking changes, and promote accountability between domains
+* **Internal components**: Internal components include datasets and processes required to produce the output ports but not intended for end-users. These components are not represented in the current version of the platform.
+
+A **data contract** is a formal agreement between a data product owner (also known as a producer) and its consumers. It defines the structure, meaning, quality expectations, and access terms of the exposed data. A data contract includes a schema definition and can also include data quality rules, Service Level Agreements (SLAs), ownership, rights, and other related information. Data contracts ensure reliable data consumption, prevent breaking changes, and promote accountability between domains.
 
 ## Data Products in the Actian Data Intelligence Platform
 
-The Actian Data Intelligence Platform supports data products and data contracts natively. It enables organizations to manage, govern, and maximize the value of their data assets as products: 
+The Actian Data Intelligence Platform supports data products and data contracts natively. It enables organizations to manage, govern, and maximize the value of their data assets as products:
 
-* Define your data products and data contracts with YAML descriptors containing all relevant information for discovery and consumption (name, description, terms and conditions, custom properties, and so on).
-
-* Synchronize data products and their data contracts from your CI/CD pipelines by using our dedicated [Data Product API](../../technical-documentation/api/zeenea-data-product-api.md).
-
-* Manage data products and all their components in the Studio to enrich their documentation and publish them into the enterprise marketplace.
-
-* Search, find, and understand data products thanks to the graph-powered search engine and an optimized layout dedicated to the discovery of these new item types.
-
+* Define your data products and data contracts with YAML descriptors that include all relevant information for discovery and consumption (for example, name, description, terms and conditions, and custom properties).  
+* Synchronize data products and their data contracts from your CI/CD pipelines by using the dedicated [Data Product API](../../technical-documentation/api/zeenea-data-product-api.md).
+* Manage data products and their components in the Studio to enrich their documentation and publish them to the enterprise marketplace.  
+* Search, find, and understand data products using the graph-powered search engine and an optimized layout dedicated to the discovery of these new item types.  
 * Request access to data products directly in Zeenea Explorer and manage these requests in Zeenea Studio to allow an efficient and governed consumption of the data products.
 
 The following are the key benefits of implementing data products in the Actian Data Intelligence Platform:
 
 * **Enhance Data Discovery & Accessibility**
 
-Data products are supported as native items, allowing for modeling simple as well as more complex data products. Define one or several output ports for each data product to create more use-case-oriented data to better meet business user expectations.  
+Data products are supported as native items, enabling the modeling of simple and complex data products. You can define one or more output ports for each data product to create more use-case-oriented data that meets business needs.
 
-A dedicated and optimized search experience, powered by the knowledge graph, enables users to efficiently search for, discover, understand, and consume data products.
+A dedicated and optimized search experience, powered by the knowledge graph, enables users to efficiently discover, understand, and consume data products.
 
 * **Governance by Design**
 
-By supporting data contracts, our platform encourages organizations in their efforts to shift left metadata management. Design data contracts upfront and integrate them in your CI/CD pipelines to ensure that business expectations from the data contract are met when you deploy new data. Moreover, synchronize your data contracts to keep metadata up to date.
+By supporting data contracts, the platform encourages organizations in their efforts to shift left metadata management. Organizations can design data contracts early and integrate them into their CI/CD pipelines to ensure that business expectations from the data contract are met when deploying new data. Synchronizing data contracts ensures that metadata remains up to date.
 
 * **Scale Data Management and Governance**
 
-Coupled with the federated catalog, each domain can design and manage its own data products.
+Together with the federated catalog, each domain can design and manage its own data products.
 
-Our platform breaks data silos and supports a data mesh approach by allowing domains publish their data products into the enterprise marketplace.
+The platform breaks data silos and supports a data mesh approach by allowing domains to publish their data products into the Enterprise Marketplace.
 
 ## Create Data Products with the API
 
+### Define and Upload Data Products
+
 The Actian Data Intelligence Platform leverages these standards managed by [Bitol](https://bitol.io/) (a Linux Foundation project):
 
-- [Open Data Contract Standard (ODCS)](https://github.com/bitol-io/open-data-contract-standard)
-- [Open Data Product Standard (ODPS)](https://github.com/bitol-io/open-data-product-standard)
+* [Open Data Contract Standard (ODCS)](https://github.com/bitol-io/open-data-contract-standard)  
+* [Open Data Product Standard (ODPS)](https://github.com/bitol-io/open-data-product-standard) 
 
-These YAML files can be uploaded to the platform through a dedicated REST API. 
-
-This API can be called from external tools or the CI/CD pipelines, for instance, from a GitHub Action, like in the following diagram:
+These YAML files can be uploaded to the platform through a dedicated [REST API](../../technical-documentation/api/zeenea-data-product-api.md). This API can be called from external tools or the CI/CD pipelines, for example, from a GitHub Action, as illustrated in the following diagram:
 
 ![](./images/zeenea-data-product-api.png)
 
-In the current version, you cannot create data products from the Studio.
+The list of output ports is defined in the data product descriptor. Each output port must have a name and must be linked to a data contract ID (UUID) with its version.
 
-The following is a sample YAML file for a data product:
-
-```
-apiVersion: v1.9.0
-kind: DataProduct
-name:  Yet Another Product
-id: fbe8d147-28db-4f1d-bedf-a3fe9f458427
-
-description:
-  purpose: Yet Another Product, with datasets from data contracts.
-  tags: ['experimental']
-
-inputPorts:
-  - name: kafka_stock_topic
-    version: 1.0.0
-    contractId: dbb7b1eb-7628-436e-8914-2a00638ba6db
-
+```yaml
 outputPorts:
-  - name: COVID-19
-    description: "COVID-19"
-    version: 1.0.0
-    contractId: f07a9a38-4020-415f-abd1-2802d6e77f19
-    customProperties:
-    - property: zeeneaGlossaryRefs
-      value: "KPI/Number of Delivered Doses of Vaccine"
-    inputContracts:
-      - id: dbb7b1eb-7628-436e-8914-2a00638ba6db
-        version: 2.0.0
+- name: rawtransactions
+  version: 1.0.0
+  contractId: c2798941-1b7e-4b03-9e0d-955b1a872b32
 ```
 
-The following is a sample YAML file for a data contract:
+Before calling the API, bundle the data product and all referenced data contract YAML files into a single ZIP file so that the platform can process them together.
 
-```
-kind: DataContract
-apiVersion: v3.0.2
-version: 1.0.0
-id: f07a9a38-4020-415f-abd1-2802d6e77f19
+### Manage Output Ports
 
-description:
-  purpose: Johns Hopkins University data on COVID-19 cases, Enigma
-customProperties:
-  - property: zeeneaGlossaryRefs
-    value: "KPI/Number of Delivered Doses of Vaccine"
+#### Output Port Lifecycle
 
-tags: ["kafka", "confluent", "aws", "managed"]
+When updating a data product through the API, newly defined output port versions replace existing ones. An output port is updated only if it references the same data contract ID and version.
 
+Output ports are read-only items in the catalog. Their documentation is fully managed through the associated data contracts, which act as the single source of truth.
+
+Output ports that are not included in the last version of the data product descriptor are automatically deleted.
+
+#### Link Output Ports to Imported Datasets
+
+The data contract must define both the model of the output port (the `schema` section in ODCS) and the location of the related datasets (the `servers` section in ODCS).
+
+```yaml
 schema:
-  - name: covid_cases
-    physicalName: covid_cases
-    description: the number of confirmed covid cases reported for a specified region, with location and county/province/country information.
+  - name: Transactions
+    physicalName: transactions
+    description: Real-time transaction data.
     properties:
-      - name: fips
+      - name: Transaction ID
+        physicalName: transaction_id
+        required: true
         logicalType: string
-        description: state and county two digits code
-      - name: admin2
+        description: Unique transaction identifier
+      - name: Account ID
+        physicalName: acct_id
+        required: true
         logicalType: string
-        description: county name
-      - name: province_state
-        logicalType: string
-        description: province name or state name
-      - name: country_region
-        logicalType: string
-        description: country name or region name
-      - name: last_update
-        logicalType: date
-        description: last update timestamp
-      - name: latitude
-        logicalType: number
-        description: location (latitude)
-      - name: longitude
-        logicalType: number
-        description: location (longitude)
-      - name: confirmed
-        logicalType: int
-        description: number of confirmed cases
-      - name: combined_key
-        logicalType: string
-        description: county name+state name+country name
-
+        description: Account Id
 ```
 
-## ODPS and ODCS Support Details in Actian Data Intelligence Platform
+When uploading a data product or importing a dataset from a scanner, the platform uses the `name` and `physicalName` and the `servers` section to automatically link output ports with their physical implementations. Only connectors built on the public SDK V2 are supported.
 
-### ODPS Support
+Following is an example of a `servers` section for Snowflake:
 
-The following table shows the level of support the Actian Data Intelligence Platform provides for each section of the ODPS:
+```yaml
+servers:
+  - id: snowflake-server-pse
+    server: Snowflake server
+    type: snowflake
+    host: ABCDEFGH-IJ12345.snowflakecomputing.com
+    port: 8080
+    account: IJ12345
+    database: DATABASE_1
+    warehouse: SMALL_COMPUTE_WH
+    schema: SCHEMA_1
+```
 
-| Section | Support Level |
-| :---- | :---- |
-| **Fundamentals** | Partially Supported |
-| **Product Information** | Partially Supported |
-| **Management Ports** | Not Supported |
-| **Support and Communication Channels** | Not Supported |
-| **Team** | Partially Supported |
-| **Ancillary Objects: Custom Properties** | Fully Supported|
-| **Ancillary Objects: Authoritative Definitions** | Partially Supported |
-| **Other Properties** | Not Supported |
-
-* **Fully Supported**: All attributes are supported and mapped to Actian concepts.  
-* **Partially Supported**: Some attributes are supported, but not the entire list.  
-* **Not Supported**: None of the attributes in this section are mapped to Actian concepts.
+You can link the same dataset to multiple output ports and to different data products.
 
 !!! note
-    Unsupported attributes or sections are ignored when the YAML file is ingested by the platform.
+    Linked datasets do not need to belong to the same catalog.
 
+After a link is created, the related dataset appears in the **Datasets** tab of the output port in the Studio and Explorer.
 
-The following sections provide detailed attribute-level information for the fully and partially supported sections.
+![](./images/zeenea-data-product-output-port.png)
+
+If not all datasets defined in the data contract are linked to the output port, a banner indicates that the data contract is not fully implemented.
+
+![](./images/zeenea-data-product-output-port-warning.png)
+
+### Manage Actian-Specific Attributes for Data Products and Output Ports
+
+#### Manage Properties
+
+You can use the data product and data contract YAML files to create or update properties of data products and output ports in the Data Intelligence Platform.
+
+Properties must be defined using the `customProperties` syntax in ODPS/ODCS, with the property name `zeeneaProperties`.
+
+The platform automatically determines the property type based on the syntax of the file:
+
+* **Short text**: If defined as a key/value.   
+* **Tag**: If defined as an array.  
+* **Date**: If defined using a predefined format (ISO 8601).  
+* **URL**: If defined as a valid URL.
+
+For example:
+
+```yaml
+customProperties:
+  - property: zeeneaProperties
+    value:
+      Sensitivity: Very High
+  - property: zeeneaProperties
+    value:
+      Compliance: [BSA, FinCEN]
+  - property: zeeneaProperties
+    value:
+      Documentation: https://www.acme.com
+  - property: zeeneaProperties
+    value:
+      Approval date: 2025-10-27
+```
+
+The example above creates the following properties:
+
+* A **Short-text** property `Sensitivity` and apply the value `Very High` to the item.  
+* A **Tag** property `Compliance` and apply the values `BSA` and `FinCEN` to the item.  
+* A **URL** property `Documentation` and apply the value `https://www.acme.com` to the item.  
+* A **Date** property `Approval date` and apply the value `2025-10-27` to the item.
+
+Properties are managed as source documentation, similar to source properties of a dataset. They are not mapped to the data product template.
+
+Properties created through the data product API can be used as filters or displayed in the catalog as any other source property, depending on their type, by customizing their search and display options in the **Catalog Design** section of the Studio.
+
+#### Manage Contacts
+
+You can use the data product and data contract YAML files to create or update contacts on data products and output ports in the Data Intelligence Platform using the ODPS/ODCS syntax for teams.
+
+For example:
+
+```yaml
+team:
+ members:
+   - username: ceastwood@acme.com
+     name: Clint Eastwood
+     role: data-owner
+   - username: daustin@acme.com
+     name: David Austin
+     role: data-steward
+```
+
+The example above creates contacts with a name, email address, and source responsibilities such as `data-owner` and `data-steward`. The `role` value must be an existing source responsibility code. If the code does not exist, the platform creates it automatically using the provided value.
+
+If the provided code corresponds to a user-defined responsibility code (created from the **Catalog Design** section), the contact is not added, and the API returns a non-blocking error.
+
+!!! note
+    The source responsibility display name can be updated in the **Catalog Design** section.
+
+When team members are specified, the platform attempts to match an existing contact by email (using the username field).  
+If the username is not a valid email address, then the platform attempts to match an existing contact by name (using the name field, and then the username field as a last fallback).
+
+If no existing contact matches the specified contact, the platform creates a new contact.
+
+#### Manage Links with Glossary Items
+
+You can use the data product YAML files to create implementation links between glossary items and data products.
+
+Links must be defined using the `customProperties` syntax in ODPS/ODCS, with the property name `zeeneaGlossaryRefs`.
+
+```yaml
+customProperties:
+  - property: zeeneaGlossaryRefs
+    value:
+      - "business-terms/Transaction Type"
+      - “business-terms/Account Type”
+      - “business-terms/Account ID”
+      - “business-terms/Customer ID
+```
+
+Ensure that an implementation rule is configured at the metamodel level between the Data product item type and the targeted Glossary item type in the **Catalog Design** section. Otherwise, the link will not be created.
+
+!!! note
+    Links between glossary items and output ports are not supported.
+
+#### Manage Links with Custom Items 
+
+You can use the data product YAML files to create links between custom items and data products.
+
+Links must be defined using the `customProperties` syntax in ODPS/ODCS, with the property name `zeeneaCustomItemRefs`.
+
+```yaml
+customProperties:
+  - property: zeeneaCustomItemRefs
+    value:
+      - regulation/Bank-Secrecy-Act
+      - regulation/USA-PATRIOT-Act
+      - regulation/FinCEN
+      - "data-domain/Finance | Application"
+```
+
+!!! note
+    Links between custom items and output ports are not supported in this version.
+
+#### Manage Access Request Policies for Output Ports
+
+You can use the data contract YAML files to apply an [access request policy](https://docs.actian.com/zeenea/#page/Features%20_%20Applications/zeenea-access-requests.html) to the output port. This allows data consumers to request access to the output port.
+
+Access request policies must be defined using the `customProperties` syntax in ODPS/ODCS, with the property name `accessRequestPolicy`.
+
+```yaml
+customProperties:
+  - property: zeeneaProperties
+    value:
+      accessRequestPolicy: data-product-access-request-policy
+```
+
+The specified access request policy must already exist in the platform.
+
+#### Define the Catalog of a Data Product and its Output Ports
+
+If multiple catalogs are defined, you can specify the targeted catalog for your data products and their output ports in the payload of the data product API request.
+
+You can also move a data product from its original catalog to another using the Studio. All output ports are automatically moved to the same catalog. Linked datasets are not moved automatically.
+
+## ODPS and ODCS Mapping Details in the Actian Data Intelligence Platform
+
+The platform supports ODPS version `1.0.0` and ODCS version `3.1.0`.
+
+Uploaded YAML files must specify the ODPS or ODCS version used and comply with the standard version syntax and contain all required attributes as defined by the standard version. Files that do not meet these requirements are not processed.
+
+### ODPS Mapping
+
+The following table shows how ODPS sections are mapped with the platform internal concepts and which sections are required:
+
+| Section | Required | Mapping |
+| :---- | :---- | :---- |
+| Fundamentals | Yes | Partially mapped |
+| Product Information | Yes | Partially mapped |
+| Management Ports | No | Not mapped |
+| Support and Communication Channels | No | Not mapped |
+| Team | No | Partially mapped |
+| Ancillary Objects: Custom Properties | No | Partially mapped |
+| Ancillary Objects: Authoritative Definitions | No | Partially mapped |
+| Other Properties | No | Not mapped |
+
+* **Fully mapped**: All attributes are mapped to platform concepts.  
+* **Partially mapped**: Some attributes are mapped, but not the entire list.  
+* **Not mapped**: None of the attributes in this section are mapped to platform concepts.
+
+!!! note
+    Unmapped attributes or sections are ignored when the platform ingests the YAML file.
+
+The following sections provide detailed attribute-level information for the fully and partially mapped sections.
 
 #### Fundamentals
 
-| Key | Required | Supported | Description |
+| Key | Required | Mapped | Description |
 | :---- | :---- | :---- | :---- |
-| `apiVersion` | Yes | Yes | Version of the standard used to build data product. <br />Default value is `v1.0.0`. <br />The platform ingests ODPS attributes in a best-effort approach based on the v0.9.0. <br />This information is not displayed in the UI. |
-| `kind` | Yes | Yes | The kind of file this is. Valid value is `DataProduct`. |
-| `id` | Yes | Yes | A unique identifier used to reduce the risk of dataset name collisions, such as a UUID. <br />This attribute must be in the format of a UUID. Otherwise, the file will not be processed. <br />The `id` is used in the key of the item. |
+| `apiVersion` | Yes | Yes | Version of the standard used to build the data product. <br />Valid value is `1.0.0`. |
+| `kind` | Yes | Yes | The kind of file this is. <br />Valid value is `DataProduct`. |
+| `id` | Yes | Yes | A unique identifier used to reduce the risk of dataset name collisions. <br />This attribute must be in the format of a UUID. Otherwise, the file will not be processed. <br />This ID is used in the key of the item. |
 | `name` | No | Yes | Name of the data product. |
-| `version` | No | Yes | Current version of the data product. <br />Not required, but highly recommended. <br />The version is used in the key of the item. <br />This information is used (with the UUID) to identify the related data product. Two different data products can have the same UUID but a different version. |
-| `status` | Yes | No | Current status of the data product. <br />Valid values are `proposed`, `draft`, `active`, `deprecated`, `retired`. |
+| `version` | No | Yes | Current version of the data product. <br />Not required, but highly recommended. <br />The version is used in the key of the item. <br />The version combined with the id defines the unicity of a data product. <br />Two different data products can have the same UUID but a different version. |
+| `status` | Yes | No | Current status of the data product. <br />Valid values are proposed, `draft`, `active`, `deprecated`, and `retired`. <br />Only active data products may be uploaded to the platform. |
 | `domain` | No | No | Business domain |
 | `tenant` | No | No | Organization identifier |
 | `authoritativeDefinitions` | No | Yes | List of links to sources that provide more details on the data contract. <br />See _Ancillary Objects: Authoritative Definitions_ below. |
 | `description` | No | Yes | Object containing the descriptions. |
-| `description.purpose` | No | Yes | Intended purpose for the provided data.<br>Mapped to the source description of the data product.<br>Syntax example:<br><code>&nbsp;&nbsp;description:<br>&nbsp;&nbsp;&nbsp;&nbsp;purpose: Yet Another Product.</code> |
-| `description.limitations` | No | Yes | Technical, compliance, and legal limitations for data use. <br />Using this attribute will create a `limitations` source property (Rich text). |
-| `description.usage` | No | Yes | Recommended usage of the data. <br />Using this attribute will create a `usage` source property (Rich text). |
+| `description.purpose` | No | Yes | Intended purpose for the provided data. <br />Mapped to the source description of the data product. <br>Syntax example:<br><code>&nbsp;&nbsp;description:<br>&nbsp;&nbsp;&nbsp;&nbsp;purpose: Yet Another Product.</code> |
+| `description.limitations` | No | No | Technical, compliance, and legal limitations for data use. <br />Can be set at the data contract level. |
+| `description.usage` | No | No | Recommended usage of the data. <br />Can be set at the data contract level. |
 | `description.authoritativeDefinitions` | No | No | See _Authoritative Definitions_ below. |
 | `description.customProperties` | No | No | See _Custom Properties_ below. |
 | `customProperties` | No | Yes | See _Custom Properties_ below. |
-| `tags` | No | Yes | Tags as a list.<br>Syntax example:<br><code>&nbsp;&nbsp;tags:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Managed<br>&nbsp;&nbsp;&nbsp;&nbsp;- AML<br>&nbsp;&nbsp;&nbsp;&nbsp;- Compliance</code> |
+| `tags` | No | Yes | Tags as a list. <br>Syntax example:<br><code>&nbsp;&nbsp;tags:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Managed<br>&nbsp;&nbsp;&nbsp;&nbsp;- AML<br>&nbsp;&nbsp;&nbsp;&nbsp;- Compliance</code> |
 
 #### Product Information
 
-| Key | Required | Supported | Description |
+| Key | Required | Mapped | Description |
 | :---- | :---- | :---- | :---- |
-| `inputPorts` | No | Yes | List of objects describing an input port. You need at least one as a data product needs to get data somewhere. |
+| `inputPorts` | No | Yes | List of objects describing an input port. You need at least one, as a data product needs to get data somewhere. |
 | `inputPorts.name` | Yes | Yes | When specifying an input port, it is mapped to a data process in the Intelligence platform. |
 | `inputPorts.version` | No | Yes | For each version, a different instance of the output port is listed. The combination of the name and version is the key. A new (major) version would be a new output port, for simplicity. <br />This is the version of a data contract attached to the related output port for another data product. <br />The version is used with the UUID to match a specific input. |
 | `inputPorts.contractId` | No | Yes | id of the data contract attached to the referred output port. |
-| `inputPorts.customProperties` | No | Yes | Custom properties |
+| `inputPorts.customProperties` | No | No | Custom properties |
 | `inputPorts.authoritativeDefinitions` | No | No | Authoritative definitions |
 | `inputPorts.tags` | No | No | Tags |
 | `outputPorts` | Yes | Yes | List of objects describing an output port. You need at least one, as a data product without output is useless. |
-| `outputPorts.name` | Yes | Yes |  |
-| `outputPorts.version` | No | Yes | For each version, a different instance of the output port is listed. The combination of the name and version is the key. A new (major) version would be a new output port, for simplicity. <br />The version is used in the item unique key. |
+| `outputPorts.name` | Yes | Yes |   |
+| `outputPorts.version` | No | Yes | For each version, a different instance of the output port is listed. The combination of the name, contractId, and version is the key. <br />The version is used in the item unique key. |
 | `outputPorts.contractId` | No | Yes | The contract id is used in the output port unique key. |
 | `outputPorts.type` | No | No | There can be different types of output ports, each automated and handled differently. Here you can indicate the type. |
-| `outputPorts.description` | No | No | Human readable short description of the output port. <br />The description of the output port must be defined in the data contract. |
+| `outputPorts.description` | No | Yes | Human-readable short description of the output port. <br />The description of the data contract is used as a fallback if not defined here. |
 | `outputPorts.customProperties` | No | No | Custom properties. <br />The custom properties of the output port must be defined in the data contract. |
 | `outputPorts.authoritativeDefinitions` | No | No | Authoritative definitions. <br />The authoritative definitions of the output port must be defined in the data contract. |
 | `outputPorts.tags` | No | No | Tags. <br />The tags of the output port must be defined in the data contract. |
@@ -217,19 +342,19 @@ The following sections provide detailed attribute-level information for the full
 
 #### Team
 
-| Key | Required | Supported | Description |
+| Key | Required | Mapped | Description |
 | :---- | :---- | :---- | :---- |
 | `team` | No | Yes | Object representing a team. |
 | `team.name` | No | No | Team name. |
 | `team.description` | No | No | Team description. |
 | `team.customProperties` | No | No | Custom properties block. |
-| `team.authoritativeDefinitions` | No | Yes | Authoritative definitions block. <br />Will be added to the list of `Links` at the data product level. |
+| `team.authoritativeDefinitions` | No | No | Authoritative definitions block. |
 | `team.tags` | No | No | Tags as a list. |
 | `team.members` | No | Yes | List of members. |
 | `team.members.username` | Yes | Yes | The user's username or email. <br />Using this attribute will create contacts with the `dataOwner` source responsibility in the Intelligence platform. |
-| `team.members.name` | No | No | The user's name. |
-| `team.members.description` | No | No | The user's name. |
-| `team.members.role` | No | No | The user's job role. <br />Examples might be owner, data steward. <br />There is no limit on the role. |
+| `team.members.name` | Yes | Yes | The user's name (combine first name and last name). |
+| `team.members.description` | No | No | The user's description. |
+| `team.members.role` | Yes | Yes | The user's job role. For example, owner, data steward. <br />This attribute is not required by the standard, but is necessary to link the contact with the right responsibility. |
 | `team.members.dateIn` | No | No | The date when the user joined the team. |
 | `team.members.dateOut` | No | No | The date when the user ceased to be part of the team. |
 | `team.members.replacedByUsername` | No | No | The username of the user who replaced the previous user. |
@@ -239,207 +364,188 @@ The following sections provide detailed attribute-level information for the full
 
 #### Ancillary Objects
 
-**Custom Properties**
+##### Custom Properties
 
-| Key | Required | Supported | Description |
+| Key | Required | Mapped | Description |
 | :---- | :---- | :---- | :---- |
-| `customProperties` | No | Yes | A list of key/value pairs for custom properties.<br>The `customProperties` attribute is used to create or value source properties (Short text), link technical items described in the YAML file with existing glossary items, or with existing custom items.<br>Custom properties cannot be used to value template properties created in the UI.<br>Syntax example:<br><code>&nbsp;&nbsp;customProperties:<br>&nbsp;&nbsp;&nbsp;&nbsp;- property: zeeneaProperties<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensitivity: Yes<br>&nbsp;&nbsp;&nbsp;&nbsp;- property: zeeneaGlossaryRefs<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- terms/Customer ID<br>&nbsp;&nbsp;&nbsp;&nbsp;- property: zeeneaCustomItemRefs<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- regulation/GDPR </code> |
-| `customProperties.property` | No | Yes | The name of the key. Names should be in camel case, the same as if they were permanent properties in the contract. <br />Possible values are `zeeneaProperties`, `zeeneaGlossaryRefs`, `zeeneaCustomItemRefs`. |
-| `customProperties.value` | No | Yes | The value of the key. <br />Mapping in the Intelligence platform: <br />- In case of a property, the value is the name and value of the property. <br />- In case of a link, the value is the key of the targeted item. <br />Targeted item must already exist in the Intelligence platform and the link must be allowed at the metamodel level. |
+| `customProperties` | No | Yes | A list of key/value pairs for custom properties. <br />The `customProperties` attribute is used to create or value source properties (Short text, Tag, Date, URL), link the data product with existing glossary items, or with existing custom items. <br />Custom properties cannot be used to value template properties created in the UI. |
+| `customProperties.property` | No | Yes | The name of the key. Names should be in camel case, the same as if they were permanent properties in the contract. <br />Possible values are: <br />`zeeneaProperties`<br />`zeeneaGlossaryRefs`<br />`zeeneaCustomItemRefs` |
+| `customProperties.value` | No | Yes | The value of the key. <br />Mapping in the Intelligence platform: <br />- In case of a property, the value is the name and value of the property. <br />- In case of a link, the value is the key of the targeted item. <br />The targeted item must already exist in the Intelligence platform, and the link must be allowed at the metamodel level. |
 | `customProperties.description` | No | No | Optional description. |
 
-**Authoritative Definitions**
+##### Authoritative Definitions
 
-| Key | Required | Supported | Description |
+| Key | Required | Mapped | Description |
 | :---- | :---- | :---- | :---- |
 | `authoritativeDefinitions` | No | Yes | A list of type/link pairs for authoritative definitions. |
-| `authoritativeDefinitions.type` | Yes | Yes | Type of definition for authority.<br>Recommended values are `businessDefinition`, `transformationImplementation`, `videoTutorial`, `tutorial`, and `implementation`. At the root level, a type can also be `canonicalUrl` to indicate a reference to the product's last version.<br>Using this attribute will create a `Links` source property (URL type and multivalued).<br>Syntax example:<br><code>&nbsp;&nbsp;authoritativeDefinitions:<br>&nbsp;&nbsp;&nbsp;&nbsp;- type: privacy-policy<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: https://example.com</code><br>`type` will be used as the label and `url` as the value of the hyperlink. |
+| `authoritativeDefinitions.type` | Yes | Yes | Type of definition for authority. <br />Recommended values are `businessDefinition`, `transformationImplementation`, `videoTutorial`, `tutorial`, and `implementation`. At the root level, a type can also be `canonicalUrl` to indicate a reference to the product's last version. <br />Using this attribute will create a `Links` source property (URL type and multivalued). <br>Syntax example:<br><code>&nbsp;&nbsp;authoritativeDefinitions:<br>&nbsp;&nbsp;&nbsp;&nbsp;- type: privacy-policy<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: https://example.com</code><br>Type will be used as the label and URL as the value of the hyperlink. |
 | `authoritativeDefinitions.url` | Yes | Yes | URL to the authority. |
 | `authoritativeDefinitions.description` | No | No | Optional description. |
 
 ### ODCS Support
 
-The following table shows the level of support the Actian Data Intelligence Platform provides for each section of the ODCS:
+The following table shows how ODCS sections are mapped with the platform internal concepts and which sections are required:
 
-| Section | Support Level |
-| :---- | :---- |
-| **Fundamentals** | Partially Supported |
-| **Schema** | Partially Supported |
-| **References** | Not Supported |
-| **Data Quality** | Not Supported |
-| **Support and Communication Channels** | Not Supported |
-| **Pricing** | Not Supported |
-| **Team** | Partially Supported |
-| **Roles** | Not Supported |
-| **Service-level Agreement** | Not Supported |
-| **Infrastructures and Servers** | Not Supported |
-| **Custom and Other Properties** | Partially Supported |
+| Section | Required | Mapping |
+| :---- | :---- | :---- |
+| Fundamentals | Yes | Partially mapped |
+| Schema | Yes | Partially mapped |
+| References | No | Not mapped |
+| Data Quality | No | Not mapped |
+| Support and Communication Channels | No | Not mapped |
+| Pricing | No | Not mapped |
+| Team | No | Partially mapped |
+| Roles | No | Not mapped |
+| Service-level Agreement | No | Not mapped |
+| Infrastructures and Servers | No | Partially mapped |
+| Custom and Other Properties | No | Partially mapped |
 
-
-* **Fully Supported**: All attributes are supported and mapped to Actian concepts.  
-* **Partially Supported**: Some attributes are supported, but not the entire list.  
-* **Not Supported**: None of the attributes in this section are mapped to Actian concepts.
+* **Fully mapped**: All attributes are supported and mapped to Actian concepts.  
+* **Partially mapped**: Some attributes are supported, but not the entire list.  
+* **Not mapped**: None of the attributes in this section are mapped to Actian concepts.
 
 !!! note
-    Unsupported attributes or sections are ignored when the YAML file is ingested by the platform.
+    Unmapped attributes or sections are ignored when the platform ingests the YAML file. However, they are stored and displayed as read-only information in the user interface.
 
-
-The following sections provide detailed attribute-level information for the fully and partially supported sections.
+The following sections provide detailed attribute-level information for the fully and partially mapped sections.
 
 #### Fundamentals
 
-| Key | Required | Supported | Description |
+| Key | Required | Mapped | Description |
 | :---- | :---- | :---- | :---- |
-| `apiVersion` | Yes | Yes | Version of the standard used to build data contract. <br />Default value is `v3.0.2`. <br />The platform ingests ODCS attributes in a best-effort approach based on the v3.0.2. <br />This information is not displayed in the UI. |
-| `kind` | Yes | Yes | The kind of file this is. Valid value is `DataContract`. |
-| `id` | Yes | Yes | A unique identifier used to reduce the risk of dataset name collisions, such as a UUID. <br />This attribute must be in the format of a UUID. Otherwise, the file will not be processed. <br />The `id` is used in the key of the item. |
+| `apiVersion` | Yes | Yes | Version of the standard used to build the data contract. <br />Valid value is `3.1.0`. |
+| `kind` | Yes | Yes | The kind of file this is. <br />Valid value is `DataContract`. |
+| `id` | Yes | Yes | A unique identifier used to reduce the risk of dataset name collisions. <br />This attribute must be in the format of a UUID. Otherwise, the file will not be processed. <br />This ID is used in the key of the item. |
 | `name` | No | No | Name of the data contract. |
-| `version` | Yes | Yes | Current version of the data contract. <br />This information is not displayed in the UI but is used (with the UUID) to identify the related output port when referring to it as an input port of another product. |
-| `status` | Yes | No | Current status of the data contract. <br />Valid values are `proposed`, `draft`, `active`, `deprecated`, `retired`. |
-| `tenant` | No | No | Indicates the property the data is primarily associated with. Value is case-insensitive. |
-| `tags` | No | Yes | A list of tags that may be assigned to the elements (object or property); the tags keyword may appear at any level. Tags may be used to better categorize an element. For example, `finance`, `sensitive`, `employee_record`.<br>Syntax example:<br><code>&nbsp;&nbsp;tags:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Managed<br>&nbsp;&nbsp;&nbsp;&nbsp;- AML<br>&nbsp;&nbsp;&nbsp;&nbsp;- Compliance</code> |
+| `version` | Yes | Yes | Current version of the data contract. |
+| `status` | Yes | No | Current status of the data contract. <br />Valid values are `proposed`, `draft`, `active`, `deprecated`, and `retired`. |
+| `tenant` | No | No | Indicates the property the data is primarily associated with. <br />Value is case-insensitive. |
+| `tags` | No | Yes | A list of tags that may be assigned to the elements (object or property); the tags keyword may appear at any level. Tags may be used to better categorize an element. For example, `finance`, `sensitive`, `employee_record`. <br>Syntax example:<br><code>&nbsp;&nbsp;tags:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Managed<br>&nbsp;&nbsp;&nbsp;&nbsp;- AML<br>&nbsp;&nbsp;&nbsp;&nbsp;- Compliance</code> |
 | `domain` | No | No | Name of the logical data domain. |
 | `dataProduct` | No | No | Name of the data product. |
-| `authoritativeDefinitions` | No | Yes | List of links to sources that provide more details on the data contract.<br>Using this attribute will create a `Links` source property (URL type and multivalued).<br>Syntax example:<br><code>&nbsp;&nbsp;authoritativeDefinitions:<br>&nbsp;&nbsp;&nbsp;&nbsp;- type: privacy-policy<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: https://example.com</code><br>`type` will be used as the label and `url` as the value of the hyperlink. |
+| `authoritativeDefinitions` | No | Yes | List of links to sources that provide more details on the data contract. <br />Using this attribute will create a `Links` source property (URL type and multivalued). <br>Syntax example:<br><code>&nbsp;&nbsp;authoritativeDefinitions:<br>&nbsp;&nbsp;&nbsp;&nbsp;- type: privacy-policy<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: https://example.com</code><br> Type will be used as the label and URL as the value of the hyperlink. |
 | `description` | No | Yes | Object containing the description. |
-| `description.purpose` | No | Yes | Intended purpose for the provided data.<br>Mapped to the source description of the output port.<br>Syntax example:<br><code>&nbsp;&nbsp;description:<br>&nbsp;&nbsp;&nbsp;&nbsp;purpose: Yet Another Product, with datasets from data contracts.</code> |
+| `description.purpose` | No | Yes | Intended purpose for the provided data. <br />Mapped to the source description of the output port as a fallback to the description provided in the ODPS file. <br>Syntax example:<br><code>&nbsp;&nbsp;description:<br>&nbsp;&nbsp;&nbsp;&nbsp;purpose: Yet Another Product.</code> |
 | `description.limitations` | No | Yes | Technical, compliance, and legal limitations for data use. <br />Using this attribute will create a `limitations` source property (Rich text). |
 | `description.usage` | No | Yes | Recommended usage of the data. <br />Using this attribute will create a `usage` source property (Rich text). |
-| `description.authoritativeDefinitions` | No | No | List of links to sources that provide more details on the dataset. Examples would be a link to privacy statement, terms and conditions, license agreements, data catalog, or another tool. |
+| `description.authoritativeDefinitions` | No | No | List of links to sources that provide more details on the dataset. Examples would be a link to a privacy statement, terms and conditions, license agreements, data catalog, or another tool. <br />Using this attribute will create a `Policies` source property (URL-type). The type will be used as the label and the value as the URL. |
 | `description.customProperties` | No | No | Custom properties that are not part of the standard. |
 
 #### Schema
 
-**Schema (Top-level)**
+##### Schema (Top-level)
 
-| Key | Required | Supported | Description |
+| Key | Required | Mapped | Description |
 | :---- | :---- | :---- | :---- |
-| `schema` | Yes | Yes | Array. A list of elements within the schema to be cataloged. <br />Objects are mapped to datasets and properties to fields in the Intelligence platform. |
+| `schema` | Yes | Yes | Array. A list of elements within the schema to be cataloged. <br />Objects are mapped to the dataset concept and are used to link the output port to imported datasets in the platform. |
 
-**Applicable to Elements (either Objects or Properties)**
+##### Applicable to Elements (either Objects or Properties)
 
-| Key | Required | Supported | Description |
+| Key | Required | Mapped | Description |
 | :---- | :---- | :---- | :---- |
-| `name` | Yes | Yes | Name of the element. |
-| `physicalName` | No | Yes | Physical name. |
-| `physicalType` | No | No | The physical element data type in the data source. <br />For objects: `table`, `view`, `topic`, `file`. <br />For properties: `VARCHAR(2)`, `DOUBLE`, `INT`, etc. |
-| `description` | No | Yes | Description of the element. |
+| `name` | Yes | Yes | Name of the element. <br />Mapped for Objects only and used to link the output port to an imported dataset. |
+| `physicalName` | No | Yes | Physical name. <br />Mapped for Objects only and used to link the output port to an imported dataset. |
+| `physicalType` | No | No | The physical element data type in the data source. <br />For objects: `table`, `view`, `topic`, `file`.  <br />For properties: `VARCHAR(2)`, `DOUBLE`, `INT`, etc. |
+| `description` | No | No | Description of the element. |
 | `businessName` | No | No | The business name of the element. |
-| `authoritativeDefinitions` | No | Yes | List of links to sources that provide more details on the element. Examples would be a link to privacy statement, terms and conditions, license agreements, data catalog, or another tool. |
+| `authoritativeDefinitions` | No | No | List of links to sources that provide more details on the element. Examples would be a link to a privacy statement, terms and conditions, license agreements, data catalog, or another tool. |
 | `quality` | No | No | List of data quality attributes. |
-| `tags` | No | Yes | A list of tags that may be assigned to the elements (object or property); the tags keyword may appear at any level. Tags may be used to better categorize an element. <br />For example, `finance`, `sensitive`, `employee_record`. |
-| `customProperties` | No | Yes | Custom properties that are not part of the standard. |
+| `tags` | No | No | A list of tags that may be assigned to the elements (object or property); the tags keyword may appear at any level. Tags may be used to better categorize an element. <br />For example, `finance`, `sensitive`, `employee_record`. |
+| `customProperties` | No | No | Custom properties that are not part of the standard. |
 
-**Applicable to Objects**
+##### Applicable to Objects
 
-| Key | Required | Supported | Description |
-| :---- | :---- | :---- | :---- |
-| `dataGranularityDescription` | No | No | Granular level of the data in the object. Example would be "Aggregation by country." |
+This section is not required and is not mapped.
 
-**Applicable to Properties**
+##### Applicable to Properties
 
-Some keys are more applicable when the described property is a column.
+Some keys are more applicable when the described property is a column.  
+This section is not required and is not mapped.
 
-| Key | Required | Supported | Description |
-| :---- | :---- | :---- | :---- |
-| `primaryKey` | No | Yes | Boolean value specifying whether the field is primary or not. <br />Default is `false`. |
-| `primaryKeyPosition` | No | No | If field is a primary key, the position of the primary key element. Starts from 1. <br />Example of `account_id, name` being primary key columns, `account_id` has primaryKeyPosition 1 and `name` primaryKeyPosition 2. Default to -1. |
-| `logicalType` | No | Yes | The logical field datatype. <br />One of `string`, `date`, `number`, `integer`, `object`, `array` or `boolean`. |
-| `logicalTypeOptions` | No | No | Additional optional metadata to describe the logical type. For more information about supported options for each `logicalType`, see [Logical Type Options](https://bitol-io.github.io/open-data-contract-standard/latest/#logical-type-options). |
-| `description` | No | Yes | Description of the element. |
-| `required` | No | Yes | Indicates if the element may contain Null values. <br />Possible values are `true` and `false`. Default is `false`. |
-| `unique` | No | No | Indicates if the element contains unique values. <br />Possible values are `true` and `false`. Default is `false`. |
-| `partitioned` | No | No | Indicates if the element is partitioned. <br />Possible values are `true` and `false`. |
-| `partitionKeyPosition` | No | No | If element is used for partitioning, the position of the partition element. Starts from 1. <br />Example of `country, year` being partition columns, `country` has partitionKeyPosition 1 and `year` partitionKeyPosition 2. Default to -1. |
-| `classification` | No | No | Can be anything, like confidential, restricted, and public to more advanced categorization. |
-| `authoritativeDefinitions` | No | Yes | List of links to sources that provide more detail on element logic or values<br /> Examples would be URL to a git repo, documentation, a data catalog, or another tool. |
-| `encryptedName` | No | No | The element name within the dataset that contains the encrypted element value. <br />For example, unencrypted element `email_address` might have an encryptedName of `email_address_encrypt`. |
-| `transformSourceObjects` | No | No | List of objects in the data source used in the transformation. |
-| `transformLogic` | No | No | Logic used in the column transformation. |
-| `transformDescription` | No | No | Describes the transform logic in very simple terms. |
-| `examples` | No | No | List of sample element values. |
-| `criticalDataElement` | No | No | True or false indicator. <br />If the element is considered a critical data element (CDE), the value is true; otherwise, false. |
-| `items` | No | Yes | List of items in an array (only applicable when `logicalType: array`).<br>Use this syntax to create nested fields.<br>Syntax example:<br><code>&nbsp;&nbsp;schema:<br>&nbsp;&nbsp;&nbsp;&nbsp;- name: AnotherObject<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logicalType: object<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- name: x<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logicalType: array<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logicalType: object<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- name: id<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logicalType: string<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- name: zip<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logicalType: string</code> |
+##### Logical Type Options
 
-**Logical Type Options**
-
-Additional metadata options to more accurately define the data type.
-
-| Data Type | Key | Required | Supported | Description |
-| :---- | :---- | :---- | :---- | :---- |
-| array | `maxItems` | No | No | Maximum number of items. |
-| array | `minItems` | No | No | Minimum number of items. |
-| array | `uniqueItems` | No | No | If set to `true`, all items in the array are unique. |
-| date | `format` | No | No | Format of the date. <br />Follows the format as prescribed by [JDK DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html). <br />Default value is using ISO 8601: `YYYY-MM-DDTHH:mm:ss.SSSZ`. For example, format `yyyy-MM-dd`. |
-| date | `exclusiveMaximum` | No | No | If set to `true`, all values are strictly less than the maximum value (values < maximum). <br />Otherwise, less than or equal to the maximum value (values <= maximum). |
-| date | `exclusiveMinimum` | No | No | If set to `true`, all values are strictly greater than the minimum value (values > minimum). <br />Otherwise, greater than or equal to the minimum value (values >= minimum). |
-| date | `maximum` | No | No | All date values are less than or equal to this value (values <= maximum). |
-| date | `minimum` | No | No | All date values are greater than or equal to this value (values >= minimum). |
-| integer/number | `exclusiveMaximum` | No | No | If set to `true`, all values are strictly less than the maximum value (values < maximum). <br />Otherwise, less than or equal to the maximum value (values <= maximum). |
-| integer/number | `exclusiveMinimum` | No | No | If set to `true`, all values are strictly greater than the minimum value (values > minimum). <br />Otherwise, greater than or equal to the minimum value (values >= minimum). |
-| integer/number | `format` | No | No | Format of the value in terms of how many bits of space it can use and whether it is signed or unsigned (follows the Rust integer types). |
-| integer/number | `maximum` | No | No | All values are less than or equal to this value (values <= maximum). |
-| integer/number | `minimum` | No | No | All values are greater than or equal to this value (values >= minimum). |
-| integer/number | `multipleOf` | No | No | Values must be multiples of this number. <br />For example, multiple of 5 has valid values 0, 5, 10, -5. |
-| object | `maxProperties` | No | No | Maximum number of properties. |
-| object | `minProperties` | No | No | Minimum number of properties. |
-| object | `required` | No | No | Property names that are required to exist in the object. |
-| string | `format` | No | No | Provides extra context about what format the string follows. <br />For example, password, byte, binary, email, uuid, uri, hostname, ipv4, ipv6. |
-| string | `maxLength` | No | No | Maximum length of the string. |
-| string | `minLength` | No | No | Minimum length of the string. |
-| string | `pattern` | No | No | Regular expression pattern to define valid value. <br />Follows regular expression syntax from [ECMA-262](https://262.ecma-international.org/5.1/#sec-15.10.1).  |
+Additional metadata options to more accurately define the data type.  
+This section is not required and is not mapped.
 
 #### Team
 
-| Key | Required | Supported | Description |
+| Key | Required | Mapped | Description |
 | :---- | :---- | :---- | :---- |
-| `team` | No | Yes | Object |
-| `team.username` | No | Yes | The user's username or email. <br />Using this attribute will create contacts with the `dataOwner` source responsibility in the Intelligence platform. |
-| `team.name` | No | No | The user's name. |
-| `team.description` | No | No | The user's name. |
-| `team.role` | No | No | The user's job role. <br />Examples might be owner, data steward. There is no limit on the role. |
-| `team.dateIn` | No | No | The date when the user joined the team. |
-| `team.dateOut` | No | No | The date when the user ceased to be part of the team. |
-| `team.replacedByUsername` | No | No | The username of the user who replaced the previous user. |
+| `team` | No | Yes | Object representing a team. |
+| `team.name` | No | No | Team name. |
+| `team.description` | No | No | Team description. |
+| `team.customProperties` | No | No | Custom properties block. |
+| `team.authoritativeDefinitions` | No | No | Authoritative definitions block. |
+| `team.tags` | No | No | Tags as a list. |
+| `team.members` | No | Yes | List of members. |
+| `team.members.username` | Yes | Yes | The user's username or email. <br />Using this attribute will create contacts with the `dataOwner` source responsibility in the Intelligence platform. |
+| `team.members.name` | No | Yes | The user's name (combine first name and last name). |
+| `team.members.description` | No | No | The user's description. |
+| `team.members.role` | Yes | Yes | The user's job role. <br />For example, owner, data steward. <br />This attribute is not required by the standard, but is necessary to link the contact with the right responsibility. |
+| `team.members.dateIn` | No | No | The date when the user joined the team. |
+| `team.members.dateOut` | No | No | The date when the user ceased to be part of the team. |
+| `team.members.replacedByUsername` | No | No | The username of the user who replaced the previous user. |
+| `team.members.customProperties` | No | No | Custom properties block. |
+| `team.members.authoritativeDefinitions` | No | No | Authoritative definitions block. |
+| `team.members.tags` | No | No | Tags as a list. |
+
+#### Infrastructure & Servers
+
+| Key | Required | Mapped | Description |
+| :---- | :---- | :---- | :---- |
+| `server` | Yes | Yes | Identifier of the server. |
+| `id` | No | Yes | A unique identifier used to reduce the risk of collisions, such as a UUID. |
+| `type` | Yes | Yes | Type of the server. Can be one of: api, athena, azure, bigquery, clickhouse, cloudsql, custom, databricks, db2, denodo, dremio, duckdb, glue, hive, impala, informix, kafka, kinesis, local, mysql, oracle, postgres, postgresql, presto, pubsub, redshift, s3, sftp, snowflake, sqlserver, synapse, trino, vertica, zen. |
+| `description` | No | No | Description of the server. |
+| `environment` | No | No | Environment of the server. <br />Examples includes: prod, preprod, dev, uat. |
+| `roles` | No | No | List of roles that have access to the server. For more information, see [Roles](https://bitol-io.github.io/open-data-contract-standard/latest/roles/). |
+| `customProperties` | No | No | Custom properties that are not part of the standard. |
+
+Each server type can be customized with different properties such as host, port, database, and schema, depending on the server technology in use. Refer to the specific documentation for each server type for additional configurations.  
+If your server is not in the list, use the type [Custom Server](https://bitol-io.github.io/open-data-contract-standard/latest/infrastructure-servers/#custom-server).
 
 #### Custom and Other Properties
 
-**Custom Properties**
+##### Custom Properties
 
-| Key | Required | Supported | Description |
+| Key | Required | Mapped | Description |
 | :---- | :---- | :---- | :---- |
-| `customProperties` | No | Yes | A list of key/value pairs for custom properties. Initially created to support the REF ruleset property.<br>The `customProperties` attribute is used to create or value source properties (Short text), link technical items described in the YAML file with existing glossary items, or with existing custom items.<br>Custom properties cannot be used to value template properties created in the UI.<br>Syntax example:<br><code>&nbsp;&nbsp;customProperties:<br>&nbsp;&nbsp;&nbsp;&nbsp;- property: zeeneaProperties<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sensitivity: Yes<br>&nbsp;&nbsp;&nbsp;&nbsp;- property: zeeneaGlossaryRefs<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- terms/Customer ID<br>&nbsp;&nbsp;&nbsp;&nbsp;- property: zeeneaCustomItemRefs<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- regulation/GDPR</code> |
-| `customProperties.property` | No | Yes | The name of the key. Names should be in camel case, the same as if they were permanent properties in the contract. <br />Possible values are `zeeneaProperties`, `zeeneaGlossaryRefs`, `zeeneaCustomItemRefs`. |
-| `customProperties.value` | No | Yes | The value of the key. <br />Mapping in the Intelligence platform: <br />- In case of a property, the value is the name and value of the property. <br />- In case of a link, the value is the key of the targeted item. <br />Targeted item must already exist in the Intelligence platform and the link must be allowed at the metamodel level. |
+| `customProperties` | No | Yes | A list of key/value pairs for custom properties. <br />The `customProperties` attribute is used to create or value source properties (Short text, Tag, Date, URL), link the output port with existing glossary items, or assign an access request policy. <br />Custom properties cannot be used to value template properties created in the UI. |
+| `customProperties.property` | No | Yes | The name of the key. Names should be in camel case, the same as if they were permanent properties in the contract. <br />Possible values are: <br />`zeeneaProperties` <br />`zeeneaGlossaryRefs` |
+| `customProperties.value` | No | Yes | The value of the key. <br />Mapping in the Intelligence platform: <br />- In case of a property, the value is the name and value of the property. <br />- In case of a glossary link, the value is the key of the targeted item. The targeted item must already exist in the Intelligence platform and the link must be allowed at the metamodel level. <br />- In case of an access request policy, the value is `accessRequestPolicy: [the code of the policy]`. |
 | `contractCreatedTs` | No | No | Timestamp in UTC of when the data contract was created, using ISO 8601. |
 
-**Authoritative Definitions**
+##### Authoritative Definitions
 
-| Key | Required | Supported | Description |
+| Key | Required | Mapped | Description |
 | :---- | :---- | :---- | :---- |
 | `authoritativeDefinitions` | No | Yes | A list of type/link pairs for authoritative definitions. |
 | `authoritativeDefinitions.id` | No | No | A unique identifier for the element used to create stable, refactor-safe references. <br />Recommended for elements that will be referenced. For more information, see [References](https://bitol-io.github.io/open-data-contract-standard/latest/references/). |
-| `authoritativeDefinitions.type` | Yes | Yes | Type of definition for authority.<br>Recommended values are `businessDefinition`, `transformationImplementation`, `videoTutorial`, `tutorial`, and `implementation`. At the root level, a type can also be `canonicalUrl` to indicate a reference to the data contract's latest version.<br>Using this attribute will create a `Links` source property (URL type and multivalued).<br>Syntax example:<br><code>&nbsp;&nbsp;authoritativeDefinitions:<br>&nbsp;&nbsp;&nbsp;&nbsp;- type: privacy-policy<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: https://example.com</code><br>`type` will be used as the label and `url` as the value of the hyperlink. |
+| `authoritativeDefinitions.type` | Yes | Yes | Type of definition for authority. <br />Recommended values are `businessDefinition`, `transformationImplementation`, `videoTutorial`, `tutorial`, and `implementation`. At the root level, a type can also be `canonicalUrl` to indicate a reference to the data contract's latest version. <br />Using this attribute will create a `Links` source property (URL type and multivalued). <br>Syntax example:<br><code>&nbsp;&nbsp;authoritativeDefinitions:<br>&nbsp;&nbsp;&nbsp;&nbsp;- type: privacy-policy<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: https://example.com</code><br> The type will be used as the label, and the URL as the value of the hyperlink. |
 | `authoritativeDefinitions.url` | Yes | Yes | URL to the authority. |
 | `authoritativeDefinitions.description` | No | No | Optional description. |
 
-For detailed API specification, see [Data Product API](../../technical-documentation/api/zeenea-data-product-api.md).
-
 ## Manage Data Product Documentation in Studio
 
-### Data Product and Output Port Templates
+### Data Product Template
 
-Data products and output ports are represented as two built-in item types. You can manage their templates and responsibilities as any other item type in the Catalog Design section. It allows curators to provide metadata in addition to that harvested from the source with the API.
+You can manage the data product template and responsibilities as any other item type in the **Catalog Design** section. It allows curators to provide metadata in addition to that harvested from the source with the API.
 
-You can also configure data products to implement glossary items in the Glossary metamodel section. Output ports cannot implement glossary items.
+You can also configure data products to implement glossary items in the Glossary metamodel section.
+
+!!! note
+    Output ports do not have a template and cannot implement glossary items.
+
+!!! warning "Important"
+    During the Beta phase, pre-existing template properties remain on output ports. Actian will implement an automatic migration, coinciding with the feature's general availability, which will result in the deletion of all current template property values from existing items.
 
 ### Data Product and Output Port Attributes
 
 #### Data Product Attributes
 
-**General Information**
+##### General Information
 
-Data products have common attributes as follows:
+Data products have the following common attributes:
 
 * Name / Source name  
 * Description / Source description  
@@ -449,69 +555,59 @@ Data products have common attributes as follows:
 * Links with custom items  
 * Catalog
 
-![](./images/zeenea-data-product-attributes.png)
+In Studio, curators can manage data product properties defined in the template from their side panel and details page. They can also manage these properties using bulk actions and file import.
 
-In the Studio, data product attributes can be updated from their side panel and details page, as well as using bulk actions and file import.
+##### Input Ports Tab
 
-**Input Ports Tab**
+In the **Input ports** tab of a data product, all the sources consumed by the data product's input ports are listed. The input ports themselves are displayed only in the lineage.
 
-In the Input ports tab of a data product, all the sources consumed by the data product's input ports are listed. Input ports themselves are displayed only in the lineage.
+##### Output Ports Tab
 
-**Output Ports Tab**
+In the **Output ports** tab of a data product, all the output ports to be consumed by the end-users are listed.
 
-In the Output ports tab of a data product, all the output ports to be consumed by the end-users are listed.
-
-**Data Quality Status**
+##### Data Quality Status
 
 The data quality status of a data product is calculated from the data quality status of its output ports.
 
-**Attachments**
+##### Attachments
 
-From the Explorer, you can download the YAML descriptor of the data product.
+In Explorer, you can download the YAML descriptor of the data product.
 
 #### Output Port Attributes
 
-**General Information**
+##### General Information
 
-Output ports have common attributes as follows:
+Output ports have the following common attributes:
 
-* Name / Source name  
-* Description / Source description  
-* Properties / Source properties  
-* Contacts / Source contacts  
-* Links with custom items  
+* Source name  
+* Source description  
+* Source properties  
+* Source contacts  
 * Catalog (inherited from the parent data product)
 
-![](./images/zeenea-output-port-attributes.png)
+##### Datasets Tab
 
-**Datasets Tab**
+The **Datasets** tab lists all the datasets and their fields that compose the output port.
 
-The Datasets tab lists all the datasets and their fields that compose the output port.
+##### Data Model Tab
 
-![](./images/zeenea-datasets-tab.png)
+The **Data model** tab shows the relationships between the datasets of the output ports.
 
-**Data Model Tab**
+##### Data Quality Tab and Status
 
-The Data model tab shows the relations between the datasets of the output ports.  
-!!! note
-    These links can be specified through the YAML descriptors or through the Catalog API.
-
-
-**Data Quality Tab and Status**
-
-The Data quality tab lists all the checks that have been performed for all the datasets that compose the output port. For each check, a link allows the user to open the side panel of the dataset this check refers.
+The **Data quality** tab lists all checks performed for all the datasets that compose the output port. For each check, a link allows the user to open the side panel of the corresponding dataset.
 
 The data quality status of the output port is calculated from the quality status of its datasets.
 
-![](./images/zeenea-data-quality-status-tab.png)
+![](./images/zeenea-data-product-data-quality-status.png)
 
-**Attachments**
+##### Attachments
 
-From the Explorer, you can download the YAML descriptor of the data contract attached to this output port.
+In Explorer, you can download the YAML descriptor of the data contract attached to the output port.
 
 ### Delete a Data Product
 
-You can delete a data product from the Studio. When you delete a data product, its output ports and the datasets that compose them are deleted automatically.
+You can delete a data product from the Studio. When you delete a data product, its output ports are also automatically deleted. The dataset linked to the output ports is not deleted.
 
 ### Share a Data Product in Marketplace
 
@@ -519,18 +615,18 @@ Data products can be shared in the marketplace when the federated catalog option
 
 ### Move a Data Product to Another Catalog
 
-From the Studio, you can move a data product to another catalog when the federated catalog option is activated. When you move a data product, its output ports and the datasets that compose them are moved automatically.
+In Studio, you can move a data product to another catalog when the federated catalog option is activated. When you move a data product, its output ports and the datasets that compose them are moved automatically.
 
-## Search for Data Products
+You cannot move a data product to another catalog using the data product API. Attempting to do so generates a non-blocking error.
 
-In the Explorer and the Studio, you can search data products by their own attributes or those of their output ports. Output ports and their embedded datasets are not displayed in search results.
+### Search for Data Products
 
-![](./images/zeenea-search-data-products.png)
+In Explorer and Studio, you can search data products using their own attributes or the attributes of their output ports. Output ports are not displayed in search results. Datasets linked to output ports are displayed in search results.
 
-## Request Access to a Data Product
+![](./images/zeenea-data-product-search-data-products.png)
 
-An Explorer user can request access to data products at the output port level.
+### Request Access to a Data Product
 
-You can enable access requests for data product output ports in Administration. Curators must then activate the feature for each output port, just as they do for datasets and visualizations.
+In Explorer, users can request access to data products at the output port level.
 
-![](./images/zeenea-request-access-data-product.png)
+To enable access requests for data product output ports, create an [access request policy](../cross-application-features/zeenea-access-requests.md) in Administration. Then the access request policy must be provided in the data contract.
