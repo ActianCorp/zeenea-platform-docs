@@ -117,6 +117,7 @@ Edit files under `docs/`, preview at [http://127.0.0.1:8000](http://127.0.0.1:80
 - Image references should always include alt text: `![Description of image](./images/example.png)`.
 - Cross-references between pages use relative `.md` paths: `[Link text](../other-page.md)`.
 - Navigation order is controlled by `.pages` files in each folder (via the `awesome-pages` plugin).
+- The custom sidebar (`cn-nav.js`) is regenerated from those same `.pages` files on every `mkdocs build` / `mkdocs serve`. To refresh it manually: `python scripts/generate_cn_nav.py`.
 
 ---
 

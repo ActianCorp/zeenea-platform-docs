@@ -144,3 +144,4 @@ plugins:
 # Hooks
 hooks:
   - hooks/custom_lexers.py
+  - hooks/generate_cn_nav.py
