@@ -12,14 +12,36 @@
       label: 'Getting Started',
       href: 'getting-started/zeenea-supported-browsers.html',
       pages: [
-        { name: 'Supported Browsers', href: 'getting-started/zeenea-supported-browsers.html' },
-        { name: 'Copyright Information', href: 'getting-started/copyright.html' },
-        { name: 'Definitions', href: 'getting-started/zeenea-definitions.html' },
-        { name: 'Your First Steps', href: 'getting-started/your-first-step/zeenea-superadmin.html', pages: [
-          { name: 'As a Super Admin', href: 'getting-started/your-first-step/zeenea-superadmin.html' },
-          { name: 'As a Data Steward', href: 'getting-started/your-first-step/zeenea-data-steward.html' },
-          { name: 'As a Data Explorer', href: 'getting-started/your-first-step/zeenea-data-explorer.html' }
-        ]}
+        {
+          name: 'Supported Browsers',
+          href: 'getting-started/zeenea-supported-browsers.html'
+        },
+        {
+          name: 'Copyright Information',
+          href: 'getting-started/copyright.html'
+        },
+        {
+          name: 'Definitions',
+          href: 'getting-started/zeenea-definitions.html'
+        },
+        {
+          name: 'Your First Steps',
+          href: 'getting-started/your-first-step/zeenea-superadmin.html',
+          pages: [
+            {
+              name: 'As a Super Admin',
+              href: 'getting-started/your-first-step/zeenea-superadmin.html'
+            },
+            {
+              name: 'As a Data Steward',
+              href: 'getting-started/your-first-step/zeenea-data-steward.html'
+            },
+            {
+              name: 'As a Data Explorer',
+              href: 'getting-started/your-first-step/zeenea-data-explorer.html'
+            }
+          ]
+        }
       ]
     },
     {
@@ -27,84 +49,302 @@
       label: 'Features & Applications',
       href: 'features-applications/administration/zeenea-managing-users.html',
       pages: [
-        { name: 'Administration', href: 'features-applications/administration/zeenea-managing-users.html', pages: [
-          { name: 'Managing Users', href: 'features-applications/administration/zeenea-managing-users.html' },
-          { name: 'Managing Groups', href: 'features-applications/administration/zeenea-managing-groups.html' },
-          { name: 'Managing Catalogs', href: 'features-applications/administration/zeenea-managing-catalogs.html' },
-          { name: 'Managing Scanners', href: 'features-applications/administration/zeenea-managing-scanners.html' },
-          { name: 'Managing Connections', href: 'features-applications/administration/zeenea-managing-connections.html' },
-          { name: 'Managing API Keys', href: 'features-applications/administration/zeenea-managing-api-keys.html' },
-          { name: 'Maintenance Mode', href: 'features-applications/administration/zeenea-maintenance-mode.html' }
-        ]},
-        { name: 'Studio', href: 'features-applications/studio/zeenea-studio-overview.html', pages: [
-          { name: 'Studio Overview', href: 'features-applications/studio/zeenea-studio-overview.html' },
-          { name: 'Catalog Design', href: 'features-applications/studio/catalog-design/zeenea-configuring-templates.html', pages: [
-            { name: 'Configuring Templates', href: 'features-applications/studio/catalog-design/zeenea-configuring-templates.html' },
-            { name: 'Creating or Deleting a Custom Item Type', href: 'features-applications/studio/catalog-design/zeenea-studio-create-delete-custom-item.html' },
-            { name: 'Creating, Editing, or Deleting a Property', href: 'features-applications/studio/catalog-design/zeenea-studio-create-edit-delete-property.html' },
-            { name: 'Creating, Editing, or Deleting Responsibilities', href: 'features-applications/studio/catalog-design/zeenea-studio-create-delete-responsibility.html' },
-            { name: 'Configuring the Glossary Metamodel', href: 'features-applications/studio/catalog-design/zeenea-studio-configure-glossary-model.html' },
-            { name: 'Adding Input and Output Types', href: 'features-applications/studio/catalog-design/zeenea-add-input-output-types.html' },
-            { name: 'Custom Items - Best Practices', href: 'features-applications/studio/catalog-design/zeenea-custom-item-best-practices.html' }
-          ]},
-          { name: 'Stewardship', href: 'features-applications/studio/stewardship/data-steward.html', pages: [
-            { name: 'Data Steward', href: 'features-applications/studio/stewardship/data-steward.html' },
-            { name: 'Dashboard Widgets', href: 'features-applications/studio/stewardship/zeenea-dashboard-widgets.html' },
-            { name: 'Searching and Filtering', href: 'features-applications/studio/stewardship/zeenea-studio-search.html' },
-            { name: 'Importing Datasets or Visualizations', href: 'features-applications/studio/stewardship/zeenea-importing-datasets-or-visualizations.html' },
-            { name: 'Understanding the Documentation of an Item', href: 'features-applications/studio/stewardship/zeenea-item-documentation.html' },
-            { name: 'Creating or Deleting an Item', href: 'features-applications/studio/stewardship/zeenea-studio-create-delete-item.html' },
-            { name: 'Creating, Editing, or Deleting a Data Process', href: 'features-applications/studio/stewardship/zeenea-studio-create-delete-data-process.html' },
-            { name: 'Creating, Editing, or Deleting a Topic', href: 'features-applications/studio/stewardship/zeenea-studio-create-edit-delete-topic.html' },
-            { name: 'Creating or Deleting a Watchlist', href: 'features-applications/studio/stewardship/zeenea-watchlist.html' },
-            { name: 'Editing Items in Bulk', href: 'features-applications/studio/stewardship/zeenea-editing-items-in-bulk.html' },
-            { name: 'Adding or Removing Item Contacts', href: 'features-applications/studio/stewardship/zeenea-add-remove-item-contacts.html' },
-            { name: 'Assigning and Removing Curators', href: 'features-applications/studio/stewardship/zeenea-curators.html' },
-            { name: 'Identification Keys', href: 'features-applications/studio/stewardship/zeenea-identification-keys.html' },
-            { name: 'Primary, Foreign, and Business Keys', href: 'features-applications/studio/stewardship/zeenea-understanding-keys.html' },
-            { name: 'Documentation Completion Level', href: 'features-applications/studio/stewardship/zeenea-doc-completion-level.html' },
-            { name: 'Exporting Search Results', href: 'features-applications/studio/stewardship/zeenea-studio-search-export.html' },
-            { name: 'Importing a File', href: 'features-applications/studio/stewardship/zeenea-studio-import.html' },
-            { name: 'Identifying Orphan Datasets', href: 'features-applications/studio/stewardship/zeenea-identifying-orphan-datasets.html' },
-            { name: 'Personally Identifiable Information', href: 'features-applications/studio/stewardship/zeenea-personal-data.html' },
-            { name: 'How Notifications Work', href: 'features-applications/studio/stewardship/zeenea-notifications.html' },
-            { name: 'How Discussion Threads Work', href: 'features-applications/studio/stewardship/zeenea-discussion-threads.html' },
-            { name: 'Data Catalog Item Updates', href: 'features-applications/studio/stewardship/zeenea-data-catalog-item-updates.html' }
-          ]},
-          { name: 'Analytics Dashboard', href: 'features-applications/studio/zeenea-analytics-dashboard.html' }
-        ]},
-        { name: 'Explorer', href: 'features-applications/explorer/zeenea-explorer-overview.html', pages: [
-          { name: 'Explorer Overview', href: 'features-applications/explorer/zeenea-explorer-overview.html' },
-          { name: 'Search and Filter', href: 'features-applications/explorer/zeenea-explorer-search.html' },
-          { name: 'Searching and Exploring Topics', href: 'features-applications/explorer/zeenea-searching-topics.html' },
-          { name: 'Ask AI', href: 'features-applications/explorer/zeenea-ask-ai.html' },
-          { name: 'Item Details Page', href: 'features-applications/explorer/zeenea-item-details-pages.html' },
-          { name: 'Favorite Items', href: 'features-applications/explorer/zeenea-favorite-items.html' },
-          { name: 'Submitting a Suggestion', href: 'features-applications/explorer/zeenea-submit-suggestion.html' },
-          { name: 'Exporting Search Results', href: 'features-applications/explorer/zeenea-explorer-export-search-results.html' }
-        ]},
-        { name: 'Cross-Application Features', href: 'features-applications/cross-application-features/zeenea-data-product.html', pages: [
-          { name: 'Data Products', href: 'features-applications/cross-application-features/zeenea-data-product.html' },
-          { name: 'Data Lineage', href: 'features-applications/cross-application-features/zeenea-data-lineage.html' },
-          { name: 'Data Sampling', href: 'features-applications/cross-application-features/zeenea-data-sampling.html' },
-          { name: 'Data Profiling', href: 'features-applications/cross-application-features/zeenea-data-profiling.html' },
-          { name: 'Glossary Item Hierarchy', href: 'features-applications/cross-application-features/zeenea-glossary-hierarchy.html' },
-          { name: 'View 360 Diagram', href: 'features-applications/cross-application-features/zeenea-view-360-diagram.html' },
-          { name: 'Access Requests', href: 'features-applications/cross-application-features/zeenea-access-requests.html' },
-          { name: 'Synchronization', href: 'features-applications/cross-application-features/zeenea-synchronization.html' },
-          { name: 'Zeenea Query Language', href: 'features-applications/cross-application-features/zeenea-query-language.html' },
-          { name: 'Integration with Microsoft Teams', href: 'features-applications/cross-application-features/zeenea-microsoft-teams.html' }
-        ]},
-        { name: 'Actian MCP Server', href: 'features-applications/actian-mcp-server/zeenea-amcp-overview.html', pages: [
-          { name: 'MCP Server Overview', href: 'features-applications/actian-mcp-server/zeenea-amcp-overview.html' },
-          { name: 'Remote Authentication Setup', href: 'features-applications/actian-mcp-server/zeenea-amcp-remote-authentication.html' },
-          { name: 'Set up Claude Desktop', href: 'features-applications/actian-mcp-server/zeenea-amcp-claude.html' }
-        ]},
-        { name: 'Federated Catalog', href: 'features-applications/federated-catalog/zeenea-federated-catalog-intro.html', pages: [
-          { name: 'Federated Catalog Overview', href: 'features-applications/federated-catalog/zeenea-federated-catalog-intro.html' },
-          { name: 'Building a Federated Catalog', href: 'features-applications/federated-catalog/zeenea-federated-catalog-building.html' },
-          { name: 'Searching in the Federated Catalog', href: 'features-applications/federated-catalog/zeenea-searching-federated-catalog.html' }
-        ]}
+        {
+          name: 'Administration',
+          href: 'features-applications/administration/zeenea-managing-users.html',
+          pages: [
+            {
+              name: 'Managing Users',
+              href: 'features-applications/administration/zeenea-managing-users.html'
+            },
+            {
+              name: 'Managing Groups',
+              href: 'features-applications/administration/zeenea-managing-groups.html'
+            },
+            {
+              name: 'Managing Catalogs',
+              href: 'features-applications/administration/zeenea-managing-catalogs.html'
+            },
+            {
+              name: 'Managing Scanners',
+              href: 'features-applications/administration/zeenea-managing-scanners.html'
+            },
+            {
+              name: 'Managing Connections',
+              href: 'features-applications/administration/zeenea-managing-connections.html'
+            },
+            {
+              name: 'Managing API Keys',
+              href: 'features-applications/administration/zeenea-managing-api-keys.html'
+            },
+            {
+              name: 'Maintenance Mode',
+              href: 'features-applications/administration/zeenea-maintenance-mode.html'
+            }
+          ]
+        },
+        {
+          name: 'Studio',
+          href: 'features-applications/studio/zeenea-studio-overview.html',
+          pages: [
+            {
+              name: 'Zeenea Studio Overview',
+              href: 'features-applications/studio/zeenea-studio-overview.html'
+            },
+            {
+              name: 'Catalog Design',
+              href: 'features-applications/studio/catalog-design/zeenea-configuring-templates.html',
+              pages: [
+                {
+                  name: 'Configuring Templates',
+                  href: 'features-applications/studio/catalog-design/zeenea-configuring-templates.html'
+                },
+                {
+                  name: 'Creating or Deleting a Custom Item Type',
+                  href: 'features-applications/studio/catalog-design/zeenea-studio-create-delete-custom-item.html'
+                },
+                {
+                  name: 'Creating, Editing, or Deleting a Property',
+                  href: 'features-applications/studio/catalog-design/zeenea-studio-create-edit-delete-property.html'
+                },
+                {
+                  name: 'Creating, Editing, or Deleting Responsibilities',
+                  href: 'features-applications/studio/catalog-design/zeenea-studio-create-delete-responsibility.html'
+                },
+                {
+                  name: 'Configuring the Glossary Metamodel',
+                  href: 'features-applications/studio/catalog-design/zeenea-studio-configure-glossary-model.html'
+                },
+                {
+                  name: 'Adding Input and Output Types to Data Processes',
+                  href: 'features-applications/studio/catalog-design/zeenea-add-input-output-types.html'
+                },
+                {
+                  name: 'Custom Items - Best Practices',
+                  href: 'features-applications/studio/catalog-design/zeenea-custom-item-best-practices.html'
+                }
+              ]
+            },
+            {
+              name: 'Stewardship',
+              href: 'features-applications/studio/stewardship/data-steward.html',
+              pages: [
+                {
+                  name: 'Data Steward',
+                  href: 'features-applications/studio/stewardship/data-steward.html'
+                },
+                {
+                  name: 'Dashboard Widgets',
+                  href: 'features-applications/studio/stewardship/zeenea-dashboard-widgets.html'
+                },
+                {
+                  name: 'Searching and Filtering in Zeenea Studio',
+                  href: 'features-applications/studio/stewardship/zeenea-studio-search.html'
+                },
+                {
+                  name: 'Importing Datasets or Visualizations',
+                  href: 'features-applications/studio/stewardship/zeenea-importing-datasets-or-visualizations.html'
+                },
+                {
+                  name: 'Understanding the Documentation of an Item',
+                  href: 'features-applications/studio/stewardship/zeenea-item-documentation.html'
+                },
+                {
+                  name: 'Creating or Deleting an Item',
+                  href: 'features-applications/studio/stewardship/zeenea-studio-create-delete-item.html'
+                },
+                {
+                  name: 'Creating, Editing, or Deleting a Data Process',
+                  href: 'features-applications/studio/stewardship/zeenea-studio-create-delete-data-process.html'
+                },
+                {
+                  name: 'Creating, Editing, or Deleting a Topic',
+                  href: 'features-applications/studio/stewardship/zeenea-studio-create-edit-delete-topic.html'
+                },
+                {
+                  name: 'Creating or Deleting a Watchlist',
+                  href: 'features-applications/studio/stewardship/zeenea-watchlist.html'
+                },
+                {
+                  name: 'Editing Items in Bulk',
+                  href: 'features-applications/studio/stewardship/zeenea-editing-items-in-bulk.html'
+                },
+                {
+                  name: 'Adding or Removing Item Contacts',
+                  href: 'features-applications/studio/stewardship/zeenea-add-remove-item-contacts.html'
+                },
+                {
+                  name: 'Assigning and Removing Curators',
+                  href: 'features-applications/studio/stewardship/zeenea-curators.html'
+                },
+                {
+                  name: 'Identification Keys',
+                  href: 'features-applications/studio/stewardship/zeenea-identification-keys.html'
+                },
+                {
+                  name: 'Primary Keys, Foreign keys, and Business Keys',
+                  href: 'features-applications/studio/stewardship/zeenea-understanding-keys.html'
+                },
+                {
+                  name: 'Documentation Completion Level',
+                  href: 'features-applications/studio/stewardship/zeenea-doc-completion-level.html'
+                },
+                {
+                  name: 'Exporting search results in Zeenea Studio',
+                  href: 'features-applications/studio/stewardship/zeenea-studio-search-export.html'
+                },
+                {
+                  name: 'Importing a File in Zeenea',
+                  href: 'features-applications/studio/stewardship/zeenea-studio-import.html'
+                },
+                {
+                  name: 'Identifying Orphan Datasets',
+                  href: 'features-applications/studio/stewardship/zeenea-identifying-orphan-datasets.html'
+                },
+                {
+                  name: 'Personally Identifiable Information Property',
+                  href: 'features-applications/studio/stewardship/zeenea-personal-data.html'
+                },
+                {
+                  name: 'How Notifications Work',
+                  href: 'features-applications/studio/stewardship/zeenea-notifications.html'
+                },
+                {
+                  name: 'How Discussion Threads Work',
+                  href: 'features-applications/studio/stewardship/zeenea-discussion-threads.html'
+                },
+                {
+                  name: 'Data Catalog Item Updates',
+                  href: 'features-applications/studio/stewardship/zeenea-data-catalog-item-updates.html'
+                }
+              ]
+            },
+            {
+              name: 'Analytics Dashboard',
+              href: 'features-applications/studio/zeenea-analytics-dashboard.html'
+            }
+          ]
+        },
+        {
+          name: 'Explorer',
+          href: 'features-applications/explorer/zeenea-explorer-overview.html',
+          pages: [
+            {
+              name: 'Zeenea Explorer Overview',
+              href: 'features-applications/explorer/zeenea-explorer-overview.html'
+            },
+            {
+              name: 'Search and Filter in Zeenea Explorer',
+              href: 'features-applications/explorer/zeenea-explorer-search.html'
+            },
+            {
+              name: 'Searching and Exploring Topics',
+              href: 'features-applications/explorer/zeenea-searching-topics.html'
+            },
+            {
+              name: 'Ask AI',
+              href: 'features-applications/explorer/zeenea-ask-ai.html'
+            },
+            {
+              name: 'Item Details Page',
+              href: 'features-applications/explorer/zeenea-item-details-pages.html'
+            },
+            {
+              name: 'Favorite Items',
+              href: 'features-applications/explorer/zeenea-favorite-items.html'
+            },
+            {
+              name: 'Submitting a Suggestion',
+              href: 'features-applications/explorer/zeenea-submit-suggestion.html'
+            },
+            {
+              name: 'Exporting Search Results from Zeenea Explorer',
+              href: 'features-applications/explorer/zeenea-explorer-export-search-results.html'
+            }
+          ]
+        },
+        {
+          name: 'Cross-Application Features',
+          href: 'features-applications/cross-application-features/zeenea-data-product.html',
+          pages: [
+            {
+              name: 'Data Products',
+              href: 'features-applications/cross-application-features/zeenea-data-product.html'
+            },
+            {
+              name: 'Data Lineage',
+              href: 'features-applications/cross-application-features/zeenea-data-lineage.html'
+            },
+            {
+              name: 'Data Sampling',
+              href: 'features-applications/cross-application-features/zeenea-data-sampling.html'
+            },
+            {
+              name: 'Data Profiling',
+              href: 'features-applications/cross-application-features/zeenea-data-profiling.html'
+            },
+            {
+              name: 'Glossary Item Hierarchy',
+              href: 'features-applications/cross-application-features/zeenea-glossary-hierarchy.html'
+            },
+            {
+              name: 'View 360 Diagram',
+              href: 'features-applications/cross-application-features/zeenea-view-360-diagram.html'
+            },
+            {
+              name: 'Access Requests',
+              href: 'features-applications/cross-application-features/zeenea-access-requests.html'
+            },
+            {
+              name: 'Synchronization with a Data Quality Management Tool',
+              href: 'features-applications/cross-application-features/zeenea-synchronization.html'
+            },
+            {
+              name: 'Zeenea Query Language',
+              href: 'features-applications/cross-application-features/zeenea-query-language.html'
+            },
+            {
+              name: 'Integration with Microsoft Teams',
+              href: 'features-applications/cross-application-features/zeenea-microsoft-teams.html'
+            }
+          ]
+        },
+        {
+          name: 'Actian MCP Server',
+          href: 'features-applications/actian-mcp-server/zeenea-amcp-overview.html',
+          pages: [
+            {
+              name: 'Amcp Overview',
+              href: 'features-applications/actian-mcp-server/zeenea-amcp-overview.html'
+            },
+            {
+              name: 'Remote Authentication Setup',
+              href: 'features-applications/actian-mcp-server/zeenea-amcp-remote-authentication.html'
+            },
+            {
+              name: 'Set up Claude Desktop',
+              href: 'features-applications/actian-mcp-server/zeenea-amcp-claude.html'
+            }
+          ]
+        },
+        {
+          name: 'Federated Catalog',
+          href: 'features-applications/federated-catalog/zeenea-federated-catalog-intro.html',
+          pages: [
+            {
+              name: 'Federated Catalog Overview',
+              href: 'features-applications/federated-catalog/zeenea-federated-catalog-intro.html'
+            },
+            {
+              name: 'Building a Federated Catalog',
+              href: 'features-applications/federated-catalog/zeenea-federated-catalog-building.html'
+            },
+            {
+              name: 'Searching in the Federated Catalog',
+              href: 'features-applications/federated-catalog/zeenea-searching-federated-catalog.html'
+            }
+          ]
+        }
       ]
     },
     {
@@ -112,136 +352,512 @@
       label: 'Technical Documentation',
       href: 'technical-documentation/scanners/zeenea-scanner-setup.html',
       pages: [
-        { name: 'Scanners', href: 'technical-documentation/scanners/zeenea-scanner-setup.html', pages: [
-          { name: 'Zeenea Scanner Setup', href: 'technical-documentation/scanners/zeenea-scanner-setup.html' },
-          { name: 'Creating a Docker Image', href: 'technical-documentation/scanners/zeenea-scanner-docker.html' },
-          { name: 'Filters', href: 'technical-documentation/scanners/zeenea-filters.html' },
-          { name: 'Universal Filters', href: 'technical-documentation/scanners/zeenea-universal-filters.html' },
-          { name: 'Configuring a Hook', href: 'technical-documentation/scanners/zeenea-configure-hook.html' },
-          { name: 'Silwood Safyr', href: 'technical-documentation/scanners/zeenea-silwood-safyr.html' },
-          { name: 'Troubleshooting', href: 'technical-documentation/scanners/zeenea-troubleshooting.html' }
-        ]},
-        { name: 'Connectors', href: 'technical-documentation/connectors/zeenea-dataset-detection.html', pages: [
-          { name: 'Dataset Detection on File Systems', href: 'technical-documentation/connectors/zeenea-dataset-detection.html' },
-          { name: 'Connector Downloads', href: 'technical-documentation/connectors/zeenea-connectors-list.html' },
-          { name: 'Installing and Configuring Connectors as a Plugin', href: 'technical-documentation/connectors/zeenea-connectors-install-as-plugin.html' },
-          { name: 'Externalizing Embedded Connectors', href: 'technical-documentation/connectors/zeenea-externalizing-external-connectors.html' },
-          { name: 'Actian DataConnect', href: 'technical-documentation/connectors/zeenea-connector-actian-dataconnect.html' },
-          { name: 'Actian Informix', href: 'technical-documentation/connectors/zeenea-connector-actian-informix.html' },
-          { name: 'Actian Ingres', href: 'technical-documentation/connectors/zeenea-connector-actian-ingres.html' },
-          { name: 'Actian Zen', href: 'technical-documentation/connectors/zeenea-connector-actian-zen.html' },
-          { name: 'Agile Data Engine (Solita)', href: 'technical-documentation/connectors/zeenea-connector-agile-data-engine-solita.html' },
-          { name: 'Aliyun DataWorks MaxCompute', href: 'technical-documentation/connectors/zeenea-connector-aliyun-dataworks-maxcompute.html' },
-          { name: 'Amazon S3', href: 'technical-documentation/connectors/zeenea-connector-amazonS3.html' },
-          { name: 'Atlas', href: 'technical-documentation/connectors/zeenea-connector-atlas.html' },
-          { name: 'AWS Athena', href: 'technical-documentation/connectors/zeenea-connector-aws-athena.html' },
-          { name: 'AWS DynamoDB', href: 'technical-documentation/connectors/zeenea-connector-aws-dynamodb.html' },
-          { name: 'AWS Glue (Data Catalog)', href: 'technical-documentation/connectors/zeenea-connector-aws-glue-data-catalog.html' },
-          { name: 'AWS Glue (ETL)', href: 'technical-documentation/connectors/zeenea-connector-aws-glue-etl.html' },
-          { name: 'AWS Redshift', href: 'technical-documentation/connectors/zeenea-connector-aws-redshift.html' },
-          { name: 'Azure Data Factory', href: 'technical-documentation/connectors/zeenea-connector-azure-data-factory.html' },
-          { name: 'Azure Data Lake', href: 'technical-documentation/connectors/zeenea-connector-azure-data-lake.html' },
-          { name: 'Azure Purview', href: 'technical-documentation/connectors/zeenea-connector-azure-purview.html' },
-          { name: 'Azure Synapse Analytics', href: 'technical-documentation/connectors/zeenea-connector-azure-synapse.html' },
-          { name: 'Cassandra', href: 'technical-documentation/connectors/zeenea-connector-cassandra.html' },
-          { name: 'Couchbase', href: 'technical-documentation/connectors/zeenea-connector-couchbase.html' },
-          { name: 'Custom Item - CSV (Deprecated)', href: 'technical-documentation/connectors/zeenea-connector-custom-items-csv.html' },
-          { name: 'Databricks Hive Metastore', href: 'technical-documentation/connectors/zeenea-connector-databricks-hive-metastore.html' },
-          { name: 'Databricks Unity Catalog JDBC', href: 'technical-documentation/connectors/zeenea-connector-databricks-unity-jdbc.html' },
-          { name: 'Databricks Unity Catalog REST', href: 'technical-documentation/connectors/zeenea-connector-databricks-unity-rest.html' },
-          { name: 'Dataiku', href: 'technical-documentation/connectors/zeenea-connector-dataiku.html' },
-          { name: 'DB2', href: 'technical-documentation/connectors/zeenea-connector-db2.html' },
-          { name: 'DBT', href: 'technical-documentation/connectors/zeenea-connector-dbt.html' },
-          { name: 'DBT Cloud', href: 'technical-documentation/connectors/zeenea-connector-dbt-cloud.html' },
-          { name: 'Denodo', href: 'technical-documentation/connectors/zeenea-connector-denodo.html' },
-          { name: 'Dynamics AX', href: 'technical-documentation/connectors/zeenea-connector-dynamics-ax.html' },
-          { name: 'Dynamics 365 (Safyr)', href: 'technical-documentation/connectors/zeenea-connector-dynamics365.html' },
-          { name: 'Elasticsearch', href: 'technical-documentation/connectors/zeenea-connector-elasticsearch.html' },
-          { name: 'Generic Dataset (Deprecated)', href: 'technical-documentation/connectors/zeenea-connector-generic-dataset.html' },
-          { name: 'Generic JDBC', href: 'technical-documentation/connectors/zeenea-connector-generic-jdbc.html' },
-          { name: 'Generic Lineage', href: 'technical-documentation/connectors/zeenea-connector-generic-lineage.html' },
-          { name: 'Google BigQuery', href: 'technical-documentation/connectors/zeenea-connector-google-bigquery.html' },
-          { name: 'Google Cloud Storage', href: 'technical-documentation/connectors/zeenea-connector-google-cloud-storage.html' },
-          { name: 'Google Data Catalog', href: 'technical-documentation/connectors/zeenea-connector-google-data-catalog.html' },
-          { name: 'Google Data Lineage', href: 'technical-documentation/connectors/zeenea-connector-google-data-lineage.html' },
-          { name: 'Google Dataplex', href: 'technical-documentation/connectors/zeenea-connector-google-dataplex.html' },
-          { name: 'Google Dataplex (V2)', href: 'technical-documentation/connectors/zeenea-connector-google-dataplex-v2.html' },
-          { name: 'Greenplum', href: 'technical-documentation/connectors/zeenea-connector-greenplum.html' },
-          { name: 'HDFS', href: 'technical-documentation/connectors/zeenea-connector-hdfs.html' },
-          { name: 'Hive', href: 'technical-documentation/connectors/zeenea-connector-hive.html' },
-          { name: 'Impala', href: 'technical-documentation/connectors/zeenea-connector-impala.html' },
-          { name: 'InfluxDB', href: 'technical-documentation/connectors/zeenea-connector-influxdb.html' },
-          { name: 'Informatica Data Integration', href: 'technical-documentation/connectors/zeenea-connector-informatica.html' },
-          { name: 'Kafka', href: 'technical-documentation/connectors/zeenea-connector-kafka.html' },
-          { name: 'Local File System', href: 'technical-documentation/connectors/zeenea-connector-local-filesystem.html' },
-          { name: 'Looker', href: 'technical-documentation/connectors/zeenea-connector-looker.html' },
-          { name: 'MariaDB', href: 'technical-documentation/connectors/zeenea-connector-mariadb.html' },
-          { name: 'Matillion', href: 'technical-documentation/connectors/zeenea-connector-matillion.html' },
-          { name: 'Matillion DPC', href: 'technical-documentation/connectors/zeenea-connector-matillion-dpc.html' },
-          { name: 'Microsoft Fabric', href: 'technical-documentation/connectors/zeenea-connector-ms-fabric.html' },
-          { name: 'MicroStrategy', href: 'technical-documentation/connectors/zeenea-connector-microstrategy.html' },
-          { name: 'MongoDB', href: 'technical-documentation/connectors/zeenea-connector-mongodb.html' },
-          { name: 'MySQL', href: 'technical-documentation/connectors/zeenea-connector-mysql.html' },
-          { name: 'Netezza', href: 'technical-documentation/connectors/zeenea-connector-netezza.html' },
-          { name: 'OpenAPI', href: 'technical-documentation/connectors/zeenea-connector-openapi.html' },
-          { name: 'Oracle', href: 'technical-documentation/connectors/zeenea-connector-oracle.html' },
-          { name: 'Oracle E-Business Suite (Safyr)', href: 'technical-documentation/connectors/zeenea-connector-oracle-ebusiness-suite.html' },
-          { name: 'Oracle JD Edwards (Safyr)', href: 'technical-documentation/connectors/zeenea-connector-oracle-jd-edwards.html' },
-          { name: 'Oracle PeopleSoft (Safyr)', href: 'technical-documentation/connectors/zeenea-connector-oracle-peoplesoft.html' },
-          { name: 'Oracle Siebel (Safyr)', href: 'technical-documentation/connectors/zeenea-connector-oracle-siebel.html' },
-          { name: 'Palantir Foundry', href: 'technical-documentation/connectors/zeenea-connector-palantir.html' },
-          { name: 'PostgreSQL', href: 'technical-documentation/connectors/zeenea-connector-postgresql.html' },
-          { name: 'Power BI Report Server', href: 'technical-documentation/connectors/zeenea-connector-powerbi-report-server.html' },
-          { name: 'Power BI Online (Deprecated)', href: 'technical-documentation/connectors/zeenea-connector-powerbi-saas.html' },
-          { name: 'Power BI Online (V2)', href: 'technical-documentation/connectors/zeenea-connector-powerbi-saas-v2.html' },
-          { name: 'Qlik Cloud', href: 'technical-documentation/connectors/zeenea-connector-qlik-cloud.html' },
-          { name: 'Qlik Sense', href: 'technical-documentation/connectors/zeenea-connector-qlik-sense.html' },
-          { name: 'Salesforce', href: 'technical-documentation/connectors/zeenea-connector-salesforce2.html' },
-          { name: 'Salesforce (Safyr)', href: 'technical-documentation/connectors/zeenea-connector-salesforce.html' },
-          { name: 'SAP Analytics Cloud', href: 'technical-documentation/connectors/zeenea-connector-sap-analytics-cloud.html' },
-          { name: 'SAP BO', href: 'technical-documentation/connectors/zeenea-connector-sap-bo.html' },
-          { name: 'SAP BW (Safyr)', href: 'technical-documentation/connectors/zeenea-connector-sap-bw-safyr.html' },
-          { name: 'SAP BW (Bluetelligence)', href: 'technical-documentation/connectors/zeenea-connector-sap-bw-bluetelligence.html' },
-          { name: 'SAP (Safyr)', href: 'technical-documentation/connectors/zeenea-connector-sap-safyr.html' },
-          { name: 'SAS Data Integration', href: 'technical-documentation/connectors/zeenea-connector-sas-data-integration.html' },
-          { name: 'SAS Database', href: 'technical-documentation/connectors/zeenea-connector-sas-db.html' },
-          { name: 'Snowflake', href: 'technical-documentation/connectors/zeenea-connector-snowflake.html' },
-          { name: 'Splunk', href: 'technical-documentation/connectors/zeenea-connector-splunk.html' },
-          { name: 'SQL Server', href: 'technical-documentation/connectors/zeenea-connector-sqlserver.html' },
-          { name: 'SSAS', href: 'technical-documentation/connectors/zeenea-connector-ssas.html' },
-          { name: 'SSIS', href: 'technical-documentation/connectors/zeenea-connector-ssis.html' },
-          { name: 'SSRS', href: 'technical-documentation/connectors/zeenea-connector-ssrs.html' },
-          { name: 'Sybase IQ', href: 'technical-documentation/connectors/zeenea-connector-sybase-iq.html' },
-          { name: 'Tableau (Deprecated)', href: 'technical-documentation/connectors/zeenea-connector-tableau.html' },
-          { name: 'Tableau (V2)', href: 'technical-documentation/connectors/zeenea-connector-tableau-v2.html' },
-          { name: 'Talend', href: 'technical-documentation/connectors/zeenea-connector-talend.html' },
-          { name: 'Teradata', href: 'technical-documentation/connectors/zeenea-connector-teradata.html' },
-          { name: 'Tibco Data Virtualization', href: 'technical-documentation/connectors/zeenea-connector-tibco-data-virtualization.html' },
-          { name: 'Tibco Spotfire (Deprecated)', href: 'technical-documentation/connectors/zeenea-connector-tibco-spotfire.html' },
-          { name: 'Tibco Spotfire (V2)', href: 'technical-documentation/connectors/zeenea-connector-tibco-spotfire-v2.html' },
-          { name: 'Zeenea Descriptor Format (ZDF)', href: 'technical-documentation/connectors/zeenea-connector-zdf.html' }
-        ]},
-        { name: 'Authentication', href: 'technical-documentation/authentication/zeenea-auth0-integration.html', pages: [
-          { name: 'Integration with Auth0', href: 'technical-documentation/authentication/zeenea-auth0-integration.html' }
-        ]},
-        { name: 'API', href: 'technical-documentation/api/zeenea-public-apis.html', pages: [
-          { name: 'Introduction to Zeenea Public APIs', href: 'technical-documentation/api/zeenea-public-apis.html' },
-          { name: 'Zeenea API Lifecycle', href: 'technical-documentation/api/zeenea-api-lifecycle.html' },
-          { name: 'Catalog API v1 (Deprecated)', href: 'technical-documentation/api/zeenea-catalog-api-v1.html' },
-          { name: 'Catalog API v2', href: 'technical-documentation/api/zeenea-catalog-api-v2.html' },
-          { name: 'GraphQL API v2 Limitations', href: 'technical-documentation/api/zeenea-graphql-api-v2-limitations.html' },
-          { name: 'Catalog Design API', href: 'technical-documentation/api/zeenea-catalog-design-api.html' },
-          { name: 'Audit Trail API', href: 'technical-documentation/api/zeenea-audit-trail-apis.html' },
-          { name: 'Data Product API', href: 'technical-documentation/api/zeenea-data-product-api.html' },
-          { name: 'Access Request API', href: 'technical-documentation/api/zeenea-access-request-api.html' },
-          { name: 'SCIM Protocol Support', href: 'technical-documentation/api/zeenea-scim-api.html' },
-          { name: 'SCIM User Management', href: 'technical-documentation/api/scim-user-provisioning.html' },
-          { name: 'User Management API', href: 'technical-documentation/api/zeenea-user-management-api.html' }
-        ]},
-        { name: 'Data Intelligence Reference Architecture', href: 'technical-documentation/data-intelligence-reference-architecture.html' },
-        { name: 'Security Flaws Management Policy', href: 'technical-documentation/zeenea-security-flaws-management.html' }
+        {
+          name: 'Scanners',
+          href: 'technical-documentation/scanners/zeenea-scanner-setup.html',
+          pages: [
+            {
+              name: 'Zeenea Scanner Setup',
+              href: 'technical-documentation/scanners/zeenea-scanner-setup.html'
+            },
+            {
+              name: 'Creating a Docker Image for your Scanner',
+              href: 'technical-documentation/scanners/zeenea-scanner-docker.html'
+            },
+            {
+              name: 'Filters',
+              href: 'technical-documentation/scanners/zeenea-filters.html'
+            },
+            {
+              name: 'Universal Filters',
+              href: 'technical-documentation/scanners/zeenea-universal-filters.html'
+            },
+            {
+              name: 'Configuring a Hook after a Scanner Job',
+              href: 'technical-documentation/scanners/zeenea-configure-hook.html'
+            },
+            {
+              name: 'Silwood Safyr',
+              href: 'technical-documentation/scanners/zeenea-silwood-safyr.html'
+            },
+            {
+              name: 'Troubleshooting Scanners and Connections',
+              href: 'technical-documentation/scanners/zeenea-troubleshooting.html'
+            }
+          ]
+        },
+        {
+          name: 'Connectors',
+          href: 'technical-documentation/connectors/zeenea-dataset-detection.html',
+          pages: [
+            {
+              name: 'Dataset Detection on File Systems',
+              href: 'technical-documentation/connectors/zeenea-dataset-detection.html'
+            },
+            {
+              name: 'Connector Downloads',
+              href: 'technical-documentation/connectors/zeenea-connectors-list.html'
+            },
+            {
+              name: 'Installing and Configuring Connectors as a Plugin',
+              href: 'technical-documentation/connectors/zeenea-connectors-install-as-plugin.html'
+            },
+            {
+              name: 'Externalizing Embedded Connectors',
+              href: 'technical-documentation/connectors/zeenea-externalizing-external-connectors.html'
+            },
+            {
+              name: 'Actian DataConnect',
+              href: 'technical-documentation/connectors/zeenea-connector-actian-dataconnect.html'
+            },
+            {
+              name: 'Actian Informix',
+              href: 'technical-documentation/connectors/zeenea-connector-actian-informix.html'
+            },
+            {
+              name: 'Actian Ingres',
+              href: 'technical-documentation/connectors/zeenea-connector-actian-ingres.html'
+            },
+            {
+              name: 'Actian Zen',
+              href: 'technical-documentation/connectors/zeenea-connector-actian-zen.html'
+            },
+            {
+              name: 'Agile Data Engine (Solita)',
+              href: 'technical-documentation/connectors/zeenea-connector-agile-data-engine-solita.html'
+            },
+            {
+              name: 'Aliyun DataWorks MaxCompute',
+              href: 'technical-documentation/connectors/zeenea-connector-aliyun-dataworks-maxcompute.html'
+            },
+            {
+              name: 'Amazon S3',
+              href: 'technical-documentation/connectors/zeenea-connector-amazonS3.html'
+            },
+            {
+              name: 'Atlas',
+              href: 'technical-documentation/connectors/zeenea-connector-atlas.html'
+            },
+            {
+              name: 'AWS Athena',
+              href: 'technical-documentation/connectors/zeenea-connector-aws-athena.html'
+            },
+            {
+              name: 'AWS DynamoDB',
+              href: 'technical-documentation/connectors/zeenea-connector-aws-dynamodb.html'
+            },
+            {
+              name: 'AWS Glue (Data Catalog)',
+              href: 'technical-documentation/connectors/zeenea-connector-aws-glue-data-catalog.html'
+            },
+            {
+              name: 'AWS Glue (ETL)',
+              href: 'technical-documentation/connectors/zeenea-connector-aws-glue-etl.html'
+            },
+            {
+              name: 'AWS Redshift',
+              href: 'technical-documentation/connectors/zeenea-connector-aws-redshift.html'
+            },
+            {
+              name: 'Azure Data Factory',
+              href: 'technical-documentation/connectors/zeenea-connector-azure-data-factory.html'
+            },
+            {
+              name: 'Azure Data Lake',
+              href: 'technical-documentation/connectors/zeenea-connector-azure-data-lake.html'
+            },
+            {
+              name: 'Azure Purview',
+              href: 'technical-documentation/connectors/zeenea-connector-azure-purview.html'
+            },
+            {
+              name: 'Azure Synapse Analytics',
+              href: 'technical-documentation/connectors/zeenea-connector-azure-synapse.html'
+            },
+            {
+              name: 'Cassandra',
+              href: 'technical-documentation/connectors/zeenea-connector-cassandra.html'
+            },
+            {
+              name: 'Couchbase',
+              href: 'technical-documentation/connectors/zeenea-connector-couchbase.html'
+            },
+            {
+              name: 'Custom Item - CSV (Deprecated)',
+              href: 'technical-documentation/connectors/zeenea-connector-custom-items-csv.html'
+            },
+            {
+              name: 'Databricks Hive Metastore',
+              href: 'technical-documentation/connectors/zeenea-connector-databricks-hive-metastore.html'
+            },
+            {
+              name: 'Databricks Unity Catalog JDBC',
+              href: 'technical-documentation/connectors/zeenea-connector-databricks-unity-jdbc.html'
+            },
+            {
+              name: 'Databricks Unity Catalog REST',
+              href: 'technical-documentation/connectors/zeenea-connector-databricks-unity-rest.html'
+            },
+            {
+              name: 'Dataiku',
+              href: 'technical-documentation/connectors/zeenea-connector-dataiku.html'
+            },
+            {
+              name: 'DB2',
+              href: 'technical-documentation/connectors/zeenea-connector-db2.html'
+            },
+            {
+              name: 'DBT',
+              href: 'technical-documentation/connectors/zeenea-connector-dbt.html'
+            },
+            {
+              name: 'DBT Cloud',
+              href: 'technical-documentation/connectors/zeenea-connector-dbt-cloud.html'
+            },
+            {
+              name: 'Denodo',
+              href: 'technical-documentation/connectors/zeenea-connector-denodo.html'
+            },
+            {
+              name: 'Dynamics AX',
+              href: 'technical-documentation/connectors/zeenea-connector-dynamics-ax.html'
+            },
+            {
+              name: 'Dynamics 365 (Safyr)',
+              href: 'technical-documentation/connectors/zeenea-connector-dynamics365.html'
+            },
+            {
+              name: 'Elasticsearch',
+              href: 'technical-documentation/connectors/zeenea-connector-elasticsearch.html'
+            },
+            {
+              name: 'Generic Dataset (Deprecated)',
+              href: 'technical-documentation/connectors/zeenea-connector-generic-dataset.html'
+            },
+            {
+              name: 'Generic JDBC',
+              href: 'technical-documentation/connectors/zeenea-connector-generic-jdbc.html'
+            },
+            {
+              name: 'Generic Lineage',
+              href: 'technical-documentation/connectors/zeenea-connector-generic-lineage.html'
+            },
+            {
+              name: 'Google BigQuery',
+              href: 'technical-documentation/connectors/zeenea-connector-google-bigquery.html'
+            },
+            {
+              name: 'Google Cloud Storage',
+              href: 'technical-documentation/connectors/zeenea-connector-google-cloud-storage.html'
+            },
+            {
+              name: 'Google Data Catalog',
+              href: 'technical-documentation/connectors/zeenea-connector-google-data-catalog.html'
+            },
+            {
+              name: 'Google Data Lineage',
+              href: 'technical-documentation/connectors/zeenea-connector-google-data-lineage.html'
+            },
+            {
+              name: 'Google Dataplex',
+              href: 'technical-documentation/connectors/zeenea-connector-google-dataplex.html'
+            },
+            {
+              name: 'Google Dataplex (V2)',
+              href: 'technical-documentation/connectors/zeenea-connector-google-dataplex-v2.html'
+            },
+            {
+              name: 'Greenplum',
+              href: 'technical-documentation/connectors/zeenea-connector-greenplum.html'
+            },
+            {
+              name: 'HDFS',
+              href: 'technical-documentation/connectors/zeenea-connector-hdfs.html'
+            },
+            {
+              name: 'Hive',
+              href: 'technical-documentation/connectors/zeenea-connector-hive.html'
+            },
+            {
+              name: 'Impala',
+              href: 'technical-documentation/connectors/zeenea-connector-impala.html'
+            },
+            {
+              name: 'InfluxDB',
+              href: 'technical-documentation/connectors/zeenea-connector-influxdb.html'
+            },
+            {
+              name: 'Informatica Data Integration',
+              href: 'technical-documentation/connectors/zeenea-connector-informatica.html'
+            },
+            {
+              name: 'Kafka',
+              href: 'technical-documentation/connectors/zeenea-connector-kafka.html'
+            },
+            {
+              name: 'Local File System',
+              href: 'technical-documentation/connectors/zeenea-connector-local-filesystem.html'
+            },
+            {
+              name: 'Looker',
+              href: 'technical-documentation/connectors/zeenea-connector-looker.html'
+            },
+            {
+              name: 'MariaDB',
+              href: 'technical-documentation/connectors/zeenea-connector-mariadb.html'
+            },
+            {
+              name: 'Matillion',
+              href: 'technical-documentation/connectors/zeenea-connector-matillion.html'
+            },
+            {
+              name: 'Matillion DPC',
+              href: 'technical-documentation/connectors/zeenea-connector-matillion-dpc.html'
+            },
+            {
+              name: 'Microsoft Fabric',
+              href: 'technical-documentation/connectors/zeenea-connector-ms-fabric.html'
+            },
+            {
+              name: 'MicroStrategy',
+              href: 'technical-documentation/connectors/zeenea-connector-microstrategy.html'
+            },
+            {
+              name: 'MongoDB',
+              href: 'technical-documentation/connectors/zeenea-connector-mongodb.html'
+            },
+            {
+              name: 'MySQL',
+              href: 'technical-documentation/connectors/zeenea-connector-mysql.html'
+            },
+            {
+              name: 'Netezza',
+              href: 'technical-documentation/connectors/zeenea-connector-netezza.html'
+            },
+            {
+              name: 'OpenAPI',
+              href: 'technical-documentation/connectors/zeenea-connector-openapi.html'
+            },
+            {
+              name: 'Oracle',
+              href: 'technical-documentation/connectors/zeenea-connector-oracle.html'
+            },
+            {
+              name: 'Oracle E-Business Suite (Safyr)',
+              href: 'technical-documentation/connectors/zeenea-connector-oracle-ebusiness-suite.html'
+            },
+            {
+              name: 'Oracle JD Edwards (Safyr)',
+              href: 'technical-documentation/connectors/zeenea-connector-oracle-jd-edwards.html'
+            },
+            {
+              name: 'Oracle PeopleSoft (Safyr)',
+              href: 'technical-documentation/connectors/zeenea-connector-oracle-peoplesoft.html'
+            },
+            {
+              name: 'Oracle Siebel (Safyr)',
+              href: 'technical-documentation/connectors/zeenea-connector-oracle-siebel.html'
+            },
+            {
+              name: 'Palantir Foundry',
+              href: 'technical-documentation/connectors/zeenea-connector-palantir.html'
+            },
+            {
+              name: 'PostgreSQL',
+              href: 'technical-documentation/connectors/zeenea-connector-postgresql.html'
+            },
+            {
+              name: 'Power BI Report Server',
+              href: 'technical-documentation/connectors/zeenea-connector-powerbi-report-server.html'
+            },
+            {
+              name: 'Power BI Online (Deprecated)',
+              href: 'technical-documentation/connectors/zeenea-connector-powerbi-saas.html'
+            },
+            {
+              name: 'Power BI Online (V2)',
+              href: 'technical-documentation/connectors/zeenea-connector-powerbi-saas-v2.html'
+            },
+            {
+              name: 'Qlik Cloud',
+              href: 'technical-documentation/connectors/zeenea-connector-qlik-cloud.html'
+            },
+            {
+              name: 'Qlik Sense',
+              href: 'technical-documentation/connectors/zeenea-connector-qlik-sense.html'
+            },
+            {
+              name: 'Salesforce',
+              href: 'technical-documentation/connectors/zeenea-connector-salesforce2.html'
+            },
+            {
+              name: 'Salesforce (Safyr)',
+              href: 'technical-documentation/connectors/zeenea-connector-salesforce.html'
+            },
+            {
+              name: 'SAP Analytics Cloud',
+              href: 'technical-documentation/connectors/zeenea-connector-sap-analytics-cloud.html'
+            },
+            {
+              name: 'SAP BO',
+              href: 'technical-documentation/connectors/zeenea-connector-sap-bo.html'
+            },
+            {
+              name: 'SAP BW (Safyr)',
+              href: 'technical-documentation/connectors/zeenea-connector-sap-bw-safyr.html'
+            },
+            {
+              name: 'SAP BW (Bluetelligence)',
+              href: 'technical-documentation/connectors/zeenea-connector-sap-bw-bluetelligence.html'
+            },
+            {
+              name: 'SAP (Safyr)',
+              href: 'technical-documentation/connectors/zeenea-connector-sap-safyr.html'
+            },
+            {
+              name: 'SAS Data Integration',
+              href: 'technical-documentation/connectors/zeenea-connector-sas-data-integration.html'
+            },
+            {
+              name: 'SAS Database',
+              href: 'technical-documentation/connectors/zeenea-connector-sas-db.html'
+            },
+            {
+              name: 'Snowflake',
+              href: 'technical-documentation/connectors/zeenea-connector-snowflake.html'
+            },
+            {
+              name: 'Splunk',
+              href: 'technical-documentation/connectors/zeenea-connector-splunk.html'
+            },
+            {
+              name: 'SQL Server',
+              href: 'technical-documentation/connectors/zeenea-connector-sqlserver.html'
+            },
+            {
+              name: 'SSAS',
+              href: 'technical-documentation/connectors/zeenea-connector-ssas.html'
+            },
+            {
+              name: 'SSIS',
+              href: 'technical-documentation/connectors/zeenea-connector-ssis.html'
+            },
+            {
+              name: 'SSRS',
+              href: 'technical-documentation/connectors/zeenea-connector-ssrs.html'
+            },
+            {
+              name: 'Sybase IQ',
+              href: 'technical-documentation/connectors/zeenea-connector-sybase-iq.html'
+            },
+            {
+              name: 'Tableau (Deprecated)',
+              href: 'technical-documentation/connectors/zeenea-connector-tableau.html'
+            },
+            {
+              name: 'Tableau (V2)',
+              href: 'technical-documentation/connectors/zeenea-connector-tableau-v2.html'
+            },
+            {
+              name: 'Talend',
+              href: 'technical-documentation/connectors/zeenea-connector-talend.html'
+            },
+            {
+              name: 'Teradata',
+              href: 'technical-documentation/connectors/zeenea-connector-teradata.html'
+            },
+            {
+              name: 'Tibco Data Virtualization',
+              href: 'technical-documentation/connectors/zeenea-connector-tibco-data-virtualization.html'
+            },
+            {
+              name: 'Tibco Spotfire (Deprecated)',
+              href: 'technical-documentation/connectors/zeenea-connector-tibco-spotfire.html'
+            },
+            {
+              name: 'Tibco Spotfire (V2)',
+              href: 'technical-documentation/connectors/zeenea-connector-tibco-spotfire-v2.html'
+            },
+            {
+              name: 'Zeenea Descriptor Format (ZDF)',
+              href: 'technical-documentation/connectors/zeenea-connector-zdf.html'
+            }
+          ]
+        },
+        {
+          name: 'Authentication',
+          href: 'technical-documentation/authentication/zeenea-auth0-integration.html',
+          pages: [
+            {
+              name: 'Integration with Auth0',
+              href: 'technical-documentation/authentication/zeenea-auth0-integration.html'
+            }
+          ]
+        },
+        {
+          name: 'API',
+          href: 'technical-documentation/api/zeenea-public-apis.html',
+          pages: [
+            {
+              name: 'Introduction to Zeenea Public APIs',
+              href: 'technical-documentation/api/zeenea-public-apis.html'
+            },
+            {
+              name: 'Zeenea API Lifecycle',
+              href: 'technical-documentation/api/zeenea-api-lifecycle.html'
+            },
+            {
+              name: 'Catalog API v1 (Deprecated)',
+              href: 'technical-documentation/api/zeenea-catalog-api-v1.html'
+            },
+            {
+              name: 'Catalog API v2',
+              href: 'technical-documentation/api/zeenea-catalog-api-v2.html'
+            },
+            {
+              name: 'GraphQL API v2 Limitations',
+              href: 'technical-documentation/api/zeenea-graphql-api-v2-limitations.html'
+            },
+            {
+              name: 'Catalog Design API',
+              href: 'technical-documentation/api/zeenea-catalog-design-api.html'
+            },
+            {
+              name: 'Audit Trail API',
+              href: 'technical-documentation/api/zeenea-audit-trail-apis.html'
+            },
+            {
+              name: 'Data Product API',
+              href: 'technical-documentation/api/zeenea-data-product-api.html'
+            },
+            {
+              name: 'Access Request API',
+              href: 'technical-documentation/api/zeenea-access-request-api.html'
+            },
+            {
+              name: 'SCIM (System for Cross-Domain Identity Management) Protocol Support',
+              href: 'technical-documentation/api/zeenea-scim-api.html'
+            },
+            {
+              name: 'Authentication & User Provisioning — Architecture Diagrams',
+              href: 'technical-documentation/api/scim-user-provisioning.html'
+            },
+            {
+              name: 'User Management API',
+              href: 'technical-documentation/api/zeenea-user-management-api.html'
+            }
+          ]
+        },
+        {
+          name: 'Actian Data Intelligence Reference Architecture',
+          href: 'technical-documentation/data-intelligence-reference-architecture.html'
+        },
+        {
+          name: 'Security Flaws Management Policy',
+          href: 'technical-documentation/zeenea-security-flaws-management.html'
+        }
       ]
-    }
+    },
   ];
 
   // ── Helpers ───────────────────────────────────────────────────────────────
