@@ -12,61 +12,68 @@ These steps are described in the sections: [Zeenea Scanner Setup](../../../techn
 
 ## Import datasets or visualizations
 
-If the requirements are met, you can access the import wizard by clicking the "Import" button from Zeenea Studio, and then clicking on “Select a connection”. Only specific profiles are allowed to import items into Zeenea.
+If all requirements are met, you can access the import wizard by clicking **Import** button from Studio, and then selecting **Select a data source**". Only specific profiles are allowed to import items.
 
   ![](./images/zeenea-import-items.png)
 
-### Step 1: Connection
+### Step 1: Data Source
 
-First, select the connection corresponding to the items to be imported.
+Select the data source corresponding to the items to import. Data sources are identified in the wizard by their technical name.
 
-Some specifics about this step: 
+### Step 2: Connection
 
-* Only connections that work with an inventory are proposed, namely those of the "dataset" or "visualization" type. The other "synchronized" connections are automatically imported in an all-or-nothing mode. 
-* Connections with automatic import activated are grayed out. If necessary, it is possible to force an automatic import from the administration interface.
+Select the connection from the list of connections associated with the selected data source. The list is filtered based on the data source selected in the previous step.
 
-### Step 2: Items
+Some specifics about this step:
 
-Search for the items either:
+* If only one connection is available for the selected data source, it is selected automatically.
+* Only connections that support an inventory are available, specifically those of type **dataset** or **visualization**. The other "synchronized" connections are imported automatically in an all-or-nothing mode. 
+* Connections with automatic import enabled are not displayed. If all connections for a data source have automatic import enabled, no connections are displayed for that data source in this step. If needed, you can force an automatic import from the administration interface.
 
-* by browsing the folders (by clicking on their name) 
-* by using the search bar
-* Select the items to import:  
-    * individually: Click on the cross next to an item 
-    * in bulk: Click on "Add all" to add the items in a folder to your import 
+### Step 3: Items
 
-Select the **Show already imported** checkbox to view the items already imported in the catalog.
+Search for items using one of the following methods:
 
-### Step 3: Curators (Optional)
+* Browse folders by clicking their names
+* Use the search bar
 
-You can now add one or more Curators to datasets when importing them. These will be the Stewards in charge of documenting the imported datasets. 
+Select the items to import:
+
+* Individually: Click **Select this item** next to an item.
+* In bulk: Click **Select all** to add all items in a folder to your import
+
+Select the **Show previously imported items** checkbox to display items that have already been imported into the catalog.
+
+### Step 4: Curators (Optional)
+
+You can assign one or more **Curators** to datasets during import. Curators act as Stewards responsible for documenting the imported datasets.
 
 !!! note
-    If a user requesting the import does not have permission to edit unassigned items, they will be automatically set as a curator for these newly-imported items.
+    If a user performing the import does not have permission to edit unassigned items, that user is automatically assigned as a curator for the newly imported items.
 
 
-### Step 4: Contact (Optional)
+### Step 5: Contact (Optional)
 
-It is possible to associate a contact and a responsibility to the datasets resulting from your selection. 
+You can assign a contact and a responsibility to the datasets selected for import. 
 
-### Step 5: Category (Optional)
+### Step 6: Category (Optional)
 
-For datasets only, it is possible to specify a category among those already created.
+For datasets only, you can assign a category from the list of existing categories.
 
-### Step 6: Confirm
+### Step 7: Confirm
 
-Before final confirmation, a summary of the operations to be carried out is proposed in the last stage.
+Before confirming the import, a summary of the operations to be performed is displayed.
 
 !!! warning "Important"
-    After confirmation, the window is closed and the import is performed asynchronously. The operation may take several minutes depending on the number of items selected.
+    After confirmation, the window closes and the import is performed asynchronously. The operation may take several minutes, depending on the number of items selected.
 
 
-## Specificities of certain imports
+## Specificities of Certain Imports
 
 For datasets:
 
 * For these imports, the fields are also imported automatically. Once associated with the source dataset, the fields also become searchable items in Zeenea.
-* For some connections, the automatic import of the Data processes associated with this dataset is possible (ex: Atlas)
+* For some connections, the automatic import of the Data processes associated with this dataset is possible (for example, Atlas)
 
 For visualizations: 
 

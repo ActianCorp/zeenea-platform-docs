@@ -109,6 +109,7 @@ This option allows finding Items for which the selected attribute (contact, prop
 | Category | In the same way as the "Contacts" filter, this filter allows you to search for datasets associated with one or more categories. |
 | Access request policy | This filter allows you to search for items based on their associated access request policy. |
 | Connections | This "faceted" type of filter allows you to select items from one or more connections using checkboxes. Only connections for which at least one item has been imported are displayed. |
+| Data Source | This filter allows you to select items from one or more data sources. Only data sources with at least one imported item are displayed. |
 | Orphan Items | This filter allows you to display the data sets deleted from a connection and still present in the catalog. |
 | Quality Status | This filter is used to display datasets according to their quality status:<br/>- Passed (each quality test passed since the last execution of the tests)<br/>- Warning (at least one test status is "Warning" since the last execution)<br/>- Failed (at least one test failed during the last execution)<br/>This filter is displayed if the catalog is synchronized with one of your data quality management tools only. |
 | Personally Identifiable Information| This filter displays the fields for which the Personally Identifiable Information property has been filled in (Yes/No). |

@@ -3,9 +3,15 @@
 ## Uses
 In order to facilitate imports and exports of all objects in the Catalog, being able to uniquely identify them is necessary. Identification Keys are also useful when synchronizing the Catalog with an External System using the APIs. 
 
-Each item in the Catalog has its dedicated key. Keys are automatically generated as explained below:
+Each item in the Catalog has its own key. Keys are generated automatically as follows:
 
-* When an item is imported using a Scanner, its key will be generated using its connection name, its source location and its name. The key generation will also depend on the type of item, as well as the connector type. Key generation for synchronized items is detailed in each connector article. Keys generated this way will always be unique and non-editable. 
+* When an item is imported using a scanner, its key is generated based on data source information. A data source is automatically associated with each imported item. For more information about data sources, see [Definitions](../../../getting-started/zeenea-definitions.md#data-source).
+  The key format depends on the connector type.
+     * For V1 connectors, the key is generated using the connection code. 
+     * For V2 Connectors, the key is generated using the data source information. It does not refer to the connection code. 
+  
+  The key generation also depends on the item type. Key generation for synchronized items is provided in the documentation for each connector. Keys generated in this way are always unique and cannot be modified.
+
 * Keys are automatically generated for Custom Items, Glossary Items and Data Processes. 
 
 For Glossary Items, the key is created by combining the object type code (defined in the Catalog Design) with its name, e.g., the key for a Glossary item type "KPI", name "Revenue per customer", then the key will be "KPI/Revenue per customer". 

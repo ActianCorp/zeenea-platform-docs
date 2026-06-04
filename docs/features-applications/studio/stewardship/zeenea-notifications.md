@@ -1,10 +1,12 @@
 # How Notifications Work
 
-Zeenea Studio offers a notification system that is accessible to the application users.
+Zeenea Studio offers a notification system that is accessible to the application users. 
 
 ## Types of Notifications Per User
 
 Each time a new notification is received or read, the increment is updated on the pictogram.
+
+All notifications related to imports and orphan items include data source information to help users identify the associated data source.
 
 The table below lists the different notifications available depending on the user profile.
 
@@ -22,9 +24,12 @@ Clicking on a notification triggers an action to allow the user to process the s
 
 | Context	| Action |
 | :--- | :--- |
-| Detection of new items | Opening the import wizard with the new items preselected |
-| Detection of orphan items | Redirection to the Catalog section with the following search filters: connection + type and date mentioned in the notification. |
-| Completion of the import of items | Redirection to the Catalog section with the following search filters: connection + type and date mentioned in the notification. |
+| Detection of new items | Opening the import wizard with the data source and new items preselected |
+| Detection of orphan items | Redirection to the Catalog section with the following search filters: data source + connection + type and date mentioned in the notification. |
+| Completion of the import of items | Redirection to the Catalog section with the following search filters: data source + connection + type and date mentioned in the notification. |
+
+
+
 
 
  
