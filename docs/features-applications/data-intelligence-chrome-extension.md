@@ -52,9 +52,7 @@ After installation, enter the Data Intelligence Platform URL and sign in using y
 
 The URL format is as follows:
 
-```
-https://<tenant-name>.zeenea.app
-```
+`https://<tenant-name>.zeenea.app`
 
 ![](./images/chrome-extension-sign-in.png)
 
