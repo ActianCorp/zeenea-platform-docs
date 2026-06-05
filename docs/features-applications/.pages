@@ -3,5 +3,6 @@ nav:
     - Studio: studio
     - Explorer: explorer
     - Cross-Application Features: cross-application-features
+    - Actian Chrome Extension: data-intelligence-chrome-extension.md
     - Actian MCP Server: actian-mcp-server
     - Federated Catalog: federated-catalog
