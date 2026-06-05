@@ -310,6 +310,10 @@
           ]
         },
         {
+          name: 'Actian Chrome Extension',
+          href: 'features-applications/data-intelligence-chrome-extension.html'
+        },
+        {
           name: 'Actian MCP Server',
           href: 'features-applications/actian-mcp-server/zeenea-amcp-overview.html',
           pages: [
