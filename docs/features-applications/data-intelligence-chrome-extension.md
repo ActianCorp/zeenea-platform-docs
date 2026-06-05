@@ -87,12 +87,15 @@ When you hover over a highlighted term, a tooltip displays its definition. Selec
 ### Access Report Documentation
 
 When the extension is activated on a specific page or subdomain, it reads the page URL and queries the Data Intelligence Platform to find a matching documented report or dashboard (Visualization item type). 
+
 If a match is found, an **About this report** button appears as an overlay on the page. Select this button to open a side panel that displays the report documentation from the Data Intelligence Platform.
 
 ### Data Handling and Privacy
 
 The extension reads the page content only when it is activated for the current page or subdomain. It does not access other browser tabs.
+
 Only the URL of the active tab is sent to the Data Intelligence Platform. Page content is not sent to the platform. Glossary matching is performed locally in the browser.
+
 Tooltip and side panel content are rendered using innerHTML and Shadow DOM to prevent style conflicts with the host page.
 
 !!! note
@@ -118,7 +121,9 @@ You must sign in again to use the extension.
 
 ### Uninstall Extension
 
-From the Chrome **Manage extensions** page, you can uninstall the extension. All stored data is deleted automatically.
+From the Chrome **Manage extensions** page, you can uninstall the extension. 
+
+All stored data is deleted automatically.
 
 ## Data Storage and Tracking
 
