@@ -50,6 +50,12 @@ You can pin the extension to the browser toolbar for quick access.
 
 After installation, enter the Data Intelligence Platform URL and sign in using your credentials (same as for the Studio or Explorer).
 
+The URL format is as follows:
+
+```
+https://<tenant-name>.zeenea.app
+```
+
 ![](./images/chrome-extension-sign-in.png)
 
 The platform uses Auth0 with PKCE for user authentication. The access token is stored locally in `chrome.storage.local`.
