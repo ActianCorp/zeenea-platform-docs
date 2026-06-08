@@ -66,7 +66,9 @@ A Service Principal account is needed to authenticate to MS Azure via a register
 
 To create a service principal in Azure, you will first need to register an application in Azure Active Directory (Azure AD). This application registration will automatically create a corresponding service principal, which represents the application's identity in your Microsoft Entra tenant. You'll need to note the Application (client) ID and the Client Secret from the app registration, which will be needed for the Zeenea Scanner configuration. Finally, you'll need to grant the service principal the necessary roles and permissions to access the resources it needs.
 
-Access to the PowerBI Admin API must be enabled for service principals using the Microsoft Fabric Admin Portal or Power BI Admin Portal and linked to a security group created using the Microsoft Entra Admin Center
+Access to the PowerBI Admin API must be enabled for service principals using the Microsoft Fabric Admin Portal or Power BI Admin Portal and linked to a security group created using the Microsoft Entra Admin Center.
+
+In addition, to retrieve lineage information, `dataRetrievalState` must not include `DatasetExpressionsDisabledByAdmin`.
 
 To configure Admin API settings in Azure, you typically need to enable service principal authentication for admin APIs within the Admin portal, especially when using features like Microsoft Fabric. This involves signing into the Microsoft Fabric Admin Portal, navigating to tenant settings, and enabling the switch for service principal access to read-only admin APIs. You also need to assign a specific security group created during application creation to the Admin API settings.
 
