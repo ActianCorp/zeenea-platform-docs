@@ -130,7 +130,7 @@
               href: 'features-applications/studio/stewardship/data-steward.html',
               pages: [
                 {
-                  name: 'Data Steward',
+                  name: 'Data Steward Agent',
                   href: 'features-applications/studio/stewardship/data-steward.html'
                 },
                 {
