@@ -1,8 +1,8 @@
-# Data Steward
+# Data Steward Agent
 
 ## Overview
 
-The **Data Steward** is a conversational data-catalog assistant embedded directly inside **Zeenea Studio**. It appears as a side panel next to whatever the user is doing in the catalog and helps them **explore, understand, document, and actively maintain** their catalog through natural language.
+The **Data Steward Agent** is a conversational data-catalog assistant embedded directly inside **Zeenea Studio**. It appears as a side panel next to whatever the user is doing in the catalog and helps them **explore, understand, document, and actively maintain** their catalog through natural language.
 
 Unlike a generic chatbot, the Steward:
 
@@ -17,7 +17,7 @@ It is designed for **data stewards, data engineers, analysts, and governance te
 
 | Persona | Primary Value |
 | --- | --- |
-| Data Steward | Bulk enrichment, completion gaps, ownership audits, glossary linking |
+| Data Steward Agent | Bulk enrichment, completion gaps, ownership audits, glossary linking |
 | Data Engineer | Quickly understand schema, lineage, and downstream impact |
 | Analyst | Discover datasets, glossary terms, and trusted owners via search |
 | Governance Lead | Metamodel queries ("who owns what"), policy enforcement via tenant memory |
@@ -66,7 +66,7 @@ The panel state is remembered per user (position, size, expanded/compact, whethe
 
 | Area | Purpose |
 | --- | --- |
-| **Header** | Title "Data Steward", memory shortcut, expand/collapse, close |
+| **Header** | Title "Data Steward Agent", memory shortcut, expand/collapse, close |
 | **New chat / threads toggle** | Open a fresh thread, list past conversations, delete old ones |
 | **Message stream** | The conversation, including tool-call indicators and approval cards |
 | **"Looking at" strip** | Always shows the item or catalog the Steward considers as current focus |
@@ -330,7 +330,7 @@ The Steward enforces several layers of safety:
 
 | **Label seen in the panel** | **Meaning** |
 | --- | --- |
-| **Data Steward** | Panel title |
+| **Data Steward Agent** | Panel title |
 | **Looking at** | Currently focused item or catalog |
 | **New chat** | Start a fresh conversation thread |
 | **Tenant Memory** | Persistent instructions shared by everyone in the tenant |
@@ -344,4 +344,4 @@ The Steward enforces several layers of safety:
 | **Stop generating** | Cancel the in-flight response |
 
 !!! note "Summary"
-    The **Data Steward** is a context-aware chat companion inside Zeenea Studio that turns natural-language requests into safe, approved catalog actions — from searching and explaining items, to writing descriptions, fixing completion gaps, linking glossary terms, and running large governance batches — without ever leaving the page the user is on.
+    The **Data Steward Agent** is a context-aware chat companion inside Zeenea Studio that turns natural-language requests into safe, approved catalog actions — from searching and explaining items, to writing descriptions, fixing completion gaps, linking glossary terms, and running large governance batches — without ever leaving the page the user is on.
