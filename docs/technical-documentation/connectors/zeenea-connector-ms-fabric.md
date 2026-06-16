@@ -40,7 +40,7 @@ To establish a connection with a Microsoft Fabric instance, fill in the followin
 | `catalog_code` | Specifies the catalog code associated with the connection (`default` when empty). |
 | `secret_manager.enabled` | Specifies whether to enable or disable the secret manager for the connection. <br />This configuration works only with Scanner 73 or later and requires a functional secret manager configured in the scanner configuration file. <br />The default value is `true`. |
 | `secret_manager.key` | Specifies the name of the secret. |
-| `connection.tenant` | Specifies the tenant's technical identifier. |
+| `connection.tenant` | Specifies the tenant's unique identifier.<br/>To retrieve the tenant ID from Microsoft Fabric:<br/>1. Sign in to Microsoft Fabric and select the **?** (Help) icon  in the upper-right corner.<br/>2. Select **About Microsoft Fabric**.<br/>3. In the dialog, locate the **Tenant URL**, which has the following format:<br/>`https://app.fabric.microsoft.com/home?ctid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`<br/>The tenant ID is the value of the `ctid` parameter in the Tenant URL. |
 | `connection.url` | Specifies the connection address. <br />The default value is `https://api.powerbi.com`. |
 | `connection.oauth.client_id` | Specifies the application ID (client) as defined in Azure. |
 | `connection.oauth.client_secret` | Specifies the client secret. |

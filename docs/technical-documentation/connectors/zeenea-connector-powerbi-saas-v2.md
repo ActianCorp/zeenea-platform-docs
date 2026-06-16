@@ -39,11 +39,10 @@ To establish a connection with a PowerBI Online instance, fill in the following 
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `powerbi-v2` and this value must not be modified. |
-| `connection.tenant` | Tenant's technical identifier |
+| `connection.tenant` | Specifies the tenant's unique identifier.<br/>To retrieve the tenant ID from Power BI:<br/>1. Sign in to Power BI and select the **?** (Help) icon  in the upper-right corner.<br/>2. Select **About Power BI**.<br/>3. In the dialog, locate the **Tenant URL**, which has the following format:<br/>`https://app.powerbi.com/home?ctid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`<br/>The tenant ID is the value of the `ctid` parameter in the Tenant URL. |
 | `connection.url` | Connection address. Default value `https://api.powerbi.com`. |
 | `connection.oauth.client_id` | Application ID (client) as defined in Azure |
 | `connection.oauth.client_secret` | Client secret |
-| `connection.oauth.endpoint` | API Scanner endpoint. Must respect following format: `https://login.microsoftonline.com/<tenants-technical-identifier>/oauth2/v2.0/token` |
 | `connection.timeout` | Specifies the maximum time, in milliseconds, that the system waits for a server response before terminating the connection to prevent indefinite hangs. The default value is `30000` ms. |
 | `dsn.configuration` | To define the list of DSNs configured in PowerBI Desktop. Must be filled in to get the lineage to external sources from DSNs. See the template to complete the field. |
 | `cache.enabled` | Enable cache usage (default value is `false`) |
