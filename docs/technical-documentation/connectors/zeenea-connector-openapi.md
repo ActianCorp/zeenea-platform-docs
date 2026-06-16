@@ -11,23 +11,23 @@
 
 ## Supported Versions
 
-The OpenAPI connector was developed  and tested with OpenAPI requirements 3.0.0 and 3.0.1 and should be compatible later.
+The OpenAPI connector is developed and tested with OpenAPI requirements 3.0.0 and 3.0.1 and should be compatible with later versions.
 
 The OpenAPI connector accepts JSON and YAML formats.
 
 ## Installing the Plugin
 
-The OpenAPI plugin can be downloaded here: [Zeenea Connector Downloads](zeenea-connectors-list.md# "title: Zeenea Connector Downloads")
+You can download the OpenAPI plugin from [Zeenea Connector Downloads](./zeenea-connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
+For more information about managing connections, see  [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
-In order to establish a connection with a OpenAPI interface, specifying the following parameters in the dedicated file is required:
+To establish a connection with a OpenAPI interface, specifying the following parameters in the dedicated file is required:
 
 | Parameter | Expected value |
 |---|---|
@@ -58,13 +58,19 @@ In order to establish a connection with a OpenAPI interface, specifying the foll
 
 ## User Permissions
 
-In order to collect metadata, the running user's permissions must allow them to access and read datasets that need cataloging. 
+To collect metadata, the running user's permissions must allow them to access and read datasets that need cataloging. 
 
 Here, the user must have read access to the specification API file.
 
 ## Data Extraction
 
-To extract information, the connector identifies the datasets exposed by the API from each GET endpoint defined in the specification file. Then, it defined the object's data model as described in the file.
+To extract information, the connector identifies the datasets exposed by the API from each `GET` endpoint defined in the specification file. 
+The connector creates a dataset for any `GET` endpoint that:
+
+- Returns a 2xx (success) response
+- Uses the `application/json` content type
+
+The schema can be defined either in a referenced component or as an inline schema within the response definition.
 
 ## Collected Metadata
 
@@ -73,6 +79,8 @@ To extract information, the connector identifies the datasets exposed by the API
 The inventory collects the list of unique GET endpoints described in the JSON specification file.  
 
 ### Dataset
+
+Response component or schema.
 
 * **Name**
 * **Source Description**
@@ -99,10 +107,18 @@ Dataset attribute.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-More information about unique identification keys in this documentation: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
 
 | Object | Identification Key | Description |
 |---|---|---|
-| Dataset | code/component name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **component name**: Exposed object's name |
-| Field | code/component name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **component name**: Exposed object's name<br/>- **field name**: Complete path of the attribute |
+| Dataset | code/dataset name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **dataset name**: The name of the dataset |
+| Field | code/dataset name/field name | - **code**: Unique identifier of the connection noted in the configuration file<br/>- **dataset name**: The name of the dataset<br/>- **field name**: Complete path of the attribute |
 
+### Dataset Name
+
+The dataset name is derived using the following rules:
+
+1. If the schema is defined by a reference to a component, the dataset name is the component name.
+2. If the schema is defined inline and the endpoint has an `operationId`, the dataset name is `<operationID>_Response`.
+3. If the schema is defined inline and the endpoint does not have an `operationId`, the dataset name is `<endpoint_path>_Response`.
+   The path is normalized by removing slashes and parameter syntax and converting the name to camel case. For example, if the path is `/report-status/{reportId}`, the dataset name is `reportStatusReportId_Response`.
