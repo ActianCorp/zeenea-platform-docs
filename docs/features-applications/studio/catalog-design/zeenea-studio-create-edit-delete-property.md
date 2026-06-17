@@ -45,6 +45,12 @@ There are different types of properties (Short Text, URL, Number, etc.). This al
 * **URL**: A hyperlink to a web resource.
 * **Select** (Enumeration): A finite list of configurable values that limits editing possibilities for Data Stewards. This improves the quality of the documentation by structuring the possibilities. To add a value, enter it in the dedicated field and press **Enter** key to validate it. The value will appear in a box, confirming integration.
 * **Multi-select** (Multivalued): A finite list of configurable values. Unlike the **Select** type, this type allows you to select multiple values of this property for the same item.
+  
+  !!! note
+      You can change the property type from **Multi-select** to **Select**. In this case, only the first value of the multi-select property is displayed in the Studio and Explorer. Existing values are not deleted. 
+
+      Curators can use the file export and import feature to identify items with multiple values selected for the property and resolve any issues.
+
 * **Date**: A date value with formatting that will change based on tenant language. 
 
   | Tenant language | Date format |
