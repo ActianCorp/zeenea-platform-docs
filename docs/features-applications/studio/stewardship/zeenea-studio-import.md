@@ -24,6 +24,7 @@ The import file must meet the following criteria:
      * **contacts**: For each responsibility, a column with its name will be added to the template. Note that curators can be imported using the **curator** column. 
      * **Template properties**: for each property, a column will be added to the template. 
      * **policy code**: The policy code to assign an access request policy to the Item, if required.
+     * **lifecycle stage**: The code of the lifecycle stage to assign to the item.
      * **Links with Custom Items** or **Glossary Items**: for each type of Item that can be associated, a column will be added to the template. 
      * **Inputs** and **Outputs** (Only for Data Processes): These columns can be used to import or update a lineage, and can only contain Dataset unique keys or Custom Item unique keys (depending on your metamodel configuration). 
      * Calculation of the Data Profiling (Fields only)
