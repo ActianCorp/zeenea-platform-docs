@@ -414,7 +414,8 @@ authentication {
 
 You can configure hooks that will be called after a scanner job ends.
 
-Learn how to configure a hook after a scanner job.
+For more information about configuring a hook after a scanner job, see [Configuring a Hook after a Scanner Job](zeenea-configure-hook.md).
+``
 
 ## Dry Run
 
