@@ -128,7 +128,16 @@ When the Federated Catalog is activated, you can move objects in bulk to another
 
 This action is only available from the default catalog.
 
-## Update Lifecycle Stage
+## Updating Lifecycle Stage
+
+This feature is enabled if the following conditions are met:
+
+* At least one item is selected.
+* All selected items are at the same stage.
+* All selected items belong to the same item type.
+
+!!! note
+    When these conditions are not met, the action is disabled, and a tooltip explains why.
 
 To update the lifecycle stage of multiple items:
 
