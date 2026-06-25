@@ -32,13 +32,14 @@ When the Federated Catalog option is activated, you can create Explorer groups t
 
 ### Global permissions
 
-You can select global permissions for a Data Steward type group. Global permissions grant administration rights on the catalog. There are 5 possible global permissions:
+You can select global permissions for a Data Steward type group. Global permissions grant administration rights on the catalog. There are 6 possible global permissions:
 
 * Catalog Design
 * User and group administration
 * Connectivity administration
 * Access to the analytics dashboard
 * Manage catalogs
+* Manage agents
 
 ### Catalog Design
 
@@ -60,6 +61,10 @@ This permission grants access to the analytics dashboard in the Studio with metr
 
 This permission allows you to create new catalogs on your tenant if the Federated Catalog option is activated for your subscription.
 
+### Manage agents
+
+This permission allows users to administer agents on the **Agents** tab: enabling or disabling an agent, editing its settings, and managing which groups may use it. See [Managing Agents](./zeenea-managing-agents.md).
+
 ### Catalog Access
 
 In this section, you can configure the read and write permissions on catalog items for Data Stewards. Write permissions on items are divided into three categories:
@@ -78,6 +83,12 @@ For each of these permissions, you can adjust the perimeter of Data Stewards as 
 In case the Federated Catalog option is activated, you will have the same configuration options but split by catalog.
 
   ![](./images/zeenea-group-catalog.png)
+
+### Agent Access
+
+In this section, you can grant a Data Steward-type group permission to use the Steward agent in Studio. A group can only use the agent once it has been granted access here.
+
+The agent must also be enabled by an administrator before any group can use it. See [Managing Agents](./zeenea-managing-agents.md) for the full administration workflow.
 
 ### Adding users to groups
 

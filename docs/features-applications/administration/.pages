@@ -1,6 +1,7 @@
 nav:
     - zeenea-managing-users.md
     - zeenea-managing-groups.md
+    - zeenea-managing-agents.md
     - zeenea-managing-catalogs.md
     - zeenea-managing-scanners.md
     - zeenea-managing-connections.md
