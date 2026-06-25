@@ -17,6 +17,21 @@ The SAP BO connector is compatible with all recent versions that expose the REST
 
 You can download the SAP BO plugin from [Zeenea Connector Downloads](./zeenea-connectors-list.md).
 
+!!! warning "Attention"
+    Updating the connector to version `2.0.0` or later introduces **breaking changes** by correcting how datasets are identified. Because this changes the identity of existing assets, they must be deleted and reimported.
+
+    **Important:** Any documentation manually added to SAP BO visualizations or their embedded datasets is attached to the  current assets and is **not** carried over during reimport.
+
+    Recommended upgrade steps:
+
+    1. Back up any manually added documentation on SAP BO assets.
+    2. Delete all SAP BO visualizations from the catalog.
+    3. Upgrade the SAP BO connector to the latest version.
+    4. Reimport all SAP BO visualizations into Zeenea. 
+       
+       Embedded datasets are reimported automatically with the correct identifiers.
+    6. Reapply any manually added documentation to the SAP BO assets.
+
 For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
 ## Declaring the Connection
