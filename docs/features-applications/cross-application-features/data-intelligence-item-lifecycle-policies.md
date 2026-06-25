@@ -4,7 +4,7 @@
 
 Item lifecycle policies help you define structured workflows for documenting and publishing catalog items. By assigning ordered stages to items (such as **Draft**, **In Review**, **Approved**), you control when items become visible to data consumers in Explorer. This ensures that only reviewed and approved content is available to Explorer users.
 
-Lifecycle policies also helps to hide incomplete or draft content from data consumers without enforcing strict approval workflows that slow down progress. They enable governance teams to control what data consumers see while allowing curators to continue working on items in Studio without interruption.
+Lifecycle policies also help to hide incomplete or draft content from data consumers without enforcing strict approval workflows that slow down progress. They enable governance teams to control what data consumers see while allowing curators to continue working on items in Studio without interruption.
 
 A lifecycle policy defines a sequence of stages that items move through as their documentation is created, reviewed, and approved. 
 Each stage includes:
@@ -23,9 +23,9 @@ The following table describes the key concepts used in lifecycle policies:
 
 | Concept | Description |
 | :---- | :---- |
-| Stage | A named step in the lifecycle (such as Draft, In Review, Approved). Each stage has a color and a visibility rule. |
+| Stage | A named step in the lifecycle (such as **Draft**, **In Review**, **Approved**). Each stage has a color and a visibility rule. |
 | Visibility rule | Controls whether items are visible only in Studio or also in Explorer. |
-| Not staged | A system stage automatically assigned to existing items when a new policy is applied, without affecting their visibility. Only Studio users can see that an item is not staged |
+| Not staged | A system stage automatically assigned to existing items when a new policy is applied, without affecting their visibility. Only Studio users can see that an item is not staged. |
 | Stage transition | The process of moving an item to the next or previous stage. |
 
 ## Typical Workflow
@@ -75,7 +75,9 @@ You can create new lifecycle policies in Administration.
 
 #### Configure Lifecycle Stages
 
-By default, a new lifecycle policy includes three stages: **Draft**, **In Review**, and **Approved**. You can customize these stages or create your own. 
+By default, a new lifecycle policy includes three stages: **Draft**, **In Review**, and **Approved**. 
+
+You can customize these stages or create your own. 
 
 !!! warning 
     A lifecycle policy must include at least two stages.
@@ -128,7 +130,7 @@ After you save the policy, it takes effect immediately:
 * New items matching the policy’s catalog and item type criteria are automatically assigned the first stage when created (through Studio, API, or scanner import).  
 * Existing items that match the criteria are assigned a **Not staged** status. The **Not staged** status is visible only in Studio and does not affect the item’s visibility in Explorer.
 
-After applying a policy, use the stage filter in Studio to find items with the Not staged status. You can then update their stages individually or in bulk by using file import.
+After applying a policy, use the stage filter in Studio to find items with the **Not staged** status. You can then update item stages individually or in bulk.
 
 ### Edit a Lifecycle Policy
 
@@ -202,7 +204,7 @@ A stage filter is available in Studio. You can use it to filter items by one or 
 You can use the stage filter for the following purposes:
 
 * Finding **Not staged** items after a policy is applied.
-* Creating watchlists to track items at specific stages (such as items awaiting review).
+* Creating watchlists to track items at specific stages (for example, items awaiting review).
 
 For more information about searching and filtering items in Studio, see [Searching and Filtering in Zeenea Studio](../studio/stewardship/zeenea-studio-search.md).
 
@@ -216,20 +218,21 @@ The item stage is displayed as a colored label in the following locations:
 
 ### Stage in File Import and Export
 
-The stage code is included as a column in XLSX import and export files. 
+The lifecycle stage code is included as a column in XLSX import and export files. 
 
 During import, you can assign an item to any stage. You do not need to follow the sequential transition rule.
 
 You can also create items at any stage, not just the first stage.
 
 For more information about import, see [Importing a File in Zeenea](../studio/stewardship/zeenea-studio-import.md).
+
 For more information about export, see [Exporting Search Results in Zeenea Studio](../studio/stewardship/zeenea-studio-search-export.md).
 
 ### Bulk Stage Updates
 
 You can update the stage of multiple items by using the **Edit lifecycle stage** option in the **Edit** menu. 
 
-For more information, see [Editing Items in Bulk](../studio/stewardship/zeenea-editing-items-in-bulk.md#update-lifecycle-stage).
+For more information, see [Editing Items in Bulk](../studio/stewardship/zeenea-editing-items-in-bulk.md#update-lifecycle-stage#update-lifecycle-stage).
 
 ### Analytics Dashboard Segments
 
