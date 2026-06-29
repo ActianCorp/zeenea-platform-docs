@@ -62,6 +62,10 @@
               href: 'features-applications/administration/zeenea-managing-groups.html'
             },
             {
+              name: 'Managing Agents',
+              href: 'features-applications/administration/zeenea-managing-agents.html'
+            },
+            {
               name: 'Managing Catalogs',
               href: 'features-applications/administration/zeenea-managing-catalogs.html'
             },
