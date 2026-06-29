@@ -1,8 +1,8 @@
 # Data Steward Agent
 
-The **Data Steward Agent** is a conversational assistant built into Studio. It appears in a side panel next to whatever you are working on and helps you **explore, understand, document, and maintain** your catalog using plain language. No query syntax required.
+The **Data Steward Agent** is a conversational assistant built into Studio. It appears in a side panel next to whatever you are working on and helps you **explore, understand, document, and maintain** your catalog using plain language. No query syntax is required.
 
-You can ask the agent to find datasets, explain where data comes from, write descriptions, fill in missing documentation, link glossary terms, or update multiple items at once. The agent knows which catalog you have open and which item you are viewing, so you rarely need to provide additional details. 
+You can ask the agent to find datasets, explain where data comes from, write descriptions, fill in missing documentation, link glossary terms, or update multiple items at once. The agent knows which catalog you have open and which item you are viewing, so you rarely need to provide additional details.
 
 Before making any changes, the agent always shows you exactly what it plans to update and waits for your approval.
 
@@ -27,7 +27,7 @@ The Data Steward Agent is designed for **data stewards, data engineers, analysts
      - **Compact card**: A small, draggable, resizable card that you can position anywhere.
      - **Sidebar**: A full-height panel docked to the right (screens ≥ 1200 px wide).
 
-Just above the input box, a **"Looking at"** strip shows the item or catalog that the agent is currently focused on. This enables the agent to understand references such as *"this dataset"* or *"the current table"*, so you can ask questions without naming the item.
+Just above the input box, a **"Looking at"** strip shows the item or catalog that the agent is currently focused on. This allows the agent to understand references such as *"this dataset"* or *"the current table"*, so you can ask questions without naming the item.
 
 ## What You Can Ask
 
@@ -105,7 +105,7 @@ In Plan mode, the agent **does not apply any changes**. Instead, it displays a *
 - **Ordered steps**, each with a title and detail.
 - Any **assumptions** and **risks** to consider.
 
-From the plan card, you can:
+In the plan card, you can:
 
 - **Expand** it in a modal or **copy** it.
 - **Iterate** on it — for example, *"change step 2 to…"* — until it meets your needs.
@@ -146,7 +146,7 @@ You review all proposed changes on a single approval card before they are applie
 
 Administrators manage the Steward agent from the **Agents** tab in **Administration**. This section is intended for administrators; everyday users can skip it. For more information about the full workflow, see [Managing Agents](../../administration/zeenea-managing-agents.md).
 
-### Enabling Steward Agent
+### Enabling the Steward Agent
 
 The Steward agent is **disabled by default**. An administrator must enable it on the **Agents** tab before users can use it.
 
@@ -154,7 +154,7 @@ The Steward agent is **disabled by default**. An administrator must enable it on
 
 The **Manage agents** permission controls who can manage agents. Grant this permission to a group on the **Edit group** page. Members of that group can then enable agents, edit agent settings, and manage access.
 
-### Granting Access to Steward Agent
+### Granting Access to the Steward Agent
 
 Decide which groups can use the Steward agent:
 
@@ -163,7 +163,7 @@ Decide which groups can use the Steward agent:
 
 ### Setting Shared Instructions
 
-The Steward agent follows a set of shared instructions that apply to **every conversation for all users** who are allowed to use it. You can edit these instructions on the **Edit agent** page.
+The Steward agent follows a set of shared instructions that apply to **every conversation, for all users** allowed to use it. You can edit these instructions on the **Edit agent** page.
 
 Use shared instructions to define conventions and policies, for example:
 
@@ -172,7 +172,7 @@ Use shared instructions to define conventions and policies, for example:
 - *"When creating glossary terms, use sentence case."*
 
 !!! note
-    Shared instructions affect all users who are allowed to use the Steward agent. Coordinate before making changes.
+    Shared instructions affect all users allowed to use the Steward agent. Coordinate before making changes.
 
 ## How Your Data Stays Safe
 
@@ -214,7 +214,7 @@ Key points:
 
 **1. I do not see the purple star button in Studio**
 
-The Steward agent may be disabled, or your group may not have access. Ask an administrator to enable the agent and grant your group access. For more information, see [Administration](#administration).
+The Steward agent may be disabled, or your group may not have access. Contact an administrator to enable the agent and grant your group access. For more information, see [Administration](#administration).
 
 **2. The agent opens as a small card instead of a full sidebar**
 

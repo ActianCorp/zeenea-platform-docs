@@ -6,11 +6,11 @@ You can manage agents from the **Agents** tab in **Administration**.
 
 ## Permission Required
 
-To manage agents, you must have the **Manage agents** permission. Grant this permission to a Data Steward-type group from the **Edit group** page. For more information, see [Managing Groups](./zeenea-managing-groups.md). 
+To manage agents, you must have the **Manage agents** permission. Grant this permission to a Data Steward-type group on the **Edit group** page. For more information, see [Managing Groups](./zeenea-managing-groups.md). 
 
 Members of groups with this permission can enable agents, edit agent settings, and manage which groups can use them.
 
-## Enabling Steward Agent
+## Enabling the Steward Agent
 
 The Steward agent is **disabled by default**. No one can use it until an administrator enables it.
 
@@ -20,14 +20,14 @@ To enable the agent:
 2. Select the **Agents** tab.
 3. Click the pencil icon next to the **Steward agent** in the **Action** column.
    
-   The **Edit agent** page opens.
+     The **Edit agent** page opens.
 
-4. Turn on the **Enable** switch. 
+4. Turn on the **Enable** switch.
 5. Click **Save changes**.
 
 After you enable the agent, it becomes available to all groups that have been granted access.
 
-## Granting Access to Steward Agent
+## Granting Access to the Steward Agent
 
 Access is managed at the group level. A group can use the Steward agent only if it has been granted access.
 
@@ -41,7 +41,7 @@ You can grant access in one of the following ways:
 
 ## Setting Shared Instructions
 
-The **Edit agent** page also includes the agent's shared instructions — guidance that the Steward agent follows in **every conversation for all users** who are allowed to use it.
+The **Edit agent** page also includes the agent's shared instructions — guidance that the Steward agent follows in **every conversation, for all users** allowed to use it.
 
 Use shared instructions to define conventions and policies, for example:
 
@@ -50,4 +50,4 @@ Use shared instructions to define conventions and policies, for example:
 * *"When creating glossary terms, use sentence case."*
 
 !!! note
-    Shared instructions affect all users who are allowed to use the Steward agent. Coordinate before making changes.
+    Shared instructions affect all users allowed to use the Steward agent. Coordinate before making changes.
