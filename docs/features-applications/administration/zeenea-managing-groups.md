@@ -57,11 +57,11 @@ This permission allows users to create API Keys (for Scanner configuration for e
 
 This permission grants access to the analytics dashboard in the Studio with metrics regarding the completion level of the documentation and user adoption.
 
-### Manage catalogs
+### Manage Catalogs
 
 This permission allows you to create new catalogs on your tenant if the Federated Catalog option is activated for your subscription.
 
-### Manage agents
+### Manage Agents
 
 This permission allows users to manage agents from the **Agents** tab. Users can enable or disable agents, edit agent settings, and manage which groups can use them. For more information, see [Managing Agents](./zeenea-managing-agents.md).
 

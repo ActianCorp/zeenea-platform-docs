@@ -10,7 +10,7 @@ To manage agents, you must have the **Manage agents** permission. Grant this per
 
 Members of groups with this permission can enable agents, edit agent settings, and manage which groups can use them.
 
-## Enabling the Steward Agent
+## Enabling Steward Agent
 
 The Steward agent is **disabled by default**. No one can use it until an administrator enables it.
 
@@ -21,12 +21,13 @@ To enable the agent:
 3. Click the pencil icon next to the **Steward agent** in the **Action** column.
    
    The **Edit agent** page opens.
+
 4. Turn on the **Enable** switch. 
 5. Click **Save changes**.
 
 After you enable the agent, it becomes available to all groups that have been granted access.
 
-## Granting Access to the Steward Agent
+## Granting Access to Steward Agent
 
 Access is managed at the group level. A group can use the Steward agent only if it has been granted access.
 
@@ -38,7 +39,7 @@ You can grant access in one of the following ways:
 !!! note
     Only Data Steward-type groups can be granted access to the Steward agent.
 
-## Setting the Agent's Shared Instructions
+## Setting Shared Instructions
 
 The **Edit agent** page also includes the agent's shared instructions — guidance that the Steward agent follows in **every conversation for all users** who are allowed to use it.
 
