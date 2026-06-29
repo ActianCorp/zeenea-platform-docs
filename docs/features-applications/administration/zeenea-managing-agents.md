@@ -1,44 +1,52 @@
 # Managing Agents
 
-Zeenea agents are conversational assistants embedded in the platform. The **Data Steward Agent** helps users explore, document, and maintain the catalog from a chat panel in Studio — see [Data Steward Agent](../studio/stewardship/data-steward.md).
+Agents are conversational assistants embedded in the platform. The **Data Steward Agent** helps you explore, document, and maintain the catalog from a chat panel in Studio. For more information, see [Data Steward Agent](../studio/stewardship/data-steward.md).
 
-Administer agents from the **Administration** section, on the **Agents** tab.
+You can manage agents from the **Agents** tab in **Administration**.
 
-## Permission required
+## Permission Required
 
-Administering agents requires the **Manage agents** permission. Grant it to a Data Steward-type group on the **Edit group** page — see [Managing Groups](./zeenea-managing-groups.md). Members of a group with this permission can enable agents, edit their settings, and manage which groups may use them.
+To manage agents, you must have the **Manage agents** permission. Grant this permission to a Data Steward-type group from the **Edit group** page. For more information, see [Managing Groups](./zeenea-managing-groups.md). 
 
-## Enabling the Steward agent
+Members of groups with this permission can enable agents, edit agent settings, and manage which groups can use them.
 
-The Steward agent is **disabled by default**. No one can use it until an administrator turns it on.
+## Enabling the Steward Agent
 
-To enable it:
+The Steward agent is **disabled by default**. No one can use it until an administrator enables it.
 
-1. Open the **Agents** tab in the Administration section.
-2. Select the **Steward agent**.
-3. Enable it.
+To enable the agent:
 
-Once enabled, the agent becomes available to every group that has been granted access to it.
+1. Open **Administration**.
+2. Select the **Agents** tab.
+3. Click the pencil icon next to the **Steward agent** in the **Action** column.
+   
+   The **Edit agent** page opens.
+4. Turn on the **Enable** switch. 
+5. Click **Save changes**.
 
-## Granting access to the Steward agent
+After you enable the agent, it becomes available to all groups that have been granted access.
 
-Use is controlled per group. A group can only use the Steward agent if it has been granted access. There are two ways to manage this:
+## Granting Access to the Steward Agent
 
-* **From the group** — on the **Edit group** page, use the **Agent access** section to grant a Data Steward-type group permission to use the Steward agent. See [Managing Groups](./zeenea-managing-groups.md).
-* **From the agent** — for convenience, on the **Edit agent** page you can manage the full list of groups allowed to use the agent in one place.
+Access is managed at the group level. A group can use the Steward agent only if it has been granted access.
+
+You can grant access in one of the following ways:
+
+* **From the group**: On the **Edit group** page, use the **Agent access** section to grant a Data Steward-type group permission to use the Steward agent. For more information, see [Managing Groups](./zeenea-managing-groups.md).
+* **From the agent**: On the **Edit agent** page, you can manage the list of groups allowed to use the agent in one place.
 
 !!! note
     Only Data Steward-type groups can be granted access to the Steward agent.
 
-## Setting the agent's shared instructions
+## Setting the Agent's Shared Instructions
 
-The **Edit agent** page also holds the agent's shared instructions — guidance the Steward agent follows in **every conversation, for everyone** allowed to use it.
+The **Edit agent** page also includes the agent's shared instructions — guidance that the Steward agent follows in **every conversation for all users** who are allowed to use it.
 
-Use them for conventions and policies, for example:
+Use shared instructions to define conventions and policies, for example:
 
 * *"Always use formal language in descriptions."*
 * *"The PII Sensitivity property is mandatory on every dataset."*
 * *"When creating glossary terms, use sentence case."*
 
 !!! note
-    Shared instructions affect every user allowed to use the Steward agent. Coordinate before changing them.
+    Shared instructions affect all users who are allowed to use the Steward agent. Coordinate before making changes.
