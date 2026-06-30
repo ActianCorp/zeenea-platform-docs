@@ -117,7 +117,7 @@ The inventory collects all data sources that the user can access.
 
 ### Dataset
 
-A dataset is a Denodo derived view. 
+A dataset can be a table or a view. 
 
 * **Name**
 * **Source Description**
