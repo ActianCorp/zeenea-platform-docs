@@ -269,47 +269,51 @@
         },
         {
           name: 'Cross-Application Features',
-          href: 'features-applications/cross-application-features/zeenea-data-product.html',
+          href: 'features-applications/cross-application-features/zeenea-access-requests.html',
           pages: [
             {
-              name: 'Data Products',
-              href: 'features-applications/cross-application-features/zeenea-data-product.html'
+              name: 'Access Requests',
+              href: 'features-applications/cross-application-features/zeenea-access-requests.html'
             },
             {
               name: 'Data Lineage',
               href: 'features-applications/cross-application-features/zeenea-data-lineage.html'
             },
             {
-              name: 'Data Sampling',
-              href: 'features-applications/cross-application-features/zeenea-data-sampling.html'
+              name: 'Data Products',
+              href: 'features-applications/cross-application-features/zeenea-data-product.html'
             },
             {
               name: 'Data Profiling',
               href: 'features-applications/cross-application-features/zeenea-data-profiling.html'
             },
             {
+              name: 'Data Sampling',
+              href: 'features-applications/cross-application-features/zeenea-data-sampling.html'
+            },
+            {
               name: 'Glossary Item Hierarchy',
               href: 'features-applications/cross-application-features/zeenea-glossary-hierarchy.html'
             },
             {
-              name: 'View 360 Diagram',
-              href: 'features-applications/cross-application-features/zeenea-view-360-diagram.html'
+              name: 'Item Lifecycle Policies',
+              href: 'features-applications/cross-application-features/data-intelligence-item-lifecycle-policies.html'
             },
             {
-              name: 'Access Requests',
-              href: 'features-applications/cross-application-features/zeenea-access-requests.html'
+              name: 'Integration with Microsoft Teams',
+              href: 'features-applications/cross-application-features/zeenea-microsoft-teams.html'
             },
             {
               name: 'Synchronization with a Data Quality Management Tool',
               href: 'features-applications/cross-application-features/zeenea-synchronization.html'
             },
             {
-              name: 'Zeenea Query Language',
-              href: 'features-applications/cross-application-features/zeenea-query-language.html'
+              name: 'View 360 Diagram',
+              href: 'features-applications/cross-application-features/zeenea-view-360-diagram.html'
             },
             {
-              name: 'Integration with Microsoft Teams',
-              href: 'features-applications/cross-application-features/zeenea-microsoft-teams.html'
+              name: 'Zeenea Query Language',
+              href: 'features-applications/cross-application-features/zeenea-query-language.html'
             }
           ]
         },
