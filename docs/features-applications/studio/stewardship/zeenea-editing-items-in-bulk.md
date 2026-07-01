@@ -147,6 +147,3 @@ To update the lifecycle stage of multiple items:
 
 3. Select the target stage for the selected items.
 4. Click **Confirm**.
-
-!!! warning
-    Bulk stage updates are available only when all selected items are at the same stage and belong to the same item type. When these conditions are not met, the action is disabled, and a tooltip explains why.
