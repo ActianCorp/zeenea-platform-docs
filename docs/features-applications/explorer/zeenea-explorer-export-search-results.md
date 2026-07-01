@@ -31,6 +31,7 @@ The following information is exported:
 * **catalog name**: In the case of the Federated Catalog, the name of the catalog the Item belongs to.
 * **catalog code**: In the case of the Federated Catalog, the code of the catalog the Item belongs to.
 * **shared**: In the case of the Federated Catalog, whether the Item is shared with other catalogs.
+* **lifecycle stage**: The lifecycle stage code associated with the Item.
 * **source description**: The description as defined in the source.
 * **Contacts** (one column for each responsibility). Note that curators are exported in the **curator** column. Contacts without an email address are not exported.
 * **policy code**: The policy code when an access request policy is associated with the Item.

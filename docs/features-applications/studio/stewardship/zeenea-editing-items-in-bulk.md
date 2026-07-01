@@ -133,7 +133,6 @@ This action is only available from the default catalog.
 This feature is enabled if the following conditions are met:
 
 * At least one item is selected.
-* All selected items are at the same stage.
 * All selected items belong to the same item type.
 
 !!! note

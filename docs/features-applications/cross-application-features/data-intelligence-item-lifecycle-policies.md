@@ -9,13 +9,14 @@ Lifecycle policies also help to hide incomplete or draft content from data consu
 A lifecycle policy defines a sequence of stages that items move through as their documentation is created, reviewed, and approved. 
 Each stage includes:
 * A name
+* A code
 * A color
 * A visibility rule that determines whether items at that stage appear in Explorer or remain visible only in Studio
 
 Lifecycle policies are scoped by catalog and item type. When you assign a policy to a catalog and item type combination, it applies to all matching items, both existing and new. Each catalog and item type combination can have only one lifecycle policy.
 
 !!! warning "Important"
-    Lifecycle policies support all item types except **Fields**. Policies defined for datasets or data processes do not apply to their embedded items (such as fields or datasets).
+    Lifecycle policies support all item types except **Fields** and **Output ports**. Policies defined for datasets or data processes do not apply to their embedded items (such as fields or datasets).
 
 ## Key Concepts
 
@@ -64,7 +65,7 @@ You can create new lifecycle policies in Administration.
    * **Description** (optional): Explain the purpose of this policy.
    * **Catalogs to which the policy applies** (required): Select one or more catalogs where the policy applies. 
    * **Automatically apply to new catalogs** (optional): Turn on this option to automatically apply the policy to newly created catalogs.
-   * **Item types to which the policy applies** (required): Select one or more item types to which this policy applies (all types except Fields).  
+   * **Item types to which the policy applies** (required): Select one or more item types to which this policy applies (all types except Fields and Output ports).  
    * **Stages** (required): Define the ordered stages of the lifecycle. For more information about configuring lifecycle stages, see [Configure Lifecycle Stages](#configure-lifecycle-stages).  
 5. Click **Create lifecycle policy**.
    
@@ -234,10 +235,6 @@ You can update the stage of multiple items by using the **Edit lifecycle stage**
 
 For more information, see [Editing Items in Bulk](../studio/stewardship/zeenea-editing-items-in-bulk.md#update-lifecycle-stage#update-lifecycle-stage).
 
-### Analytics Dashboard Segments
-
-A stage segment is available in the Analytics dashboard to create completion widgets filtered by lifecycle stage. For more information, see [Analytics Dashboard](../studio/zeenea-analytics-dashboard.md).
-
 ## Lifecycle Stages in Explorer
 
 ### Lifecycle Visibility Rules
@@ -245,12 +242,12 @@ A stage segment is available in the Analytics dashboard to create completion wid
 The lifecycle policy’s visibility rules control which items appear in Explorer:
 
 * Items at a stage with the **Studio and Explorer** visibility rule are visible in Explorer, subject to standard catalog permissions and sharing rules.
-* Items at a stage with the **Studio only** visibility rule are hidden from Explorer search results, item counts, and lists. 
+* Items at a stage with the **Studio only** visibility rule are hidden from Explorer search results, item counts, and lists. However, these items remain visible in the **lineage** and **data model** graphs. When you open the item's side panel from these graphs, a banner indicates that the item is displayed in preview mode.
 * Items with the **Not staged** status remain visible in Explorer. Their visibility is unchanged from before the policy was applied.  
 * Items that are not associated with a lifecycle policy are unaffected and remain visible as usual.
 
 !!! note
-    Visibility is independent of the **shared** status. An item can be shared across catalogs but still be hidden from Explorer if its stage visibility rule is set to **Studio only**.
+    In a **Federated Catalog**, visibility is independent of the **shared** status. An item can be shared across catalogs but but remain hidden in Explorer if its stage visibility rule is set to **Studio only**.
 
 ### View the Item Stage in Explorer
 
@@ -264,7 +261,7 @@ The item stage is displayed as a colored label in the following locations:
 
 You can access an item that is hidden from Explorer search results by using a direct URL or by selecting **Open in Explorer** from Studio.
 
-In this case, a banner appears on the item details page to indicate that the item is not officially published.
+In this case, a banner appears on the item details page to indicate that the item is displayed in preview mode.
 
 ## Lifecycle Stages in GraphQL API
 
@@ -301,7 +298,5 @@ All lifecycle policy configuration changes are recorded in the policy audit trai
 * Policy creation and updates  
 * Previous and new values for updated fields  
 * User and timestamp
-
-When a configuration change causes items to lose their stages, an audit log entry is also recorded for each affected item.
 
 All stage updates on items are recorded in the item audit trail with the previous and current values.

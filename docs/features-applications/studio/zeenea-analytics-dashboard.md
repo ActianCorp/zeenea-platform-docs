@@ -29,7 +29,6 @@ To do so, click on the **Add widget** button, then enter the following informati
 * Item Type: The type of Item you wish to analyze
 * Property used for segmentation: The completion level will be calculated according to the possible values for this criterion. The available criteria are:
      * Connection
-     * Stage (Lifecycle stages defined for the selected Item type)
      * "Select" properties of the template for the selected Item type
      * Catalog (when the Federated Catalog is activated)
 
