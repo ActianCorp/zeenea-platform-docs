@@ -194,7 +194,7 @@
                   href: 'features-applications/studio/stewardship/zeenea-doc-completion-level.html'
                 },
                 {
-                  name: 'Exporting search results in Zeenea Studio',
+                  name: 'Exporting Search Results in Zeenea Studio',
                   href: 'features-applications/studio/stewardship/zeenea-studio-search-export.html'
                 },
                 {
