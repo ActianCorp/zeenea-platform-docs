@@ -108,6 +108,7 @@ This option allows finding Items for which the selected attribute (contact, prop
 | Contacts | This filter allows you to search for items based on the contacts associated with them.<br/>Type the first few characters of a contact's first name, last name, or email, then select the contact from the suggested list for your search.<br/>The contact you are looking for must therefore be registered in the catalog beforehand. |
 | Category | In the same way as the "Contacts" filter, this filter allows you to search for datasets associated with one or more categories. |
 | Access request policy | This filter allows you to search for items based on their associated access request policy. |
+| Stage | This filter allows you to search for items based on one or more lifecycle stages. |
 | Connections | This "faceted" type of filter allows you to select items from one or more connections using checkboxes. Only connections for which at least one item has been imported are displayed. |
 | Data Source | This filter allows you to select items from one or more data sources. Only data sources with at least one imported item are displayed. |
 | Orphan Items | This filter allows you to display the data sets deleted from a connection and still present in the catalog. |

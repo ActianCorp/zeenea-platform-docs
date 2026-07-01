@@ -1,4 +1,4 @@
-# Exporting search results in Zeenea Studio
+# Exporting Search Results in Zeenea Studio
 
 The Export feature allows you to export a selection of Items from the Catalog section. Once exported, the same selection can be imported back into the Catalog.  
 
@@ -34,6 +34,7 @@ The following information is exported:
 * **source description**: The description as defined in the source.
 * **Contacts** (one column for each responsibility). Note that curators are exported in the **curator** column. Contacts without an email address are not exported.
 * **policy code**: The policy code when an access request policy is associated with the Item.
+* **lifecycle stage**: The lifecycle stage code associated with the Item.
 * **Properties** (one column for each property)
 * **Links with Custom Items or Glossary Items**: Two columns will be created. The first one is named the linked item type and will contain the unique keys to the linked items. The second, suffixed with **-name** and with a grey background, will contain the names of the related Items. This second column will be ignored if the file is re-imported related.
 * **Inputs & Outputs** (Data Process only): These two columns will contain the keys of the Datasets or Custom Items linked to the Data Process.

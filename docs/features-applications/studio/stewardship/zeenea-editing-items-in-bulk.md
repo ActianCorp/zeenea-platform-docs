@@ -10,6 +10,7 @@ Bulk edition actions include:
 * Adding curators
 * Managing properties
 * Managing glossary Items
+* Edit lifecycle stage
 
 Bulk publishing can be done on: 
 
@@ -126,3 +127,25 @@ When the Federated Catalog is activated, you can manage the sharing status of yo
 When the Federated Catalog is activated, you can move objects in bulk to another catalog by clicking the **Move to catalog** button.
 
 This action is only available from the default catalog.
+
+## Updating Lifecycle Stage
+
+This feature is enabled if the following conditions are met:
+
+* At least one item is selected.
+* All selected items belong to the same item type.
+
+!!! note
+    When these conditions are not met, the action is disabled, and a tooltip explains why.
+
+To update the lifecycle stage of multiple items:
+
+1. Select the items you want to update.  
+2. Click **Edit**, and then select **Edit lifecycle stage**.
+   
+   The **Edit lifecycle stage** dialog opens.
+3. Select the target stage for the selected items.
+4. Click **Confirm**.
+
+!!! warning
+    Bulk stage updates are available only when all selected items are at the same stage and belong to the same item type. When these conditions are not met, the action is disabled, and a tooltip explains why.

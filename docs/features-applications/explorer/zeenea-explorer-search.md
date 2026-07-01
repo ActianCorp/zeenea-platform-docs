@@ -29,6 +29,7 @@ Different filters are proposed by default:
 
 * Item Type: The type(s) of Items in the catalog (Datasets, Visualizations, etc.)
 * Data Source: System from where Items have been harvested
+* Lifecycle stage: Search for items based on one or more lifecycle stages.
 * Quality level: Data quality status (for Datasets only when information is available)
 * Contacts: Contacts associated with the Items (Data Steward, Data Owner, etc.).
 * Implemented: Custom and glossary Items that are used to define or categorize other items (Yes/No)
