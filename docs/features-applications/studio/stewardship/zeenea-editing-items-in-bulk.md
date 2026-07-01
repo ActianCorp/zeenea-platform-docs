@@ -144,6 +144,7 @@ To update the lifecycle stage of multiple items:
 2. Click **Edit**, and then select **Edit lifecycle stage**.
    
      The **Edit lifecycle stage** dialog opens.
+
 3. Select the target stage for the selected items.
 4. Click **Confirm**.
 

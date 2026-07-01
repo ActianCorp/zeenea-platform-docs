@@ -8,6 +8,7 @@ Lifecycle policies also help to hide incomplete or draft content from data consu
 
 A lifecycle policy defines a sequence of stages that items move through as their documentation is created, reviewed, and approved. 
 Each stage includes:
+
 * A name
 * A code
 * A color
@@ -55,9 +56,10 @@ You can create new lifecycle policies in Administration.
 2. Select **Policies** > **Lifecycles**. 
 3. Click **Create lifecycle policy**.  
    
-   The **Create lifecycle policy** window opens.
+     The **Create lifecycle policy** window opens.
    
-   ![](./images/create-lifecycle-policy-button.png)
+     ![](./images/create-lifecycle-policy-button.png)
+
 4. Complete the following fields:  
    
    * **Name** (required): Enter a descriptive name for the policy (for example, "Glossary Review Workflow").
@@ -67,9 +69,10 @@ You can create new lifecycle policies in Administration.
    * **Automatically apply to new catalogs** (optional): Turn on this option to automatically apply the policy to newly created catalogs.
    * **Item types to which the policy applies** (required): Select one or more item types to which this policy applies (all types except Fields and Output ports).  
    * **Stages** (required): Define the ordered stages of the lifecycle. For more information about configuring lifecycle stages, see [Configure Lifecycle Stages](#configure-lifecycle-stages).  
+
 5. Click **Create lifecycle policy**.
    
-   ![](./images/create-lifecycle-policy-dialog.png)
+     ![](./images/create-lifecycle-policy-dialog.png)
 
 !!! note
     A catalog and item type combination can be associated with only one lifecycle policy. If you try to select a combination that is already used in another policy, the system rejects the selection.
@@ -87,25 +90,27 @@ You can customize these stages or create your own.
 
 1. Click **Add stage**.
    
-   The **Add stage** window opens. 
+     The **Add stage** window opens. 
+
 2. Provide the following attributes: 
 
-    * **Name**: The display name of the stage (for example, **Draft**, **In Review**, **Approved**).
-    * **Code**: A unique technical identifier for the stage, used in API calls and file imports.
-    * **Visible in Explorer**: Controls where items at this stage are visible. Select one of the following: 
+   * **Name**: The display name of the stage (for example, **Draft**, **In Review**, **Approved**).
+   * **Code**: A unique technical identifier for the stage, used in API calls and file imports.
+   * **Visible in Explorer**: Controls where items at this stage are visible. Select one of the following: 
         * **Studio only**: Items are hidden from Explorer.
         * **Studio and Explorer**: Items are visible in both Studio and Explorer.
-    * **Color**: Select a color from the available palette.
+   * **Color**: Select a color from the available palette.
 
 3. Click **Apply** to save the stage. 
    
-   The new stage appears in the list of stages for the policy.
+     The new stage appears in the list of stages for the policy.
 
 **To edit an existing stage**
 
 1. Click the pencil icon next to the stage. 
    
-   The **Edit stage** window opens.
+     The **Edit stage** window opens.
+
 2. Make the required changes to the stage attributes.
 3. Click **Apply** to save the changes.
 
@@ -113,12 +118,12 @@ You can customize these stages or create your own.
 
 1. Click the trash icon next to the stage. 
    
-   The **Delete lifecycle stage** dialog opens.
+     The **Delete lifecycle stage** dialog opens.
+
 2. Click **Confirm** to delete the stage.
     
-    !!! warning
-        You cannot delete a stage if any items are currently assigned to it. In this case, the delete button is disabled, and a tooltip explains the reason.
-
+!!! warning
+    You cannot delete a stage if any items are currently assigned to it. In this case, the delete button is disabled, and a tooltip explains the reason.
 
 You can reorder stages by using drag-and-drop. The order determines the allowed transitions, and items can move only to the immediately previous or next stage.
 
@@ -143,7 +148,8 @@ You can edit lifecycle policies from Administration.
 2. Select **Policies** > **Lifecycles**. 
 3. Click the pencil icon next to the policy in the **Actions** column. 
    
-   The **Edit lifecycle policy** window opens.
+     The **Edit lifecycle policy** window opens.
+
 4. Make the required changes to the policy attributes or stages.
 5. Click **Save changes**.
 
@@ -159,7 +165,8 @@ You can delete a lifecycle policy from Administration.
 2. Select **Policies** > **Lifecycles**. 
 3. Click the trash icon next to the policy in the **Actions** column. 
    
-   The **Delete lifecycle policy** dialog opens.
+     The **Delete lifecycle policy** dialog opens.
+
 4. Click **Confirm**. 
 
 ![](./images/create-lifecycle-policy-delete.png)
@@ -209,7 +216,7 @@ You can use the stage filter for the following purposes:
 
 For more information about searching and filtering items in Studio, see [Searching and Filtering in Zeenea Studio](../studio/stewardship/zeenea-studio-search.md).
 
-### View the Item Stage
+### View the Item Stage in Studio
 
 The item stage is displayed as a colored label in the following locations:
 
@@ -217,7 +224,7 @@ The item stage is displayed as a colored label in the following locations:
 * Item overview panel (editable)  
 * Item details page (editable)
 
-### Stage in File Import and Export
+### Item Stage in File Import and Export
 
 The lifecycle stage code is included as a column in XLSX import and export files. 
 
@@ -256,6 +263,18 @@ The item stage is displayed as a colored label in the following locations:
 - Search results  
 - Item overview panel  
 - Item details page
+
+### Search and Filter Items by Stage
+
+A lifecycle stage filter is available in Explorer. You can use it to filter items by one or more lifecycle stages.
+
+For more information about searching and filtering in Explorer, see [Search and Filter in Zeenea Explorer](../explorer/zeenea-explorer-search.md).
+
+### Item Stage in File Export
+
+The lifecycle stage code is included as a column in XLSX files exported from Explorer. 
+
+For more information, see [Exporting Search Results from Zeenea Explorer](../studio/stewardship/zeenea-studio-search-export.md).
 
 ### Access Hidden Items in Explorer
 
