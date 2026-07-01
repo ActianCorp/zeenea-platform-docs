@@ -62,13 +62,13 @@ You can create new lifecycle policies in Administration.
 
 4. Complete the following fields:  
    
-   * **Name** (required): Enter a descriptive name for the policy (for example, "Glossary Review Workflow").
-   * **Code** (required): Enter a unique technical identifier.
-   * **Description** (optional): Explain the purpose of this policy.
-   * **Catalogs to which the policy applies** (required): Select one or more catalogs where the policy applies. 
-   * **Automatically apply to new catalogs** (optional): Turn on this option to automatically apply the policy to newly created catalogs.
-   * **Item types to which the policy applies** (required): Select one or more item types to which this policy applies (all types except Fields and Output ports).  
-   * **Stages** (required): Define the ordered stages of the lifecycle. For more information about configuring lifecycle stages, see [Configure Lifecycle Stages](#configure-lifecycle-stages).  
+     * **Name** (required): Enter a descriptive name for the policy (for example, "Glossary Review Workflow").
+     * **Code** (required): Enter a unique technical identifier.
+     * **Description** (optional): Explain the purpose of this policy.
+     * **Catalogs to which the policy applies** (required): Select one or more catalogs where the policy applies. 
+     * **Automatically apply to new catalogs** (optional): Turn on this option to automatically apply the policy to newly created catalogs.
+     * **Item types to which the policy applies** (required): Select one or more item types to which this policy applies (all types except Fields and Output ports).  
+     * **Stages** (required): Define the ordered stages of the lifecycle. For more information about configuring lifecycle stages, see [Configure Lifecycle Stages](#configure-lifecycle-stages).  
 
 5. Click **Create lifecycle policy**.
    
@@ -94,12 +94,12 @@ You can customize these stages or create your own.
 
 2. Provide the following attributes: 
 
-   * **Name**: The display name of the stage (for example, **Draft**, **In Review**, **Approved**).
-   * **Code**: A unique technical identifier for the stage, used in API calls and file imports.
-   * **Visible in Explorer**: Controls where items at this stage are visible. Select one of the following: 
-        * **Studio only**: Items are hidden from Explorer.
-        * **Studio and Explorer**: Items are visible in both Studio and Explorer.
-   * **Color**: Select a color from the available palette.
+     * **Name**: The display name of the stage (for example, **Draft**, **In Review**, **Approved**).
+     * **Code**: A unique technical identifier for the stage, used in API calls and file imports.
+     * **Visible in Explorer**: Controls where items at this stage are visible. Select one of the following: 
+           * **Studio only**: Items are hidden from Explorer.
+           * **Studio and Explorer**: Items are visible in both Studio and Explorer.
+     * **Color**: Select a color from the available palette.
 
 3. Click **Apply** to save the stage. 
    
