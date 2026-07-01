@@ -14,9 +14,7 @@ In the Explorer, you have full access to the documentation for items in your cat
 
 Items from catalogs for which you do not have read permission are not included in search results.
 
-Marketplace items can be linked to items in catalogs you do not have access to. In the Explorer, these links are hidden except in lineage, where only the name and connection of the unshared items appear.
-
-To provide more sealing between catalogs, you can disable the **Lineage** tab in the Explorer by submitting a request to your Customer Success Manager. The **Lineage** tab remains accessible in the Studio.
+Marketplace items can be linked to items in catalogs you do not have access to. In the Explorer, these links are hidden except in lineage and data model, where placeholders appear for restricted items.
 
 In the Studio, search is filtered for one catalog at a time. However, curators can still see links to items from other catalogs.
 
