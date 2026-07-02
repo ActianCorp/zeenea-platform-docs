@@ -44,13 +44,18 @@ In order to establish a connection with a Denodo instance, specifying the follow
 | `name` | The name that will be displayed to catalog users for this connection | 
 | `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `denodo` and this value must not be modified. | 
-| `connection.url` | Denodo Data Catalog address. Example: `http://host:9090/denodo-data-catalog`. |
+| `connection.url` | Denodo Data Catalog address. <br/>For Example: `http://host:9090/denodo-data-catalog`<br/>**Note:** Any query parameters provided in the URL value will be included in the Data Catalog REST API requests made by the connector. |
 | `connection.username` | Username |
 | `connection.password` |	User password |
 | `connection.jdbc.username` | Optional - see configuration template |
 | `connection.jdbc.password` | Optional - see configuration template |
 | `connection.jdbc.class_name` | Optional - see configuration template |
 | `lineage.enabled` | Activates the lineage feature. The default value is `false`.<br /> The JDBC driver must be provided. For more information, see [Prerequisites](#prerequisites). |
+
+| `vdp_server.list` | A space-separated list of VDP servers to inventory. You can specify servers by using a URL in the format `//host:port/admin`, a server ID number, or a combination of both.<br/>If this parameter is left empty (default), the connector inventories all VDP servers configured in the Denodo Data Catalog. <br/>Example: `304 305`<br/>Example: `401 //localhost:9999/admin` |
+| `vdp_server.default.uri` | The URL of the default VDP server used to retrieve the list of all configured VDP servers from the Denodo Data Catalog.<br/>Example: `//localhost:9999/admin`  |
+| `vdp_server.default.server_id` | The numeric identifier of the default VDP server used to retrieve the list of configured VDP servers.<br/>If neither `vdp_server.default.uri` nor `vdp_server.default.server_id` is specified, Denodo uses VDP server ID `1` by default.<br/>If both properties are specified, they must refer to the same VDP server.<br/>Example: `401` |
+
 | `filter` | To filter datasets during the inventory. See [Filters](#filters) |
 | `tls.truststore.path` | The Trust Store file path. This file must be provided in case TLS encryption is activated (protocol https) and when certificates of Denodo servers are delivered by a specific authority. It must contain the certification chain. |
 | `tls.truststore.password` |	Password of the trust store file |
