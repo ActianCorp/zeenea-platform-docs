@@ -1,6 +1,6 @@
 # Audit Trail API
 
-The Audit Trail API allows you to list all added, updated, and deleted metadata in the catalog; this includes users, contacts, groups/permission sets, data access requests and lifecycle policies. 
+The Audit Trail API allows you to list all added, updated, and deleted metadata in the catalog; this includes users, contacts, groups/permission sets, data access requests, and lifecycle policies. 
 
 Following are some examples, detailing how these APIs could be used (the requests used are detailed in the "Examples" section):
 
