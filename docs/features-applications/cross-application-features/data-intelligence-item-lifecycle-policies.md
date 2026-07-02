@@ -319,3 +319,5 @@ All lifecycle policy configuration changes are recorded in the policy audit trai
 * User and timestamp
 
 All stage updates on items are recorded in the item audit trail with the previous and current values.
+
+For more information about Audit API, see [Audit Trail API](../../technical-documentation/api/zeenea-audit-trail-apis.md).

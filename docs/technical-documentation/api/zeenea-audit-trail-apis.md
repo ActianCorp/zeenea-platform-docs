@@ -1,19 +1,21 @@
 # Audit Trail API
 
-The Audit Trail API allows you to list all added, updated, and deleted metadata in the catalog; this includes users, contacts, groups/permission sets, and data access requests. 
+The Audit Trail API allows you to list all added, updated, and deleted metadata in the catalog; this includes users, contacts, groups/permission sets, data access requests and lifecycle policies. 
 
-Following are some examples, detailing how these APIs could be used (the requests used are detailed in the "Using the API" section):
+Following are some examples, detailing how these APIs could be used (the requests used are detailed in the "Examples" section):
 
 * Data catalog items audit trail:
-    * Example 1: I want to list all changes made on all objects contained in the Catalog, over the last two days.
-    * Example 2: I want to list all changes made by a specific user on all Items in the Catalog, over a given time range.
-    * Example 3: I want to list all changes made on the “Customers” dataset in 2021.
+    * [Example 1: I want to list all changes made on all objects contained in the Catalog, over the last two days.](#example-1-i-want-to-list-all-changes-made-on-all-objects-contained-in-the-catalog-over-the-last-two-days)
+    * [Example 2: I want to list all changes made by a specific user on all Items in the Catalog, over a given time range.](#example-2-i-want-to-list-all-changes-made-by-a-specific-user-on-all-items-in-the-catalog-over-a-given-time-range)
+    * [Example 3: I want to list all changes made on the “Customers” dataset in 2021.](#example-3-i-want-to-list-all-changes-made-on-the-customers-dataset-in-2021)
 * Users and Contacts audit trail:
-    * Example 4: I want to list all changes made to users and contacts over the last month.
-    * Example 5: I want to list all changes made to groups/permission sets in 2021.
+    * [Example 4: I want to list all changes made to users and contacts over the last month.](#example-4-i-want-to-list-all-changes-made-to-users-and-contacts-over-the-last-month)
+    * [Example 5: I want to list all changes made to groups/permission sets in 2021.](#example-5-i-want-to-list-all-changes-made-to-groupspermission-sets-in-2021)
 * Data access requests audit trail:
-    * Example 6: I want to list all access requests and their status transitions over the last month.
-    * Example 7: I want to list all changes made to the data access request policies in 2024.
+    * [Example 6: I want to list all access requests and their status transitions over the last month.](#example-6-i-want-to-list-all-access-requests-and-their-status-transitions-over-the-last-month)
+    * [Example 7: I want to list all changes made to the data access request policies in 2024.](#example-7-i-want-to-list-all-changes-made-to-the-data-access-request-policies-in-2024)
+* Lifecycle policies audit trail:
+    * [Example 8: I want to list all lifecycle policy configuration changes over a given time range.](#example-8-i-want-to-list-all-lifecycle-policy-configuration-changes-over-a-given-time-range)
 
 The API technical documentation is provided in this section.
 
@@ -122,6 +124,17 @@ Follow these steps to authenticate using your API key:
  "from": "2024-01-01T00:00:00.000Z",
  "to": "2024-12-31T00:00:00.000Z",
  "eventType": "Policy"
+}
+```
+
+
+#### Example 8: I want to list all lifecycle policy configuration changes over a given time range.
+
+```json
+{
+   "from": "2026-07-01T00:00:00.000Z",
+   "to": "2026-07-02T00:00:00.000Z",
+   "eventType": "LifecyclePolicy"
 }
 ```
 
