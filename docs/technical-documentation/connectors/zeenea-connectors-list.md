@@ -50,7 +50,7 @@
 | [SAS Data Integration](./zeenea-connector-sas-data-integration.md)<br />[SAS Database](./zeenea-connector-sas-db.md) | SAS | 70 | [sas-connector-plugin-1.3.0.zip](https://plugins.zeenea.app/sas-connector-plugin/sas-connector-plugin-1.3.0.zip) |
 | [Splunk](./zeenea-connector-splunk.md) | Splunk | 54 | [splunk-connector-plugin-1.0.0.zip](https://plugins.zeenea.app/splunk-connector-plugin/splunk-connector-plugin-1.0.0.zip) |
 | [Tableau (Deprecated)](./zeenea-connector-tableau.md) | Tableau | 54 | [tableau-connector-plugin-4.2.2.zip](https://plugins.zeenea.app/tableau-connector-plugin/tableau-connector-plugin-4.2.2.zip) |
-| [Tableau (V2)](./zeenea-connector-tableau-v2.md) | Tableau V2 | 90 | [tableau-v2-connector-plugin-1.4.3.zip](https://plugins.zeenea.app/tableau-v2-connector-plugin/tableau-v2-connector-plugin-1.4.3.zip) |
+| [Tableau (V2)](./zeenea-connector-tableau-v2.md) | Tableau V2 | 99 | [tableau-v2-connector-plugin-1.5.0.zip](https://plugins.zeenea.app/tableau-v2-connector-plugin/tableau-v2-connector-plugin-1.5.0.zip) |
 | [Talend ETL](./zeenea-connector-talend.md) | Talend | 70 | [talend-connector-plugin-1.5.3.zip](https://plugins.zeenea.app/talend-connector-plugin/talend-connector-plugin-1.5.3.zip) |
 | [Tibco Data Virtualization](./zeenea-connector-tibco-data-virtualization.md)<br />[Tibco Spotfire (Deprecated)](./zeenea-connector-tibco-spotfire.md) | Tibco | 54 | [tibco-connector-plugin-4.0.1.zip](https://plugins.zeenea.app/tibco-connector-plugin/tibco-connector-plugin-4.0.1.zip) |
 | [Tibco Spotfire (V2)](./zeenea-connector-tibco-spotfire-v2.md) | Tibco V2 | 88 | [tibco-v2-connector-plugin-1.0.0.zip](https://plugins.zeenea.app/tibco-v2-connector-plugin/tibco-v2-connector-plugin-1.0.0.zip) |
