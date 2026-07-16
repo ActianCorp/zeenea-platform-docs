@@ -307,6 +307,10 @@ Currently, the Scanner supports 2 different Secret Manager types:
 * AWS Secret Manager
 * A local file containing your secrets
 
+!!! note
+    Whenever you update secret values, restart the scanner for the changes to take effect.
+
+
 ### AWS Secret Manager
 
 Configuration example:
