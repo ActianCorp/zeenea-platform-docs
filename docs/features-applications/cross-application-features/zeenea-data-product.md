@@ -18,9 +18,22 @@ A **data contract** is a formal agreement between a data product owner (also kno
 
 ## Data Products in the Actian Data Intelligence Platform
 
-The Actian Data Intelligence Platform supports data products and data contracts natively. It enables organizations to manage, govern, and maximize the value of their data assets as products:
+The Actian Data Intelligence Platform supports data products and data contracts natively. It enables organizations to manage, govern, and maximize the value of their data assets as products.
 
-* Define your data products and data contracts with YAML descriptors that include all relevant information for discovery and consumption (for example, name, description, terms and conditions, and custom properties).  
+You can create and manage data products either directly in Studio or by synchronizing YAML descriptors through the Data Product API and CI/CD pipelines. 
+The platform supports two types of data products:
+
+* **User-Defined Data Product:** A data product created and managed directly in Studio. You can edit its name, description, and properties, add or remove output ports, and download its YAML descriptor at any time. For more information, see [Create Data Products in Studio](#create-data-products-in-studio).
+
+* **Synced with Source Data Product:** A data product managed externally through the Data Product API or a CI/CD pipeline. Output ports can be managed only through the data product YAML descriptors or the API. Template properties and contacts can still be edited in Studio. For more information, see [Create Data Products with the API](#create-data-products-with-the-api).
+
+!!! warning
+    If a user-defined data product is later synchronized through the API, it automatically becomes a synced with source data product.
+
+The platform enables you to:
+
+* Create data products and output ports directly in Studio by using existing datasets.
+* Define data products and data contracts with YAML descriptors that include all relevant information required for discovery and consumption (for example, name, description, terms and conditions, and custom properties).  
 * Synchronize data products and their data contracts from your CI/CD pipelines by using the dedicated [Data Product API](../../technical-documentation/api/zeenea-data-product-api.md).
 * Manage data products and their components in the Studio to enrich their documentation and publish them to the enterprise marketplace.  
 * Search, find, and understand data products using the graph-powered search engine and an optimized layout dedicated to the discovery of these new item types.  
@@ -38,11 +51,164 @@ A dedicated and optimized search experience, powered by the knowledge graph, ena
 
 By supporting data contracts, the platform encourages organizations in their efforts to shift left metadata management. Organizations can design data contracts early and integrate them into their CI/CD pipelines to ensure that business expectations from the data contract are met when deploying new data. Synchronizing data contracts ensures that metadata remains up to date.
 
+User-defined data products created in Studio automatically generate ODPS and ODCS compliant YAML descriptors that can be integrated with the Data Contract Builder (coming soon) or CI/CD pipelines.
+
 * **Scale Data Management and Governance**
 
 Together with the federated catalog, each domain can design and manage its own data products.
 
 The platform breaks data silos and supports a data mesh approach by allowing domains to publish their data products into the Enterprise Marketplace.
+
+## Create Data Products in Studio
+
+Studio enables you to create and manage data products and output ports directly from the user interface. This allows you to group existing datasets into structured data products, even before adopting full data contract governance.
+
+Using Studio, you can define output ports, associate datasets with them, and enable access request workflows for data consumers.
+
+Data products created in Studio automatically generate YAML descriptors that comply with the Open Data Product Standard (ODPS) and the Open Data Contract Standard (ODCS). These descriptors can later be integrated into the Data Contract Builder (coming soon) or your CI/CD pipelines.
+
+This capability bridges the gap between initial dataset management and full data contract governance, accelerating the adoption of data products across your organization.
+
+### Create a Data Product
+
+You can create a user-defined data product directly from the **New Item** page in Studio.
+
+To create a data product:
+
+1. Open **Studio**
+2. Select **New Item**.
+   
+     The **New Item** page opens.
+
+3. Select **Data Product** as the item type.
+4. Enter a name for the data product.
+5. Click **Confirm**.
+   
+     The platform creates the data product and redirects you to its details page.
+
+To add an output port to the data product, see [Add an Output Port to an Existing Data Product](#add-an-output-port-to-an-existing-data-product).
+
+![](./images/data-product-studio-new-item-create.png)
+
+!!! note
+    The data product YAML descriptor is generated only when you download it from the item details page. It reflects the current state of the data product and is not generated automatically when the data product is created.
+
+#### Manage Output Ports
+
+From the **Output Ports** tab of a user-defined data product, you can:
+
+* **Add an output port**
+
+     Select **Add output port** to add one or more output ports to the data product. This opens the output port creation wizard with the current data product preselected. For more information, see [Add an Output Port to an Existing Data Product](#add-an-output-port-to-an-existing-data-product).
+
+* **Delete an output port**
+
+     Delete an output port from the output port list or its details page.
+
+### Create an Output Port
+
+You can create an output port directly from the **New Item** page in Studio.
+
+When you create an output port directly from the **New Item** page, the platform automatically creates a new user-defined data product and associates the output port with it.
+
+To create an output port:
+
+1. Open **Studio**.
+2. Select **New Item**.
+     
+     The **New Item** page opens.
+
+3. Select **Output Port** as the item type.
+4. Enter a name for the output port.
+5. Click **Confirm**.
+   
+     The output port creation wizard opens.
+
+     ![](./images/data-product-studio-output-port-create.png)
+
+6. Select a data source to filter the available data sources, and then click  **Next**.
+7. Select a data container, and then click **Next**.
+   
+     !!! warning
+         In this version, only schemas are supported.
+
+8.  Search, filter, and select one or more datasets, and then click **Next**.
+   
+     !!! note
+         You can select all datasets at once or add them individually. Selected datasets are marked with a check mark to prevent duplicate selections. You can remove individual datasets or clear the entire selection.
+
+9.  Review the information on the confirmation page.
+10. Click **Confirm**.
+    
+     The platform creates the output port and redirects you to its details page.
+
+After creation, you can edit the following attributes:
+
+* Name
+* Description
+* Access request policy
+* Curators
+
+### Add an Output Port to an Existing Data Product
+
+To add an output port to an existing user-defined data product:
+
+1. Open the data product details page in Studio.
+2. Go to the **Output Ports** tab.
+3. Click **Add output port**.
+   
+     The output port creation wizard opens with the current data product preselected.
+
+4. Select a data source and a data container.
+5. Search, filter, and select one or more datasets.
+6. Review the information on the confirmation page.
+7. Click **Confirm**.
+   
+     The platform creates the output port and associates it with the selected data product.
+
+!!! warning
+    Only user-defined data products support adding output ports in Studio. For synced with source data products, output ports can be managed only through the data product YAML descriptor or the API.
+
+![](./images/data-product-studio-output-port-tab.png)
+
+### Manage Datasets in an Output Port
+
+After creating an output port, you can update its associated datasets.
+
+To manage datasets:
+
+1. Open the output port details page.
+2. Go to the **Datasets** tab.
+3. Select **Manage datasets**.
+   
+     The dataset selection page opens, where you can add or remove datasets.
+
+4. Add or remove datasets as needed. You can search for datasets, select all datasets, or clear the selection.
+5. Review the changes on the confirmation page.
+6. Click **Confirm**.
+   
+     The platform updates the datasets associated with the output port.
+
+### Limitations
+
+#### Supported Connectors
+
+Dataset linking for Studio-created output ports is currently supported only for the following connector:
+
+* Snowflake V2
+
+#### Generated YAML Descriptors
+
+In the current version, the YAML descriptors generated by the platform contain only the core structural information of data products and output ports.
+
+Advanced attributes, such as custom properties, glossary items, and contacts, must be added after downloading the YAML files.
+
+The generated YAML descriptors comply with the following standards:
+
+* **Data product descriptor**: ODPS v1.0.0
+* **Data contract**: ODCS v3.1.0
+
+Other specification versions are not supported.
 
 ## Create Data Products with the API
 
