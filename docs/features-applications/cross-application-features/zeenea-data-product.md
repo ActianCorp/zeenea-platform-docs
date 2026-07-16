@@ -129,13 +129,13 @@ To create an output port:
 6. Select a data source to filter the available data sources, and then click  **Next**.
 7. Select a data container, and then click **Next**.
    
-     !!! warning
-         In this version, only schemas are supported.
+      !!! warning
+          In this version, only schemas are supported.
 
 8.  Search, filter, and select one or more datasets, and then click **Next**.
    
-     !!! note
-         You can select all datasets at once or add them individually. Selected datasets are marked with a check mark to prevent duplicate selections. You can remove individual datasets or clear the entire selection.
+      !!! note
+          You can select all datasets at once or add them individually. Selected datasets are marked with a check mark to prevent duplicate selections. You can remove individual datasets or clear the entire selection.
 
 9.  Review the information on the confirmation page.
 10. Click **Confirm**.
