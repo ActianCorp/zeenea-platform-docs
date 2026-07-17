@@ -41,8 +41,8 @@ In order to establish a connection with Tableau, specifying the following parame
 | `connection.token.name` | Token name obtained within the Tableau account menu. Official documentation can be found [here](https://help.tableau.com/current/pro/desktop/en-us/useracct.htm#create-and-revoke-personal-access-tokens). |
 | `connection.token.secret` | Token secret |
 | `connection.timeout` | (Optional; Advanced) Timeout delay of the GraphQL request. Delay in milliseconds.  <br/> Default: `10000` ms. |
-| `fields.include_hidden` | Include hidden fields from Tableau.<br />The default value is `true`. |
-| `fields.include_internal` | Include internal fields from Tableau.<br />The default value is `true`. |
+| `fields.include_hidden` | Include hidden fields from Tableau (hidden through the Tableau interface).<br />The default value is `true`. |
+| `fields.include_internal` | Include internal fields from Tableau (used by Tableau for internal calculations AND/OR fields with no lineage).<br />The default value is `true`. |
 | `proxy.scheme` | Depending on the proxy, `http` or `https` |
 | `proxy.hostname` | Proxy address |
 | `proxy.port` | Proxy port |
