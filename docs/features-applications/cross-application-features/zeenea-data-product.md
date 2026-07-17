@@ -75,7 +75,7 @@ You can create a user-defined data product directly from the **New Item** page i
 
 To create a data product:
 
-1. Open **Studio**
+1. Open **Studio**.
 2. Select **New Item**.
    
      The **New Item** page opens.
@@ -702,9 +702,6 @@ You can also configure data products to implement glossary items in the Glossary
 !!! note
     Output ports do not have a template and cannot implement glossary items.
 
-!!! warning "Important"
-    During the Beta phase, pre-existing template properties remain on output ports. Actian will implement an automatic migration, coinciding with the feature's general availability, which will result in the deletion of all current template property values from existing items.
-
 ### Data Product and Output Port Attributes
 
 #### Data Product Attributes
@@ -737,7 +734,7 @@ The data quality status of a data product is calculated from the data quality st
 
 ##### Attachments
 
-In Explorer, you can download the YAML descriptor of the data product.
+In Studio and Explorer, you can download the YAML descriptor of the data product.
 
 #### Output Port Attributes
 
@@ -745,11 +742,16 @@ In Explorer, you can download the YAML descriptor of the data product.
 
 Output ports have the following common attributes:
 
-* Source name  
-* Source description  
-* Source properties  
-* Source contacts  
+* Name
+* Source name (if synced with source)
+* Description
+* Source description (if synced with source)
+* Source properties (if synced with source)
+* Curators (if user-defined)
+* Source contacts (if synced with source)
 * Catalog (inherited from the parent data product)
+* Access request policy
+
 
 ##### Datasets Tab
 
@@ -769,7 +771,7 @@ The data quality status of the output port is calculated from the quality status
 
 ##### Attachments
 
-In Explorer, you can download the YAML descriptor of the data contract attached to the output port.
+In Studio and Explorer, you can download the YAML descriptor of the data contract attached to the output port.
 
 ### Delete a Data Product
 
@@ -795,4 +797,7 @@ In Explorer and Studio, you can search data products using their own attributes 
 
 In Explorer, users can request access to data products at the output port level.
 
-To enable access requests for data product output ports, create an [access request policy](../cross-application-features/zeenea-access-requests.md) in Administration. Then the access request policy must be provided in the data contract.
+To enable access requests for data product output ports, create an [access request policy](../cross-application-features/zeenea-access-requests.md) in Administration. Then assign the access request policy as follows:
+
+* If the output port is **user-defined**, assign the policy in Studio.
+* If the output port is **synced with source**, specify the policy in the data contract.
