@@ -39,8 +39,7 @@ pipeline {
         DOC_NAME_VERSION="data-intelligence-${DOC_VERSION}.doc"
 
         EMAIL_RECIPIENTS='jim.mccaskey@hcl-software.com, ' +
-            'bipinkumar.pandey@hcl-software.com, calvin.raj@hcl-software.com
-, cody.kern@hcl-software.com, mike.zayour@hcl-software.com'
+            'bipinkumar.pandey@hcl-software.com, calvin.raj@hcl-software.com, cody.kern@hcl-software.com, mike.zayour@hcl-software.com'
     }
 
     stages {
