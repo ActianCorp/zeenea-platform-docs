@@ -10,7 +10,7 @@ To import Datasets or Visualizations  into Zeenea, you must first:
 
 These steps are described in the sections: [Zeenea Scanner Setup](../../../technical-documentation/scanners/zeenea-scanner-setup.md) & [Managing Connections](../../administration/zeenea-managing-connections.md).
 
-## Import datasets or visualizations
+## Import Datasets or Visualizations
 
 If all requirements are met, you can access the import wizard by clicking **Import** button from Studio, and then selecting **Select a data source**". Only specific profiles are allowed to import items.
 
