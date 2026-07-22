@@ -1,28 +1,7 @@
-/* =============================================================
-   Scroll behaviour fixes
-   - scroll-padding-top: offsets anchor-link jumps so content
-     isn't hidden behind the sticky header + tabs (~96 px).
-   - overscroll-behavior-y: prevents elastic/bounce overscroll
-     on macOS and mobile browsers.
-   ============================================================= */
-html {
-  scroll-padding-top: 6rem; /* header (48px) + tabs (48px) + small buffer */
-  overscroll-behavior-y: none;
-}
-
-body {
-  overscroll-behavior-y: none;
-}
-
 /* Table header styling */
 .md-typeset table:not([class]) th {
     background-color: #f0f0f0;
     font-weight: 600;
-}
-
-/* Font stack */
-:root {
-  --md-text-font: "Inter", "Helvetica Neue", Arial, sans-serif;
 }
 
 [data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
