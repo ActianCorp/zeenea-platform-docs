@@ -1,6 +1,6 @@
 #Project Information
 site_name: Actian Data Intelligence Platform
-site_url: https://help.actian-software.com/digital-experience/9.5/latest/
+site_url: https://docs.actian.com/data-intelligence-platform/index.html
 site_description: >-
   Democratize data access and accelerate data-driven initiatives!.
 use_directory_urls: false
@@ -12,29 +12,25 @@ theme:
   logo: assets/img/logos/actian-logo.svg
   language: en
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.indexes
     - navigation.top
-    - navigation.instant
-    - navigation.prune
+    - navigation.indexes
     - navigation.path
     - navigation.footer
+    - navigation.sections
+    - content.code.copy
+    - content.code.annotate
     - search.highlight
     - search.share
     - search.suggest
-    - search.focus
-    - content.code.copy
-    - content.code.annotate
   palette:
     - scheme: default
-      primary: custom
+      primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-4
         name: Switch to dark mode
     - scheme: slate
-      primary: custom
+      primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-7
@@ -43,7 +39,6 @@ theme:
   icon:
     repo: material/lifebuoy
     edit: fontawesome/regular/pen-to-square
-  font: false
   favicon: assets/img/logos/favicon.ico
   
   # Static files
@@ -86,7 +81,7 @@ copyright: >-
 extra:
   analytics: 
     provider: custom
-    property: G-7LF0XY95M1
+    property: G-NHC5CN295F
     feedback:
       title: Was this page helpful?
       ratings:
@@ -119,7 +114,6 @@ extra_javascript:
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js
   - javascripts/mermaid-init.js
   - javascripts/search_enhancement.js
-  - javascripts/cn-nav.js
   - javascripts/extra.js
   - path: javascripts/current.js
     defer: true
@@ -144,4 +138,4 @@ plugins:
 # Hooks
 hooks:
   - hooks/custom_lexers.py
-  - hooks/generate_cn_nav.py
+  - hooks/copy_md_sources.py
