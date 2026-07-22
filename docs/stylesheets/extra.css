@@ -1,29 +1,13 @@
 /* =============================================================
-   Home page — centered content
-   Targets pages where both sidebars are hidden (hide: navigation + toc)
+   Actian AI Analyst — Mintlify-style UI
+   Light + dark mode
    ============================================================= */
-.md-sidebar--primary[hidden] ~ .md-content .md-content__inner {
-  max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-/* =============================================================
-   Actian MCP Server — Mintlify-style UI
-   Inter (body) · JetBrains Mono (code) · Light + dark mode
-   ============================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ═══════════════════════════════════════════════
    LIGHT MODE tokens
    ═══════════════════════════════════════════════ */
 :root,
 [data-md-color-scheme="default"] {
-  --md-text-font: "Inter", system-ui, -apple-system, sans-serif;
-  --md-code-font: "JetBrains Mono", "Fira Code", monospace;
-
   --color-bg:          #ffffff;
   --color-surface:     #f9fafb;
   --color-border:      #e5e7eb;
@@ -73,14 +57,12 @@
    ═══════════════════════════════════════════════ */
 html, body {
   background-color: var(--color-bg);
+  overscroll-behavior: none;       /* prevents elastic bounce / page-jump at scroll edges */
 }
 
 body,
 .md-typeset {
   font-family: var(--md-text-font);
-  font-size: 16px;
-  line-height: 1.65;
-  font-weight: 400;
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -94,17 +76,32 @@ body,
   color: var(--color-text) !important;
   border-bottom: 1px solid var(--color-border) !important;
   box-shadow: none !important;
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
+  padding-bottom: 0.45rem !important;
 }
 
-/* Light mode: dark logo as-is */
+/* Give the inner header row a consistent right gap so the
+   theme-toggle / source icon don't sit flush against the edge */
+.md-header__inner {
+  padding-right: 1rem !important;
+}
+
+/* Search bar: push it right but leave room for the icons */
+.md-search {
+  margin-left: auto !important;
+  margin-right: 0.5rem !important;
+}
+
+/* Theme-toggle group: no extra auto margin */
+.md-header__option {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
 [data-md-color-scheme="default"] .md-header__button.md-logo img,
 [data-md-color-scheme="default"] .md-header__button.md-logo svg {
   filter: none !important;
 }
 
-/* Dark mode: invert dark logo to white */
 [data-md-color-scheme="slate"] .md-header__button.md-logo img,
 [data-md-color-scheme="slate"] .md-header__button.md-logo svg {
   filter: brightness(0) invert(1) !important;
@@ -114,16 +111,13 @@ body,
 .md-header__topic {
   color: var(--color-accent) !important;
   font-family: var(--md-text-font);
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .md-header__button {
   color: var(--color-text) !important;
 }
 
-/* Header icon color fix — Material uses --md-primary-bg-color for icon fills.
-   With a white header + primary: custom, that token defaults to white (invisible).
-   Override it to dark text so all header icons are visible in light mode. */
 [data-md-color-scheme="default"] .md-header {
   --md-primary-bg-color: #1f2937;
 }
@@ -135,14 +129,15 @@ body,
   fill: #1f2937 !important;
 }
 
-/* Support link — compact filled pill, Actian blue */
+/* Support link — filled pill, Actian blue (matches AI Analyst) */
 .md-source,
 .md-header__button.md-source {
   color: #ffffff !important;
   background: #238ffb !important;
   border: none !important;
-  border-radius: 9999px !important;
-  padding: 0.2em 1em !important;
+  border-radius: 2rem !important;
+  padding: 0.35rem 1rem !important;
+  font-size: 0.7rem !important;
   width: fit-content !important;
   min-width: 0 !important;
   max-width: fit-content !important;
@@ -150,38 +145,21 @@ body,
   line-height: 1.4 !important;
   transition: background 0.15s;
 }
-
 .md-source:hover,
 .md-header__button.md-source:hover {
   background: #1a7de0 !important;
   opacity: 1;
 }
-
 [data-md-color-scheme="slate"] .md-source,
 [data-md-color-scheme="slate"] .md-header__button.md-source {
   color: #ffffff !important;
   background: #238ffb !important;
 }
-
 [data-md-color-scheme="slate"] .md-source:hover,
 [data-md-color-scheme="slate"] .md-header__button.md-source:hover {
   background: #1a7de0 !important;
 }
 
-/* Header source */
-.md-header__source .md-source__icon {
-  display: none !important;
-}
-
-.md-header__source .md-source__repository {
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  display: inline !important;
-  white-space: nowrap;
-}
-
-/* Search — prevent invisible flash on open */
 .md-search__form {
   background: var(--color-surface) !important;
   border: 1px solid var(--color-border) !important;
@@ -210,7 +188,6 @@ body,
   padding-top: 0 !important;
 }
 
-/* Light mode tabs: #1f2937 */
 [data-md-color-scheme="default"] .md-tabs__link {
   color: #1f2937 !important;
   font-family: var(--md-text-font);
@@ -219,7 +196,6 @@ body,
   opacity: 1 !important;
 }
 
-/* Dark mode tabs: match heading color */
 [data-md-color-scheme="slate"] .md-tabs {
   background-color: var(--color-bg) !important;
 }
@@ -242,7 +218,7 @@ body,
 }
 
 /* ═══════════════════════════════════════════════
-   SIDEBAR + TOC — same bg as content
+   SIDEBAR + TOC
    ═══════════════════════════════════════════════ */
 .md-sidebar,
 .md-sidebar--primary,
@@ -250,11 +226,34 @@ body,
 .md-sidebar__scrollwrap,
 .md-sidebar__inner {
   background-color: var(--color-bg) !important;
-  border-right: none !important;
-  border-left: none !important;
 }
 
-/* Dark mode: override actian-landing.css which sets sidebar to #ffffff */
+/* ---- Thin separators between the left nav, main content, and right TOC ----
+   The sidebars are only as tall as their own content, so borders on them stop
+   short. Instead put the dividers on the middle content column, which stretches
+   to the full height of the flex row — giving full-length lines regardless of
+   which column is tallest. ---- */
+@media screen and (min-width: 76.25em) {
+  .md-main__inner {
+    align-items: stretch;
+  }
+  /* Left divider (nav | content): full page height via the stretched content column */
+  .md-content {
+    border-left: 1px solid var(--color-border);
+  }
+  /* Right divider (content | TOC): border the TOC nav itself so it spans from
+     the top down to exactly the last "On this page" entry — no further. */
+  .md-sidebar--secondary .md-nav--secondary {
+    border-left: 1px solid var(--color-border);
+  }
+  .md-sidebar--secondary .md-nav--secondary .md-nav__title {
+    padding-left: 0.6rem;
+  }
+  .md-sidebar--secondary .md-nav--secondary > .md-nav__list {
+    padding-left: 0.6rem;
+  }
+}
+
 [data-md-color-scheme="slate"] .md-sidebar,
 [data-md-color-scheme="slate"] .md-sidebar--primary,
 [data-md-color-scheme="slate"] .md-sidebar--secondary,
@@ -274,10 +273,6 @@ body,
 
 .md-nav__title {
   color: var(--color-text) !important;
-  font-weight: 600;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   background-color: var(--color-bg) !important;
 }
 
@@ -286,25 +281,11 @@ body,
   background-color: var(--color-bg) !important;
 }
 
-/* Nav links — same color as main content headings */
 .md-nav__link,
 .md-nav__link .md-ellipsis {
   color: var(--color-text) !important;
-  font-size: 14px;
-  font-weight: 400;
 }
 
-/* Sidebar section titles (top-level nav groups) — bolder */
-.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link,
-.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link .md-ellipsis,
-.md-nav__item--section > .md-nav__link,
-.md-nav__item--section > .md-nav__link .md-ellipsis {
-  font-weight: 700 !important;
-  font-size: 13px !important;
-  letter-spacing: 0.01em;
-}
-
-/* Dark mode: override actian-landing.css rgba(0,0,0,0.87) rules */
 [data-md-color-scheme="slate"] .md-nav__link,
 [data-md-color-scheme="slate"] .md-nav__link .md-ellipsis,
 [data-md-color-scheme="slate"] label.md-nav__link,
@@ -336,18 +317,6 @@ body,
   font-weight: 500;
 }
 
-/* Right-hand TOC: tighter spacing, shifted right */
-.md-nav--secondary .md-nav__link {
-  font-size: 13px !important;
-  padding-top: 0.15em !important;
-  padding-bottom: 0.15em !important;
-  line-height: 1.4 !important;
-  padding-left: 1rem !important;
-}
-
-.md-nav--secondary .md-nav__item {
-  margin: 0 !important;
-}
 
 /* ═══════════════════════════════════════════════
    CONTENT AREA
@@ -367,42 +336,55 @@ body,
 .md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
-  font-family: var(--md-text-font);
-  font-weight: 600;
   color: var(--color-text);
-  letter-spacing: -0.02em;
-  line-height: 1.3;
 }
-
-.md-typeset h1 { font-size: 2em;   margin-top: 0; margin-bottom: 0.5rem; }
-.md-typeset h2 { font-size: 1.5em; border-bottom: 1px solid var(--color-border); padding-bottom: 0.3em; }
-.md-typeset h3 { font-size: 1.25em; }
 
 /* ═══════════════════════════════════════════════
    INLINE CODE
    ═══════════════════════════════════════════════ */
 .md-typeset code:not(pre code) {
   font-family: var(--md-code-font) !important;
-  font-size: 0.875em !important;
-  background: var(--color-code-bg) !important;
-  border: 1px solid var(--color-code-border) !important;
+  font-size: 0.82em !important;
+  background: #f3f4f6 !important;
+  border: 1px solid #c9cdd2 !important;
   border-radius: 4px !important;
-  padding: 0.1em 0.4em !important;
-  color: var(--color-code-text) !important;
+  padding: 0.1em 0.42em !important;
+  color: #24292e !important;
   font-variant-ligatures: none;
+  box-shadow: none !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset code:not(pre code) {
+  background: #22272e !important;
+  border-color: #444c56 !important;
+  color: #cdd9e5 !important;
 }
 
 /* ═══════════════════════════════════════════════
-   CODE BLOCKS — override actian-landing.css dark theme
+   CODE BLOCKS
    ═══════════════════════════════════════════════ */
+.md-typeset .highlight,
+.md-typeset .highlighttable {
+  background: #f6f8fa !important;
+  border: 1px solid #e1e4e8 !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  margin: 1em 0 !important;
+  box-shadow: none !important;
+}
+
 .md-typeset pre,
 .md-typeset .highlight pre,
 .highlight pre,
 pre {
-  background: var(--color-code-bg) !important;
-  border: 1px solid var(--color-code-border) !important;
-  border-radius: 8px !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
   box-shadow: none !important;
+  padding: 1em 1.25em !important;
+  margin: 0 !important;
+  overflow-x: auto !important;
+  overscroll-behavior: contain !important;
 }
 
 .md-typeset pre code,
@@ -413,39 +395,110 @@ pre code {
   background: transparent !important;
   border: none !important;
   padding: 0 !important;
-  color: var(--color-code-text) !important;
+  color: #000000 !important;
+  -webkit-font-smoothing: auto !important;
   font-variant-ligatures: none;
-  line-height: 1.6 !important;
+  line-height: 1.7 !important;
   white-space: pre !important;
 }
 
-/* Syntax tokens — light mode */
+[data-md-color-scheme="slate"] .md-typeset .highlight,
+[data-md-color-scheme="slate"] .md-typeset .highlighttable {
+  background: #161b22 !important;
+  border-color: #30363d !important;
+}
+[data-md-color-scheme="slate"] .md-typeset pre,
+[data-md-color-scheme="slate"] .md-typeset .highlight pre,
+[data-md-color-scheme="slate"] pre {
+  background: transparent !important;
+}
+[data-md-color-scheme="slate"] .md-typeset pre code,
+[data-md-color-scheme="slate"] .md-typeset .highlight pre code,
+[data-md-color-scheme="slate"] pre code {
+  color: #e6edf3 !important;
+}
+
+/* ═══════════════════════════════════════════════
+   SYNTAX TOKENS — light mode
+   ═══════════════════════════════════════════════ */
 [data-md-color-scheme="default"] .md-typeset .highlight .c,
 [data-md-color-scheme="default"] .md-typeset .highlight .c1,
-[data-md-color-scheme="default"] .md-typeset .highlight .cm { color: #64748b !important; font-style: italic; }
+[data-md-color-scheme="default"] .md-typeset .highlight .cm { color: #999999 !important; font-style: normal !important; }
+
 [data-md-color-scheme="default"] .md-typeset .highlight .k,
 [data-md-color-scheme="default"] .md-typeset .highlight .kn,
-[data-md-color-scheme="default"] .md-typeset .highlight .kd { color: #7c3aed !important; }
+[data-md-color-scheme="default"] .md-typeset .highlight .kd,
+[data-md-color-scheme="default"] .md-typeset .highlight .kr,
+[data-md-color-scheme="default"] .md-typeset .highlight .kt { color: #d73a49 !important; font-weight: normal !important; }
+
 [data-md-color-scheme="default"] .md-typeset .highlight .s,
 [data-md-color-scheme="default"] .md-typeset .highlight .s1,
-[data-md-color-scheme="default"] .md-typeset .highlight .s2 { color: #059669 !important; }
-[data-md-color-scheme="default"] .md-typeset .highlight .mi,
-[data-md-color-scheme="default"] .md-typeset .highlight .mf { color: #dc2626 !important; }
-[data-md-color-scheme="default"] .md-typeset .highlight .o  { color: #374151 !important; }
+[data-md-color-scheme="default"] .md-typeset .highlight .s2,
+[data-md-color-scheme="default"] .md-typeset .highlight .sb,
+[data-md-color-scheme="default"] .md-typeset .highlight .sc,
+[data-md-color-scheme="default"] .md-typeset .highlight .se,
+[data-md-color-scheme="default"] .md-typeset .highlight .sh,
+[data-md-color-scheme="default"] .md-typeset .highlight .si,
+[data-md-color-scheme="default"] .md-typeset .highlight .sx { color: #22863a !important; }
 
-/* Syntax tokens — dark mode */
+[data-md-color-scheme="default"] .md-typeset .highlight .mi,
+[data-md-color-scheme="default"] .md-typeset .highlight .mf,
+[data-md-color-scheme="default"] .md-typeset .highlight .m  { color: #22863a !important; }
+
+[data-md-color-scheme="default"] .md-typeset .highlight .nl,
+[data-md-color-scheme="default"] .md-typeset .highlight .py,
+[data-md-color-scheme="default"] .md-typeset .highlight .nt,
+[data-md-color-scheme="default"] .md-typeset .highlight .na { color: #c96a1e !important; }
+
+[data-md-color-scheme="default"] .md-typeset .highlight .o,
+[data-md-color-scheme="default"] .md-typeset .highlight .ow,
+[data-md-color-scheme="default"] .md-typeset .highlight .p,
+[data-md-color-scheme="default"] .md-typeset .highlight .n,
+[data-md-color-scheme="default"] .md-typeset .highlight .nn,
+[data-md-color-scheme="default"] .md-typeset .highlight .nb,
+[data-md-color-scheme="default"] .md-typeset .highlight .nf,
+[data-md-color-scheme="default"] .md-typeset .highlight .nc { color: #24292e !important; }
+
+[data-md-color-scheme="default"] .md-typeset .highlight .gp { color: #babbbd !important; user-select: none !important; }
+[data-md-color-scheme="default"] .md-typeset .highlight .err { color: #24292e !important; background: transparent !important; border: none !important; }
+
+/* ═══════════════════════════════════════════════
+   SYNTAX TOKENS — dark mode
+   ═══════════════════════════════════════════════ */
 [data-md-color-scheme="slate"] .md-typeset .highlight .c,
 [data-md-color-scheme="slate"] .md-typeset .highlight .c1,
-[data-md-color-scheme="slate"] .md-typeset .highlight .cm { color: #94a3b8 !important; font-style: italic; }
+[data-md-color-scheme="slate"] .md-typeset .highlight .cm  { color: #768390 !important; font-style: normal !important; }
 [data-md-color-scheme="slate"] .md-typeset .highlight .k,
 [data-md-color-scheme="slate"] .md-typeset .highlight .kn,
-[data-md-color-scheme="slate"] .md-typeset .highlight .kd { color: #a78bfa !important; }
+[data-md-color-scheme="slate"] .md-typeset .highlight .kd,
+[data-md-color-scheme="slate"] .md-typeset .highlight .kr,
+[data-md-color-scheme="slate"] .md-typeset .highlight .kt  { color: #f97583 !important; font-weight: normal !important; }
 [data-md-color-scheme="slate"] .md-typeset .highlight .s,
 [data-md-color-scheme="slate"] .md-typeset .highlight .s1,
-[data-md-color-scheme="slate"] .md-typeset .highlight .s2 { color: #34d399 !important; }
+[data-md-color-scheme="slate"] .md-typeset .highlight .s2,
+[data-md-color-scheme="slate"] .md-typeset .highlight .sb,
+[data-md-color-scheme="slate"] .md-typeset .highlight .sc,
+[data-md-color-scheme="slate"] .md-typeset .highlight .se,
+[data-md-color-scheme="slate"] .md-typeset .highlight .sh,
+[data-md-color-scheme="slate"] .md-typeset .highlight .si,
+[data-md-color-scheme="slate"] .md-typeset .highlight .sx  { color: #8ddb8c !important; }
 [data-md-color-scheme="slate"] .md-typeset .highlight .mi,
-[data-md-color-scheme="slate"] .md-typeset .highlight .mf { color: #f87171 !important; }
-[data-md-color-scheme="slate"] .md-typeset .highlight .o  { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .md-typeset .highlight .mf,
+[data-md-color-scheme="slate"] .md-typeset .highlight .m   { color: #8ddb8c !important; }
+[data-md-color-scheme="slate"] .md-typeset .highlight .nl,
+[data-md-color-scheme="slate"] .md-typeset .highlight .py,
+[data-md-color-scheme="slate"] .md-typeset .highlight .nt,
+[data-md-color-scheme="slate"] .md-typeset .highlight .na  { color: #e3986a !important; }
+[data-md-color-scheme="slate"] .md-typeset .highlight .o,
+[data-md-color-scheme="slate"] .md-typeset .highlight .ow,
+[data-md-color-scheme="slate"] .md-typeset .highlight .p,
+[data-md-color-scheme="slate"] .md-typeset .highlight .n,
+[data-md-color-scheme="slate"] .md-typeset .highlight .nn,
+[data-md-color-scheme="slate"] .md-typeset .highlight .nb,
+[data-md-color-scheme="slate"] .md-typeset .highlight .nf,
+[data-md-color-scheme="slate"] .md-typeset .highlight .nc  { color: #cdd9e5 !important; }
+[data-md-color-scheme="slate"] .md-typeset .highlight .gp  { color: #545d68 !important; user-select: none !important; }
+[data-md-color-scheme="slate"] .md-typeset .highlight .err { color: #cdd9e5 !important; background: transparent !important; border: none !important; }
 
 /* ═══════════════════════════════════════════════
    ADMONITIONS
@@ -460,8 +513,6 @@ pre code {
    TABLES
    ═══════════════════════════════════════════════ */
 .md-typeset table {
-  font-family: var(--md-text-font);
-  font-size: 15px;
   border: 1px solid var(--color-border);
   border-radius: 6px;
   overflow: hidden;
@@ -475,6 +526,7 @@ pre code {
 
 .md-typeset table td,
 .md-typeset table th {
+  border: 1px solid var(--color-border) !important;
   border-color: var(--color-border);
 }
 
@@ -511,6 +563,84 @@ pre code {
 }
 
 /* ═══════════════════════════════════════════════
+   RAW MARKDOWN LINK — card style (matches screenshot)
+   ═══════════════════════════════════════════════ */
+.md-raw-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  float: right;
+  position: relative;
+  z-index: 100;
+  margin: 0.75rem 0 1rem 1rem;
+  padding: 0.3em 0.6em;
+  font-family: var(--md-text-font);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.4rem;
+  text-decoration: none !important;
+  transition: border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+  cursor: pointer;
+  max-width: 180px;
+}
+
+.md-raw-link:hover {
+  border-color: var(--color-accent);
+  background: var(--color-bg);
+  text-decoration: none !important;
+}
+
+/* M↓ badge icon */
+.md-raw-link__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.3em;
+  height: 1.3em;
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-radius: 0.2rem;
+  font-size: 0.42rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+[data-md-color-scheme="slate"] .md-raw-link__icon {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* Text body */
+.md-raw-link__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  min-width: 0;
+}
+
+.md-raw-link__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2em;
+  font-size: 0.42rem;
+  font-weight: 500;
+  color: var(--color-text) !important;
+  line-height: 1.3;
+}
+
+.md-raw-link:hover .md-raw-link__title {
+  color: var(--color-accent) !important;
+}
+
+/* Hide on landing/home page */
+.md-home .md-raw-link {
+  display: none !important;
+}
+
+/* ═══════════════════════════════════════════════
    LINKS
    ═══════════════════════════════════════════════ */
 .md-typeset a {
@@ -523,7 +653,7 @@ pre code {
 }
 
 /* ═══════════════════════════════════════════════
-   LANDING PAGE (outside .md-typeset)
+   LANDING PAGE
    ═══════════════════════════════════════════════ */
 .dx-hero__content,
 .dx-hero__content h1,
@@ -548,7 +678,7 @@ pre code {
 }
 
 /* ═══════════════════════════════════════════════
-   STEPS COMPONENT (Mintlify-style)
+   STEPS COMPONENT
    ═══════════════════════════════════════════════ */
 .steps-container {
   margin: 2rem 0;
@@ -568,7 +698,6 @@ pre code {
   padding-bottom: 0;
 }
 
-/* Connecting line between steps */
 .step-item:not(:last-child)::before {
   content: '';
   position: absolute;
@@ -579,7 +708,6 @@ pre code {
   background: var(--color-border);
 }
 
-/* Numbered circle - no background */
 .step-item::after {
   content: counter(step-counter) ".";
   position: absolute;
@@ -616,16 +744,90 @@ pre code {
   padding: 0;
 }
 
-/* Dark mode adjustments */
 [data-md-color-scheme="slate"] .step-item:not(:last-child)::before {
   background: var(--color-border);
 }
 
 /* ═══════════════════════════════════════════════
-   COPY DIALOG — black pill, white text, bottom-center
-   Material uses .md-dialog (not .md-toast)
+   IMAGES
    ═══════════════════════════════════════════════ */
-.md-dialog {
+.md-content figure {
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.md-content figure img {
+  display: block !important;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.2rem;
+  margin: 0;
+}
+
+.md-typeset figure img {
+  display: block !important;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+/* Left-align block images (exclude inline images like icons in tables) */
+.md-typeset img:not(table img):not(.icon) {
+  display: block;
+  margin: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════════
+   API REFERENCE — full-bleed Redoc layout
+   ═══════════════════════════════════════════════ */
+[data-md-url*="public-api/reference"] .md-content,
+[data-md-url*="public-api/reference"] .md-content__inner {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+
+[data-md-url*="public-api/reference"] .md-content__inner > h1:first-child {
+  display: none !important;
+}
+
+[data-md-url*="public-api/reference"] .md-footer-nav,
+[data-md-url*="public-api/reference"] footer.md-footer {
+  display: none !important;
+}
+
+#redoc-container {
+  width: 100%;
+  min-height: calc(100vh - 56px);
+}
+
+[data-md-url*="public-api/reference"] .md-main__inner {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+[data-md-url*="public-api/reference"] .md-sidebar--secondary {
+  display: none !important;
+}
+
+/* ═══════════════════════════════════════════════
+   COPY TOAST — black pill, white text, bottom-center
+   Nuclear fix: override MD CSS variables at scope
+   ═══════════════════════════════════════════════ */
+
+/* Override the MD variable at the toast scope */
+.md-toast {
+  --md-default-fg-color: #ffffff !important;
+  --md-default-fg-color--light: #ffffff !important;
+  --md-default-fg-color--lighter: #ffffff !important;
+  --md-default-fg-color--lightest: #ffffff !important;
+  color: #ffffff !important;
+}
+.md-toast {
   position: fixed !important;
   bottom: 1.5rem !important;
   left: 50% !important;
@@ -635,12 +837,10 @@ pre code {
   width: auto !important;
   max-width: 90vw !important;
   pointer-events: none !important;
-  background-color: #1a1a1a !important;
-  border-radius: 9999px !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
 }
 
-.md-dialog__inner {
+.md-toast__inner {
+  display: block !important;
   background-color: #1a1a1a !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
@@ -649,224 +849,38 @@ pre code {
   font-weight: 500 !important;
   padding: 0.65rem 1.5rem !important;
   border-radius: 9999px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
   white-space: nowrap !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: none !important;
+  transition: none !important;
 }
 
-.md-dialog .md-typeset {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
-
-/* ============================================
-   Custom Comprehensive Navigation (cn-nav)
-   ============================================ */
-
-/* Hide native MkDocs nav immediately to prevent flash */
-.md-nav--primary {
+.md-toast__inner::before,
+.md-toast__inner::after {
   display: none !important;
 }
 
-.cn-nav {
-  padding: 0 0.5rem 1rem 0.5rem;
-  margin-top: -0.6rem;
+.md-toast__inner,
+.md-toast__inner *,
+.md-toast [class*="md-"] {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
 }
 
-.cn-item {
-  margin-bottom: 0.1rem;
+/* ═══════════════════════════════════════════════
+   HEADER SOURCE
+   ═══════════════════════════════════════════════ */
+.md-header__source .md-source__icon {
+  display: none !important;
 }
 
-.cn-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.3rem 0.5rem;
-  border-radius: 0.2rem;
-}
-
-.cn-header:hover {
-  background-color: var(--md-default-fg-color--lightest);
-}
-
-.cn-label {
-  font-size: 14px;
-  font-family: var(--md-text-font);
-  font-weight: 500;
-  letter-spacing: 0;
-  color: #1f2937 !important;
-  text-decoration: none;
-  flex-grow: 1;
-  line-height: 1.3;
-}
-
-.cn-label:hover {
-  color: var(--md-primary-fg-color);
-  text-decoration: none;
-}
-
-.cn-label--active,
-.cn-item--active .cn-label {
-  color: var(--md-primary-fg-color) !important;
-}
-
-.cn-item--active {
-  border-left: 2px solid var(--md-primary-fg-color);
-  padding-left: 0.3rem;
-  margin-left: -0.3rem;
-}
-
-/* ── Toggle arrows ───────────────────────────────────────────── */
-
-.cn-arrow {
-  font-size: 1rem;
-  color: var(--md-default-fg-color--light);
-  transition: transform 0.2s ease, opacity 0.15s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.2rem;
-  height: 1.2rem;
-  flex-shrink: 0;
-  cursor: pointer;
-  user-select: none;
-}
-
-.cn-arrow:hover {
-  color: var(--md-primary-fg-color);
-}
-
-.cn-arrow:not(.cn-arrow--sub) {
-  opacity: 1;
-}
-
-.cn-arrow--sub {
-  font-size: 0.85rem;
-  width: 1rem;
-  height: 1rem;
-  opacity: 1;
-}
-
-/* ── Sub-page lists ──────────────────────────────────────────── */
-
-.cn-sublist {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.cn-subitem {
-  margin: 0;
-}
-
-.cn-subheader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 0.2rem;
-}
-
-.cn-subheader:hover {
-  background-color: var(--md-default-fg-color--lightest);
-}
-
-.cn-sublist--depth-1 > .cn-subitem > .cn-sublink,
-.cn-sublist--depth-1 > .cn-subitem > .cn-subheader > .cn-sublink {
-  padding: 0.28rem 0.4rem 0.28rem 0.5rem;
-  font-size: 14px;
-  font-family: var(--md-text-font);
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.3;
-}
-
-.cn-sublist--depth-2 > .cn-subitem > .cn-sublink,
-.cn-sublist--depth-2 > .cn-subitem > .cn-subheader > .cn-sublink {
-  padding: 0.25rem 0.4rem 0.25rem 1rem;
-  font-size: 14px;
-  font-family: var(--md-text-font);
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.3;
-}
-
-.cn-sublist--depth-3 > .cn-subitem > .cn-sublink,
-.cn-sublist--depth-3 > .cn-subitem > .cn-subheader > .cn-sublink {
-  padding: 0.22rem 0.4rem 0.22rem 1.5rem;
-  font-size: 14px;
-  font-family: var(--md-text-font);
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.3;
-}
-
-.cn-sublink {
-  display: block;
-  flex-grow: 1;
-  font-size: 14px;
-  font-family: var(--md-text-font);
-  font-weight: 400;
-  line-height: 1.3;
-  color: #1f2937 !important;
-  text-decoration: none;
-  border-radius: 0.2rem;
-  transition: background-color 0.15s, color 0.15s;
-}
-
-.cn-sublink:not(.cn-sublink--parent):hover {
-  background-color: var(--md-default-fg-color--lightest);
-  color: var(--md-default-fg-color);
-  text-decoration: none;
-}
-
-.cn-sublink--active {
-  color: var(--md-primary-fg-color) !important;
-  font-weight: 500;
-}
-
-.cn-sublink--parent {
-  font-weight: 400;
-  color: var(--md-default-fg-color);
-}
-
-.cn-sublink--parent:hover {
-  color: var(--md-primary-fg-color);
-  text-decoration: none;
-}
-
-/* ── Sidebar divider lines & ToC layout ─────────────────────────────────── */
-
-.md-sidebar--primary .md-sidebar__scrollwrap {
-  box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.08);
-}
-
-.md-sidebar--secondary .md-sidebar__scrollwrap {
-  box-shadow: none !important;
-}
-
-@media screen and (min-width: 1220px) {
-  .md-sidebar--secondary {
-    margin-left: -2.5rem;
-  }
-}
-
-.md-sidebar--secondary .md-sidebar__inner {
-  border-left: 1px solid rgba(0, 0, 0, 0.08) !important;
-  padding-left: 0.8rem !important;
-}
-
-[data-md-color-scheme="slate"] .md-sidebar--primary .md-sidebar__scrollwrap {
-  box-shadow: 1px 0 0 0 rgba(255, 255, 255, 0.08);
-}
-
-[data-md-color-scheme="slate"] .md-sidebar--secondary .md-sidebar__scrollwrap {
-  box-shadow: none !important;
-}
-
-[data-md-color-scheme="slate"] .md-sidebar--secondary .md-sidebar__inner {
-  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-/* Dark mode label colors */
-[data-md-color-scheme="slate"] .cn-label,
-[data-md-color-scheme="slate"] .cn-sublink {
-  color: var(--md-default-fg-color) !important;
+.md-header__source .md-source__repository {
+  font-weight: 600;
+  display: inline !important;
+  white-space: nowrap;
+  max-width: none !important;
+  overflow: visible !important;
 }

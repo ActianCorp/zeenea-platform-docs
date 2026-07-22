@@ -22,6 +22,17 @@
 {% endblock %}
 
 {% block content %}
+  {# Raw Markdown link — shown on every doc page (relative URL so it
+     works regardless of deploy host). Skipped on pages with `hide`. #}
+  {% if page and page.file and not (page.meta and page.meta.hide) %}
+    {%- set raw_md_url = page.file.src_uri.split('/')[-1] -%}
+    <a href="{{ raw_md_url }}" class="md-raw-link" target="_blank" rel="noopener" title="View this page as plain text Markdown">
+      <span class="md-raw-link__icon">M&#x2193;</span>
+      <span class="md-raw-link__body">
+        <span class="md-raw-link__title">View as Markdown &#x2197;</span>
+      </span>
+    </a>
+  {% endif %}
   {{ super() }}
 
   {# Prev/next nav rendered INSIDE the content column #}
