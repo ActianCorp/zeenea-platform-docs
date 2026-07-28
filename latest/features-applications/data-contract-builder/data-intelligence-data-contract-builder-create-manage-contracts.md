@@ -10,7 +10,7 @@ You can create an empty draft contract and fill everything manually.
    The contract creation window opens.
 2. Click **Create empty contract**.
    The new contract creation window opens.
-3. Complete the contract information. For more information about the available sections and fields, see [Contract Form Sections](data-intelligence-data-contract-builder-configure.md).
+3. Complete the contract information. For more information about the available sections and fields, see [Configure Contract Information](#configure-contract-information).
 
 ### Create a Contract from DDL
 
@@ -24,7 +24,7 @@ Use this method when a SQL schema already exists.
 4. Review validation messages and resolve blocking errors if any.
 6. Click **Import schema** to create the Draft.
 7. Resolve any parsing issue or unsupported syntax.
-8. Complete the remaining contract information. For more information about the available sections and fields, see [Contract Form Sections](data-intelligence-data-contract-builder-configure.md).
+8. Complete the remaining contract information. For more information about the available sections and fields, see [Configure Contract Information](#configure-contract-information).
 
 !!! note
     DDL import generates the data model but does not populate business metadata such as ownership, descriptions, roles, service-level objectives, or quality rules.
@@ -52,7 +52,7 @@ If an imported identifier is not a valid UUID, Data Contract Builder imports the
 
 You can use the following contract form sections to define contract information.
 
-## Fundamentals
+### Fundamentals
 
 The Fundamentals section contains the core metadata used to identify and classify the contract.
 
@@ -82,11 +82,11 @@ To add a reference link:
 1. Select **Add reference link**.
 2. Provide the following information:
    
-   * **URL:** The URL of the reference document.
-   * **Type:** The type of reference document. Supported values include Privacy statement, Terms and conditions, and License agreement.
-   * **Description:** An optional description explaining the purpose of the reference link.
+     * **URL:** The URL of the reference document.
+     * **Type:** The type of reference document. Supported values include Privacy statement, Terms and conditions, and License agreement.
+     * **Description:** An optional description explaining the purpose of the reference link.
 
-## Schema
+### Schema
 
 Use the Schema section to define the tables and fields included in the contract.
 
@@ -107,19 +107,19 @@ You can select the Properties button for a table to define additional metadata.
 * **Tags:** Specify tags that can be used to classify and organize the table.
 * **Quality rules:** Use the Quality rules section to define expectations that apply to the table as a whole. To add a quality rule:
 
-   1. Select **Add quality rule**.
-   2. Enter a rule name.
-   3. Provide a description of the quality expectation.
+     1. Select **Add quality rule**.
+     2. Enter a rule name.
+     3. Provide a description of the quality expectation.
 
-   !!! note
-       Table-level quality rules apply to the dataset as a whole rather than to individual fields. The current release supports text-based quality rules only.
+     !!! note
+         Table-level quality rules apply to the dataset as a whole rather than to individual fields. The current release supports text-based quality rules only.
 
 * **Reference links:** Use Reference links to associate the table with related catalog assets or supporting documentation. To add a reference link:
 
-   1. Select **Add reference link**.
-   2. Select a catalog asset.
-   3. Review the generated URL and link type.
-   4. Optionally, provide a description.
+     1. Select **Add reference link**.
+     2. Select a catalog asset.
+     3. Review the generated URL and link type.
+     4. Optionally, provide a description.
 
 **Delete Table**
 
@@ -141,24 +141,24 @@ When a field is created, it includes the following attributes:
 * **Field:** The name of the field.
 * **Type:** The logical data type of the field. Supported field types include:
    
-   * **Text:** Text values such as names, email addresses, or descriptions.
-   * **Date:** Date values.
-   * **Date & time:** Timestamp values containing both date and time.
-   * **Time:** Time-only values.
-   * **Decimal:** Decimal numbers.
-   * **Whole number:** Integer values.
-   * **Record:** Nested structured data.
-   * **List:** Multiple values.
-   * **Yes / No:** Boolean values.
+     * **Text:** Text values such as names, email addresses, or descriptions.
+     * **Date:** Date values.
+     * **Date & time:** Timestamp values containing both date and time.
+     * **Time:** Time-only values.
+     * **Decimal:** Decimal numbers.
+     * **Whole number:** Integer values.
+     * **Record:** Nested structured data.
+     * **List:** Multiple values.
+     * **Yes / No:** Boolean values.
 
 * **DB type:** The database-specific type of the field.  Supported types include VARCHAR, BOOLEAN, BIT, and TINYINT(1).
 * **Rules:** Constraints and classifications applied to the field. Supported rules include:
    
-   * **PK:** Identifies the field as a primary key.
-   * **REQ:** Indicates that the field is required.
-   * **PII:** Indicates that the field contains personally identifiable information.
-   * **UQ:** Indicates that values in the field must be unique.
-   * **CDE:** Identifies the field as a critical data element.
+     * **PK:** Identifies the field as a primary key.
+     * **REQ:** Indicates that the field is required.
+     * **PII:** Indicates that the field contains personally identifiable information.
+     * **UQ:** Indicates that values in the field must be unique.
+     * **CDE:** Identifies the field as a critical data element.
 
 * **Classification:** Indicates the sensitivity level of the field. Supported values include: Public, Restricted, and Confidential.
 
@@ -171,8 +171,8 @@ You can select the Properties button for a field to define additional metadata.
 * **Tags:** Specify tags that can be used to classify and organize the field.
 * **Foreign key:** Use the Foreign key section to define relationships between fields. For each foreign key, specify:
 
-   * **Referenced table:** The table referenced by the foreign key.
-   * **Referenced field:** The field referenced by the foreign key.
+     * **Referenced table:** The table referenced by the foreign key.
+     * **Referenced field:** The field referenced by the foreign key.
 
 * **Quality rules:** Use the Quality rules section to document data quality expectations for the field. You can define Up to 3 rules in text format only. To add a quality rule:
 
@@ -193,7 +193,7 @@ Click **Save** to save the field properties.
 
 To delete a field, click **Delete** button next to the field.
 
-## Data Access
+### Data Access
 
 Use the Data access section to define data consumer roles and the level of access they require for the contract.
 
@@ -205,9 +205,9 @@ To add a data access role:
 2. Enter a role name.
 3. Select an access level.
    
-   * **Read:** Allows consumers to view data.
-   * **Write:** Allows consumers to create and update data.
-   * **Custom:** Allows you to define a custom access level that does not fit the standard read or write categories.
+     * **Read:** Allows consumers to view data.
+     * **Write:** Allows consumers to create and update data.
+     * **Custom:** Allows you to define a custom access level that does not fit the standard read or write categories.
 
 4. Optionally, provide a description.
 5. Repeat the process to add additional roles.
@@ -220,7 +220,7 @@ To configure an access request policy, enter the policy code associated with the
 
 The policy code is exported in the generated YAML under the contract's `customProperties`.
 
-## Service Levels
+### Service Levels
 
 Use the Service levels section to define service-level commitments and operational expectations for the contract.
 
@@ -231,39 +231,40 @@ To add a service level:
 1. Select **Add service level**.
 2. Provide the following information.
    
-   * **Type:** Select one of the supported service level types.
-        * Latency
-        * Retention
-        * Frequency
-        * Availability
-        * Throughput
-        * Error rate
-        * General availability
-        * End of support
-        * End of life
-        * Time of availability
-        * Time to detect
-        * Time to notify
-        * Time to repair
+     * **Type:** Select one of the supported service level types.
+        
+          * Latency
+          * Retention
+          * Frequency
+          * Availability
+          * Throughput
+          * Error rate
+          * General availability
+          * End of support
+          * End of life
+          * Time of availability
+          * Time to detect
+          * Time to notify
+          * Time to repair
 
-   * **Value:** The target value or threshold for the service-level commitment.
-   * **Unit:** The unit associated with the service-level value. The following units are supported:
+     * **Value:** The target value or threshold for the service-level commitment.
+     * **Unit:** The unit associated with the service-level value. The following units are supported:
 
-       * **ms:** Milliseconds
-       * **s:** Seconds
-       * **min:** Minutes
-       * **h:** Hours
-       * **d:** Days
-       * **w:** Weeks
-       * **mo:** Months
-       * **y:** Years
+          * **ms:** Milliseconds
+          * **s:** Seconds
+          * **min:** Minutes
+          * **h:** Hours
+          * **d:** Days
+          * **w:** Weeks
+          * **mo:** Months
+          * **y:** Years
 
-   * **Element:** The table or field associated with the service level.
-   * **Driver:** The reason for the service-level commitment. Supported values include:
+     * **Element:** The table or field associated with the service level.
+     * **Driver:** The reason for the service-level commitment. Supported values include:
 
-       * Regulatory
-       * Analytics
-       * Operational
+          * Regulatory
+          * Analytics
+          * Operational
 
    * **Description:** Additional information about the service level.
 
