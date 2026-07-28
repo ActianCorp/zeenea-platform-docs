@@ -8,7 +8,7 @@ A data contract is a structured agreement describing a data product or dataset, 
 
 ## Key Capabilities
 
-Data Contract Builder supports the following capabilities:
+DCB supports the following capabilities:
 
 * Create contracts from SQL DDL.
 * Create contracts from scratch.
@@ -26,21 +26,21 @@ Data Contract Builder supports the following capabilities:
 * Compare contract versions.
 * Export contracts as YAML.
 
-## Accessing Data Contract Builder
+## Accessing DCB
 
-Users with the **Data Steward** or **Data Explorer** role can access Data Contract Builder from the application switcher in Studio and Explorer.
+Users with the **Data Steward** or **Data Explorer** role can access DCB from the application switcher in Studio and Explorer.
 
-To open Data Contract Builder:
+To open DCB:
 
 1. Open Studio or Explorer.
 2. Select the application switcher in the page header.
 3. Select **Data Contract Builder**.
 
-The Data Contract Builder home page opens.
+The DCB home page opens.
 
-## Data Contract Builder Home Page
+## DCB Home Page
 
-The Data Contract Builder home page displays all data contracts available in the current tenant.
+The DCB home page displays all data contracts available in the current tenant.
 
 From this page, you can:
 

@@ -1,8 +1,8 @@
 # Supported ODCS Attributes
 
-Data Contract Builder supports a subset of the Open Data Contract Standard (ODCS) version 3.1.0.
+DCB supports a subset of the Open Data Contract Standard (ODCS) version 3.1.0.
 
-The following sections describe the ODCS attributes supported by Data Contract Builder and indicate which attributes are required.
+The following sections describe the ODCS attributes supported by DCB and indicate which sections are required.
 
 ## Fundamentals
 
@@ -91,7 +91,7 @@ The following sections describe the ODCS attributes supported by Data Contract B
 | `schema[].properties[].customProperties` | No | No | Custom properties for the property. |
 
 
-## Service-level agreement (SLA)
+## Service-level Agreement (SLA)
 
 | Property | Mapped | Required | Description |
 | :---- | :---- | :---- | :---- |
