@@ -111,7 +111,7 @@ You can select the Properties button for a table to define additional metadata.
      2. Enter a rule name.
      3. Provide a description of the quality expectation.
 
-     !!! note
+       !!! note
          Table-level quality rules apply to the dataset as a whole rather than to individual fields. The current release supports text-based quality rules only.
 
 * **Reference links:** Use Reference links to associate the table with related catalog assets or supporting documentation. To add a reference link:
@@ -176,16 +176,16 @@ You can select the Properties button for a field to define additional metadata.
 
 * **Quality rules:** Use the Quality rules section to document data quality expectations for the field. You can define Up to 3 rules in text format only. To add a quality rule:
 
-   1. Select **Add quality rule**.
-   2. Enter a rule name.
-   3. Provide a rule description of the quality expectation.
+     1. Select **Add quality rule**.
+     2. Enter a rule name.
+     3. Provide a rule description of the quality expectation.
 
 * **Reference links:** Use Reference links to associate relevant zeenea catalog assets or supporting documentation with the field.To add a reference link:
 
-   1. Select **Add reference link**.
-   2. Select a catalog asset.
-   3. Review the generated URL and link type.
-   4. Optionally, provide a description.
+     1. Select **Add reference link**.
+     2. Select a catalog asset.
+     3. Review the generated URL and link type.
+     4. Optionally, provide a description.
 
 Click **Save** to save the field properties.
 
