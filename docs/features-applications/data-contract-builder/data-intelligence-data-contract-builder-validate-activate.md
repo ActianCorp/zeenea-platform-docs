@@ -35,8 +35,8 @@ To activate a contract:
 
      * **Update (minor version)**: Use a minor version for backward-compatible changes that do not affect existing consumers. Examples include adding new fields, updating descriptions, or adding non-breaking metadata.
 
-         !!! note
-             Minor versions must not remove or rename existing tables or fields, and must not introduce incompatible data type changes.
+    !!! note
+        Minor versions must not remove or rename existing tables or fields, and must not introduce incompatible data type changes.
    
      * **Breaking (major version)**: Use a major version when changes may affect existing consumers. Examples include removing or renaming tables or fields, or making incompatible schema changes that require consumers to update their integrations.
 

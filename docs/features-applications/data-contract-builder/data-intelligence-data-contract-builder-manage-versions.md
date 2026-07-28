@@ -52,7 +52,7 @@ To create a new version:
 2. Select **New version** in the page header.
    A new **Draft working copy** is created based on the current Active version.
 3. Make the required changes in the **Draft working copy**.
-4. When the updates are complete, activate the **Draft** version. For more information, see [Activate a Contract](data-intelligence-data-contract-builder-validate-activate.md).
+4. When the updates are complete, activate the **Draft** version. For more information, see [Activate a Contract](data-intelligence-data-contract-builder-validate-activate.md#activate-a-contract).
 
 When the new version is activated, the previously Active version is automatically changed to Deprecated.
 

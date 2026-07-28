@@ -111,8 +111,8 @@ You can select the Properties button for a table to define additional metadata.
      2. Enter a rule name.
      3. Provide a description of the quality expectation.
 
-       !!! note
-         Table-level quality rules apply to the dataset as a whole rather than to individual fields. The current release supports text-based quality rules only.
+!!! note
+    Table-level quality rules apply to the dataset as a whole rather than to individual fields. The current release supports text-based quality rules only.
 
 * **Reference links:** Use Reference links to associate the table with related catalog assets or supporting documentation. To add a reference link:
 
