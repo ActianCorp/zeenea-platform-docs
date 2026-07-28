@@ -22,9 +22,9 @@ Use this method when a SQL schema already exists.
    The Import from SQL window opens.
 3. Paste or upload the SQL DDL.
 4. Review validation messages and resolve blocking errors if any.
-6. Click **Import schema** to create the Draft.
-7. Resolve any parsing issue or unsupported syntax.
-8. Complete the remaining contract information. For more information about the available sections and fields, see [Configure Contract Information](#configure-contract-information).
+5. Click **Import schema** to create the draft contract.
+6. Resolve any parsing issue or unsupported syntax.
+7. Complete the remaining contract information. For more information about the available sections and fields, see [Configure Contract Information](#configure-contract-information).
 
 !!! note
     DDL import generates the data model but does not populate business metadata such as ownership, descriptions, roles, service-level objectives, or quality rules.
@@ -44,7 +44,7 @@ You can import an existing ODCS YAML contract to create a new contract in DCB.
    
 DCB preserves the lifecycle status and version declared in the YAML when they are valid and supported.
 
-A contract imported as Draft remains editable by its Owner. A contract imported as Active, Deprecated or Retired is read-only and follows the lifecycle rules associated with that status.
+A contract imported as **Draft** remains editable by its **Contract Owner**. A contract imported as **Active**, **Deprecated** or **Retired** is read-only and follows the lifecycle rules associated with that status.
 
 If an imported identifier is not a valid UUID, DCB imports the contract with a blocking error and proposes a valid UUID. The Contract Owner must accept the proposed UUID or provide another valid UUID.
 
@@ -68,6 +68,7 @@ Provide the following information:
 **Additional context**
 
 Use the Additional context section to provide supporting information about how the data should be used and governed.
+
 For each contract, you can specify:
 
 * **Usage:** Describe the intended usage patterns or supported use cases.
@@ -101,7 +102,7 @@ To add a table:
 
 **Table properties**
 
-You can select the Properties button for a table to define additional metadata.
+You can select the **Properties** button for a table to define additional metadata.
 
 * **Business name:** Provide a business-friendly name for the table.
 * **Tags:** Specify tags that can be used to classify and organize the table.
@@ -123,7 +124,7 @@ You can select the Properties button for a table to define additional metadata.
 
 **Delete Table**
 
-To delete a table, click **Delete** button next to the table.
+To delete a table, click the **Delete** button next to the table.
 
 #### Fields
 
@@ -164,7 +165,7 @@ When a field is created, it includes the following attributes:
 
 **Field properties**
 
-You can select the Properties button for a field to define additional metadata.
+You can select the **Properties** button for a field to define additional metadata.
 
 * **Description:** Provide a business description that explains the meaning and purpose of the field.
 * **Examples:** Provide one example value per line.
@@ -174,13 +175,13 @@ You can select the Properties button for a field to define additional metadata.
      * **Referenced table:** The table referenced by the foreign key.
      * **Referenced field:** The field referenced by the foreign key.
 
-* **Quality rules:** Use the Quality rules section to document data quality expectations for the field. You can define Up to 3 rules in text format only. To add a quality rule:
+* **Quality rules:** Use the **Quality rules** section to document data quality expectations for the field. You can define up to three rules in text format only. To add a quality rule:
 
      1. Select **Add quality rule**.
      2. Enter a rule name.
      3. Provide a rule description of the quality expectation.
 
-* **Reference links:** Use Reference links to associate relevant zeenea catalog assets or supporting documentation with the field.To add a reference link:
+* **Reference links:** Use **Reference links** to associate relevant Data Intelligence Platform catalog assets or supporting documentation with the field. To add a reference link:
 
      1. Select **Add reference link**.
      2. Select a catalog asset.
@@ -191,7 +192,7 @@ Click **Save** to save the field properties.
 
 **Delete Field**
 
-To delete a field, click **Delete** button next to the field.
+To delete a field, click the **Delete** button next to the field.
 
 ### Data Access
 
@@ -218,7 +219,7 @@ Use the **Access Request Policy Code** field to associate the contract with an a
 
 To configure an access request policy, enter the policy code associated with the access request policy.
 
-The policy code is exported in the generated YAML under the contract's `customProperties`.
+The policy code is exported in the generated YAML under the contract's `customProperties` section.
 
 For more information about access request policies, see [Access Request Policies](../cross-application-features/zeenea-access-requests.md).
 
@@ -226,12 +227,12 @@ For more information about access request policies, see [Access Request Policies
 
 Use the Service levels section to define service-level commitments and operational expectations for the contract.
 
-Service levels are exported as ODCS slaProperties. Complete service level entries are included in the generated YAML.
+Service levels are exported as ODCS `slaProperties`. Complete service level entries are included in the generated YAML.
 
 To add a service level:
 
 1. Select **Add service level**.
-2. Provide the following information.
+2. Provide the following information:
    
      * **Type:** Select one of the supported service level types.
         

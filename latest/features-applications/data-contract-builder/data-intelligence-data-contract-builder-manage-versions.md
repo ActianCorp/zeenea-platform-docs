@@ -5,7 +5,7 @@
 Every contract version progresses through a defined lifecycle that ensures changes are controlled, versioned, and traceable.
 A contract version moves through the following lifecycle states:
 
-Draft → Active → Deprecated → Retired
+**Draft → Active → Deprecated → Retired**
 
 ### Draft
 
@@ -15,7 +15,7 @@ A contract created from scratch or imported from DDL always starts in the Draft 
 
 Draft versions can be modified by Contract Owners. Changes made to a Draft do not affect the current Active version. The user who creates a Draft automatically becomes its initial Owner.
 
-When the draft is complete and valid, owner can activate it. If a Draft was created by mistake and has not been activated, an Owner can delete it.
+When the draft is complete and valid, the Contract Owner can activate it. If a draft was created by mistake and has not been activated, a Contract Owner can delete it.
 
 ### Active
 
@@ -37,7 +37,7 @@ An active contract must be deprecated before it can be retired.
 
 Retired is the final end-of-life status for a contract version. Retired contracts are no longer intended for operational use and are retained for traceability and historical reference only. Retired contracts cannot be edited.
 
-Retirement requires an explicit action by an Owner. After a contract is retired, it cannot be returned to Active or Deprecated status. Retired versions remain visible in version history and can still be used for comparison and audit purposes
+Retirement requires an explicit action by an Owner. After a contract is retired, it cannot be returned to Active or Deprecated status. Retired versions remain visible in version history and can still be used for comparison and audit purposes.
 
 !!! warning
     Retirement is a permanent lifecycle action. Before retiring a contract, ensure that downstream consumers have migrated to a newer version or no longer depend on the retired contract.
@@ -70,9 +70,9 @@ Use the Versions section to review contract history and lifecycle changes.
 
 To view version history, open the contract and select **Versions** in the contract form.
 
-You can see the Draft, Active, Deprecated and Retired versions.
+You can view all **Draft**, **Active**, **Deprecated**, and **Retired** versions.
 
-Use Version history to:
+Use version history to:
 
 * Identify the current Active version.
 * Review previous Active, Deprecated, and Retired versions.

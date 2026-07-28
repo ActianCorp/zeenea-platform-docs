@@ -51,7 +51,7 @@ For each suggestion, a Contract Owner can:
 * **Accept** the suggestion and apply the proposed change to the Draft.
 * **Decline** the suggestion if the proposed change should not be applied.
 
-Accepted and declined suggestions are removed from the active review queue but remain available in the collaboration history.
+Accepted and declined suggestions are removed from the review queue but remain available in the collaboration history.
 
 !!! warning "Important"
-    Suggestions and comments support the review process but do not modify the contract directly.
+    Suggestions and comments support the review process but do not modify the contract content until a Contract Owner accepts the suggestion.
