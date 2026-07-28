@@ -31,7 +31,7 @@ Use this method when a SQL schema already exists.
 
 ### Import an Existing ODCS YAML Contract
 
-You can import an existing ODCS YAML contract to create a new contract in Data Contract Builder.
+You can import an existing ODCS YAML contract to create a new contract in DCB.
 
 1. Select **Create Contract**.
    The contract creation window opens.
@@ -46,7 +46,7 @@ DCB preserves the lifecycle status and version declared in the YAML when they ar
 
 A contract imported as Draft remains editable by its Owner. A contract imported as Active, Deprecated or Retired is read-only and follows the lifecycle rules associated with that status.
 
-If an imported identifier is not a valid UUID, Data Contract Builder imports the contract with a blocking error and proposes a valid UUID. The Contract Owner must accept the proposed UUID or provide another valid UUID.
+If an imported identifier is not a valid UUID, DCB imports the contract with a blocking error and proposes a valid UUID. The Contract Owner must accept the proposed UUID or provide another valid UUID.
 
 ## Configure Contract Information
 
@@ -75,7 +75,7 @@ For each contract, you can specify:
 
 **Reference links**
 
-Use Reference links to provide links to documents associated with the contract.
+Use **Reference links** to provide links to documents associated with the contract.
 
 To add a reference link:
 
@@ -88,9 +88,9 @@ To add a reference link:
 
 ### Schema
 
-Use the Schema section to define the tables and fields included in the contract.
+Use the **Schema** section to define the tables and fields included in the contract.
 
-**Tables**
+#### Tables
 
 To add a table:
 
@@ -111,8 +111,8 @@ You can select the Properties button for a table to define additional metadata.
      2. Enter a rule name.
      3. Provide a description of the quality expectation.
 
-!!! note
-    Table-level quality rules apply to the dataset as a whole rather than to individual fields. The current release supports text-based quality rules only.
+    !!! note
+        Table-level quality rules apply to the dataset as a whole rather than to individual fields. The current release supports text-based quality rules only.
 
 * **Reference links:** Use Reference links to associate the table with related catalog assets or supporting documentation. To add a reference link:
 
@@ -125,7 +125,7 @@ You can select the Properties button for a table to define additional metadata.
 
 To delete a table, click **Delete** button next to the table.
 
-**Fields**
+#### Fields
 
 Fields represent the columns within a table.
 
@@ -219,6 +219,8 @@ Use the **Access Request Policy Code** field to associate the contract with an a
 To configure an access request policy, enter the policy code associated with the access request policy.
 
 The policy code is exported in the generated YAML under the contract's `customProperties`.
+
+For more information about access request policies, see [Access Request Policies](../cross-application-features/zeenea-access-requests.md).
 
 ### Service Levels
 

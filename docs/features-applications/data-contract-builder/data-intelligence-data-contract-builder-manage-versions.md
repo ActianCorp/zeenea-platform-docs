@@ -11,7 +11,7 @@ Draft → Active → Deprecated → Retired
 
 A draft is a working version used for creating, editing, and reviewing a contract. 
 
-A contract created from scratch or imported from DDL always starts in the Draft state. When an ODCS YAML contract is imported, Data Contract Builder preserves the contract version and lifecycle status defined in the YAML, when they are valid and supported. 
+A contract created from scratch or imported from DDL always starts in the Draft state. When an ODCS YAML contract is imported, DCB preserves the contract version and lifecycle status defined in the YAML, when they are valid and supported. 
 
 Draft versions can be modified by Contract Owners. Changes made to a Draft do not affect the current Active version. The user who creates a Draft automatically becomes its initial Owner.
 
@@ -21,7 +21,7 @@ When the draft is complete and valid, owner can activate it. If a Draft was crea
 
 An active contract is the approved and published version that consumers use. Active contracts cannot be edited. To update it, an Owner must create a new draft based on the latest Active version.
 
-When a new version is activated, Data Contract Builder automatically changes the previously Active version to Deprecated. An owner can also manually deprecate the current active version without activating a replacement.
+When a new version is activated, DCB automatically changes the previously Active version to Deprecated. An owner can also manually deprecate the current active version without activating a replacement.
 
 ### Deprecated
 
@@ -89,7 +89,7 @@ Select the **More actions** menu for a version to access available actions.
 - **View YAML**: Review the YAML representation of the selected version.
 - **Compare**: Compare the selected version with another version.
 
-## Deprecate a contract version
+## Deprecate a Contract Version
 
 Deprecation indicates that a contract version should no longer be used for new integrations but remains available for existing consumers. 
 
@@ -106,7 +106,7 @@ The version status changes to **Deprecated**.
 !!! note
     Existing consumers can continue to use a deprecated version. Deprecation only signals that the version should not be adopted for new integrations.
 
-## Retire a contract version
+## Retire a Contract Version
 
 Retirement marks the final end-of-life state for a contract version.
 

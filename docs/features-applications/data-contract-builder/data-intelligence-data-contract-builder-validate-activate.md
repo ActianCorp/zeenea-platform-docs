@@ -2,7 +2,7 @@
 
 ## Validate a Contract
 
-Data Contract Builder automatically validates the contract as you make changes. Validation ensures that the contract contains the required information and can be activated successfully.
+DCB automatically validates the contract as you make changes. Validation ensures that the contract contains the required information and can be activated successfully.
 
 Validation errors are categorized as follows:
 

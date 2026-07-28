@@ -1,11 +1,11 @@
 # Access and Permissions
 
-Data Contract Builder distinguishes between:
+DCB distinguishes between:
 
 * **Application roles**, which control what users can do within the application.
 * **Contract roles**, which describe responsibilities defined inside a contract.
 
-A user can have the **Contract Owner** application role in Data Contract Builder while also being assigned contract roles such as **data owner**, **producer**, or **contact** within the contract itself.
+A user can have the **Contract Owner** application role in DCB while also being assigned contract roles such as **data owner**, **producer**, or **contact** within the contract itself.
 
 ## Application Roles
 
