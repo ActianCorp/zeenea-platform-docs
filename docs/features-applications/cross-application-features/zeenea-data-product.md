@@ -51,7 +51,7 @@ A dedicated and optimized search experience, powered by the knowledge graph, ena
 
 By supporting data contracts, the platform encourages organizations in their efforts to shift left metadata management. Organizations can design data contracts early and integrate them into their CI/CD pipelines to ensure that business expectations from the data contract are met when deploying new data. Synchronizing data contracts ensures that metadata remains up to date.
 
-User-defined data products created in Studio automatically generate ODPS and ODCS compliant YAML descriptors that can be integrated with the Data Contract Builder (coming soon) or CI/CD pipelines.
+User-defined data products created in Studio automatically generate ODPS and ODCS compliant YAML descriptors that can be integrated with the Data Contract Builder or CI/CD pipelines.
 
 * **Scale Data Management and Governance**
 
@@ -65,7 +65,7 @@ Studio enables you to create and manage data products and output ports directly 
 
 Using Studio, you can define output ports, associate datasets with them, and enable access request workflows for data consumers.
 
-Data products created in Studio automatically generate YAML descriptors that comply with the Open Data Product Standard (ODPS) and the Open Data Contract Standard (ODCS). These descriptors can later be integrated into the Data Contract Builder (coming soon) or your CI/CD pipelines.
+Data products created in Studio automatically generate YAML descriptors that comply with the Open Data Product Standard (ODPS) and the Open Data Contract Standard (ODCS). These descriptors can later be integrated into the Data Contract Builder or your CI/CD pipelines.
 
 This capability bridges the gap between initial dataset management and full data contract governance, accelerating the adoption of data products across your organization.
 
