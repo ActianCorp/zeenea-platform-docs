@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.3
+---
+
 # Adding an Generic Lineage Connection (Deprecated)
 
 ## Deprecated

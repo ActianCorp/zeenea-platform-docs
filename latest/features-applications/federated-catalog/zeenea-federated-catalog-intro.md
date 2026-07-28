@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Federated Catalog Overview
 
 This section only applies if your subscription includes the Federated Catalog option. If you want to activate this paid option, please contact the Customer Success team.

@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.3
+---
+
 # Catalog API v1 (Deprecated)
 
 !!! note
@@ -87,13 +92,13 @@ Performance while exploring links.
 
 The Exploration API can retrieve Items from multiple levels using a single request. However, we recommend not exceeding 3 levels, as it will impact the response time. 
 
-## Sample requests
+## Sample requests {data-search-exclude}
 
 !!! note
     All returns shown below were obtained in the Playground testing tool.
 
  
-### Example 1: Retrieve a Dataset name, along with all Fields contained within
+### Example 1: Retrieve a Dataset name, along with all Fields contained within {data-search-exclude}
 
 ```
 query {
@@ -159,7 +164,7 @@ The above request will return the following:
     If the "name" property has not been changed (i.e. if the functional name is the same as the source name in the interface), then queries will return a null value on this attribute.
 
 
-### Example 2: From a Dataset, retrieve all other Datasets implementing the same Business terms
+### Example 2: From a Dataset, retrieve all other Datasets implementing the same Business terms {data-search-exclude}
 
 ```
 query {
@@ -221,7 +226,7 @@ The above request will return the following:
 }
 ```
 
-### Example 3: Retrieve all the Datasets from the data catalog that are linked to the "Snowflake" connection whose connection code is "SnowflakeCode"
+### Example 3: Retrieve all the Datasets from the data catalog that are linked to the "Snowflake" connection whose connection code is "SnowflakeCode" {data-search-exclude}
 
 The connection code can be retrieved in the scanner configuration or in the "Connections" section of Zeenea Admin.
 
@@ -295,7 +300,7 @@ The above request will return the following:
 }
 ```
 
-### Example 4: Create a Custom Item with a key named "MyCustomKey"
+### Example 4: Create a Custom Item with a key named "MyCustomKey" {data-search-exclude}
 
 First, retrieve all the IDs of the Item Types:
 
@@ -346,7 +351,7 @@ The above request will return the following:
 }
 ```
 
-### Example 5: Update the key of a Data catalog Visualization Item whose key is "Table/Samples/Regional" with the key "Finance/Report/Regional"
+### Example 5: Update the key of a Data catalog Visualization Item whose key is "Table/Samples/Regional" with the key "Finance/Report/Regional" {data-search-exclude}
 
 ```
 mutation {
@@ -383,9 +388,9 @@ The above request will return the following:
 }
 ```
 
-### Example 6: Create an "Implements" type link between a Glossary Item of type "Business Data" and a Dataset
+### Example 6: Create an "Implements" type link between a Glossary Item of type "Business Data" and a Dataset {data-search-exclude}
 
-#### Step 1: Get the Id of the link type with the "listItemTypes" method:
+#### Step 1: Get the Id of the link type with the "listItemTypes" method: {data-search-exclude}
 
 ```
 query {
@@ -448,7 +453,7 @@ The above request will return the following:
 }
 ```
 
-#### Step 2: Create the link between the two Items with "linkItemsByKey:
+#### Step 2: Create the link between the two Items with "linkItemsByKey: {data-search-exclude}
 
 ```
 mutation {
@@ -498,9 +503,9 @@ The above request will return the following:
 }
 ```
 
-### Example 7 : Update a property called "trust score" on a Dataset 
+### Example 7 : Update a property called "trust score" on a Dataset {data-search-exclude}
 
-#### Step 1: Retrieving the id of the property "trust score"
+#### Step 1: Retrieving the id of the property "trust score" {data-search-exclude}
 
 ```
 query {
@@ -528,7 +533,7 @@ The above request returns the following:
 }
 ```
 
-####  Step 2: Updating the property "trust score" (whose id is "a608420b-52af-4bc8-9f4e-458a94310b2c") on the Dataset whose key is "MySQL/laboratory/Final_product_quality"
+####  Step 2: Updating the property "trust score" (whose id is "a608420b-52af-4bc8-9f4e-458a94310b2c") on the Dataset whose key is "MySQL/laboratory/Final_product_quality" {data-search-exclude}
 
 ```
 mutation{

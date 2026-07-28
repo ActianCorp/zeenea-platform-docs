@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.5
+---
+
 # Zeenea Scanner Setup
 
 ## Architecture Overview

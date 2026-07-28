@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 Actian Model Context Protocol (MCP) Server
 ==========================================
 

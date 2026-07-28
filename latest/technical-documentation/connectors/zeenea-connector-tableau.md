@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.3
+---
+
 # Adding a Tableau Connection (Deprecated)
 
 ## Deprecated

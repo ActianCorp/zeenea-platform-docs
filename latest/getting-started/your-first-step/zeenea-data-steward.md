@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # As a Data Steward
 
 As a Data Steward of the Zeenea suite, you have specific rights and permissions. 

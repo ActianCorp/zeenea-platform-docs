@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.3
+---
+
 # Adding a Power BI Online Connection (Deprecated)
 
 ## Deprecated
