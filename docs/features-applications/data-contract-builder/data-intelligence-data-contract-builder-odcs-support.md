@@ -8,11 +8,11 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 
 | Property | Mapped | Required | Description |
 | :---- | :---- | :---- | :---- |
-| `apiVersion` | Yes | Yes | Version of the ODCS standard used to build the data contract. The default value is v3.1.0. |
-| `kind` | Yes | Yes | 	The kind of file this is. Valid value is DataContract. |
+| `apiVersion` | Yes | Yes | Version of the ODCS standard used to build the data contract. The default value is `v3.1.0.` |
+| `kind` | Yes | Yes | 	The kind of file this is. Valid value is `DataContract`. |
 | `id` | Yes | Yes | Unique identifier used to reduce the risk of contract name collisions. Generated from the contract name. |
 | `version` | Yes | Yes | Current version of the data contract. |
-| `status` | Yes | Yes | Current lifecycle status of the data contract. Valid values are proposed, draft, active, deprecated, and retired. |
+| `status` | Yes | Yes | Current lifecycle status of the data contract. Valid values are `proposed`, `draft`, `active`, `deprecated`, and `retired`. |
 | `name` | Yes | No | Name of the data contract. |
 | `dataProduct` | No | No | Name of the data product. |
 | `domain` | Yes | No | Name of the logical data domain. |
@@ -35,7 +35,7 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 | `schema[].name` | Yes | Yes | Name of the schema object. |
 | `schema[].id` | Yes | No | Stable unique identifier for the schema object, enabling safe references. |
 | `schema[].physicalName` | Yes | No | Physical name of the object in the data source. |
-| `schema[].physicalType` | Yes | No | Physical type of the object. Valid values are table, view, topic, and file. |
+| `schema[].physicalType` | Yes | No | Physical type of the object. Valid values are `table`, `view`, `topic`, and `file`. |
 | `schema[].description` | Yes | No | Human-readable description of the schema object. |
 | `schema[].quality` | Yes | No | Data quality rules associated with the object (for example, rowCount, compound duplicateValues). |
 | `schema[].businessName` | Yes | No | Business-facing name of the schema object. |
@@ -46,14 +46,14 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 | `schema[].customProperties` | No | No | Custom properties for the schema object. |
 | `schema[].properties` | Yes | No | Array of properties (columns and fields) within the schema object. |
 | `schema[].properties[].name` | Yes | Yes | Name of the property. |
-| `schema[].properties[].logicalType` | Yes | No | Logical data type of the property. Valid values are string, date, timestamp, time, number, integer, object, array, and boolean. |
+| `schema[].properties[].logicalType` | Yes | No | Logical data type of the property. Valid values are `string`, `date`, `timestamp`, `time`, `number`, `integer`, `object`, `array`, and `boolean`. |
 | `schema[].properties[].id` | Yes | No | Stable unique identifier for the property, enabling safe references. |
 | `schema[].properties[].description` | Yes | No | Human-readable description of the property. |
 | `schema[].properties[].physicalType` | Yes | No | Physical data type in the source system. |
 | `schema[].properties[].required` | Yes | No | Indicates whether the property can contain null values. The default value is false. |
 | `schema[].properties[].primaryKey` | Yes | No | Indicates whether the property is a primary key. The default value is false. |
 | `schema[].properties[].primaryKeyPosition` | Yes | No | Position within a composite primary key (starts at 1, -1 = not a PK). |
-| `schema[].properties[].classification` | Yes | No | Data sensitivity classification. Valid values are public, restricted, confidential.|
+| `schema[].properties[].classification` | Yes | No | Data sensitivity classification. Valid values are `public`, `restricted`, `confidential`.|
 | `schema[].properties[].quality` | Yes | No | Data quality rules defined for the property. |
 | `schema[].properties[].physicalName` | Yes | No | Physical name of the property in the data source. |
 | `schema[].properties[].businessName` | Yes | No | Business-facing name of the property. |
@@ -96,13 +96,13 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 | Property | Mapped | Required | Description |
 | :---- | :---- | :---- | :---- |
 | `slaProperties` | Yes | No | Array of service-level agreement property entries. |
-| `slaProperties[].property` | Yes | Yes | SLA property name from the Data QoS periodic table.  |
-| `slaProperties[].value` | Yes | Yes | Service-level target value. Valid values are latency, retention, frequency, availability, throughput, errorRate, generalAvailability, endOfSupport, endOfLife, timeOfAvailability, timeToDetect, timeToNotify, and timeToRepair. |
-| `slaProperties[].unit` | Yes | No | Unit for the SLA value (ISO standard). Valid values are d / day / days, y / yr / years, h / hr / hours |
+| `slaProperties[].property` | Yes | Yes | SLA property name from the Data QoS periodic table. Valid values are `latency`, `retention`, `frequency`, `availability`, `throughput`, `errorRate`, `generalAvailability`, `endOfSupport`, `endOfLife`, `timeOfAvailability`, `timeToDetect`, `timeToNotify`, and `timeToRepair`. |
+| `slaProperties[].value` | Yes | Yes | Service-level target value. |
+| `slaProperties[].unit` | Yes | No | Unit for the SLA value (ISO standard). Valid values are `d / day / days`, `y / yr / years`, `h / hr / hours` |
 | `slaProperties[].element` | Yes | No | Object or property path to which the SLA applies. |
 | `slaProperties[].id` | No | No | Stable unique identifier for the SLA entry. |
-| `slaProperties[].valueExt` | No | No | Extended SLA value when the property requires two values (e.g. a time window). |
-| `slaProperties[].driver` | Yes | No | Importance driver for the SLA. Valid values are regulatory, analytics, and operational. |
+| `slaProperties[].valueExt` | No | No | Extended SLA value when the property requires two values (for example, a time window). |
+| `slaProperties[].driver` | Yes | No | Importance driver for the SLA. Valid values are `regulatory`, `analytics`, and `operational`. |
 | `slaProperties[].description` | Yes | No | Human-readable description of the SLA entry. |
 | `slaProperties[].scheduler` | No | No | Scheduler name for automated SLA checks. |
 | `slaProperties[].schedule` | No | No | Scheduler configuration for the SLA check. |
@@ -150,7 +150,7 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 | `servers[].endpointUrl` | No | No | Endpoint URL for S3-compatible servers. |
 | `servers[].roles` | No | No | Roles with access to this server. Follows the same roles structure. |
 | `servers[].stagingDir` | No | No | S3 staging directory for Athena query results. |
-| `servers[].customProperties` | No | No | Custom properties for the server.
+| `servers[].customProperties` | No | No | Custom properties for the server. |
 
 ## Pricing
 

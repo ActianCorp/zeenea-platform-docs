@@ -2,15 +2,14 @@
 
 ## Using the YAML View
 
-The YAML view displays the ODCS representation generated from the information entered in the contract form.
-The YAML view is automatically updated as contract information changes.
+The YAML view displays the ODCS representation generated from the information entered in the contract form. It is automatically updated as contract information changes.
 
 Use the YAML view to:
 
 * Review the complete contract structure.
 * Verify the generated ODCS field names and values.
 * Understand how contract information is represented in YAML.
-* Copy or download the contract for use in engineering workflows.
+* Copy or download the YAML for use in engineering workflows.
 
 To view the generated YAML:
 
@@ -49,5 +48,5 @@ To download a contract:
 4. Select **Download YAML**.
 
 !!! warning "Important"
-    Only complete and supported contract properties are included in the generated YAML. Any preserved unsupported YAML fields remain available through the YAML watchlist and are retained during export.
+    Only complete and supported contract properties are included in the generated YAML. Unsupported YAML fields preserved during import remain available in the **YAML watchlist** and are retained when the contract is exported.
 

@@ -1,10 +1,10 @@
 # Manage Contributors
 
-Collaboration allows Contract Owners and Contributors to review a Draft contract before activation.
+Collaboration allows **Contract Owners** and **Contributors** to review draft contracts before activation.
 
 Contributors can propose changes, discuss updates, and participate in the review process without directly modifying the contract. Contract Owners remain responsible for reviewing suggestions and managing the final contract content.
 
-### Add Contributors
+## Add Contributors
 
 To add a Contributor:
 
@@ -16,9 +16,9 @@ To add a Contributor:
    
 Repeat these steps to add additional Contributors.
 
-The selected users are added to the contract and can immediately participate in the review process.
+The selected users are added as **Contributors** and can immediately participate in the review process.
 
-### Remove Contributors
+## Remove Contributors
 
 Contract Owners can remove Contributors when they no longer need to participate in the review process.
 
@@ -29,4 +29,4 @@ To remove a Contributor:
 3. Locate the Contributor in the list.
 4. Select **Remove** next to the Contributor's name.
 
-The Contributor is removed from the contract and can no longer create suggestions or participate in contract reviews.
+The **Contributor** is removed from the contract and can no longer submit suggestions or participate in contract review process.
