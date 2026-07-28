@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Remote Authentication Setup
 
 To set up authentication for integrating with your Actian Data Intelligence Platform instance using the Model Context Protocol (MCP), follow these steps: 

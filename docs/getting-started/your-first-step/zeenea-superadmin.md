@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # As a Super Admin
 
 The role of Super Admin is frequently shared or supported by several collaborators to cover the technical and functional skills required.

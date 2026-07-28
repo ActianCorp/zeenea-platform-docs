@@ -107,7 +107,7 @@ extra_css:
   - stylesheets/minichat.css
   - stylesheets/dx_style.css
   - assets/stylesheets/actian-landing.css?v=4
-  - stylesheets/extra.css
+  - stylesheets/extra.css?v=2
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/marked/marked.min.js

@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Zeenea Explorer Overview
 
 Zeenea Explorer wants to further support users' exploratory approaches, beyond our search capabilities based on metadata indexing, scoring and filtering, already present in our first application Zeenea Studio.

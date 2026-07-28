@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.3
+---
+
 # Adding a Generic Dataset Connection (Deprecated)
 
 ## Deprecated
