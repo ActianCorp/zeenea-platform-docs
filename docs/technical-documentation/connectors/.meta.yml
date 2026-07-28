@@ -1,0 +1,6 @@
+# Connector reference pages are the canonical "Adding a <source> Connection" task
+# pages. Boost them so they win for their data source name. The root docs/.meta.yml
+# (comments: true) cascades in automatically. Deprecated connectors override this
+# with search.boost: 0.3 in their own front matter.
+search:
+  boost: 2.0

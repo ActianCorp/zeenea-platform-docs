@@ -571,7 +571,7 @@ pre code {
   gap: 0.4em;
   float: right;
   position: relative;
-  z-index: 100;
+  z-index: 1; /* stay above page content but below the header/search overlay (header z-index is 4) */
   margin: 0.75rem 0 1rem 1rem;
   padding: 0.3em 0.6em;
   font-family: var(--md-text-font);
@@ -883,4 +883,27 @@ pre code {
   white-space: nowrap;
   max-width: none !important;
   overflow: visible !important;
+}
+
+/* Compact, heading-first search results.
+   Material renders each result's title as an h1/h2 and the body preview as a bare
+   text node inside .md-search-result__article (this version has no teaser class).
+   Clamp the article to two lines so every result shows the heading plus about one
+   line of context, then an ellipsis. Presentation only; the search index and
+   full-text search are unchanged. */
+.md-search-result__article.md-typeset {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  max-height: 3rem; /* hard cap if line-clamp is unsupported */
+}
+
+/* Keep the heading on a single line so the one-liner below it is the body preview. */
+.md-search-result__article.md-typeset > h1,
+.md-search-result__article.md-typeset > h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Introduction to Zeenea Public APIs
 
 Zeenea provides a set of public APIs that allow you to manage your catalog and its contents. The following section gives an overview of the available APIs and the technologies they use.

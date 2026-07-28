@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Zeenea Studio Overview
 
 Zeenea Studio is Zeenea Data Catalog's back office management interface.

@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Troubleshooting Scanners and Connections
 
 This topic describes the procedure to follow in case of a problem with the Zeenea scanner or the configuration of the connection.
