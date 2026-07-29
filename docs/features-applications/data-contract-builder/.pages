@@ -1,0 +1,12 @@
+nav:
+    - data-intelligence-data-contract-builder-overview.md
+    - data-intelligence-data-contract-builder-access-permissions.md
+    - data-intelligence-data-contract-builder-create-manage-contracts.md
+    - data-intelligence-data-contract-builder-manage-contributors.md
+    - data-intelligence-data-contract-builder-suggestions-and-collaboration.md
+    - data-intelligence-data-contract-builder-validate-activate.md
+    - data-intelligence-data-contract-builder-manage-versions.md
+    - data-intelligence-data-contract-builder-copy-download-yaml.md
+    - data-intelligence-data-contract-builder-yaml-watchlist.md
+    - data-intelligence-data-contract-builder-odcs-support.md
+    - data-intelligence-data-contract-builder-troubleshooting.md
