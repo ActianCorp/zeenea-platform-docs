@@ -125,7 +125,10 @@ You can select the **Properties** button for a table to define additional metada
      3. Provide a description of the quality expectation.
 
     !!! note
-        Table-level quality rules apply to the dataset as a whole rather than to individual fields. The current release supports text-based quality rules only.
+        Table-level quality rules apply to the dataset as a whole rather than to individual fields.
+
+    !!! warning "Important"
+        Only text-based quality rules are supported in the current release.
 
 * **Reference links:** Use Reference links to associate the table with related catalog assets or supporting documentation. To add a reference link:
 
@@ -187,7 +190,7 @@ You can select the **Properties** button for a field to define additional metada
      * **Referenced table:** The table referenced by the foreign key.
      * **Referenced field:** The field referenced by the foreign key.
 
-* **Quality rules:** Use the **Quality rules** section to document data quality expectations for the field. You can define up to three rules in text format only. To add a quality rule:
+* **Quality rules:** Use the **Quality rules** section to document data quality expectations for the field. You can define up to three rules in **text format only**. To add a quality rule:
 
      1. Select **Add quality rule**.
      2. Enter a rule name.
@@ -289,7 +292,7 @@ You can add multiple service levels to document different service-level commitme
 
 Server information describes the technical connection details for the data source associated with a contract, such as the database host, schema, and platform type. This information helps consumers and downstream tools locate and connect to the underlying data.
 
-Data Contract Builder does not currently provide a form for defining server information. To add server information to a contract, you must edit the downloaded YAML file directly.
+DCB does not currently provide a form for defining server information. To add server information to a contract, you must edit the downloaded YAML file directly.
 
 To add server information:
 
