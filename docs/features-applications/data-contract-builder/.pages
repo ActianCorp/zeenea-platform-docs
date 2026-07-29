@@ -1,6 +1,5 @@
 nav:
     - README.md
-    - data-intelligence-data-contract-builder-overview.md
     - data-intelligence-data-contract-builder-access-permissions.md
     - data-intelligence-data-contract-builder-create-manage-contracts.md
     - data-intelligence-data-contract-builder-manage-contributors.md
