@@ -125,7 +125,10 @@ You can select the **Properties** button for a table to define additional metada
      3. Provide a description of the quality expectation.
 
     !!! note
-        Table-level quality rules apply to the dataset as a whole rather than to individual fields. The current release supports text-based quality rules only.
+        Table-level quality rules apply to the dataset as a whole rather than to individual fields.
+
+    !!! warning "Important"
+        Only text-based quality rules are supported in the current release.
 
 * **Reference links:** Use Reference links to associate the table with related catalog assets or supporting documentation. To add a reference link:
 
@@ -187,7 +190,7 @@ You can select the **Properties** button for a field to define additional metada
      * **Referenced table:** The table referenced by the foreign key.
      * **Referenced field:** The field referenced by the foreign key.
 
-* **Quality rules:** Use the **Quality rules** section to document data quality expectations for the field. You can define up to three rules in text format only. To add a quality rule:
+* **Quality rules:** Use the **Quality rules** section to document data quality expectations for the field. You can define up to three rules in **text format only**. To add a quality rule:
 
      1. Select **Add quality rule**.
      2. Enter a rule name.
@@ -284,3 +287,36 @@ To add a service level:
    * **Description:** Additional information about the service level.
 
 You can add multiple service levels to document different service-level commitments.
+
+### Server Information
+
+Server information describes the technical connection details for the data source associated with a contract, such as the database host, schema, and platform type. This information helps consumers and downstream tools locate and connect to the underlying data.
+
+DCB does not currently provide a form for defining server information. To add server information to a contract, you must edit the downloaded YAML file directly.
+
+To add server information:
+
+1. Download the contract YAML file. For more information, see [Download a Contract](data-intelligence-data-contract-builder-copy-download-yaml.md#download-a-contract).
+2. Open the YAML file in a text editor.
+3. Add a `servers` section at the top level of the YAML document, following the ODCS v3.1.0 structure. 
+
+    The following example shows a Snowflake server definition:
+
+    ```
+    yaml
+    servers:
+      - server: production
+        type: snowflake
+        account: <account_identifier>
+        database: <database_name>
+        schema: <schema_name>
+        role: <role_name>
+        warehouse: <warehouse_name>
+    ```
+
+4. Save the updated YAML file.
+
+For the complete list of supported server types and required fields for each platform, see the [ODCS v3.1.0 Infrastructure and Servers](https://bitol-io.github.io/open-data-contract-standard/v3.1.0/infrastructure-servers/) specification.
+
+!!! note
+    If you re-import the updated YAML into Data Contract Builder, the `servers` section is preserved as a read-only entry in the YAML watchlist and is retained in subsequent YAML exports. For more information, see [YAML Watchlist](data-intelligence-data-contract-builder-yaml-watchlist.md).

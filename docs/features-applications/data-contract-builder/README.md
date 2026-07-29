@@ -1,4 +1,6 @@
-# Data Contract Builder Overview
+# Data Contract Builder (DCB)
+
+## Overview
 
 **Data Contract Builder (DCB)** enables users to create, review, validate, version, and export data contracts based on the **Open Data Contract Standard, version 3.1.0**. It provides contract forms that allow users to manage contract information without manually editing YAML files.
 
