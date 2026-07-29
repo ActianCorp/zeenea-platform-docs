@@ -9,9 +9,9 @@ A contract version moves through the following lifecycle states:
 
 ### Draft
 
-A draft is a working version used for creating, editing, and reviewing a contract. 
+A draft is a working version used for creating, editing, and reviewing a contract.
 
-A contract created from scratch or imported from DDL always starts in the Draft state. When an ODCS YAML contract is imported, DCB preserves the contract version and lifecycle status defined in the YAML, when they are valid and supported. 
+A contract created from scratch or imported from DDL always starts in the Draft state. When an ODCS YAML contract is imported, DCB preserves the contract version and lifecycle status defined in the YAML when they are valid and supported.
 
 Draft versions can be modified by Contract Owners. Changes made to a Draft do not affect the current Active version. The user who creates a Draft automatically becomes its initial Owner.
 
@@ -21,7 +21,7 @@ When the draft is complete and valid, the Contract Owner can activate it. If a d
 
 An active contract is the approved and published version that consumers use. Active contracts cannot be edited. To update it, an Owner must create a new draft based on the latest Active version.
 
-When a new version is activated, DCB automatically changes the previously Active version to Deprecated. An owner can also manually deprecate the current active version without activating a replacement.
+When a new version is activated, DCB automatically changes the previously Active version to Deprecated. An Owner can also manually deprecate the current Active version without activating a replacement.
 
 ### Deprecated
 
@@ -50,7 +50,9 @@ To create a new version:
 
 1. Open the **Active** contract.
 2. Select **New version** in the page header.
-   A new **Draft working copy** is created based on the current Active version.
+     
+     A new **Draft working copy** is created based on the current Active version.
+     
 3. Make the required changes in the **Draft working copy**.
 4. When the updates are complete, activate the **Draft** version. For more information, see [Activate a Contract](data-intelligence-data-contract-builder-validate-activate.md#activate-a-contract).
 
@@ -91,7 +93,7 @@ Select the **More actions** menu for a version to access available actions.
 
 ## Deprecate a Contract Version
 
-Deprecation indicates that a contract version should no longer be used for new integrations but remains available for existing consumers. 
+Deprecation indicates that a contract version should no longer be used for new integrations but remains available for existing consumers.
 
 To deprecate a version:
 

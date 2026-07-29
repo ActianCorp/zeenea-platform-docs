@@ -8,8 +8,8 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 
 | Property | Mapped | Required | Description |
 | :---- | :---- | :---- | :---- |
-| `apiVersion` | Yes | Yes | Version of the ODCS standard used to build the data contract. The default value is `v3.1.0.` |
-| `kind` | Yes | Yes | 	The kind of file this is. Valid value is `DataContract`. |
+| `apiVersion` | Yes | Yes | Version of the ODCS standard used to build the data contract. The default value is `v3.1.0`. |
+| `kind` | Yes | Yes | The kind of file this is. Valid value is `DataContract`. |
 | `id` | Yes | Yes | Unique identifier used to reduce the risk of contract name collisions. Generated from the contract name. |
 | `version` | Yes | Yes | Current version of the data contract. |
 | `status` | Yes | Yes | Current lifecycle status of the data contract. Valid values are `proposed`, `draft`, `active`, `deprecated`, and `retired`. |
@@ -113,7 +113,7 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 | Property | Mapped | Required | Description |
 | :---- | :---- | :---- | :---- |
 | `roles` | Yes | No | Array of IAM roles that a consumer may need to access the dataset. |
-| `roles[].role` | Yes | Yes |	Name of the IAM role providing access. |
+| `roles[].role` | Yes | Yes | Name of the IAM role providing access. |
 | `roles[].access` | Yes | No | Type of access provided by the IAM role. |
 | `roles[].firstLevelApprovers` | No | No | Name(s) of first-level approver(s) for granting this role. |
 | `roles[].secondLevelApprovers` | No | No | Name(s) of second-level approver(s) for granting this role. |

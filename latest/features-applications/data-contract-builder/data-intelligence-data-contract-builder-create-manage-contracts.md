@@ -4,12 +4,16 @@
 
 ### Create a Contract from Scratch
 
-You can create an empty draft contract and fill everything manually.
+You can create an empty draft contract and fill in all the details manually.
 
 1. Select **Create Contract**.
-   The contract creation window opens.
+   
+     The contract creation window opens.
+
 2. Click **Create empty contract**.
-   The new contract creation window opens.
+     
+     The new contract creation window opens.
+
 3. Complete the contract information. For more information about the available sections and fields, see [Configure Contract Information](#configure-contract-information).
 
 ### Create a Contract from DDL
@@ -17,9 +21,13 @@ You can create an empty draft contract and fill everything manually.
 Use this method when a SQL schema already exists.
 
 1. Select **Create Contract**.
-   The contract creation window opens.
+     
+     The contract creation window opens.
+
 2. Click **Continue with DDL import**.
-   The Import from SQL window opens.
+     
+     The Import from SQL window opens.
+
 3. Paste or upload the SQL DDL.
 4. Review validation messages and resolve blocking errors if any.
 5. Click **Import schema** to create the draft contract.
@@ -34,9 +42,13 @@ Use this method when a SQL schema already exists.
 You can import an existing ODCS YAML contract to create a new contract in DCB.
 
 1. Select **Create Contract**.
-   The contract creation window opens.
+     
+     The contract creation window opens.
+
 2. Click **Continue with YAML import**.
-   The Import from YAML window opens.
+     
+     The Import from YAML window opens.
+     
 3. Upload a YAML file or paste YAML content.
 4. Review validation messages.
 5. Resolve blocking errors if any.
@@ -44,7 +56,7 @@ You can import an existing ODCS YAML contract to create a new contract in DCB.
    
 DCB preserves the lifecycle status and version declared in the YAML when they are valid and supported.
 
-A contract imported as **Draft** remains editable by its **Contract Owner**. A contract imported as **Active**, **Deprecated** or **Retired** is read-only and follows the lifecycle rules associated with that status.
+A contract imported as **Draft** remains editable by its **Contract Owner**. A contract imported as **Active**, **Deprecated**, or **Retired** is read-only and follows the lifecycle rules associated with that status.
 
 If an imported identifier is not a valid UUID, DCB imports the contract with a blocking error and proposes a valid UUID. The Contract Owner must accept the proposed UUID or provide another valid UUID.
 
@@ -59,11 +71,11 @@ The Fundamentals section contains the core metadata used to identify and classif
 Provide the following information:
 
 * **Contract name:** A unique name used to identify the contract.
-* **Domain:** The business domain or area associated with the contract. 
+* **Domain:** The business domain or area associated with the contract.
 * **ID:** A unique identifier assigned to the contract. The ID is automatically generated when the contract is created and cannot be modified.
 * **Version:** The version of the contract. The version is automatically generated when the contract is created and is updated through contract versioning actions.
 * **Business purpose:** A description of the business purpose and scope of the contract.
-* **Tags:** Tags used to classify and organize the contract. 
+* **Tags:** Tags used to classify and organize the contract.
 
 **Additional context**
 
@@ -152,7 +164,7 @@ When a field is created, it includes the following attributes:
      * **List:** Multiple values.
      * **Yes / No:** Boolean values.
 
-* **DB type:** The database-specific type of the field.  Supported types include VARCHAR, BOOLEAN, BIT, and TINYINT(1).
+* **DB type:** The database-specific type of the field. Supported types include VARCHAR, BOOLEAN, BIT, and TINYINT(1).
 * **Rules:** Constraints and classifications applied to the field. Supported rules include:
    
      * **PK:** Identifies the field as a primary key.
@@ -161,7 +173,7 @@ When a field is created, it includes the following attributes:
      * **UQ:** Indicates that values in the field must be unique.
      * **CDE:** Identifies the field as a critical data element.
 
-* **Classification:** Indicates the sensitivity level of the field. Supported values include: Public, Restricted, and Confidential.
+* **Classification:** Indicates the sensitivity level of the field. Supported values include Public, Restricted, and Confidential.
 
 **Field properties**
 

@@ -3,7 +3,7 @@
 DCB distinguishes between the following types of roles:
 
 * **Application roles**, which control what users can do within the application.
-* **Contract roles**, which describe responsibilities defined inside a contract.
+* **Contract roles**, which describe responsibilities defined within a contract.
 
 A user can have the **Contract Owner** application role in DCB while also being assigned contract roles such as **data owner**, **producer**, or **contact** within the contract itself.
 
@@ -13,15 +13,15 @@ A user can have the **Contract Owner** application role in DCB while also being 
 
 Contract Owners manage contract content and lifecycle. They can:
 
-* Create contracts
-* Edit draft contracts
-* Manage datasets, properties, relationships, roles, service levels, and quality rules
-* Manage contributors
-* Process suggestions
-* Review automatically updated validation results and resolve blocking issues
-* Activate contracts
-* Create versions
-* Deprecate and retire contracts
+* Create contracts.
+* Edit draft contracts.
+* Manage datasets, properties, relationships, roles, service levels, and quality rules.
+* Manage contributors.
+* Process suggestions.
+* Review automatically updated validation results and resolve blocking issues.
+* Activate contracts.
+* Create versions.
+* Deprecate and retire contracts.
 
 !!! note
     Only Contract Owners can perform lifecycle actions.
@@ -30,11 +30,11 @@ Contract Owners manage contract content and lifecycle. They can:
 
 Contributors participate in contract reviews. They can:
 
-* Review contract content
-* Review generated YAML
-* Submit suggestions
-* Participate in discussions
-* Monitor suggestion status
+* Review contract content.
+* Review generated YAML.
+* Submit suggestions.
+* Participate in discussions.
+* Monitor suggestion status.
 
 Contributors cannot modify contract content directly. They can only propose changes through suggestions.
 
@@ -42,15 +42,15 @@ Contributors cannot modify contract content directly. They can only propose chan
 
 Viewers have read-only access. They can:
 
-* Read contract metadata and data-model information
-* Read the YAML representation
-* Review active and historical contract versions
+* Read contract metadata and data-model information.
+* Read the YAML representation.
+* Review active and historical contract versions.
 
 All Data Intelligence Platform users have **Viewer** access by default.
 
 ## Assign Access
 
-Contract access is granted through explicit assignment. Contract Owners can add or remove **Contributors** for individual contracts, allowing them to review content, participate in discussions, and submit suggestions.
+Contract access is granted through explicit assignment. Contract Owners can add or remove **Contributors** from individual contracts, allowing them to review content, participate in discussions, and submit suggestions.
 
 ## Permissions by Contract Status
 

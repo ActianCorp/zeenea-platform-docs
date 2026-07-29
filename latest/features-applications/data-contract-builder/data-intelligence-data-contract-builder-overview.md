@@ -1,10 +1,8 @@
-# Data Contract Builder 
-
-## Overview
+# Data Contract Builder Overview
 
 **Data Contract Builder (DCB)** enables users to create, review, validate, version, and export data contracts based on the **Open Data Contract Standard, version 3.1.0**. It provides contract forms that allow users to manage contract information without manually editing YAML files.
 
-A data contract is a structured agreement describing a data product or dataset, including its ownership, schema, service expectations, quality rules, and usage conditions. 
+A data contract is a structured agreement describing a data product or dataset, including its ownership, schema, service expectations, quality rules, and usage conditions.
 
 ## Key Capabilities
 
@@ -17,9 +15,9 @@ DCB supports the following capabilities:
 * Define datasets, properties, and relationships.
 * Add roles, service-level objectives, and quality rules.
 * Invite Contributors to participate in the contract review.
-* Create contextual suggestions linked to a contract section or property. 
+* Create contextual suggestions linked to a contract section or property.
 * Collaborate through suggestions and discussions.
-* Review, accept, reject, or mark suggestions as processed  
+* Review, accept, reject, or mark suggestions as processed.
 * Validate contracts automatically before activation.
 * Manage contract lifecycle states.
 * Create and manage contract versions.
@@ -36,7 +34,7 @@ To open DCB:
 2. Select the application switcher in the page header.
 3. Select **Data Contract Builder**.
 
-The DCB home page opens.
+     The DCB home page opens.
 
 ## DCB Home Page
 
