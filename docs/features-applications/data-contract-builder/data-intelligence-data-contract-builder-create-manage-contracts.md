@@ -316,7 +316,5 @@ To add server information:
 
 4. Save the updated YAML file.
 
-For the complete list of supported server types and required fields for each platform, see the [ODCS v3.1.0 Infrastructure and Servers](https://bitol-io.github.io/open-data-contract-standard/v3.1.0/infrastructure-servers/) specification.
-
 !!! note
     If you re-import the updated YAML into Data Contract Builder, the `servers` section is preserved as a read-only entry in the YAML watchlist and is retained in subsequent YAML exports. For more information, see [YAML Watchlist](data-intelligence-data-contract-builder-yaml-watchlist.md).
