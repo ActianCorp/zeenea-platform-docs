@@ -11,7 +11,7 @@ Use the YAML view to:
 * Understand how contract information is represented in YAML.
 * Copy or download the YAML for use in engineering workflows.
 
-To view the generated YAML:
+To view the generated YAML, complete the following steps:
 
 1. Open the contract.
 2. Select **YAML** in the page header.
@@ -40,7 +40,7 @@ Before downloading a contract:
 * Review validation results and resolve any blocking errors.
 * Verify that the intended contract version is selected.
 
-To download a contract:
+To download a contract, complete the following steps:
 
 1. Open the contract version that you want to download.
 2. Review the contract information.
@@ -48,5 +48,5 @@ To download a contract:
 4. Select **Download YAML**.
 
 !!! warning "Important"
-    Only complete and supported contract properties are included in the generated YAML. Unsupported YAML fields preserved during import remain available in the **YAML watchlist** and are retained when the contract is exported.
+    Only complete and supported contract properties are included in the generated YAML. Unsupported YAML fields that were preserved during import remain available in the **YAML watchlist** and are retained when the contract is exported.
 

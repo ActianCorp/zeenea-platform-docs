@@ -1,5 +1,7 @@
 # Suggestions and Collaboration
 
+Collaboration allows **Contract Owners** and **Contributors** to review draft contracts before activation.
+
 ## Submit a Suggestion
 
 Contributors can propose changes to any field in a **Draft** contract.
@@ -37,7 +39,7 @@ Only users who have access to the contract can participate in discussions.
 
 Contract Owners review incoming suggestions and determine how they should be handled.
 
-Suggestions are displayed directly on the affected contract fields and sections. When one or more suggestions require review, a notification banner is displayed in the contract form.
+Suggestions are displayed directly on the affected contract fields and sections. When one or more suggestions require review, a notification banner appears in the contract form.
 
 To review suggestions:
 

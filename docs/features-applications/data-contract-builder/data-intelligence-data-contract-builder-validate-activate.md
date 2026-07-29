@@ -38,7 +38,7 @@ To activate a contract:
     !!! note
         Minor versions must not remove or rename existing tables or fields, and must not introduce incompatible data type changes.
    
-     * **Breaking (major version)**: Use a major version when changes that affect existing consumers. Examples include removing or renaming tables or fields, or making incompatible schema changes that require consumers to update their integrations.
+     * **Breaking (major version)**: Use a major version when the changes affect existing consumers. Examples include removing or renaming tables or fields, or making incompatible schema changes that require consumers to update their integrations.
 
 5. Select **Activate new version**.
 
