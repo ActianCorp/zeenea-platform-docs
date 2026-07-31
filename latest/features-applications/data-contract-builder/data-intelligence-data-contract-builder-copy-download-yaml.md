@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Copy and Download YAML
 
 ## Using the YAML View
