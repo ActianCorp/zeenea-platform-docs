@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Suggestions and Collaboration
 
 Collaboration allows **Contract Owners** and **Contributors** to review draft contracts before activation.

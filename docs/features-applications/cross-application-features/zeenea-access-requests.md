@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.5
+---
+
 # Access Requests
 
 The **Access Request** feature in Actian Data Intelligence Platform is designed to simplify and streamline the process of requesting access to data assets and products within the  organization.

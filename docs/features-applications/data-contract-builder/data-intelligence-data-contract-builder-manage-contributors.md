@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Manage Contributors
 
 Contributors can propose changes, discuss updates, and participate in the review process without directly modifying the contract. Contract Owners remain responsible for reviewing suggestions and managing the final contract content.

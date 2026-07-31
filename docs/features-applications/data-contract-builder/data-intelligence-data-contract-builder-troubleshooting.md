@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Troubleshooting
 
 ### 1. The contract contains an unsupported logical type

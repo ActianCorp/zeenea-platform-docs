@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Validate and Activate a Contract
 
 ## Validate a Contract
