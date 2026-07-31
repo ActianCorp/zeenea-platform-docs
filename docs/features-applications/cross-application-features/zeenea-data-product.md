@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.5
+---
+
 # Data Products
 
 ## Introduction to Data Products and Data Contracts
