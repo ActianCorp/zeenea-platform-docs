@@ -11,4 +11,4 @@ The latest scanner version is available for download from the platform administr
 
 **Enhancements**
 
-* Added support for data profiling on connectors based on the public SDK, where profiling is implemented.
+Added support for data profiling on connectors based on the public SDK, where profiling is implemented.
