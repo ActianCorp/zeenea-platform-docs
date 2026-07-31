@@ -1,4 +1,5 @@
 nav:
+    - data-intelligence-scanner-release-notes.md
     - zeenea-scanner-setup.md
     - zeenea-scanner-docker.md
     - zeenea-filters.md
