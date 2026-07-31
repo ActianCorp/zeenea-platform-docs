@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Scanner Release Notes 
 
 The latest scanner version is available for download from the platform administration.

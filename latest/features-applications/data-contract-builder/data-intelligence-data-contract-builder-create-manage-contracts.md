@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Create and Manage Contracts
 
 ## Create a Contract
