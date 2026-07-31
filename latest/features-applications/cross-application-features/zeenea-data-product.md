@@ -193,8 +193,9 @@ To manage datasets:
 
 #### Supported Connectors
 
-Dataset linking for Studio-created output ports is currently supported only for the following connector:
+Dataset linking for output ports is currently supported for the following connectors:
 
+* Snowflake
 * Snowflake V2
 
 #### Generated YAML Descriptors
@@ -266,7 +267,7 @@ schema:
         description: Account Id
 ```
 
-When uploading a data product or importing a dataset from a scanner, the platform uses the `name` and `physicalName` and the `servers` section to automatically link output ports with their physical implementations. Only connectors built on the public SDK V2 are supported.
+When uploading a data product or importing a dataset from a scanner, the platform uses the `name` and `physicalName` and the `servers` section to automatically link output ports with their physical implementations. See the [Supported Connectors](#supported-connectors) section.
 
 Following is an example of a `servers` section for Snowflake:
 
