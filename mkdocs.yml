@@ -156,3 +156,7 @@ plugins:
 hooks:
   - hooks/custom_lexers.py
   - hooks/copy_md_sources.py
+  # Rewrites the mike-injected version segment (…/latest/) out of the RSS/JSON
+  # feed URLs so they match the version-less production canonical. No-op unless
+  # RSS_CANONICAL_BASE_URL is set (see deploy.yml).
+  - hooks/normalize_feed_urls.py
