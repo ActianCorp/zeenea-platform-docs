@@ -24,6 +24,9 @@ The suggestion is linked to the selected contract element, making it easier for 
 !!! note
     Suggestions can only be created for contracts that are in the **Draft** status.
     
+!!! note
+    New table suggestions are currently limited to the table name and physical type. Full schema suggestions, including fields and properties, will be supported in a future release.
+
 ## Discuss a Suggestion
 
 Each suggestion creates a dedicated discussion thread.
