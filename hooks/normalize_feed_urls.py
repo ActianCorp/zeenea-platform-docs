@@ -35,9 +35,15 @@ def on_post_build(config):
     if not target:
         return  # no-op unless the deploy pipeline explicitly asks for a rewrite
 
-    # ``site_url`` here is whatever mike handed mkdocs (e.g. ".../latest/").
+    # ``site_url`` here is whatever mike handed mkdocs (e.g. ".../latest",
+    # with or without a trailing slash). Strip trailing slashes on both sides
+    # before matching so the rewrite never leaves a double slash behind.
     current = config.get("site_url")
-    if not current or current.rstrip("/") == target.rstrip("/"):
+    if not current:
+        return
+    current = current.rstrip("/")
+    target = target.rstrip("/")
+    if current == target:
         return
 
     site_dir = config["site_dir"]
