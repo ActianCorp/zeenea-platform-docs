@@ -5,6 +5,10 @@ search:
 
 # Scanner Release Notes 
 
+!!! tip "Subscribe (RSS)"
+    Get notified when a new connector or scanner version ships. Subscribe to the
+    <a href="../../feed_rss_updated.xml">release notes RSS feed</a> in your feed reader.
+
 The latest scanner version is available for download from the platform administration.
 
 ## July 30, 2026 — Version 100
