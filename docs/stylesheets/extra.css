@@ -640,6 +640,17 @@ pre code {
   display: none !important;
 }
 
+/* Subscribe (RSS) button — reuses the raw-link layout with an RSS-orange badge */
+.md-rss-link .md-raw-link__icon {
+  background: #e8710a;
+  color: #fff;
+}
+.md-rss-link .md-raw-link__icon svg {
+  width: 0.95em;
+  height: 0.95em;
+  fill: currentColor;
+}
+
 /* ═══════════════════════════════════════════════
    LINKS
    ═══════════════════════════════════════════════ */

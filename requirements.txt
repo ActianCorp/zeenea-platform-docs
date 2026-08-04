@@ -5,4 +5,5 @@ mkdocs-git-revision-date-localized-plugin>=1.2
 mkdocs-minify-plugin>=0.8
 mkdocs-swagger-ui-tag>=0.6
 mkdocs-meta-descriptions-plugin>=3.0
+mkdocs-rss-plugin>=1.19
 plantuml-markdown>=3.9

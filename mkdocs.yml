@@ -1,6 +1,6 @@
 #Project Information
 site_name: Actian Data Intelligence Platform
-site_url: https://docs.actian.com/data-intelligence-platform/index.html
+site_url: https://docs.actian.com/data-intelligence-platform/
 site_description: >-
   Democratize data access and accelerate data-driven initiatives!.
 use_directory_urls: false
@@ -79,7 +79,12 @@ copyright: >-
   Copyright &copy; 2026, Actian
 
 extra:
-  analytics: 
+  # Version-less production canonical, used by hooks/normalize_feed_urls.py to
+  # strip the mike-injected version segment (…/latest/) out of the RSS/JSON feed
+  # links. Read on every deploy path (staging + prod Jenkins), so the feed URLs
+  # match where the docs are actually served.
+  rss_canonical_base_url: https://docs.actian.com/data-intelligence-platform/
+  analytics:
     provider: custom
     property: G-NHC5CN295F
     feedback:
@@ -126,6 +131,23 @@ plugins:
       separator: '[\s\-\.,:!=\[\]()\"/]+|(?!\d)\.(?!\d)|\.(?!\d)|[0-9]+'
   - awesome-pages
   - tags
+  # RSS feed scoped to release notes pages only, so customers can subscribe and
+  # get notified when a new connector or scanner version ships. Placed after
+  # `tags` so `categories: [tags]` can resolve. Dates come from git history
+  # (pages carry no `date` front matter), which requires a full checkout
+  # (fetch-depth: 0) in CI — already configured in deploy.yml and ci.yml.
+  - rss:
+      match_path: "technical-documentation/scanners/.*release-notes.*"
+      date_from_meta:
+        as_creation: git
+        as_update: git
+      categories:
+        - tags
+      abstract_chars_count: -1
+      feed_ttl: 1440
+      feed_title: "Actian Data Intelligence Platform - Release notes"
+      feed_description: "Get notified when a new connector or scanner version ships."
+      image: https://docs.actian.com/data-intelligence-platform/assets/img/logos/actian-logo.svg
   - swagger-ui-tag
   - git-revision-date-localized:
       type: date
@@ -139,3 +161,7 @@ plugins:
 hooks:
   - hooks/custom_lexers.py
   - hooks/copy_md_sources.py
+  # Rewrites the mike-injected version segment (…/latest/) out of the RSS/JSON
+  # feed URLs so they match the version-less production canonical. No-op unless
+  # RSS_CANONICAL_BASE_URL is set (see deploy.yml).
+  - hooks/normalize_feed_urls.py
