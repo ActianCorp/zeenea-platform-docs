@@ -33,6 +33,18 @@
       </span>
     </a>
   {% endif %}
+
+  {# Subscribe (RSS) button — only on release notes pages (the pages covered by
+     the feed). Sits next to the "View as Markdown" link. base_url keeps the feed
+     path correct across deploy hosts and the mike version segment. #}
+  {% if page and page.file and "release-notes" in page.file.src_uri and not (page.meta and page.meta.hide) %}
+    <a href="{{ base_url }}/feed_rss_updated.xml" class="md-raw-link md-rss-link" target="_blank" rel="noopener" title="Subscribe via RSS to updates on this page">
+      <span class="md-raw-link__icon">{% include ".icons/material/rss.svg" %}</span>
+      <span class="md-raw-link__body">
+        <span class="md-raw-link__title">Subscribe</span>
+      </span>
+    </a>
+  {% endif %}
   {{ super() }}
 
   {# Prev/next nav rendered INSIDE the content column #}
