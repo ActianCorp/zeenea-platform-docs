@@ -41,11 +41,6 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Deploy with mike (latest alias)
-        env:
-          # mike rewrites site_url to append the version (…/latest/); this tells
-          # hooks/normalize_feed_urls.py to rewrite the feed links back to the
-          # version-less production canonical so they don't 404 on prod.
-          RSS_CANONICAL_BASE_URL: https://docs.actian.com/data-intelligence-platform/
         run: |
           mike deploy --push --update-aliases latest
           mike set-default --push latest
