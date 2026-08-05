@@ -1,5 +1,10 @@
 # Adding a Power BI Online (V2) Connection
 
+!!! warning "Microsoft Fabric Connector Recommended"
+    For new integrations, use the **Microsoft Fabric** connector instead of **Power BI Online (V2)**. The Microsoft Fabric connector covers the full Power BI Online (V2) scope and includes additional improvements. For more information, see [Adding a Microsoft Fabric Connection](./zeenea-connector-ms-fabric.md).
+
+    Migrating from **Power BI Online (V2)** to **Microsoft Fabric** currently involves breaking changes. For more information, contact your Customer Success Manager.
+
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with PowerBI Online.
