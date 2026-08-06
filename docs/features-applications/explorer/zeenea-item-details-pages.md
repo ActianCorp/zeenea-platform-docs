@@ -74,7 +74,7 @@ This section allows visualizing the list of quality checks that are performed on
 
 To be able to browse data quality information, an integration with your data quality tool is required.
 
-For more details, see the [Synchronization with a Data Quality Management Tool](../cross-application-features/zeenea-synchronization.md).
+For more details, see the [Synchronization with a Data Quality Management Tool](../cross-application-features/data-quality-synchronization/README.md).
 
 ### Discussions
 
