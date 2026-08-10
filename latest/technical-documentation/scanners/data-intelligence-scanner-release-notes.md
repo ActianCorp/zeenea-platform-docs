@@ -7,6 +7,21 @@ search:
 
 The latest scanner version is available for download from the platform administration.
 
+## August 07, 2026 — Version 101
+
+**Enhancements**
+
+* Item references with an implicit default catalog or schema are now resolved, improving lineage for sources such as SSIS.
+
+* The scanner now stops at startup when the provided API key does not have the **SCANNER** permission. Verify API key permissions before upgrading.
+
+* Improved error messages for invalid scanner and connection configuration files. They now identify the file and line containing the error and provide hints for common mistakes.
+
+**Fixed Issues**
+
+Fixed an issue where data sampling could stop after some time, preventing samples from being refreshed until the scanner was restarted.
+
+
 ## July 30, 2026 — Version 100
 
 **Enhancements**
