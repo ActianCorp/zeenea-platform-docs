@@ -151,6 +151,14 @@ plugins:
   - swagger-ui-tag
   - git-revision-date-localized:
       type: date
+  # Click any content image to open it full-screen in a zoomable lightbox.
+  # Bundles its own CSS/JS, so no extra_css/extra_javascript entries needed.
+  # Placed before `minify` so the wrapped image markup gets minified too.
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      zoomable: true
+      draggable: true
   - minify:
       minify_html: true
   - meta:
