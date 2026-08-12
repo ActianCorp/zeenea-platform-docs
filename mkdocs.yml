@@ -129,29 +129,7 @@ plugins:
   - search:
       lang: en
       separator: '[\s\-\.,:!=\[\]()\"/]+|(?!\d)\.(?!\d)|\.(?!\d)|[0-9]+'
-  # strict: false so a `.pages` explicit nav entry that the i18n French build
-  # pass supersedes (base `.md` replaced by its `.fr.md`) degrades to a warning
-  # instead of failing the build. The curated English nav order is preserved.
-  - awesome-pages:
-      strict: false
-  # Multi-language support. `suffix` structure: a page's French translation
-  # lives next to it as `<name>.fr.md`; pages with no `.fr.md` fall back to
-  # English. Placed AFTER awesome-pages: awesome-pages' `.pages` files use
-  # explicit `nav:` filename lists, and i18n's per-locale build re-runs on_nav,
-  # so i18n must run after awesome-pages has resolved the nav (see NavPluginOrder).
-  - i18n:
-      docs_structure: suffix
-      fallback_to_default: true
-      reconfigure_material: true
-      reconfigure_search: true
-      languages:
-        - locale: en
-          default: true
-          name: English
-          build: true
-        - locale: fr
-          name: Français
-          build: true
+  - awesome-pages
   - tags
   # RSS feed scoped to release notes pages only, so customers can subscribe and
   # get notified when a new connector or scanner version ships. Placed after

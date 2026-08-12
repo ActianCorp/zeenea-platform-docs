@@ -7,5 +7,4 @@ mkdocs-swagger-ui-tag>=0.6
 mkdocs-meta-descriptions-plugin>=3.0
 mkdocs-rss-plugin==1.17.4
 mkdocs-glightbox>=0.4
-mkdocs-static-i18n>=1.2
 plantuml-markdown>=3.9
