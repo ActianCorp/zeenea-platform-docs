@@ -11,12 +11,6 @@ With filters, you can create a set of rules to include or exclude specific items
 
 This feature is available for **Scanner version 79 and above**.
 
-It is available for the following plugins: 
-
-* PowerBI V2
-* Tableau V2
-* DBT Cloud
-
 ## Core Concepts
 
 Understanding two core concepts is key to mastering filters:
