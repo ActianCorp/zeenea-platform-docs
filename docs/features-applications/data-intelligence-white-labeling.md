@@ -6,8 +6,8 @@ White-labeling allows you to customize the appearance of Actian Data Intelligenc
 
 White-labeling is supported for the following applications:
 
-* Explorer
 * Studio
+* Explorer
 * Administration
 
 Depending on your requirements, you can apply your branding across all supported applications or to individual applications.
@@ -37,7 +37,7 @@ The following illustration shows branding elements that can be customized on the
 
 ## Required Branding Inputs
 
-Depending on your white-labeling requirements, you must provide the following assets:
+Depending on your requirements, you must provide the following branding assets:
 
 **Required Assets**
 
@@ -50,7 +50,7 @@ Depending on your white-labeling requirements, you must provide the following as
 * Explorer homepage heading (H1) font
 
 !!! note
-    Our Design team will customize the background image on the Explorer homepage based on the colors you've provided.
+    Our Design team will customize the background image on the Explorer homepage based on the colors you have provided.
 
 **Required Text Inputs**
 
@@ -71,7 +71,7 @@ All assets must meet the specifications outlined below to be approved.
 
 You can use a single logo across all applications or provide application-specific logo variants. Application-specific logos should maintain a consistent visual identity while adapting colors or backgrounds when necessary.
 
-**Logo Specifications**
+#### Logo Specifications
 
 | Requirement | Specification |
 | :---- | :---- |
@@ -82,7 +82,7 @@ You can use a single logo across all applications or provide application-specifi
 | Maximum file size | 1 MB |
 | Color mode | RGB |
 
-**Quality Requirements**
+#### Quality Requirements
 
 * Logos must remain legible at small sizes, such as in headers and loading screens.
 * If a logo cannot maintain sufficient clarity at small sizes, provide a simplified variant.
@@ -94,9 +94,9 @@ You can use a single logo across all applications or provide application-specifi
 
 Favicons are displayed in browser tabs and bookmarks.
 
-Depending on your white-labeling requirements, you can provide either a single favicon for all applications or application-specific favicons.
+Depending on your requirements, you can provide either a single favicon for all applications or application-specific favicons.
 
-**Favicon Specifications**
+#### Favicon Specifications
 
 | Requirement | Specification |
 | :---- | :---- |
@@ -108,7 +108,7 @@ Depending on your white-labeling requirements, you can provide either a single f
 
 You can provide one primary brand color for your organization. The platform derives the required color shades from the primary color to support UI states (hover, active, and disabled) and maintain consistent theming across the platform.
 
-**Color Specifications**
+#### Color Specifications
 
 | Supported | Specification |
 | :---- | :---- |
@@ -116,7 +116,7 @@ You can provide one primary brand color for your organization. The platform deri
 | Usage | Replaces the default primary color |
 | Accessibility | Must meet WCAG AA contrast requirements |
 
-**Color Limitations**
+#### Color Limitations
 
 * Gradients and secondary color palettes are not supported.
 * Color adjustments might be recommended if the selected color affects accessibility or usability.
@@ -125,7 +125,7 @@ You can provide one primary brand color for your organization. The platform deri
 
 You can customize the font used for the Explorer homepage heading (H1) only. All other platform text uses the default system-defined font (Roboto).
 
-**Font Specifications**
+#### Font Specifications
 
 | Requirement | Specification |
 | :---- | :---- |
@@ -149,9 +149,9 @@ Provide all branding assets as a single ZIP archive using the following folder s
 !!! warning "Important"
     File names must clearly indicate their intended usage.
 
-**Folder structure**
+#### Folder structure
 
-```
+```text
 white-labeling-assets/
 │
 ├── logos/
