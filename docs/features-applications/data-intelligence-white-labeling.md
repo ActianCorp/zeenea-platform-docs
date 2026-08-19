@@ -56,7 +56,7 @@ Provide the following branding assets and text inputs based on your requirements
 
 * **Browser page title text**: Text displayed in the browser tab and window title.
 
-* **Application names**: Text used in application navigation and actions, such as **Open in _<custom Studio name>_**.
+* **Application names**: Text used in application navigation and actions, for example, **Open in _&lt;custom Studio name&gt;_**.
 
 !!! note
     These text inputs are required to complete white-labeling for supported areas and must be finalized before implementation.
