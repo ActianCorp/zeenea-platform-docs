@@ -2,7 +2,7 @@
 
 ## Overview
 
-White-labeling allows you to customize the appearance of Actian Data Intelligence Platform applications with your organization's branding. By replacing selected branding elements, you can create a consistent experience for your users while preserving the standard platform functionality.
+White-labeling allows you to customize the appearance of Actian Data Intelligence Platform applications with your organization's branding.  You can replace selected branding elements to create a consistent experience for your users while preserving standard platform functionality.
 
 White-labeling is supported for the following applications:
 
@@ -10,13 +10,13 @@ White-labeling is supported for the following applications:
 * Explorer
 * Administration
 
-Depending on your requirements, you can apply your branding across all supported applications or to individual applications.
+You can apply your branding across all supported applications or to individual applications, depending on your requirements.
 
-This document defines the branding inputs required to deliver a high-quality branded experience. 
+This document describes the branding inputs required to create a high-quality branded experience. 
 
 ## Supported Customizations
 
-The following branding elements can be customized across supported applications:
+The following branding elements can be customized as part of white-labeling:
 
 | Customization | Support Level | Details |
 | :---- | :---- | :---- |
@@ -27,45 +27,43 @@ The following branding elements can be customized across supported applications:
 | Email Branding | Supported through webhook integration | Logo and primary color only |
 | Homepage Background | Supported | Explorer application only (managed by the Actian Design team) |
 
-The following illustration shows branding elements that can be customized across supported applications, including the application logo, favicon, browser page title, and primary brand color.
+The following illustration shows the branding elements that you can customize across supported applications, including the application logo, favicon, browser page title, and primary brand color.
 
 ![](./images/white-labeling-supported-customizations.png)
 
-The following illustration shows branding elements that can be customized on the Explorer homepage, including the application logo, homepage heading font, and background image.
+The following illustration shows the branding elements that you can customize on the Explorer homepage, including the application logo, heading font, and background image.
 
 ![](./images/white-labeling-supported-customizations-explorer.png)
 
-## Required Branding Inputs
+## Branding Inputs
 
-Depending on your requirements, you must provide the following branding assets:
+Provide the following branding assets and text inputs based on your requirements.
 
-**Required Assets**
+### Required Assets
 
 * Application logo
 * Favicon
 * Primary brand color
 
-**Optional Asset**
+### Optional Asset
 
 * Explorer homepage heading (H1) font
 
 !!! note
-    Our Design team will customize the background image on the Explorer homepage based on the colors you have provided.
+    The Actian Design team will customize the Explorer homepage background image based on the colors you provide.
 
-**Required Text Inputs**
-
-In addition to branding assets, you must provide the following text inputs where applicable:
+### Required Text Inputs
 
 * **Browser page title text**: Text displayed in the browser tab and window title.
 
-* **Application names**: Text used in application navigation and actions, for example, **Open in _<custom Studio name>_**.
+* **Application names**: Text used in application navigation and actions, such as **Open in _<custom Studio name>_**.
 
 !!! note
     These text inputs are required to complete white-labeling for supported areas and must be finalized before implementation.
 
 ## Asset Specifications
 
-All assets must meet the specifications outlined below to be approved.
+All assets must meet the following specifications for approval.
 
 ### Application Logo
 
@@ -82,19 +80,19 @@ You can use a single logo across all applications or provide application-specifi
 | Maximum file size | 1 MB |
 | Color mode | RGB |
 
-#### Quality Requirements
+#### Additional Requirements
 
 * Logos must remain legible at small sizes, such as in headers and loading screens.
 * If a logo cannot maintain sufficient clarity at small sizes, provide a simplified variant.
 
 !!! note
-    Logo design and branding strategy are the responsibility of your organization.
+    Your organization is responsible for logo design and branding strategy.
 
 ### Favicon
 
 Favicons are displayed in browser tabs and bookmarks.
 
-Depending on your requirements, you can provide either a single favicon for all applications or application-specific favicons.
+You can provide a single favicon for all applications or application-specific favicons, depending on your requirements.
 
 #### Favicon Specifications
 
@@ -106,11 +104,11 @@ Depending on your requirements, you can provide either a single favicon for all 
 
 ### Primary Brand Color 
 
-You can provide one primary brand color for your organization. The platform derives the required color shades from the primary color to support UI states (hover, active, and disabled) and maintain consistent theming across the platform.
+You can provide one primary brand color for your organization. The platform derives the required color shades from your primary brand color to support UI states such as hover, active, and disabled, while maintaining consistent theming across the platform.
 
 #### Color Specifications
 
-| Supported | Specification |
+| Requirement | Specification |
 | :---- | :---- |
 | Format | HEX value |
 | Usage | Replaces the default primary color |
@@ -123,13 +121,13 @@ You can provide one primary brand color for your organization. The platform deri
 
 ### Font
 
-You can customize the font used for the Explorer homepage heading (H1) only. All other platform text uses the default system-defined font (Roboto).
+You can customize the font used for the Explorer homepage heading (H1) only. All other platform text uses the default **Roboto** font.
 
 #### Font Specifications
 
 | Requirement | Specification |
 | :---- | :---- |
-| Scope | Explorer H1 messaging only |
+| Scope | Explorer homepage heading (H1) only |
 | File format | TTF |
 | Licensing | Proof of web embedding or distribution rights required |
 
@@ -138,18 +136,20 @@ You can customize the font used for the Explorer homepage heading (H1) only. All
 
 ### Email Branding
 
-Email branding supports limited customization.
+Email branding supports limited customization through webhook integration.
+
+Supported branding elements include the logo and primary brand color.
 
 For more information, contact your Customer Success Manager (CSM).
 
 ## Package and Submit Branding Assets
 
-Provide all branding assets as a single ZIP archive using the following folder structure.
+Provide all branding assets in a single ZIP archive using the following folder structure.
 
 !!! warning "Important"
-    File names must clearly indicate their intended usage.
+    File names must clearly indicate their intended use.
 
-#### Folder structure
+### Folder Structure
 
 ```text
 white-labeling-assets/
@@ -173,29 +173,29 @@ white-labeling-assets/
 
 ## Asset Validation and Review
 
-Submitted assets are reviewed to ensure they meet the requirements described in this document, including:
+Submitted assets are reviewed to ensure they meet the specifications in this document, including:
 
-* Completeness against the specified requirements
+* Completeness against the specifications in this document
 * Visual clarity at the required formats and sizes
 * Accessibility and contrast compliance
 * Consistency across applications
 
-After the assets are implemented, a branded version of the platform may be shared with you for review and approval.
+After implementation, a branded version of the platform may be shared with you for review and approval.
 
 !!! note
     If revisions are required, feedback will be provided before final approval.
 
-    Implementation begins once all required assets have been received and approved.
+    Implementation begins after all required assets are received and approved.
 
 ## Unsupported Customizations
 
-The following customizations are outside the scope of white-labeling:
+The following customizations are out of scope for white-labeling:
 
-* Custom user interface layouts or structural changes
-* Multiple themes within the same tenant
+* Custom UI layouts or structural changes
+* Multiple themes within a tenant
 * Custom icons other than logos and favicons
 * Email template redesign or copy customization
-* Application functionality changes or feature changes
+* Application behavior or feature changes
 
 Requests outside this scope require separate review and agreement.
 
