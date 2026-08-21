@@ -77,8 +77,6 @@ You can create new access request policies in Zeenea Administration.
          * **Extra field from use case template**: The field appears when you select **Select a use case**. Select a property from the available **Multi-select** or **Tag** type properties in the Use case item type template. For more information, see [Extra Field from Use Case Template](#extra-field-from-use-case-template).
           
          * **Approvers** (required): Select the roles responsible for approving access requests.
-         
-         * **Enable email notifications for requesters and approvers**: Use the toggle to manage email notifications.
       
       ![](./images/zeenea-access-requests-policy-create-approval.png)
     
