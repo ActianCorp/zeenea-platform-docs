@@ -1,0 +1,3 @@
+nav:
+    - Athena Guide: aws-athena.md
+    - Athena Release Notes: aws-athena-release-notes.md

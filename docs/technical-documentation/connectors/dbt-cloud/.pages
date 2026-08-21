@@ -1,0 +1,3 @@
+nav:
+    - DBT Cloud Guide: dbt-cloud.md
+    - DBT Cloud Release Notes: dbt-cloud-release-notes.md

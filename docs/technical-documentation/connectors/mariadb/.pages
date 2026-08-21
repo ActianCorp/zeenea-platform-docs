@@ -1,0 +1,3 @@
+nav:
+    - MariaDB Guide: mariadb.md
+    - MariaDB Release Notes: mariadb-release-notes.md

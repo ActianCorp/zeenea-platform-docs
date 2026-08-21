@@ -1,0 +1,3 @@
+nav:
+    - Couchbase Guide: couchbase.md
+    - Couchbase Release Notes: couchbase-release-notes.md

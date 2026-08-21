@@ -1,0 +1,3 @@
+nav:
+    - AWS Glue (ETL) Guide: aws-glue-etl.md
+    - AWS Glue (ETL) Release Notes: aws-glue-etl-release-notes.md

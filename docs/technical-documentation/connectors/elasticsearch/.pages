@@ -1,0 +1,3 @@
+nav:
+    - Elasticsearch Guide: elasticsearch.md
+    - Elasticsearch Release Notes: elasticsearch-release-notes.md

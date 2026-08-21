@@ -1,0 +1,3 @@
+nav:
+    - MySQL Guide: mysql.md
+    - MySQL Release Notes: mysql-release-notes.md

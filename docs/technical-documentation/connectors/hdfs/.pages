@@ -1,0 +1,3 @@
+nav:
+    - HDFS Guide: hdfs.md
+    - HDFS Release Notes: hdfs-release-notes.md
