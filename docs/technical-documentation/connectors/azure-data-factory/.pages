@@ -1,0 +1,3 @@
+nav:
+    - Azure Data Factory Guide: azure-data-factory.md
+    - Azure Data Factory Release Notes: azure-data-factory-release-notes.md

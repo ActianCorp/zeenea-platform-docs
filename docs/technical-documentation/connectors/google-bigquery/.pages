@@ -1,0 +1,3 @@
+nav:
+    - BigQuery Guide: google-bigquery.md
+    - BigQuery Release Notes: google-bigquery-release-notes.md

@@ -1,0 +1,3 @@
+nav:
+    - MongoDB Guide: mongodb.md
+    - MongoDB Release Notes: mongodb-release-notes.md

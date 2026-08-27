@@ -1,0 +1,3 @@
+nav:
+    - Cassandra Guide: cassandra.md
+    - Cassandra Release Notes: cassandra-release-notes.md

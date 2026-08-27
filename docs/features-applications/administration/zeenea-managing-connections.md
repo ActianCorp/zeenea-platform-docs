@@ -9,7 +9,7 @@ To configure a connection between your IS and Zeenea, follow these steps:
 
 !!! note
     * For more information about scanner installation, see [Zeenea Scanner Setup](../../technical-documentation/scanners/zeenea-scanner-setup.md).
-    * Go to the specific documentation of each connector to identify the prerequisites and the conditions of implementation: [Zeenea Connector Downloads](../../technical-documentation/connectors/zeenea-connectors-list.md).
+    * Go to the specific documentation of each connector to identify the prerequisites and the conditions of implementation: [Connector Downloads](../../technical-documentation/connectors/zeenea-connectors-list.md).
 
 
 ## Creating a Connection

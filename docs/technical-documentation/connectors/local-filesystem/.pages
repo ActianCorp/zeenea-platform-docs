@@ -1,0 +1,3 @@
+nav:
+    - Local File System Guide: local-filesystem.md
+    - Local File System Release Notes: local-filesystem-release-notes.md

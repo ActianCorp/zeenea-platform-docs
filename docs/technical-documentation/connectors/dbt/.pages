@@ -1,0 +1,3 @@
+nav:
+    - DBT Guide: dbt.md
+    - DBT Release Notes: dbt-release-notes.md
