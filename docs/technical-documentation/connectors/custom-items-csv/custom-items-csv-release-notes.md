@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Custom Item - CSV Connector Release Notes
 
 The latest version of the Custom Item - CSV Connector connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.

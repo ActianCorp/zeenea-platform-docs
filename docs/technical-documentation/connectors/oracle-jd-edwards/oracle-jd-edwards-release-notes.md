@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Oracle JD Edwards (Safyr) Release Notes
 
 The latest version of the Oracle JD Edwards (Safyr) connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.

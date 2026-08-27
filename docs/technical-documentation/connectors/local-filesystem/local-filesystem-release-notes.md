@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Local File System Release Notes
 
 The latest version of the Local File System connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.

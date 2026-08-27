@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Actian DataConnect Release Notes
 
 The latest version of the Actian DataConnect connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.

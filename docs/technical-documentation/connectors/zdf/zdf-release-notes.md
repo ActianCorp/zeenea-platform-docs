@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Zeenea Descriptor Format (ZDF) Release Notes
 
 The latest version of the Zeenea Descriptor Format (ZDF) connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.

@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Databricks Unity Catalog REST Release Notes
 
 The latest version of the Databricks Unity Catalog REST connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.

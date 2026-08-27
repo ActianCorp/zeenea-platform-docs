@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Palantir Foundry Release Notes
 
 The latest version of the Palantir Foundry connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.

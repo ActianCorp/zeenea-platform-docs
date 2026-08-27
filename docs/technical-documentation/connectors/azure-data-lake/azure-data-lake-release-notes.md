@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Azure Data Lake Release Notes
 
 The latest version of the Azure Data Lake connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.

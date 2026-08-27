@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Generic Dataset Release Notes
 
 The latest version of the Generic Dataset connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.

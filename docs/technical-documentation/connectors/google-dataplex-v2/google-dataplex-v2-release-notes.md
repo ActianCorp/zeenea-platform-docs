@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Google Dataplex (V2) Release Notes
 
 The latest version of the Google Dataplex (V2) connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.

@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Dynamics 365  (Safyr) Release Notes
 
 The latest version of the Dynamics 365  (Safyr) connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.

@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.6
+---
+
 # Aliyun DataWorks MaxCompute Release Notes
 
 The latest version of the Aliyun DataWorks MaxCompute connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.
