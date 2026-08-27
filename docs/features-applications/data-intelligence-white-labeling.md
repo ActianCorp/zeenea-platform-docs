@@ -136,7 +136,7 @@ You can customize the font used for the Explorer homepage heading (H1) only. All
 
 ### Email Branding
 
-Email branding supports limited customization through webhook integration.
+Email branding supports limited customization through webhook integration. For more information about configuring webhooks, see [Managing Notifications](./administration/data-intelligence-managing-notifications.md).
 
 Supported branding elements include the logo and primary brand color.
 
