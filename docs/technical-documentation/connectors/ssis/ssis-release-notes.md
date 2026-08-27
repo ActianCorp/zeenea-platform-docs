@@ -1,6 +1,14 @@
-# SSIS (SQL Server Integration Services) Release Notes
+---
+search:
+  boost: 0.6
+---
 
-The latest version of the SSIS (SQL Server Integration Services) connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.
+# SSIS Release Notes
 
-!!! note
-    No release notes are currently available for this connector. You can subscribe to the RSS feed to receive notifications about future updates.
+The latest version of the **SQLServer Services** connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.
+
+## August 7, 2026 — Version `1.13.0`
+
+**Enhancements**
+
+Item references with an implicit default catalog or schema are now resolved, improving lineage for SSIS sources.
