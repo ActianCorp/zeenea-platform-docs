@@ -37,7 +37,7 @@
 | [MicroStrategy](./zeenea-connector-microstrategy.md) | MicroStrategy | 54 | [microstrategy-connector-plugin-2.8.0.zip](https://plugins.zeenea.app/microstrategy-connector-plugin/microstrategy-connector-plugin-2.8.0.zip) |
 | [MongoDB](./zeenea-connector-mongodb.md) | MongoDB | 54 | [mongodb-connector-plugin-1.1.2.zip](https://plugins.zeenea.app/mongodb-connector-plugin/mongodb-connector-plugin-1.1.2.zip) |
 | [OpenAPI](./zeenea-connector-openapi.md) | OpenAPI | 78 | [openapi-connector-plugin-2.3.0.zip](https://plugins.zeenea.app/openapi-connector-plugin/openapi-connector-plugin-2.3.0.zip) |
-| [Palantir Foundry](./zeenea-connector-palantir.md) | Palantir | 54 | [palantir-connector-plugin-1.6.1.zip](https://plugins.zeenea.app/palantir-connector-plugin/palantir-connector-plugin-1.6.1.zip) |
+| [Palantir Foundry](./zeenea-connector-palantir.md) | Palantir | 54 | [palantir-connector-plugin-1.7.0.zip](https://plugins.zeenea.app/palantir-connector-plugin/palantir-connector-plugin-1.7.0.zip) |
 | [Microsoft Fabric](./zeenea-connector-ms-fabric.md)<br />[Microsoft PowerBI Online (V2)](./zeenea-connector-powerbi-saas-v2.md) | MS Fabric<br />PowerBI V2 | 96 | [msfabric-connector-plugin-2.2.0.zip](https://plugins.zeenea.app/msfabric-connector-plugin/msfabric-connector-plugin-2.2.0.zip) |
 | [Microsoft PowerBI Report Server](./zeenea-connector-powerbi-report-server.md) | PowerBI Report | 78 | [powerbi-report-connector-plugin-84.zip](https://plugins.zeenea.app/powerbi-report-connector-plugin/powerbi-report-connector-plugin-84.zip) |
 | [Microsoft PowerBI Online (Deprecated)](./zeenea-connector-powerbi-saas.md) | PowerBI | 54 | [powerbi-connector-plugin-1.16.4.zip](https://plugins.zeenea.app/powerbi-connector-plugin/powerbi-connector-plugin-1.16.4.zip) |
