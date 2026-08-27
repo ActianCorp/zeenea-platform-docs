@@ -1,0 +1,3 @@
+nav:
+    - SQL Server Guide: sqlserver.md
+    - SQL Server Release Notes: sqlserver-release-notes.md

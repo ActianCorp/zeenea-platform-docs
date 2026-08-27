@@ -1,0 +1,3 @@
+nav:
+    - Redshift Guide: aws-redshift.md
+    - Redshift Release Notes: aws-redshift-release-notes.md

@@ -137,13 +137,19 @@ plugins:
   # (pages carry no `date` front matter), which requires a full checkout
   # (fetch-depth: 0) in CI — already configured in deploy.yml and ci.yml.
   - rss:
-      match_path: "technical-documentation/scanners/.*release-notes.*"
+      match_path: "technical-documentation/(scanners|connectors)/.*release-notes.*"
       date_from_meta:
         as_creation: git
         as_update: git
       categories:
         - tags
       abstract_chars_count: -1
+      # Number of items kept in the feed. Default is 20, which truncated the
+      # feed once every connector got its own release-notes page. Set high
+      # enough to cover all current release-notes pages (94 connectors + the
+      # scanner) with headroom for new connectors, so every connector is
+      # represented in the feed rather than crowding each other out.
+      length: 300
       feed_ttl: 1440
       feed_title: "Actian Data Intelligence Platform - Release notes"
       feed_description: "Get notified when a new connector or scanner version ships."

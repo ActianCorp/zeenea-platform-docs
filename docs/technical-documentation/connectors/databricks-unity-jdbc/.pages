@@ -1,0 +1,3 @@
+nav:
+    - Databricks Unity Catalog JDBC Guide: databricks-unity-jdbc.md
+    - Databricks Unity Catalog JDBC Release Notes: databricks-unity-jdbc-release-notes.md

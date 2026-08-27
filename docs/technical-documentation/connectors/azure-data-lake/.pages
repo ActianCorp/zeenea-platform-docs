@@ -1,0 +1,3 @@
+nav:
+    - Azure Data Lake Guide: azure-data-lake.md
+    - Azure Data Lake Release Notes: azure-data-lake-release-notes.md

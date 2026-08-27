@@ -293,7 +293,7 @@ After you save the changes, restart the scanner. The scanner then uses gRPC to c
 
 You have to pay attention to the ability for the scanner to open a connection to the platforms it should communicate with: network routes should be enabled.
 
-For more about our connectors, see [Zeenea Connector Downloads](../connectors/zeenea-connectors-list.md).
+For more about our connectors, see [Connector Downloads](../connectors/zeenea-connectors-list.md).
 
 New connections are defined using a dedicated configuration file under the connections folder of the Scanner.
 

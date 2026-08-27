@@ -1,0 +1,3 @@
+nav:
+    - DynamoDB Guide: aws-dynamodb.md
+    - DynamoDB Release Notes: aws-dynamodb-release-notes.md

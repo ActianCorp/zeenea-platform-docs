@@ -1,0 +1,3 @@
+nav:
+    - AWS Glue (Data Catalog) Guide: aws-glue-data-catalog.md
+    - AWS Glue (Data Catalog) Release Notes: aws-glue-data-catalog-release-notes.md

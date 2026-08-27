@@ -1,0 +1,3 @@
+nav:
+    - PostgreSQL Guide: postgresql.md
+    - PostgreSQL Release Notes: postgresql-release-notes.md
