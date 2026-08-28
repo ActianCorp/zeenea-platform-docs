@@ -38,6 +38,19 @@ Depending on the configuration performed by your administrators filters specific
 
 Filters are dynamically updated and sorted according to their relevance and impact on your search.
 
+## Sorting the Results
+
+On the results page, you can use the **Sort by** menu to sort the search results.
+
+The following sorting options are available:
+
+* **Relevance**: Displays items that best match your search terms. This option is available only when a search query is entered.
+* **Popularity**: Displays the most frequently used assets first, based on catalog-wide activity such as item views and favorites.
+* **Name (A-Z)**: Sorts items alphabetically in ascending order.
+* **Name (Z-A)**: Sorts items alphabetically in descending order.
+
+When you browse the catalog without entering a search query, **Popularity** is the default sorting option. When you enter a search query, **Relevance** is the default sorting option. You can change the sorting option at any time using the **Sort by** menu.
+
 ## Search Results
 
 The following information is displayed for each result corresponding to your search: 
