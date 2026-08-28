@@ -18,8 +18,6 @@ By clicking on an item in the list, you’ll be redirected to its detailed page,
 
 The search engine works in a way similar to Internet search engines. 
 
-Results are sorted by default according to their relevance to the search.
-
 For each item in the Catalog, Zeenea Studio indexes the following information: 
 
 * Name
@@ -63,15 +61,18 @@ Type in one or more keywords in the search bar and hit “Enter” on your keybo
 
 ## Sorting the Results
 
-By default, results are sorted by relevance to the query according to a probability score of being the document closest to what the user is looking for. 
+On the results page, you can use the **Sort by** menu to sort the search results.
 
-For equal relevance, two results are sorted in alphabetical order.
+The following sorting options are available:
 
-You can also sort search results by name or last update date.
+* **Relevance**: Displays items that best match your search terms. This option is available only when a search query is entered. If two results have the same relevance, they are sorted alphabetically.
+* **Popularity**: Displays the most frequently used assets first, based on catalog-wide activity such as item views and favorites.
+* **Name ASC**: Sorts items alphabetically in ascending order.
+* **Name DESC**: Sorts items alphabetically in descending order.
+* **Update date ASC**: Sorts items by update date from oldest to newest.
+* **Update date DESC**: Sorts items by update date from newest to oldest.
 
-### How is the Score Calculated? 
-
-Depending on the presence of the largest number of words entered but also on the location of these words (the weight will potentially be different between a word found in the name of a dataset compared to the value of one of its properties).
+When you browse the catalog without entering a search query, **Popularity** is the default sorting option. When you enter a search query, **Relevance** is the default sorting option. You can change the sorting option at any time using the **Sort by** menu.
 
 ## Filter Your Searches in Zeenea Studio
 
