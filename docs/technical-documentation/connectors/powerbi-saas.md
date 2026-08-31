@@ -7,7 +7,7 @@ search:
 
 ## Deprecated
 
-The Power BI Online (V1) plugin has been deprecated. You can use the [Power BI Online (V2)](../powerbi-saas-v2/powerbi-saas-v2.md) connector instead.
+The Power BI Online (V1) plugin has been deprecated. You can use the [Power BI Online (V2)](./powerbi-saas-v2/powerbi-saas-v2.md) connector instead.
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ The Power BI Online (V1) plugin has been deprecated. You can use the [Power BI O
     * [https://api.powerbi.com](https://api.powerbi.com)
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](./zeenea-connectors-list.md).
 
 
 ## Supported Versions
@@ -26,19 +26,19 @@ The Power BI Online connector is compatible with the product online version.
 
 ## Installing the Plugin
 
-The Power BI Online plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md)
+The Power BI Online plugin can be downloaded here: [Connector Downloads](./zeenea-connectors-list.md)
 
 !!! warning "Attention"
     Updating the connector to version 1.7.0 from a previous version requires a data migration for the "Data process" type objects. Please contact customer service to assist you in this migration.
 
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
 In order to establish a connection with a PowerBI Online instance, specifying the following parameters in the dedicated file is required:
 
@@ -130,7 +130,7 @@ Starting with version 1.9.0 the connector has a rich filter available that enabl
 
 `contact.role_filter = "role in ('Owner', 'Read')"`
 
-Read more: [Filters](../../scanners/zeenea-filters.md)
+Read more: [Filters](../scanners/zeenea-filters.md)
 
 ## Data Extraction
 
@@ -161,13 +161,13 @@ Table summarizing the possible values of the `alias` parameter to be completed i
 
 | Source System| Model | Example |
 | :--- | :--- | :---- |
-| [SQL Server](../sqlserver/sqlserver.md) | Server name:port/Database name | `alias = ["zeenea.database.windows.net:1433/db"]` * |
-| [BigQuery](../google-bigquery/google-bigquery.md) | BigQuery project identifier	| `alias = ["zeenea-project"]` |
-| [AWS Redshift](../aws-redshift/aws-redshift.md) | Server name:port/Database name | `alias = ["zeenea.cthwlv3ueke2.eu-west-3.redshift.amazonaws.com:5439/database"]` |
-| [AWS Athena](../aws-athena/aws-athena.md) | N/A | N/A |
-| [Snowflake](../snowflake/snowflake.md) | Server name/Database name | `alias = ["kn999999.eu-west-1.snowflakecomputing.com/ZEENEA""]` * |
-| [Oracle](../oracle/oracle.md) | Server name:port/Service Name | `alias = ["oracle.example.com:1521/XE"]` |
-| [Denodo](../denodo/denodo.md) | Server name:ODBC port | `alias = ["denodo.database.com:9996"]` |
+| [SQL Server](./sqlserver/sqlserver.md) | Server name:port/Database name | `alias = ["zeenea.database.windows.net:1433/db"]` * |
+| [BigQuery](./google-bigquery/google-bigquery.md) | BigQuery project identifier	| `alias = ["zeenea-project"]` |
+| [AWS Redshift](./aws-redshift/aws-redshift.md) | Server name:port/Database name | `alias = ["zeenea.cthwlv3ueke2.eu-west-3.redshift.amazonaws.com:5439/database"]` |
+| [AWS Athena](./aws-athena/aws-athena.md) | N/A | N/A |
+| [Snowflake](./snowflake/snowflake.md) | Server name/Database name | `alias = ["kn999999.eu-west-1.snowflakecomputing.com/ZEENEA""]` * |
+| [Oracle](./oracle/oracle.md) | Server name:port/Service Name | `alias = ["oracle.example.com:1521/XE"]` |
+| [Denodo](./denodo/denodo.md) | Server name:ODBC port | `alias = ["denodo.database.com:9996"]` |
 
 !!! note
     The connector creates a data process object for each dataset from Power BI Online to represent the link with the source dataset (even if the source dataset is not present in the catalog).
@@ -232,7 +232,7 @@ To represent the data flow from an external source, a Zeenea Data Process will b
  
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
  
-More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
   
 | Object        | Identification Key                    | Description |
 |---------------|----------------------------------------|-------------|

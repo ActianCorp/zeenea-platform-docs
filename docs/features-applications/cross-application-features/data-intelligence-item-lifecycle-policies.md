@@ -262,7 +262,7 @@ Close the dialog box, provide the required information, and then try the transit
 
 You can update an item’s stage from the Item Details Page or Item Overview Panel in Studio.
 
-You can update the lifecycle stage of multiple items by using the **Edit lifecycle stage** option in Studio. For more information, see [Editing Items in Bulk](../studio/stewardship/zeenea-editing-items-in-bulk.md#Updating-lifecycle-stage).
+You can update the lifecycle stage of multiple items by using the **Edit lifecycle stage** option in Studio. For more information, see [Editing Items in Bulk](../studio/stewardship/zeenea-editing-items-in-bulk.md#updating-lifecycle-stage).
 
 !!! note
     The stage is visible in search results but cannot be updated there.
