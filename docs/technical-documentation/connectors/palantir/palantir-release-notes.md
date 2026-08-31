@@ -7,5 +7,9 @@ search:
 
 The latest version of the **Palantir** connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.
 
-!!! note
-    No release notes are currently available for this connector. You can subscribe to the RSS feed to receive notifications about future updates.
+## August 27, 2026 — Version 1.7.0
+
+**Enhancements**
+
+* Added the connection host to the retrieved source properties of imported assets.
+* Upgraded third-party dependencies to address security vulnerabilities.

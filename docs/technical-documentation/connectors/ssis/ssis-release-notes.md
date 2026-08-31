@@ -7,7 +7,7 @@ search:
 
 The latest version of the **SQLServer Services** connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.
 
-## August 7, 2026 — Version `1.13.0`
+## August 7, 2026 — Version 1.13.0
 
 **Enhancements**
 

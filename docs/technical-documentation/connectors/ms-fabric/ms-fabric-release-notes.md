@@ -7,7 +7,7 @@ search:
 
 The latest version of the **MS Fabric** connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.
 
-## August 11, 2026 — Version `2.2.0`
+## August 11, 2026 — Version 2.2.0
 
 **Enhancements**
 
