@@ -19,6 +19,8 @@ Lifecycle policies are scoped by catalog and item type. When you assign a policy
 !!! warning "Important"
     Lifecycle policies support all item types except **Fields** and **Output ports**. Policies defined for datasets or data processes do not apply to their embedded items (such as fields or datasets).
 
+Optionally, a lifecycle policy can gate stage transitions with **stage requirements**. Stage requirements are conditions that must be met before an item can advance to a stage. If a stage has unmet requirements, curators cannot move an item into it until the required information is provided. For more information, see [Configure Stage Requirements](#configure-stage-requirements).
+
 ## Key Concepts
 
 The following table describes the key concepts used in lifecycle policies:
@@ -29,6 +31,7 @@ The following table describes the key concepts used in lifecycle policies:
 | Visibility rule | Controls whether items are visible only in Studio or also in Explorer. |
 | Not staged | A system stage automatically assigned to existing items when a new policy is applied, without affecting their visibility. Only Studio users can see that an item is not staged. |
 | Stage transition | The process of moving an item to the next or previous stage. |
+| Stage requirement | A condition associated with a lifecycle stage that must be satisfied before an item can transition to that stage. A stage requirement is based on an attribute that must not be empty. Requirements accumulate across stages. |
 
 ## Typical Workflow
 
@@ -36,9 +39,10 @@ The following workflow illustrates how items progress through lifecycle stages f
 
 1. A curator creates a new item. The platform automatically assigns the first stage defined in the policy (such as **Draft**).  
 2. The curator documents the item in Studio and moves it to review stage (such as **In Review**). 
-3. Reviewers identify items in review stage by using watchlists and stage filters.  
-4. After review, the item is moved to the final stage (such as **Approved**).
-5. The item becomes visible to data consumers in Explorer.
+3. If the target stage has stage requirements, the platform checks whether the item meets the requirements. If the item does not meet a requirement, the platform blocks the transition until the curator provides the required information.
+4. Reviewers identify items in review stage by using watchlists and stage filters.  
+5. After review, the item is moved to the final stage (such as **Approved**). The platform applies the same requirement checks.
+6. The item becomes visible to data consumers in Explorer.
 
 ## Manage Lifecycle Policies
 
@@ -65,14 +69,18 @@ You can create new lifecycle policies in Administration.
      * **Name** (required): Enter a descriptive name for the policy (for example, "Glossary Review Workflow").
      * **Code** (required): Enter a unique technical identifier.
      * **Description** (optional): Explain the purpose of this policy.
-     * **Catalogs to which the policy applies** (required): Select one or more catalogs where the policy applies. 
+     * **Catalogs to which the policy applies** (optional): Select one or more catalogs where the policy applies. You can leave this empty and add catalogs later by editing the policy.
      * **Automatically apply to new catalogs** (optional): Turn on this option to automatically apply the policy to newly created catalogs.
-     * **Item types to which the policy applies** (required): Select one or more item types to which this policy applies (all types except Fields and Output ports).  
+     * **Item types to which the policy applies** (optional): Select one or more item types to which the policy applies (all item types except Field and Output Port). You can leave this field empty and add item types later by editing the policy.
      * **Stages** (required): Define the ordered stages of the lifecycle. For more information about configuring lifecycle stages, see [Configure Lifecycle Stages](#configure-lifecycle-stages).  
 
 5. Click **Create lifecycle policy**.
    
      ![](./images/create-lifecycle-policy-dialog.png)
+
+
+!!! note
+    A lifecycle policy is not applied until you select at least one catalog and one item type. Until then, the policy exists but does not affect any items.
 
 !!! note
     A catalog and item type combination can be associated with only one lifecycle policy. If you try to select a combination that is already used in another policy, the system rejects the selection.
@@ -128,6 +136,43 @@ You can customize these stages or create your own.
 You can reorder stages by using drag-and-drop. The order determines the allowed transitions, and items can move only to the immediately previous or next stage.
 
 ![](./images/create-lifecycle-policy-stage.png)
+
+#### Configure Stage Requirements
+
+In addition to a name, code, visibility, and color, each stage (except the first) can define **stage requirements**. Stage requirements are attributes that must be filled in before an item can transition to that stage.
+
+!!! note
+    You cannot set **stage requirements** for the first stage of a lifecycle policy.
+
+**To add a stage requirement**
+
+1. Open the stage editor and locate the **stage requirements** section at the bottom of the panel.
+2. Click **Add requirement**.
+3. Select an **Attribute** to require:
+     
+     * **Description**: The item's description field.
+     * A **property** from the item type templates covered by the policy.
+     * A **responsibility** type defined in Studio, such as Data owner, Steward, or Curator.
+
+4. Click **Apply** to save the requirement.
+
+![](./images/configure-lifecycle-policy-stage-requirement.png)
+
+When a lifecycle policy covers multiple item types, the property list displays only the properties that are common to all item types covered by the policy.
+
+A stage can have multiple requirements. Before an item can transition to a stage, it must meet all requirements for that stage and all previous stages. For more information, see [Cumulative Enforcement](#cumulative-enforcement).
+
+You can reorder requirements within a stage by drag-and-drop. Reordering changes only the order in which unmet requirements are displayed to the curator. It does not change how the requirements are evaluated.
+
+#### Cumulative Enforcement
+
+Stage requirements accumulate across stages. To move an item to a stage, the item must meet the requirements for that stage and all previous stages. The first stage cannot have requirements. If an item meets the requirements for a target stage but does not meet the requirements for an earlier stage, the transition is blocked.
+
+Stage requirements apply only when moving an item forward to a later stage. Moving an item to an earlier stage, such as from **Approved** to **In Review**, is not subject to stage requirements.
+
+!!! warning
+    The platform does not automatically move an item when it later meets or no longer meets a stage's requirements. The platform checks requirements only when a stage transition is attempted.
+
 
 #### Apply the Policy
 
@@ -186,11 +231,34 @@ The following table describes how the platform handles changes to lifecycle poli
 | Delete a policy | All matching items return to a no-stage state. A confirmation dialog appears before the deletion is completed. |
 | Delete a catalog from the tenant | The catalog is automatically removed from any lifecycle policies that reference it. |
 
+### Stage Requirement Updates
+
+The following table describes how the platform handles changes to stage requirements and the attributes they reference:
+
+| Action | Behavior |
+|---|---|
+| Add a stage requirement | No impact on existing items. The requirement applies only to future transition attempts. |
+| Remove a stage requirement | No impact on existing items. Items already at or beyond the stage remain in their current stage, regardless of whether they meet the remaining requirements. |
+| Remove a property referenced by a stage requirement | The property is removed. The lifecycle policy's stage editor displays an error indicating that the requirement references a deleted property. When a curator attempts to transition an item to that stage, the requirement is not evaluated. |
+| Remove a responsibility type referenced by a stage requirement | The responsibility type is removed. The lifecycle policy's stage editor displays an error indicating that the requirement references a deleted responsibility type. When a curator attempts to transition an item to that stage, the requirement is not evaluated. |
+| Delete a stage | All stage requirements defined for the stage are deleted. |
+| Delete a lifecycle policy | All stages and their stage requirements are deleted. |
+
 ## Manage Item Lifecycle Stages
 
 ### Update an Item’s Stage
 
 Users with the **Manage documentation** permission can update the stage of an item. Stage transitions are sequential. You can move an item only to the immediately previous or next stage from the UI.
+
+When a curator opens the stage selector, stages with requirements that the item does not meet are disabled.
+
+![](./images/update-lifecycle-policy-stage-requirement-blocked.png)
+
+Selecting a disabled stage opens a dialog box that lists the unmet requirements for that stage. 
+
+![](./images/update-lifecycle-policy-stage-requirement-unmet.png)
+
+Close the dialog box, provide the required information, and then try the transition again.
 
 You can update an item’s stage from the Item Details Page or Item Overview Panel in Studio.
 
@@ -230,6 +298,12 @@ The lifecycle stage code is included as a column in XLSX import and export files
 
 During import, you can assign an item to any stage. You do not need to follow the sequential transition rule.
 
+Stage requirements also apply during import. If an item does not meet the requirements for the stage specified in the import file, the import skips the stage update for that item and adds the following comment: 
+
+`Stage update is not allowed because the item does not satisfy all validation rules for stage <stage_name>.`
+
+The comment also lists the unmet requirements. All other fields in the same row are processed normally.
+
 You can also create items at any stage, not just the first stage.
 
 For more information about import, see [Importing a File in Zeenea](../studio/stewardship/zeenea-studio-import.md).
@@ -240,7 +314,9 @@ For more information about export, see [Exporting Search Results in Zeenea Studi
 
 You can update the stage of multiple items by using the **Edit lifecycle stage** option in the **Edit** menu. 
 
-For more information, see [Editing Items in Bulk](../studio/stewardship/zeenea-editing-items-in-bulk.md#update-lifecycle-stage#update-lifecycle-stage).
+If some selected items do not meet the requirements for the target stage, the update is applied only to the items that meet the requirements. The other items remain in their current stage.
+
+For more information, see [Editing Items in Bulk](../studio/stewardship/zeenea-editing-items-in-bulk.md#updating-lifecycle-stage).
 
 ## Lifecycle Stages in Explorer
 
@@ -291,16 +367,22 @@ The item stage is available as a built-in attribute on the Item type in the Cata
 * For items with no lifecycle policy, the stage attribute returns `null`.  
 * For contacts, the stage attribute always returns `null`.
 
+### Update an Item’s Stage
+
+You can update an item’s stage using the API and specifying the target stage code. The API allows you to set any stage defined in the policy. Sequential transition rules do not apply when you use the API.
+
+If an item does not meet the cumulative stage requirements for the target stage, the API returns an error. For the complete error format, see the [API documentation](https://docs.zeenea.com/#introduction-item-3).
+
 ### Create Items With a Stage
 
 When you create an item using the API, the platform checks whether a lifecycle policy applies. If it does:
 
 - If you do not specify a stage, the platform assigns the first stage defined in the policy.  
 - You can specify a stage code to create the item at any stage in the policy. The item does not need to start at the first stage.
+- The API returns the same error when you create an item directly at a stage other than the first stage and the item does not meet the cumulative stage requirements for that stage.
 
-### Update an Item’s Stage
-
-You can update an item’s stage using the API and specifying the target stage code. The API allows you to set any stage defined in the policy. Sequential transition rules do not apply when you use the API.
+!!! note
+    Items created in Studio are always assigned to the first stage, which cannot have stage requirements. Therefore, stage requirements do not apply when creating items in Studio.
 
 ## Lifecycle Stages in Actian Chrome Extension
 
