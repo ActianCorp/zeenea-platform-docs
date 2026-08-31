@@ -156,6 +156,8 @@ In addition to a name, code, visibility, and color, each stage (except the first
 
 4. Click **Apply** to save the requirement.
 
+![](./images/configure-lifecycle-policy-stage-requirement.png)
+
 When a lifecycle policy covers multiple item types, the property list displays only the properties that are common to all item types covered by the policy.
 
 A stage can have multiple requirements. Before an item can transition to a stage, it must meet all requirements for that stage and all previous stages. For more information, see [Cumulative Enforcement](#cumulative-enforcement).
@@ -250,7 +252,13 @@ Users with the **Manage documentation** permission can update the stage of an it
 
 When a curator opens the stage selector, stages with requirements that the item does not meet are disabled.
 
-Selecting a disabled stage opens a dialog box that lists the unmet requirements for that stage. Close the dialog box, provide the required information, and then try the transition again.
+![](./images/update-lifecycle-policy-stage-requirement-blocked.png)
+
+Selecting a disabled stage opens a dialog box that lists the unmet requirements for that stage. 
+
+![](./images/update-lifecycle-policy-stage-requirement-unmet.png)
+
+Close the dialog box, provide the required information, and then try the transition again.
 
 You can update an item’s stage from the Item Details Page or Item Overview Panel in Studio.
 
