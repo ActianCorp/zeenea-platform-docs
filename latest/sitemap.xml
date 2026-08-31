@@ -409,6 +409,30 @@
          <lastmod>2026-08-31</lastmod>
     </url>
     <url>
+         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/custom-items-csv.html</loc>
+         <lastmod>2026-08-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/generic-dataset.html</loc>
+         <lastmod>2026-08-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/generic-lineage.html</loc>
+         <lastmod>2026-08-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/powerbi-saas.html</loc>
+         <lastmod>2026-08-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/tableau.html</loc>
+         <lastmod>2026-08-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/tibco-spotfire.html</loc>
+         <lastmod>2026-08-31</lastmod>
+    </url>
+    <url>
          <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/zeenea-connectors-install-as-plugin.html</loc>
          <lastmod>2026-08-31</lastmod>
     </url>
@@ -577,14 +601,6 @@
          <lastmod>2026-08-31</lastmod>
     </url>
     <url>
-         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/custom-items-csv/custom-items-csv-release-notes.html</loc>
-         <lastmod>2026-08-31</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/custom-items-csv/custom-items-csv.html</loc>
-         <lastmod>2026-08-31</lastmod>
-    </url>
-    <url>
          <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/databricks-hive-metastore/databricks-hive-metastore-release-notes.html</loc>
          <lastmod>2026-08-31</lastmod>
     </url>
@@ -673,27 +689,11 @@
          <lastmod>2026-08-31</lastmod>
     </url>
     <url>
-         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/generic-dataset/generic-dataset-release-notes.html</loc>
-         <lastmod>2026-08-31</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/generic-dataset/generic-dataset.html</loc>
-         <lastmod>2026-08-31</lastmod>
-    </url>
-    <url>
          <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/generic-jdbc/generic-jdbc-release-notes.html</loc>
          <lastmod>2026-08-31</lastmod>
     </url>
     <url>
          <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/generic-jdbc/generic-jdbc.html</loc>
-         <lastmod>2026-08-31</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/generic-lineage/generic-lineage-release-notes.html</loc>
-         <lastmod>2026-08-31</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/generic-lineage/generic-lineage.html</loc>
          <lastmod>2026-08-31</lastmod>
     </url>
     <url>
@@ -953,14 +953,6 @@
          <lastmod>2026-08-31</lastmod>
     </url>
     <url>
-         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/powerbi-saas/powerbi-saas-release-notes.html</loc>
-         <lastmod>2026-08-31</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/powerbi-saas/powerbi-saas.html</loc>
-         <lastmod>2026-08-31</lastmod>
-    </url>
-    <url>
          <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/powerbi-saas-v2/powerbi-saas-v2-release-notes.html</loc>
          <lastmod>2026-08-31</lastmod>
     </url>
@@ -1113,14 +1105,6 @@
          <lastmod>2026-08-31</lastmod>
     </url>
     <url>
-         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/tableau/tableau-release-notes.html</loc>
-         <lastmod>2026-08-31</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/tableau/tableau.html</loc>
-         <lastmod>2026-08-31</lastmod>
-    </url>
-    <url>
          <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/tableau-v2/tableau-v2-release-notes.html</loc>
          <lastmod>2026-08-31</lastmod>
     </url>
@@ -1150,14 +1134,6 @@
     </url>
     <url>
          <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/tibco-data-virtualization/tibco-data-virtualization.html</loc>
-         <lastmod>2026-08-31</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/tibco-spotfire/tibco-spotfire-release-notes.html</loc>
-         <lastmod>2026-08-31</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.actian.com/data-intelligence-platform/latest/technical-documentation/connectors/tibco-spotfire/tibco-spotfire.html</loc>
          <lastmod>2026-08-31</lastmod>
     </url>
     <url>

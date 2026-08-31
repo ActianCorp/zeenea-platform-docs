@@ -7,7 +7,7 @@ search:
 
 ## Deprecated
 
-The Tableau (V1) plugin has been deprecated. You can use the [Tableau (V2)](../tableau-v2/tableau-v2.md) connector instead.
+The Tableau (V1) plugin has been deprecated. You can use the [Tableau (V2)](./tableau-v2/tableau-v2.md) connector instead.
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ The Tableau (V1) plugin has been deprecated. You can use the [Tableau (V2)](../t
 * The Zeenea traffic flows towards Tableau must be open. If you want to connect Zeenea to a Tableau installed on your own server, you must activate the Tableau API Metadata. See documentation here: [https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server](https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server)
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](./zeenea-connectors-list.md).
 
 
 ## Supported Versions
@@ -30,15 +30,15 @@ The Tableau connector was tested on the SaaS solution.
     * If you need to export your documentation before upgrading, please contact our support before proceeding.
 
 
-The Tableau plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md).
+The Tableau plugin can be downloaded here: [Connector Downloads](./zeenea-connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
 ## Declaring the Connection
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
  
 In order to establish a connection with Tableau, specifying the following parameters in the dedicated file is required:
  
@@ -101,11 +101,11 @@ The Tableau connector is able to retrieve the lineage between datasets that have
 
 | Source System | Possible value of `alias` parameter to be set in source system configuration file |
 |---|---|
-| [BigQuery](../google-bigquery/google-bigquery.md) | `bigquery-{project name}` |
-| [Snowflake](../snowflake/snowflake.md) | `snowflake-{database name}` |
-| [Redshift](../aws-redshift/aws-redshift.md) | `bigquery-{project name}` |
-| [SQL Server](../sqlserver/sqlserver.md) | `redshift-{database name}` |
-| [Oracle](../oracle/oracle.md) | `oracle-{database name}` |
+| [BigQuery](./google-bigquery/google-bigquery.md) | `bigquery-{project name}` |
+| [Snowflake](./snowflake/snowflake.md) | `snowflake-{database name}` |
+| [Redshift](./aws-redshift/aws-redshift.md) | `bigquery-{project name}` |
+| [SQL Server](./sqlserver/sqlserver.md) | `redshift-{database name}` |
+| [Oracle](./oracle/oracle.md) | `oracle-{database name}` |
 
 !!! note
     The connector creates a data process object for each dataset from Tableau to represent the link with the source dataset (even if the source dataset is not present in the catalog).
@@ -158,7 +158,7 @@ To represent the data flow from an external source, a Zeenea Data Process will b
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md)
 
 | Object | Identification Key | Description |
 |---|---|---|
