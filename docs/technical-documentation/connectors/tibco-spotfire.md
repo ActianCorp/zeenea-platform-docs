@@ -7,7 +7,7 @@ search:
 
 ## Deprecated
 
-The Tibco Spotfire (V1) plugin has been deprecated. You can use the [Tibco Spotfire (V2)](../tibco-spotfire-v2/tibco-spotfire-v2.md) connector instead.
+The Tibco Spotfire (V1) plugin has been deprecated. You can use the [Tibco Spotfire (V2)](./tibco-spotfire-v2/tibco-spotfire-v2.md) connector instead.
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ The Tibco Spotfire (V1) plugin has been deprecated. You can use the [Tibco Spotf
 * Zeenea traffic flows towards the server must be open.
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](./zeenea-connectors-list.md).
 
 
 ## Supported Versions
@@ -24,15 +24,15 @@ The Spotfire connector was developed and tested with Spotfire Server version 11.
 
 ## Installing the Plugin
 
-The Spotfire plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md).
+The Spotfire plugin can be downloaded here: [Connector Downloads](./zeenea-connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
 ## Declaring the Connection
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
  
 In order to establish a connection with a Spotfire Server instance, specifying the following parameters in the dedicated file is required:
  
@@ -94,8 +94,8 @@ The Spotfire connector is able to retrieve the lineage between datasets that hav
 
 | Source System| **Possible value of `alias` parameter to be assigned in the source system configuration file** |
 | :--- | :--- | 
-| [AWS Redshift](../aws-redshift/aws-redshift.md) | `host:port/db` |
-| [Tibco Data Virtualization](../tibco-data-virtualization/tibco-data-virtualization.md) | `IP` |
+| [AWS Redshift](./aws-redshift/aws-redshift.md) | `host:port/db` |
+| [Tibco Data Virtualization](./tibco-data-virtualization/tibco-data-virtualization.md) | `IP` |
 
 !!! note
     The connector creates a data process object for each dataset from Spotfire to represent the link with the source dataset even if the source dataset is not present in the catalog.
@@ -155,7 +155,7 @@ To represent the data flow from an external source. One Data Process will be cre
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-Read more: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md)
 
 | Object | Identification Key | Description |
 |---|---|---|

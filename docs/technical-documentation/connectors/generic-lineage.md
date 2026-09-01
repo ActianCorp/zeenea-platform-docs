@@ -7,14 +7,14 @@ search:
 
 ## Deprecated
 
-This connector is deprecated. You can use the new [ZDF Lineage](../zdf/zdf.md# "title: Zeenea Descriptor Format (ZDF)") connector instead.
+This connector is deprecated. You can use the new [ZDF Lineage](./zdf/zdf.md# "title: Zeenea Descriptor Format (ZDF)") connector instead.
 
 ## Prerequisites
 
 The technical user the scanner is executed with must have sufficient [permissions](#p100171 "title: Generic Lineage (Deprecated)") to be able to process the metadata. 
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](./zeenea-connectors-list.md).
 
 ## Supported Versions
 
@@ -61,15 +61,15 @@ To reference in or out an existing dataset in the catalog, you can use the `conn
 
 ## Installing the Plugin
 
-The lineage plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md# "title: Connector Downloads").
+The lineage plugin can be downloaded here: [Connector Downloads](./zeenea-connectors-list.md# "title: Connector Downloads").
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
 
 In order to establish a connection with an lineage connector, specifying the following parameters in the dedicated file is required:
 
@@ -118,7 +118,7 @@ A data process represents a transformation as described in the descriptor file.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
 
 | Object | Identifier Key | Description |
 |---|---|---|

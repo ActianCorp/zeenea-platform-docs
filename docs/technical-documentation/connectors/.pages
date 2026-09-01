@@ -22,7 +22,7 @@ nav:
     - Azure Synapse Analytics: azure-synapse
     - Cassandra: cassandra
     - Couchbase: couchbase
-    - Custom Item - CSV (Deprecated): custom-items-csv
+    - Custom Item - CSV (Deprecated): custom-items-csv.md
     - Databricks Hive Metastore: databricks-hive-metastore
     - Databricks Unity Catalog JDBC: databricks-unity-jdbc
     - Databricks Unity Catalog REST: databricks-unity-rest
@@ -34,9 +34,9 @@ nav:
     - Dynamics AX: dynamics-ax
     - Dynamics 365 (Safyr): dynamics365
     - Elasticsearch: elasticsearch
-    - Generic Dataset (Deprecated): generic-dataset
+    - Generic Dataset (Deprecated): generic-dataset.md
     - Generic JDBC: generic-jdbc
-    - Generic Lineage: generic-lineage
+    - Generic Lineage (Deprecated): generic-lineage.md
     - Google BigQuery: google-bigquery
     - Google Cloud Storage: google-cloud-storage
     - Google Data Catalog: google-data-catalog
@@ -69,7 +69,7 @@ nav:
     - Palantir Foundry: palantir
     - PostgreSQL: postgresql
     - Power BI Report Server: powerbi-report-server
-    - Power BI Online (Deprecated): powerbi-saas
+    - Power BI Online (Deprecated): powerbi-saas.md
     - Power BI Online (V2): powerbi-saas-v2
     - Qlik Cloud: qlik-cloud
     - Qlik Sense: qlik-sense
@@ -89,11 +89,11 @@ nav:
     - SSIS: ssis
     - SSRS: ssrs
     - Sybase IQ: sybase-iq
-    - Tableau (Deprecated): tableau
+    - Tableau (Deprecated): tableau.md
     - Tableau (V2): tableau-v2
     - Talend: talend
     - Teradata: teradata
     - Tibco Data Virtualization: tibco-data-virtualization
-    - Tibco Spotfire (Deprecated): tibco-spotfire
+    - Tibco Spotfire (Deprecated): tibco-spotfire.md
     - Tibco Spotfire (V2): tibco-spotfire-v2
     - Zeenea Descriptor Format (ZDF): zdf
