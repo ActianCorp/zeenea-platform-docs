@@ -11,5 +11,5 @@ The latest version of the **Palantir** connector plugin is available for downloa
 
 **Enhancements**
 
-* Added the connection host to the retrieved source properties of imported assets.
+* Added the connection `host` to the retrieved source properties of imported assets.
 * Upgraded third-party dependencies to address security vulnerabilities.
