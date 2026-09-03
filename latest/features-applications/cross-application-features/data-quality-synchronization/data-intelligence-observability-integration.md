@@ -6,14 +6,14 @@ This section applies only if your subscription includes the Actian Data Observab
 
 When a dataset is cataloged in Actian Data Intelligence Platform and monitored in Actian Data Observability, the latest data quality information is automatically synchronized from Actian Data Observability to Actian Data Intelligence Platform after each completed scan.
 
-For a list of supported data sources, see [Supported Data Sources](link).
+For a list of supported data sources, see [Supported Data Sources](https://docs.actian.com/actian-data-observability/getting-started/integrations/actian-data-intelligence-platform.html#supported-data-sources).
 
 This information is available in both **Studio** and **Explorer** in the following locations:
 
 * **Data Quality** tab
 * **Lineage** tab
 
-For setup and configuration instructions, see [Actian Data Intelligence Platform Integration](https://doclink).
+For setup and configuration instructions, see [Actian Data Intelligence Platform Integration](https://docs.actian.com/actian-data-observability/getting-started/integrations/actian-data-intelligence-platform.html).
 
 ## View Data Quality Information for Datasets 
 
@@ -42,7 +42,7 @@ You can select **View Details** to open the selected dataset's Overview page in 
 
 The right panel displays data quality metrics synchronized from Data Observability for the selected dataset, including:
 
-* Data quality score (for more information, see [Data Quality Score](https://docslink))
+* Data quality score (for more information, see [Data Quality Score](https://docs.actian.com/actian-data-observability/getting-started/monitoring-data/data-quality-score.html))
 * Record count
 * Uniqueness
 * Completeness
