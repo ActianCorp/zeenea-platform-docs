@@ -4,6 +4,8 @@
 
 When a dataset is cataloged in Actian Data Intelligence Platform and monitored in Actian Data Observability, the latest data quality information is automatically synchronized from Actian Data Observability to Actian Data Intelligence Platform after each completed scan.
 
+For a list of supported data sources, see [Supported Data Sources](link).
+
 This information is available in both **Studio** and **Explorer** in the following locations:
 
 * **Data Quality** tab
@@ -57,7 +59,7 @@ The **Lineage** tab displays a data quality health indicator for the selected da
 
 ## View Data Quality Information for Data Products and Output Ports 
 
-Data quality information for data products and output ports is available in the **Data Quality** tab.
+Data quality information is available at the data product and output port levels.
 
 ### Data Product
 
@@ -65,7 +67,9 @@ At the data product level, a data quality health indicator is displayed. The ind
 
 ### Data Product Output Port
 
-At the data product output port level, the following data quality information is displayed by aggregating data quality information across all linked datasets.
+Data quality information for data product output ports is available in the **Data Quality** tab.
+
+The following data quality information is displayed by aggregating data quality information across all linked datasets.
 
 **Asset Overview**
 
@@ -84,4 +88,14 @@ In the incident list, you can select a dataset link to open the corresponding da
 
 ## Limitations
 
-Using the legacy Data Quality API at the same time can result in inconsistent data quality information. In particular, information in the **Lineage** tab might not be consistent with information in the dataset's **Data Quality** tab.
+### Integration Compatibility
+
+The Actian Data Observability and legacy Data Quality API integrations are not supported for simultaneous use. Use only one integration at a time. 
+
+Using both integrations can result in inconsistent data quality information. For example, information displayed in the **Lineage** tab might not match the information displayed in the dataset's **Data Quality** tab.
+
+### Connector Matching
+
+When using Actian Data Intelligence Platform V1 connectors, dataset matching is performed on a best-effort basis and may produce ambiguous matches.
+
+For improved matching accuracy, use Actian Data Intelligence Platform V2 connectors, which match datasets by using data source and dataset identifiers.
