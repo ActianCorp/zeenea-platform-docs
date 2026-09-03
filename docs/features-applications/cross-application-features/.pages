@@ -7,7 +7,7 @@ nav:
     - zeenea-glossary-hierarchy.md
     - data-intelligence-item-lifecycle-policies.md
     - zeenea-microsoft-teams.md
-    - zeenea-synchronization.md
+    - Synchronization with a Data Quality Management Tool: data-quality-synchronization
     - zeenea-view-360-diagram.md
     - zeenea-query-language.md
 
