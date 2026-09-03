@@ -1,5 +1,7 @@
 # Actian Data Observability Integration
 
+This section applies only if your subscription includes the Actian Data Observability integration. If you want to activate this paid option, contact your Customer Success Manager (CSM).
+
 ## Overview
 
 When a dataset is cataloged in Actian Data Intelligence Platform and monitored in Actian Data Observability, the latest data quality information is automatically synchronized from Actian Data Observability to Actian Data Intelligence Platform after each completed scan.
