@@ -121,7 +121,7 @@ To configure Admin API settings in Azure, you typically need to enable service p
 
 **Configure Admin API Settings:**
 
-   * Access the Admin Portal: Navigate to the Admin portal within your Azure subscription. 
+   * Access the Admin Portal: Navigate to the Admin portal within the Fabric service. 
    * Navigate to Tenant Settings:
       * Within the Admin portal, locate the **Tenant Settings** section. 
    * Locate Developer Settings:
@@ -135,6 +135,7 @@ To configure Admin API settings in Azure, you typically need to enable service p
       * Enable the switch that allows service principals to access read-only Admin APIs used for updates
       * Enable the switch that allows for enhanced Admin API responses with detailed metadata. 
         * Assign the security group created in the previous step to the Admin API settings enabled.
+   * To retrieve lineage through the MS Fabric plugin, enable the **Enhance admin APIs responses with DAX and mashup expressions** permission for the entire organization or for a specific group that includes the connector account.
 
 #### PowerBI Online Application : [https://app.powerbi.com](https://app.powerbi.com)
 
