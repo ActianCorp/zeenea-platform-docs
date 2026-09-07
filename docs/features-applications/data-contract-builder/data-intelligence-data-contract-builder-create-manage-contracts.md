@@ -80,6 +80,9 @@ You can use this method to import multiple existing ODCS YAML contracts in a sin
 
 3. Drag and drop YAML files into the upload area or click the upload area to browse for files.
 
+    !!! note
+        Bulk import supports only `.yaml` and `.yml` files. Each uploaded file must not exceed 1 MB in size.
+
 4. Review the uploaded files.
 
      DCB validates each uploaded file and displays the upload status.
@@ -307,18 +310,24 @@ Use the Data access section to define data consumer roles and the level of acces
 
 **Data access roles**
 
-To add a data access role:
+Provide the following information:
 
-1. Select **Add access role**.
-2. Enter a role name.
-3. Select an access level.
-   
+* **Role:** The name of the data access role.
+* **Access:** The level of access granted to consumers. Supported values include:
+
      * **Read:** Allows consumers to view data.
      * **Write:** Allows consumers to create and update data.
      * **Custom:** Allows you to define a custom access level that does not fit the standard read or write categories.
 
-4. Optionally, provide a description.
-5. Repeat the process to add additional roles.
+* **Description:** An optional description of the role and its intended usage.
+* **ID:** A unique identifier for the access role.
+* **First level approvers:** Approvers responsible for the first level of access approval.
+* **Second level approvers:** Approvers responsible for the second level of access approval.
+
+    !!! note
+        Approver information is provided as declarative metadata only. DCB does not execute an approval workflow. Multiple approvers are stored as a comma-separated list in the generated YAML.
+
+* **Custom properties:** Custom properties for the access role.
 
 **Access request policy**
 
@@ -336,47 +345,48 @@ Use the Service levels section to define service-level commitments and operation
 
 Service levels are exported as ODCS `slaProperties`. Complete service level entries are included in the generated YAML.
 
-To add a service level:
+Provide the following information:
 
-1. Select **Add service level**.
-2. Provide the following information:
-   
-     * **Type:** Select one of the supported service level types.
+* **Type:** Select one of the supported service level types.
         
-          * Latency
-          * Retention
-          * Frequency
-          * Availability
-          * Throughput
-          * Error rate
-          * General availability
-          * End of support
-          * End of life
-          * Time of availability
-          * Time to detect
-          * Time to notify
-          * Time to repair
+     * Latency
+     * Retention
+     * Frequency
+     * Availability
+     * Throughput
+     * Error rate
+     * General availability
+     * End of support
+     * End of life
+     * Time of availability
+     * Time to detect
+     * Time to notify
+     * Time to repair
 
-     * **Value:** The target value or threshold for the service-level commitment.
-     * **Unit:** The unit associated with the service-level value. The following units are supported:
+* **Value:** The target value or threshold for the service-level commitment.
+* **Unit:** The unit associated with the service-level value. The following units are supported:
 
-          * **ms:** Milliseconds
-          * **s:** Seconds
-          * **min:** Minutes
-          * **h:** Hours
-          * **d:** Days
-          * **w:** Weeks
-          * **mo:** Months
-          * **y:** Years
+     * **ms:** Milliseconds
+     * **s:** Seconds
+     * **min:** Minutes
+     * **h:** Hours
+     * **d:** Days
+     * **w:** Weeks
+     * **mo:** Months
+     * **y:** Years
 
-     * **Element:** The table or field associated with the service level.
-     * **Driver:** The reason for the service-level commitment. Supported values include:
+* **Element:** The table or field associated with the service level.
+* **Driver:** The reason for the service-level commitment. Supported values include:
 
-          * Regulatory
-          * Analytics
-          * Operational
+     * Regulatory
+     * Analytics
+     * Operational
 
-   * **Description:** Additional information about the service level.
+* **Description:** Additional information about the service level.
+* **ID:** A unique identifier for the service-level entry.
+* **Value ext:** An extended service-level value used when the service-level property requires two values, such as a time window.
+* **Scheduler:** The scheduler name used for automated service-level checks.
+* **Schedule:** The scheduler configuration used for automated service-level checks.
 
 You can add multiple service levels to document different service-level commitments.
 
