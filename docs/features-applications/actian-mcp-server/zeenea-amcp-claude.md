@@ -8,6 +8,7 @@ Before you begin, ensure that you have the following:
 
 * An Actian Data Intelligence tenant with an API key generated following the Authentication Setup instructions. If you don't have access, contact Actian Support or your Actian Customer Success team.  
 * [Claude Desktop](https://claude.ai/download) is installed and updated to the latest version.
+* NodeJS LTS installed.
 
 ## Claude Desktop with Actian MCP
 
