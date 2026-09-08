@@ -175,7 +175,9 @@ white-labeling-assets/
 ```
 
 !!! note
-    Incomplete or incorrectly packaged submissions may delay review and approval. Actian repackages your submitted assets into the required deployment format. You do not need to match platform-internal filenames.
+    Incomplete or incorrectly packaged submissions may delay review and approval. 
+    
+    Actian repackages your submitted assets into the required deployment format. You do not need to match platform-internal filenames.
 
 ## Asset Validation and Review
 
