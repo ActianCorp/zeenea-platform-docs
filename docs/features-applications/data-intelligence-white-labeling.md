@@ -25,7 +25,6 @@ The following branding elements can be customized as part of white-labeling:
 | Primary Brand Color | Supported | Replaces Actian primary color |
 | Fonts | Limited | Explorer homepage heading (H1) only |
 | Email Branding | Supported through webhook integration | Logo and primary color only |
-| Homepage Background | Supported | Explorer application only (managed by the Actian Design team) |
 
 The following illustration shows the branding elements that you can customize across supported applications, including the application logo, favicon, browser page title, and primary brand color.
 
@@ -58,8 +57,13 @@ Provide the following branding assets and text inputs based on your requirements
 
 * **Application names**: Text used in application navigation and actions, for example, **Open in _&lt;custom Studio name&gt;_**.
 
+    !!! warning "Important"
+        **Application names** and **Browser page title text** must not contain the characters `&`, `<`, or `>`. Use spelled-out words instead (for example, use `and` instead of `&`).
+
+* **Support URL**: The URL used for support links within the applications. If not provided, the default Actian support URL is used.
+
 !!! note
-    These text inputs are required to complete white-labeling for supported areas and must be finalized before implementation.
+    These inputs are required to complete white-labeling for supported areas and must be finalized before implementation.
 
 ## Asset Specifications
 
@@ -75,7 +79,6 @@ You can use a single logo across all applications or provide application-specifi
 | :---- | :---- |
 | File format | SVG  |
 | Background | Transparent |
-| Aspect ratio | 1:1 (Square) |
 | Minimum size | 256 × 256 px |
 | Maximum file size | 1 MB |
 | Color mode | RGB |
@@ -101,6 +104,9 @@ You can provide a single favicon for all applications or application-specific fa
 | File format | SVG |
 | Aspect ratio | Square (1:1) |
 | Scope | Single favicon or application-specific favicon |
+
+!!! note
+    If no favicon is provided, the standard application logo is used.
 
 ### Primary Brand Color 
 
@@ -165,11 +171,11 @@ white-labeling-assets/
 ├── fonts/
 │   └── explorer-h1.ttf
 │
-└── brand-colors.txt
+└── brand-color.txt
 ```
 
 !!! note
-    Incomplete or incorrectly packaged submissions may delay review and approval.
+    Incomplete or incorrectly packaged submissions may delay review and approval. Actian repackages your submitted assets into the required deployment format. You do not need to match platform-internal filenames.
 
 ## Asset Validation and Review
 
