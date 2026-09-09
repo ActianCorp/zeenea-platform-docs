@@ -46,7 +46,7 @@
 | [SAP BW (Bluetelligence)](./sap-bw-bluetelligence/sap-bw-bluetelligence.md) | Bluetelligence | 88 | [bluetelligence-connector-plugin-1.0.1.zip](https://plugins.zeenea.app/bluetelligence-connector-plugin/bluetelligence-connector-plugin-1.0.1.zip) |
 | [Salesforce](./salesforce2/salesforce2.md) | Salesforce | 88 | [salesforce-connector-plugin-1.0.2.zip](https://plugins.zeenea.app/salesforce-connector-plugin/salesforce-connector-plugin-1.0.2.zip) |
 | [Qlik Sense Enterprise](./qlik-sense/qlik-sense.md)<br />[Qlik Cloud](./qlik-cloud/qlik-cloud.md) | Qlik | 54 | [qlik-connector-plugin-2.0.2.zip](https://plugins.zeenea.app/qlik-connector-plugin/qlik-connector-plugin-2.0.2.zip) |
-| [SAP Analytics Cloud](./sap-analytics-cloud/sap-analytics-cloud.md)<br />[SAP BO](./sap-bo/sap-bo.md) | SAP | 66 | [sap-connector-plugin-2.0.1.zip](https://plugins.zeenea.app/sap-connector-plugin/sap-connector-plugin-2.0.1.zip) |
+| [SAP Analytics Cloud](./sap-analytics-cloud/sap-analytics-cloud.md)<br />[SAP BO](./sap-bo/sap-bo.md) | SAP | 66 | [sap-connector-plugin-2.0.2.zip](https://plugins.zeenea.app/sap-connector-plugin/sap-connector-plugin-2.0.2.zip) |
 | [SAS Data Integration](./sas-data-integration/sas-data-integration.md)<br />[SAS Database](./sas-db/sas-db.md) | SAS | 70 | [sas-connector-plugin-1.3.0.zip](https://plugins.zeenea.app/sas-connector-plugin/sas-connector-plugin-1.3.0.zip) |
 | [Splunk](./splunk/splunk.md) | Splunk | 54 | [splunk-connector-plugin-1.0.0.zip](https://plugins.zeenea.app/splunk-connector-plugin/splunk-connector-plugin-1.0.0.zip) |
 | [Tableau](./tableau.md) (*Deprecated*) | Tableau | 54 | [tableau-connector-plugin-4.2.2.zip](https://plugins.zeenea.app/tableau-connector-plugin/tableau-connector-plugin-4.2.2.zip) |
