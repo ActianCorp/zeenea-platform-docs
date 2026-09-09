@@ -38,8 +38,8 @@ The Microsoft Windows PC on which Safyr is to be installed should meet the follo
 
 ## Installing Safyr on Windows
 
-To install Safyr on a Windows PC, follow the instructions in the [Safyr Getting Started Guide](https://www.silwoodtechnology.com/support/files/SafyrGettingStarted.pdf) on Silwood's website.
+To install Safyr on a Windows PC, follow the instructions in the [Safyr Getting Started Guide](https://support.silwoodtechnology.com/files/SafyrGettingStarted.pdf) on Silwood's website.
 
-In order to regularly produce the output files, you also need to configure the scheduled tasks following the instructions described in [Safyr Task Automation Guide](http://www.silwoodtechnology.com/support/files/SafyrTaskAutomationGuide.pdf).
+In order to regularly produce the output files, you also need to configure the scheduled tasks following the instructions described in [Safyr Task Automation Guide](https://support.silwoodtechnology.com/files/SafyrTaskAutomationGuide.pdf).
 
 If you are already using Safyr with a license, you can also contact Silwood support for help: [support@silwoodtechnology.com](mailto:support@silwoodtechnology.com)

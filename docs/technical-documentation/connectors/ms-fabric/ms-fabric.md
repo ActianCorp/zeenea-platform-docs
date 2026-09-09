@@ -141,10 +141,12 @@ To configure Admin API settings in Azure, you typically need to enable service p
 
 **Give permission to PowerBI Workspaces:**
 
-   * Access PowerBI Online Application.
-   * Navigate to **Workspaces** section. 
-   * Grant the **Member** permission set to the service principal for every Workspace that you want to catalog.
-   > **Note:** Do not grant the **Member** permission set to a security group; otherwise, it will not work correctly.
+* Access PowerBI Online Application.
+* Navigate to **Workspaces** section. 
+* Grant the **Member** permission set to the service principal for every Workspace that you want to catalog.
+
+    !!! note
+        Do not grant the **Member** permission set to a security group; otherwise, it will not work correctly.
 
 ## Rich Filters
 
