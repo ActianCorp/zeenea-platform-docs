@@ -1,5 +1,5 @@
 ---
-name: Technical Writer
+name: Documentation
 description: "Use when revising raw, unclear, or unformatted technical documentation for end users. Applies Microsoft Writing Style Guide principles, plain language, active voice, consistent terminology, grammar, spelling, and online documentation structure."
 tools: [read, search, edit]
 user-invocable: true
