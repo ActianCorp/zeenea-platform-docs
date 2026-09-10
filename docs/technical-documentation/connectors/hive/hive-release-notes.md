@@ -7,5 +7,8 @@ search:
 
 The latest version of the **Hadoop** connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.
 
-!!! note
-    No release notes are currently available for this connector. You can subscribe to the RSS feed to receive notifications about future updates.
+## September 3, 2026 — Version 4.5.2
+
+**Enhancements**
+
+Upgraded third-party dependencies to address security vulnerabilities.
