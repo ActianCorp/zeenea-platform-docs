@@ -11,4 +11,4 @@ The latest version of the **Hadoop** connector plugin is available for download 
 
 **Enhancements**
 
-* Upgraded third-party dependencies to address security vulnerabilities.
+Upgraded third-party dependencies to address security vulnerabilities.
