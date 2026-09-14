@@ -1,293 +1,416 @@
-# Adding a Snowflake Connection
+# Snowflake V2 Connector Guide
 
-## Prerequisites
+The Snowflake connector V2 catalogs your Snowflake metadata —
+tables, dynamic tables, table fields, views and more — and enriches it with lineage, data classification and
+tags, across one or several Snowflake accounts.
 
-* In order to establish a connection with Snowflake, a user with sufficient [permissions](#user-permissions) is required.
-* A route between the Zeenea scanner and the database must be open to allow traffic between the two.
+## Capability overview
 
-!!! note
-    You can find a link to the configuration template in [Zeenea Connector Downloads](zeenea-connectors-list.md).
-
-## Supported Versions
-
-The Snowflake connector has been tested with the cloud version of this service.
-
-## Installing the Plugin
-
-From version 96 of the scanner, the Snowflake connector is presented as a plugin.
-
-It can be downloaded here and requires a scanner version 64 or later: [Zeenea Connector Downloads](./zeenea-connectors-list.md).
-
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
-
-!!! note
-    For users of Java 17 and later, the Snowflake driver uses old private Java API. A special option should be added on the scanner command line in order to provide access to this API.
-
-    `-J--add-opens=java.base/java.nio=ALL-UNNAMED`
-
-    You can pass it directly to zeenea-scanner. If on Linux, it can be added to the `conf/application.ini` file. Create it if it doesn't exist already.
-
-## Declaring the Connection
-
-Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
-
-Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
-
-In order to establish a connection with Snowflake, specifying the following parameters in the dedicated file is required:
-
-| Parameter | Expected Value |
+| Capability | Support |
 | :--- | :--- |
-| `name` | The name that will be displayed to catalog users for this connection |
-| `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
-| `connector_id` | The type of connector to be used for the connection. Here, the value must be `snowflake-v2` and this value must not be modified. |
-| `connection.url` | Database address.<br /><br />Example: `jdbc:snowflake://<org>-<account>.snowflakecomputing.com/?db=<database>&role=<role>&warehouse=<warehouse>`<br /><br />The `db` parameter is always required to initialize the connection.<br />The `role` and `warehouse` parameters are required if no default values are defined for the user. |
-| `connection.username` | Username |
-| `connection.password` | User password. (Optional during key pair authentication use.) |
-| `connection.private_key_path` | Full path to the `rsa_key.p8` type file for key pair authentication |
-| `connection.passphrase` | Key password |
-| `data_classification.enabled` | Option to enable retrieval of "Privacy Category" and "Semantic Category" metadata related to Snowflake data classification features |
-| `user_defined_tags.enabled` | Option to enable retrieval of user-defined Snowflake object tags on datasets and fields |
-| `cache.enabled` | Enable the cache functionality. When the cache is activated, the schema update performs four queries per database instead of four per imported table. The result is greater efficiency. |
-| `cache.folder` | Folder where caches are stored. The same folder can be used by several connections.<br />The size of the cache file produced depends on the number of tables in the database (and not on the number of tables imported into Zeenea).<br />If the folder is not specified, the cache is stored in memory. |
-| `cache.ttl` | Cache validity period in ISO-8601 duration format (default `PT12H`). As long as the cache is valid, requests that fill it are not executed. |
-| `lineage.view.enabled` | Option to enable view lineage feature. Default value `true`. |
-| `lineage.dynamic_table.enabled` | Option to enable dynamic table lineage feature. Default value `true`. |
-| `lineage.pipe.enabled` | Option to enable Snowpipe lineage feature. Default value `false`. |
-| `lineage.history.enabled` | Option to enable execution history lineage feature. Default value `false`. |
-| `lineage.history.warehouse` | The name of the Warehouse where the queries are executed. |
-| `lineage.history.period` | Number of days to analyze the queries between the start of the extraction and this number. Default value `2`. |
-| `filter` | To filter datasets during the inventory. See [Rich Filters](#rich-filters). |
-| `multi_account.list` | (Optional) List of accounts to be inventoried. It consists of a succession of Snowflake account identifiers separated by a space. Account identifiers must be in the form `<org>-<account>` (see [Snowflake documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier)).<br />If unset, the organization's account list is retrieved automatically. |
+| **Connection & operations** | |
+| Authentication (password & key pair) | :material-check-circle:{ .green } Supported |
+| Multi-account | :material-check-circle:{ .green } Supported |
+| Filtering (inventory, sampling, profiling) | :material-check-circle:{ .green } Supported |
+| Extraction caching (fewer queries, faster refresh) | :material-check-circle:{ .green } Supported |
+| **Objects & metadata** | |
+| Tables, dynamic tables, table fields, views | :material-check-circle:{ .green } Supported |
+| Table primary & foreign keys | :material-check-circle:{ .green } Supported |
+| Streams, tasks | :material-close-circle:{ .red } Not supported |
+| AI / ML models | :material-close-circle:{ .red } Not supported |
+| Stored procedures & user-defined functions (UDFs) | :material-close-circle:{ .red } Not supported |
+| **Lineage** | |
+| Views | :material-check-circle:{ .green } Supported — field-to-field¹ |
+| Dynamic table definitions | :material-check-circle:{ .green } Supported — field-to-field¹ |
+| Snowpipes | :material-check-circle:{ .green } Supported — file-to-table |
+| Query-history operations | :material-check-circle:{ .green } Supported — table-to-table |
+| **Classification & governance** | |
+| Data classification (privacy & semantic categories) | :material-check-circle:{ .green } Supported |
+| User-defined tags | :material-check-circle:{ .green } Read-only (no write-back) |
+| Masking & row-access policies | :material-close-circle:{ .red } Not supported |
+| Data quality (data metric functions) | :material-close-circle:{ .red } Not supported |
+| **Data** | |
+| Data profiling | :material-check-circle:{ .green } Supported |
+| Data sampling | :material-check-circle:{ .green } Supported |
+
+<small>¹ For views and dynamic table definitions, the mapping is resolved down to the
+**field-to-field** level from the object's SQL definition, and falls back to table-to-table level when the
+statement cannot be fully parsed.</small>
+
+## Prerequisites & connection
+
+### Prerequisites
+
+Before creating the connection, make sure you have:
+
+- A network route open between the scanner and Snowflake (**port 443**, outbound).
+- A dedicated Snowflake **service role**. The privileges to grant it **depend on which
+  capabilities you enable** (lineage, data classification, tags, profiling…): core metadata
+  needs only read access, while some features require additional grants. See
+  [Required privileges](#required-privileges) to grant only what you need.
+
+### Supported versions
+
+- **Snowflake** — cloud service (all current editions).
+- **Scanner** — each plugin release requires a minimum scanner version. See the plugin's
+  entry in [Zeenea Connector Downloads](./zeenea-connectors-list.md) for the exact version.
+
+### Installing the plugin
+
+The Snowflake connector ships as a plugin. Download it from
+[Zeenea Connector Downloads](./zeenea-connectors-list.md) and follow
+[Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+
+### Connecting to Snowflake
+
+The connection is declared in a configuration file in the scanner's `/connections` folder.
+The JDBC URL **must** include the `db` parameter (the connector rejects a URL without it).
+A `role` and a `warehouse` are needed to run queries; you can omit them from the URL if the
+user has defaults defined in Snowflake.
+
+!!! tip "Credentials & secrets"
+    Prefer key-pair authentication in production. Credentials — for a single account
+    (`connection.*`) or per account (`<org>-<account>.*`) — can be resolved from the
+    scanner's **Secret Manager** instead of being stored in clear text in the config file.
+    This is a scanner capability and applies to both single- and multi-account connections.
+
+#### Single account
+
+=== "Password"
+
+    ```hocon
+    connector_id = "snowflake-v2"
+    connection.url      = "jdbc:snowflake://<org>-<account>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
+    connection.username = "<USERNAME>"
+    connection.password = "<PASSWORD>"
+    ```
+
+=== "Key pair"
+
+    ```hocon
+    connector_id = "snowflake-v2"
+    connection.url              = "jdbc:snowflake://<org>-<account>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
+    connection.username         = "<USERNAME>"
+    connection.private_key_path = "/etc/keys/rsa_key.p8"
+    connection.passphrase       = "<PASSPHRASE>"
+    ```
+
+#### Multiple accounts
+
+The connector can inventory several Snowflake accounts. By default it **auto-discovers**
+every account in the organization (requires access to `SNOWFLAKE.ORGANIZATION_USAGE.ACCOUNTS`).
+To restrict the scope, list the accounts explicitly:
+
+```hocon
+multi_account.list = ["<org>-<account1>", "<org>-<account2>"]
+```
+
+**Credentials** can be shared or set per account:
+
+- **Shared** — if every account uses the same credentials, define them once at the
+  `connection.*` level.
+- **Per account** — override any parameter by prefixing the account identifier
+  (`<org>-<account>`). If a per-account key is missing, the connector falls back to the
+  `connection.*` value.
+
+!!! note
+    A `connection.url` at the connection level is **always required**: it initializes the
+    primary connection, even when every account defines its own URL.
+
+=== "Password (per account)"
+
+    ```hocon
+    connector_id = "snowflake-v2"
+
+    connection.url = "jdbc:snowflake://<org>-<account1>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
+
+    multi_account.list = ["<org>-<account1>", "<org>-<account2>"]
+
+    <org>-<account1>.url      = "jdbc:snowflake://<org>-<account1>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
+    <org>-<account1>.username = "<USERNAME_1>"
+    <org>-<account1>.password = "<PASSWORD_1>"
+
+    <org>-<account2>.url      = "jdbc:snowflake://<org>-<account2>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
+    <org>-<account2>.username = "<USERNAME_2>"
+    <org>-<account2>.password = "<PASSWORD_2>"
+    ```
+
+=== "Key pair (per account)"
+
+    ```hocon
+    connector_id = "snowflake-v2"
+
+    connection.url = "jdbc:snowflake://<org>-<account1>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
+
+    multi_account.list = ["<org>-<account1>", "<org>-<account2>"]
+
+    <org>-<account1>.url              = "jdbc:snowflake://<org>-<account1>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
+    <org>-<account1>.username         = "<USERNAME_1>"
+    <org>-<account1>.private_key_path = "/etc/keys/account1.p8"
+    <org>-<account1>.passphrase       = "<PASSPHRASE_1>"
+
+    <org>-<account2>.url              = "jdbc:snowflake://<org>-<account2>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
+    <org>-<account2>.username         = "<USERNAME_2>"
+    <org>-<account2>.private_key_path = "/etc/keys/account2.p8"
+    <org>-<account2>.passphrase       = "<PASSPHRASE_2>"
+    ```
+
+!!! note
+    Account identifiers must use the `<organization>-<account>` format. Classic
+    single-part identifiers are ignored (with a warning).
+
+## Detailed capabilities & configuration
+
+For the full list of properties and defaults, see the [Configuration reference](#configuration-reference).
+
+!!! note
+    Features marked :material-cash:{ .amber } run queries that use **Snowflake warehouse
+    compute** (data scans or `ACCOUNT_USAGE` reads). The actual cost depends on warehouse
+    size, data volume, and extraction frequency — size and schedule these accordingly.
+
+### Connection & operations
+
+#### Authentication
+
+Password and key-pair authentication are configured when declaring the connection —
+see [Connecting to Snowflake](#connecting-to-snowflake).
+
+#### Multi-account
+
+> **Config:** `multi_account.list`
+
+Each Snowflake account is cataloged as a **separate data source**, and every object is
+attributed to its account. Accounts are either **auto-discovered** from the organization
+or listed explicitly — see [Multiple accounts](#multiple-accounts).
+
+#### Filtering
+
+> **Config:** `inventory_filters`, `sampling_filters`, `profiling_filters`
+
+Filters restrict each stage to the objects you care about, following the
+[Universal filters](../../technical-documentation/scanners/zeenea-universal-filters.md) syntax:
+
+- **`inventory_filters`** — which objects are cataloged.
+- **`sampling_filters`** — which objects data sampling runs on.
+- **`profiling_filters`** — which objects data profiling runs on.
+
+Rules match Snowflake objects on `account`, `catalog` (Snowflake database), `schema`, and `table`.
+
+#### Extraction caching
+
+> **Config:** `cache.*` · **Default:** off
+
+Reduces the number of queries sent to Snowflake during extraction: instead of querying
+each table individually, the connector runs a few per-database queries and reuses the
+result for the cache validity period. This speeds up refreshes and lowers warehouse load,
+especially for databases with many tables.
+
+### Objects & metadata
+
+The connector maps Snowflake objects to catalog objects as follows:
+
+| Snowflake object | Imported into the platform as |
+| :--- | :--- |
+| Table, dynamic table, view | **Dataset** |
+| Table column | **Field** |
+| View / dynamic-table definition, Snowpipe, query-history operation | **Data process** (see [Lineage](#lineage)) |
+| User-defined tags | Properties on the dataset (table, view, dynamic table) and its fields |
+| Privacy & Semantic categories (data classification) | Field properties |
+
+**Dataset** — a table, a dynamic table, or a view:
+
+- **Name & description** — from the source comment
+- **Location** — account, catalog (database), schema, and table name
+- **Type** — the Snowflake table type (e.g. `BASE TABLE`, `VIEW`), and whether it is a dynamic table
+- **Primary key** — which of its fields form the primary key
+- **Foreign keys** — links from its fields to fields in other datasets
+- **User-defined tags** — when enabled
+
+**Field** — a table column:
+
+- **Name & description** — from the source comment
+- **Type** — mapped data type and native Snowflake type
+- **Position** — the column index
+- **Classification** — *Privacy Category* and *Semantic Category*, when data classification is enabled
+- **User-defined tags** — when enabled
+
+#### Identification keys
+
+Each catalog object carries an **identification key**, built by the connector.
+See [Identification keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+
+| Object | Identification key | Components |
+| :--- | :--- | :--- |
+| Dataset | `catalog/schema/name` | **catalog**: Snowflake database · **schema**: schema · **name**: table, view, or dynamic table name |
+| Field | `catalog/schema/name/field` | …plus **field**: column name |
+| Data process (query-history lineage) | `type/hash` | **type**: operation type · **hash**: hash of the access-history entry |
+| Data process (Snowpipe lineage) | `catalog/schema/pipe` | **catalog**: Snowflake database · **schema**: schema · **pipe**: Snowpipe name |
+
+### Lineage
+
+Lineage is materialized as **Data processes** that link input and output assets
+(*input → Data process → output*). Each lineage feature produces a specific kind of data process.
+
+#### Views
+
+> **Config:** `lineage.view.enabled` · **Default:** on
+
+Source tables → **view** → the view.
+The mapping is resolved down to the **field-to-field** level from the object's SQL definition (it falls back to dataset level when the statement cannot be fully parsed).
+
+#### Dynamic table definitions
+
+> **Config:** `lineage.dynamic_table.enabled` · **Default:** on
+
+Source tables → **dynamic table definition** → the dynamic table.
+The mapping is resolved down to the **field-to-field** level from the object's SQL definition (it falls back to dataset level when the statement cannot be fully parsed).
+
+#### Snowpipes
+
+> **Config:** `lineage.pipe.enabled` · **Default:** off · :material-lock:{ .amber } [Required privileges](#required-privileges)
+
+Ingested source files (from a cloud stage) → **Snowpipe** → target table. A data process is created for each Snowpipe that has loaded data into a table.
+
+#### Query-history operations
+
+> **Config:** `lineage.history.enabled`, `lineage.history.period`, `lineage.history.warehouse` · **Default:** off · :material-lock:{ .amber } [Required privileges](#required-privileges) · :material-cash:{ .amber } Warehouse compute
+
+Input tables → **operation** (`INSERT`, `MERGE`, `UPDATE`, `CREATE TABLE AS SELECT`) → output tables, reconstructed from query history.
+
+- `lineage.history.period` — number of days of history to analyze (default `2`).
+- `lineage.history.warehouse` — restrict analysis to a specific warehouse (optional).
+
+!!! note
+    Only the operations listed above are reconstructed. Manual `COPY INTO` statements
+    (outside Snowpipe) are not captured as lineage.
+
+### Classification & governance
+
+#### Data classification
+
+> **Config:** `data_classification.enabled` · **Default:** off · :material-lock:{ .amber } [Required privileges](#required-privileges)
+
+Retrieves Snowflake's **Privacy Category** and **Semantic Category** and attaches them to
+the relevant fields.
+
+#### User-defined tags
+
+> **Config:** `user_defined_tags.enabled` · **Default:** off
+
+Retrieves user-defined Snowflake tags on tables, dynamic tables, views and table columns.
+**Read-only** — the connector never writes tags back to Snowflake.
+
+### Data
+
+#### Data profiling
+
+:material-cash:{ .amber } Warehouse compute · :material-lock:{ .amber } [Required privileges](#required-privileges)
+
+Statistical profiles per field. The connector draws a random sample
+(`COUNT(*)` + `TABLESAMPLE`) sized to the requested row count; statistics are then computed from that sample.
+See [Data Profiling](../../features-applications/cross-application-features/zeenea-data-profiling.md).
+
+#### Data sampling
+
+:material-cash:{ .amber } Warehouse compute · :material-lock:{ .amber } [Required privileges](#required-privileges)
+
+Exposes a preview of field values, retrieved on demand from the sampled table. See
+[Data Sampling](../../features-applications/cross-application-features/zeenea-data-sampling.md).
+
+## Required privileges
+
+The connector is **read-only**. Grant only what the enabled features need — the table
+below maps each capability to the Snowflake objects it reads and the privilege required.
+
+| Capability | Snowflake objects queried | Privilege required |
+| :--- | :--- | :--- |
+| Core metadata (tables, views, columns) | `INFORMATION_SCHEMA.DATABASES` / `TABLES` / `COLUMNS` | `USAGE` on the database & schemas; access to the objects |
+| Primary & foreign keys | `SHOW PRIMARY KEYS`, `SHOW IMPORTED KEYS` | Access to the tables |
+| View lineage | `SHOW VIEWS` (view definition); `INFORMATION_SCHEMA.VIEWS` when caching is enabled | `SELECT` on the views (secure views: owner role or `SNOWFLAKE.OBJECT_VIEWER`) |
+| Dynamic table definition lineage | `GET_DDL('DYNAMIC_TABLE', …)` | `SELECT` on the dynamic tables |
+| Snowpipe lineage | `SNOWFLAKE.ACCOUNT_USAGE.PIPES`; `INFORMATION_SCHEMA.COPY_HISTORY()` (last 14 days) | `IMPORTED PRIVILEGES ON DATABASE SNOWFLAKE` + `MONITOR` on each pipe |
+| Query-history operation lineage | `SNOWFLAKE.ACCOUNT_USAGE.ACCESS_HISTORY`, `QUERY_HISTORY` | `IMPORTED PRIVILEGES ON DATABASE SNOWFLAKE` — requires Snowflake **Enterprise Edition** |
+| Data classification | `SNOWFLAKE.ACCOUNT_USAGE.TAG_REFERENCES` | `IMPORTED PRIVILEGES ON DATABASE SNOWFLAKE` |
+| User-defined tags | `INFORMATION_SCHEMA.TAG_REFERENCES()` / `TAG_REFERENCES_ALL_COLUMNS()`, `SHOW TAGS IN ACCOUNT` | Access to the tagged objects (same grants as core metadata) |
+| Data sampling & profiling | Table data (`SELECT … FROM <table>`) | `SELECT` on the targeted tables |
+| Multi-account auto-discovery | `SNOWFLAKE.ORGANIZATION_USAGE.ACCOUNTS` | `SNOWFLAKE.ORGANIZATION_ACCOUNTS_VIEWER` database role (granted by an ORGADMIN) |
+
+!!! note
+    Granting `SELECT` lets the connector read object **definitions and structure** (needed for
+    view and dynamic-table lineage). Actual **table data** is read only when data sampling or
+    profiling is enabled.
+
+Example grants for a dedicated role (adapt names, then validate against your policy):
+
+```sql
+-- 1. Service role & warehouse
+CREATE ROLE IF NOT EXISTS SCANNER;
+GRANT USAGE ON WAREHOUSE <WH> TO ROLE SCANNER;
+
+-- 2. Metadata + view / dynamic-table lineage
+--    SELECT (not REFERENCES) is required to read view & dynamic-table definitions
+GRANT USAGE ON DATABASE <DB> TO ROLE SCANNER;
+GRANT USAGE ON ALL SCHEMAS IN DATABASE <DB> TO ROLE SCANNER;
+GRANT SELECT ON ALL TABLES IN DATABASE <DB> TO ROLE SCANNER;
+GRANT SELECT ON ALL VIEWS IN DATABASE <DB> TO ROLE SCANNER;
+GRANT SELECT ON ALL DYNAMIC TABLES IN DATABASE <DB> TO ROLE SCANNER;
+-- Secure views: definition is visible only to the owning role or via SNOWFLAKE.OBJECT_VIEWER
+
+-- 3. Account-level features (query history, Snowpipe, data classification)
+GRANT IMPORTED PRIVILEGES ON DATABASE SNOWFLAKE TO ROLE SCANNER;
+GRANT MONITOR ON PIPE <PIPE_NAME> TO ROLE SCANNER;   -- per Snowpipe
+-- Query-history lineage uses ACCESS_HISTORY -> requires Snowflake Enterprise Edition
+
+-- 4. User-defined tags: covered by the object access granted above (no extra privilege needed).
+--    Note: SHOW TAGS lists only the tag definitions the role can access.
+
+-- 5. Multi-account auto-discovery (run by an ORGADMIN)
+GRANT DATABASE ROLE SNOWFLAKE.ORGANIZATION_ACCOUNTS_VIEWER TO ROLE SCANNER;
+
+-- Optional: automatically cover objects created later
+GRANT SELECT ON FUTURE TABLES         IN DATABASE <DB> TO ROLE SCANNER;
+GRANT SELECT ON FUTURE VIEWS          IN DATABASE <DB> TO ROLE SCANNER;
+GRANT SELECT ON FUTURE DYNAMIC TABLES IN DATABASE <DB> TO ROLE SCANNER;
+```
+
+## Configuration reference
+
+The table below lists the connection properties handled by the Snowflake V2 connector.
 
 !!! note
     A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
-## User Permissions
-
-In order to collect metadata, the running user must have read-only access to databases that need cataloging.
-
-If the data profiling feature was enabled, the user must have read access to impacted tables. Otherwise, this permission is not necessary.
-
-If a lineage feature is enabled, the user must have the following rights:
-
-`GRANT IMPORTED PRIVILEGES ON DATABASE SNOWFLAKE TO ROLE SCANNER`
-
-If the Snowpipe lineage feature is enabled, the user must have MONITOR rights on each Snowpipe.
-
-`GRANT MONITOR ON PIPE [nom du Snowpipe] TO ROLE SCANNER`
-
-## Universal Filters
-
-Use universal filter language to filter and root items with the criteria bellow
-
-| Criteria | Description |
-| :--- | :--- |
-| `account` | (String) Account name |
-| `catalog` | (String) Catalog name |
-| `schema` | (String) Schema name |
-| `table` | (String) Table name |
-
-#### Example:
-```
-filters = [
-  {
-    id = "accept_zeenea_schema"
-    action = ACCEPT
-    rules {
-      schema = "zeenea_schema"
-    }
-  },
-  {
-    id = "default_reject"
-    action = REJECT
-  }
-]
-```
-
-Read more: [Universal Filters](#zeenea-universal-filters.html)
-
-## Multi Account Support
-
-Snowflake connector supports a multi-account mode.
-
-The list of accounts to scan can be determined in two ways:
-
-* The list can be provided by the parameter `multi_account.list` as a list of Snowflake account identifiers separated by a space. Account identifiers must be in the form `<org>-<account>` (see Snowflake documentation).
-
-    Example:
-
-    `multi_account.list = "myorg-account1 myorg-account2"`
-
-* If no list is provided, the connector executes the following SQL query to get the accounts available in the organization:
-
-    ```sql
-    SELECT ACCOUNT_LOCATOR, REGION
-      FROM SNOWFLAKE.ORGANIZATION_USAGE.ACCOUNTS
-    ```
-
-!!! note
-    Account identifiers must use the modern `<organization>-<account>` format. Classic single-part account identifiers are not supported and will be ignored with a warning.
-
-### Authentication
-
-If all accounts can be accessed with the same username and password, you can define the credentials at the connection level as with a single-account connection.
-
-Otherwise, per-account credentials can be configured by prefixing the account identifier to the parameter name:
-
-* `<org>-<account>.url`
-* `<org>-<account>.username`
-* `<org>-<account>.password`
-* `<org>-<account>.private_key_path`
-* `<org>-<account>.passphrase`
-
-If a per-account key is not found, the connector falls back to the value defined at the connection level.
-
-### Example with password
-
-```hocon
-name = "snowflake"
-code = "snowflake"
-connector_id = "snowflake-v2"
-enabled = true
-
-connection.url      = "jdbc:snowflake://myorg-account1.snowflakecomputing.com/?db=MY_DB&role=SCANNER&warehouse=MY_WH"
-connection.username = "scanner_user"
-connection.password = "default_password"
-
-multi_account.list = "myorg-account1 myorg-account2"
-
-myorg-account1.url      = "jdbc:snowflake://myorg-account1.snowflakecomputing.com/?db=MY_DB&role=SCANNER&warehouse=MY_WH"
-myorg-account1.username = "username1"
-myorg-account1.password = "password1"
-
-myorg-account2.url      = "jdbc:snowflake://myorg-account2.snowflakecomputing.com/?db=MY_DB&role=SCANNER&warehouse=MY_WH"
-myorg-account2.username = "username2"
-myorg-account2.password = "password2"
-```
-
-### Example with PKCS#8 Key
-
-```hocon
-name = "snowflake"
-code = "snowflake"
-connector_id = "snowflake-v2"
-enabled = true
-
-connection.url = "jdbc:snowflake://myorg-account1.snowflakecomputing.com/?db=MY_DB&role=SCANNER&warehouse=MY_WH"
-
-multi_account.list = "myorg-account1 myorg-account2"
-
-myorg-account1.url              = "jdbc:snowflake://myorg-account1.snowflakecomputing.com/?db=MY_DB&role=SCANNER&warehouse=MY_WH"
-myorg-account1.username         = "account1_user"
-myorg-account1.private_key_path = "/etc/zeenea/keys/zeenea-account1.p8"
-myorg-account1.passphrase       = "account1_key_passphrase"
-
-myorg-account2.url              = "jdbc:snowflake://myorg-account2.snowflakecomputing.com/?db=MY_DB&role=SCANNER&warehouse=MY_WH"
-myorg-account2.username         = "account2_user"
-myorg-account2.private_key_path = "/etc/zeenea/keys/zeenea-account2.p8"
-myorg-account2.passphrase       = "account2_key_passphrase"
-```
-
-In this case, the connector walks through the list of accounts and uses the per-account credentials to connect to each one. Setting a `connection.url` at the connection level is still mandatory as it is used to initialize the primary connection.
-
-## Data Extraction
-
-To extract information, the connector runs requests on the `information_schema.tables` and `information_schema.columns` tables.
-
-## Collected Metadata
-
-### Inventory
-
-The inventory collects all tables and views accessible by the user.
-
-### Lineage
-
-The Snowflake connector integrates the lineage functionality to identify and represent the origin of the data. This functionality can be activated through the configuration settings and is used in several use cases:
-
-* **Views**: The creation of views in Snowflake can be represented automatically in Zeenea. A **data process** object will be created for each view with the tables used for its construction as input and the target view as output.
-* **Dynamic Tables**: Dynamic table definitions are extracted and represented as a **data process** with their upstream dependencies as inputs and the dynamic table as output. Enabled by default.
-* **Snowpipe**: Snowpipe will be modeled in Zeenea in case of data ingestion from external sources. The Snowflake connector will identify them and create a **data process** in the catalog for each Snowpipe of the platform.
-* **(BETA) Execution history**: The connector is able to analyze query executions to identify data insertions from other tables of the same Snowflake instance. The query will be presented in the catalog as a **data process**.
-
-### Dataset
-
-Here, a dataset can be a table or a view.
-
-* **Name**
-* **Source Description**
-* **Technical Data**:
-  * Account: Snowflake account locator
-  * Catalog: Database name
-  * Schema: Database schema
-  * Table: Table name
-  * Type: Object type (TABLE, VIEW, etc.)
-  * Is dynamic table: Whether the object is a Snowflake Dynamic Table
-
-### Field
-
-Dataset field.
-
-* **Name**
-* **Source Description**
-* **Type**
-* **Can be null**: Depending on the field settings
-* **Multivalued**: Not supported. Default value `FALSE`.
-* **Primary Key**: Depending on the field's "Primary Key" attribute
-* **Technical Data**:
-  * Technical Name: field technical name
-  * Native type: field native type
-  * Privacy Category (when `data_classification.enabled = true`)
-  * Semantic Category (when `data_classification.enabled = true`)
-
-### Data Process
-
-A data process can be the representation of a Snowpipe, a view construction request, a dynamic table definition, or a data insertion.
-
-* **Name**
-* **Source Description**
-* **Snowpipe Technical data**:
-  * Is Auto-ingest Enabled
-  * Definition
-  * Last Forwarded File Path
-  * Notification Channel Name
-
-## Data Profiling
-
-!!! important
-    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each field. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency is appropriate, before enabling it.
-
-The statistical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics here: [Data Profiling](../../features-applications/cross-application-features/zeenea-data-profiling.md).
-
-Read access on targeted tables is mandatory to activate the feature. For Snowflake technologies, the connector executes the following request to get a data sample:
-
-`SELECT COUNT(*) AS result FROM tableName`
-
-The request above defines the number of rows in the table `tableName`.
-
-`SELECT field1, field2 FROM tableName TABLESAMPLE (linesPercentage)`
-
-The request above collects a data sample for each field where the feature is activated through the studio (`field1`, `field2`). The limit is 10,000 lines (`linesPercentage` parameter) deduced from a calculation with the number of rows set in the previous request.
-
-These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described here: [Zeenea Scanner Setup](../scanners/zeenea-scanner-setup.md).
-
-## Data Classification
-
-The connector is compatible with the data classification functionality offered by Snowflake. In order to benefit from the **Semantic Category** and **Privacy Category** metadata, the user account configured in the scanner for the connection must have read rights on the `snowflake.account_usage.tag_references` view.
-
-You can find the details of how this feature works directly in the [Snowflake documentation](https://docs.snowflake.com/en/user-guide/governance-classify-concepts.html).
-
-## Object Identification Keys
-
-An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
-
-More information about how it works can be found here: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
-
-| Object | Identification Key | Description |
-| --- | --- | --- |
-| Dataset | catalog/schema/dataset name | - **catalog**: Snowflake database name<br/>- **schema**: Dataset schema<br/>- **dataset name**: Table or view name |
-| Field | catalog/schema/dataset name/field name | - **catalog**: Snowflake database name<br/>- **schema**: Dataset schema<br/>- **dataset name**: Table or view name<br/>- **field name**: Column name |
-| Data process (history lineage) | type/hash | - **type**: Operation type<br/>- **hash**: Hash of the access history entry |
-| Data process (pipe lineage) | catalog/schema/pipe name | - **catalog**: Snowflake database name<br/>- **schema**: Schema name<br/>- **pipe name**: Snowpipe name |
-
-!!! note
-    The identification key format has changed compared to the previous Snowflake connector. A migration step may be required when upgrading from the legacy  connector to `snowflake-v2`.
+| Property | Default | Required | Description |
+| :--- | :--- | :--- | :--- |
+| **General** | | | |
+| `name` | — | Yes | Display name shown to catalog users. |
+| `code` | — | Yes | Unique connection identifier. Do not change after registration. |
+| `connector_id` | — | Yes | Connector type. Must be `snowflake-v2`. |
+| `enabled` | `true` | No | Whether the connection is active. |
+| **Connection** | | | |
+| `connection.url` | — | Yes | JDBC URL. `db` is required; `role` and `warehouse` are required unless the user has defaults. |
+| `connection.username` | — | Yes | Snowflake username. |
+| `connection.password` | — | Conditional | User password. Required unless key-pair authentication is used. |
+| `connection.private_key_path` | — | Conditional | Path to the PKCS#8 `.p8` private key (see [Single account](#single-account)). |
+| `connection.passphrase` | — | Conditional | Passphrase of the encrypted private key. |
+| **Multi-account** | | | |
+| `multi_account.list` | *(auto-discovery)* | No | List of `<org>-<account>` identifiers (e.g. `["myorg-account1", "myorg-account2"]`). If unset, accounts are discovered automatically. See [Multiple accounts](#multiple-accounts). |
+| `<org>-<account>.*` | *(falls back to `connection.*`)* | No | Per-account override of `url`, `username`, `password`, `private_key_path`, `passphrase`. |
+| **Filtering** | | | |
+| `inventory_filters` | *(none)* | No | Which objects are cataloged (`ACCEPT` / `REJECT`). See [Filtering](#filtering). |
+| `sampling_filters` | *(none)* | No | Which objects data sampling runs on. See [Filtering](#filtering). |
+| `profiling_filters` | *(none)* | No | Which objects data profiling runs on, with optional overrides. See [Filtering](#filtering). |
+| **Lineage** | | | |
+| `lineage.view.enabled` | `true` | No | View lineage. See [Views](#views). |
+| `lineage.dynamic_table.enabled` | `true` | No | Dynamic table lineage. See [Dynamic table definitions](#dynamic-table-definitions). |
+| `lineage.pipe.enabled` | `false` | No | Snowpipe lineage. See [Snowpipes](#snowpipes). |
+| `lineage.history.enabled` | `false` | No | Query history lineage. See [Query-history operations](#query-history-operations). |
+| `lineage.history.period` | `2` | No | Number of days of history to analyze. |
+| `lineage.history.warehouse` | *(none)* | No | Restrict history analysis to a specific warehouse. |
+| **Classification & tags** | | | |
+| `data_classification.enabled` | `false` | No | Privacy & semantic categories. See [Data classification](#data-classification). |
+| `user_defined_tags.enabled` | `false` | No | User-defined tags (read-only). See [User-defined tags](#user-defined-tags). |
+| **Extraction caching** | | | |
+| `cache.enabled` | `false` | No | Enable extraction caching. See [Extraction caching](#extraction-caching). |
+| `cache.folder` | *(in-memory)* | No | Directory where cache files are stored. In-memory if unset. |
+| `cache.ttl` | `PT12H` | No | Cache validity period (ISO-8601 duration). |
