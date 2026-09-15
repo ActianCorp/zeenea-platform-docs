@@ -17,6 +17,8 @@ The latest scanner version is available for download from the platform administr
 
 * Improved error messages for invalid scanner and connection configuration files. They now identify the file and line containing the error and provide hints for common mistakes.
 
+* The Snowflake connector no longer requires adding the `--add-opens` JVM option to the scanner command line when using Java 17 or later.
+
 **Fixed Issues**
 
 Fixed an issue where data sampling could stop after some time, preventing samples from being refreshed until the scanner was restarted.
