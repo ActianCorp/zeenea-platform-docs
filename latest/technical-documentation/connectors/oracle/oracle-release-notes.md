@@ -12,3 +12,9 @@ The latest version of the **JDBC** connector plugin is available for download fr
 **Fixed Issues**
 
 Fixed an issue where views could be missing from extraction when batch mode was enabled.
+
+## September 4, 2026 — Version 1.5.3
+
+**Fixed Issues**
+
+Fixed an issue where filters combining `and` and `or` operators could be evaluated incorrectly because of incorrect operator precedence.
