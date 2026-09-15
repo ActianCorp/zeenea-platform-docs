@@ -7,6 +7,12 @@ search:
 
 The latest version of the **MS Fabric** connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.
 
+## September 9, 2026 — Version 2.3.1
+
+**Fixed Issues**
+
+Fixed several cases where Power Query parameter resolution could corrupt expressions, causing lineage to fail for affected queries.
+
 ## August 25, 2026 — Version 2.3.0
 
 **Enhancements**
