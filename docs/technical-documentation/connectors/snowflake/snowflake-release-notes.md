@@ -7,6 +7,18 @@ search:
 
 The latest version of the **JDBC** connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.
 
+## September 10, 2026 — Version 1.5.4
+
+**Fixed Issues**
+
+Fixed an issue where Snowflake extraction could fail when reading copy history.
+
+## September 4, 2026 — Version 1.5.3
+
+**Fixed Issues**
+
+Fixed an issue where filters combining `and` and `or` operators could be evaluated incorrectly because of incorrect operator precedence.
+
 ## August 17, 2026 — Version 1.5.2
 
 **Enhancements**
