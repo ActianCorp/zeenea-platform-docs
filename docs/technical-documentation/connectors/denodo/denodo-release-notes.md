@@ -5,7 +5,7 @@ search:
 
 # Denodo Release Notes
 
-The latest version of the **Denodo** connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.
+The latest version of the **Denodo** connector plugin is available for download from the [Connector Downloads](../connectors-list.md) page.
 
 ## June 30, 2026 — Version 1.3.7
 

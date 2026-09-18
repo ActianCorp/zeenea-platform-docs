@@ -20,7 +20,7 @@ Traffic flows toward S3 must be open.
 | AWS S3 | HTTPS | 443 |
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
  
 ## Supported Versions
@@ -29,15 +29,15 @@ The S3 connector was successfully tested with the online application.
 
 ## Installing the Plugin
 
-From version 54 of the scanner, the S3 connector is presented as a plugin and can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md).
+From version 54 of the scanner, the S3 connector is presented as a plugin and can be downloaded here: [Connector Downloads](../connectors-list.md).
 
-For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
  
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 In order to establish a connection with Amazon S3, specifying the following parameters in the dedicated file is required:
 
@@ -141,7 +141,7 @@ Since version 54 of the scanner, the S3 connector benefits from the feature of r
 * `bucket`: name of the bucket
 * `key`: name of the object
 
-Read more: [Filters](../../scanners/zeenea-filters.md)
+Read more: [Filters](../../scanners/filters.md)
  
 ## Data Extraction
 
@@ -149,7 +149,7 @@ A dataset from a file system may actually be stored in multiple files. Those fil
 
 When running the inventory, the Amazon S3 connector detects datasets with the usual dataset naming convention in Amazon S3.
 
-Read more: [Dataset Detection on File Systems](../zeenea-dataset-detection.md)
+Read more: [Dataset Detection on File Systems](../dataset-detection.md)
  
 ## Collected Metadata
 
@@ -188,7 +188,7 @@ Dataset field.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 | Object | Identification Key | Description |
 |---|---|---|

@@ -3,11 +3,11 @@
 ## Prerequisites
 
 * **Java version:** Validated on Java 11 only. Not tested on Java 17 or later; no incompatibilities have been reported.
-* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](../../scanners/zeenea-scanner-setup.md).
+* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](../../scanners/scanner-setup.md).
 
 ## Installing the Generic JDBC Connector Plugin
 
-1. Download the Generic JDBC connector plugin from the [Connector Downloads](../zeenea-connectors-list.md), or download directly at https://plugins.zeenea.app/jdbc-connector-plugin/jdbc-connector-plugin-74.zip.
+1. Download the Generic JDBC connector plugin from the [Connector Downloads](../connectors-list.md), or download directly at https://plugins.zeenea.app/jdbc-connector-plugin/jdbc-connector-plugin-74.zip.
 2. Move the zip file to the `[scanner_install_dir]/plugins` folder. **Do not unzip the archive**.
 
 ## Installing Actian Zen Drivers
@@ -48,5 +48,5 @@
 
 1. Restart Zeenea Scanner.
 2. In Zeenea Administration, click **Connections** and verify that the new connection is listed:
-   ![](./images/zeenea-connection-added-zen.png)
-3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](../../scanners/zeenea-troubleshooting.md).
+   ![](./images/connection-added-zen.png)
+3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](../../scanners/troubleshooting.md).

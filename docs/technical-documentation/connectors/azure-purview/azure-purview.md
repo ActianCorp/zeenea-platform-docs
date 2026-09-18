@@ -6,7 +6,7 @@
 * Zeenea traffic flows towards the database must be open. 
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -15,13 +15,13 @@ The Purview connector is compatible with the product online version.
 
 ## Installing the Plugin
 
-The Azure plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md# "title: Connector Downloads").
+The Azure plugin can be downloaded here: [Connector Downloads](../connectors-list.md# "title: Connector Downloads").
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 In order to establish a connection with a Purview instance, specifying the following parameters in the dedicated file is required:
 
@@ -109,7 +109,7 @@ Dataset field.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md)
 
 | Object | Identifier Key | Description |
 |---|---|---|

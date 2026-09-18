@@ -4,7 +4,7 @@
 
 * **Java version:** Validated on Java 11 only. Not tested on Java 17 or later; no incompatibilities have been reported.
 * Scanner **Version 76 or higher** is required to use DataConnect Connector.
-* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](../../scanners/zeenea-scanner-setup.md).
+* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](../../scanners/scanner-setup.md).
 
 ## Creating the Configuration File
 
@@ -28,24 +28,24 @@
 
 ## Installing the Plugin
 
-You can download the plugin here: [Connector Downloads](../zeenea-connectors-list.md).
+You can download the plugin here: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
  
 ## Verifying the Connection
 
 1. Restart Zeenea Scanner.
 2. In Zeenea Administration, click **Connections** and verify that the new connection is listed.
-3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](../../scanners/zeenea-troubleshooting.md).
+3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](../../scanners/troubleshooting.md).
 
 ## Viewing the Dataset
  
-1. Switch to Zeenea Studio by clicking the apps icon in the upper right and selecting **Studio**:
-   ![](./images/zeenea-studio1.png)
-2. In Zeenea Studio, click **Catalog** to view the scanned map files:
-   ![](./images/zeenea-studio-dataconnect.png)
+1. Switch to Studio by clicking the apps icon in the upper right and selecting **Studio**:
+   ![](./images/studio1.png)
+2. In Studio, click **Catalog** to view the scanned map files:
+   ![](./images/studio-dataconnect.png)
 
 ## Manually Syncing the Connection
 
 1. In Zeenea Administration, click **Connections**, then click the ellipsis button in the **Actions** column for your connection and click **Synchronize**:
-   ![](./images/zeenea-connection-dataconnect.png)
+   ![](./images/connection-dataconnect.png)

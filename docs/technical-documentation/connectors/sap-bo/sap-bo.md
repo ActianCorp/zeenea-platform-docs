@@ -15,7 +15,7 @@ The SAP BO connector is compatible with all recent versions that expose the REST
 
 ## Installing the Plugin
 
-You can download the SAP BO plugin from [Connector Downloads](../zeenea-connectors-list.md).
+You can download the SAP BO plugin from [Connector Downloads](../connectors-list.md).
 
 !!! warning "Attention"
     Updating the connector to version `2.0.0` or later introduces **breaking changes** by correcting how datasets are identified. Because this changes the identity of existing assets, they must be deleted and reimported.
@@ -30,13 +30,13 @@ You can download the SAP BO plugin from [Connector Downloads](../zeenea-connecto
     4. Reimport all SAP BO visualizations into Zeenea. Embedded datasets are reimported automatically with the correct identification.
     6. Reapply any manually added documentation to SAP BO assets.
 
-For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-For more information about managing connections, see [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../../../features-applications/administration/managing-connections.md).
 
 To establish a connection with SAP BO, fill in the following parameters in the dedicated configuration file: 
 
@@ -102,7 +102,7 @@ The SAP BO connector supports rich filters in the configuration of the connector
     The filter can contain either a raw value or a file URL to the content (for example, `file:///path/to/zeenea/connections/filter.json`). When you use a side-file, any changes to the filter are applied without restarting the scanner.
 
 
-For more information about filters, see [Filters](../../scanners/zeenea-filters.md).
+For more information about filters, see [Filters](../../scanners/filters.md).
 
 ## Metadata Extraction
 

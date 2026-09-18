@@ -11,7 +11,7 @@
 | Kafka Schema Registry | HTTP, HTTPS | 80, 443, 8081 |
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 ## Supported Versions
 
@@ -19,15 +19,15 @@ The connector was developed and tested with Kafka Server version 2.8.0 and is co
 
 ## Installing the Plugin
 
-The Kafka connector is available as a plugin and can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md).
+The Kafka connector is available as a plugin and can be downloaded here: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
  
 In order to establish a connection with a Kafka instance, specifying the following parameters in the dedicated file is required:
  
@@ -106,7 +106,7 @@ Topic field.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-Read more: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md)
 
 | Object | Identification Key | Description |
 |---|---|---|

@@ -3,5 +3,5 @@ nav:
     - Connectors: connectors
     - Authentication: authentication
     - API: api
-    - Actian Data Intelligence Reference Architecture: data-intelligence-reference-architecture.md
-    - Security Flaws Management Policy: zeenea-security-flaws-management.md
+    - Actian Data Intelligence Reference Architecture: reference-architecture.md
+    - Security Flaws Management Policy: security-flaws-management.md

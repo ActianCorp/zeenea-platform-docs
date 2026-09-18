@@ -5,7 +5,7 @@ Actian provides an intelligent Data Intelligence Platform.
 
 This solution enables metadata management for search, exploration, data governance, compliance, and cloud transformation initiatives.
 
-  ![](./images/zeenea-platform.jpg)
+  ![](./images/platform.jpg)
 
 ### Universal connectivity
 
@@ -87,18 +87,18 @@ The Marketplace sits on top of the Data Catalog to share and exchange the most v
 
 Zeenea provides dedicated applications and user experiences (UX) for different user personas.
 
-### Zeenea Studio
+### Studio
 
-Zeenea Studio enables data management teams to manage, maintain, and enrich the documentation of their company’s data assets.
+Studio enables data management teams to manage, maintain, and enrich the documentation of their company’s data assets.
 
 It serves as the back-office tool of the platform.
 
-  ![](./images/zeenea-studio-intro.png)
+  ![](./images/studio-intro.png)
 
-### Zeenea Explorer
+### Explorer
 
-With Zeenea Explorer, business users can access a user-friendly interface and customized exploration paths to make their data discovery more efficient.
+With Explorer, business users can access a user-friendly interface and customized exploration paths to make their data discovery more efficient.
 
 It offers a simple and intuitive interface designed for efficient data exploration and collaboration.
 
-  ![](./images/zeenea-explorer.png)
+  ![](./images/explorer.png)

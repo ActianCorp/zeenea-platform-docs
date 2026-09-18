@@ -5,7 +5,7 @@ search:
 
 # Microsoft Fabric Release Notes
 
-The latest version of the **MS Fabric** connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.
+The latest version of the **MS Fabric** connector plugin is available for download from the [Connector Downloads](../connectors-list.md) page.
 
 ## September 9, 2026 — Version 2.3.1
 

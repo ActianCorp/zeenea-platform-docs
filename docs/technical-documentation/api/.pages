@@ -1,13 +1,13 @@
 nav:
-    - zeenea-public-apis.md
-    - zeenea-api-lifecycle.md
-    - zeenea-catalog-api-v1.md
-    - zeenea-catalog-api-v2.md
-    - zeenea-graphql-api-v2-limitations.md
-    - zeenea-catalog-design-api.md
-    - zeenea-audit-trail-apis.md
-    - zeenea-data-product-api.md
-    - zeenea-access-request-api.md
-    - zeenea-scim-api.md
+    - public-apis.md
+    - api-lifecycle.md
+    - catalog-api-v1.md
+    - catalog-api-v2.md
+    - graphql-api-v2-limitations.md
+    - catalog-design-api.md
+    - audit-trail-apis.md
+    - data-product-api.md
+    - access-request-api.md
+    - scim-api.md
     - scim-user-provisioning.md
-    - zeenea-user-management-api.md
+    - user-management-api.md

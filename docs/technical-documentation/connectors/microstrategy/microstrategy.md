@@ -6,7 +6,7 @@
 * Zeenea traffic flows towards MicroStrategy must be open.
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -15,15 +15,15 @@ The MicroStrategy connector is available for the SaaS and the on-prem product ve
 
 ## Installing the Plugin
 
-You can download the Microstrategy plugin from [Connector Downloads](../zeenea-connectors-list.md).
+You can download the Microstrategy plugin from [Connector Downloads](../connectors-list.md).
 
-For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for changes and resynchronizes automatically.
 
-For more information about managing connections, see [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../../../features-applications/administration/managing-connections.md).
 
 To establish a connection with a MicroStrategy instance, fill in the following parameters in the dedicated configuration file:
 
@@ -153,7 +153,7 @@ A field can be an attribute, a metric, or a field from the dataset.
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
 
-For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
  
 | Object | Identification Key | Description |
 |---|---|---|

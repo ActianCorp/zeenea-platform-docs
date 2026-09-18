@@ -1,8 +1,8 @@
 nav:
-    - zeenea-dataset-detection.md
-    - Connector Downloads: zeenea-connectors-list.md
-    - zeenea-connectors-install-as-plugin.md
-    - zeenea-externalizing-external-connectors.md
+    - dataset-detection.md
+    - Connector Downloads: connectors-list.md
+    - connectors-install-as-plugin.md
+    - externalizing-external-connectors.md
     - Actian DataConnect: actian-dataconnect
     - Actian Informix: actian-informix
     - Actian Ingres: actian-ingres

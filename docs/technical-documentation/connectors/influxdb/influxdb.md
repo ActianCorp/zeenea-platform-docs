@@ -6,7 +6,7 @@
 * Zeenea traffic flows towards InfluxDB must be open. 
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -15,15 +15,15 @@ The InfluxDB module was successfully tested with version 1.7.10 and is compatibl
 
 ## Installing the Plugin
 
-Since scanner version 26.9, the InfluxDB plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md# "title: Connector Downloads").
+Since scanner version 26.9, the InfluxDB plugin can be downloaded here: [Connector Downloads](../connectors-list.md# "title: Connector Downloads").
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 In order to establish a connection with InfluxDB, specifying the following parameters in the dedicated file is required:
 
@@ -144,7 +144,7 @@ A field is an InfluxDB measure field (or tag).
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 | Object | Identifier Key | Description |
 |---|---|---|

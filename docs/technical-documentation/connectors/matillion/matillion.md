@@ -6,7 +6,7 @@
 * Zeenea traffic flows towards the ELT must be open.
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -15,21 +15,21 @@ The Matillion module is compatible with the "Basic" edition of the online versio
 
 ## Installing the Plugin
 
-The Matillion plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md)
+The Matillion plugin can be downloaded here: [Connector Downloads](../connectors-list.md)
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 In order to establish a connection with a Matillion instance, the following parameters in the dedicated file are required:
 
 ### Changes in version 4.1.0
 
-Since version 4.1.0, [rich filters](../../scanners/zeenea-filters.md) replace the old filters.
+Since version 4.1.0, [rich filters](../../scanners/filters.md) replace the old filters.
 
 Due to a name conflict between the new parameter (filter) and the old parameters, we were unable to ensure a smooth migration period during which both setting modes could be used.
 
@@ -75,7 +75,7 @@ Since version 4.1.0 the Matillion connector benefits from the feature of rich fi
 | project | Project name |
 | job | Transformation job name |
 
-Read more: [Filters](../../scanners/zeenea-filters.md)
+Read more: [Filters](../../scanners/filters.md)
 
 ## Data Extraction
 
@@ -162,7 +162,7 @@ A data process is a Matillion transformation.
  
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
  
-More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
   
 | Object | Identifier Key | Description |
 |---|---|---|

@@ -1,4 +1,4 @@
 nav:
-    - zeenea-federated-catalog-intro.md
-    - zeenea-federated-catalog-building.md
-    - zeenea-searching-federated-catalog.md
+    - federated-catalog-intro.md
+    - federated-catalog-building.md
+    - searching-federated-catalog.md

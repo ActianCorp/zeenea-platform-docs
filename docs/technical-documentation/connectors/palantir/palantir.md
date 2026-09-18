@@ -6,7 +6,7 @@
 * Zeenea traffic flows towards the data source must be open.
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -15,15 +15,15 @@ The Palantir connector was developed and tested with the Palantir Foundry SaaS v
 
 ## Installing the Plugin
 
-The Palantir plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md)
+The Palantir plugin can be downloaded here: [Connector Downloads](../connectors-list.md)
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 In order to establish a connection with a Palantir instance, specifying the following parameters in the dedicated file is required:
 
@@ -88,7 +88,7 @@ In order to collect metadata, the running user's permissions must allow them to 
 
 Since version 1.2.0 of the plugin, the Palantir connector benefits from the feature of rich filters in the configuration of the connector. This filter is compatible only with the "collection" key to filter the values of the collected metadata.
 
-Read more: [Filters](../../scanners/zeenea-filters.md)
+Read more: [Filters](../../scanners/filters.md)
 
 ## Data Extraction
 
@@ -160,7 +160,7 @@ Dataset field.
  
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
  
-More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
   
 | Object | Identification Key | Description |
 |---|---|---|

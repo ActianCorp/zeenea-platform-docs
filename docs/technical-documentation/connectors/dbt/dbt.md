@@ -8,7 +8,7 @@
 * Zeenea traffic flows towards DBT must be open.  
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -21,15 +21,15 @@ The DBT connector was tested with version 1.3. It is compatible with version 1.3
 
 ## Installing the Plugin
 
-The DBT plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md).
+The DBT plugin can be downloaded here: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
  
 In order to establish a connection with an DBT instance, specifying the following parameters in the dedicated file is required:
  
@@ -65,7 +65,7 @@ In order to collect metadata, the user must provide the DBT files to the connect
 
 These files can be in the file system of the computer where the scanner is installed. The file system can be local or a mounted network file system (an NFS mount, for instance). It can also be an Amazon S3 or a Google Cloud Storage bucket.
 
-![](./images/zeenea-dbt.png)
+![](./images/dbt.png)
 
 ### Finding Projects
 
@@ -128,7 +128,7 @@ Table summarizing the possible values of the `alias` parameter to be completed i
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md)
 
 | Object | Identifier Key | Description |
 |---|---|---|

@@ -14,7 +14,7 @@
      * [https://api.powerbi.com](https://api.powerbi.com)
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -23,19 +23,19 @@ The Power BI Online (V2) connector is compatible with the product online version
 
 ## Installing the Plugin
 
-You can download the Power BI Online (V2) plugin from [Connector Downloads](../zeenea-connectors-list.md).
+You can download the Power BI Online (V2) plugin from [Connector Downloads](../connectors-list.md).
 
 !!! warning "Attention"
     The Power BI Online (V2) connector is now integrated into the Microsoft Fabric plugin. If you are upgrading from a previous version, make sure to download the appropriate plugin and delete the existing Power BI plugin archive. <br />Migrating from Power BI (V1) connector to PowerBI (V2) connector requires specific operations. Contact customer service to assist you in this migration.
 
 
-For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-For more information about managing connections, see [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../../../features-applications/administration/managing-connections.md).
 
 To establish a connection with a PowerBI Online instance, fill in the following parameters in the dedicated configuration file:
 
@@ -161,7 +161,7 @@ Filter and extract only the contacts that do have a role matching the filter.
 
 `contact.role_filter = "role in ('Owner', 'Read')"`
 
-Read more: [Filters](../../scanners/zeenea-filters.md)
+Read more: [Filters](../../scanners/filters.md)
 
 
 ## Universal Filters
@@ -197,7 +197,7 @@ filters = [
 ]
 ```
 
-Read more: [Universal Filters](../../scanners/zeenea-universal-filters.md)
+Read more: [Universal Filters](../../scanners/universal-filters.md)
 
 ## Data Extraction
 
@@ -308,7 +308,7 @@ To represent the data flow from an external source, a Zeenea Data Process will b
  
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
 
-For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
   
 | Object       | Identification Key                                                                                          | Description |
 |--------------|-------------------------------------------------------------------------------------------------------------|-------------|

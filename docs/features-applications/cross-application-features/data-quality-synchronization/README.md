@@ -6,13 +6,13 @@ Thanks to this synchronization, you can check the quality level of your Datasets
 
 To implement this integration, Zeenea offers a flexible approach based on our GraphQL API.
 
-For more details, see the [API technical documentation](../../../technical-documentation/api/zeenea-catalog-api-v2.md).
+For more details, see the [API technical documentation](../../../technical-documentation/api/catalog-api-v2.md).
 
 ## Browse data quality information
 
 In the Studio and Explorer, detailed information about the quality of a Dataset is available in the "Data quality" tab on the details page.
 
-  ![](./images/zeenea-data-quality-tab.png)
+  ![](./images/data-quality-tab.png)
 
 In this tab, you will find a list of the checks carried out on the Dataset and the following information for each check: 
 

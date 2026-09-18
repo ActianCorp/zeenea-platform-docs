@@ -4,7 +4,7 @@
 
 !!! note
     * To connect Zeenea to PeopleSoft, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
-    * You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    * You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -13,15 +13,15 @@ The PeopleSoft connector compatibility depends on Safyr capability.
 
 ## Installing the Plugin
 
-The Silwood Safyr plugin plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md# "title: Connector Downloads").
+The Silwood Safyr plugin plugin can be downloaded here: [Connector Downloads](../connectors-list.md# "title: Connector Downloads").
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 In order to establish a connection with PeopleSoft, specifying the following parameters in the dedicated file is required:
 
@@ -81,7 +81,7 @@ Dataset field.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md)
 
 | Object | Identifier Key | Description |
 |---|---|---|

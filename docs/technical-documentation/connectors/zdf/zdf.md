@@ -16,15 +16,15 @@ These three connectors work the same way and share the same configuration parame
 
 These connectors are available in the zdf-connector-plugin.
 
-It can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md).
+It can be downloaded here: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ### Connection Settings
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 ### Configuration Templates:
 
@@ -193,7 +193,7 @@ One of the attributes `identificationKey` or `path` must be filled in.
 
 | Attribute | Type | Description |
 |---|---|---|
-| `identificationKey` | `Text` | Dataset [identification key](../../../features-applications/studio/stewardship/zeenea-identification-keys.md) |
+| `identificationKey` | `Text` | Dataset [identification key](../../../features-applications/studio/stewardship/identification-keys.md) |
 | `connectionCode` | `Text` | Connection code. Leave blank if this is the current connection. It is possible to use one of the connection aliases. |
 | `zeepath` | `Text` | Dataset path |
 

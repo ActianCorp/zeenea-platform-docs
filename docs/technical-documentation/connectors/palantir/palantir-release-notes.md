@@ -5,7 +5,7 @@ search:
 
 # Palantir Foundry Release Notes
 
-The latest version of the **Palantir** connector plugin is available for download from the [Connector Downloads](../zeenea-connectors-list.md) page.
+The latest version of the **Palantir** connector plugin is available for download from the [Connector Downloads](../connectors-list.md) page.
 
 ## August 27, 2026 — Version 1.7.0
 
