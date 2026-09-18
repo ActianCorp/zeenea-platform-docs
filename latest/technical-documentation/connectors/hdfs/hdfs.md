@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* **Java version:** This connector is supported on Java 11, 17, and 21. It is not compatible with Java 25 or later.
+**Java version:** This connector is supported on Java 11, 17, and 21. It is not compatible with Java 25 or later.
 
 To catalog datasets stored in a Hadoop cluster, Zeenea must be installed in a Hadoop Edge Node type server, with the following characteristics: 
 
