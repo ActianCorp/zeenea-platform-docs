@@ -2,6 +2,8 @@
 
 ## Prerequisites
 
+* **Java version:** Validated on Java 11 and 17 only. Not tested on Java 21 or later; no incompatibilities have been reported.
+
 * In order to establish a connection to IBM DB2, the user must have sufficient [permissions](#user-permissions).
 * Zeenea traffic flows towards DB2 must be open.  
 

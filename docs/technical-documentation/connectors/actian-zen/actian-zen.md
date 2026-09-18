@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* The current Scanner version requires Java 11. Either OpenJDK or Oracle JDK can be installed.
+* **Java version:** Validated on Java 11 only. Not tested on Java 17 or later; no incompatibilities have been reported.
 * It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](../../scanners/zeenea-scanner-setup.md).
 
 ## Installing the Generic JDBC Connector Plugin
