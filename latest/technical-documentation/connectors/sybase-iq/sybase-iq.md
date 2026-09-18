@@ -2,6 +2,8 @@
 
 ## Prerequisites
 
+* **Java version:** Validated on Java 11 only. Not tested on Java 17 or later; no incompatibilities have been reported.
+
 * In order to establish a connection with Sybase IQ, a user with sufficient [permissions](#user-permissions) is required.
 * Zeenea traffic flows towards Sybase IQ must be open. 
 

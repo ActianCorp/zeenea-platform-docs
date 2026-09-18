@@ -30,7 +30,7 @@ search:
 
 ## Requirements for Installation
 
-#### Hardware Requirements
+### Hardware Requirements
 
 Zeenea scanners must be installed on x86-64 Linux servers or Windows servers.
 
@@ -48,17 +48,18 @@ Standard sizing for a server:
 * 20 GB of disk space
 * The server can be virtually hosted.
  
-## Software Dependencies
+### Software Dependencies
 
-**The current Scanner version requires Java 11**. OpenJDK or Oracle JDK can be installed indifferently.
+The scanner runs on Java 11 and later Java LTS release up to Java 25. Java 11 is the minimum supported version. Non-LTS releases are not supported. You can use either OpenJDK or Oracle JDK.
+
+Unless otherwise stated in a connector's documentation, connectors are supported on the same Java LTS releases as the scanner.
+
+The scanner and its connectors run in the same JVM. As a result, a single Java version applies to the scanner instance and all the connectors it hosts. Use the most restrictive Java requirement among the connectors deployed on that instance. For example, if one connector supports only Java 11 and the other connectors support up to Java 25, the scanner instance must run on Java 11.
 
 !!! tip
-    Remember to validate your installation by checking it with the command `# java --version`.
+    Validate your installation by running `java --version`.
 
-
-You should see in reply the version number of Java and be able to verify that it is one of the supported versions.
-
-## Network Requirements
+### Network Requirements
 
 The Zeenea Scanner process will establish connections to the systems it is connected to and from which it will need to extract metadata.
 
@@ -66,7 +67,7 @@ Depending on the platforms, the protocols will vary and the flow openings will h
 
 The Zeenea Scanner process will also exchange with the Zeenea SaaS platform. The network flow between the Zeenea Scanner process and the platform will therefore have to be allowed. The exchanges are always initiated by the Scanner process and are done in HTTPS. A proxy (with a possible authentication) can be configured.
 
-## Necessary Local Rights
+### Necessary Local Rights
 
 The Zeenea Scanner service must be run with a dedicated user account (no login shell user account).
 
