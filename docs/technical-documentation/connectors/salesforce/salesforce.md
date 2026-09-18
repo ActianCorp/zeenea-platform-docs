@@ -3,6 +3,8 @@
 <!-- #p100021 -->
 ## Prerequisites
 
+* **Java version:** Validated on Java 11 and 17 only. Not tested on Java 21 or later; no incompatibilities have been reported.
+
 <!-- #p100030 -->
 !!! note
     * To connect Zeenea to Salesforce, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.

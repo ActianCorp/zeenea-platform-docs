@@ -2,6 +2,8 @@
 
 ## Prerequisites
 
+* **Java version:** Validated on Java 11 and 17 only. Not tested on Java 21 or later; no incompatibilities have been reported.
+
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Databricks Unity Catalog. 
 * Zeenea traffic flows towards the data source must be open.
 
