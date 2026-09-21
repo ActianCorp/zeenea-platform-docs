@@ -3,7 +3,7 @@
 <!-- #p100021 -->
 ## Prerequisites
 
-* **Java version:** Validated on Java 11 only. Not tested on Java 17 or later; no incompatibilities have been reported.
+* **Java version:** Validated on Java 11 only.
 
 - <!-- #p100030 -->
   A user with sufficient [permissions](#p100126 "title: Aliyun DataWorks MaxCompute") is required to establish a connection with Aliyun DataWorks MaxCompute.

@@ -3,7 +3,7 @@
 <!-- #p100021 -->
 ## Prerequisites
 
-* **Java version:** Validated on Java 11 and 17 only. Not tested on Java 21 or later; no incompatibilities have been reported.
+* **Java version:** Validated on Java 11 and 17 only.
 
 <!-- #p100030 -->
 !!! note
