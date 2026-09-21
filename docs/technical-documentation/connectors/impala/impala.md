@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* **Java version:** Validated on Java 11 only. Not tested on Java 17 or later; no incompatibilities have been reported.
+* **Java version:** Validated on Java 11 only.
 
 * A user with sufficient [permissions](#p100138 "title: Impala") is required to establish a connection with Impala.
 * Zeenea traffic flows towards the data source must be open.  

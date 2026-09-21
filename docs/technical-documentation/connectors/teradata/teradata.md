@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* **Java version:** Validated on Java 11 and 17 only. Not tested on Java 21 or later; no incompatibilities have been reported.
+* **Java version:** Validated on Java 11 and 17 only.
 
 * In order to establish a connection with Teradata, a user with sufficient [permissions](#user-permissions) is required.
 * Zeenea traffic flows towards the database must be opened.  
