@@ -8,7 +8,7 @@ Actian Model Context Protocol (MCP) Server
 
 The Actian MCP Server uses the open-source Model Context Protocol (MCP) standard to enable AI agents to access contextual metadata from external systems. This protocol provides a standardized way for large language models (LLMs) and automation frameworks to retrieve the context they need to provide accurate and reliable results.
 
-The Actian MCP Server (Beta) acts as a secure bridge between the Actian Data Intelligence Platform and AI tools, such as Claude, Cursor, Windsurf, and Microsoft Copilot Studio. With the Actian MCP Server, you can search and find assets at both the semantic layer and the data model level, using real-time context from Studio and Explorer applications within the Actian Data Intelligence Platform.
+The Actian MCP Server acts as a secure bridge between the Actian Data Intelligence Platform and AI tools, such as Claude, Cursor, Windsurf, and Microsoft Copilot Studio. With the Actian MCP Server, you can search and find assets at both the semantic layer and the data model level, using real-time context from Studio and Explorer applications within the Actian Data Intelligence Platform.
 
 ## Actian MCP Server Tools
 
@@ -48,20 +48,20 @@ This tool allows you to easily find business terms that are similar in meaning, 
 
 For example, if you search for `revenue`, the tool returns related terms like `income`, `sales`, `gross profit`, and `billing`. These terms are conceptually connected even if they don't share the same keywords.
 
-### Get Metamodel Item Types (Beta feature - available on request)
+### Get Metamodel Item Types
 
 The `get_metamodel_item_types` tool retrieves a list of all possible item types defined in the catalog's metamodel.
 The metamodel defines the structure and configuration of the data catalog itself, not the actual data.
 
 This tool returns the item types that can exist in the catalog, such as dataset, field, or visualization.
 
-### Get Metamodel Properties (Beta feature - available on request)
+### Get Metamodel Properties
 
 The `get_metamodel_properties` tool retrieves a list of all possible properties defined in the catalog's metamodel by Studio users, which can include the common properties of connectors. The metamodel defines the structure and configuration of the data catalog itself, not the actual data.
 
 This tool returns the properties that can be attached to items in the catalog, such as `$z_schema` or `$z_table`.
 
-### Search Items (Beta feature - available on request)
+### Search Items
 
 The `search_items` tool retrieves a list of catalog items based on filter criteria.
 
@@ -83,11 +83,10 @@ For example, if you want to search for datasets named `albums` in the `music` sc
 You should see a list of datasets named `albums` in the `music` schema in all connections.
 
 !!! note
-    Results are currently limited to a maximum of five items to avoid overloading the agent context. This limit will be increased or removed when the feature comes out of Beta.
-
+    Results are currently limited to a maximum of five items to avoid overloading the agent context.
 
 ## Deployment Options
 
 We currently provide only remote connections to Actian MCP Servers. 
 
-Our remote deployment is a per-tenant MCP Server managed by Actian. It supports API Key authentication and is currently available in Beta.
+Our remote deployment is a per-tenant MCP Server managed by Actian. It supports API Key authentication.
