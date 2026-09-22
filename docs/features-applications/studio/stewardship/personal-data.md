@@ -8,7 +8,7 @@ More information on the website of the CNIL (French National Commission on Infor
 
 ### How the Personally Identifiable Information property and its suggestions work
 
-By default, Zeenea offers a "Personally Identifiable Information" property of the "List of values" type (`YES` / `NO`) that can be used in the templates of your choice to identify assets containing personal data.
+By default, Actian Data Intelligence offers a "Personally Identifiable Information" property of the "List of values" type (`YES` / `NO`) that can be used in the templates of your choice to identify assets containing personal data.
 
 This property can be used as a filter in Studio and Explorer, or as a tag in search results.
 
@@ -28,9 +28,9 @@ Other information is non-editable:
 
 ## Automatic detection of "Personal Data" (PII)
 
-Zeenea offers a system for automatic detection of PII in the Field type items. This is a weekly batch process.
+Actian Data Intelligence offers a system for automatic detection of PII in the Field type items. This is a weekly batch process.
 
-To detect personal data, Zeenea evaluates the probability of the presence of this type of data using an artificial intelligence algorithm that takes into account the description and name of the Field.
+To detect personal data, Actian Data Intelligence evaluates the probability of the presence of this type of data using an artificial intelligence algorithm that takes into account the description and name of the Field.
 
 When the algorithm detects a Field likely to contain personal data, Studio displays an insert suggesting that this data be categorized as "Personal data" on the Field details page.
 

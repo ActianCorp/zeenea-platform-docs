@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * You must have a user account with sufficient [permissions](#user-permissions) to connect to SAP BO.
-* Zeenea traffic flows towards the database must be open. 
+* Actian Data Intelligence traffic flow towards the database must be open. 
 
 !!! note
     You can find the configuration file template in the [GitHub repository](https://github.com/zeenea/connector-conf-templates/blob/main/templates/sap-bo.conf).
@@ -27,7 +27,7 @@ You can download the SAP BO plugin from [Connector Downloads](../connectors-list
     1. Back up any manually added documentation on SAP BO assets.
     2. Delete all SAP BO visualizations from the catalog.
     3. Upgrade the SAP BO connector to the latest version.
-    4. Reimport all SAP BO visualizations into Zeenea. Embedded datasets are reimported automatically with the correct identification.
+    4. Reimport all SAP BO visualizations into Actian Data Intelligence. Embedded datasets are reimported automatically with the correct identification.
     6. Reapply any manually added documentation to SAP BO assets.
 
 For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
@@ -43,7 +43,7 @@ To establish a connection with SAP BO, fill in the following parameters in the d
 | Parameter | Expected value |
 |---|---|
 | `name` | Specifies the display name for the connection. |
-| `code` | Defines the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified. Otherwise, the connection will be considered as new and the old one removed from the scanner. |
+| `code` | Defines The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified. Otherwise, the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. The value must be `sap-bo` and must not be modified. |
 | `enabled` | A boolean value to enable or disable the connection (`true` or `false`). <br />The default value is `true`. |
 | `catalog_code` | Defines the catalog code associated with the connection (`default` when empty). |

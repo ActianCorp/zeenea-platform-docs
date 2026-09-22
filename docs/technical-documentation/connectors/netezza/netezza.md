@@ -5,7 +5,7 @@
 * **Java version:** Validated on Java 11 only.
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Netezza.
-* Zeenea traffic flows towards the data source must be open.
+* Actian Data Intelligence traffic flow towards the data source must be open.
 
 | Target| Protocol | Usual Ports |
 | :--- | :--- | :--- |
@@ -44,14 +44,14 @@ In order to establish a connection with a Netezza instance, specifying the follo
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `netezza` and this value must not be modified. |
 | `connection.url` | Database address (example: `jdbc:netezza://main:5490/sales`) |
 | `connection.username` | Username |
 | `connection.password` | User password |
 | `filter` | **Scanner 69 and later**.<br/>Optional. Rich filter to restrict the inventory scope. |
 | `cache.enabled` | **Scanner 69 and later**.<br/>Enable the cache functionality. When the cache is activated, the schema update performs four queries in total instead of four per imported table. The result is greater efficiency. |
-| `cache.folder` | **Scanner 69 and later**.<br/>Folder where caches are stored. The same folder can be used by several connections.<br/>The size of the cache file produced depends on the number of tables in the database (and not on the number of tables imported into Zeenea).<br/>If the folder is not specified, the cache is stored in memory. |
+| `cache.folder` | **Scanner 69 and later**.<br/>Folder where caches are stored. The same folder can be used by several connections.<br/>The size of the cache file produced depends on the number of tables in the database (and not on the number of tables imported into Actian Data Intelligence).<br/>If the folder is not specified, the cache is stored in memory. |
 | `cache.ttl` | **Scanner 69 and later**.<br/>Cache validity period (default `23h`)<br/>As long as the cache is valid, requests that fill it are not executed. |
 
 ## Rich Filters
@@ -152,7 +152,7 @@ SELECT
 
 The request above collects a data sample for each field where the feature is activated through the studio (`field1`, `field2`). The limit of collected rows is 10.000.
 
-These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Zeenea Scanner Setup](../../scanners/scanner-setup.md).
+These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Actian Data Intelligence Scanner Setup](../../scanners/scanner-setup.md).
 
 ## Unique Identification Keys
  

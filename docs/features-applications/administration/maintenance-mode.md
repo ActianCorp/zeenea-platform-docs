@@ -1,6 +1,6 @@
 # Maintenance Mode
 
-You can activate a maintenance mode from the Administration interface for your Zeenea platform. This feature allows Super Admins to set up a maintenance landing page and redirect all users during maintenance time. Only Super Admins can access the catalog during maintenance time.
+You can activate a maintenance mode from the **Administration** interface for your Actian Data Intelligence Platform. This feature allows Super Admins to set up a maintenance landing page and redirect all users during maintenance time. Only Super Admins can access the catalog during maintenance time.
 
 ## Activating the maintenance mode
 

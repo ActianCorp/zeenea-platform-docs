@@ -67,7 +67,7 @@ In the image above, the option "Publish Data Profiling in the Explorer" will all
 
 ## How to manually execute a Data Profiling job?
 
-Data Profiling is automatically run based on the connector's configuration. However, it is possible for admins to manually launch the job from the Connections page in the Zeenea Admin interface. 
+Data Profiling is automatically run based on the connector's configuration. However, it is possible for admins to manually launch the job from the Connections page in the Actian Data Intelligence **Administration** interface. 
 
 ## Data Profiling-compatible technologies
 

@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#p100156 "title: MariaDB") is required to establish a connection with MariaDB.
-* Zeenea traffic flows towards the database must be open.
+* Actian Data Intelligence traffic flow towards the database must be open.
 
 !!! warning "Important"
     The MariaDB driver is not delivered with the connector. Download the MariaDB driver related to your MariaDB instance and move it into the `/lib-ext` folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://mariadb.com/downloads/connectors/connectors-data-access/](https://mariadb.com/downloads/connectors/connectors-data-access/).
@@ -38,7 +38,7 @@ In order to establish a connection with a MariaDB instance, specifying the follo
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `mariadb` and this value must not be modified. |
 | `connection.url` | Database address (example: `jdbc:mariadb://host:3306/database`) |
 | `connection.username` | Username |

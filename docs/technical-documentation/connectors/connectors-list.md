@@ -5,7 +5,7 @@
     * The latest version of the scanner can be downloaded from your instance: `https://[instance-name].zeenea.app/admin/settings/scanners`
     * A plugin can contain several connectors.
     * Template files for configuring each connector are available in the [Github repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
-    * For more information about installation, see [Zeenea Scanner Setup](../scanners/scanner-setup.md).
+    * For more information about installation, see [Actian Data Intelligence Scanner Setup](../scanners/scanner-setup.md).
 
 
 | Connector | Plugin | Scanner minimum version | Download Link |
@@ -55,9 +55,9 @@
 | [Tibco Data Virtualization](./tibco-data-virtualization/tibco-data-virtualization.md)<br />[Tibco Spotfire](./tibco-spotfire.md) (*Deprecated*) | Tibco | 54 | [tibco-connector-plugin-4.0.1.zip](https://plugins.zeenea.app/tibco-connector-plugin/tibco-connector-plugin-4.0.1.zip) |
 | [Tibco Spotfire (V2)](./tibco-spotfire-v2/tibco-spotfire-v2.md) | Tibco V2 | 88 | [tibco-v2-connector-plugin-1.0.0.zip](https://plugins.zeenea.app/tibco-v2-connector-plugin/tibco-v2-connector-plugin-1.0.0.zip) |
 | [Generic Dataset](./generic-dataset.md) (\*\*) (*Deprecated*) | Generic Dataset | 54 | [dataset-connector-plugin-1.0.0.zip](https://plugins.zeenea.app/dataset-connector-plugin/dataset-connector-plugin-1.0.0.zip) |
-| [Zeenea Descriptor Format Dataset](./zdf/zdf.md) (\*\*) | Generic Dataset | 54 | [zdf-connector-plugin-2.0.1.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.1.zip) |
-| [Zeenea Descriptor Format Visualization](./zdf/zdf.md) (\*\*) | Generic Visualization | 54 | [zdf-connector-plugin-2.0.1.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.1.zip) |
-| [Zeenea Descriptor Format Lineage](./zdf/zdf.md) (\*\*) | Generic Lineage | 54 | [zdf-connector-plugin-2.0.1.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.1.zip) |
+| [Actian Data Intelligence Descriptor Format Dataset](./zdf/zdf.md) (\*\*) | Generic Dataset | 54 | [zdf-connector-plugin-2.0.1.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.1.zip) |
+| [Actian Data Intelligence Descriptor Format Visualization](./zdf/zdf.md) (\*\*) | Generic Visualization | 54 | [zdf-connector-plugin-2.0.1.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.1.zip) |
+| [Actian Data Intelligence Descriptor Format Lineage](./zdf/zdf.md) (\*\*) | Generic Lineage | 54 | [zdf-connector-plugin-2.0.1.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.1.zip) |
 
 (*) Safyr connectors require Safyr third party solution from Silwood.
 

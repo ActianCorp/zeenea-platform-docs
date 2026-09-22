@@ -5,7 +5,7 @@
 * **Java version:** Validated on Java 11 and 17 only.
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Azure Data Lake. 
-* Zeenea traffic flows towards the Data Lake must be open. 
+* Actian Data Intelligence traffic flow towards the Data Lake must be open. 
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -34,7 +34,7 @@ To establish a connection with an Azure Gen 2 cluster, fill in the following par
 | Parameter| Expected Value |
 | :--- | :--- |
 | `name` | Specifies the display name for the connection. | 
-| `code` | Specifies the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
+| `code` | Specifies the unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | Specifies the type of connector to be used for the connection. The value must be `ADLSGen2` and must not be modified. | 
 | `enabled` | Specifies whether to enable or disable the connection (`true` or `false`). <br />The default value is `true`. |
 | `catalog_code` | Specifies the catalog code associated with the connection (`default` when empty). |

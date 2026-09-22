@@ -7,9 +7,9 @@ With Studio, you can:
 * Create items manually from the interface, without having an associated "Connection"
 * Import items of the "Datasets or Visualizations" type
 
-Creating Items manually in Zeenea allows you to add context to your data assets.  
+Creating Items manually in Actian Data Intelligence allows you to add context to your data assets.  
 
-Only certain profiles can create or delete an Item in Zeenea.
+Only certain profiles can create or delete an Item in Actian Data Intelligence.
 
 Item types that can be created manually:
 
@@ -42,6 +42,7 @@ You can delete an Item:
 * From the item's detailed page, click on the "trash can" icon.
 * Using the mass edition feature.
 * Consequences of deleting:
+     
      * Deleting a Dataset automatically deletes all its Fields.
      * Deleting a Visualization results in the deletion of all associated Datasets from the same connection, as well as the fields of these Datasets.
      * The deletion of an Item from the catalog entails the irreversible destruction of its documentation. This Item can nevertheless be reimported afterward from the import wizard if necessary.

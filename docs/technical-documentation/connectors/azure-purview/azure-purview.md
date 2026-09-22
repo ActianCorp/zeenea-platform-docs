@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#p100120 "title: Azure Purview") is required to establish a connection with Purview.
-* Zeenea traffic flows towards the database must be open. 
+* Actian Data Intelligence traffic flow towards the database must be open. 
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -28,7 +28,7 @@ In order to establish a connection with a Purview instance, specifying the follo
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `azure-purview` and this value must not be modified. |
 | `connection.url` | Connection address (example: `https://{purview_account}.catalog.purview.azure.com`) |
 | `connection.oauth.client_id` | Application ID (client) as defined in Azure |

@@ -1,12 +1,12 @@
 # Catalog API v2
 
-Zeenea offers a GraphQL API for integrating the data catalog into your data ecosystem. Thanks to this API, you can query or mutate the metadata stored in the data catalog.
+Actian Data Intelligence offers a GraphQL API for integrating the data catalog into your data ecosystem. Thanks to this API, you can query or mutate the metadata stored in the data catalog.
 
-Full documentation of this API is available at [https://docs.zeenea.com/](https://docs.zeenea.com/).
+Full documentation of this API is available at [GraphQL Catalog API](https://docs.zeenea.com/).
  
-Zeenea also makes available the GraphiQL tool, enabling you to test your queries from the browser, at a URL such as the following:
+Actian Data Intelligence also makes available the GraphiQL tool, enabling you to test your queries from the browser, at a URL such as the following:
 
-<pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/api/catalog</pre>
+`https://[instance-name].zeenea.app/api/catalog`
 
 where `[instance-name]` is the name of your instance.
 

@@ -4,7 +4,7 @@ In the Catalog Design section, select the Glossary metamodel tab to configure th
 
 Glossary Items allow you to document concepts (business objects, rules, KPIs, etc.) used in your organization and align business and technical users with their definitions.
 
-Zeenea does not impose a metamodel for your glossary, so you can create any item types you wish. You can create either a simple lexicon (consisting of a flat list of business terms with their definitions) or a more complex (or hierarchical) model consisting of object types of different natures.
+Actian Data Intelligence does not impose a metamodel for your glossary, so you can create any item types you wish. You can create either a simple lexicon (consisting of a flat list of business terms with their definitions) or a more complex (or hierarchical) model consisting of object types of different natures.
 
 Click the **New Glossary Type** button to create a new object type:
 

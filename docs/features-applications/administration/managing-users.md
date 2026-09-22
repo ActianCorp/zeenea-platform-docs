@@ -8,8 +8,8 @@ Managing the repository of users is done through the administration interface in
 
 Click the **New User** button and fill in the required fields:
 
-* Email: The user's email is used as his unique identifier in Zeenea and also as his login
-* Groups: A user can belong to one or several groups. Select groups to give extra permissions to the user. Note that there are two types of group licenses (Explorer and Data Steward) with different pricing). A user can also belong to no group. In this case, he has read access in the Explorer to the default catalog items and also to the shared items in the Federated Catalog
+* Email: The user's email is used as his unique identifier in Actian Data Intelligence and also as his login
+* Groups: A user can belong to one or several groups. Select groups to give extra permissions to the user. Note that there are two types of group licenses (Explorer and Data Steward) with different pricing. A user can also belong to no group. In this case, he has read access in the Explorer to the default catalog items and also to the shared items in the Federated Catalog
 * First name/Lastname
 * Phone number
 
@@ -19,13 +19,13 @@ Click the **New User** button and fill in the required fields:
     Once the user is created, you can not modify his email address. If necessary, you delete and then recreate the user.
 
 
-When you create a new user, a new contact is automatically created in the Zeenea repository.
+When you create a new user, a new contact is automatically created in the Actian Data Intelligence repository.
 
 ## Defining the user password 
 
-If you are using an identity federation for the connection with Zeenea: the password to use is therefore the one of the identity federation
+If you are using an identity federation for the connection with Actian Data Intelligence: the password to use is therefore the one of the identity federation
 
-If you are using a database specific to Zeenea for the connection, the user will receive 2 emails inviting him to validate his email address via a link and to change his password via a dedicated interface. The password must comply with a security level that is indicated to the user when it is set up.
+If you are using a database specific to Actian Data Intelligence for the connection, the user will receive 2 emails inviting him to validate his email address via a link and to change his password via a dedicated interface. The password must comply with a security level that is indicated to the user when it is set up.
 
 ## Editing a user
 

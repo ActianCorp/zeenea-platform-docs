@@ -1,14 +1,15 @@
 # Importing Datasets or Visualizations
 
 ## Requirements 
-To import Datasets or Visualizations  into Zeenea, you must first: 
+
+To import Datasets or Visualizations into Actian Data Intelligence, you must first: 
 
 1. Install a scanner.
 2. Install the plugin of the connector that is appropriate to your storage system.
 3. Configure a connection to your storage system.
 4. Launch an inventory of this connection to allow the connector to automatically discover the Items available for import.
 
-These steps are described in the sections: [Zeenea Scanner Setup](../../../technical-documentation/scanners/scanner-setup.md) & [Managing Connections](../../administration/managing-connections.md).
+These steps are described in the sections: [Actian Data Intelligence Scanner Setup](../../../technical-documentation/scanners/scanner-setup.md) & [Managing Connections](../../administration/managing-connections.md).
 
 ## Import Datasets or Visualizations
 
@@ -72,7 +73,7 @@ Before confirming the import, a summary of the operations to be performed is dis
 
 For datasets:
 
-* For these imports, the fields are also imported automatically. Once associated with the source dataset, the fields also become searchable items in Zeenea.
+* For these imports, the fields are also imported automatically. Once associated with the source dataset, the fields also become searchable items in Actian Data Intelligence.
 * For some connections, the automatic import of the Data processes associated with this dataset is possible (for example, Atlas)
 
 For visualizations: 

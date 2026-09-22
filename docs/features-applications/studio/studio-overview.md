@@ -5,7 +5,7 @@ search:
 
 # Studio Overview
 
-Studio is Zeenea Data Catalog's back office management interface.
+Studio is Actian Data Intelligence Data Catalog's back office management interface.
 
   ![](./images/studio-overview.png)
 
@@ -13,14 +13,14 @@ Studio is designed for your data management teams and more specifically for Data
 
 ## Main uses
 
-* Inventory datasets and other enterprise assets (Discover the items managed by Zeenea).
+* Inventory datasets and other enterprise assets (Discover the items managed by Actian Data Intelligence).
 * Transform technical and operational metadata collected from source systems into readable and searchable documentation for data catalog items.
-* Create documentation metamodels to be filled in on the items inventoried in Zeenea.
-* Link business definitions, called Business Terms, from the Zeenea Business Glossary to the items in the data catalog.
+* Create documentation metamodels to be filled in on the items inventoried in Actian Data Intelligence.
+* Link business definitions, called Business Terms, from the Actian Data Intelligence Business Glossary to the items in the data catalog.
 * Associate referrers and contacts to the items in the data catalog.
 * Be the privileged space for collaboration between the company's internal requests and questions and the knowledgeable.
 
 ## Studio Demo
 
-See [Discover Zeenea Data Catalog in 8 minutes (Product Demo)](https://www.youtube.com/watch?v=u5DMqZDCBYs).
+See [Discover Actian Data Intelligence Data Catalog in 8 minutes (Product Demo)](https://www.youtube.com/watch?v=u5DMqZDCBYs).
 

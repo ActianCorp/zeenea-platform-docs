@@ -74,4 +74,4 @@ Recurring information on the overview panel includes, among others :
 * Associated contacts
 * Related Glossary Items
 
-For more information about Zeenea query language, see [Zeenea Query Language](../cross-application-features/query-language.md).
+For more information about Actian Data Intelligence query language, see [Actian Data Intelligence Query Language](../cross-application-features/query-language.md).

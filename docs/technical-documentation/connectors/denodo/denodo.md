@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Denodo.
-* Zeenea traffic flows towards the data source must be open. 
+* Actian Data Intelligence traffic flow towards the data source must be open. 
 
 !!! warning "Important"
     The Denodo JDBC driver is not included with the connector. Download the Denodo JDBC driver that matches your Denodo instance and copy the `.jar` file to the `/lib-ext` folder of your scanner. You can download the driver for your Denodo version from the resources provided by Denodo:
@@ -42,7 +42,7 @@ In order to establish a connection with a Denodo instance, specifying the follow
 | Parameter| Expected Value |
 | :--- | :--- |
 | `name` | The name that will be displayed to catalog users for this connection | 
-| `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
+| `code` | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `denodo` and this value must not be modified. | 
 | `connection.url` | Denodo Data Catalog address. <br/>Example: `http://host:9090/denodo-data-catalog`<br/>**Note:** Any query parameters provided in the URL value will be included in the Data Catalog REST API requests made by the connector. |
 | `connection.username` | Username |

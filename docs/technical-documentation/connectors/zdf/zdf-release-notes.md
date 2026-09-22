@@ -3,7 +3,7 @@ search:
   boost: 0.6
 ---
 
-# Zeenea Descriptor Format (ZDF) Release Notes
+# Actian Data Intelligence Descriptor Format (ZDF) Release Notes
 
 The latest version of the **ZDF** connector plugin is available for download from the [Connector Downloads](../connectors-list.md) page.
 

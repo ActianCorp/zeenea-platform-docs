@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Google Data Lineage API.
-* Zeenea traffic flows towards the data source must be open.
+* Actian Data Intelligence traffic flow towards the data source must be open.
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -30,7 +30,7 @@ In order to establish a connection with a Data Lineage instance, specifying the 
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `google-data-lineage` and this value must not be modified. |
 | `connection.json_key` | JSON access key.<br /><br />The key can be indicated directly or put in a separate file. In the latter case, this parameter indicates the path to the file in the form of a URI of scheme `file:`.<br /><br />Example: `file:///opt/zeenea-scanner/connections/gdc_json_key.json`<br /><br />**Warning**: If you indicate directly the token, you must use triple quotes to encapsulate the key as a parameter. Example: `"""{my: "json"}"""`. |
 | `scope.project_id` | List of project ids separated by comma |

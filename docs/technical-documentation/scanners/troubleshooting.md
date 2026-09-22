@@ -5,11 +5,11 @@ search:
 
 # Troubleshooting Scanners and Connections
 
-This topic describes the procedure to follow in case of a problem with the Zeenea scanner or the configuration of the connection.
+This topic describes the procedure to follow in case of a problem with the Actian Data Intelligence scanner or the configuration of the connection.
 
 This procedure is intended for users who have access to the machines on which the scanning processes are hosted.
 
-If you do not find in the answers to common issues, you can report your incident by opening a ticket and contacting the operator of Zeenea. We will be able to refer to the latter for additional information.
+If you do not find in the answers to common issues, you can report your incident by opening a ticket and contacting the operator of Actian Data Intelligence. We will be able to refer to the latter for additional information.
 
 ## Unresolved Issue Procedure
 
@@ -17,12 +17,12 @@ Here is the recommended procedure when a problem is encountered:
 
 1. If your scanner version is not the latest version available, please upgrade it in order to validate if the issue is already fixed or not. The upgrade procedure is described in [Managing Scanners](../../features-applications/administration/managing-scanners.md).
 2. If it appears that the problem is related to the user interface, collecting information at this level will be useful for understanding and therefore solving the problem.
-     * It is important to collect the traces of exchanges between the browser and Zeenea services. Any JavaScript errors should be logged.
+     * It is important to collect the traces of exchanges between the browser and Actian Data Intelligence services. Any JavaScript errors should be logged.
      * By activating the Network Developer tool, the requests exchanged between the interface and the service will be visible and if one of them is in error, it will be faster to understand the problem. In this case, retrieving the information from both the request made and the response received will provide useful information.
-3. It is important to collect the server-side traces recorded in the logs. Zeenea's configuration includes by default a log named scanner. log in the logs/directory. Errors related to the incident may therefore be found there. If the incident cannot be reproduced, it is important to keep the lines relating to the time it occurred.
-     * Keep the content of the log so you can communicate it to the Zeenea support.
+3. It is important to collect the server-side traces recorded in the logs. Actian Data Intelligence's configuration includes by default a log named scanner. log in the logs/directory. Errors related to the incident may therefore be found there. If the incident cannot be reproduced, it is important to keep the lines relating to the time it occurred.
+     * Keep the content of the log so you can communicate it to the Actian support.
      * If the problem is reproducible, isolate the possible errors that would appear during the reproduction procedure.
-4. It is not necessary, except on request of Zeenea support, to modify the levels of the traces in the logs. Errors will be logged by default. More detailed information will only be necessary in certain cases and in a very targeted manner: Zeenea support will then specify how to proceed.
+4. It is not necessary, except on request of Actian support, to modify the levels of the traces in the logs. Errors will be logged by default. More detailed information will only be necessary in certain cases and in a very targeted manner: Actian support will then specify how to proceed.
 5. Open a ticket by attaching the technical elements collected and specifying the issue encountered.
 
 ## Common Errors and Solutions
@@ -42,15 +42,15 @@ Make sure to also check that you’re not using a proxy.
 
 #### 2. The server certificate is not recognized
 
-If the scanner fails to connect to Zeenea with the error message: 
+If the scanner fails to connect to Actian Data Intelligence with the error message: 
 ```
 Error: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 ```
-then it is possible that the proxy is listening for the network and is generating a fake Zeenea certificate, using an internal CA. This certificate will not be recognized by Java. 
+then it is possible that the proxy is listening for the network and is generating a fake Actian Data Intelligence certificate, using an internal CA. This certificate will not be recognized by Java. 
 
 Confirm this is happening with the following command: 
 
-<pre>keytool -printcert -sslserver <font className="codeHighlight">[instance-name]</font>.zeenea.app</pre>
+`keytool -printcert -sslserver [instance-name].zeenea.app`
  
 Below is the expected result: 
 
@@ -100,7 +100,7 @@ Check the scanner's logs to view the list of connections it found and scanned, a
 
 #### 4. Imports and other actions do not complete, and the UI remains on _"Your request has been taken into account"_ 
 
-Verify that the Zeenea Scanner process is running. The scanner is a long-running background process and must run continuously. For more information, see [Zeenea Scanner Setup](./scanner-setup.md).
+Verify that the Actian Data Intelligence Scanner process is running. The scanner is a long-running background process and must run continuously. For more information, see [Actian Data Intelligence Scanner Setup](./scanner-setup.md).
 
 #### 5. The scanner is duplicated
 

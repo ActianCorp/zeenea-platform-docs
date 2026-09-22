@@ -1,6 +1,6 @@
 # Documentation Completion Level
 
-Zeenea offers, using a graphical component, an indicator of the documentation's level of completion at a given moment in time.
+Actian Data Intelligence offers, using a graphical component, an indicator of the documentation's level of completion at a given moment in time.
 
 This indicator is calculated for each Item and is displayed in the search results and on the Item detailed page.
 

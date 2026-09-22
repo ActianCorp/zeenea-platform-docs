@@ -417,7 +417,7 @@ customProperties:
 
 #### Manage Access Request Policies for Output Ports
 
-You can use the data contract YAML files to apply an [access request policy](https://docs.actian.com/zeenea/#page/Features%20_%20Applications/zeenea-access-requests.html) to the output port. This allows data consumers to request access to the output port.
+You can use the data contract YAML files to apply an [access request policy](../cross-application-features/access-requests.md) to the output port. This allows data consumers to request access to the output port.
 
 Access request policies must be defined using the `customProperties` syntax in ODPS/ODCS, with the property name `accessRequestPolicy`.
 

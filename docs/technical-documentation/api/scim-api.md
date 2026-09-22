@@ -4,11 +4,11 @@
 
 The SCIM (System for Cross-domain Identity Management) protocol is a standard designed to facilitate the synchronization and provisioning of users between different domains, in particular between an identity provider and external solutions that need this information to create their user profiles.
 
-Zeenea implements certain services of the SCIM v2.0 protocol to enable user provisioning.
+Actian Data Intelligence implements certain services of the SCIM v2.0 protocol to enable user provisioning.
 
-This documentation presents the specificities and limitations of the implementation of the SCIM protocol by the Zeenea platform. As this implementation is still incomplete, if you require other services or would like to share your feedback, please let us know and contact your Customer Success Manager.
+This documentation presents the specificities and limitations of the implementation of the SCIM protocol by the Actian Data Intelligence Platform. As this implementation is still incomplete, if you require other services or would like to share your feedback, please let us know and contact your Customer Success Manager.
 
-In order to implement SCIM in your company, contact an administrator of your identity management platform in order to carry out the necessary configuration operations. Zeenea does not offer support for this configuration, as each platform has its own specific features, but the information provided below should make it easy to configure SCIM. For architecture visuals, see [Authentication & User Provisioning - Architecture Diagrams](./scim-user-provisioning.md).
+In order to implement SCIM in your company, contact an administrator of your identity management platform in order to carry out the necessary configuration operations. Actian Data Intelligence does not offer support for this configuration, as each platform has its own specific features, but the information provided below should make it easy to configure SCIM. For architecture visuals, see [Authentication & User Provisioning - Architecture Diagrams](./scim-user-provisioning.md).
 
 Related Resources: [SCIM specifications](https://scim.cloud/)
 
@@ -18,13 +18,13 @@ The recommended permission scope for the SCIM API is **Admin**.
 
 ## Authentication and Headers
 
-To connect with Zeenea SCIM API, you need to generate an API key from the Zeenea Administration interface. See the following article which describes how to do this: [Managing API Keys](../../features-applications/administration/managing-api-keys.md).
+To connect with Actian Data Intelligence SCIM API, you need to generate an API key from the Actian Data Intelligence **Administration** interface. See [Managing API Keys](../../features-applications/administration/managing-api-keys.md).
 
 Each SCIM request must provide authentication information to access the service.
 
 The authentication mode currently implemented is Bearer authentication (aka token authentication) and uses the HTTP Header "Authorization".
 
-The token corresponds to the API key secret generated from your Zeenea instance.
+The token corresponds to the API key secret generated from your Actian Data Intelligence instance.
 
 Here is how to proceed:
 
@@ -41,11 +41,11 @@ SCIM defines two main types of objects: "Users" and "Groups".
 
 ### Users
 
-Users can be defined in SCIM using a list of attributes. The table below shows the attributes supported by Zeenea for objects of type "User":
+Users can be defined in SCIM using a list of attributes. The table below shows the attributes supported by Actian Data Intelligence for objects of type "User":
 
-| SCIM attribute | Mapping in Zeenea | 
+| SCIM attribute | Mapping in Actian Data Intelligence | 
 | :--- | :--- | 
-| `id` | User identifier in Zeenea (UUID) |
+| `id` | User identifier in Actian Data Intelligence (UUID) |
 | `userName` | User email |
 | `emails` | User email |
 | `phones` | User phone number |
@@ -56,15 +56,15 @@ Users can be defined in SCIM using a list of attributes. The table below shows t
 
 In addition to users, SCIM includes the definition of groups. Groups are used to model the organizational structure of the resources made available. Groups can contain users or groups.
 
-In Zeenea, SCIM groups correspond to user groups as defined in the Zeenea administration interface. Furthermore, in the current implementation, groups cannot contain other groups.
+In Actian Data Intelligence, SCIM groups correspond to user groups as defined in the Actian Data Intelligence **Administration** interface. Furthermore, in the current implementation, groups cannot contain other groups.
 
-The table below shows the attributes supported by Zeenea for objects of type "Group":
+The table below shows the attributes supported by Actian Data Intelligence for objects of type "Group":
 
-| SCIM attribute | Mapping in Zeenea | 
+| SCIM attribute | Mapping in Actian Data Intelligence | 
 | :--- | :--- | 
-| `id` | Identifier of the group in Zeenea (UUID) |
+| `id` | Identifier of the group in Actian Data Intelligence (UUID) |
 | `displayName` | Name of the group |
-| `externalId` | Code of the group<br /><br />Note: You need to perform a mapping upstream of Zeenea between the group identifiers defined in your identity management tool and the codes of the Zeenea groups to fill in the `externalId` attribute. |
+| `externalId` | Code of the group<br /><br />Note: You need to perform a mapping upstream of Actian Data Intelligence between the group identifiers defined in your identity management tool and the codes of the Actian Data Intelligence groups to fill in the `externalId` attribute. |
 
 ## Supported Operations
 
@@ -76,7 +76,7 @@ The SCIM API URL for your tenant is
 
 where `[instance_name]` is to be replaced by the name of your instance.
 
-Zeenea only supports the operations described below.
+Actian Data Intelligence only supports the operations described below.
 
 ## Users
 
@@ -92,7 +92,7 @@ You can create new users from a POST request using the `/Users` endpoint.
 
 #### Constraints
 
-In the Zeenea implementation of SCIM, the `userName` attribute is mandatory and must correspond to a valid email address.
+In the Actian Data Intelligence implementation of SCIM, the `userName` attribute is mandatory and must correspond to a valid email address.
 
 When a user is created, no group is assigned to him, which means that he is given read access to the Explorer. Users can then be assigned to a group (as a member) via a modification request to the group (see [Groups](#groups) below).
 
@@ -142,7 +142,7 @@ You can modify a user's attributes from a PATCH request using the `/Users` endpo
     }
 ```
 
-where `[instance_name]` is to be replaced by the name of your instance and `[user_id]` is to be replaced by the user's internal Zeenea ID.
+where `[instance_name]` is to be replaced by the name of your instance and `[user_id]` is to be replaced by the user's internal Actian Data Intelligence ID.
 
 ### Delete User
 
@@ -157,7 +157,7 @@ curl --request DELETE \
 --header 'Content-Type: application/scim+json'
 ```
 
-where `[instance_name]` is to be replaced by the name of your instance and `[user_id]` is to be replaced by the user's internal Zeenea ID.
+where `[instance_name]` is to be replaced by the name of your instance and `[user_id]` is to be replaced by the user's internal Actian Data Intelligence ID.
 
 ### Get User
 
@@ -172,7 +172,7 @@ curl —-request GET \
 --header 'Content-Type: application/scim+json'
 ```
 
-where `[instance_name]` is to be replaced by the name of your instance and `[user_id]` is to be replaced by the user's internal Zeenea ID.
+where `[instance_name]` is to be replaced by the name of your instance and `[user_id]` is to be replaced by the user's internal Actian Data Intelligence ID.
 
 ### List Users
 
@@ -181,7 +181,7 @@ This access point can also be used to carry out filtering requests on an existin
 #### Constraints
 
 * This request does not support pagination. In particular, the `startIndex` parameter is not supported. By default, 100 results are returned. A maximum of 1000 results can be returned.
-* The list of users can be filtered by `userName`, `email`, `externalId` (resolved as email in Zeenea), or `displayName` (resolved as `firstname lastname` in Zeenea).
+* The list of users can be filtered by `userName`, `email`, `externalId` (resolved as email in Actian Data Intelligence), or `displayName` (resolved as `firstname lastname` in Actian Data Intelligence).
 * The following comparison operators are supported: eq, co, sw, ew, and pr, as well as the expression and.
 * The `filter` query parameter must be URL encoded. Its syntax is as follows (it is expressed here before encoding)
   
@@ -204,7 +204,7 @@ Operations relating to groups are carried out from the `/Groups` endpoint:
 
 where `[instance_name]` is to be replaced by the name of your instance.
 
-Creating and deleting groups is not supported by the API. Use the Zeenea Administration interface to configure your groups.
+Creating and deleting groups is not supported by the API. Use the Actian Data Intelligence **Administration** interface to configure your groups.
 
 ### Patch Group
 
@@ -237,7 +237,7 @@ curl --request PATCH \
 }'
 ```
 
-where `[instance_name]` is to be replaced by the name of your instance, `[group_id]` is to be replaced by the group identifier, and `[user_id]` to be replaced by the user's internal Zeenea ID.
+where `[instance_name]` is to be replaced by the name of your instance, `[group_id]` is to be replaced by the group identifier, and `[user_id]` to be replaced by the user's internal Actian Data Intelligence ID.
 
 ### List Groups
 

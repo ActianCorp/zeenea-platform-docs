@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The purpose of this document is to detail the rules applied in File System-type Zeenea connector to detect Datasets.
+The purpose of this document is to detail the rules applied in File System-type Actian Data Intelligence connector to detect Datasets.
 
 The algorithm checks all the objects from the root path and identifies if they are datasets. Once a folder is identified as a dataset, the algorithm stops its treatment and goes to the next folder.
 
@@ -17,7 +17,7 @@ Supported extensions are: csv, parquet, orc, xml, json, avro
 |-----------------------------------------|-----------------------------------------|
 | * The "Client" folder is a dataset (rule 1). | * The "Project" folder is considered a unique dataset (rule 1). |
 | * The folder contains only files, and at least one of them has a supported extension. | * The folder contains only files, and at least one of them has a supported extension. |
-| * Zeenea will extract the Schema from the most recent file (in this case, Client20190827.csv). | * Zeenea will extract the schema from the most recent file. |
+| * Actian Data Intelligence will extract the Schema from the most recent file (in this case, Client20190827.csv). | * Actian Data Intelligence will extract the schema from the most recent file. |
 |  | * If the files are not homogenous, the documented schema may then change upon the analysis treatment. |
 
 ## Folder with Subfolders

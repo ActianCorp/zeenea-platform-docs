@@ -1,10 +1,10 @@
-# Zeenea API Lifecycle
+# Actian Data Intelligence API Lifecycle
 
-This documentation is a detailed page of Zeenea Public APIs. Please refer to the main documentation for more information about general usage.
+This documentation is a detailed page of Actian Data Intelligence Public APIs. Refer to the main documentation for more information about general usage.
 
 ## API Lifecycle Explained
 
-Zeenea API follows a four phases long lifecycle:
+Actian Data Intelligence API follows a four phases long lifecycle:
 
 1. **Beta**: The API can be used in production but should take into account some limitations:
     * The API may have annoying bugs

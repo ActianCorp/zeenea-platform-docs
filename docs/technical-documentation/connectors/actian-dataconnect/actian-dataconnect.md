@@ -4,7 +4,7 @@
 
 * **Java version:** Validated on Java 11 only.
 * Scanner **Version 76 or higher** is required to use DataConnect Connector.
-* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](../../scanners/scanner-setup.md).
+* It is assumed that the Actian Data Intelligence Scanner has been successfully downloaded and configured. See [Actian Data Intelligence Scanner Setup](../../scanners/scanner-setup.md).
 
 ## Creating the Configuration File
 
@@ -34,8 +34,8 @@ For more information on how to install a plugin, please refer to the following a
  
 ## Verifying the Connection
 
-1. Restart Zeenea Scanner.
-2. In Zeenea Administration, click **Connections** and verify that the new connection is listed.
+1. Restart Actian Data Intelligence Scanner.
+2. In **Administration**, click **Connections** and verify that the new connection is listed.
 3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](../../scanners/troubleshooting.md).
 
 ## Viewing the Dataset
@@ -47,5 +47,5 @@ For more information on how to install a plugin, please refer to the following a
 
 ## Manually Syncing the Connection
 
-1. In Zeenea Administration, click **Connections**, then click the ellipsis button in the **Actions** column for your connection and click **Synchronize**:
+1. In **Administration**, click **Connections**, then click the ellipsis button in the **Actions** column for your connection and click **Synchronize**:
    ![](./images/connection-dataconnect.png)

@@ -1,12 +1,12 @@
 # Creating a Docker Image for your Scanner
 
 !!! note "Disclaimer"
-    This Docker documentation is provided as an example. Adapt it to your context, following the online documentation about how to run a Zeenea Scanner.
+    This Docker documentation is provided as an example. Adapt it to your context, following the online documentation about how to run a Actian Data Intelligence Scanner.
 
 
 ## Introduction
 
-Zeenea doesn’t provide an official Scanner image, but it’s rather easy to build your own.
+Actian Data Intelligence doesn’t provide an official Scanner image, but it’s rather easy to build your own.
 
 This article shares all the necessary information you need to define your own image.
 
@@ -40,14 +40,14 @@ ENTRYPOINT  ["/opt/entrypoint.sh"]
 CMD ["start"]
 ```
 
-Zeenea Scanner requires Java 11 to run &mdash; the image is based on Openjdk JRE 11 Slim.
+Actian Data Intelligence Scanner requires Java 11 to run &mdash; the image is based on Openjdk JRE 11 Slim.
 
 It creates a user, having only the expected privileges, as described in our Scanner documentation. You can give him a Group and User ID to ease the administration out of the container, but that’s not mandatory at all.
 
 ## Get the binary
 First, let’s create a fresh new folder, named, for instance, `zeenea-docker`.
 
-Download (or get from our support) the Zeenea Scanner you want to dockerize.
+Download (or get from our support) the Actian Data Intelligence Scanner you want to dockerize.
 
 Unzip the archive into `zeenea-docker` and rename the scanner folder `zeenea-scanner-latest` (instead of `zeenea-scanner-VERSION`)
 
@@ -128,7 +128,7 @@ This name is very important as it determines which scanner handles which connect
 
 This name will be provided as an env variable to the container (see below).
 
-## Run your Dockerized Zeenea Scanner
+## Run your Dockerized Actian Data Intelligence Scanner
 
 Considering your four folders were created locally under `/opt/zee`, the startup script may be as follows:
 
@@ -148,7 +148,7 @@ docker run \
  zeenea-scanner:latest
 ```
 
-Your container will share the name by which Zeenea platform knows it.
+Your container will share the name by which Actian Data Intelligence Platform knows it.
 
 Choose a unique name and set the `SCANNER_NAME` env variable.
 

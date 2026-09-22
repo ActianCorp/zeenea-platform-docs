@@ -33,7 +33,7 @@ To establish a connection with Looker, fill in the following parameters in the d
 |----|-----|
 | `name` | Specifies the display name for the connection. |
 |  |  |
-| `code` | Defines the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | Defines The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 |  |  |
 | `connector_id` | The type of connector to be used for the connection. The value must be `looker` and must not be modified. |
 |  |  |
@@ -57,7 +57,7 @@ To collect metadata, the running user's permissions must allow them to access an
 
 ## Data Extraction
 
-To extract information from Looker, the connector will scan all Dashboards the running user has access to and transform them into **Visualization** objects in Zeenea. Data sources are referenced as **Datasets**. Fields are recreated as **Field**-type objects in Zeenea. For each Looker Dataset, a **Data Process** is created to represent the lineage with the origin Dataset.
+To extract information from Looker, the connector will scan all Dashboards the running user has access to and transform them into **Visualization** objects in Actian Data Intelligence. Data sources are referenced as **Datasets**. Fields are recreated as **Field**-type objects in Actian Data Intelligence. For each Looker Dataset, a **Data Process** is created to represent the lineage with the origin Dataset.
 
 The connector executes the following requests:
 ```bash
@@ -128,7 +128,7 @@ Dataset field. Can be used as a Dashboard report data.
 
 ### Data Process
 
-To represent the data flow from an external source, a Zeenea Data Process will be created for each Looker Dataset.
+To represent the data flow from an external source, a Actian Data Intelligence Data Process will be created for each Looker Dataset.
 
 * **Name**: `import input/output_dataset name`
 

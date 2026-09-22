@@ -7,7 +7,7 @@ search:
 
 ## Deprecated
 
-This connector is deprecated. You can use the new [ZDF Lineage](./zdf/zdf.md# "title: Zeenea Descriptor Format (ZDF)") connector instead.
+This connector is deprecated. You can use the new [ZDF Lineage](./zdf/zdf.md) connector instead.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ The technical user the scanner is executed with must have sufficient [permission
 
 The Lineage connector is compatible with `.zeenea` files written in JSON format and which respect the format below.
 
-The connector is able to recreate the data transformations described in the JSON file as a Data Process object in Zeenea. A `.zeenea` descriptor file can describe several transformations but the connector is also able to detect and collect information from several files placed in a directory or in a git repository.
+The connector is able to recreate the data transformations described in the JSON file as a Data Process object in Actian Data Intelligence. A `.zeenea` descriptor file can describe several transformations but the connector is also able to detect and collect information from several files placed in a directory or in a git repository.
 
 To reference in or out an existing dataset in the catalog, you can use the `connectionCode` and `zeepath` pair or its identification key to target it.
 
@@ -76,7 +76,7 @@ In order to establish a connection with an lineage connector, specifying the fol
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `lineage` and this value must not be modified. |
 | `connection.git.repository` | URL of the git repository where to read the files |
 | `connection.git.branch` | Git branch |
@@ -87,7 +87,7 @@ In order to establish a connection with an lineage connector, specifying the fol
 
 ## User Permissions
 
-In order to collect metadata, the Zeenea Scanner technical user's permissions must allow the connector to access and read folders or repositories that contain the description files (`*.zeenea`). 
+In order to collect metadata, the Actian Data Intelligence Scanner technical user's permissions must allow the connector to access and read folders or repositories that contain the description files (`*.zeenea`). 
 
 ## Data Extraction
 

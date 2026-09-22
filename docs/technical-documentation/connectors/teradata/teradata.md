@@ -5,7 +5,7 @@
 * **Java version:** Validated on Java 11 and 17 only.
 
 * In order to establish a connection with Teradata, a user with sufficient [permissions](#user-permissions) is required.
-* Zeenea traffic flows towards the database must be opened.  
+* Actian Data Intelligence traffic flow towards the database must be opened.  
 
 !!! warning "Important"
     The Teradata driver is not delivered with the connector with scanner version 34 and later. Download the Teradata driver related to your Teradata instance and move it into the `/lib-ext` folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://downloads.teradata.com/download/connectivity/jdbc-driver](https://downloads.teradata.com/download/connectivity/jdbc-driver).
@@ -40,7 +40,7 @@ In order to establish a connection with Teradata, specifying the following param
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `Teradata` and this value must not be modified. |
 | `connection.url` | Database address. It is possible to add specific parameters through URL.<br/><br/>Example : `jdbc:teradata://localhost/CHARSET=UTF8,LOG=...` |
 | `connection.username` | Username |
@@ -50,7 +50,7 @@ In order to establish a connection with Teradata, specifying the following param
 | `roles` | To filter the "Roles" metadata. See [Rich Filters](#rich-filters). |
 | `extract.dbc.use_qvci` | Define which DBC view will be used to extract columns metadata.<br/>- `use_qvci = "false": DBC.ColumnsV` (default value, table's columns metadata only)<br/>- `use_qvci = "true": DBC.ColumnsQV` (table's and view's columns metadata).<br/>Before setting `use_qvci` flag to `true`, you must activate QVCI (Queryable Column Information on Views) feature on the Teradata platform. |
 | `cache.enabled` | Enable the cache functionality. When the cache is activated, the schema update performs four queries in total instead of four per imported table. The result is greater efficiency. |
-| `cache.folder` | The size of the cache file produced depends on the number of tables in the database (and not on the number of tables imported into Zeenea). If the folder is not specified, the cache is stored in memory. |
+| `cache.folder` | The size of the cache file produced depends on the number of tables in the database (and not on the number of tables imported into Actian Data Intelligence). If the folder is not specified, the cache is stored in memory. |
 | `cache.ttl` | Cache validity period (default `12h`). As long as the cache is valid, requests that fill it are not executed. |
 
 !!! note
@@ -147,7 +147,7 @@ SELECT
 
 The request above collects a data sample for each field where the feature is activated through the studio (`field1`, `field2`). The limit is 10.000 lines (`linesPercentage` parameter) deduced from a calculation with the number of rows set in the previous request.
 
-These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Zeenea Scanner Setup](../../scanners/scanner-setup.md).
+These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Actian Data Intelligence Scanner Setup](../../scanners/scanner-setup.md).
 
 ## Object Identification Keys
 

@@ -8,7 +8,7 @@
 
 * **Java version:** Validated on Java 11 only.
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with SAS.
-* Zeenea traffic flows towards the data source must be open. 
+* Actian Data Intelligence traffic flow towards the data source must be open. 
 
 !!! warning "Important"
     * The SAS proprietary libraries are not provided with the connector.<br />Please download them and place them in the `/lib-ext` folder of the scanner: [https://www.ibm.com/docs/en/psfa/7.2.1?topic=configuration-installing-uninstalling-client-tools-software](https://www.ibm.com/docs/en/psfa/7.2.1?topic=configuration-installing-uninstalling-client-tools-software)
@@ -47,7 +47,7 @@ In order to establish a connection with a SAS instance, specifying the following
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `sas-dataintegration` and this value must not be modified. |
 | `connection.server` | SAS Server name |
 | `connection.port` | SAS Server port |

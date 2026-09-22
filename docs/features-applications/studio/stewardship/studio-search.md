@@ -2,7 +2,7 @@
 
 ## Understanding the “Catalog” Section
 
-The Catalog section of the Studio lists all items contained in Zeenea. 
+The Catalog section of the Studio lists all items contained in Actian Data Intelligence. 
 
 This display is split into three sections:
 
@@ -130,4 +130,4 @@ Depending on the type of property, the user interface can be of two types:
 
 In any case, you can select one or more values of the same property to apply a filter.
 
-For more information about Zeenea query language, see [Zeenea Query Language](../../cross-application-features/query-language.md).
+For more information about Actian Data Intelligence query language, see [Actian Data Intelligence Query Language](../../cross-application-features/query-language.md).

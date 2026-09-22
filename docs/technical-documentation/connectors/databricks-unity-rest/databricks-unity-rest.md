@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with the Databricks Unity Catalog. 
-* Zeenea traffic flows towards the data source must be open.
+* Actian Data Intelligence traffic flow towards the data source must be open.
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -30,7 +30,7 @@ To establish a connection with a Databricks Unity Catalog instance, fill in the 
 | Parameter| Expected Value |
 | :--- | :--- |
 | `name` | The name that will be displayed to catalog users for this connection | 
-| `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
+| `code` | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `databricks-unitycatalog` and this value must not be modified. | 
 | `connection.url` | Databricks URL address (`https://url.cloud.databricks.com`). |
 | `connection.oauth.endpoint`	| Databricks OAuth2 endpoint (optional)<br /><br /> Example: `https://tenant.cloud.databricks.com/oidc/v1/token`. |

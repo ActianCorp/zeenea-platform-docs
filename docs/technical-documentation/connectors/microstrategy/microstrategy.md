@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with MicroStrategy.
-* Zeenea traffic flows towards MicroStrategy must be open.
+* Actian Data Intelligence traffic flow towards MicroStrategy must be open.
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -30,7 +30,7 @@ To establish a connection with a MicroStrategy instance, fill in the following p
 | Parameter | Expected value |
 |---|---|
 | `name` | Specifies the display name for the connection. |
-| `code` | Specifies the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | Specifies The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | Specifies the type of connector to be used for the connection. The value must be `microstrategy` and must not be modified. |
 | `enabled` | Specifies whether to enable or disable the connection (`true` or `false`). <br />The default value is `true`. |
 | `catalog_code` | Specifies the catalog code associated with the connection (`default` when empty). |
@@ -94,7 +94,7 @@ The following API calls are made to obtain the lineage information:
 
 * `GET /api/model/attributes/[attribute-id]`: Allows you to retrieve the id of the table where this attribute is attached.
 * `GET /api/model/datasources/[source-system-id]`: Allows you to retrieve the ID of the connection that is associated with it.
-* `GET /api/model/connections/[connection-id]`: Allows to build the connection code for the Zeenea lineage.
+* `GET /api/model/connections/[connection-id]`: Allows to build the connection code for the Actian Data Intelligence lineage.
 
 !!! note
     The connector will create a data process object for each MicroStrategy dataset in order to link it with the original dataset(s) even if the original dataset(s) are not present in the catalog.
@@ -274,7 +274,7 @@ Each object contains:
 * at least one identification field: `key`, `id`, or `name`
 * an `answers` field
 
-The format of the `answers` field depends on the type of the prompt and has many variants. It is not interpreted by Zeenea and passed as is to the `PUT {{baseUrl}}/api/documents/{{folderId}}/instances/{instanceFolder}}/prompts/answers` response API.
+The format of the `answers` field depends on the type of the prompt and has many variants. It is not interpreted by Actian Data Intelligence and passed as is to the `PUT {{baseUrl}}/api/documents/{{folderId}}/instances/{instanceFolder}}/prompts/answers` response API.
 
 See the MicroStrategy documentation for details of this format.
 

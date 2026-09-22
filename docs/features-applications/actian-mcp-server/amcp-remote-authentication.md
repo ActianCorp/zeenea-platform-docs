@@ -15,9 +15,9 @@ If your organization uses identity federation (for example, SSO with providers l
 
 ## Step 1: Generate an API Key
 
-To generate an API key in Zeenea Administration, follow these steps:
+To generate an API key in Actian Data Intelligence **Administration**, follow these steps:
 
-1. Open Zeenea Administration.
+1. Open **Administration**.
 2. Go to the **API keys** section. 
 3. Click the **Create API key** button.<br />A **Create API key** window opens. 
 4. Fill in the required fields and click **Create API key** button. 

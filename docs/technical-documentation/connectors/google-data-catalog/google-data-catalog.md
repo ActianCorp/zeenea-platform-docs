@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#p100588 "title: Google Data Catalog") is required to establish a connection with Google Data Catalog.
-* Zeenea traffic flows towards the data source must be open.  
+* Actian Data Intelligence traffic flow towards the data source must be open.  
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -29,7 +29,7 @@ In order to establish a connection with Google Data Catalog instance, specifying
 | Parameter                | Expected Value       |
 | ------------------------- | ------------------------- |
 | `name`                             | The name that will be displayed to catalog users for this connection  |
-| `code`                             | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code`                             | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id`                     | The type of connector to be used for the connection. Here, the value must be `google-cloud.data-catalog`. **This value must not be modified**.     |
 | `connection.json_key`              | <p>JSON Key.</p><p>**Careful**: use three double quotes to encapsulate the JSON key.</p><p>Example: `"""{my:"json"}"""`</p>       |
 | `proxy.scheme`                     | Depending on the proxy, `http` or `https`   |
@@ -84,7 +84,7 @@ Dataset field.
 
 ### Tags
 
-It's possible to get all the tags applied to your Data Catalog objects through a specified configuration in your dedicated scanner. You just need to define the tag model you want to get into your Zeenea Data Catalog in the `application.conf` file of your scanner.
+It's possible to get all the tags applied to your Data Catalog objects through a specified configuration in your dedicated scanner. You just need to define the tag model you want to get into your Actian Data Intelligence Data Catalog in the `application.conf` file of your scanner.
 
 Here is an example of a configuration file `application.conf` that retrieves select tags:
 

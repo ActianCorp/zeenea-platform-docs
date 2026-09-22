@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with a data source through the standard JDBC interface.
-* Zeenea traffic flows towards the data source must be open.
+* Actian Data Intelligence traffic flow towards the data source must be open.
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -34,7 +34,7 @@ In order to establish a connection with a JDBC instance, specifying the followin
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `generic-jdbc` and this value must not be modified. |
 | `connection.url` | Database address |
 | `connection.jdbc_driver_name` | **Scanner 69 and later.**<br/>(Optional) The long name of the JDBC Driver to use.<br/>Examples:<br/>  - `org.postgresql.Driver`<br/>  - `com.mysql.jdbc.Driver`<br/>  - `org.mariadb.jdbc.Driver`<br/>  - `com.microsoft.sqlserver.jdbc.SQLServerDriver`<br/>  - `oracle.jdbc.driver.OracleDriver`<br/>  - `com.ibm.db2.jcc.DB2Driver` |

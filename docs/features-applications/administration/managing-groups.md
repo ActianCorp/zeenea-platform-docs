@@ -1,10 +1,10 @@
 # Managing Groups
 
 !!! note
-    Groups replace Permission sets to manage user permissions in Zeenea. Existing permission sets have already been automatically migrated to Groups with the same descriptions and scopes.
+    Groups replace Permission sets to manage user permissions in Actian Data Intelligence. Existing permission sets have already been automatically migrated to Groups with the same descriptions and scopes.
 
 
-Groups allow you to manage user permissions in Zeenea. You can manage groups from the Administration section.
+Groups allow you to manage user permissions in Actian Data Intelligence. You can manage groups from the Administration section.
 
   ![](./images/group-create.png)
 
@@ -18,7 +18,7 @@ First, select a type of group: Explorer or Data Steward.
 
 An Explorer group only grants read access to the catalog, while a Data Steward group allows granting edit permission on catalog items or administration permissions.
 
-Note that it also corresponds to the two different license options Zeenea offers.
+Note that it also corresponds to the two different license options Actian Data Intelligence offers.
 
 ## Creating an Explorer-Type Group
 

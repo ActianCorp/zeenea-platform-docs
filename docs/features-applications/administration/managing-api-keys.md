@@ -1,11 +1,11 @@
 # Managing API Keys
 
-Zeenea provides a **machine-to-machine** authentication mechanism based on API keys. This key must be generated from the administration interface on your platform.
+Actian Data Intelligence provides a **machine-to-machine** authentication mechanism based on API keys. This key must be generated from the administration interface on your platform.
 
 ## Create an API key
 
-1. Login to Zeenea as a user with the "Connectivity Administration" permission.
-2. Open Zeenea Administration.
+1. Login to Actian Data Intelligence as a user with the "Connectivity Administration" permission.
+2. Open **Administration**.
 3. Go to the **API Keys** section.
 4. Click the **Create API Key** button.<br />A **Create API key** window opens. 
 5. In the **Name** field, enter a unique name for your API key. <br />This name helps you identify the key in the interface later.
@@ -28,5 +28,5 @@ Zeenea provides a **machine-to-machine** authentication mechanism based on API k
 You can delete an existing API key at any time from the **API Key** section in the administration interface.
 
 !!! warning "Important"
-    Be careful when deleting the API key, because the services (script, scanners, or others) that use this key for authentication will no longer be able to connect to the Zeenea platform.
+    Be careful when deleting the API key, because the services (script, scanners, or others) that use this key for authentication will no longer be able to connect to the Actian Data Intelligence Platform.
 

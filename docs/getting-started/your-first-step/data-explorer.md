@@ -6,13 +6,13 @@ search:
 # As a Data Explorer
 
 
-As a Data Explorer, you have access to our dedicated Data discovery application: Explorer.
+As a Data Explorer, you have access to Actian Data Intelligence's dedicated Data discovery application: Explorer.
 
 Read more: [Explorer Overview](../../features-applications/explorer/explorer-overview.md)
 
 ## Log in to the platform
 
-To access Zeenea, you must be authorized to log in.
+To access Actian Data Intelligence, you must be authorized to log in.
 
 You will have to enter the login/password combination which will have been sent to you by email by the administrators.
 
@@ -30,7 +30,7 @@ You can also explore the content of the catalog by entering either through the t
 
   ![](./images/discover2.png)
 
-Read more: [Zeenea Definitions](../definitions.md)
+Read more: [Definitions](../definitions.md)
 
 ## Filter
 

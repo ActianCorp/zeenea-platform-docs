@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Talend.
-* Zeenea traffic flows towards the ETL must be open. 
+* Actian Data Intelligence traffic flow towards the ETL must be open. 
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -30,7 +30,7 @@ In order to establish a connection with Talend, the following parameters in the 
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `talend` and this value must not be modified. |
 | `connection.path` | Path of the directory containing Talend projects to synchronize with the catalog. |
 | `context.name` | (Optional) Used by the connector to get parameters stored in the job context for resolving values in jobs like database, schema, URL, etc.<br/>May contain values separate by a comma order by priority.<br/>Example: `context.name = "DEV, PROD, Default"`<br/>If empty, the connector will use the last context name use in the job. |

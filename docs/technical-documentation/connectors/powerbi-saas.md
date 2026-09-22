@@ -11,8 +11,9 @@ The Power BI Online (V1) plugin has been deprecated. You can use the [Power BI O
 
 ## Prerequisites
 
-* A user with sufficient [permissions](#user-permissions) is required to establish a connection with PowerBI Online.
-* Zeenea's scanner traffic flows towards Power BI's instance and Azure must be open. Refer to the following:
+* A user with sufficient [permissions](#user-permissions) is required to establish a connection with Power BI Online.
+* Actian Data Intelligence Scanner traffic flows towards Power BI's instance and Azure must be open. Refer to the following:
+    
     * [https://login.microsoftonline.com](https://login.microsoftonline.com)
     * [https://api.powerbi.com](https://api.powerbi.com)
 
@@ -45,7 +46,7 @@ In order to establish a connection with a PowerBI Online instance, specifying th
 | Parameter                        | Expected value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`                           | The name that will be displayed to catalog users for this connection.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `code`                           | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner.                                                                                                                                                                                                                                                                                           |
+| `code`                           | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner.                                                                                                                                                                                                                                                                                           |
 | `connector_id`                   | The connector type to use for the connection. Here, the value must be `powerbi` and this value must not be modified.                                                                                                                                                                                                                                                                                                                                                                                              |
 | `connection.tenant`             | Tenant's technical identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `connection.url`                | Connection address. Default value `https://api.powerbi.com`.                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -224,7 +225,7 @@ Dataset field or measure.
 
 ### Data Process
 
-To represent the data flow from an external source, a Zeenea Data Process will be created for each Power BI Online Dataset.
+To represent the data flow from an external source, an Actian Data Intelligence Data Process will be created for each Power BI Online Dataset.
 
 * **Name**: `import dataset_name`
 

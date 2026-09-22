@@ -5,7 +5,7 @@
 * **Java version:** Validated on Java 11 and 17 only.
 
 * In order to establish a connection to Google Cloud Storage, a user with sufficient [permissions](#user-permissions) is required.
-* Zeenea traffic flow towards Google Cloud Storage must be open. 
+* Actian Data Intelligence traffic flow towards Google Cloud Storage must be open. 
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -34,7 +34,7 @@ In order to establish a connection with Google Cloud Storage, specifying the fol
 | Parameter| Expected Value |
 | :--- | :--- |
 | `name` | The name that will be displayed to catalog users for this connection | 
-| `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
+| `code` | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `GCPCloudStorage` and this value must not be modified. | 
 | `connection.project_id` | Project Identifier |
 | `connection.json_key` | Project JSON access key |

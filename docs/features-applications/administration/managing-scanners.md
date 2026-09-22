@@ -2,7 +2,7 @@
 
 ## Adding a Scanner
 
-Scanners are added and set up outside of the Zeenea interface. Please see [Zeenea Scanner Setup](../../technical-documentation/scanners/scanner-setup.md) for more information.
+Scanners are added and set up outside of the Actian Data Intelligence interface. For more information, see [Actian Data Intelligence Scanner Setup](../../technical-documentation/scanners/scanner-setup.md).
 
 ## Deleting a Scanner
 
@@ -10,7 +10,7 @@ Scanners cannot be deleted. They will however be tagged as “Inactive” in the
 
 ## Moving a Scanner
 
-You can move a scanner simply by moving its installation folder. The scanner will then be automatically updated on the Zeenea platform, without any added manual intervention on your end. 
+You can move a scanner simply by moving its installation folder. The scanner will then be automatically updated on the Actian Data Intelligence Platform, without any added manual intervention on your end. 
 
 This process can be used both for moving a scanner in the same host, or changing the host entirely.   
 
@@ -55,18 +55,18 @@ By clicking on the "eye" icon next to a Scanner, you’ll be able to access more
 Unlike Studio and Explorer, the scanner must be updated manually.
 
 !!! note
-    Zeenea Support team may ask you to upgrade your scanner if you are facing an issue to validate if it is already fixed in the most recent version available.
+    Actian Data Intelligence support team may ask you to upgrade your scanner if you are facing an issue to validate if it is already fixed in the most recent version available.
 
 
 ### Installation procedure: 
 
 1. Stop the current scanner
-2. Download the new version available at: <pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/admin/settings/scanners</pre> (If you need a specific version of the scanner, it will be provided by Zeenea support.)
-4. Copy the file `agent-identifier` from the root directory of the current scanner and paste it into the root directory of the new scanner.
-5. Copy the file `application.conf` from the `conf` directory of the current scanner and paste it into the `conf` directory of the new scanner.
-6. Copy the connections configuration files from the `connections` directory of the current scanner and paste them in the `connections` directory of the new scanner.
-7. Go to the [Connectors List](../../technical-documentation/connectors/connectors-list.md) and the copy up-to-date version of the plugins you use (without unzipping them) into the `plugins` directory of the new scanner.
-8. Start the new scanner. It should be visible on the Zeenea administration page and the connections must be correctly associated and ready to use again.
+2. Download the new version available at: `https://[instance-name].zeenea.app/admin/settings/scanners` (If you need a specific version of the scanner, it will be provided by Actian Data Intelligence support.)
+3. Copy the file `agent-identifier` from the root directory of the current scanner and paste it into the root directory of the new scanner.
+4. Copy the file `application.conf` from the `conf` directory of the current scanner and paste it into the `conf` directory of the new scanner.
+5. Copy the connections configuration files from the `connections` directory of the current scanner and paste them in the `connections` directory of the new scanner.
+6. Go to the [Connectors List](../../technical-documentation/connectors/connectors-list.md) and the copy up-to-date version of the plugins you use (without unzipping them) into the `plugins` directory of the new scanner.
+7. Start the new scanner. It should be visible on the Actian Data Intelligence administration page and the connections must be correctly associated and ready to use again.
 
 ## Windows Environment (Scanner as a Windows Service)
 

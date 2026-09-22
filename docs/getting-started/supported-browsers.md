@@ -5,9 +5,9 @@ Studio and Explorer applications can run on any computer with an Internet connec
 
 | Browser| Notes |
 | :--- | :--- |
-| Google Chrome™<br />Most recent stable version | Zeenea makes every effort to test and support the most recent version of Chrome. There are no configuration recommendations for Chrome. |
-| Mozilla® Firefox®<br />Most recent stable version | Zeenea makes every effort to test and support the most recent version of Firefox. There are no configuration recommendations for Firefox. |
-| Microsoft® Edge® | If you use Edge, we recommend using the latest version that Zeenea supports. Apply all Microsoft software updates. |
+| Google Chrome™<br />Most recent stable version | Actian makes every effort to test and support the most recent version of Chrome. There are no configuration recommendations for Chrome. |
+| Mozilla® Firefox®<br />Most recent stable version | Actian makes every effort to test and support the most recent version of Firefox. There are no configuration recommendations for Firefox. |
+| Microsoft® Edge® | If you use Edge, we recommend using the latest version that Actian Data Intelligence supports. Apply all Microsoft software updates. |
 | Apple® Safari®<br />Versions 11.x and 12.x on Mac OS X | There are no configuration recommendations for Safari. |
 
 Recommendations for all browsers:

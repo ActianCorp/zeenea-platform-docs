@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Spotfire.
-* Zeenea traffic flows towards the server must be open.
+* Actian Data Intelligence traffic flow towards the server must be open.
 
 !!! note
     You can find the configuration file template in [tibco-spotfire-v2.conf](https://github.com/zeenea/connector-conf-templates/blob/main/templates/tibco-spotfire-v2.conf).
@@ -30,7 +30,7 @@ To establish a connection with a Spotfire Server instance, fill in the following
 | Parameter | Expected value |
 | :----- | :---------- |
 | `name` | Specifies the display name for the connection. |
-| `code` | Defines the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | Defines The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. The value must be `tibco-spotfire-v2` and must not be modified. |
 | `enabled` | A boolean value to enable or disable the connection (`true` or `false`). <br />The default value is `true`. |
 | `catalog_code` | Defines the catalog code associated with the connection (`default` when empty). |

@@ -31,7 +31,7 @@ In order to establish a connection with a Matillion DPC instance, the following 
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `matillion-dpc` and this value must not be modified. |
 | `connection.path` | The root path of Matillion files |
 | `default.warehouse` | Replace the default value [Environment Default] for the parameter `warehouse` for every component |
@@ -68,11 +68,11 @@ In order to collect metadata, the running user's permissions must allow them to 
 
 ## Data Extraction
 
-The Matillion DPC connector feeds Zeenea Database with Data Processes. Like other Data Process connectors, it has a single job "synchronize" that discovers all items of interest and creates or updates their documentation in the catalog. Matillion items of interest are Jobs. So, for each Jobs in Matillion DPC, a Data Process should be created in Zeenea.
+The Matillion DPC connector feeds Actian Data Intelligence Database with Data Processes. Like other Data Process connectors, it has a single job "synchronize" that discovers all items of interest and creates or updates their documentation in the catalog. Matillion items of interest are Jobs. So, for each Jobs in Matillion DPC, a Data Process should be created in Actian Data Intelligence.
 
 ## Synchronization
 
-This connector will harvest all transformation processes identified in the Matillion DPC instance, and automatically represent them in Zeenea.
+This connector will harvest all transformation processes identified in the Matillion DPC instance, and automatically represent them in Actian Data Intelligence.
 
 ## Lineage
 

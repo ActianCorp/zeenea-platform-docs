@@ -2,13 +2,13 @@
 
 ## Prerequisites
 
-To catalog datasets stored in a Hadoop cluster Zeenea's scanner must access to Hive Server 2.
+To catalog datasets stored in a Hadoop cluster Actian Data Intelligence's scanner must access to Hive Server 2.
 
 If the server is secured by the Kerberos protocol:
 
 * Kerberos client must be installed and configured on the scanner's server,
-* network flow to the Kerberos Domaine Controller (KDC) should be open,
-* the Zeenea user should have a keytab file and should have read permissions on Hive tables that need to be documented.
+* Network flow to the Kerberos Domaine Controller (KDC) should be open,
+* The Actian Data Intelligence user should have a keytab file and should have read permissions on Hive tables that need to be documented.
 
 The server is either on the same network as the Hive Server and technical services such as Kerberos through traffic flows.
 
@@ -47,7 +47,7 @@ In order to establish a connection with Hive, specifying the following parameter
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `Hive` and this value must not be modified. |
 | `connection.url` | Data source connection address. This can have many parameters. In order to set the right value:<br/>1. ask your Hive administrator,<br/>2. read the [official documentation](https://cwiki.apache.org/confluence/display/hive/hiveserver2+clients#HiveServer2Clients-ConnectionURLs),<br/>3. or read [this article](https://community.cloudera.com/t5/Community-Articles/HiveServer2-JDBC-Connection-URL-Examples/ta-p/244698).<br/>Template file contains several examples of a valid Hive connection URL. |
 | `connection.principal` | Principal name.<br/><br/>Used by Kerberos Authentication. Keep it `null` if kerberos is disabled. |

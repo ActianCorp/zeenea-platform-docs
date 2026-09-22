@@ -9,7 +9,7 @@ You can use the Access Request API to:
 
 ## Creating an Access Request API Key
 
-You can create a new Access Request API key in Zeenea Administration.
+You can create a new Access Request API key in Actian Data Intelligence **Administration**.
 
 To create the API Key, follow the instructions in [Create an API key](../../features-applications/administration/managing-api-keys.md#create-an-api-key).
 

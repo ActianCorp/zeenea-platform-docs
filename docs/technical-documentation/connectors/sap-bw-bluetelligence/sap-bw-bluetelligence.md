@@ -51,7 +51,7 @@ To establish a connection with SAP BW, fill in the following parameters in the d
 | Parameter | Expected Value |
 |-----------|----------------|
 | `name` | The name displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified, or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified, or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. The value must be `bluetelligence-sap-bw` and must not be modified. |
 | `enabled` | A Boolean value that enables or disables the connection (`true` or `false`). The default value is `true`. |
 | `metadata_api.path` | Optional. The root path of Bluetelligence exported files. Default is `bluetelligence-data`.  |

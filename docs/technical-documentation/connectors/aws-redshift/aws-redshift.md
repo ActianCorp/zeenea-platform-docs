@@ -3,8 +3,8 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#p100432 "title: AWS Redshift") is required to establish a connection with Redshift.
-*  Zeenea traffic flows towards Redshift must be open.
-*  In order to catalog datasets stored on Redshift, Zeenea uses the JDBC API to extract metadata. The flow toward the Redshift server must be open.
+*  Actian Data Intelligence traffic flow towards Redshift must be open.
+*  In order to catalog datasets stored on Redshift, Actian Data Intelligence uses the JDBC API to extract metadata. The flow toward the Redshift server must be open.
 
 | Target            | Protocol          | Usual Ports       |
 | ----------------- | ----------------- | ----------------- |
@@ -37,7 +37,7 @@ In order to establish a connection with Redshift, specifying the following param
 | Parameter              | Expected Value    |
 | ---------------------- | ----------------- |
 | `name`                 | The name that will be displayed to catalog users for this connection  |
-| `code`                 | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code`                 | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id`         | The type of connector to be used for the connection. Here, the value must be `AWSRedshift` and this value must not be modified.   |
 | `connection.url`       | AWS Redshift server address (example: `jdbc:redshift://redshift.example.com:5439/database`)     |
 | `connection.username`  | Username      |
@@ -146,7 +146,7 @@ SELECT
 
 The request above collects a data sample for each field where the feature is activated through the studio (`field1`, `field2`). The limit of collected rows is 10.000.
 
-These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in Zeenea Scanner Setup.
+These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in Actian Data Intelligence Scanner Setup.
 
 ## Object Identification Keys
 

@@ -24,7 +24,7 @@ My application B";the description of my application B
 ```
 ### Technical Documentation
 
-This plug-in provides two connectors that allow to load data from a CSV file into Zeenea.
+This plug-in provides two connectors that allow to load data from a CSV file into Actian Data Intelligence Platform.
 
 The available connectors are:
 
@@ -53,11 +53,11 @@ For more information on how to install a plugin, please refer to the following a
 
 ### name
 
-The name of the connection as visible to users in Zeenea
+The name of the connection as visible to users in Actian Data Intelligence.
 
 ### code
 
-Zeenea Connection code
+Actian Data Intelligence Connection code
 
 ### connector_id
 

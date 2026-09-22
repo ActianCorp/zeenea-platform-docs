@@ -4,7 +4,7 @@
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Dataplex.
 
-* Zeenea traffic flows towards the data source must be open.
+* Actian Data Intelligence traffic flow towards the data source must be open.
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -33,7 +33,7 @@ To establish a connection with a Dataplex instance, fill in the following parame
 | Parameter| Expected Value |
 | :--- | :--- |
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. The value must be `google-dataplex-v2` and must not be modified. |
 | `enabled` | A boolean value to enable or disable the connection (`true` or `false`). The default value is `true`. |
 | `catalog_code` | The catalog code associated with the connection (`default` when empty). |

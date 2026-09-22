@@ -10,11 +10,11 @@ In the data catalog, data samples enable data scientists, predictive modelers, a
 
 ## How is data sampling carried out?
 
-Data sampling is performed by the Zeenea Scanner installed in your information system. It can be triggered programmatically, like inventory, or manually from the administration interface.
+Data sampling is performed by the Actian Data Intelligence Scanner installed in your information system. It can be triggered programmatically, like inventory, or manually from the administration interface.
 
-During the execution of this task, the Scanner recovers the first 30 lines of each connection's Dataset. Then it encrypts and transmits this information to the Zeenea platform, where it is stored.
+During the execution of this task, the Scanner recovers the first 30 lines of each connection's Dataset. Then it encrypts and transmits this information to the Actian Data Intelligence Platform, where it is stored.
 
-Data sampling is performed when fields are not Blob or binary. Moreover, Zeenea truncates the recovered values to a maximum of 100 characters.
+Data sampling is performed when fields are not Blob or binary. Moreover, Actian Data Intelligence truncates the recovered values to a maximum of 100 characters.
 
 ## Who can view sample data?
 
@@ -24,7 +24,7 @@ If a dataset contains personal data, it is possible to obfuscate the values of t
 
 ## How do I activate or disable data sampling?
 
-This feature must be activated in the Zeenea administration interface (see here). It must be activated on a connection-by-connection basis for supported technologies (see below).
+This feature must be activated in the Actian Data Intelligence **Administration** interface. It must be activated on a connection-by-connection basis for supported technologies (see below).
 
 Once activated for a given connection, sampling is activated for all the connection's Datasets imported into the data catalog. It is not possible to deactivate the feature for a particular Dataset.
 
@@ -32,7 +32,7 @@ Activating the feature does not automatically start sampling. To do so, launch t
 
 Deactivating this function deletes all samples from the connection. The command is taken into account instantaneously, but processing is asynchronous. It may therefore take a few minutes.
 
-## Which technologies does Zeenea support?
+## Which technologies does Actian Data Intelligence support?
 
 Data sampling is available from the scanner 59th version for BigQuery and JDBC connectors:
 

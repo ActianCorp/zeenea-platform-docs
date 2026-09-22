@@ -1,6 +1,6 @@
 # User Management API
 
-Public User Management APIs allow you to automatically synchronize your users from your authentication system (LDAP, Azure AD, etc.) to your list of users in Zeenea. This provides enhanced enterprise security and ensures compliance with your internal policies. 
+Public User Management APIs allow you to automatically synchronize your users from your authentication system (LDAP, Azure AD, etc.) to your list of users in Actian Data Intelligence. This provides enhanced enterprise security and ensures compliance with your internal policies. 
 
 ## Permissions
 
@@ -32,13 +32,13 @@ The User Management API uses the GraphQL language. GraphQL is an easy-to-impleme
 
 For more information, refer to the official [GraphQL documentation](https://graphql.org/).
 
-Zeenea provides two tools for understanding and testing this GraphQL API: Voyager and Playground.
+Actian Data Intelligence provides two tools for understanding and testing this GraphQL API: Voyager and Playground.
 
 ### Voyager Documentation
 
-You can access the full documentation for Zeenea GraphQL APIs by accessing Voyager, at the following URL:
+You can access the full documentation for Actian Data Intelligence GraphQL APIs by accessing Voyager, at the following URL:
 
-<pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/catalog/voyager</pre>
+`https://[instance-name].zeenea.app/public-api/catalog/voyager`
 
 where `[instance-name]` is the name of your instance.
 
@@ -48,22 +48,22 @@ Note: Voyager also provides access to documentation for the Catalog Design API, 
 
 Documentation in Voyager is split into two sections: 
 
-* Query APIs, that will allow you to read Zeenea data
+* Query APIs, that will allow you to read Actian Data Intelligence data
 * Mutation APIs, that you can use to edit data
  
  Navigate between both groups by using the selection menu in the lower part of the diagram.
 
 ## Limits
 
-### Users already existing as contacts in Zeenea
+### Users already existing as contacts in Actian Data Intelligence
 
-When creating a new user, if the email address is already registered to a contact in Zeenea, the API will return an error message. 
+When creating a new user, if the email address is already registered to a contact in Actian Data Intelligence, the API will return an error message. 
 
 ## Use case examples
 
 ### Example 1: Create a new user in the Catalog, and assign them a Permission Set
 
-First, we'll need to list all existing permission sets in Zeenea: 
+First, we'll need to list all existing permission sets in Actian Data Intelligence: 
 
 ```
 query{
@@ -119,7 +119,7 @@ mutation {
 }
 ```
 
-Note that the "Action" property will inform you of whether the user has been created or updated in Zeenea. 
+Note that the "Action" property will inform you of whether the user has been created or updated in Actian Data Intelligence. 
 
 User "Nicolas Boisnic" with a "Data Steward" permission set has been created. 
 
@@ -164,9 +164,9 @@ mutation {
 }
 ``` 
 
-Note that a deleted user will remain in Zeenea as a Contact. 
+Note that a deleted user will remain in Actian Data Intelligence as a Contact. 
 
-### Example 4: List all users in Zeenea
+### Example 4: List all users in Actian Data Intelligence
 
 First, run a job that will extract all users from the platform: 
 
@@ -208,7 +208,7 @@ Note that the file contains the following information:
 * Permission set id (Group id)
 * Permission set name (Group name)
 * Permission set description (Group description)
-* Permission set built-in: Boolean (true/false) - Indicates if it is a Zeenea built-in permission set
+* Permission set built-in: Boolean (true/false) - Indicates if it is a Actian Data Intelligence built-in permission set
 * Custom item documentation permission: Whether the user can edit Custom Items (true/false)
 * Custom item documentation scope: 
       * All: User can edit all Custom Items

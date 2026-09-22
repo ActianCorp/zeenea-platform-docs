@@ -4,7 +4,7 @@ This section covers scanners from version 72 upwards.
 
 ## Overview
 
-Zeenea scanner enables you to configure hooks in the form of plugins.
+Actian Data Intelligence scanner enables you to configure hooks in the form of plugins.
 
 These hooks allow you to trigger processing at the end of one of the following scanner jobs:
 

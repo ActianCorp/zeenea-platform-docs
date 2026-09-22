@@ -19,13 +19,13 @@ The Catalog Design API uses the GraphQL language. GraphQL is an easy-to-implemen
 
 More information on GraphQL can be found [here](https://graphql.org/).
 
-Zeenea provides two tools for understanding and testing this GraphQL API: Voyager and Playground
+Actian Data Intelligence provides two tools for understanding and testing this GraphQL API: Voyager and Playground
 
 ### Voyager Documentation
 
-You can access the full documentation for Zeenea GraphQL APIs by accessing [Voyager](https://github.com/APIs-guru/graphql-voyager), at the following URL: 
+You can access the full documentation for Actian Data Intelligence GraphQL APIs by accessing [Voyager](https://github.com/APIs-guru/graphql-voyager), at the following URL: 
 
-<pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/catalog/voyager</pre>
+`https://[instance-name].zeenea.app/public-api/catalog/voyager`
 
 This tool allows you to access the entire documentation of the User Management API and in particular the available requests. 
 
@@ -33,7 +33,7 @@ Voyager also provides access to documentation for the User Management API, as we
 
 Documentation in Voyager is split into two sections: 
 
-* Query APIs, that will allow you to read Zeenea data
+* Query APIs, that will allow you to read Actian Data Intelligence data
 * Mutation APIs, that you can use to edit data
 
 Navigate between both groups by using the selection menu in the bottom of the screen:
@@ -44,9 +44,7 @@ Navigate between both groups by using the selection menu in the bottom of the sc
 
 If you wish to test your queries before running them, you can use the Playground tool, accessible here: 
 
-<pre>
-https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/catalog/playground 
-</pre>
+`https://[instance-name].zeenea.app/public-api/catalog/playground`
 
 !!! note
     To use the APIs with Playground, you will need a valid API Key in the "HTTP Headers" tab.

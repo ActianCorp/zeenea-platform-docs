@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * To connect to a MongoDB cluster, a user with sufficient [permissions](#p100255 "title: MongoDB") is required.
-* The traffic flows from Zeenea towards the MongoDB cluster must be open.
+* Actian Data Intelligence traffic flow towards the MongoDB cluster must be open.
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -30,7 +30,7 @@ To establish a connection to a MongoDB cluster, fill in the following parameters
 | Parameter | Expected value |
 |---|---|
 | `name` | Specifies the display name for the connection. |
-| `code` | Defines the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | Defines The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. The value must be `Mongodb` and must not be modified. |
 | `enabled` | A Boolean value to enable or disable the connection (`true` or `false`). <br />The default value is `true`. |
 | `catalog_code` | Defines the catalog code associated with the connection (`default` when empty). |
@@ -106,7 +106,7 @@ The `readAnyDatabase` integrated role is enough to catalog the entire system.
 
 The read integrated role, when assigned to a database, allows the user to catalog that base's collections.
 
-In the following example, the Zeenea account can catalog the sales and stock bases:
+In the following example, the Actian Data Intelligence account can catalog the sales and stock bases:
 
 ```
 db.grantRolesToUser('zeenea', [
@@ -115,9 +115,9 @@ db.grantRolesToUser('zeenea', [
 ]);
 ```
 
-### Zeenea Role
+### Actian Data Intelligence Role
 
-You may regroup permissions into one specific role for Zeenea:
+You may regroup permissions into one specific role for Actian Data Intelligence:
 
 ```
 db.createRole({

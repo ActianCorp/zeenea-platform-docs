@@ -5,13 +5,13 @@ search:
 
 # As a Data Steward
 
-As a Data Steward of the Zeenea suite, you have specific rights and permissions. 
+As a Data Steward of the Actian Data Intelligence suite, you have specific rights and permissions. 
 
 Data stewards are responsible for documenting and managing the catalog items assigned to them.
 
 ## Requirements
 
-Before starting in Zeenea as a Data Steward, a few requirements must be met:
+Before starting in Actian Data Intelligence as a Data Steward, a few requirements must be met:
 
 * Your user account must be associated with a group of type "Data Steward"
 * At least one scanner must be installed and connected to your catalog (see our article about Scanners)
@@ -41,7 +41,7 @@ If you are responsible for curation and import on one or more connections, start
 
   ![](./images/import-dialog.png)
 
-For more details on importing items into the catalog, read Importing "Datasets" or "Visualization" items into Zeenea
+For more details on importing items into the catalog, read Importing "Datasets" or "Visualization" items into Actian Data Intelligence.
 
 ## Step 3: Select the items for which you are responsible
 

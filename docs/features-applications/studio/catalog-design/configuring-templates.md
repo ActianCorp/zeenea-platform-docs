@@ -4,16 +4,16 @@ To configure and edit a template, follow the steps below.
 
 ## Step 1: Access the Catalog Design section
 
-Configuring and editing templates in Zeenea is done in the Catalog Design section, accessible from the left menu ("Catalog Design" icon).
+Configuring and editing templates in Actian Data Intelligence is done in the Catalog Design section, accessible from the left menu ("Catalog Design" icon).
 
 ## Step 2: Select the "Physical & Logical Metamodel" or "Glossary Metamodel" section
 
-The Catalog Design section has several entries. The "Physical & Logical Metamodel" section presents the object types natively offered by Zeenea to represent your data assets (datasets, reports, etc.) as well as your own object types.
+The Catalog Design section has several entries. The "Physical & Logical Metamodel" section presents the object types natively offered by Actian Data Intelligence to represent your data assets (datasets, reports, etc.) as well as your own object types.
 
 The "Glossary Metamodel" section allows you to structure and manage the metamodel of your glossary.
 
 Click on the icon in the "Actions" column next to each object type to access its template editing screen (below).
-In order to harmonize the use of connector properties in applications, and to apply specific treatments according to their semantics, Zeenea maintains a property library.
+In order to harmonize the use of connector properties in applications, and to apply specific treatments according to their semantics, Actian Data Intelligence maintains a property library.
 
 ![](./images/dataset-template2.png)
 

@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Qlik Cloud.
-* Zeenea traffic flows towards the data source must be open. 
+* Actian Data Intelligence traffic flow towards the data source must be open. 
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -26,7 +26,7 @@ In order to establish a connection with a Qlik Cloud instance, specifying the fo
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `qlik-cloud` and this value must not be modified. |
 | `connection.url` | Instance address (`https://.eu.qlikcloud.com`) |
 | `connection.auth_mode` | Qlik Cloud authentication mode (accepted values : `oauth`, `token`) |
@@ -135,7 +135,7 @@ Dataset field.
 
 ### Data Process
 
-To represent the data flow from an external source, a Zeenea Data Process will be created for each Qlik application if lineage is found.
+To represent the data flow from an external source, an Actian Data Intelligence Data Process will be created for each Qlik application if lineage is found.
 
 * **Name**: `import application-name`
 

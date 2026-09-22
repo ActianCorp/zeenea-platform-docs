@@ -4,7 +4,7 @@ This section covers the main concepts of the federated catalog and the general s
 
 ## Introduction
 
-Building a federated catalog is mostly about declining Zeenea generic concepts to subsections of your platform (user groups, connections, etc.). By default, the Zeenea platform works as a single-catalog federation, meaning all items and user permissions are assigned or applied by default to this single catalog.
+Building a federated catalog is mostly about declining Actian Data Intelligence generic concepts to subsections of your platform (user groups, connections, etc.). By default, the Actian Data Intelligence Platform works as a single-catalog federation, meaning all items and user permissions are assigned or applied by default to this single catalog.
 
 Once the federated catalog option is activated for your platform, you can create additional catalogs and define more fine-grained configurations (read and write permissions in particular).
 
@@ -14,15 +14,15 @@ Within this framework, the default or common catalog contains the business gloss
 
 ## Step 1: Creating Catalogs
 
-By default, Zeenea provides a single catalog, which is the "default catalog" or "common catalog".
+By default, Actian Data Intelligence provides a single catalog, which is the "default catalog" or "common catalog".
 
 The federated catalog lets you create from the Administration interface, additional catalogs, identified by a code and a name. The default catalog has the following values as its code and name: default, Common.
 
 A catalog is like a container for your items that can be compared to a folder in a file system: even if each item is part of the global platform's graph, an item belongs to only one catalog and you can define read or write permissions to users for each catalog. That means items are not copied nor synchronized between catalogs.
 
-Defining the scope of each catalog should be addressed with the same approach as defining Domains in a Data Mesh as it serves the same purpose. But, even if the Data Mesh defines an ideal goal, the organization’s context and constraints can make this goal difficult to reach. For this reason, the Zeenea Federated Catalog offers lots of flexibility to support any organization's topologies.
+Defining the scope of each catalog should be addressed with the same approach as defining Domains in a Data Mesh as it serves the same purpose. But, even if the Data Mesh defines an ideal goal, the organization’s context and constraints can make this goal difficult to reach. For this reason, the Actian Data Intelligence Federated Catalog offers lots of flexibility to support any organization's topologies.
 
-By the way, all catalogs don't have to be defined from the start. You can work with increments by adding catalogs along the way. Zeenea also enables you to test and learn, as you can move Items from one catalog to another or delete an obsolete catalog. Especially, Item identification keys are independent of their catalogs. 
+By the way, all catalogs don't have to be defined from the start. You can work with increments by adding catalogs along the way. Actian Data Intelligence also enables you to test and learn, as you can move Items from one catalog to another or delete an obsolete catalog. Especially, Item identification keys are independent of their catalogs. 
 
 When you have defined the scope of your first catalogs, you can define permissions and access for users with groups.
 
@@ -125,7 +125,7 @@ As the glossary belongs to the common catalog, curators can associate the items 
 
 ## Step 7: Monitoring Completion and Usage
 
-In the Analytics section, Zeenea allows you to monitor the completion level of your items and the adoption rate of end-users. This section presents a global view of the whole federation.
+In the Analytics section, Actian Data Intelligence allows you to monitor the completion level of your items and the adoption rate of end-users. This section presents a global view of the whole federation.
 
 Even so, you can create custom analyses to monitor the average completion level per item type and by catalog.
 
@@ -133,7 +133,7 @@ Even so, you can create custom analyses to monitor the average completion level 
 
 The Federated Catalog enables domains to gain autonomy and independence in the curation and consumption of their metadata. By configuring appropriate groups and permissions you can also set up advanced and flexible access strategies that avoid creating data silos in the organization.
 
-But Zeenea also offers the capability to set up a marketplace at the organization level.
+But Actian Data Intelligence also offers the capability to set up a marketplace at the organization level.
 
 Indeed, curators can use the "Share the Item" action in the details page in the Studio, or the file import feature, to give access to a specific item to all users in the federation even if they do not have read access to the catalog the item belongs to. Therefore, shared items will be searchable by any user in the Explorer. 
 
@@ -147,7 +147,7 @@ Please note that you can retrieve and manage shared items using the "Shared" fil
  
 ## Step 9: Working with APIs
 
-You can use Zeenea SCIM API to synchronize users with your identity management tool. The SCIM API allows you to create users and add them to one or several groups to give users access to the different catalogs.
+You can use Actian Data Intelligence SCIM API to synchronize users with your identity management tool. The SCIM API allows you to create users and add them to one or several groups to give users access to the different catalogs.
  
 In this first version of the Federated Catalog, the Catalog API does not yet support the catalog concept. As a matter of fact, you can read or update items issued from any catalog but the catalog information will not be returned by the API. You can also create new items but they will be assigned to the default catalog.
  

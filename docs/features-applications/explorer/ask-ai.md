@@ -81,7 +81,7 @@ Ask AI is designed and optimized for English language queries and content. Ask A
 
 Ask AI is built on a secure, isolated architecture with two separate environments:
 
-- **Zeenea Application VPC:** Your catalog data, metadata, and business logic
+- **Actian Data Intelligence Application VPC:** Your catalog data, metadata, and business logic
 - **Dedicated Bedrock VPC:** AI processing uses Amazon Bedrock's Nova PRO (summarization and reasoning) and Nova micro (embeddings generation)
 
 This dual-VPC architecture ensures that AI processing is completely isolated from your application environment, with data flowing between them only during active AI queries through secure, encrypted connections.
@@ -92,16 +92,16 @@ This dual-VPC architecture ensures that AI processing is completely isolated fro
 
 **No Model Training:** Your data is never used to train, improve, or fine-tune any AWS foundation models. Each interaction is isolated and does not influence future model behavior.
 
-**No Third-Party Sharing:** Your data is not distributed to, shared with, or accessible by any third parties. All processing remains within the controlled AWS environment across Zeenea's VPC and the dedicated Bedrock VPC.
+**No Third-Party Sharing:** Your data is not distributed to, shared with, or accessible by any third parties. All processing remains within the controlled AWS environment across Actian Data Intelligence's VPC and the dedicated Bedrock VPC.
 
 ### How Data Flows Through Ask AI
 
-1. You submit a question or request through the Zeenea application interface.
+1. You submit a question or request through the Actian Data Intelligence application interface.
 1. Your query and relevant context (such as item names, descriptions, and user query details) directs to the appropriate AI model in the Bedrock VPC.
 1. Ask AI directs the request:
     - For summarization and reasoning tasks, the prepared prompt is sent to Nova PRO in the dedicated Bedrock VPC.
-    - For semantic search, item names and descriptions are sent to Nova micro to generate embeddings stored within your Zeenea application VPC, enabling similarity-based search and retrieval.
-1. The AI-generated answers are returned to your Zeenea session and displayed.
+    - For semantic search, item names and descriptions are sent to Nova micro to generate embeddings stored within your Actian Data Intelligence application VPC, enabling similarity-based search and retrieval.
+1. The AI-generated answers are returned to your Actian Data Intelligence session and displayed.
 
 !!! note
     Prompts and completions sent to the Bedrock VPC are not logged or stored after processing.
@@ -109,7 +109,7 @@ This dual-VPC architecture ensures that AI processing is completely isolated fro
 
 ### Security and Compliance
 
-Both VPCs follow AWS's [Shared Responsibility Model](https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html), where AWS manages the security of the cloud infrastructure, and Zeenea manages security in the cloud for your data.
+Both VPCs follow AWS's [Shared Responsibility Model](https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html), where AWS manages the security of the cloud infrastructure, and Actian Data Intelligence manages security in the cloud for your data.
 
 ## Troubleshooting
 

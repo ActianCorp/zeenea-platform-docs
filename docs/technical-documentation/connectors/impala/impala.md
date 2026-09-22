@@ -5,7 +5,7 @@
 * **Java version:** Validated on Java 11 only.
 
 * A user with sufficient [permissions](#p100138 "title: Impala") is required to establish a connection with Impala.
-* Zeenea traffic flows towards the data source must be open.  
+* Actian Data Intelligence traffic flow towards the data source must be open.  
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -32,7 +32,7 @@ In order to establish a connection with an Impala instance, specifying the follo
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `impala` and this value must not be modified. |
 | `connection.url` | Database address (example: `jdbc:impala://host:21050`). |
 | **Basic Auth** | |

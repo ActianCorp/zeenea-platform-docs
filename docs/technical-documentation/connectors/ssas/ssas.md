@@ -25,7 +25,7 @@ In order to establish a connection with SSAS, the following parameters in the de
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `ssas` and this value must not be modified. |
 | `connection.path` | Path to the SSAS project directory to synchronize with the catalog. These files will be parsed: <br/>- `.cube` : cube file<br/>- `.ds`: reference datasource file<br/>- `.dsv`: reference datasource view file |
 | `connection.url` | URL to the data pump `MSMDPUMP.dll` |

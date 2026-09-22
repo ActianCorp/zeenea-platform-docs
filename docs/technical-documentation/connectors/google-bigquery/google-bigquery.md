@@ -5,9 +5,9 @@
 * **Java version:** Validated on Java 11 and 17 only.
 
 * In order to establish a connection to Google BigQuery, a BigQuery user with sufficient [permissions](#user-permissions) is required.
-* Zeenea traffic flows towards Google BigQuery must be open.
+* Actian Data Intelligence traffic flow towards Google BigQuery must be open.
 
-Zeenea uses Google HTTP API to collect metadata. 
+Actian Data Intelligence uses Google HTTP API to collect metadata. 
 
 | Target| Protocol | Usual Ports |
 | :--- | :--- | :--- |
@@ -45,7 +45,7 @@ In order to establish a connection with BigQuery, specifying the following param
 | Parameter| Expected Value |
 | :--- | :--- |
 | `name` | The name that will be displayed to catalog users for this connection | 
-| `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
+| `code` | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `BigQuery` for project level or `BigQueryOrganization` for organization level. This value must not be modified. | 
 | `connection.json_key` | Path to the access JSON Key. |
 | `connection.billing_project_id` | (Optional) Identifier of the project used for the connection. The Google invoice is for this project. By default, one connection is established for each project that is scanned.<br /><br />NOTE: The retrieval of PK, FK requires this parameter. |
@@ -215,7 +215,7 @@ SELECT
 
 The above requests will collect a data sample on fields where the feature has been enabled (fields 1 and 2). The sample contains a maximum of 10,000 lines (defined in the percentLines parameter).
 
-This request can either be manually executed from the Admin portal, or it can be scheduled, according to the collect-fingerprint variable in the `application.conf` file. For more information, see [Zeenea Scanner Setup](../../scanners/scanner-setup.md).
+This request can either be manually executed from the Admin portal, or it can be scheduled, according to the collect-fingerprint variable in the `application.conf` file. For more information, see [Actian Data Intelligence Scanner Setup](../../scanners/scanner-setup.md).
 
 ## Object Identification Keys
 

@@ -2,7 +2,7 @@
 
 ## Impacts of Data Catalog Item Updates
 
-As soon as an Item is modified, Zeenea adds an entry in the Item's activity tab for the audit trail and updates the Item's last update date.
+As soon as an Item is modified, Actian Data Intelligence adds an entry in the Item's activity tab for the audit trail and updates the Item's last update date.
 
 All this information can also be retrieved via APIs in:
 

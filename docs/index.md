@@ -19,7 +19,7 @@ Our platform’s built-in scanners and APIs enable organizations to automaticall
 
 ## Cloud-native design
 
-Actian Data Intelligence Platform is cloud-native and developed Software-as-a-Service (SaaS) to help enterprises reduce risks, optimize costs, and simplify data access across the organization. Our architecture makes it easy for you to deploy a variety of environments in the cloud – hybrid, inter-cloud, or multi-cloud.
+Actian Data Intelligence is cloud-native and developed Software-as-a-Service (SaaS) to help enterprises reduce risks, optimize costs, and simplify data access across the organization. Our architecture makes it easy for you to deploy a variety of environments in the cloud – hybrid, inter-cloud, or multi-cloud.
 
 ## Powered by knowledge graph technologies
 
@@ -37,7 +37,7 @@ Via powerful knowledge graph technology, add, configure, and overlay documentati
 
 ### Automated Data Stewardship
 
-Actian Data Intelligence Platform provides a connected and automated metadata management solution that enables Data Stewards to overcome the challenges associated with handling increasingly large volumes of data.
+Actian Data Intelligence provides a connected and automated metadata management solution that enables Data Stewards to overcome the challenges associated with handling increasingly large volumes of data.
 
 Our platform helps organizations maximize the value of their data by reducing the time spent on complex and time-consuming documentation tasks, and by breaking data silos to increase enterprise data knowledge.
 
@@ -45,7 +45,7 @@ Our platform helps organizations maximize the value of their data by reducing th
 
 Strongly inspired by marketplaces and e-commerce websites, Actian Data Intelligence offers smart searching capabilities for data consumers to quickly find the relevant data for their business use cases.
 
-Our Data Intelligence Platform provides a multi-dimensional search engine, able to retrieve the right information whether you know what you are looking for (high intent) or not (low intent).
+Our Actian Data Intelligence provides a multi-dimensional search engine, able to retrieve the right information whether you know what you are looking for (high intent) or not (low intent).
 
 ### Business Glossary
 
@@ -72,7 +72,7 @@ Our platform helps organizations make better business decisions by enabling data
 
 ### Data Catalog
 
-Actian Data Intelligence Platform enables Data Managers and Data Producers to master the organization's data landscape by providing advanced back-office capabilities:
+Actian Data Intelligence enables Data Managers and Data Producers to master the organization's data landscape by providing advanced back-office capabilities:
 
 * Information modelling (metadata model)
 * Automation, suggestions, productivity

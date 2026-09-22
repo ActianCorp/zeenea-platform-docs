@@ -1,6 +1,6 @@
 # Definitions
 
-This list highlights select Zeenea-specific terms you might encounter in the documentation. It focuses on terms with unique meanings within Zeenea.
+This list highlights select Actian Data Intelligence-specific terms you might encounter in the documentation. It focuses on terms with unique meanings within Actian Data Intelligence.
 
 Many definitions on the list provide links to articles and core reference materials, offering deeper insights into the concepts and practical applications of the associated keyword.
 
@@ -8,7 +8,7 @@ Use the search feature in your browser to quickly find the term or phrase that y
 
 ## Category
 
-The "Category" item type is a concept that facilitates the organization of datasets in Zeenea.
+The "Category" item type is a concept that facilitates the organization of datasets in Actian Data Intelligence.
 
 It will allow you to create groupings of datasets according to your organization and your domains.
 
@@ -29,14 +29,14 @@ The elements of a Category item are the following:
 * Contacts
 
 ## Connection
-A Connection represents a system to which Zeenea is connected. It allows the scanner to retrieve metadata from your information source with which you are connected and incorporate them into Zeenea. 
+A Connection represents a system to which Actian Data Intelligence is connected. It allows the scanner to retrieve metadata from your information source with which you are connected and incorporate them into Actian Data Intelligence. 
 
-Connections are therefore associated with specific solutions (Oracle, Teradata, HDFS, Amazon S3, Table, Power BI...) through [Zeenea connectors](../technical-documentation/connectors/connectors-list.md).
+Connections are therefore associated with specific solutions (Oracle, Teradata, HDFS, Amazon S3, Table, Power BI...) through [Actian Data Intelligence connectors](../technical-documentation/connectors/connectors-list.md).
 
 ## Custom item
-Custom items allow you to document entirely new concepts, without being limited by native or default Item Types in Zeenea. They offer ideal support for modeling abstract concepts, complementary to the metadata structurally proposed by Zeenea.
+Custom items allow you to document entirely new concepts, without being limited by native or default Item Types in Actian Data Intelligence. They offer ideal support for modeling abstract concepts, complementary to the metadata structurally proposed by Actian Data Intelligence.
 
-Each new custom item type can be used on each of the templates, as a single or multi-valued property, to create relationships with all of Zeenea's asset types.
+Each new custom item type can be used on each of the templates, as a single or multi-valued property, to create relationships with all of Actian Data Intelligence's asset types.
 
 ## Dataset
  
@@ -50,7 +50,7 @@ In the detailed pages of this item, you can find a set of information, such as:
 
 * a title (a logical name and the technical name) 
 * the source of import
-* the date of its last update with the source in Zeenea
+* the date of its last update with the source in Actian Data Intelligence
 * a description added from Studio
 * a description imported from the source
 * associated business terms
@@ -62,7 +62,7 @@ In the detailed pages of this item, you can find a set of information, such as:
 
 ## Data Process
 
-A Data Process is an item in Zeenea generally used to materialize a program or pipeline taking one or more sets of data as input and producing one or more other sets of data as output.
+A Data Process is an item in Actian Data Intelligence generally used to materialize a program or pipeline taking one or more sets of data as input and producing one or more other sets of data as output.
 
 This item thus makes it possible to materialize these relations between datasets and therefore to build the "horizontal" lineage of the data.
 
@@ -109,7 +109,7 @@ Multiple connections can reference the same data source. A single connection can
 
 The structure of a dataset is described in its schema. This structure contains the enumeration, if known, of the Fields, which typically correspond to the columns of a table in a database. 
 
-Fields are the technical items with the finest granularity in Zeenea.
+Fields are the technical items with the finest granularity in Actian Data Intelligence.
 
 Fields are accompanied by metadata:
 
@@ -133,7 +133,7 @@ A glossary sheds some light on:
 * Who is responsible for a business term definition
 * How is a KPI calculated?
 
-Setting up a glossary in Zeenea will help bring value to your data by: 
+Setting up a glossary in Actian Data Intelligence will help bring value to your data by: 
 
 * Bringing a common understanding of your company’s concepts and terminology
 * Reducing the risk of misuse, especially due to a misunderstanding of the data
@@ -145,7 +145,7 @@ Other advantages of a glossary are:
 * Giving IT and Business teams  a common vocabulary
 * Helping to identify policies, data governance, and data management initiatives. 
 
-Zeenea allows you to create different kinds of Items to build your business glossary to better reflect your organization's business landscape: business terms, KPIs, reports, domains, etc. Glossary Items represent all these kinds of business Items in the catalog.
+Actian Data Intelligence allows you to create different kinds of Items to build your business glossary to better reflect your organization's business landscape: business terms, KPIs, reports, domains, etc. Glossary Items represent all these kinds of business Items in the catalog.
 
 The attributes of a Glossary Item are the following:
 
@@ -172,12 +172,12 @@ An orphan dataset is a dataset that is still present in the catalog but is no lo
 
 ### Objective
 
-Zeenea helps identify orphan datasets to keep catalog content up-to-date and avoid directing Explorers to obsolete data assets.
+Actian Data Intelligence helps identify orphan datasets to keep catalog content up-to-date and avoid directing Explorers to obsolete data assets.
 
 ### Impacts
 
 * The documentation of an orphan dataset can no longer be updated through its original connection.
-* If this dataset has been moved, it is treated by Zeenea as a new entry.
+* If this dataset has been moved, it is treated by Actian Data Intelligence as a new entry.
 
 ## Property
 
@@ -198,7 +198,7 @@ The template of a type of Item (datasets, visualizations, business terms, etc.) 
 
 ### Characteristics
 
-The notion of template in Zeenea represents a coherent set of properties. From Studio, you can define templates for each item type by adding and ordering sections and properties.
+The notion of template in Actian Data Intelligence represents a coherent set of properties. From Studio, you can define templates for each item type by adding and ordering sections and properties.
 
 The template will allow you to document each item in a unitary manner by highlighting the properties that make it up.
 

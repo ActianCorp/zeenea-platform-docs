@@ -25,7 +25,7 @@ The recommended permission scope for the Audit Trail API is **Read-only**.
 
 ## Documentation and Tools
 
-The full technical documentation for the Zeenea Audit Trail API can be retrieved by sending a `GET` request (using any API Platform such as Postman) to the following endpoint: 
+The full technical documentation for the Actian Data Intelligence Audit Trail API can be retrieved by sending a `GET` request (using any API Platform such as Postman) to the following endpoint: 
 
 `https://[instance-name].zeenea.app/public-api/management/audit/docs`
 
@@ -39,7 +39,7 @@ Most of the APIs use the `POST` method.
 
 Follow these steps to authenticate using your API key:
 
-1. Create a new API key in Zeenea Administration. For detailed steps, see [Create an API key](../../features-applications/administration/managing-api-keys.md#create-an-api-key).
+1. Create a new API key in Actian Data Intelligence **Administration**. For detailed steps, see [Create an API key](../../features-applications/administration/managing-api-keys.md#create-an-api-key).
 2. In your HTTP Request headers, add the following value: 
 
     `"X-API-SECRET": "$APISECRET"`
@@ -82,10 +82,8 @@ Follow these steps to authenticate using your API key:
 
 !!! warning "Important"
     The item ID can be retrievable with the help of the Exploration APIs or it can be found in the URL of a specific item. As an example, after having accessed an item, its ID was retrieved from its URL:
-    <pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/studio/dataset/c89862e8-1002-4dff-92d6-fd7d5bb57b6c/general</pre>
+    `https://[instance-name].zeenea.app/studio/dataset/c89862e8-1002-4dff-92d6-fd7d5bb57b6c/general`
     The ID is string like `c89862e8-1002-4dff-92d6-fd7d5bb57b6c`.
-
-
 
 #### Example 4: I want to list all changes made to users and contacts over the last month. 
 

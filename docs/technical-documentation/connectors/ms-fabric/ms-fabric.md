@@ -4,7 +4,7 @@
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Microsoft Fabric.
 * The Fabric connector uses Fabric and Power BI APIs to obtain metadata.<br />The main metadata scan is performed using Power BI APIs, and most of the setup for the Fabric connector is common with the Power BI connector.
-* Zeenea's scanner traffic flows towards PowerBI/Fabric's instance and Azure must be open. See following:
+* Actian Data Intelligence scanner traffic flows towards PowerBI/Fabric's instance and Azure must be open. See following:
 
      * [https://login.microsoftonline.com](https://login.microsoftonline.com)
      * [https://api.powerbi.com](https://api.powerbi.com)
@@ -34,7 +34,7 @@ To establish a connection with a Microsoft Fabric instance, fill in the followin
 | Parameter                         | Expected value |
 |:----------------------------------|:----------------|
 | `name` | Specifies the display name for the connection. |
-| `code` | Specifies the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | Specifies The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | Specifies the type of connector to be used for the connection. The value must be `ms-fabric` and must not be modified. |
 | `enabled` | Specifies whether to enable or disable the connection (`true` or `false`). <br />The default value is `true`. |
 | `catalog_code` | Specifies the catalog code associated with the connection (`default` when empty). |
@@ -64,7 +64,7 @@ To establish a connection with a Microsoft Fabric instance, fill in the followin
 To collect metadata, the running user's permissions must allow them to access and read reports that need cataloging.
 A Service Principal account is needed to authenticate to MS Azure via a registered application using OAuth 2.0, an application ID, and a secret key.
 
-To create a service principal in Azure, you will first need to register an application in Azure Active Directory (Azure AD). This application registration will automatically create a corresponding service principal, which represents the application's identity in your Microsoft Entra tenant. You'll need to note the Application (client) ID and the Client Secret from the app registration, which will be needed for the Zeenea Scanner configuration. Finally, you'll need to grant the service principal the necessary roles and permissions to access the resources it needs.
+To create a service principal in Azure, you will first need to register an application in Azure Active Directory (Azure AD). This application registration will automatically create a corresponding service principal, which represents the application's identity in your Microsoft Entra tenant. You'll need to note the Application (client) ID and the Client Secret from the app registration, which will be needed for the Actian Data Intelligence Scanner configuration. Finally, you'll need to grant the service principal the necessary roles and permissions to access the resources it needs.
 
 Access to the PowerBI Admin API must be enabled for service principals using the Microsoft Fabric Admin Portal or Power BI Admin Portal and linked to a security group created using the Microsoft Entra Admin Center.
 

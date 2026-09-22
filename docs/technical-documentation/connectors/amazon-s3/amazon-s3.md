@@ -2,16 +2,17 @@
 
 In order to establish a connection with Amazon S3, a user with sufficient [permissions](#user-permissions) is required. 
 
-Zeenea traffic flows towards the database must be opened.
+Actian Data Intelligence traffic flow towards the database must be opened.
 
-There are two ways to authenticate the Zeenea Agent on S3:
+There are two ways to authenticate the Actian Data Intelligence Agent on S3:
 
 * Either the Agent's host server has sufficient credentials to connect to S3 (recommended way). 
   In this case, available authentication methods are: 
+    
     * Instance Role
     * Environment Variable
     * Configuration File
-* Or, the API Keys are managed by Zeenea. In this case, the keys need to be entered in the connection configuration file.
+* Or, the API Keys are managed by Actian Data Intelligence. In this case, the keys need to be entered in the connection configuration file.
 
 Traffic flows toward S3 must be open. 
 
@@ -44,7 +45,7 @@ In order to establish a connection with Amazon S3, specifying the following para
 | Parameter| Expected Value |
 | :--- | :--- |
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `AmazonS3` and this value must not be modified. |
 | `enabled` | A boolean value to enable or disable the connection. |
 | `catalog_code` | The catalog code associated with the connection (`default` when empty). |

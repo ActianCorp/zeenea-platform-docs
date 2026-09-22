@@ -12,7 +12,7 @@ The Tibco Spotfire (V1) plugin has been deprecated. You can use the [Tibco Spotf
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Spotfire.
-* Zeenea traffic flows towards the server must be open.
+* Actian Data Intelligence traffic flow towards the server must be open.
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](./connectors-list.md).
@@ -39,7 +39,7 @@ In order to establish a connection with a Spotfire Server instance, specifying t
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `tibco-spotfire` and this value must not be modified. |
 | `connection.strategy` | Spotfire connector strategy<br/>- **webservice**: SOAP integration mode<br/>- **database**: JDBC integration mode<br/>Default value: `webservice` |
 | `connection.url` | Webservice strategy:<br/>- Server address (example: `https://spotfire.prod.client.ec2`)<br/>Database strategy:<br/>- Database JDBC URL (example: `jdbc:postgresql://server:5432/spotfire_server`) |

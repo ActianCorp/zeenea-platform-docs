@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Matillion.
-* Zeenea traffic flows towards the ELT must be open.
+* Actian Data Intelligence traffic flow towards the ELT must be open.
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -40,7 +40,7 @@ The `filter.versions` parameter is replaced by the `versions` parameter, which w
 | Parameter | Expected value |
 |---|---|
 | `name` | Specifies the display name for the connection. |
-| `code` | Specifies the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | Specifies The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | Specifies the type of connector to be used for the connection. The value must be `matillion` and must not be modified. |
 | `connection.url` | Specifies the matillion instance URL. |
 | `connection.username` | Specifies the username for the connection. |
@@ -79,7 +79,7 @@ Read more: [Filters](../../scanners/filters.md)
 
 ## Data Extraction
 
-The Matillion connector feeds Zeenea Database with Data Processes. Like other Data Process connectors, it has a single job "synchronize" that discovers all items of interest and creates or updates their documentation in the catalog. Matillion items of interest are Transformations. So, for each Transformation in Matillion, a Data Process should be created in Zeenea.
+The Matillion connector feeds Actian Data Intelligence Database with Data Processes. Like other Data Process connectors, it has a single job "synchronize" that discovers all items of interest and creates or updates their documentation in the catalog. Matillion items of interest are Transformations. So, for each Transformation in Matillion, a Data Process should be created in Actian Data Intelligence.
 
 We can logically split the process into two steps, the discovery of the transformations and the extraction of the transformation's metadata.
 
@@ -103,7 +103,7 @@ In addition, the connector is able to detect whether tables are involved in tran
 
 ## Synchronization
 
-This connector will harvest all transformation processes identified in the Matillion instance, and automatically represent them in Zeenea.
+This connector will harvest all transformation processes identified in the Matillion instance, and automatically represent them in Actian Data Intelligence.
 
 ## Lineage
 

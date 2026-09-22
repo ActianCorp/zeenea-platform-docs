@@ -10,7 +10,7 @@ search:
 
  
 
-Thanks to this Catalog API, dedicated to the exploration and mutation of Items, you can synchronize metadata from an external system into Zeenea, or pull information from your data catalog to another system.
+Thanks to this Catalog API, dedicated to the exploration and mutation of Items, you can synchronize metadata from an external system into Actian Data Intelligence, or pull information from your data catalog to another system.
 
 Here are some use cases (all associated requests are available at the end of this article):
 
@@ -68,7 +68,7 @@ For more information, see [API Lifecycle](./api-lifecycle.md) can be found here.
 
 !!! note
     The complete API documentation is available in the [Voyager](https://github.com/APIs-guru/graphql-voyager) tool which you can access from any of your environments by following this address:
-    <pre>https://<font className="codeHighlight">[instance-name]</font>.zeenea.app/public-api/catalog/voyager</pre>
+    `https://[instance-name].zeenea.app/public-api/catalog/voyager`
 
 ## Representation of the properties
 
@@ -228,7 +228,7 @@ The above request will return the following:
 
 ### Example 3: Retrieve all the Datasets from the data catalog that are linked to the "Snowflake" connection whose connection code is "SnowflakeCode" {data-search-exclude}
 
-The connection code can be retrieved in the scanner configuration or in the "Connections" section of Zeenea Admin.
+The connection code can be retrieved in the scanner configuration or in the "Connections" section of Actian Data Intelligence Administration.
 
 ```
 query {

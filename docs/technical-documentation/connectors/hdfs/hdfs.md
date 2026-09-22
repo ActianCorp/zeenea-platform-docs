@@ -4,13 +4,13 @@
 
 * **Java version:** This connector is supported on Java 11, 17, and 21. It is not compatible with Java 25 or later.
 
-To catalog datasets stored in a Hadoop cluster, Zeenea must be installed in a Hadoop Edge Node type server, with the following characteristics: 
+To catalog datasets stored in a Hadoop cluster, Actian Data Intelligence must be installed in a Hadoop Edge Node type server, with the following characteristics: 
 
 * Access to HDFS from native APIs
 * Access to Hive Server 2
 * Hadoop Client (HDFS command, Yarn, ...) and Hadoop Client configuration (core-site.xml, hdfs-site.xml, ...) on the server
 
-If the server is secured by the Kerberos protocol, a Keytab for Zeenea will have to be generated. The owner of the Keytab must also have read permissions on HDFS directories and files, along with the Hive tables that need to be documented. 
+If the server is secured by the Kerberos protocol, a Keytab for Actian Data Intelligence will have to be generated. The owner of the Keytab must also have read permissions on HDFS directories and files, along with the Hive tables that need to be documented. 
 
 Because of its type (Hadoop Edge Node), the server is either on the same network as the Hadoop cluster, or it has access to HDFS, Hive Server and technical services such as Kerberos through traffic flows. 
 
@@ -51,7 +51,7 @@ In order to establish a connection with HDFS, specifying the following parameter
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `Hdfs` and this value must not be modified. |
 | `connection.hadoop_conf_dir` | Location of the HDFS Client configuration file |
 | `connection.principal` | Username |

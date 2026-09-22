@@ -5,7 +5,7 @@
 * **Java version:** Validated on Java 11 and 17 only.
 
 * A user with sufficient permissions is required to establish a connection with DBT.
-* Zeenea traffic flows towards DBT must be open.  
+* Actian Data Intelligence traffic flow towards DBT must be open.  
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -36,7 +36,7 @@ In order to establish a connection with an DBT instance, specifying the followin
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `dbt` and this value must not be modified. |
 | `connection.path` | Path to the DBT projects. Must be formatted like:<br/>- AWS S3: `s3://[bucket_name]/[optional_prefix]`<br/>- Google Storage: `gs://[bucket_name]/[optional_prefix]`<br/>- Local File System: `file:///path/to/project/folder/root` or `/path/to/project/folder/root`<br/>- (**≥2.8.0**) Azure ADLS Gen 2: `http://[account_name].dfs.core.windows.net/[container_name]/[optional_prefix]`<br/>- (**< 2.7.0**) Azure Storage: `az://[bucket_name]/[optional_prefix]`<br/>Examples:<br/><br/>`connection.path = "aws://dbt-bucket/projects"`<br/>or<br/>`connection.path = "/var/dbt/projects"` |
 | **Google Cloud Storage** | |

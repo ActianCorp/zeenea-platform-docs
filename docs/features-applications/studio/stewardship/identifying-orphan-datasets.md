@@ -1,8 +1,8 @@
 # Identifying Orphan Datasets
 
-At each inventory of a connection, Zeenea checks the status of each dataset imported into the catalog. A dataset can then become an orphan.
+At each inventory of a connection, Actian Data Intelligence checks the status of each dataset imported into the catalog. A dataset can then become an orphan.
 
-Read more: [Orphan Dataset](../../../getting-started/definitions.md##Orphan%20Dataset)
+Read more: [Orphan Dataset](../../../getting-started/definitions.md#orphan-dataset)
  
 ## Dataset Notifications
 

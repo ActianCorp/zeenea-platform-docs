@@ -41,7 +41,7 @@ To remove an Item from the list of inputs or outputs or a Data Process, click on
 
 ## Viewing the data lineage from a Data Process
 
-Defining links between a Dataset and a Data Process allows Zeenea to automatically generate the data lineage representation.
+Defining links between a Dataset and a Data Process allows Actian Data Intelligence to automatically generate the data lineage representation.
 
 This interactive representation is dynamically updated not only for the Data Process but also for the affected Datasets. Click on an Item in the graph to immediately access the details of this Item or to view its own data lineage.
 

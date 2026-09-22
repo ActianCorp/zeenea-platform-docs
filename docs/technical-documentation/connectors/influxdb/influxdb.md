@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#p100531 "title: InfluxDB") is required to establish a connection with InfluxDB.
-* Zeenea traffic flows towards InfluxDB must be open. 
+* Actian Data Intelligence traffic flow towards InfluxDB must be open. 
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -30,7 +30,7 @@ In order to establish a connection with InfluxDB, specifying the following param
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `InfluxDB` and this value must not be modified. |
 | `connection.url` | InfluxDB connection URL (example: `http://influxdb.com:8086`) |
 | `connection.username` | InfluxDB username |
@@ -56,9 +56,9 @@ The shared part is `log-cogip`, whereas the part representing the partition can 
 
 `\d{4}-\d{2}-\d{2}$`
 
-Declaring the rational expression above will be enough for Zeenea to take into account the partitioned virtual measures.
+Declaring the rational expression above will be enough for Actian Data Intelligence to take into account the partitioned virtual measures.
 
-During the inventory, Zeenea will replace the first occurrence of this model with a star. All indexes with the same name structure will be considered as being a part of the same partitioned virtual index. 
+During the inventory, Actian Data Intelligence will replace the first occurrence of this model with a star. All indexes with the same name structure will be considered as being a part of the same partitioned virtual index. 
 
 In our example above, all three partitions will be read as a unique dataset named `log-cogip-*`. 
 
@@ -73,13 +73,13 @@ For instance, if the following measures are used:
 * `x-files-01`
 * `x-files-02`
 
-By defining the setting Measurement Partition Pattern with the value: ` \d{4}-\d{2}-\d{2}$ \d{2}$`, Zeenea will display the following datasets: 
+By defining the setting Measurement Partition Pattern with the value: ` \d{4}-\d{2}-\d{2}$ \d{2}$`, Actian Data Intelligence will display the following datasets: 
 
 * `log-cogip-*`
 * `log-acme-*`
 * `x-files-*`
 
-However, be mindful of the pattern order: if the above expression is replaced with `\d{2}$ \d{4}-\d{2}-\d{2}$`, the first option, replacing the last two digits with a star, will be used, and the datasets displayed by Zeenea will be the following: 
+However, be mindful of the pattern order: if the above expression is replaced with `\d{2}$ \d{4}-\d{2}-\d{2}$`, the first option, replacing the last two digits with a star, will be used, and the datasets displayed by Actian Data Intelligence will be the following: 
 
 * `log-cogip-2020-05-*`
 * `log-cogip-2020-06-*`

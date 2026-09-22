@@ -17,7 +17,7 @@ The application aims to simplify their daily life by allowing them to search and
 
 ## What are its main assets?
 
-Zeenea has separated the exploratory experience from its data catalog in its Explorer application to provide a better user experience for data consumers.
+Actian Data Intelligence has separated the exploratory experience from its data catalog in its Explorer application to provide a better user experience for data consumers.
 
 Explorer is the front-office application of our data catalog.
 
@@ -26,7 +26,7 @@ Drawing inspiration from e-commerce websites, it offers very simple ergonomics b
 Its objectives are:
 
 * To search in a customized way through a data catalog filled with thousands of information.
-* To provide a profiling of the items inventoried in Zeenea, presenting statistical signatures in the form of graphs, very useful for a synthetic analytical reading.
+* To provide a profiling of the items inventoried in Actian Data Intelligence, presenting statistical signatures in the form of graphs, very useful for a synthetic analytical reading.
 * To refine the display of documentation according to one’s needs, profile or role to get to the essentials in the research.
 * To suggest complementary items to the different users as soon as they connect, based on their history and profile.
 * To be a workspace for data teams during a use case.

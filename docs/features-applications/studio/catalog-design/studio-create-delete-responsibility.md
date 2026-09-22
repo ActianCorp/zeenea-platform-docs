@@ -8,7 +8,7 @@ Defining responsibilities in the catalog allows you to list the different types 
 
 ## Accessing the Catalog Design Page
 
-Creating, editing, and deleting responsibilities in Zeenea is done in the **Catalog Design** section of Studio. 
+Creating, editing, and deleting responsibilities in Actian Data Intelligence is done in the **Catalog Design** section of Studio. 
 
 To access the Catalog Design page, click **Catalog Design** in the left pane.
 

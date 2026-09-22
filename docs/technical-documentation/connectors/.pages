@@ -96,4 +96,4 @@ nav:
     - Tibco Data Virtualization: tibco-data-virtualization
     - Tibco Spotfire (Deprecated): tibco-spotfire.md
     - Tibco Spotfire (V2): tibco-spotfire-v2
-    - Zeenea Descriptor Format (ZDF): zdf
+    - Actian Data Intelligence Descriptor Format (ZDF): zdf

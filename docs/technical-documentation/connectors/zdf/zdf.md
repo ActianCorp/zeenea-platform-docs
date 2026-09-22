@@ -1,8 +1,8 @@
-# Adding a Zeenea Descriptor Format (ZDF) Connection
+# Adding a Actian Data Intelligence Descriptor Format (ZDF) Connection
 
 ## Connectors
 
-Zeenea Descriptor Format (ZDF) plugin describes a set of three connectors allowing the management of datasets, visualizations and data processes based on declarative files.
+Actian Data Intelligence Descriptor Format (ZDF) plugin describes a set of three connectors allowing the management of datasets, visualizations and data processes based on declarative files.
 
 !!! note
     These connectors must be used in very specific cases where a traditional connector is not an option. By using a description of the items instead of the discoverability mechanism used by regular connectors, you must ensure that you comply with the assertions that other connectors respect, such as the existence of elements.<br />For more information about these connectors, contact your Customer Success Manager.
@@ -45,7 +45,7 @@ To connect to an instance, the parameters of the connection file must be complet
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `zdf-dataset`, `zdf-visualization`, or `zdf-lineage`. Once defined, this value must not be modified. |
 | `enabled` | Optional<br/>Boolean (`true`/`false`) indicating whether the connection is active or not.<br/>Default value: `true` |
 | `connection.path` | Path to file or folder containing description files.<br/>This value is mandatory if no git repository is declared.<br/>If a git repository is declared, the value can be null or a path relative to the repository root. |
@@ -175,7 +175,7 @@ A field description.
 | `name`* | `Text` | Field name |
 | `description` | `Text` | Field description |
 | `nativeType` | `Text` | Native type of the field.<br/>If unset, the `dataType` value is used. |
-| `dataType` | `Text` | Zeenea type of the field.<br/>If unset, the `nativeType` value is used.<br/>Allowed values are:<br/>- `boolean`<br/>- `byte`<br/>- `short`<br/>- `integer`<br/>- `long`<br/>- `float`<br/>- `double`<br/>- `string`<br/>- `date`<br/>- `timestamp`<br/>- `binary`<br/>- `struct`<br/>- `unknown` |
+| `dataType` | `Text` | Actian Data Intelligence type of the field.<br/>If unset, the `nativeType` value is used.<br/>Allowed values are:<br/>- `boolean`<br/>- `byte`<br/>- `short`<br/>- `integer`<br/>- `long`<br/>- `float`<br/>- `double`<br/>- `string`<br/>- `date`<br/>- `timestamp`<br/>- `binary`<br/>- `struct`<br/>- `unknown` |
 | `isNullable` | `Boolean` | The field can be null. Default value `false`. |
 | `isMultivalued` | `Boolean` | The field can contain multiple values. Default value `false`. |
 | `isPrimaryKey` | `Boolean` | The field is part of the primary key. Default value `false`. |

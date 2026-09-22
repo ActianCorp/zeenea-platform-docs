@@ -5,7 +5,7 @@
 * **Java version:** Validated on Java 11 and 17 only.
 
 * In order to establish a connection to IBM DB2, the user must have sufficient [permissions](#user-permissions).
-* Zeenea traffic flows towards DB2 must be open.  
+* Actian Data Intelligence traffic flow towards DB2 must be open.  
 
 !!! warning "Important"
     The DB2 driver is not delivered with the connector with scanner version 34 and later. Download the DB2 driver related to your DB2 instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://www.ibm.com/support/pages/db2-jdbc-driver-versions-and-downloads](https://www.ibm.com/support/pages/db2-jdbc-driver-versions-and-downloads). <br />For the **DB2 for i** version, use the jt400 driver: [https://www.ibm.com/docs/fr/was/9.0.5?topic=variables-configuring-toolbox-java](https://www.ibm.com/docs/fr/was/9.0.5?topic=variables-configuring-toolbox-java).
@@ -44,7 +44,7 @@ In order to establish a connection with DB2, specifying the following parameters
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `DB2` and this value must not be modified. |
 | `connection.url` | URL to access the DB2 database. See IBM documentation for DB2 for i: [https://www.ibm.com/support/pages/using-jdbc-connector-connect-db2-iseries-as400](https://www.ibm.com/support/pages/using-jdbc-connector-connect-db2-iseries-as400). |
 | `connection.username` | Username |

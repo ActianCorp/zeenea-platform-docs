@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with SSIS.  
-* Zeenea traffic flows towards the ETL must be open. 
+* Actian Data Intelligence traffic flow towards the ETL must be open. 
 
 The only authentication mode supported by this connector requires the user's username and password.
 
@@ -32,7 +32,7 @@ In order to establish a connection with SSIS, the following parameters in the de
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `ssis` and this value must not be modified. |
 | **File System Mode** | |
 | `connection.path` | (Optional) Path to the Visual Studio SSIS project directory to synchronize with the catalog |

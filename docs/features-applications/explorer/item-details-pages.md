@@ -14,7 +14,7 @@ Contacts may include natural persons, legal persons, or legal entities.
 
 For each contact, name, email address (if provided) and responsibility for the Item (Data Owner, Data Steward, etc.) are available.
 
-The Curator badge defines who will be in charge of the documentation of the Item in Zeenea.
+The Curator badge defines who will be in charge of the documentation of the Item in Actian Data Intelligence.
 
   ![](./images/details-people.png)
 

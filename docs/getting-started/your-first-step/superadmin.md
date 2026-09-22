@@ -9,9 +9,9 @@ The role of Super Admin is frequently shared or supported by several collaborato
 
 Should you require more technical information or advice on the installation phase, please refer to the technical file.
 
-You have specific rights and permissions as a Super Admin of the Zeenea suite. 
+You have specific rights and permissions as a Super Admin of the Actian Data Intelligence suite. 
 
-## Step 1: Login to Zeenea
+## Step 1: Login to Actian Data Intelligence
 
 You enter the login/password combination which will have been sent to you by email.
 
@@ -21,7 +21,7 @@ You enter the login/password combination which will have been sent to you by ema
 
   ![](./images/login.png)
 
-## Step 2: Configure the Zeenea Platform
+## Step 2: Configure the Actian Data Intelligence Platform
 
 Platform configuration is the main action reserved for Super Admin. 
 
@@ -42,7 +42,7 @@ From this interface, you will be able to supervise the platform regarding the fo
 
 ## Step 3: Define the Data Catalog Metamodel
 
-As Super Admin you can also configure the documentation in Zeenea. 
+As Super Admin you can also configure the documentation in Actian Data Intelligence. 
 
 This section is accessible from Studio via the **Catalog Design** button in the left menu.
 
@@ -72,10 +72,10 @@ Read more: [Configuring the Glossary Metamodel](../../features-applications/stud
 
 ## Step 4: Define Responsibilities
 
-In Zeenea, a responsibility describes the nature of the relationship between an individual or an entity and an item of the catalog. This attribute thus allows any user to identify the relevant contact person for their needs from the detailed page of the item once it has been completed (Data Steward, Data Owner, etc.).
+In Actian Data Intelligence, a responsibility describes the nature of the relationship between an individual or an entity and an item of the catalog. This attribute thus allows any user to identify the relevant contact person for their needs from the detailed page of the item once it has been completed (Data Steward, Data Owner, etc.).
 
 Read more: [Creating, Editing, or Deleting Responsibilities](../../features-applications/studio/catalog-design/studio-create-delete-responsibility.md)
 
 ## Step 5: Start Importing and Documenting Your Items
 
-Congrats! You have laid the foundations of the catalog. Carry on the journey As a Data Steward.
+You have laid the foundations of the catalog. Continue your work as a Data Steward in Actian Data Intelligence.

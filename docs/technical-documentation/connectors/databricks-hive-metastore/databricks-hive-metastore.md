@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Databricks Hive Metastore.
-* Zeenea traffic flows towards the database must be open. 
+* Actian Data Intelligence traffic flow towards the database must be open. 
 
 !!! warning "Important"
     The Databricks JDBC driver is not provided with the connector. Download the Databricks JDBC driver for your Databricks instance and copy it to the `/lib-ext` folder of your scanner (**only the .jar file**). You can find the driver in the sources provided by the vendor on their website: [https://www.databricks.com/spark/jdbc-drivers-download](https://www.databricks.com/spark/jdbc-drivers-download).
@@ -36,7 +36,7 @@ In order to establish a connection with an Databricks Hive Metastore instance, s
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `databricks-hivemetastore` and this value must not be modified. |
 | `connection.url` | Address (example: `jdbc:databricks://.cloud.databricks.com:443`). |
 | `connection.token` | Databricks Token |

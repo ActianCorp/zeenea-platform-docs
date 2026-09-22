@@ -2,13 +2,13 @@
 
 ### Prerequisites  
 
-To configure a connection between your IS and Zeenea, follow these steps:
+To configure a connection between your IS and Actian Data Intelligence Platform, follow these steps:
 
 1. Install a scanner.
 2. Install the connector plugin appropriate for your storage system.
 
 !!! note
-    * For more information about scanner installation, see [Zeenea Scanner Setup](../../technical-documentation/scanners/scanner-setup.md).
+    * For more information about scanner installation, see [Actian Data Intelligence Scanner Setup](../../technical-documentation/scanners/scanner-setup.md).
     * Go to the specific documentation of each connector to identify the prerequisites and the conditions of implementation: [Connector Downloads](../../technical-documentation/connectors/connectors-list.md).
 
 
@@ -22,7 +22,7 @@ A new connection is created by adding a new configuration file to the scanner:
 In all connection configuration files, there are 3 systematic and mandatory parameters: 
 
 * `name` = The name that will be displayed to catalog users for this connection. 
-* `code` = The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner.
+* `code` = The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner.
 * `connector_id` = The type of connector to be used for the connection.
 
 The remaining configuration parameters depend on the connector type and are specified in the corresponding configuration template file.
@@ -34,7 +34,7 @@ A connection is valid only if all of the following conditions are met:
 * It is syntactically correct.
 * All mandatory properties appear and are filled in.
 * The authentication information to the target system is correct.
-* The connection does not already exist on the Zeenea platform with a link to another scanner.
+* The connection does not already exist on the Actian Data Intelligence Platform with a link to another scanner.
 
 ### Connection File Parameter Formats
 
@@ -63,7 +63,7 @@ connection {
 
 ## Encryption of Connection Secrets
 
-If you wish, you can encrypt the secrets of your connections using a tool provided by Zeenea. 
+If you wish, you can encrypt the secrets of your connections using a tool provided by Actian. 
 
 1. Go to the scanner folder.
 2. Launch the zeenea-pwd executable. 
@@ -72,18 +72,18 @@ If you wish, you can encrypt the secrets of your connections using a tool provid
 
 ## List of Connections
 
-The connection listing page is accessible from the administration interface, under the "Connections" tab. It displays all connections within Zeenea. 
+The connection listing page is accessible from the administration interface, under the "Connections" tab. It displays all connections within Actian Data Intelligence. 
 
 On this page, you will find active connections as well as the connections presenting an error.
 
 ![](./images/connections-tab.png)
-A connection is identified by catalog users by its name. For technical purposes, a connection is identified by the Zeenea platform by its unique code (displayed in square brackets on the right of its name). 
+A connection is identified by catalog users by its name. For technical purposes, a connection is identified by the Actian Data Intelligence Platform by its unique code (displayed in square brackets on the right of its name). 
 
 A connection can only be linked to one scanner at a time. It will be linked to the first one to register it and will be ignored by the following ones.
 
 ## Configuration of a Connection
 
-It is possible to view the detailed information of a connection, as defined at the scanner level, by clicking on "Settings" from the action menu of each connection. However, the secrets of the connection are not accessible from this interface and are kept by the scanner only.
+It is possible to view the detailed information of a connection, as defined at the scanner level, by clicking on "Settings" from the action menu of each connection. However, the secrets of the connection are not accessible from this interface and are kept by the Actian Data Intelligence Scanner only.
 
 ![](./images/connection-configuration.png)
 
@@ -152,4 +152,4 @@ To relocate a connection to another scanner:
 4. Check in the detailed view of the destination scanner that the connection has been relocated. 
 
 !!! note
-    Operations on the scanners are only taken into account by the Zeenea platform every 10 seconds. It may take a few seconds for changes to appear on the interface.
+    Operations on the scanners are only taken into account by the Actian Data Intelligence Platform every 10 seconds. It may take a few seconds for changes to appear on the interface.

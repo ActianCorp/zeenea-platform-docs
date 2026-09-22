@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * **Java version:** Validated on Java 11 only.
-* It is assumed that the Zeenea Scanner has been successfully downloaded and configured. See [Zeenea Scanner Setup](../../scanners/scanner-setup.md).
+* It is assumed that the Actian Data Intelligence Scanner has been successfully downloaded and configured. See [Actian Data Intelligence Scanner Setup](../../scanners/scanner-setup.md).
 
 ## Installing the Generic JDBC Connector Plugin
 
@@ -46,7 +46,7 @@
      ```
 ## Verifying the Connection
 
-1. Restart Zeenea Scanner.
-2. In Zeenea Administration, click **Connections** and verify that the new connection is listed:
+1. Restart Actian Data Intelligence Scanner.
+2. In **Administration**, click **Connections** and verify that the new connection is listed:
    ![](./images/connection-added-zen.png)
 3. If you encounter any issues, review the scanner.log file located in the `[scanner_install_dir]/logs` folder for troubleshooting guidance. Also refer to [Troubleshooting for Scanners and Connections](../../scanners/troubleshooting.md).

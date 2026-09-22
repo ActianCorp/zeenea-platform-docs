@@ -7,7 +7,7 @@
   A user with sufficient [permissions](#p100138 "title: SAP Analytics Cloud") is required to establish a connection with SAP Analytics Cloud.
 
 - <!-- #p100039 -->
-  Zeenea traffic flows towards the data source must be open. 
+  Actian Data Intelligence traffic flow towards the data source must be open. 
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -44,7 +44,7 @@ In order to establish a connection with SAP Analytics Cloud, specifying the foll
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `sap-sac` and this value must not be modified. |
 | `connection.oauth.endpoint` | SAP Analytics Cloud endpoint<br/>Example: `https://example.authentication.eu10.hana.ondemand.com/oauth/token` |
 | `connection.oauth.client_id` | Client identifier |
@@ -131,7 +131,7 @@ A dataset is an SAP Analytics Cloud model.
 
 ### Data Process
 
-To represent the data flow from an external source, a Zeenea Data Process will be created for each SAP Analytics Cloud model.
+To represent the data flow from an external source, an Actian Data Intelligence Data Process will be created for each SAP Analytics Cloud model.
 
 * **Name**: `import dataset_name`
 

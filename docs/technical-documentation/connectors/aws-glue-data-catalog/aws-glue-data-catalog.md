@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with AWS Glue.
-* Zeenea traffic flows towards the database must be open. 
+* Actian Data Intelligence traffic flow towards the database must be open. 
 
 The Agent's host server must have sufficient credentials to connect to AWS Glue. The available authentication methods are: 
 
@@ -40,7 +40,7 @@ To establish a connection with an AWS Glue instance, fill in the following param
 | Parameter | Expected value |
 |---|---|
 | `name` | Specifies the display name for the connection. |
-| `code` | Specifies the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | Specifies the unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | Specifies the type of connector to be used for the connection. The value must be `aws.glue` and must not be modified. |
 | `enabled` | Specifies whether to enable or disable the connection (`true` or `false`). <br />The default value is `true`. |
 | `catalog_code` | Specifies the catalog code associated with the connection (`default` when empty). |

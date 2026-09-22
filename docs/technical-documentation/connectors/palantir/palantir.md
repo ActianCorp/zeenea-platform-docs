@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Palantir. 
-* Zeenea traffic flows towards the data source must be open.
+* Actian Data Intelligence traffic flow towards the data source must be open.
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -30,7 +30,7 @@ In order to establish a connection with a Palantir instance, specifying the foll
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `palantir` and must not be modified. |
 | `connection.url` | Database address (example: `https://tenant.palantirfoundry.fr/`) |
 | `connection.oauth.endpoint` | (Optional) API's endpoint. Default value is from `connection.url` parameter completed by `/multipass/api/oauth2/token`. |
@@ -53,7 +53,7 @@ In order to establish a connection with a Palantir instance, specifying the foll
 | **Inventory** | |
 | `inventory.file_path` | Path to the file containing the Resource Identifier (RID) in case the inventory is provided.<br/>The path must be formatted like:<br/>- **AWS S3**: `s3://[bucket_name]/[optional_prefix]/[file_name]`<br/>- **Google Storage**: `gs://[bucket_name]/[optional_prefix]/[file_name]`<br/>- **Local File System**: `file:///path/to/file` or `/path/to/file`<br/>- **Azure ADLS Gen 2**: `http://[account_name].dfs.core.windows.net/[container_name]/[optional_prefix]/[file_name]`<br/>Examples:<br/>`connection.path = "aws://palantir-bucket/rids.txt"`<br/>or<br/>`connection.path = "/var/palantir/rids.txt"`<br/>The file should contain a list of Resource Identifiers (RID), with one identifier per line.<br/>Example: ``` ri.foundry.main.dataset.4bbacdc9-3965-45ff-b44a-1d8f64b822bb ri.foundry.main.dataset.6bf56e27-2106-42fb-aa81-4a012f865f84 ri.foundry.main.dataset.30399d1c-a942-4cb2-85eb-25f69db6fd72 ri.foundry.main.dataset.746fb5dd-9153-4a4a-b2c6-052ada4a900c ``` |
 | `inventory.from_datacatalog` | Default value `false`. Set to `true` to filter on Palantir's data catalog objects. |
-| `inventory.with_ontology` | Default value `false`. Set to `true` to list datasets from ontology objects. They will be prefixed by `/ontology` only in the Zeenea selection import window. |
+| `inventory.with_ontology` | Default value `false`. Set to `true` to list datasets from ontology objects. They will be prefixed by `/ontology` only in the Actian Data Intelligence selection import window. |
 | **Filter** | |
 | `filter` | To filter collections associated with datasets. |
 | **Others** | |

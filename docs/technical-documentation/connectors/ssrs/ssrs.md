@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with SSRS.  
-* Zeenea traffic flows towards the data source must be open. 
+* Actian Data Intelligence traffic flow towards the data source must be open. 
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -30,7 +30,7 @@ In order to establish a connection with an SSRS instance, specifying the followi
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `ssrs` and this value must not be modified. |
 | `connection.path` | Path of the directory containing SSRS projects to synchronize with the catalog |
 

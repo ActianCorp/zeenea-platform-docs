@@ -8,7 +8,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with PowerBI Online.
-* Zeenea's scanner traffic flows towards Power BI's instance and Azure must be open. Refer to the following:
+* Actian Data Intelligence scanner traffic flow towards Power BI's instance and Azure must be open. Refer to the following:
 
      * [https://login.microsoftonline.com](https://login.microsoftonline.com)
      * [https://api.powerbi.com](https://api.powerbi.com)
@@ -42,7 +42,7 @@ To establish a connection with a PowerBI Online instance, fill in the following 
 | Parameter                         | Expected value |
 |:----------------------------------|:----------------|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `powerbi-v2` and this value must not be modified. |
 | `connection.tenant` | Specifies the tenant's unique identifier.<br/>To retrieve the tenant ID from Power BI:<br/>1. Sign in to Power BI and select the **?** (Help) icon  in the upper-right corner.<br/>2. Select **About Power BI**.<br/>3. In the dialog, locate the **Tenant URL**, which has the following format:<br/>`https://app.powerbi.com/home?ctid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`<br/>The tenant ID is the value of the `ctid` parameter in the Tenant URL. |
 | `connection.url` | Connection address. Default value `https://api.powerbi.com`. |
@@ -68,7 +68,7 @@ To establish a connection with a PowerBI Online instance, fill in the following 
 In order to collect metadata, the running user's permissions must allow them to access and read reports that need cataloging.
 A Service Principal account is needed to authenticate to MS Azure via a registered application using OAuth 2.0, an application ID, and a secret key.
 
-To create a service principal in Azure, you will first need to register an application in Azure Active Directory (Azure AD). This application registration will automatically create a corresponding service principal, which represents the application's identity in your Microsoft Entra tenant. You'll need to note the Application (client) ID and the Client Secret from the app registration, which will be needed for the Zeenea Scanner configuration. Finally, you'll need to grant the service principal the necessary roles and permissions to access the resources it needs.
+To create a service principal in Azure, you will first need to register an application in Azure Active Directory (Azure AD). This application registration will automatically create a corresponding service principal, which represents the application's identity in your Microsoft Entra tenant. You'll need to note the Application (client) ID and the Client Secret from the app registration, which will be needed for the Actian Data Intelligence Scanner configuration. Finally, you'll need to grant the service principal the necessary roles and permissions to access the resources it needs.
 
 Access to the PowerBI Admin API must be enabled for service principals using the Microsoft Fabric Admin Portal or Power BI Admin Portal and linked to a security group created using the Microsoft Entra Admin Center.
 
@@ -300,7 +300,7 @@ Dataset field or measure.
 
 ### Data Process
 
-To represent the data flow from an external source, a Zeenea Data Process will be created for each Power BI Online Dataset.
+To represent the data flow from an external source, an Actian Data Intelligence Data Process will be created for each Power BI Online Dataset.
 
 * **Name**: `IMPORT dataset_name`
 

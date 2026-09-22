@@ -27,13 +27,13 @@ Bulk publishing can be done on:
 
 This feature is enabled if the following conditions are met:
 
-* There is at least one Responsibility defined in Zeenea
+* There is at least one Responsibility defined in Actian Data Intelligence
 * At least one item is selected
 
 To add contacts:
 
 1. Click the **Add People** button, then click the **Add Contacts** button.
-2. Search for a contact already referenced in Zeenea.
+2. Search for a contact already referenced in Actian Data Intelligence.
 3. Select from the list a responsibility that will be associated with it.
 4. Click **Confirm** to close the window and update the selected items.
 
@@ -51,7 +51,7 @@ This feature is enabled if the following condition is met:
 
 Click on the "Add People" button, then the "Add Contacts" button : 
 
-1. Search for a user already existing in Zeenea.
+1. Search for a user already existing in Actian Data Intelligence.
 2. Click **Confirm** to close the window and update the selected items.
 
     ![](./images/curators-add.png)

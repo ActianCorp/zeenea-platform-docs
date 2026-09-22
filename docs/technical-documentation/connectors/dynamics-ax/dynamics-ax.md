@@ -3,9 +3,8 @@
 ## Prerequisites
 
 !!! note
-    * To connect Zeenea to Dynamics AX, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
+    * To connect Actian Data Intelligence to Dynamics AX, Actian provides a collaborative solution with Silwood Technology and its Safyr software. This integration must be validated with our customer services.
     * You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
-
 
 ## Supported Versions
 
@@ -28,7 +27,7 @@ In order to establish a connection with Dynamics AX, the following parameters in
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `safyr-dynamicsax` and this value must not be modified. |
 | `input.folder` | The complete path to the folder containing files from the Silwood Safyr extraction |
 

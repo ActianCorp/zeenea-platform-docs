@@ -1,6 +1,6 @@
 # Installing and Configuring Connectors as a Plugin
 
-Zeenea next-generation connectors are now available as plugins. This new approach allows for easier installation and faster roll-out of new versions and features.
+Actian Data Intelligence next-generation connectors are now available as plugins. This new approach allows for easier installation and faster roll-out of new versions and features.
 
 Follow these steps to install or update your plugin connector:
 

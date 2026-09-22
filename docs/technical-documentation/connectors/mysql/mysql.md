@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#p100153 "title: MySQL") is required to establish a connection with MySQL.
-* Zeenea traffic flows towards the database must be open.
+* Actian Data Intelligence traffic flow towards the database must be open.
 
 !!! warning "Important"
     The MySQL driver is not delivered with the connector. Download the MySQL driver related to your MySQL instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://dev.mysql.com/downloads/connector/j/](https://dev.mysql.com/downloads/connector/j/)
@@ -38,7 +38,7 @@ In order to establish a connection with a MySQL instance, specifying the followi
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `Mysql` and this value must not be modified. |
 | `connection.url` | Database address (example: `jdbc:mysql://host:3306/database`) |
 | `connection.username` | Username |

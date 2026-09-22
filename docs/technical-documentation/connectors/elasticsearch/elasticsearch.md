@@ -4,7 +4,7 @@
 ## Prerequisites
 
 * In case the Elasticsearch security has been enabled, the connector must reference a user with sufficient [permissions](#user-permissions).
-* Zeenea traffic flows towards the base must be opened. 
+* Actian Data Intelligence traffic flow towards the base must be opened. 
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -33,14 +33,14 @@ In order to establish a connection with Elasticsearch, specifying the following 
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `Elasticsearch` and this value must not be modified. |
 | `connection.protocol` | Connection protocol to the cluster. Possible values are `https` or `http`. |
 | `connection.nodes` | A list of cluster connection nodes separated with spaces.<br/><br/>Each node is shown using the `host_name[:port]`. The port value is optional, and `9200` will be used as a default.<br/><br/>Examples<br/>- `es1.cogip.com:9200`<br/>- `es1.cogip.com:9200`<br/><br/>This list does not have to be complete, but it is recommended to have multiple nodes. |
 | `tls.trust_store.type` | Trust Store type. Possible values are `pkcs12` or `jks`. |
 | `tls.trust_store.path` | This file must be provided in case TLS encryption is activated (protocol https) and when certificates of Elasticsearch servers are delivered by a specific authority. It must contain the certification chain.<br/><br/> See [https://www.elastic.co/guide/en/elasticsearch/reference/current/configuring-tls.html#node-certificates](https://www.elastic.co/guide/en/elasticsearch/reference/current/configuring-tls.html#node-certificates). |
 | `tls.trust_store.password` | Trust Store password |
-| `connection.username` | Name of the Elasticsearch user used to connect to Zeenea. The user must have sufficient permissions. |
+| `connection.username` | Name of the Elasticsearch user used to connect to Actian Data Intelligence. The user must have sufficient permissions. |
 | `connection.password` | User password |
 | `inventory.index_partition.pattern` | The index partition pattern. See [Partitioned Virtual Indexes](#partitioned-virtual-indexes). |
 
@@ -63,9 +63,9 @@ The share part is `log-cogip`, whereas the part representing the partition can b
 
  `\d{4}-\d{2}-\d{2}$`
 
-Declaring the rational expression above will be enough for Zeenea to take into account the partitioned virtual indexes.
+Declaring the rational expression above will be enough for Actian Data Intelligence to take into account the partitioned virtual indexes.
 
-During inventory, Zeenea will replace the first occurrence of this model with a star. All indexes with the same name structure will be considered as being a part of the same partitioned virtual index. 
+During inventory, Actian Data Intelligence will replace the first occurrence of this model with a star. All indexes with the same name structure will be considered as being a part of the same partitioned virtual index. 
 
 In our example above, all three partitions will be read as a unique dataset named `log-cogip-*`. 
 
@@ -80,13 +80,13 @@ For instance, if the following indexes are used:
 * `x-files-01`
 * `x-files-02`
 
-By defining the setting Index Partition Pattern with the value: ` \d{4}-\d{2}-\d{2}$ \d{2}$`, Zeenea will display the following datasets: 
+By defining the setting Index Partition Pattern with the value: ` \d{4}-\d{2}-\d{2}$ \d{2}$`, Actian Data Intelligence will display the following datasets: 
 
 * `log-cogip-*`
 * `log-acme-*`
 * `x-files-*`
 
-However, be mindful of the pattern order: if above expression is replaced with `\d{2}$ \d{4}-\d{2}-\d{2}$`, the first option, replacing the last two digits with a star, will be used, and the datasets displayed by Zeenea will be the following: 
+However, be mindful of the pattern order: if above expression is replaced with `\d{2}$ \d{4}-\d{2}-\d{2}$`, the first option, replacing the last two digits with a star, will be used, and the datasets displayed by Actian Data Intelligence will be the following: 
 
 * `log-cogip-2020-05-*`
 * `log-cogip-2020-06-*`

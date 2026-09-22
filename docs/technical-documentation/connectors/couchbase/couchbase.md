@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Couchbase.
-* Zeenea traffic flows towards the database must be open. 
+* Actian Data Intelligence traffic flow towards the database must be open. 
 
 | Target | Protocol	| Usual Ports |
 | :--- | :--- | :--- |
@@ -34,7 +34,7 @@ In order to establish a connection with a Couchbase instance, specifying the fol
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `couchbase` and this value must not be modified. |
 | `connection.url` | Database address (example: `couchbase://host:port`) |
 | `connection.username` | Username |

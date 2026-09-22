@@ -5,7 +5,7 @@
 * **Java version:** Validated on Java 11 and 17 only.
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Databricks Unity Catalog. 
-* Zeenea traffic flows towards the data source must be open.
+* Actian Data Intelligence traffic flow towards the data source must be open.
 
 !!! warning "Important"
     The Databricks JDBC driver is not provided with the connector. Download the Databricks JDBC driver for your Databricks instance and copy it to the `/lib-ext` folder of your scanner (**only the .jar file**). You can find the driver in the sources provided by the vendor on their website: [https://www.databricks.com/spark/jdbc-drivers-download](https://www.databricks.com/spark/jdbc-drivers-download).
@@ -40,7 +40,7 @@ In order to establish a connection with a Databricks Unity Catalog instance, spe
 | Parameter| Expected Value |
 | :--- | :--- |
 | `name` | The name that will be displayed to catalog users for this connection | 
-| `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
+| `code` | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `databricks-jdbc` and this value must not be modified. | 
 | `connection.url` | JDBC URL (example: `jdbc:databricks://<tenant>.cloud.databricks.com:443`) |
 | `connection.oauth.endpoint`	| Databricks OAuth2 endpoint (Optional)<br /><br /> Example: `https://tenant.cloud.databricks.com/oidc/v1/token`. |

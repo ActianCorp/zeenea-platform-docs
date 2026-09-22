@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Microsoft SQL Server.
-* Zeenea traffic flows towards SQL Server must be open.
+* Actian Data Intelligence traffic flow towards SQL Server must be open.
 * The only authentication mode supported by this connector requires the user's username and password.
 
 !!! note
@@ -39,7 +39,7 @@ To establish a connection with an SQL Server instance, fill in the following par
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `SqlServer` and this value must not be modified. |
 | `connection.url` | Database URL<br/> Example: `jdbc:sqlserver://example.test.net;database=my_db;encrypt=true` |
 | `connection.database` | Database name |
@@ -67,7 +67,7 @@ Information about primary and foreign keys is collected using the following proc
 * `sp_pkeys`
 * `sp_fkeys`
 
-To collect this information, the Zeenea user defined in the connection configuration must be able to connect to the selected databases and must be granted the following permission:
+To collect this information, the Actian Data Intelligence user defined in the connection configuration must be able to connect to the selected databases and must be granted the following permission:
 
 `grant VIEW ANY DEFINITION to zeenea;`
 
@@ -155,7 +155,7 @@ SELECT
 
 The request above collects a data sample for each field where the feature is activated through the studio (`field1`, `field2`). The limit is 10.000 lines (`linesPercentage` parameter) deduced from a calculation with the number of rows set in the previous request.
 
-These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Zeenea Scanner Setup](../../scanners/scanner-setup.md).
+These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Actian Data Intelligence Scanner Setup](../../scanners/scanner-setup.md).
 
 ## Unique Identifier Keys
 

@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient permissions is required to establish a connection with Kafka.
-* Zeenea traffic flows towards the data source must be open. 
+* Actian Data Intelligence traffic flow towards the data source must be open. 
 
 | Target | Protocol	| Usual Ports |
 | :--- | :--- | :--- |
@@ -34,7 +34,7 @@ In order to establish a connection with a Kafka instance, specifying the followi
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `kafka` and this value must not be modified. |
 | `connection.bootstrap_servers ` | A comma-separated list of host:port pairs to use for establishing the initial connection to the Kafka cluster. Example: `broker1.example.com:9092,broker2.example.com:9092` |
 | `connection.security_protocol` | Protocol used to communicate with brokers. (Property security.protocol of Kafka Client). Valid values are: `PLAINTEXT`, `SSL`. (`SASL_PLAINTEXT`, `SASL_SSL` coming soon). Default: `PLAINTEXT` |

@@ -7,7 +7,7 @@
   A user with sufficient [permissions](#p100201 "title: Qlik Sense Enterprise on Windows") is required to establish a connection with Qlik Sense.
 
 - <!-- #p100039 -->
-  Zeenea traffic flows towards the data source must be open. 
+  Actian Data Intelligence traffic flow towards the data source must be open. 
 
 | Target            | Protocol          | Usual Ports       |
 | ----------------- | ----------------- | ----------------- |
@@ -48,7 +48,7 @@ In order to establish a connection with a Qlik Sense instance, specifying the fo
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `qlik-sense` and this value must not be modified. |
 | `connection.url` | Qlik Sense server address (example: `https://hostname.port/virtual-proxy`) |
 | `connection.auth.key` | Header name for authentication |

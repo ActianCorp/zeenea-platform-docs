@@ -2,8 +2,8 @@
 
 ## Prerequisites
 
-* A user with sufficient [permissions](#p100153 "title: OpenAPI") is required to establish a connection with OpenAPI.
-* Zeenea traffic flows towards the data source must be open.
+* A user with sufficient [permissions](#user-permissions) is required to establish a connection with OpenAPI.
+* Actian Data Intelligence traffic flow towards the data source must be open.
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -32,7 +32,7 @@ To establish a connection with a OpenAPI interface, specifying the following par
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `openapi` and this value must not be modified. |
 | `connection.url` | Path to the `swagger.json` local file or an URL to a remote server.<br/><br/>Examples:<br/>`connection.url = "file:///var/path/to/my/swagger.json"`<br/>or<br/>`connection.url = "https://my-api.my-domain.com:8443"` |
 | `connection.swagger.endpoint` | Optional when the `connection.url` contains a local file path.<br/> Mandatory when the `connection.url` is a URL to a server.<br/><br/>Example:<br/>` # Given this URL: "[https://my-api.my-domain.com:8443/api/v1/swagger.json](https://my-api.my-domain.com:8443/api/v1/swagger.json)""` <br/>`# The connector must be configured like :` <br/>`connection.url = "[https://my-api.my-domain.com:8443](https://my-api.my-domain.com:8443)""` <br/>`connection.swagger.endpoint = "/api/v1/swagger.json" ` |

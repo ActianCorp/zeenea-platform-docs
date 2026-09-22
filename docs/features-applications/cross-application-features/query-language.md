@@ -1,16 +1,16 @@
-# Zeenea Query Language
+# Actian Data Intelligence Query Language
 
-The Zeenea query language is a simple text-based query language for filtering data from the search bar. It can be used in the Studio and Explorer.
+The Actian Data Intelligence query language is a simple text-based query language for filtering data from the search bar. It can be used in the Studio and Explorer.
 
 ## Language
 
-### Filter lItems where a field exists
+### Filter Items where a field exists
 
 `Geography: *`
 
 Returns all Items for which the "Geography" property is set.
 
-### Filter lItems that match a value
+### Filter Items that match a value
 
 `Geography: US`
 
@@ -62,7 +62,7 @@ You can also use brackets as abbreviated syntax when querying multiple values fo
 
 ## Supported Fields
 
-### Native Zeenea fields
+### Native Actian Data Intelligence fields
 
 | Field | Description |
 | :--- | :--- |

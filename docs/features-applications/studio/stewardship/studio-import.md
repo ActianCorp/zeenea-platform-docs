@@ -1,6 +1,6 @@
-# Importing a File in Zeenea
+# Importing a File in Studio
 
-The Zeenea File Import feature allows you to bulk-create and update items in the catalog. This feature supports Excel (`.xlsx`) files.
+The Actian Data Intelligence File Import feature allows you to bulk-create and update items in the catalog. This feature supports Excel (`.xlsx`) files.
 
 Once you have gathered and formatted the data you want to add or update, click **Import** and then select a file in the Studio: 
 
@@ -13,7 +13,7 @@ The import file must meet the following criteria:
 * The format must be `.xlsx`.
 * The data you wish to import must be located in the first tab of your Excel file.
 * The file size must be less than `50 Mb`.
-* The file can only contain one type of Item, selected directly from the import menu on the Studio. You can import documentation about any type of Item in Zeenea.
+* The file can only contain one type of Item, selected directly from the import menu on the Studio. You can import documentation about any type of Item in Actian Data Intelligence.
 * The import file must have a header: 
      * The file must contain one column per attribute (property, responsibility, etc.) that you want to modify. Columns that can not be mapped with an attribute of the Item Type metamodel will be ignored during import.
      * The import file must contain a column named **key** to identify the imported Items. For more information, see [Identification Keys](identification-keys.md). 
@@ -39,7 +39,7 @@ File import templates are available by clicking **Download Template**. These tem
 
 You can delete any columns from the template if you do not wish to update their related property.  
 
-During the import, Zeenea will map each column to a property. If even one column cannot be mapped to an existing property, the entire file will be discarded and the following screen will be displayed: 
+During the import, Actian Data Intelligence will map each column to a property. If even one column cannot be mapped to an existing property, the entire file will be discarded and the following screen will be displayed: 
 
    ![](./images/studio-import-failed.png)
 
@@ -60,7 +60,7 @@ Note the following constraints:
 
 ### Duplicated Entries in the File
 
-If the file contains several lines for the same item, Zeenea will treat them sequentially. 
+If the file contains several lines for the same item, Actian Data Intelligence will treat them sequentially. 
 
 ### Duplicated Columns in the File
 
@@ -78,7 +78,7 @@ Multi-valued properties in the file will be merged with the existing ones in the
 
 ### Special Characters and Formulas
 
-Zeenea does not check for special characters. Files containing formulas will thus be treated.
+Actian Data Intelligence does not check for special characters. Files containing formulas will thus be treated.
 
 ## Specific Attributes
 
@@ -88,9 +88,9 @@ By adding a value to the **name** column in the import file, you can set or upda
 
 * If the **name** column exists in the file but is empty, then it is ignored.
 
-* If the **name** column exists in the file, is not empty, and its value is the same as the one in the **source name** column, then the functional name of the Dataset or Field in Zeenea becomes the same as the Source Name (if the source name changes, the functional name will be updated as well). 
+* If the **name** column exists in the file, is not empty, and its value is the same as the one in the **source name** column, then the functional name of the Dataset or Field in Actian Data Intelligence becomes the same as the Source Name (if the source name changes, the functional name will be updated as well). 
 
-* If the **name** column exists in the file, is not empty, and its value is different from the **source name**, then the functional name of the Dataset of Field in Zeenea is updated with the new value. Then, if the source name is updated, the functional name will remain the same. 
+* If the **name** column exists in the file, is not empty, and its value is different from the **source name**, then the functional name of the Dataset of Field in Actian Data Intelligence is updated with the new value. Then, if the source name is updated, the functional name will remain the same. 
 
 ### Description
 
@@ -106,7 +106,7 @@ Descriptions are imported in **raw text** mode only (with no formatting apart fr
 It is, therefore, possible to change a rich description back to a simple description by changing the value of the **description type** column. In this case, any HTML tags in the description will be transcribed as raw text in the applications.
 
 !!! note
-    Only the Zeenea description can be added/updated. The source description collected by the connector can't be edited.
+    Only the Actian Data Intelligence description can be added/updated. The source description collected by the connector can't be edited.
 
 
 ### Summary
@@ -122,7 +122,7 @@ You can use the import file to update values for property types.
 For each value, the header must contain the name of the target property as a column. 
 
 !!! note
-    * Only properties defined in Zeenea can be set or updated. Properties harvested through a connector are ignored.
+    * Only properties defined in Actian Data Intelligence can be set or updated. Properties harvested through a connector are ignored.
     * For `URL` type properties, you can set or update its label by using the following format in the cell: `https://www.mycustomurl.com[label]`
 
 
@@ -136,7 +136,7 @@ For each property, the header must contain its name as a column, as well as the 
 
 You can add in the header as many columns as there are existing responsibilities (that is, Data Owner, Data Steward, etc.). 
 
-For each responsibility, contacts must be identified using their email address, as specified in Zeenea. 
+For each responsibility, contacts must be identified using their email address, as specified in Actian Data Intelligence. 
 
 If you wish to add multiple contacts for one responsibility, you will have to separate them using a semicolon. 
 
@@ -177,7 +177,7 @@ In the case of the Federated Catalog, you can manage the sharing status of an It
 
 ### Error Management
 
-Zeenea processes the file sequentially, reading it line by line. For each line, it attempts to update as many attributes as possible.
+Actian Data Intelligence processes the file sequentially, reading it line by line. For each line, it attempts to update as many attributes as possible.
 
 Once the import is complete, a summary page is displayed:
 
@@ -189,4 +189,4 @@ In case of errors, you can download an `.xlsx` file that details where the error
 
 Cells containing errors are highlighted in orange and a detailed explanation of each error is provided as a comment. 
 
-To resolve the errors, you can correct the highlighted cells and re-import the file into Zeenea. 
+To resolve the errors, you can correct the highlighted cells and re-import the file into Actian Data Intelligence. 

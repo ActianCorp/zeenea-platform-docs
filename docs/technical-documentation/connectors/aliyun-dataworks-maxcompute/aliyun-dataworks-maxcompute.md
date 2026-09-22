@@ -9,7 +9,7 @@
   A user with sufficient [permissions](#p100126 "title: Aliyun DataWorks MaxCompute") is required to establish a connection with Aliyun DataWorks MaxCompute.
 
 - <!-- #p100039 -->
-  Zeenea traffic flows towards the data source must be open.
+  Actian Data Intelligence traffic flow towards the data source must be open.
 
 <!-- #p100054 -->
 !!! note
@@ -41,7 +41,7 @@ In order to establish a connection with a Aliyun DataWorks MaxCompute instance, 
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `aliyun-dataworks-maxcompute` and this value must not be modified. |
 | `connection.region_id` | The region ID. The complete list is available [here](https://www.alibabacloud.com/help/en/acr/user-guide/region-list). |
 | `connection.access_key_id` | The user's access key id.<br/><br/>This parameter is optional, the key can be provided through the environment variable `ALIBABA_CLOUD_ACCESS_KEY_ID`.<br/><br/>If both are defined, the environment variable will be used. |
@@ -151,7 +151,7 @@ Dataset field.
 ### Data Processes
 
 <!-- #p100435 -->
-To represent the data flow between tables, a Zeenea Data Process will be created for a table and its ancestors.
+To represent the data flow between tables, an Actian Data Intelligence Data Process will be created for a table and its ancestors.
 
 - <!-- #p100447 -->
   **Name**: `import dataset_name`

@@ -1,6 +1,6 @@
 # Universal Filters
 
-This document describes Zeenea's scanner universal filtering system, a powerful tool designed to give you precise control over which assets are imported from your data sources.
+This document describes Actian Data Intelligence's scanner universal filtering system, a powerful tool designed to give you precise control over which assets are imported from your data sources.
 
 With filters, you can create a set of rules to include or exclude specific items based on their names, ids, or other attributes. This is the perfect way to keep your data catalog clean and relevant, for example by:
 
@@ -15,8 +15,8 @@ This feature is available for **Scanner version 79 and above**.
 
 Understanding two core concepts is key to mastering filters:
 
-1. **Rules are Processed in Order:** The filter is a list of rules that you define. When scanning a source, Zeenea checks an item (like a table or a report) against your rules from top to bottom.
-2. **The First Match Wins:** As soon as an item matches a rule's conditions, Zeenea applies the corresponding `ACCEPT` or `REJECT` action and immediately stops processing. No further rules are checked for that item.
+1. **Rules are Processed in Order:** The filter is a list of rules that you define. When scanning a source, Actian Data Intelligence checks an item (like a table or a report) against your rules from top to bottom.
+2. **The First Match Wins:** As soon as an item matches a rule's conditions, Actian Data Intelligence applies the corresponding `ACCEPT` or `REJECT` action and immediately stops processing. No further rules are checked for that item.
 
 If an item goes through the entire list without matching any rule, it will be accepted by default. For this reason, we strongly recommend that your **last rule is a "catch-all" reject rule** to prevent unwanted assets from being imported.
 
@@ -63,7 +63,7 @@ The attributes you can use as keys inside the `rules` block (for example, `schem
 The `rules` block is where you set the conditions based on an item's attributes (like `schema`, `table`, `workspace_name`, etc.). You can match values in three powerful ways.
 
 1. **Exact Matching**<br />
-     This is the default. If you provide a value without any special characters, Zeenea will look for an exact match.
+     This is the default. If you provide a value without any special characters, Actian Data Intelligence will look for an exact match.
 
      **Example:**<br />
      This condition only matches if the schema is exactly `production`.

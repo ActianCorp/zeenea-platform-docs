@@ -70,7 +70,8 @@ There are different types of properties (Short Text, URL, Number, etc.). This al
 ### Options
 
 #### Feed Settings
-* **External sources and Zeenea interface**: The property can be modified through Studio and the API.
+
+* **External sources and Actian Data Intelligence interface**: The property can be modified through Studio and the API.
 * **External sources only**: The property can be modified through the API only.
 
 #### Search Settings

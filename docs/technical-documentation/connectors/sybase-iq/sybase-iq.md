@@ -5,7 +5,7 @@
 * **Java version:** Validated on Java 11 only.
 
 * In order to establish a connection with Sybase IQ, a user with sufficient [permissions](#user-permissions) is required.
-* Zeenea traffic flows towards Sybase IQ must be open. 
+* Actian Data Intelligence traffic flow towards Sybase IQ must be open. 
 
 !!! warning "Important"
     The Sybase IQ driver is not delivered with the connector with scanner version 34 and later. Download the Sybase IQ driver related to your Sybase IQ instance and move it into the /lib-ext folder of your scanner. You will find the driver into sources provided by the editor on their website: [http://www.sybase.com/products/allproductsa-z/softwaredeveloperkit/jconnect](http://www.sybase.com/products/allproductsa-z/softwaredeveloperkit/jconnect)
@@ -38,7 +38,7 @@ In order to establish a connection with SybaseIQ, specifying the following param
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `SybaseIQ` and this value must not be modified. |
 | `connection.hostname` | Database address |
 | `connection.database` | Database name |

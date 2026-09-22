@@ -31,7 +31,7 @@ In order to establish a connection with a DBT Cloud instance, the following para
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `dbt-cloud` and this value must not be modified. |
 | `connection.account_prefix` | DBT Cloud account prefix (when environment are hosted by DBT Cloud : https://[account_prefix].us1.dbt.com) |
 | `connection.token` | DBT Cloud personal access token |
@@ -44,7 +44,7 @@ In order to collect metadata, the running user's permissions must allow them to 
 
 ## Data Extraction
 
-The DBT Cloud connector feeds Zeenea Database with Data Processes. Like other Data Process connectors, it has a single job "synchronize" that discovers all items of interest and creates or updates their documentation in the catalog. DBT Cloud items of interest are Jobs and Runs. So, for each Runs from a Job in DBT Cloud, multiple Data Processes should be created in Zeenea.
+The DBT Cloud connector feeds Actian Data Intelligence Database with Data Processes. Like other Data Process connectors, it has a single job "synchronize" that discovers all items of interest and creates or updates their documentation in the catalog. DBT Cloud items of interest are Jobs and Runs. So, for each Runs from a Job in DBT Cloud, multiple Data Processes should be created in Actian Data Intelligence.
 
 To extract information, the connector runs REST requests on following endpoints:
 
@@ -54,7 +54,7 @@ To extract information, the connector runs REST requests on following endpoints:
 
 ## Synchronization
 
-This connector will harvest all job processes identified in the DBT Cloud instance for each account and latest run, and automatically represent them in Zeenea.
+This connector will harvest all job processes identified in the DBT Cloud instance for each account and latest run, and automatically represent them in Actian Data Intelligence.
 
 ## Lineage
 

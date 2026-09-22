@@ -29,19 +29,19 @@ Here is a list of all the services and which are implemented in the preview.
 | Contact | contact | Ok | Ok |
 | Datasource | datasource | Ok | N/A |
 | Category | category | Ok | Ok |
-| Custom Item Type | Code of the custom item as defined in Zeenea metamodel | Ok | Ok |
-| Glossary Item Type | Code of the glossary item as defined in Zeenea metamodel | Ok | Ok |
+| Custom Item Type | Code of the custom item as defined in Actian Data Intelligence metamodel | Ok | Ok |
+| Glossary Item Type | Code of the glossary item as defined in Actian Data Intelligence metamodel | Ok | Ok |
 
 
 ## Basic Attributes
 
 | Attribute | Available on | Item type(s) | Read | Write | Description | Comment |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| id | String | Any type | Ok | N/A | Zeenea internal identifier of the Item | |
+| id | String | Any type | Ok | N/A | Actian Data Intelligence internal identifier of the Item | |
 | key | String | Any type | Ok | Ok | Forgeable unique identifier of the Item | key = email for contacts |
-| name | String | Any type | Ok | Ok | Name of the Item in Zeenea | Concatenation of firstName and lastName for contacts |
-| description | String | Any type | Ok | Ok | Description of the Item in Zeenea | |
-| lastCatalogMetadataUpdate | Date | Any type | Ok | N/A | Date of the last modification in Zeenea | |
+| name | String | Any type | Ok | Ok | Name of the Item in Actian Data Intelligence | Concatenation of firstName and lastName for contacts |
+| description | String | Any type | Ok | Ok | Description of the Item in Actian Data Intelligence | |
+| lastCatalogMetadataUpdate | Date | Any type | Ok | N/A | Date of the last modification in Actian Data Intelligence | |
 | type | String | Any type | Ok | N/A | Item type value as defined above | |
 | completion | Number | Any type | Ok | N/A | Completion rate of the documentation of the Item | Not implemented for contacts and data sources |
 

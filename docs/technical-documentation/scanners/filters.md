@@ -1,8 +1,8 @@
 # Filters
 
-Starting from Scanner v47, Zeenea has introduced advanced and uniform filtering capabilities.
+Starting from Scanner v47, Actian Data Intelligence has introduced advanced and uniform filtering capabilities.
 
-This filter will let you keep only a subset of the elements Zeenea can retrieve, mainly from the inventory, but it can also be used elsewhere, including for metadata that could (or not) be synchronized (Snowflake & BigQuery).
+This filter will let you keep only a subset of the elements Actian Data Intelligence can retrieve, mainly from the inventory, but it can also be used elsewhere, including for metadata that could (or not) be synchronized (Snowflake & BigQuery).
 
 Filters syntax is based on a simple language with expressions and operators to describe rather easily your filtering rules.
 

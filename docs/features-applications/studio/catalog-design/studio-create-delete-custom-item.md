@@ -1,6 +1,6 @@
 # Creating or Deleting a Custom Item Type
 
-In addition to the native item types supported by the catalog, Zeenea allows you to configure custom item types to categorize, contextualize, and enrich the documentation of your data assets.
+In addition to the native item types supported by the catalog, Actian Data Intelligence allows you to configure custom item types to categorize, contextualize, and enrich the documentation of your data assets.
 
 Indeed, Custom Item Types allow you to enrich the metamodel by representing technical or structural concepts that are specific to your company (e.g., applications, entities, processes).
 
@@ -19,7 +19,7 @@ These types of items can be used to create links between them and any other item
 
 Fill in the following information:
 
-* **Name**: This name will be used in Zeenea applications to designate this new type of item
+* **Name**: This name will be used in Actian Data Intelligence applications to designate this new type of item
 * **Code**: This mandatory code allows this Item Type to be uniquely identified. It is used by scanners to synchronize this type of Item from a repository. It is also used as a part of the Item identification keys
 * **Description**: Displayed for Studio users
 * **Icon**: The selected icon will be used for all items created for this type
@@ -29,7 +29,7 @@ Fill in the following information:
 
 You can create your custom items manually or synchronize/import them automatically from your repository from a connection:
 
-* External sources and Zeenea interface: Choose this option if you want to allow your objects to be created from the Studio interface ("New Item" function or Excel import) and from external systems (API and scanner).
+* External sources and Actian Data Intelligence interface: Choose this option if you want to allow your objects to be created from the Studio interface ("New Item" function or Excel import) and from external systems (API and scanner).
 * External sources only: Choose this option if you want to restrict the creation of objects to external sources (API and scanner).
 
 ## How to modify a custom item type

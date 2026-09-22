@@ -306,7 +306,7 @@ The comment also lists the unmet requirements. All other fields in the same row 
 
 You can also create items at any stage, not just the first stage.
 
-For more information about import, see [Importing a File in Zeenea](../studio/stewardship/studio-import.md).
+For more information about import, see [Importing a File in Studio](../studio/stewardship/studio-import.md).
 
 For more information about export, see [Exporting Search Results in Studio](../studio/stewardship/studio-search-export.md).
 
