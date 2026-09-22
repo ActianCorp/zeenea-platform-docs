@@ -43,6 +43,28 @@ Only users who have access to the contract can participate in discussions.
 !!! warning "Important"
     Contract Owners must explicitly grant Contributor access before a user can review contracts, submit suggestions, or participate in discussions.
 
+## Suggestion Email Notifications
+
+DCB sends digest emails to Contract Owners when Contributor suggestions are awaiting review. Suggestions are collected for 24 hours before the email is sent.
+
+When the first suggestion is submitted for a contract, DCB starts a 24-hour collection period for the Contract Owner. Any additional suggestions submitted for that owner during this period are included in the same digest email. The collection period does not reset when new suggestions are submitted.
+
+!!! note
+    Suggestions that are accepted or declined before the digest email is sent are excluded.
+
+At the end of the collection period, DCB sends the Contract Owner a digest email summarizing all pending suggestions submitted during that period.
+
+The digest email groups suggestions by contract and includes:
+
+* Contract name
+* Contract version
+* Contributor name
+* Affected field or section
+* Summary of the proposed change
+* A link to review the suggestions in DCB
+
+After the digest email is sent, DCB starts a new 24-hour collection period when the next suggestion is submitted.
+
 ## Process a Suggestion
 
 Contract Owners review incoming suggestions and determine how they should be handled.

@@ -16,16 +16,16 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 | `name` | Yes | No | Name of the data contract. |
 | `dataProduct` | No | No | Name of the data product. |
 | `domain` | Yes | No | Name of the logical data domain. |
-| `tenant` | No | No | Property the data is primarily associated with (case insensitive). |
+| `tenant` | Yes | No | Property the data is primarily associated with (case insensitive). |
 | `description` | Yes | No | Object containing the description. |
 | `description.purpose` | Yes | No | Intended purpose of the provided data. |
 | `description.limitations` | Yes | No | Technical, compliance, and legal limitations for data use. |
 | `description.usage` | Yes | No | Recommended usage of the data. |
 | `description.authoritativeDefinitions` | Yes | No | Links to privacy statements, terms and conditions, or license agreements. |
-| `description.customProperties` | No | No | Custom properties not covered by the standard. |
-| `authoritativeDefinitions` | No | No | Links to sources with more details on the data contract. |
+| `description.customProperties` | Yes | No | Custom properties not covered by the standard. |
+| `authoritativeDefinitions` | Yes | No | Links to sources with more details on the data contract. |
 | `tags` | Yes | No | A list of tags for categorizing the contract. |
-| `customProperties` | No | No | Top-level custom key/value pairs with organization-specific metadata. |
+| `customProperties` | Yes | No | Top-level custom key/value pairs with organization-specific metadata. |
 
 ## Schema
 
@@ -39,8 +39,8 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 | `schema[].description` | Yes | No | Human-readable description of the schema object. |
 | `schema[].quality` | Yes | No | Data quality rules associated with the object (for example, rowCount, compound duplicateValues). |
 | `schema[].businessName` | Yes | No | Business-facing name of the schema object. |
-| `schema[].dataGranularityDescription` | No | No | Granular level of data in this object. |
-| `schema[].relationships` | No | No | List of relationships to other properties. Supports composite keys and dot-notation references. |
+| `schema[].dataGranularityDescription` | Yes | No | Granular level of data in this object. |
+| `schema[].relationships` | Yes | No | List of relationships to other properties. Supports composite keys and dot-notation references. |
 | `schema[].tags` | Yes | No | Tags used to categorize the object. |
 | `schema[].authoritativeDefinitions` | Yes | No | Links to authoritative sources for the object. |
 | `schema[].customProperties` | No | No | Custom properties for the schema object. |
@@ -64,31 +64,31 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 | `schema[].properties[].examples` | Yes | No | Sample values for the property. |
 | `schema[].properties[].items` | Yes | No | Describes items contained within an array property (only when logicalType is array). |
 | `schema[].properties[].relationships` | Yes | No | Foreign key relationships to other properties. The from field is implicit at property level. |
-| `schema[].properties[].logicalTypeOptions` | No | No | Additional metadata to further describe the logical type. See sub-properties below. |
-| `schema[].properties[].logicalTypeOptions.format` | No | No | Format for dates (JDK DateTimeFormatter) or string format hint. |
-| `schema[].properties[].logicalTypeOptions.minimum` | No | No | Minimum value (inclusive) for number/integer, or minimum date string. |
-| `schema[].properties[].logicalTypeOptions.maximum` | No | No | Maximum value (inclusive) for number/integer, or maximum date string. |
-| `schema[].properties[].logicalTypeOptions.exclusiveMinimum` | No | No | All values must be strictly greater than this (number/integer and date types). |
-| `schema[].properties[].logicalTypeOptions.exclusiveMaximum` | No | No | All values must be strictly less than this (number/integer and date types). |
-| `schema[].properties[].logicalTypeOptions.multipleOf` | No | No | Values must be a multiple of this number (integer/number only). |
-| `schema[].properties[].logicalTypeOptions.minLength` | No | No | Minimum string length. |
-| `schema[].properties[].logicalTypeOptions.maxLength` | No | No | Maximum string length. |
-| `schema[].properties[].logicalTypeOptions.pattern` | No | No | Regex pattern for valid string values (ECMA-262 syntax). |
-| `schema[].properties[].logicalTypeOptions.timezone` | No | No | Whether the timestamp/time value encodes timezone info. |
-| `schema[].properties[].logicalTypeOptions.defaultTimezone` | No | No | Default timezone when not embedded in the value. |
-| `schema[].properties[].logicalTypeOptions.minItems` | No | No | Minimum number of items in an array. |
-| `schema[].properties[].logicalTypeOptions.maxItems` | No | No | Maximum number of items in an array. |
-| `schema[].properties[].logicalTypeOptions.uniqueItems` | No | No | If true, all items in the array must be unique. |
-| `schema[].properties[].logicalTypeOptions.minProperties` | No | No | Minimum number of properties in an object. |
-| `schema[].properties[].logicalTypeOptions.maxProperties` | No | No | Maximum number of properties in an object. |
-| `schema[].properties[].logicalTypeOptions.required` | No | No | Property names that must be present in the object. |
-| `schema[].properties[].encryptedName` | No | No | Name of the property in the dataset that holds the encrypted value of this property. |
+| `schema[].properties[].logicalTypeOptions` | Yes | No | Additional metadata to further describe the logical type. See sub-properties below. |
+| `schema[].properties[].logicalTypeOptions.format` | Yes | No | Format for dates (JDK DateTimeFormatter) or string format hint. |
+| `schema[].properties[].logicalTypeOptions.minimum` | Yes | No | Minimum value (inclusive) for number/integer, or minimum date string. |
+| `schema[].properties[].logicalTypeOptions.maximum` | Yes | No | Maximum value (inclusive) for number/integer, or maximum date string. |
+| `schema[].properties[].logicalTypeOptions.exclusiveMinimum` | Yes | No | All values must be strictly greater than this (number/integer and date types). |
+| `schema[].properties[].logicalTypeOptions.exclusiveMaximum` | Yes | No | All values must be strictly less than this (number/integer and date types). |
+| `schema[].properties[].logicalTypeOptions.multipleOf` | Yes | No | Values must be a multiple of this number (integer/number only). |
+| `schema[].properties[].logicalTypeOptions.minLength` | Yes | No | Minimum string length. |
+| `schema[].properties[].logicalTypeOptions.maxLength` | Yes | No | Maximum string length. |
+| `schema[].properties[].logicalTypeOptions.pattern` | Yes | No | Regex pattern for valid string values (ECMA-262 syntax). |
+| `schema[].properties[].logicalTypeOptions.timezone` | Yes | No | Whether the timestamp/time value encodes timezone info. |
+| `schema[].properties[].logicalTypeOptions.defaultTimezone` | Yes | No | Default timezone when not embedded in the value. |
+| `schema[].properties[].logicalTypeOptions.minItems` | Yes | No | Minimum number of items in an array. |
+| `schema[].properties[].logicalTypeOptions.maxItems` | Yes | No | Maximum number of items in an array. |
+| `schema[].properties[].logicalTypeOptions.uniqueItems` | Yes | No | If true, all items in the array must be unique. |
+| `schema[].properties[].logicalTypeOptions.minProperties` | Yes | No | Minimum number of properties in an object. |
+| `schema[].properties[].logicalTypeOptions.maxProperties` | Yes | No | Maximum number of properties in an object. |
+| `schema[].properties[].logicalTypeOptions.required` | Yes | No | Property names that must be present in the object. |
+| `schema[].properties[].encryptedName` | Yes | No | Name of the property in the dataset that holds the encrypted value of this property. |
 | `schema[].properties[].transformSourceObjects` | No | No | List of source objects used in the property's transformation. |
 | `schema[].properties[].transformLogic` | No | No | SQL or code logic used in the property's transformation. |
 | `schema[].properties[].transformDescription` | No | No | Plain-language description of the transform logic. |
 | `schema[].properties[].tags` | Yes | No | Tags used to categorize the property. |
 | `schema[].properties[].authoritativeDefinitions` | Yes | No | Links to authoritative sources for the property. |
-| `schema[].properties[].customProperties` | No | No | Custom properties for the property. |
+| `schema[].properties[].customProperties` | Yes | No | Custom properties for the property. |
 
 
 ## Service-level Agreement (SLA)
@@ -100,12 +100,12 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 | `slaProperties[].value` | Yes | Yes | Service-level target value. |
 | `slaProperties[].unit` | Yes | No | Unit for the SLA value (ISO standard). Valid values are `d / day / days`, `y / yr / years`, `h / hr / hours` |
 | `slaProperties[].element` | Yes | No | Object or property path to which the SLA applies. |
-| `slaProperties[].id` | No | No | Stable unique identifier for the SLA entry. |
-| `slaProperties[].valueExt` | No | No | Extended SLA value when the property requires two values (for example, a time window). |
+| `slaProperties[].id` | Yes | No | Stable unique identifier for the SLA entry. |
+| `slaProperties[].valueExt` | Yes | No | Extended SLA value when the property requires two values (for example, a time window). |
 | `slaProperties[].driver` | Yes | No | Importance driver for the SLA. Valid values are `regulatory`, `analytics`, and `operational`. |
 | `slaProperties[].description` | Yes | No | Human-readable description of the SLA entry. |
-| `slaProperties[].scheduler` | No | No | Scheduler name for automated SLA checks. |
-| `slaProperties[].schedule` | No | No | Scheduler configuration for the SLA check. |
+| `slaProperties[].scheduler` | Yes | No | Scheduler name for automated SLA checks. |
+| `slaProperties[].schedule` | Yes | No | Scheduler configuration for the SLA check. |
 
 
 ## Roles
@@ -115,11 +115,11 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 | `roles` | Yes | No | Array of IAM roles that a consumer may need to access the dataset. |
 | `roles[].role` | Yes | Yes | Name of the IAM role providing access. |
 | `roles[].access` | Yes | No | Type of access provided by the IAM role. |
-| `roles[].firstLevelApprovers` | No | No | Name(s) of first-level approver(s) for granting this role. |
-| `roles[].secondLevelApprovers` | No | No | Name(s) of second-level approver(s) for granting this role. |
-| `roles[].id` | No | No | Stable unique identifier for the role entry. |
+| `roles[].firstLevelApprovers` | Yes | No | Name(s) of first-level approver(s) for granting this role. |
+| `roles[].secondLevelApprovers` | Yes | No | Name(s) of second-level approver(s) for granting this role. |
+| `roles[].id` | Yes | No | Stable unique identifier for the role entry. |
 | `roles[].description` | Yes | No | Description of the IAM role and its permissions. |
-| `roles[].customProperties` | No | No | Custom properties for the role. |
+| `roles[].customProperties` | Yes | No | Custom properties for the role. |
 
 ## Servers
 
@@ -156,31 +156,31 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 
 | Property | Mapped | Required | Description |
 | :---- | :---- | :---- | :---- |
-| `price` | No | No | Object containing pricing information for data product subscribers. |
-| `price.priceAmount` | No | No | Subscription price per unit of measure in priceUnit. |
-| `price.priceCurrency` | No | No | Currency of the subscription price. |
-| `price.priceUnit` | No | No | Unit of measure for pricing calculation. |
+| `price` | Yes | No | Object containing pricing information for data product subscribers. |
+| `price.priceAmount` | Yes | No | Subscription price per unit of measure in priceUnit. |
+| `price.priceCurrency` | Yes | No | Currency of the subscription price. |
+| `price.priceUnit` | Yes | No | Unit of measure for pricing calculation. |
 
 ## Team
 
 | Property | Mapped | Required | Description |
 | :---- | :---- | :---- | :---- |
-| `team` | No | No | Object describing the team responsible for this data contract. |
-| `team.members` | No | No | List of team members. |
-| `team.members[].username` | No | Yes | The member's username or email address. |
-| `team.members[].role` | No | No | The member's job role (no limit on values). |
-| `team.id` | No | No | Unique identifier for the team. |
-| `team.name` | No | No | Team name. |
-| `team.description` | No | No | Team description. |
-| `team.members[].id` | No | No | Unique identifier for the team member entry. |
-| `team.members[].name` | No | No | The member's full name. |
-| `team.members[].description` | No | No | Description of the member's responsibilities. |
-| `team.members[].dateIn` | No | No | Date when the user joined the team. |
-| `team.members[].dateOut` | No | No | Date when the user ceased to be part of the team. |
-| `team.members[].replacedByUsername` | No | No | Username of the member who replaced this person. |
-| `team.members[].tags` | No | No | Tags for the team member. |
-| `team.members[].authoritativeDefinitions` | No | No | Authoritative definitions for the team member. |
-| `team.members[].customProperties` | No | No | Custom properties for the team member. |
-| `team.tags` | No | No | Tags for the team. |
-| `team.authoritativeDefinitions` | No | No | Authoritative definitions for the team. |
-| `team.customProperties` | No | No | Custom properties for the team. |
+| `team` | Yes | No | Object describing the team responsible for this data contract. |
+| `team.members` | Yes | No | List of team members. |
+| `team.members[].username` | Yes | Yes | The member's username or email address. |
+| `team.members[].role` | Yes | No | The member's job role (no limit on values). |
+| `team.id` | Yes | No | Unique identifier for the team. |
+| `team.name` | Yes | No | Team name. |
+| `team.description` | Yes | No | Team description. |
+| `team.members[].id` | Yes | No | Unique identifier for the team member entry. |
+| `team.members[].name` | Yes | No | The member's full name. |
+| `team.members[].description` | Yes | No | Description of the member's responsibilities. |
+| `team.members[].dateIn` | Yes | No | Date when the user joined the team. |
+| `team.members[].dateOut` | Yes | No | Date when the user ceased to be part of the team. |
+| `team.members[].replacedByUsername` | Yes | No | Username of the member who replaced this person. |
+| `team.members[].tags` | Yes | No | Tags for the team member. |
+| `team.members[].authoritativeDefinitions` | Yes | No | Authoritative definitions for the team member. |
+| `team.members[].customProperties` | Yes | No | Custom properties for the team member. |
+| `team.tags` | Yes | No | Tags for the team. |
+| `team.authoritativeDefinitions` | Yes | No | Authoritative definitions for the team. |
+| `team.customProperties` | Yes | No | Custom properties for the team. |

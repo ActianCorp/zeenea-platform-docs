@@ -5,7 +5,7 @@ search:
 
 # Create and Manage Contracts
 
-## Create a Contract
+## Create Contract
 
 ### Create a Contract from Scratch
 
@@ -65,6 +65,63 @@ A contract imported as **Draft** remains editable by its **Contract Owner**. A c
 
 If an imported identifier is not a valid UUID, DCB imports the contract with a blocking error and proposes a valid UUID. The Contract Owner must accept the proposed UUID or provide another valid UUID.
 
+
+### Bulk Import YAML Contracts
+
+You can use this method to import multiple existing ODCS YAML contracts in a single operation.
+
+1. Select **Create Contract**.
+
+     The contract creation window opens.
+
+2. Click **Continue with bulk import**.
+
+     The **Bulk import from YAML** window opens.
+
+3. Drag and drop YAML files into the upload area or click the upload area to browse for files.
+
+    !!! note
+        Bulk import supports only `.yaml` and `.yml` files. Each uploaded file must not exceed 1 MB in size.
+
+4. Review the uploaded files.
+
+     DCB validates each uploaded file and displays the upload status.
+
+5. Click **Review files**.
+
+     The **Review this batch** window opens and displays the contracts detected in the uploaded files.
+
+6. Review the detected contracts.
+
+     The review window displays the following information for each file:
+
+     * File name
+     * Contract name
+     * Version
+     * Status
+
+7. Click **Confirm import**.
+
+     DCB imports all valid contracts and displays the import results.
+
+8. Review the import results.
+
+     The Import results window displays the status of each uploaded file.
+
+     * **Imported**: The contract was successfully created.
+     * **Skipped**: The contract was not imported. The reason is displayed in the results table.
+
+9. Select one of the following actions:
+
+      * **Open** to open an imported contract.
+      * **Import more** to start another bulk import operation.
+      * **Back to contracts** to return to the contract list.
+
+
+!!! warning "Important"
+
+    Before importing contracts, DCB checks for duplicate contracts within the uploaded batch and for contracts that already exist in DCB. Contracts that fail either check are skipped. The review and import results steps display each skipped contract and the reason it was skipped.
+
 ## Configure Contract Information
 
 You can use the following contract form sections to define contract information.
@@ -78,31 +135,19 @@ Provide the following information:
 * **Contract name:** A unique name used to identify the contract.
 * **Domain:** The business domain or area associated with the contract.
 * **ID:** A unique identifier assigned to the contract. The ID is automatically generated when the contract is created and cannot be modified.
+* **Tenant:** The property with which the data is primarily associated.
 * **Version:** The version of the contract. The version is automatically generated when the contract is created and is updated through contract versioning actions.
 * **Business purpose:** A description of the business purpose and scope of the contract.
 * **Tags:** Tags used to classify and organize the contract.
+* **Additional context:** Use the Additional context section to provide supporting information about how the data should be used and governed. For each contract, you can specify:
+     
+     * **Usage:** Describe the expected usage patterns or supported use cases.
+     * **Limitations:** Describe any known constraints or restrictions associated with the contract, such as data quality, compliance, retention, or latency considerations.
+     * **Authoritative definition:** Links to privacy statements, terms and conditions, license agreements, or other sources that provide additional information about the contract.
+     * **Custom properties:** Custom properties that are not covered by the standard.
 
-**Additional context**
-
-Use the Additional context section to provide supporting information about how the data should be used and governed.
-
-For each contract, you can specify:
-
-* **Usage:** Describe the intended usage patterns or supported use cases.
-* **Limitations:** Describe any known constraints or restrictions associated with the contract, such as data retention requirements, latency constraints, compliance restrictions, or data quality considerations.
-
-**Reference links**
-
-Use **Reference links** to provide links to documents associated with the contract.
-
-To add a reference link:
-
-1. Select **Add reference link**.
-2. Provide the following information:
-   
-     * **URL:** The URL of the reference document.
-     * **Type:** The type of reference document. Supported values include Privacy statement, Terms and conditions, and License agreement.
-     * **Description:** An optional description explaining the purpose of the reference link.
+* **Authoritative definition:** Links to privacy statements, terms and conditions, license agreements, or other sources that provide additional information about the contract.
+* **Custom properties:** Top-level custom key-value pairs for organization-specific metadata.
 
 ### Schema
 
@@ -121,26 +166,38 @@ To add a table:
 
 You can select the **Properties** button for a table to define additional metadata.
 
-* **Business name:** Provide a business-friendly name for the table.
-* **Tags:** Specify tags that can be used to classify and organize the table.
-* **Quality rules:** Use the Quality rules section to define expectations that apply to the table as a whole. To add a quality rule:
+Provide the following information:
 
-     1. Select **Add quality rule**.
-     2. Enter a rule name.
-     3. Provide a description of the quality expectation.
+* **Business name:** A business-friendly name for the table.
+* **Data granularity:** Describe the grain of one row in the table.
+* **Tags:** Specify tags that can be used to classify and organize the table.
+* **Quality rules:** Define data quality expectations that apply to the table as a whole. You can add up to three quality rules and specify a rule name, rule type, data quality dimension, and description. Supported rule types include:
+
+     * **Text:** Define the quality expectation in natural language.
+     * **SQL:** Define the quality expectation using a SQL expression.
 
     !!! note
         Table-level quality rules apply to the dataset as a whole rather than to individual fields.
 
-    !!! warning "Important"
-        Only text-based quality rules are supported in the current release.
+* **Authoritative definition:** Add relevant Data Intelligence Platform catalog assets or supporting documentation with the table.
 
-* **Reference links:** Use Reference links to associate the table with related catalog assets or supporting documentation. To add a reference link:
+Click **Save** to apply the changes.
 
-     1. Select **Add reference link**.
-     2. Select a catalog asset.
-     3. Review the generated URL and link type.
-     4. Optionally, provide a description.
+**Table relationships:** 
+
+You can define relationships between tables at the table level. Table relationships support composite foreign keys and many-to-many associations. For each relationship, specify:
+
+* **Linked table:** The table associated with the relationship.
+* **Relationship type:** The type of relationship to create. Supported values include:
+
+     * **Composite foreign key:** Defines a foreign key relationship using two or more source columns and matching referenced columns.
+     
+    !!! note
+         Composite foreign key relationships require at least two source columns and matching referenced columns with the same count and order.
+     
+     * **Many-to-many:** Defines a junction or bridge table relationship between tables.
+ 
+          * **Join columns:** The columns used to establish the relationship between the tables.
 
 **Delete Table**
 
@@ -172,7 +229,7 @@ When a field is created, it includes the following attributes:
      * **List:** Multiple values.
      * **Yes / No:** Boolean values.
 
-* **DB type:** The database-specific type of the field. Supported types include VARCHAR, BOOLEAN, BIT, and TINYINT(1).
+* **DB type:** The database-specific type of the field. Supported types include VARCHAR, TEXT, CHAR, NVARCHAR, CLOB, and LONGTEXT.
 * **Rules:** Constraints and classifications applied to the field. Supported rules include:
    
      * **PK:** Identifies the field as a primary key.
@@ -187,26 +244,23 @@ When a field is created, it includes the following attributes:
 
 You can select the **Properties** button for a field to define additional metadata.
 
-* **Description:** Provide a business description that explains the meaning and purpose of the field.
+* **Description:** A business description that explains the meaning and purpose of the field.
 * **Examples:** Provide one example value per line.
 * **Tags:** Specify tags that can be used to classify and organize the field.
+* **Logical type options:** Additional configuration options associated with the selected logical data type, when applicable.
+* **Encrypted name:** The name of the property in the dataset that holds the encrypted value of the field.
+* **Custom properties:** Additional ODCS custom properties for this field.
 * **Foreign key:** Use the Foreign key section to define relationships between fields. For each foreign key, specify:
 
      * **Referenced table:** The table referenced by the foreign key.
      * **Referenced field:** The field referenced by the foreign key.
 
-* **Quality rules:** Use the **Quality rules** section to document data quality expectations for the field. You can define up to three rules in **text format only**. To add a quality rule:
+* **Quality rules:** Define data quality expectations that apply to the field. You can add up to three quality rules and specify a rule name, rule type, data quality dimension, and description. Supported rule types include:
 
-     1. Select **Add quality rule**.
-     2. Enter a rule name.
-     3. Provide a rule description of the quality expectation.
+     * **Text:** Define the quality expectation in natural language.
+     * **SQL:** Define the quality expectation using a SQL expression.
 
-* **Reference links:** Use **Reference links** to associate relevant Data Intelligence Platform catalog assets or supporting documentation with the field. To add a reference link:
-
-     1. Select **Add reference link**.
-     2. Select a catalog asset.
-     3. Review the generated URL and link type.
-     4. Optionally, provide a description.
+* **Authoritative definition:** Add relevant Data Intelligence Platform catalog assets or supporting documentation with the field.
 
 Click **Save** to save the field properties.
 
@@ -214,24 +268,66 @@ Click **Save** to save the field properties.
 
 To delete a field, click the **Delete** button next to the field.
 
+### Team
+
+Use the Team section to define the people and metadata associated with the contract team.
+
+Provide the following information:
+
+* **Team name:** The name of the team responsible for the contract.
+* **Team identifier:** A unique identifier for the team.
+* **Description:** An optional description of the team.
+* **Team members:** Add the people responsible for the contract. For each team member, you can specify:
+
+     * **Username:** The member's username or email address.
+     * **Role:** The member's job role.
+     * **Display name:** The member's full name.
+     * **Replaced by:** The username of the member who replaced this person.
+     * **Date in:** The date when the member joined the team.
+     * **Date out:** The date when the member left the team.
+     * **Description:** A description of the member's responsibilities.
+     * **Tags:** Tags used to classify and organize the team member.
+     * **Authoritative definition:** Authoritative definitions for the team member.
+     * **Custom properties:** Custom properties for the team member.
+
+* **Tags:** Use tags to classify and organize the team.
+* **Authoritative definition:** Authoritative definitions for the team.
+* **Custom properties:** Custom properties for the team.
+
+### Pricing
+
+Use the Pricing section to define subscription pricing information for the contract.
+
+Provide the following information:
+
+* **Price amount:** The amount charged for the contract subscription.
+* **Currency:** The currency in which the price is charged.
+* **Price unit:** The unit that determines how the subscription price is applied based on data consumption, usage, or time.
+
 ### Data Access
 
 Use the Data access section to define data consumer roles and the level of access they require for the contract.
 
 **Data access roles**
 
-To add a data access role:
+Provide the following information:
 
-1. Select **Add access role**.
-2. Enter a role name.
-3. Select an access level.
-   
+* **Role:** The name of the data access role.
+* **Access:** The level of access granted to consumers. Supported values include:
+
      * **Read:** Allows consumers to view data.
      * **Write:** Allows consumers to create and update data.
      * **Custom:** Allows you to define a custom access level that does not fit the standard read or write categories.
 
-4. Optionally, provide a description.
-5. Repeat the process to add additional roles.
+* **Description:** An optional description of the role and its intended usage.
+* **ID:** A unique identifier for the access role.
+* **First level approvers:** Approvers responsible for the first level of access approval.
+* **Second level approvers:** Approvers responsible for the second level of access approval.
+
+    !!! note
+        Approver information is provided as declarative metadata only. DCB does not execute an approval workflow. Multiple approvers are stored as a comma-separated list in the generated YAML.
+
+* **Custom properties:** Custom properties for the access role.
 
 **Access request policy**
 
@@ -249,47 +345,48 @@ Use the Service levels section to define service-level commitments and operation
 
 Service levels are exported as ODCS `slaProperties`. Complete service level entries are included in the generated YAML.
 
-To add a service level:
+Provide the following information:
 
-1. Select **Add service level**.
-2. Provide the following information:
-   
-     * **Type:** Select one of the supported service level types.
+* **Type:** Select one of the supported service level types.
         
-          * Latency
-          * Retention
-          * Frequency
-          * Availability
-          * Throughput
-          * Error rate
-          * General availability
-          * End of support
-          * End of life
-          * Time of availability
-          * Time to detect
-          * Time to notify
-          * Time to repair
+     * Latency
+     * Retention
+     * Frequency
+     * Availability
+     * Throughput
+     * Error rate
+     * General availability
+     * End of support
+     * End of life
+     * Time of availability
+     * Time to detect
+     * Time to notify
+     * Time to repair
 
-     * **Value:** The target value or threshold for the service-level commitment.
-     * **Unit:** The unit associated with the service-level value. The following units are supported:
+* **Value:** The target value or threshold for the service-level commitment.
+* **Unit:** The unit associated with the service-level value. The following units are supported:
 
-          * **ms:** Milliseconds
-          * **s:** Seconds
-          * **min:** Minutes
-          * **h:** Hours
-          * **d:** Days
-          * **w:** Weeks
-          * **mo:** Months
-          * **y:** Years
+     * **ms:** Milliseconds
+     * **s:** Seconds
+     * **min:** Minutes
+     * **h:** Hours
+     * **d:** Days
+     * **w:** Weeks
+     * **mo:** Months
+     * **y:** Years
 
-     * **Element:** The table or field associated with the service level.
-     * **Driver:** The reason for the service-level commitment. Supported values include:
+* **Element:** The table or field associated with the service level.
+* **Driver:** The reason for the service-level commitment. Supported values include:
 
-          * Regulatory
-          * Analytics
-          * Operational
+     * Regulatory
+     * Analytics
+     * Operational
 
-   * **Description:** Additional information about the service level.
+* **Description:** Additional information about the service level.
+* **ID:** A unique identifier for the service-level entry.
+* **Value ext:** An extended service-level value used when the service-level property requires two values, such as a time window.
+* **Scheduler:** The scheduler name used for automated service-level checks.
+* **Schedule:** The scheduler configuration used for automated service-level checks.
 
 You can add multiple service levels to document different service-level commitments.
 
