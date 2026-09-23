@@ -5,8 +5,8 @@
 
 <!-- #p100030 -->
 !!! note
-    * To connect Zeenea to SAP BW, Zeenea provides a collaborative solution with Silwood Technology and his Safyr software. This integration must be validated with our customer services.
-    * You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    * To connect Actian Data Intelligence to SAP BW, Actian provides a collaborative solution with Silwood Technology and its Safyr software. This integration must be validated with our customer services.
+    * You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 <!-- #p100036 -->
@@ -19,16 +19,16 @@ The SAP BW connector is compatible with SAP BW.
 ## Installing the Plugin
 
 <!-- #p100057 -->
-The Silwood Safyr plugin can be downloaded here:  [Connector Downloads](../zeenea-connectors-list.md# "title: Connector Downloads")
+The Silwood Safyr plugin can be downloaded here:  [Connector Downloads](../connectors-list.md# "title: Connector Downloads")
 
 <!-- #p100063 -->
 !!! warning "Attention"
-    -  Updating the connector to version 3.0.0 from a previous version requires a data migration for the "Dataset" type objects representing Query. Please contact customer service to assist you in this migration.
-    - Updating the connector to version 3.1.1 from a previous version impacts data processes identification and requires a manual deleting of existing data processes. If you documented your SAP BW data processes, please contact customer service to assist you in this migration.
+    -  Updating the connector to version 3.0.0 from a previous version requires a data migration for the "Dataset" type objects representing Query. Contact customer service to assist you in this migration.
+    - Updating the connector to version 3.1.1 from a previous version impacts data processes identification and requires a manual deleting of existing data processes. If you documented your SAP BW data processes, contact customer service to assist you in this migration.
 
 
 <!-- #p100105 -->
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 <!-- #p100111 -->
 ## Declaring the Connection
@@ -37,7 +37,7 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
 <!-- #p100129 -->
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 <!-- #p100135 -->
 In order to establish a connection with SAP BW, you need to fill out the following parameters in the dedicated file:
@@ -46,7 +46,7 @@ In order to establish a connection with SAP BW, you need to fill out the followi
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `safyr-sap` and this value must not be modified. |
 | `input.folder` | The complete path to the folder containing files from the Silwood Safyr extraction |
 | `input.display_name` | (Deprecated) To choose between the "Physical" and the "Logical" name of the objects |
@@ -119,7 +119,7 @@ Dataset field.
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
 <!-- #p100495 -->
-More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 <!-- #p100501 -->
 | Object | Identifier Key | Description |

@@ -11,13 +11,14 @@ The Power BI Online (V1) plugin has been deprecated. You can use the [Power BI O
 
 ## Prerequisites
 
-* A user with sufficient [permissions](#user-permissions) is required to establish a connection with PowerBI Online.
-* Zeenea's scanner traffic flows towards Power BI's instance and Azure must be open. Refer to the following:
+* A user with sufficient [permissions](#user-permissions) is required to establish a connection with Power BI Online.
+* Actian Data Intelligence Scanner traffic flows towards Power BI's instance and Azure must be open. Refer to the following:
+    
     * [https://login.microsoftonline.com](https://login.microsoftonline.com)
     * [https://api.powerbi.com](https://api.powerbi.com)
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](./zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](./connectors-list.md).
 
 
 ## Supported Versions
@@ -26,26 +27,26 @@ The Power BI Online connector is compatible with the product online version.
 
 ## Installing the Plugin
 
-The Power BI Online plugin can be downloaded here: [Connector Downloads](./zeenea-connectors-list.md)
+The Power BI Online plugin can be downloaded here: [Connector Downloads](./connectors-list.md)
 
 !!! warning "Attention"
-    Updating the connector to version 1.7.0 from a previous version requires a data migration for the "Data process" type objects. Please contact customer service to assist you in this migration.
+    Updating the connector to version 1.7.0 from a previous version requires a data migration for the "Data process" type objects. Contact customer service to assist you in this migration.
 
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](./connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/managing-connections.md)
 
 In order to establish a connection with a PowerBI Online instance, specifying the following parameters in the dedicated file is required:
 
 | Parameter                        | Expected value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`                           | The name that will be displayed to catalog users for this connection.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `code`                           | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner.                                                                                                                                                                                                                                                                                           |
+| `code`                           | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner.                                                                                                                                                                                                                                                                                           |
 | `connector_id`                   | The connector type to use for the connection. Here, the value must be `powerbi` and this value must not be modified.                                                                                                                                                                                                                                                                                                                                                                                              |
 | `connection.tenant`             | Tenant's technical identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `connection.url`                | Connection address. Default value `https://api.powerbi.com`.                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -130,7 +131,7 @@ Starting with version 1.9.0 the connector has a rich filter available that enabl
 
 `contact.role_filter = "role in ('Owner', 'Read')"`
 
-Read more: [Filters](../scanners/zeenea-filters.md)
+Read more: [Filters](../scanners/filters.md)
 
 ## Data Extraction
 
@@ -224,7 +225,7 @@ Dataset field or measure.
 
 ### Data Process
 
-To represent the data flow from an external source, a Zeenea Data Process will be created for each Power BI Online Dataset.
+To represent the data flow from an external source, an Actian Data Intelligence Data Process will be created for each Power BI Online Dataset.
 
 * **Name**: `import dataset_name`
 
@@ -232,7 +233,7 @@ To represent the data flow from an external source, a Zeenea Data Process will b
  
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
  
-More information about unique identification keys in this documentation: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../features-applications/studio/stewardship/identification-keys.md).
   
 | Object        | Identification Key                    | Description |
 |---------------|----------------------------------------|-------------|

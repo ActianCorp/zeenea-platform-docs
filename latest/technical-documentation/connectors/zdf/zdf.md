@@ -1,8 +1,8 @@
-# Adding a Zeenea Descriptor Format (ZDF) Connection
+# Adding a Actian Data Intelligence Descriptor Format (ZDF) Connection
 
 ## Connectors
 
-Zeenea Descriptor Format (ZDF) plugin describes a set of three connectors allowing the management of datasets, visualizations and data processes based on declarative files.
+Actian Data Intelligence Descriptor Format (ZDF) plugin describes a set of three connectors allowing the management of datasets, visualizations and data processes based on declarative files.
 
 !!! note
     These connectors must be used in very specific cases where a traditional connector is not an option. By using a description of the items instead of the discoverability mechanism used by regular connectors, you must ensure that you comply with the assertions that other connectors respect, such as the existence of elements.<br />For more information about these connectors, contact your Customer Success Manager.
@@ -16,15 +16,15 @@ These three connectors work the same way and share the same configuration parame
 
 These connectors are available in the zdf-connector-plugin.
 
-It can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md).
+It can be downloaded here: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ### Connection Settings
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 ### Configuration Templates:
 
@@ -45,7 +45,7 @@ To connect to an instance, the parameters of the connection file must be complet
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `zdf-dataset`, `zdf-visualization`, or `zdf-lineage`. Once defined, this value must not be modified. |
 | `enabled` | Optional<br/>Boolean (`true`/`false`) indicating whether the connection is active or not.<br/>Default value: `true` |
 | `connection.path` | Path to file or folder containing description files.<br/>This value is mandatory if no git repository is declared.<br/>If a git repository is declared, the value can be null or a path relative to the repository root. |
@@ -175,7 +175,7 @@ A field description.
 | `name`* | `Text` | Field name |
 | `description` | `Text` | Field description |
 | `nativeType` | `Text` | Native type of the field.<br/>If unset, the `dataType` value is used. |
-| `dataType` | `Text` | Zeenea type of the field.<br/>If unset, the `nativeType` value is used.<br/>Allowed values are:<br/>- `boolean`<br/>- `byte`<br/>- `short`<br/>- `integer`<br/>- `long`<br/>- `float`<br/>- `double`<br/>- `string`<br/>- `date`<br/>- `timestamp`<br/>- `binary`<br/>- `struct`<br/>- `unknown` |
+| `dataType` | `Text` | Actian Data Intelligence type of the field.<br/>If unset, the `nativeType` value is used.<br/>Allowed values are:<br/>- `boolean`<br/>- `byte`<br/>- `short`<br/>- `integer`<br/>- `long`<br/>- `float`<br/>- `double`<br/>- `string`<br/>- `date`<br/>- `timestamp`<br/>- `binary`<br/>- `struct`<br/>- `unknown` |
 | `isNullable` | `Boolean` | The field can be null. Default value `false`. |
 | `isMultivalued` | `Boolean` | The field can contain multiple values. Default value `false`. |
 | `isPrimaryKey` | `Boolean` | The field is part of the primary key. Default value `false`. |
@@ -193,7 +193,7 @@ One of the attributes `identificationKey` or `path` must be filled in.
 
 | Attribute | Type | Description |
 |---|---|---|
-| `identificationKey` | `Text` | Dataset [identification key](../../../features-applications/studio/stewardship/zeenea-identification-keys.md) |
+| `identificationKey` | `Text` | Dataset [identification key](../../../features-applications/studio/stewardship/identification-keys.md) |
 | `connectionCode` | `Text` | Connection code. Leave blank if this is the current connection. It is possible to use one of the connection aliases. |
 | `zeepath` | `Text` | Dataset path |
 

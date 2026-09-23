@@ -3,10 +3,10 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#p100588 "title: Google Data Catalog") is required to establish a connection with Google Data Catalog.
-* Zeenea traffic flows towards the data source must be open.  
+* Actian Data Intelligence traffic flow towards the data source must be open.  
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 ## Supported Versions
 
@@ -14,22 +14,22 @@ The Google Data Catalog connector has been successfully tested with the Web vers
 
 ## Installing the Plugin
 
-The Google Data Catalog plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md# "title: Connector Downloads").
+The Google Data Catalog plugin can be downloaded here: [Connector Downloads](../connectors-list.md# "title: Connector Downloads").
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 In order to establish a connection with Google Data Catalog instance, specifying the following parameters in the dedicated file is required:
 
 | Parameter                | Expected Value       |
 | ------------------------- | ------------------------- |
 | `name`                             | The name that will be displayed to catalog users for this connection  |
-| `code`                             | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code`                             | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id`                     | The type of connector to be used for the connection. Here, the value must be `google-cloud.data-catalog`. **This value must not be modified**.     |
 | `connection.json_key`              | <p>JSON Key.</p><p>**Careful**: use three double quotes to encapsulate the JSON key.</p><p>Example: `"""{my:"json"}"""`</p>       |
 | `proxy.scheme`                     | Depending on the proxy, `http` or `https`   |
@@ -84,7 +84,7 @@ Dataset field.
 
 ### Tags
 
-It's possible to get all the tags applied to your Data Catalog objects through a specified configuration in your dedicated scanner. You just need to define the tag model you want to get into your Zeenea Data Catalog in the `application.conf` file of your scanner.
+It's possible to get all the tags applied to your Data Catalog objects through a specified configuration in your dedicated scanner. You just need to define the tag model you want to get into your Actian Data Intelligence Data Catalog in the `application.conf` file of your scanner.
 
 Here is an example of a configuration file `application.conf` that retrieves select tags:
 
@@ -124,7 +124,7 @@ connector.google_data_catalog.tags = """
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 | Object | Identification Key | Description |
 |---|---|---|

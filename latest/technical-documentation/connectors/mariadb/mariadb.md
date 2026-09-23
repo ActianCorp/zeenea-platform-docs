@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#p100156 "title: MariaDB") is required to establish a connection with MariaDB.
-* Zeenea traffic flows towards the database must be open.
+* Actian Data Intelligence traffic flow towards the database must be open.
 
 !!! warning "Important"
     The MariaDB driver is not delivered with the connector. Download the MariaDB driver related to your MariaDB instance and move it into the `/lib-ext` folder of your scanner. You will find the driver into sources provided by the editor on their website: [https://mariadb.com/downloads/connectors/connectors-data-access/](https://mariadb.com/downloads/connectors/connectors-data-access/).
@@ -12,7 +12,7 @@
 <br />
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -23,22 +23,22 @@ The MariaDB connector was developed and tested with version MariaDB 10. It is co
 
 From version 54 of the scanner, the MariaDB connector is presented as a plugin.
 
-It can be downloaded here and requires scanner version 64: [Connector Downloads](../zeenea-connectors-list.md# "title: Connector Downloads")
+It can be downloaded here and requires scanner version 64: [Connector Downloads](../connectors-list.md# "title: Connector Downloads")
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 In order to establish a connection with a MariaDB instance, specifying the following parameters in the dedicated file is required:
 
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `mariadb` and this value must not be modified. |
 | `connection.url` | Database address (example: `jdbc:mariadb://host:3306/database`) |
 | `connection.username` | Username |
@@ -95,7 +95,7 @@ Dataset field.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 | Object | Identifier Key | Description |
 |---|---|---|

@@ -3,10 +3,10 @@
 ## Prerequisites
 
 * In order to establish a connection with Snowflake, a user with sufficient [permissions](#user-permissions) is required.
-* A route between the Zeenea scanner and the database must be open to allow traffic between the two.
+* A route between the Actian Data Intelligence scanner and the database must be open to allow traffic between the two.
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -17,9 +17,9 @@ The Snowflake connector has been tested with the cloud version of this service.
 
 From version 54 of the scanner, the Snowflake connector is presented as a plugin.
 
-It can be downloaded here and requires a scanner version 64 or later: [Connector Downloads](../zeenea-connectors-list.md).
+It can be downloaded here and requires a scanner version 64 or later: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
  
 !!! note
     For users of Java 17 and later, the Snowflake driver use old private Java API. A special option should be added on the scanner command line in order to provide access to this API.
@@ -33,14 +33,14 @@ For more information on how to install a plugin, please refer to the following a
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
  
 In order to establish a connection with Snowflake, specifying the following parameters in the dedicated file is required:
 
 | Parameter| Expected Value |
 | :--- | :--- |
 | `name` | The name that will be displayed to catalog users for this connection | 
-| `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
+| `code` | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `Snowflake` and this value must not be modified. | 
 | `connection.url` | Database address.<br /><br />Example: `jdbc:snowflake://<account_identifier>.snowflakecomputing.com/?db=<database>&role=<role>&warehouse=<warehouse>`<br /><br />The `db` parameter is always required to initialize the connection.<br />The `role` and `warehouse` parameters are required if no default values are defined for the user. |
 | `connection.username` | Username |
@@ -54,7 +54,7 @@ In order to establish a connection with Snowflake, specifying the following para
 | `proxy.username` | Proxy username |
 | `proxy.password` | Proxy account password |
 | `cache.enabled` | Enable the cache functionality. When the cache is activated, the schema update performs four queries per database instead of four per imported table. The result is greater efficiency. |
-| `cache.folder` | Folder where caches are stored. The same folder can be used by several connections.<br />The size of the cache file produced depends on the number of tables in the database (and not on the number of tables imported into Zeenea).<br />If the folder is not specified, the cache is stored in memory. |
+| `cache.folder` | Folder where caches are stored. The same folder can be used by several connections.<br />The size of the cache file produced depends on the number of tables in the database (and not on the number of tables imported into Actian Data Intelligence).<br />If the folder is not specified, the cache is stored in memory. |
 | `cache.ttl` | Cache validity period (default `12h`). As long as the cache is valid, requests that fill it are not executed. |
 | `lineage.view.enabled` | Option to enable view lineage feature. Default value `false`. |
 | `lineage.pipe.enabled` | Option to enable Snowpipe lineage feature. Default value `false`. |
@@ -70,9 +70,9 @@ In order to establish a connection with Snowflake, specifying the following para
     A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
 
 
-You can have snowflake datasets with "multi-catalog = true"  /my\_db/my\_schema/my\_table or /my\_schema/my\_table  .
+You can have snowflake datasets with "multi-catalog = true"  /my\_db/my\_schema/my\_table or /my\_schema/my\_table
 
-If the platform receives a reference like /my\_schema/my\_table and the imported dataset has the ZeePath /my\_db/my\_schema/my\_table ,
+If the platform receives a reference like /my\_schema/my\_table and the imported dataset has the ZeePath /my\_db/my\_schema/my\_table
 
 If the platform can't find the ZeePath directly, it removes the first segment and searches with /my\_schema/my\_table 
 
@@ -94,7 +94,7 @@ If the Snowpipe lineage feature is enabled, the user must have MONITOR rights on
 
 Since version 47 of the scanner, the Snowflake connector benefits from the feature of rich filters in the configuration of the connector.
 
-Read more: [Filters](../../scanners/zeenea-filters.md)
+Read more: [Filters](../../scanners/filters.md)
 
 ## Multi Account Support
 
@@ -221,8 +221,8 @@ The inventory collects all tables and views accessible by the user.
 
 Starting with **version 44 of the Plugin**, the Snowflake connector integrates the lineage functionality to identify and represent the origin of the data. This functionality can be activated through the configuration settings and is used in several use cases:
 
-* **Views**: The creation of views in Snowflake can be represented automatically in Zeenea. A **data process** object will be created for each view with the tables used for its construction as input and the target view as output.
-* **Snowpipe**: Snowpipe will be modeled in Zeenea in case of data ingestion from external sources. Datasets from other types of systems will have to be imported from the corresponding connectors. The Snowflake connector will be able to identify them and make the necessary link through a **data process** that will be created in the catalog for each Snowpipe of the platform.
+* **Views**: The creation of views in Snowflake can be represented automatically in Actian Data Intelligence. A **data process** object will be created for each view with the tables used for its construction as input and the target view as output.
+* **Snowpipe**: Snowpipe will be modeled in Actian Data Intelligence in case of data ingestion from external sources. Datasets from other types of systems will have to be imported from the corresponding connectors. The Snowflake connector will be able to identify them and make the necessary link through a **data process** that will be created in the catalog for each Snowpipe of the platform.
 * **(BETA) Execution history**: The connector is able to analyze query executions to identify data insertions from other tables of the same Snowflake instance. The query will be presented in the catalog as a **data process**.
  
 ### Dataset
@@ -272,10 +272,10 @@ A data process can be the representation of a Snowpipe, a view construction requ
 ## Data Profiling
 
 !!! warning "Important"
-    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Ensure the estimated impact of this feature is acceptable and that the default frequency is appropriate before enabling it.
 
 
-The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics here: [Data Profiling](../../../features-applications/cross-application-features/zeenea-data-profiling.md).
+The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics here: [Data Profiling](../../../features-applications/cross-application-features/data-profiling.md).
 
 Read access on targeted tables is mandatory to activate the feature. For Snowflake technologies, the connector executes the following request to get a data sample: 
 
@@ -287,7 +287,7 @@ The request above defines the number of rows in the table tableName.
  
 The request above collects a data sample for each field where the feature is activated through the studio (`field1`, `field2`). The limit is 10.000 lines (`linesPercentage` parameter) deduced from a calculation with the number of rows set in the previous request.
 
-These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter collect-fingerprint from the application.conf file, as described here: [Zeenea Scanner Setup](../../scanners/zeenea-scanner-setup.md).
+These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter collect-fingerprint from the application.conf file, as described here: [Actian Data Intelligence Scanner Setup](../../scanners/scanner-setup.md).
 
 ## Data Classification
 
@@ -299,7 +299,7 @@ You can find the details of how this feature works directly in the [Snowflake do
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 | Object | Identification Key | Description |
 |---|---|---|

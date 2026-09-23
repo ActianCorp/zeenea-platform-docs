@@ -3,10 +3,10 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with MicroStrategy.
-* Zeenea traffic flows towards MicroStrategy must be open.
+* Actian Data Intelligence traffic flow towards MicroStrategy must be open.
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -15,22 +15,22 @@ The MicroStrategy connector is available for the SaaS and the on-prem product ve
 
 ## Installing the Plugin
 
-You can download the Microstrategy plugin from [Connector Downloads](../zeenea-connectors-list.md).
+You can download the Microstrategy plugin from [Connector Downloads](../connectors-list.md).
 
-For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for changes and resynchronizes automatically.
 
-For more information about managing connections, see [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../../../features-applications/administration/managing-connections.md).
 
 To establish a connection with a MicroStrategy instance, fill in the following parameters in the dedicated configuration file:
 
 | Parameter | Expected value |
 |---|---|
 | `name` | Specifies the display name for the connection. |
-| `code` | Specifies the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | Specifies The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | Specifies the type of connector to be used for the connection. The value must be `microstrategy` and must not be modified. |
 | `enabled` | Specifies whether to enable or disable the connection (`true` or `false`). <br />The default value is `true`. |
 | `catalog_code` | Specifies the catalog code associated with the connection (`default` when empty). |
@@ -94,7 +94,7 @@ The following API calls are made to obtain the lineage information:
 
 * `GET /api/model/attributes/[attribute-id]`: Allows you to retrieve the id of the table where this attribute is attached.
 * `GET /api/model/datasources/[source-system-id]`: Allows you to retrieve the ID of the connection that is associated with it.
-* `GET /api/model/connections/[connection-id]`: Allows to build the connection code for the Zeenea lineage.
+* `GET /api/model/connections/[connection-id]`: Allows to build the connection code for the Actian Data Intelligence lineage.
 
 !!! note
     The connector will create a data process object for each MicroStrategy dataset in order to link it with the original dataset(s) even if the original dataset(s) are not present in the catalog.
@@ -153,7 +153,7 @@ A field can be an attribute, a metric, or a field from the dataset.
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
 
-For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
  
 | Object | Identification Key | Description |
 |---|---|---|
@@ -274,7 +274,7 @@ Each object contains:
 * at least one identification field: `key`, `id`, or `name`
 * an `answers` field
 
-The format of the `answers` field depends on the type of the prompt and has many variants. It is not interpreted by Zeenea and passed as is to the `PUT {{baseUrl}}/api/documents/{{folderId}}/instances/{instanceFolder}}/prompts/answers` response API.
+The format of the `answers` field depends on the type of the prompt and has many variants. It is not interpreted by Actian Data Intelligence and passed as is to the `PUT {{baseUrl}}/api/documents/{{folderId}}/instances/{instanceFolder}}/prompts/answers` response API.
 
 See the MicroStrategy documentation for details of this format.
 

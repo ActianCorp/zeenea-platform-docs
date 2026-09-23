@@ -3,15 +3,15 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#p100432 "title: AWS Redshift") is required to establish a connection with Redshift.
-*  Zeenea traffic flows towards Redshift must be open.
-*  In order to catalog datasets stored on Redshift, Zeenea uses the JDBC API to extract metadata. The flow toward the Redshift server must be open.
+*  Actian Data Intelligence traffic flow towards Redshift must be open.
+*  In order to catalog datasets stored on Redshift, Actian Data Intelligence uses the JDBC API to extract metadata. The flow toward the Redshift server must be open.
 
 | Target            | Protocol          | Usual Ports       |
 | ----------------- | ----------------- | ----------------- |
 | AWS Redshift      | JDBC              | 5439              |
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -22,22 +22,22 @@ The Redshift connector is compatible with all versions supported by Amazon.
 
 From version 54 of the scanner, the Redshift connector is presented as a plugin.
 
-It can downloaded here and requires a scanner version 64 or later: [Connector Downloads](../zeenea-connectors-list.md# "title: Connector Downloads").
+It can downloaded here and requires a scanner version 64 or later: [Connector Downloads](../connectors-list.md# "title: Connector Downloads").
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 In order to establish a connection with Redshift, specifying the following parameters in the dedicated file is required:
 
 | Parameter              | Expected Value    |
 | ---------------------- | ----------------- |
 | `name`                 | The name that will be displayed to catalog users for this connection  |
-| `code`                 | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code`                 | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id`         | The type of connector to be used for the connection. Here, the value must be `AWSRedshift` and this value must not be modified.   |
 | `connection.url`       | AWS Redshift server address (example: `jdbc:redshift://redshift.example.com:5439/database`)     |
 | `connection.username`  | Username      |
@@ -63,7 +63,7 @@ If the data profiling feature was enabled, the user must have read access to imp
 
 Since version 47 of the scanner, the Redshift connector benefits from the feature of rich filters in the configuration of the connector. This functionality also applies if on the metadata "Roles" of the datasets.
 
-Read more: [Filters](../../scanners/zeenea-filters.md)
+Read more: [Filters](../../scanners/filters.md)
 
 ## Data Extraction
 
@@ -126,7 +126,7 @@ A data process represents the request to build a view.
 ## Data Profiling
 
 !!! warning "Important"
-    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Ensure the estimated impact of this feature is acceptable and that the default frequency is appropriate before enabling it.
 
 
 The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics in the following documentation: Data Profiling.
@@ -146,13 +146,13 @@ SELECT
 
 The request above collects a data sample for each field where the feature is activated through the studio (`field1`, `field2`). The limit of collected rows is 10.000.
 
-These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in Zeenea Scanner Setup.
+These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in Actian Data Intelligence Scanner Setup.
 
 ## Object Identification Keys
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-Read more: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md)
 
 | Object | Identification Key | Description |
 |---|---|---|
