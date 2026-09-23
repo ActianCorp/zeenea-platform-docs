@@ -46,7 +46,7 @@ Viewers have read-only access. They can:
 * Read the YAML representation.
 * Review active and historical contract versions.
 
-All Data Intelligence Platform users have **Viewer** access by default.
+All Actian Data Intelligence users have **Viewer** access by default.
 
 ## Assign Access
 
@@ -63,4 +63,4 @@ Permissions also depend on the version status:
 To modify an **Active** contract, a **Contract Owner** must create a new **Draft working copy** version. No role can directly edit the Active version.
 
 !!! note
-    Authentication and core platform permissions are provided through Data Intelligence Platform. The actions available in DCB depend on both the user's Data Intelligence Platform permissions and their role on the selected contract.
+    Authentication and core platform permissions are provided through Actian Data Intelligence. The actions available in DCB depend on both the user's Actian Data Intelligence permissions and their role on the selected contract.
