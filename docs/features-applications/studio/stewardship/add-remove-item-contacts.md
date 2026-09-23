@@ -18,4 +18,4 @@ To add a contact to an item, click the "+" button in the **Contacts** sections f
 
 You can then search for a contact among those imported or created in the catalog, as well as select a responsibility from the list configured for your company.
 
-Please note that the same contact may have several responsibilities for the same item, or different responsibilities from one item to another.
+Note that the same contact may have several responsibilities for the same item, or different responsibilities from one item to another.

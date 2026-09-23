@@ -6,7 +6,7 @@ The SCIM (System for Cross-domain Identity Management) protocol is a standard de
 
 Actian Data Intelligence implements certain services of the SCIM v2.0 protocol to enable user provisioning.
 
-This documentation presents the specificities and limitations of the implementation of the SCIM protocol by the Actian Data Intelligence Platform. As this implementation is still incomplete, if you require other services or would like to share your feedback, please let us know and contact your Customer Success Manager.
+This documentation presents the specificities and limitations of the implementation of the SCIM protocol by the Actian Data Intelligence Platform. As this implementation is still incomplete, if you require other services or would like to share your feedback, contact your Customer Success Manager.
 
 In order to implement SCIM in your company, contact an administrator of your identity management platform in order to carry out the necessary configuration operations. Actian Data Intelligence does not offer support for this configuration, as each platform has its own specific features, but the information provided below should make it easy to configure SCIM. For architecture visuals, see [Authentication & User Provisioning - Architecture Diagrams](./scim-user-provisioning.md).
 

@@ -89,7 +89,7 @@ It is possible to view the detailed information of a connection, as defined at t
 
 You can also manage the connection options: 
 
-* **Data Profiling**: Allows you to activate the calculation of statistical profiles for the connection's Dataset Fields. It is not available on all connectors. Please note that activating this option may have an impact on your host's billing. For more information on Data Profiling, see [Data Profiling](../cross-application-features/data-profiling.md).
+* **Data Profiling**: Allows you to activate the calculation of statistical profiles for the connection's Dataset Fields. It is not available on all connectors. Note that activating this option may have an impact on your host's billing. For more information on Data Profiling, see [Data Profiling](../cross-application-features/data-profiling.md).
 * **Data Sampling**: Enables data sampling for all the connection's imported Datasets. This option is not available for all connectors. For more information on Data Sampling, see [Data Sampling](../cross-application-features/data-sampling.md).
 * **Automatic Import**: This option allows you to automatically import all new Items for a connection, without having to select them manually from the Studio. Beware of using an appropriate filter configuration at the connection level to avoid importing unwanted Objects.
  

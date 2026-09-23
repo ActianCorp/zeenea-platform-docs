@@ -17,7 +17,7 @@ This connector may be used on an Atlas catalog linked through its v2 API to a Ha
 
 Since scanner version 26.0, the Atlas plugin can be downloaded here: Connectors: download links
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
   

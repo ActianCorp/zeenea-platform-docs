@@ -7,7 +7,7 @@ search:
 
 The role of Super Admin is frequently shared or supported by several collaborators to cover the technical and functional skills required.
 
-Should you require more technical information or advice on the installation phase, please refer to the technical file.
+Should you require more technical information or advice on the installation phase, refer to the technical file.
 
 You have specific rights and permissions as a Super Admin of the Actian Data Intelligence suite. 
 

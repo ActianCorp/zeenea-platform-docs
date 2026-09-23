@@ -37,7 +37,7 @@ From version 54 of the scanner, the PostgreSQL connector is presented as a plugi
 It can be downloaded here and requires a scanner version 64: [Connector Downloads](../connectors-list.md# "title: Connector Downloads")
 
 <!-- #p100168 -->
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 <!-- #p100174 -->
 ## Declaring the Connection

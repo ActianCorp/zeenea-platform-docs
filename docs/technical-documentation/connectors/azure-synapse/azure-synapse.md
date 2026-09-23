@@ -16,14 +16,14 @@
 The Synapse connector is compatible with the online software version.
 
 !!! note
-    The connector is compatible with Lake Database datasets. Please use the SQL Server connector for dedicated SQL Serverless pools.
+    The connector is compatible with Lake Database datasets. Use the SQL Server connector for dedicated SQL Serverless pools.
 
  
 ## Installing the Plugin
 
 The Synapse plugin can be downloaded here: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
   

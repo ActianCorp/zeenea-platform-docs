@@ -25,7 +25,7 @@ From version 54 of the scanner, the MySQL connector is presented as a plugin.
 
 It can be downloaded here and requires a scanner version 64: [Connector Downloads](../connectors-list.md# "title: Connector Downloads")
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 ## Declaring the Connection
 

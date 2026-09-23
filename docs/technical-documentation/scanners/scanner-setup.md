@@ -225,7 +225,7 @@ Here are the processes triggered by the scanner:
 * **collect-data-sample**: Collect a data sample from the last 30 entries of each Dataset, if the option is enabled in the Administration interface. By default, this process runs once a week.
 
 !!! note
-    Each process execution is configured with the help of a cron expression. Please, read carefully this article describing its syntax: [https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)
+    Each process execution is configured with the help of a cron expression. Read carefully this article describing its syntax: [https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)
 
 
 ## Configure a Proxy (optional)
@@ -272,7 +272,7 @@ gRPC protocol is not concerned by this limitation. Thus it could make sense to c
 
 ### Is my architecture ready for gRPC?
 
-gRPC uses HTTP/2 as its transport protocol. Your infrastructure MUST support HTTP/2 from end to end. In case of any doubt, please read your proxies documentation to validate they do support HTTP/2 properly.
+gRPC uses HTTP/2 as its transport protocol. Your infrastructure MUST support HTTP/2 from end to end. In case of any doubt, read your proxies documentation to validate they do support HTTP/2 properly.
 
 When configured to use gRPC, the scanner will communicate with a unique central entry point: `grpc.zeenea.app`. Make sure this address is accessible for the scanner.
 

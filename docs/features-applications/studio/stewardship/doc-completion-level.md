@@ -17,5 +17,5 @@ The calculation of the completion level is based on 4 criteria:
 * Has at least one Glossary Item been linked (this condition is ignored if the metamodel does not support this type of link)?
 * Are all the "Standard" and "Important" properties filled in?
 * Descriptions from the source are also taken into account in the calculation of the completion level.
-* In case of an update of the metamodel (i.e.: a property is removed from the template), the completion level is automatically updated. Please note that it is an asynchronous task that can take several minutes.
+* In case of an update of the metamodel (i.e.: a property is removed from the template), the completion level is automatically updated. Note that it is an asynchronous task that can take several minutes.
 * An administrator can define which properties are "Standard" or "Important" in the Catalog Design section. You can find this information in the tooltip on the details page of each Item.

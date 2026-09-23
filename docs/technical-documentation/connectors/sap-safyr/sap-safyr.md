@@ -23,11 +23,11 @@ The Silwood Safyr plugin can be downloaded here:  [Connector Downloads](../conne
 
 <!-- #p100066 -->
 !!! warning "Attention"
-    Updating the connector to version 3.1.1 from a previous version impacts data processes identification and requires a manual deleting of existing data processes. If you documented your SAP data processes, please contact customer service to assist you in this migration.
+    Updating the connector to version 3.1.1 from a previous version impacts data processes identification and requires a manual deleting of existing data processes. If you documented your SAP data processes, contact customer service to assist you in this migration.
 
 
 <!-- #p100075 -->
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 <!-- #p100081 -->
 ## Declaring the Connection

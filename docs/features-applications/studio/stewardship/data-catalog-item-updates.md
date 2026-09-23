@@ -9,7 +9,7 @@ All this information can also be retrieved via APIs in:
 * [Audit Trail APIs](../../../technical-documentation/api/audit-trail-apis.md)
 * The [exploration and mutation APIs](../../../technical-documentation/api/catalog-api-v1.md) which allow you to manipulate the dates of the last updated Items thanks  to the findItems API as well as the LoadItemByKey API which allows to retrieve the updated date in the updatedAt field
 
-Please note that the date of the last update is not visible in Explorer.
+Note that the date of the last update is not visible in Explorer.
 
 In the case where we modify a property of the Item which is a reference to another Item (a property which points to a Custom Item, an input/output Item of a Data process ...), then the behavior will depend on the type of Item involved as well as the type of link that exists between them.
 

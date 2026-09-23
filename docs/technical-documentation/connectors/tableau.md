@@ -27,12 +27,12 @@ The Tableau connector was tested on the SaaS solution.
 !!! warning
     * This version of the connector is NOT compatible with previous versions (3.XX and earlier) of Tableau Connector.
     * All the items you may have already imported **MUST** be deleted and reimported.
-    * If you need to export your documentation before upgrading, please contact our support before proceeding.
+    * If you need to export your documentation before upgrading, contact our support before proceeding.
 
 
 The Tableau plugin can be downloaded here: [Connector Downloads](./connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](./connectors-install-as-plugin.md).
 
 ## Declaring the Connection
   

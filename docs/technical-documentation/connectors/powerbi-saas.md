@@ -30,10 +30,10 @@ The Power BI Online connector is compatible with the product online version.
 The Power BI Online plugin can be downloaded here: [Connector Downloads](./connectors-list.md)
 
 !!! warning "Attention"
-    Updating the connector to version 1.7.0 from a previous version requires a data migration for the "Data process" type objects. Please contact customer service to assist you in this migration.
+    Updating the connector to version 1.7.0 from a previous version requires a data migration for the "Data process" type objects. Contact customer service to assist you in this migration.
 
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](./connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 

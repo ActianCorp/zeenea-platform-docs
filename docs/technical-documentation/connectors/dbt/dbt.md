@@ -23,7 +23,7 @@ The DBT connector was tested with version 1.3. It is compatible with version 1.3
 
 The DBT plugin can be downloaded here: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
   
@@ -52,7 +52,7 @@ In order to establish a connection with an DBT instance, specifying the followin
 | `connection.azure.client_secret` | Client Application Secret |
 | `connection.azure.account_name` | Storage Account Name |
 | `connection.azure.account_key` | Storage Account Secret Key |
-| **Azure Storage** <br/><br/> *Azure Storage support is discontinued in version 2.7.0 of the connector.<br/>If you need it, please contact support for it to be added again.* |
+| **Azure Storage** <br/><br/> *Azure Storage support is discontinued in version 2.7.0 of the connector.<br/>If you need it, contact support for it to be added again.* |
 | `connection.azure.account_name` | **Before 2.7.0**<br/><br/>The Storage Account Name |
 | `connection.azure.account_key` | **Before 2.7.0**<br/><br/>Account Key; can be retrieved in the Access Key section of the Azure menu. |
 | `multi_catalog.enabled` | Set to `true` if the dataset source system is also configured as `multi catalog`.<br/>Default value `false`. |

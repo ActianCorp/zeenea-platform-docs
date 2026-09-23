@@ -15,7 +15,7 @@ If you do not find in the answers to common issues, you can report your incident
 
 Here is the recommended procedure when a problem is encountered:
 
-1. If your scanner version is not the latest version available, please upgrade it in order to validate if the issue is already fixed or not. The upgrade procedure is described in [Managing Scanners](../../features-applications/administration/managing-scanners.md).
+1. If your scanner version is not the latest version available, upgrade it to validate if the issue is already fixed or not. The upgrade procedure is described in [Managing Scanners](../../features-applications/administration/managing-scanners.md).
 2. If it appears that the problem is related to the user interface, collecting information at this level will be useful for understanding and therefore solving the problem.
      * It is important to collect the traces of exchanges between the browser and Actian Data Intelligence services. Any JavaScript errors should be logged.
      * By activating the Network Developer tool, the requests exchanged between the interface and the service will be visible and if one of them is in error, it will be faster to understand the problem. In this case, retrieving the information from both the request made and the response received will provide useful information.

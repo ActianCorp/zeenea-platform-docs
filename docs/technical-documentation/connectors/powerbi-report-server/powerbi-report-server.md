@@ -19,7 +19,7 @@ From version 54 of the scanner, the Power BI Report Server connector is presente
 
 It can be downloaded here and requires a scanner version 64 or later: [Connector Downloads](../connectors-list.md)
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 

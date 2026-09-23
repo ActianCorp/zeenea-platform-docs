@@ -23,13 +23,13 @@ The Denodo connector was developed and tested with version 8.0 and 9.0.
 
 Denodo Connector requires Denodo Data Catalog. This feature is not available in all versions.
 
-In case you don't have this feature in your version, please consider our [Generic JDBC Connector](../generic-jdbc/generic-jdbc.md) instead.
+In case you don't have this feature in your version, consider our [Generic JDBC Connector](../generic-jdbc/generic-jdbc.md) instead.
  
 ## Installing the Plugin
 
 The Denodo plugin can be downloaded here: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 

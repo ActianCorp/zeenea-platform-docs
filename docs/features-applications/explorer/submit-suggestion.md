@@ -14,7 +14,7 @@ Your suggestion must be between 20 and 1,000 characters long.
 
 Once registered, you'll receive a confirmation email with a link to reconnect directly to the Item's details page. Your suggestions on a given Item are also listed on its details page and in the Suggestions tab of its overview panel.
 
-If you make a mistake, you can delete your suggestion. Please note that other Explorer users cannot view your suggestions.
+If you make a mistake, you can delete your suggestion. Note that other Explorer users cannot view your suggestions.
 
 ![](./images/submit-suggestion4.png)
 

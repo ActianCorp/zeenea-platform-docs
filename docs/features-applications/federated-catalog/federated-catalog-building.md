@@ -8,7 +8,7 @@ Building a federated catalog is mostly about declining Actian Data Intelligence 
 
 Once the federated catalog option is activated for your platform, you can create additional catalogs and define more fine-grained configurations (read and write permissions in particular).
 
-Please note that once the Federated Catalog option is activated, the default catalog becomes a common space where all Items are shared with all users. It is a container for common items of all types across domains. This common catalog can then be used to define a common classification across domains or even to catalog physical items that are not owned by a specific domain.
+Note that once the Federated Catalog option is activated, the default catalog becomes a common space where all Items are shared with all users. It is a container for common items of all types across domains. This common catalog can then be used to define a common classification across domains or even to catalog physical items that are not owned by a specific domain.
 
 Within this framework, the default or common catalog contains the business glossary to share a common language at the organization level.
 
@@ -32,7 +32,7 @@ Groups in a federated catalog work mainly as in a single-catalog platform. The d
 
 As in a single-catalog platform, a user can belong to several groups. So you can also for instance create a "Catalog A managers" group and a "Catalog B managers" group and assign these two groups to the same user. His permissions will be the union of all of his groups' permissions.
 
-Please note that Global Permissions (Manage Connections, Manage Users, etc.) apply to all catalogs and that users in the Super Admin group have full permission to manage all catalogs.
+Note that Global Permissions (Manage Connections, Manage Users, etc.) apply to all catalogs and that users in the Super Admin group have full permission to manage all catalogs.
 
 As in the single catalog case, assigning a group to a user is not mandatory. Therefore, you can create a user with no associated group. In this case, the user has access to all the Items from the common catalog plus all Items in the Marketplace (that have been shared by domains).
 
@@ -66,7 +66,7 @@ As mentioned above, you can configure a target catalog code on a connection. But
 
 To assign all connection items to a specific catalog, use the "Move the Item to another catalog" action. This feature is available in the Actions menu on the details page. But, you can also use the file import feature.
 
-Please note that you can not move an item that references other items if those are not shared (see "Step 5: Documenting in the Studio").
+Note that you can not move an item that references other items if those are not shared (see "Step 5: Documenting in the Studio").
 
 Finally, Ensure you have defined appropriate groups and assigned these groups to the right users. Pay attention to the assigned curators before moving items because those curators may not have the right permissions to manage those items in the target catalog.
 
@@ -139,7 +139,7 @@ Indeed, curators can use the "Share the Item" action in the details page in the 
 
 By sharing an item, you also enable curators from other catalogs to create links between this item and other items in their catalog (for instance to build the lineage). 
 
-Please note that you can retrieve and manage shared items using the "Shared" filter in the Studio. Shared items are also identifiable by a badge close to their name.
+Note that you can retrieve and manage shared items using the "Shared" filter in the Studio. Shared items are also identifiable by a badge close to their name.
 
 #### Related Topics
 

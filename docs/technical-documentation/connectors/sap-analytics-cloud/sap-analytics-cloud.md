@@ -26,7 +26,7 @@ The SAP Analytics Cloud connector is compatible with the online version of the s
 The SAP plugin can be downloaded here: [Connector Downloads](../connectors-list.md# "title: Connector Downloads")
 
 <!-- #p100081 -->
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 <!-- #p100087 -->
 ## Declaring the Connection

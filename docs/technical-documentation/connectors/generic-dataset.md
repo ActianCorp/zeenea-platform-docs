@@ -34,7 +34,7 @@ This connector is compatible with Actian Data Intelligence description files as 
 
 This connector is presented as a plugin and can be downloaded here: [Connector Downloads](./connectors-list.md)
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](./connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 

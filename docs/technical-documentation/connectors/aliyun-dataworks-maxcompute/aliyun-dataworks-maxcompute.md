@@ -23,7 +23,7 @@
 The Aliyun DataWorks MaxCompute plugin can be downloaded here: [Connector Downloads](../connectors-list.md# "title: Connector Downloads").
 
 <!-- #p100078 -->
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 <!-- #p100084 -->
 ## Declaring the Connection

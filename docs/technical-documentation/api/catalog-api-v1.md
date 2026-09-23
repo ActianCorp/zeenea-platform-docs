@@ -6,7 +6,7 @@ search:
 # Catalog API v1 (Deprecated)
 
 !!! note
-    This API is deprecated. Please see [Catalog API v2](./catalog-api-v2.md).
+    This API is deprecated. See [Catalog API v2](./catalog-api-v2.md).
 
  
 
