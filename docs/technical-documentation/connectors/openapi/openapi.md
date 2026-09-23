@@ -2,11 +2,11 @@
 
 ## Prerequisites
 
-* A user with sufficient [permissions](#p100153 "title: OpenAPI") is required to establish a connection with OpenAPI.
-* Zeenea traffic flows towards the data source must be open.
+* A user with sufficient [permissions](#user-permissions) is required to establish a connection with OpenAPI.
+* Actian Data Intelligence traffic flow towards the data source must be open.
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -17,22 +17,22 @@ The OpenAPI connector accepts JSON and YAML formats.
 
 ## Installing the Plugin
 
-You can download the OpenAPI plugin from [Connector Downloads](../zeenea-connectors-list.md).
+You can download the OpenAPI plugin from [Connector Downloads](../connectors-list.md).
 
-For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-For more information about managing connections, see  [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+For more information about managing connections, see  [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 To establish a connection with a OpenAPI interface, specifying the following parameters in the dedicated file is required:
 
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `openapi` and this value must not be modified. |
 | `connection.url` | Path to the `swagger.json` local file or an URL to a remote server.<br/><br/>Examples:<br/>`connection.url = "file:///var/path/to/my/swagger.json"`<br/>or<br/>`connection.url = "https://my-api.my-domain.com:8443"` |
 | `connection.swagger.endpoint` | Optional when the `connection.url` contains a local file path.<br/> Mandatory when the `connection.url` is a URL to a server.<br/><br/>Example:<br/>` # Given this URL: "[https://my-api.my-domain.com:8443/api/v1/swagger.json](https://my-api.my-domain.com:8443/api/v1/swagger.json)""` <br/>`# The connector must be configured like :` <br/>`connection.url = "[https://my-api.my-domain.com:8443](https://my-api.my-domain.com:8443)""` <br/>`connection.swagger.endpoint = "/api/v1/swagger.json" ` |
@@ -107,7 +107,7 @@ Dataset attribute.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 | Object | Identification Key | Description |
 |---|---|---|

@@ -3,10 +3,10 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Data Factory. 
-* Zeenea traffic flows towards the data source must be open. 
+* Actian Data Intelligence traffic flow towards the data source must be open. 
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
  
 ## Supported Versions
@@ -15,22 +15,22 @@ The Azure Data Factory connector is compatible with the product online version.
 
 ## Installing the Plugin
 
-The Azure plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md).
+The Azure plugin can be downloaded here: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
  
 In order to establish a connection with an Azure Data Factory instance, specifying the following parameters in the dedicated file is required:
 
 | Parameter| Expected Value |
 | :--- | :--- |
 | name | The name that will be displayed to catalog users for this connection | 
-| code | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
+| code | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | connector_id | The type of connector to be used for the connection. Here, the value must be `azure-datafactory` and this value must not be modified. | 
 | connection.url | Connection address (example: `https://management.azure.com/subscriptions/{subscription ID}`) | 
 | connection.oauth.client_id |Application ID (client) as defined in Azure |
@@ -113,7 +113,7 @@ A data process is the representation of a pipeline.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md)
 
 | Object | Identifier Key | Description |
 |---|---|---|

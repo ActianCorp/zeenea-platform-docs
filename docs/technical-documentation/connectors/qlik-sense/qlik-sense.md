@@ -7,14 +7,14 @@
   A user with sufficient [permissions](#p100201 "title: Qlik Sense Enterprise on Windows") is required to establish a connection with Qlik Sense.
 
 - <!-- #p100039 -->
-  Zeenea traffic flows towards the data source must be open. 
+  Actian Data Intelligence traffic flow towards the data source must be open. 
 
 | Target            | Protocol          | Usual Ports       |
 | ----------------- | ----------------- | ----------------- |
 | Qlik Sense Server | HTTP/HTTPS        | 80/443            |
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 <!-- #p100114 -->
@@ -27,10 +27,10 @@ The Qlik Sense connector was developed and tested with Qlik Sense Server version
 ## Installing the Plugin
 
 <!-- #p100135 -->
-The Qlik plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md# "title: Connector Downloads")
+The Qlik plugin can be downloaded here: [Connector Downloads](../connectors-list.md# "title: Connector Downloads")
 
 <!-- #p100144 -->
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 <!-- #p100150 -->
 ## Declaring the Connection
@@ -39,7 +39,7 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
 <!-- #p100168 -->
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 <!-- #p100174 -->
 In order to establish a connection with a Qlik Sense instance, specifying the following parameters in the dedicated file is required:
@@ -48,7 +48,7 @@ In order to establish a connection with a Qlik Sense instance, specifying the fo
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `qlik-sense` and this value must not be modified. |
 | `connection.url` | Qlik Sense server address (example: `https://hostname.port/virtual-proxy`) |
 | `connection.auth.key` | Header name for authentication |
@@ -117,7 +117,7 @@ A visualization is a sheet from an application.
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
 <!-- #p100402 -->
-More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 <!-- #p100408 -->
 | Object | Identifier Key | Description |

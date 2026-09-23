@@ -4,13 +4,13 @@
 ## Prerequisites
 
 - <!-- #p100030 -->
-  A user with sufficient [permissions](#p100216 "title: PostgreSQL") is required to establish a connection with PostgreSQL.
+  A user with sufficient [permissions](#user-permissions) is required to establish a connection with PostgreSQL.
 
 - <!-- #p100039 -->
-  Zeenea traffic flows towards the database must be open.
+  Actian Data Intelligence traffic flow towards the database must be open.
 
 - <!-- #p100048 -->
-  In order to catalog datasets stored on PostgreSQL, Zeenea uses the JDBC API to extract metadata. The flow towards the PostgreSQL server must be open.
+  In order to catalog datasets stored on PostgreSQL, Actian Data Intelligence uses the JDBC API to extract metadata. The flow towards the PostgreSQL server must be open.
 
 | Target            | Protocol          | Usual Ports       |
 | ----------------- | ----------------- | ----------------- |
@@ -18,7 +18,7 @@
 
 <!-- #p100126 -->
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 <!-- #p100132 -->
@@ -34,10 +34,10 @@ The PostgreSQL connector was developed and tested with version 10.4. It is compa
 From version 54 of the scanner, the PostgreSQL connector is presented as a plugin.
 
 <!-- #p100159 -->
-It can be downloaded here and requires a scanner version 64: [Connector Downloads](../zeenea-connectors-list.md# "title: Connector Downloads")
+It can be downloaded here and requires a scanner version 64: [Connector Downloads](../connectors-list.md# "title: Connector Downloads")
 
 <!-- #p100168 -->
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 <!-- #p100174 -->
 ## Declaring the Connection
@@ -46,7 +46,7 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
 <!-- #p100192 -->
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 <!-- #p100198 -->
 In order to establish a connection with a PostgreSQL instance, fill out the following parameters in the dedicated file:
@@ -55,7 +55,7 @@ In order to establish a connection with a PostgreSQL instance, fill out the foll
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `PgSql` and this value must not be modified. |
 | `connection.url` | Database address (example: `jdbc:postgresql://postgresql.example.com:5432/database`) |
 | `connection.username` | Username |
@@ -83,7 +83,7 @@ You can filter by the following criteria:
 * `schema`: Schema name
 * `table`: Table or view name
 
-For more information about filters, see [Filters](../../scanners/zeenea-filters.md).
+For more information about filters, see [Filters](../../scanners/filters.md).
 
 <!-- #p100243 -->
 ## Data Extraction
@@ -168,7 +168,7 @@ A data process represents the request to build a view.
 
 
 <!-- #p100702 -->
-The statistical profiles feature, also known as _Data Profiling_, is available for this connector. The impact of this feature must be evaluated before activating it on any of your connections. For more information about the resulting statistics, see [Data Profiling](../../../features-applications/cross-application-features/zeenea-data-profiling.md).
+The statistical profiles feature, also known as _Data Profiling_, is available for this connector. The impact of this feature must be evaluated before activating it on any of your connections. For more information about the resulting statistics, see [Data Profiling](../../../features-applications/cross-application-features/data-profiling.md).
 
 <!-- #p100708 -->
 To activate this feature, read access to the target tables is required. For PostgreSQL technologies, the connector executes the following request to get a data sample: 
@@ -191,14 +191,14 @@ SELECT
 The request above collects a data sample for each field where the feature is activated through the studio (`field1`, `field2`). The limit is 10.000 lines (`linesPercentage` parameter) deduced from a calculation with the number of rows set in the previous request.
 
 <!-- #p100759 -->
-These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Zeenea Scanner Setup](../../scanners/zeenea-scanner-setup.md).
+These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Actian Data Intelligence Scanner Setup](../../scanners/scanner-setup.md).
 
 <!-- #p100765 -->
 ## Unique Identifier Keys
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
  
-For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 <!-- #p100786 -->
 | Object | Identifier Key  | Description |

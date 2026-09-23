@@ -4,7 +4,7 @@ nav:
     - Explorer: explorer
     - Data Contract Builder (DCB): data-contract-builder
     - Cross-Application Features: cross-application-features
-    - Actian Chrome Extension: data-intelligence-chrome-extension.md
+    - Actian Chrome Extension: chrome-extension.md
     - Actian MCP Server: actian-mcp-server
     - Federated Catalog: federated-catalog
-    - White-Labeling: data-intelligence-white-labeling.md
+    - White-Labeling: white-labeling.md

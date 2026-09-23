@@ -12,7 +12,7 @@ This connector is deprecated. You can use the new [ZDF Dataset](./zdf/zdf.md) co
 <br />
 
 !!! note "Disclaimer"
-    This connector should only be used in very specific cases where a conventional connector is unable to connect to the platform managing the data sets. The indirection offered by this connector will enable you to create and then document datasets from a description. By contract, Zeenea defines a Dataset as a data container that physically exists on a platform. If you decide to use this connector, you must respect this contract in order to provide your end-users with a consistent experience.
+    This connector should only be used in very specific cases where a conventional connector is unable to connect to the platform managing the data sets. The indirection offered by this connector will enable you to create and then document datasets from a description. By contract, Actian Data Intelligence defines a Dataset as a data container that physically exists on a platform. If you decide to use this connector, you must respect this contract in order to provide your end-users with a consistent experience.
     For more information, contact your customer success manager.
 
 
@@ -28,26 +28,26 @@ Configuration templates can be downloaded here:
 
 ## Supported Versions
 
-This connector is compatible with Zeenea description files as illustrated by the templates listed above.
+This connector is compatible with Actian Data Intelligence description files as illustrated by the templates listed above.
 
 ## Installing the Plugin
 
-This connector is presented as a plugin and can be downloaded here: [Connector Downloads](./zeenea-connectors-list.md)
+This connector is presented as a plugin and can be downloaded here: [Connector Downloads](./connectors-list.md)
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](./connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/managing-connections.md)
 
 For this specific connector, fill out the following parameters in the dedicated file:
 
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `generic-dataset` and this value must not be modified. |
 | `connection.path` | Path to the folder containing the descriptor files |
 
@@ -113,7 +113,7 @@ Dataset field.
  
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
  
-More information about unique identification keys in this documentation: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../features-applications/studio/stewardship/identification-keys.md).
   
 | Object | Identification Key | Description |
 |---|---|---|

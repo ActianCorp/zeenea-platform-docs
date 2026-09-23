@@ -1,4 +1,4 @@
 nav:
-    - zeenea-superadmin.md
-    - zeenea-data-steward.md
-    - zeenea-data-explorer.md
+    - superadmin.md
+    - data-steward.md
+    - data-explorer.md

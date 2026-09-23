@@ -7,10 +7,10 @@
   A user with sufficient [permissions](#p100138 "title: SAP Analytics Cloud") is required to establish a connection with SAP Analytics Cloud.
 
 - <!-- #p100039 -->
-  Zeenea traffic flows towards the data source must be open. 
+  Actian Data Intelligence traffic flow towards the data source must be open. 
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 <!-- #p100051 -->
@@ -23,10 +23,10 @@ The SAP Analytics Cloud connector is compatible with the online version of the s
 ## Installing the Plugin
 
 <!-- #p100072 -->
-The SAP plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md# "title: Connector Downloads")
+The SAP plugin can be downloaded here: [Connector Downloads](../connectors-list.md# "title: Connector Downloads")
 
 <!-- #p100081 -->
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md# "title: Installing and Configuring Connectors as a Plugin").
 
 <!-- #p100087 -->
 ## Declaring the Connection
@@ -35,7 +35,7 @@ For more information on how to install a plugin, please refer to the following a
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
 <!-- #p100105 -->
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 <!-- #p100111 -->
 In order to establish a connection with SAP Analytics Cloud, specifying the following parameters in the dedicated file is required:
@@ -44,7 +44,7 @@ In order to establish a connection with SAP Analytics Cloud, specifying the foll
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `sap-sac` and this value must not be modified. |
 | `connection.oauth.endpoint` | SAP Analytics Cloud endpoint<br/>Example: `https://example.authentication.eu10.hana.ondemand.com/oauth/token` |
 | `connection.oauth.client_id` | Client identifier |
@@ -131,7 +131,7 @@ A dataset is an SAP Analytics Cloud model.
 
 ### Data Process
 
-To represent the data flow from an external source, a Zeenea Data Process will be created for each SAP Analytics Cloud model.
+To represent the data flow from an external source, an Actian Data Intelligence Data Process will be created for each SAP Analytics Cloud model.
 
 * **Name**: `import dataset_name`
 
@@ -145,7 +145,7 @@ The connector does not return any information about the story fields. They are n
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
 <!-- #p100528 -->
-More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 <!-- #p100534 -->
 | Object | Identifier Key | Description |

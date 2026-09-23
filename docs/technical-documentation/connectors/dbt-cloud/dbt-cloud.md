@@ -5,7 +5,7 @@
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with DBT Cloud.
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -14,15 +14,15 @@ The DBT Cloud module is compatible with the online version of the product.
 
 ## Installing the Plugin
 
-The DBT Cloud plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md)
+The DBT Cloud plugin can be downloaded here: [Connector Downloads](../connectors-list.md)
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 In order to establish a connection with a DBT Cloud instance, the following parameters in the dedicated file are required:
 
@@ -31,7 +31,7 @@ In order to establish a connection with a DBT Cloud instance, the following para
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `dbt-cloud` and this value must not be modified. |
 | `connection.account_prefix` | DBT Cloud account prefix (when environment are hosted by DBT Cloud : https://[account_prefix].us1.dbt.com) |
 | `connection.token` | DBT Cloud personal access token |
@@ -44,7 +44,7 @@ In order to collect metadata, the running user's permissions must allow them to 
 
 ## Data Extraction
 
-The DBT Cloud connector feeds Zeenea Database with Data Processes. Like other Data Process connectors, it has a single job "synchronize" that discovers all items of interest and creates or updates their documentation in the catalog. DBT Cloud items of interest are Jobs and Runs. So, for each Runs from a Job in DBT Cloud, multiple Data Processes should be created in Zeenea.
+The DBT Cloud connector feeds Actian Data Intelligence Database with Data Processes. Like other Data Process connectors, it has a single job "synchronize" that discovers all items of interest and creates or updates their documentation in the catalog. DBT Cloud items of interest are Jobs and Runs. So, for each Runs from a Job in DBT Cloud, multiple Data Processes should be created in Actian Data Intelligence.
 
 To extract information, the connector runs REST requests on following endpoints:
 
@@ -54,7 +54,7 @@ To extract information, the connector runs REST requests on following endpoints:
 
 ## Synchronization
 
-This connector will harvest all job processes identified in the DBT Cloud instance for each account and latest run, and automatically represent them in Zeenea.
+This connector will harvest all job processes identified in the DBT Cloud instance for each account and latest run, and automatically represent them in Actian Data Intelligence.
 
 ## Lineage
 
@@ -89,7 +89,7 @@ A data process is a DBT Cloud job link between each nodes.
  
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
  
-More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
   
 | Object | Identifier Key | Description |
 |---|---|---|

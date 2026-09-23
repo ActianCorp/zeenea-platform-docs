@@ -3,14 +3,14 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Couchbase.
-* Zeenea traffic flows towards the database must be open. 
+* Actian Data Intelligence traffic flow towards the database must be open. 
 
 | Target | Protocol	| Usual Ports |
 | :--- | :--- | :--- |
 | Couchbase | Java SDK | 8091 |
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -19,22 +19,22 @@ The Couchbase connector was developed and tested with version 7.0.2. It is compa
 
 ## Installing the Plugin
 
-The Couchbase connector can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md).
+The Couchbase connector can be downloaded here: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
   
  Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
- Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+ Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
  
 In order to establish a connection with a Couchbase instance, specifying the following parameters in the dedicated file is required:
  
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `couchbase` and this value must not be modified. |
 | `connection.url` | Database address (example: `couchbase://host:port`) |
 | `connection.username` | Username |
@@ -101,7 +101,7 @@ Dataset field.
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md)
 
 | Object | Identifier Key | Description |
 |---|---|---|

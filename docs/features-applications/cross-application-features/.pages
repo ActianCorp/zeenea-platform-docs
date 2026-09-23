@@ -1,13 +1,13 @@
 nav:
-    - zeenea-access-requests.md
-    - zeenea-data-lineage.md
-    - zeenea-data-product.md
-    - zeenea-data-profiling.md
-    - zeenea-data-sampling.md
-    - zeenea-glossary-hierarchy.md
-    - data-intelligence-item-lifecycle-policies.md
-    - zeenea-microsoft-teams.md
+    - access-requests.md
+    - data-lineage.md
+    - data-product.md
+    - data-profiling.md
+    - data-sampling.md
+    - glossary-hierarchy.md
+    - item-lifecycle-policies.md
+    - microsoft-teams.md
     - Synchronization with a Data Quality Management Tool: data-quality-synchronization
-    - zeenea-view-360-diagram.md
-    - zeenea-query-language.md
+    - view-360-diagram.md
+    - query-language.md
 

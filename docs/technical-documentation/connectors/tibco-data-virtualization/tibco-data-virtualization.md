@@ -5,7 +5,7 @@
 * **Java version:** Validated on Java 11 only.
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Tibco Data Virtualization (TDV).
-* Zeenea traffic flows towards the database must be open.
+* Actian Data Intelligence traffic flow towards the database must be open.
 
 !!! warning "Important"
     * The TDV connector is compatible with **scanner version 34** and later.
@@ -15,7 +15,7 @@
 <br />
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -24,22 +24,22 @@ The TDV connector was developed and tested with TDV 8.4.
 
 ## Installing the Plugin
 
-The Tibco plugin can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md).
+The Tibco plugin can be downloaded here: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
  
 In order to establish a connection with a TDV instance, the following parameters in the configuration file are required:
  
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `tibco-datavirtualization` and this value must not be modified. |
 | `connection.url` | Database address.<br/>Example: `jdbc:compositesw:dbapi@localhost:9401?domain=composite&dataSource=system` |
 | `connection.username` | Username |
@@ -110,7 +110,7 @@ Dataset field.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-Read more: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md)
 
 | Object | Identification Key | Description |
 |---|---|---|

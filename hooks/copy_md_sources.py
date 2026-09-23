@@ -3,7 +3,7 @@ MkDocs hook: after each build, copy every source .md file from docs/ into
 site/ at the same relative path.
 
 This makes raw Markdown available at predictable public URLs on the deployed
-site (e.g. https://help.actian-software.com/digital-experience/9.5/latest/getting-started/zeenea-definitions.md),
+site (e.g. https://help.actian-software.com/digital-experience/9.5/latest/getting-started/definitions.md),
 so they can be used by:
   - in-app docs browsers that need Markdown endpoints
   - users who want to copy-paste page content into Claude / ChatGPT
