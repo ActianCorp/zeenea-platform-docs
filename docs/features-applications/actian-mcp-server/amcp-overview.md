@@ -84,7 +84,6 @@ You should see a list of datasets named `albums` in the `music` schema in all co
 !!! note
     Results are currently limited to a maximum of five items to avoid overloading the agent context.
 
-
 ## Deployment Options
 
 We currently provide only remote connections to Actian MCP Servers. 
