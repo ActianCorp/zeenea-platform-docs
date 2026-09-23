@@ -1,5 +1,4 @@
-Actian Data Intelligence Reference Architecture
-================================================
+# Actian Data Intelligence Reference Architecture
 
 This section provides a high-level overview of the Actian Data Intelligence Platform architecture.
 <br />

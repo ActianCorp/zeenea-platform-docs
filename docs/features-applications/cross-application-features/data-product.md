@@ -23,7 +23,7 @@ A **data contract** is a formal agreement between a data product owner (also kno
 
 ## Data Products in the Actian Data Intelligence Platform
 
-The Actian Data Intelligence Platform supports data products and data contracts natively. It enables organizations to manage, govern, and maximize the value of their data assets as products.
+The Actian Data Intelligence supports data products and data contracts natively. It enables organizations to manage, govern, and maximize the value of their data assets as products.
 
 You can create and manage data products either directly in Studio or by synchronizing YAML descriptors through the Data Product API and CI/CD pipelines. 
 The platform supports two types of data products:
@@ -44,7 +44,7 @@ The platform enables you to:
 * Search, find, and understand data products using the graph-powered search engine and an optimized layout dedicated to the discovery of these new item types.  
 * Request access to data products directly in Explorer and manage these requests in Studio to allow an efficient and governed consumption of the data products.
 
-The following are the key benefits of implementing data products in the Actian Data Intelligence Platform:
+The following are the key benefits of implementing data products in the Actian Data Intelligence:
 
 * **Enhance Data Discovery & Accessibility**
 
@@ -306,7 +306,7 @@ If not all datasets defined in the data contract are linked to the output port, 
 
 #### Manage Properties
 
-You can use the data product and data contract YAML files to create or update properties of data products and output ports in the Data Intelligence Platform.
+You can use the data product and data contract YAML files to create or update properties of data products and output ports in the Actian Data Intelligence Platform.
 
 Properties must be defined using the `customProperties` syntax in ODPS/ODCS, with the property name `zeeneaProperties`.
 
@@ -348,7 +348,7 @@ Properties created through the data product API can be used as filters or displa
 
 #### Manage Contacts
 
-You can use the data product and data contract YAML files to create or update contacts on data products and output ports in the Data Intelligence Platform using the ODPS/ODCS syntax for teams.
+You can use the data product and data contract YAML files to create or update contacts on data products and output ports in the Actian Data Intelligence Platform using the ODPS/ODCS syntax for teams.
 
 For example:
 

@@ -10,7 +10,7 @@ Scanners cannot be deleted. They will however be tagged as “Inactive” in the
 
 ## Moving a Scanner
 
-You can move a scanner simply by moving its installation folder. The scanner will then be automatically updated on the Actian Data Intelligence Platform, without any added manual intervention on your end. 
+You can move a scanner simply by moving its installation folder. The scanner will then be automatically updated on the Actian Data Intelligence, without any added manual intervention on your end. 
 
 This process can be used both for moving a scanner in the same host, or changing the host entirely.   
 

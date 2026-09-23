@@ -1,8 +1,13 @@
+---
+search:
+  boost: 2.0
+---
+
 # White-Labeling
 
 ## Overview
 
-White-labeling allows you to customize the appearance of Actian Data Intelligence Platform applications with your organization's branding.  You can replace selected branding elements to create a consistent experience for your users while preserving standard platform functionality.
+White-labeling allows you to customize the appearance of Actian Data Intelligence applications with your organization's branding.  You can replace selected branding elements to create a consistent experience for your users while preserving standard platform functionality.
 
 White-labeling is supported for the following applications:
 

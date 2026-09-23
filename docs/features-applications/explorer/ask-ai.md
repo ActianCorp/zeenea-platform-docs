@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Ask AI
 
 Ask AI is a Natural Language Query (NLQ) search feature. It allows you to find relevant data assets by asking questions in everyday language. Instead of searching with specific keywords or technical terms, type your question as you would ask a colleague. Ask AI returns relevant results with a comprehensive summary.

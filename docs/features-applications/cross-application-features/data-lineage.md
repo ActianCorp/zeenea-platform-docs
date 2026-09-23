@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Data Lineage
 
 The lineage presents the transformations and uses of the data. It can be used, for example, to understand the origin of a Dataset, or for impact studies.

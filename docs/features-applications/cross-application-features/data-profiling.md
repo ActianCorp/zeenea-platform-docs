@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Data Profiling
 
 Data Profiling allows you to understand a data sample better, in order to more easily detect issues, risks, and general trends related to Data Quality. It hence converts data into key insights. 

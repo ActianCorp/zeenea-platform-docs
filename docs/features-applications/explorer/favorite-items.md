@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Favorite Items
 
 This feature enables you to mark catalog items as **Favorite Items** and access them from a dedicated list. This single-click approach saves time and effort from searching repeatedly for the same catalog item or relying on browser bookmarks.

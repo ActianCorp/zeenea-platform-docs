@@ -1,10 +1,15 @@
+---
+search:
+  boost: 2.0
+---
+
 # Actian Data Intelligence Chrome Extension
 
 ## Overview
 
 Actian provides a Google Chrome extension that enables dashboard and BI report users to quickly access standardized KPI, business term definitions and report documentation directly within their BI tools (for example, Power BI and Tableau), without leaving the report.
 
-This extension automatically loads and highlights your glossary terms on any webpage. It also retrieves report documentation from the Data Intelligence Platform and displays it in a side panel.
+This extension automatically loads and highlights your glossary terms on any webpage. It also retrieves report documentation from the Actian Data Intelligence Platform and displays it in a side panel.
 
 ### Key Benefits
 
@@ -15,7 +20,7 @@ This extension automatically loads and highlights your glossary terms on any web
   
 ### Core Capabilities
 
-* Automatically search and retrieve report and dashboard documentation from the Data Intelligence Platform.
+* Automatically search and retrieve report and dashboard documentation from the Actian Data Intelligence.
 * Highlight KPI terms in BI dashboards and reports.
 * Instantly display definitions on hover using the business glossary.
 * Works across major BI platforms.
@@ -48,7 +53,7 @@ You can pin the extension to the browser toolbar for quick access.
 
 ### User Authentication
 
-After installation, enter the Data Intelligence Platform URL and sign in using your credentials (same as for the Studio or Explorer).
+After installation, enter the Actian Data Intelligence URL and sign in using your credentials (same as for the Studio or Explorer).
 
 The URL format is as follows:
 
@@ -62,7 +67,7 @@ If your account is removed from the platform, the extension attempts to refresh 
 
 ### Glossary Synchronization
 
-After signing in, synchronize the extension to load glossary definitions from your organization’s catalog in the Data Intelligence Platform. The extension stores this data locally.
+After signing in, synchronize the extension to load glossary definitions from your organization’s catalog in the Actian Data Intelligence. The extension stores this data locally.
 
 * Synchronization runs automatically once per day.
 * To trigger synchronization manually, select **Sync glossary**.
@@ -90,20 +95,20 @@ When you hover over a highlighted term, a tooltip displays its definition. Selec
 
 ### Access Report Documentation
 
-When the extension is activated on a specific page or subdomain, it reads the page URL and queries the Data Intelligence Platform to find a matching documented report or dashboard (Visualization item type). 
+When the extension is activated on a specific page or subdomain, it reads the page URL and queries the Actian Data Intelligence to find a matching documented report or dashboard (Visualization item type). 
 
-If a match is found, an **About this report** button appears as an overlay on the page. Select this button to open a side panel that displays the report documentation from the Data Intelligence Platform.
+If a match is found, an **About this report** button appears as an overlay on the page. Select this button to open a side panel that displays the report documentation from the Actian Data Intelligence.
 
 ### Data Handling and Privacy
 
 The extension reads the page content only when it is activated for the current page or subdomain. It does not access other browser tabs.
 
-Only the URL of the active tab is sent to the Data Intelligence Platform. Page content is not sent to the platform. Glossary matching is performed locally in the browser.
+Only the URL of the active tab is sent to the Actian Data Intelligence. Page content is not sent to the platform. Glossary matching is performed locally in the browser.
 
 Tooltip and side panel content are rendered using innerHTML and Shadow DOM to prevent style conflicts with the host page.
 
 !!! note
-    The extension does not sanitize data. It uses data from the Data Intelligence Platform, which is sanitized during ingestion.
+    The extension does not sanitize data. It uses data from the Actian Data Intelligence, which is sanitized during ingestion.
 
 ## Manage the Extension
 
@@ -137,4 +142,4 @@ The extension stores the following data locally:
 * Registered domains
 * Glossary cache
 
-It does not store or send any other user activity data to the Data Intelligence Platform.
+It does not store or send any other user activity data to the Actian Data Intelligence.

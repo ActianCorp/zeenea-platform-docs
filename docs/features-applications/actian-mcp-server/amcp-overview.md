@@ -7,11 +7,11 @@ search:
 
 The Actian MCP Server uses the open-source Model Context Protocol (MCP) standard to enable AI agents to access contextual metadata from external systems. This protocol provides a standardized way for large language models (LLMs) and automation frameworks to retrieve the context they need to provide accurate and reliable results.
 
-The Actian MCP Server acts as a secure bridge between the Actian Data Intelligence Platform and AI tools, such as Claude, Cursor, Windsurf, and Microsoft Copilot Studio. With the Actian MCP Server, you can search and find assets at both the semantic layer and the data model level, using real-time context from Studio and Explorer applications within the Actian Data Intelligence Platform.
+The Actian MCP Server acts as a secure bridge between the Actian Data Intelligence Platform and AI tools, such as Claude, Cursor, Windsurf, and Microsoft Copilot Studio. With the Actian MCP Server, you can search and find assets at both the semantic layer and the data model level, using real-time context from Studio and Explorer applications within the Actian Data Intelligence.
 
 ## Actian MCP Server Tools
 
-The Actian MCP Server provides a set of tools that enable AI agents to work directly with metadata in the Actian Data Intelligence Platform. These tools supply real-time context to AI environments, making it easier to search, explore, and update metadata without leaving your workflow.
+The Actian MCP Server provides a set of tools that enable AI agents to work directly with metadata in the Actian Data Intelligence. These tools supply real-time context to AI environments, making it easier to search, explore, and update metadata without leaving your workflow.
 
 The tools include the following:
 

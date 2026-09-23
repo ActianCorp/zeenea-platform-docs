@@ -11,7 +11,7 @@ Should you require more technical information or advice on the installation phas
 
 You have specific rights and permissions as a Super Admin of the Actian Data Intelligence suite. 
 
-## Step 1: Login to Actian Data Intelligence
+## Step 1: Login to Actian Data Intelligence Platform
 
 You enter the login/password combination which will have been sent to you by email.
 

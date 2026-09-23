@@ -12,7 +12,7 @@ In the data catalog, data samples enable data scientists, predictive modelers, a
 
 Data sampling is performed by the Actian Data Intelligence Scanner installed in your information system. It can be triggered programmatically, like inventory, or manually from the administration interface.
 
-During the execution of this task, the Scanner recovers the first 30 lines of each connection's Dataset. Then it encrypts and transmits this information to the Actian Data Intelligence Platform, where it is stored.
+During the execution of this task, the Scanner recovers the first 30 lines of each connection's Dataset. Then it encrypts and transmits this information to the Actian Data Intelligence, where it is stored.
 
 Data sampling is performed when fields are not Blob or binary. Moreover, Actian Data Intelligence truncates the recovered values to a maximum of 100 characters.
 

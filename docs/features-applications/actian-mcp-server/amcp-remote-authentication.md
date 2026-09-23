@@ -66,4 +66,4 @@ The following is a generic JSON example:
 * **Troubleshooting**: If your setup involves GraphQL APIs (for example, for broader catalog access), the same API secret can be used in headers for endpoints like `<https://<your-tenant>>.zeenea.app/api/catalog/graphql`.  
 * For advanced integrations, refer to the product documentation for API rate limits, error handling, and syncing with external identity systems.
 
-This setup enables secure, authenticated access to the Actian Data Intelligence Platform through MCP without exposing sensitive information. If your instance has custom configurations, see the admin console for details.
+This setup enables secure, authenticated access to the Actian Data Intelligence through MCP without exposing sensitive information. If your instance has custom configurations, see the admin console for details.

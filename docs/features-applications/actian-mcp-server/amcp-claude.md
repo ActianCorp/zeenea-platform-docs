@@ -1,6 +1,11 @@
+---
+search:
+  boost: 2.0
+---
+
 # Set up Claude Desktop
 
-You can connect Claude Desktop to the Actian MCP Server to access the metadata from your Actian Data Intelligence Platform account directly in your desktop environment. This allows you to work locally while still leveraging metadata context from the Actian Data Intelligence Platform.
+You can connect Claude Desktop to the Actian MCP Server to access the metadata from your Actian Data Intelligence Platform account directly in your desktop environment. This allows you to work locally while still leveraging metadata context from the Actian Data Intelligence.
 
 ## Prerequisites
 

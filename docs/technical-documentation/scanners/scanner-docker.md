@@ -148,7 +148,7 @@ docker run \
  zeenea-scanner:latest
 ```
 
-Your container will share the name by which Actian Data Intelligence Platform knows it.
+Your container will share the name by which Actian Data Intelligence knows it.
 
 Choose a unique name and set the `SCANNER_NAME` env variable.
 

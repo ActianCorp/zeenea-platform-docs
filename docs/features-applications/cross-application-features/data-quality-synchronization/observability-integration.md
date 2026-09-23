@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2.0
+---
+
 # Actian Data Observability Integration
 
 This section applies only if your subscription includes the Actian Data Observability. If you want to activate this paid option, contact your Customer Success Manager (CSM).
