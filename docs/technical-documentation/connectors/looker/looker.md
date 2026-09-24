@@ -128,7 +128,7 @@ Dataset field. Can be used as a Dashboard report data.
 
 ### Data Process
 
-To represent the data flow from an external source, a Actian Data Intelligence Data Process will be created for each Looker Dataset.
+To represent the data flow from an external source, an Actian Data Intelligence Data Process will be created for each Looker Dataset.
 
 * **Name**: `import input/output_dataset name`
 

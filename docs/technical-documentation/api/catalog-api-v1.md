@@ -10,7 +10,7 @@ search:
 
  
 
-Thanks to this Catalog API, dedicated to the exploration and mutation of Items, you can synchronize metadata from an external system into Actian Data Intelligence, or pull information from your data catalog to another system.
+With this Catalog API, dedicated to the exploration and mutation of Items, you can synchronize metadata from an external system into Actian Data Intelligence, or pull information from your data catalog to another system.
 
 Here are some use cases (all associated requests are available at the end of this article):
 
@@ -74,7 +74,7 @@ For more information, see [API Lifecycle](./api-lifecycle.md) can be found here.
 
 Properties are displayed without their sections in the APIs. Only non-empty properties are returned. 
 
-Source and custom properties are returned in the same section, but are however distinguishable thanks to the "provenance" attribute.
+Source and custom properties are returned in the same section but can be distinguished by the `provenance` attribute.
 
 ## Representation of the links between Items
 

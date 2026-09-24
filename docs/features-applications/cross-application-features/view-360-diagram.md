@@ -16,9 +16,9 @@ Click on an Item to highlight its direct links and to display an overview of its
 
 ### Filters
 
-By default, dataset fields are hidden when opening the section: this is to make sure the graph is not too crowded.
+By default, dataset fields are hidden when opening the section to keep the graph from becoming too crowded.
 
-You can display Fields or hide other types of Items thanks to the action button in the top right corner of the diagram.
+You can display Fields or hide other types of Items using the action button in the upper-right corner of the diagram.
 
 ![](./images/view-360-diagram2.png)
 

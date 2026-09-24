@@ -42,7 +42,7 @@ It is also possible to directly extend all available lineage levels. To do this,
 
 For each Dataset, you can view the number of Fields that make up the Dataset, and display a list by clicking on this number. Fields belonging to business or primary keys are also shown in this extended view.
 
-Thanks to the Catalog API, it is also possible to document lineage at the Field level, by adding operations at the Data Process level. These operations contain a list of input and output Fields, as well as a description (see API documentation for details). You can consult the list of these operations in the Studio, on the Data Process details page.
+With the Catalog API, it is also possible to document lineage at the Field level, by adding operations at the Data Process level. These operations contain a list of input and output Fields, as well as a description (see API documentation for details). You can consult the list of these operations in the Studio, on the Data Process details page.
 
 When the information is available, a dot is added to the left or right of the relevant Field.
 

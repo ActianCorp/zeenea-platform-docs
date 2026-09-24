@@ -1,4 +1,4 @@
-# Adding a Actian Data Intelligence Descriptor Format (ZDF) Connection
+# Adding an Actian Data Intelligence Descriptor Format (ZDF) Connection
 
 ## Connectors
 

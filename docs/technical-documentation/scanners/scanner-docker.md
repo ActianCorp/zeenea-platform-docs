@@ -1,7 +1,7 @@
 # Creating a Docker Image for your Scanner
 
 !!! note "Disclaimer"
-    This Docker documentation is provided as an example. Adapt it to your context, following the online documentation about how to run a Actian Data Intelligence Scanner.
+    This Docker documentation is provided as an example. Adapt it to your context, following the online documentation about how to run an Actian Data Intelligence Scanner.
 
 
 ## Introduction
