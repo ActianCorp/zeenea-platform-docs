@@ -37,7 +37,7 @@ The following sections describe the ODCS attributes supported by DCB and indicat
 | `schema[].physicalName` | Yes | No | Physical name of the object in the data source. |
 | `schema[].physicalType` | Yes | No | Physical type of the object. Valid values are `table`, `view`, `topic`, and `file`. |
 | `schema[].description` | Yes | No | Human-readable description of the schema object. |
-| `schema[].quality` | Yes | No | Data quality rules associated with the object (for example, rowCount, compound duplicateValues). |
+| `schema[].quality` | Yes | No | Data quality rules associated with the object (for example, rowCount, compound duplicateValues).<br/>SQL and Text-based data quality rules are supported. |
 | `schema[].businessName` | Yes | No | Business-facing name of the schema object. |
 | `schema[].dataGranularityDescription` | Yes | No | Granular level of data in this object. |
 | `schema[].relationships` | Yes | No | List of relationships to other properties. Supports composite keys and dot-notation references. |
