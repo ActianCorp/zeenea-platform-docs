@@ -208,7 +208,7 @@ Note that the file contains the following information:
 * Permission set id (Group id)
 * Permission set name (Group name)
 * Permission set description (Group description)
-* Permission set built-in: Boolean (true/false) - Indicates if it is a Actian Data Intelligence built-in permission set
+* Permission set built-in: Boolean (true/false) - Indicates if it is an Actian Data Intelligence built-in permission set
 * Custom item documentation permission: Whether the user can edit Custom Items (true/false)
 * Custom item documentation scope: 
       * All: User can edit all Custom Items

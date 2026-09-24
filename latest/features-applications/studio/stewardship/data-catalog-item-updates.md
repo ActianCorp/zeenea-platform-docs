@@ -7,7 +7,7 @@ As soon as an Item is modified, Actian Data Intelligence adds an entry in the It
 All this information can also be retrieved via APIs in:
 
 * [Audit Trail APIs](../../../technical-documentation/api/audit-trail-apis.md)
-* The [exploration and mutation APIs](../../../technical-documentation/api/catalog-api-v1.md) which allow you to manipulate the dates of the last updated Items thanks  to the findItems API as well as the LoadItemByKey API which allows to retrieve the updated date in the updatedAt field
+* The [exploration and mutation APIs](../../../technical-documentation/api/catalog-api-v1.md) which allow you to manipulate the dates of the last updated Items using the `findItems` API as well as the `LoadItemByKey` API which allows to retrieve the updated date in the `updatedAt` field
 
 Note that the date of the last update is not visible in Explorer.
 

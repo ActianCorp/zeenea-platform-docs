@@ -2,7 +2,7 @@
 
 Actian Data Intelligence enables you to synchronize quality information from third-party solutions relating to your Datasets with the catalog.
 
-Thanks to this synchronization, you can check the quality level of your Datasets according to the criteria and controls defined in your DQM tools directly from your Studio and Explorer applications.
+With this synchronization, you can check the quality level of your Datasets according to the criteria and controls defined in your DQM tools directly from your Studio and Explorer applications.
 
 To implement this integration, Actian Data Intelligence offers a flexible approach based on our GraphQL API.
 
