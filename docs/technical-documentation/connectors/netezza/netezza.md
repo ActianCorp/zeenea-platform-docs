@@ -5,7 +5,7 @@
 * **Java version:** Validated on Java 11 only.
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Netezza.
-* Zeenea traffic flows towards the data source must be open.
+* Actian Data Intelligence traffic flow towards the data source must be open.
 
 | Target| Protocol | Usual Ports |
 | :--- | :--- | :--- |
@@ -18,7 +18,7 @@
 <br />
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -29,29 +29,29 @@ The Netezza connector was developed and tested with version 7.2.1.
 
 From version 54 of the scanner, the Netezza connector is presented as a plugin.
 
-It can be downloaded here and requires a scanner version 64: [Connector Downloads](../zeenea-connectors-list.md)
+It can be downloaded here and requires a scanner version 64: [Connector Downloads](../connectors-list.md)
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 In order to establish a connection with a Netezza instance, specifying the following parameters in the dedicated file is required:
 
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `netezza` and this value must not be modified. |
 | `connection.url` | Database address (example: `jdbc:netezza://main:5490/sales`) |
 | `connection.username` | Username |
 | `connection.password` | User password |
 | `filter` | **Scanner 69 and later**.<br/>Optional. Rich filter to restrict the inventory scope. |
 | `cache.enabled` | **Scanner 69 and later**.<br/>Enable the cache functionality. When the cache is activated, the schema update performs four queries in total instead of four per imported table. The result is greater efficiency. |
-| `cache.folder` | **Scanner 69 and later**.<br/>Folder where caches are stored. The same folder can be used by several connections.<br/>The size of the cache file produced depends on the number of tables in the database (and not on the number of tables imported into Zeenea).<br/>If the folder is not specified, the cache is stored in memory. |
+| `cache.folder` | **Scanner 69 and later**.<br/>Folder where caches are stored. The same folder can be used by several connections.<br/>The size of the cache file produced depends on the number of tables in the database (and not on the number of tables imported into Actian Data Intelligence).<br/>If the folder is not specified, the cache is stored in memory. |
 | `cache.ttl` | **Scanner 69 and later**.<br/>Cache validity period (default `23h`)<br/>As long as the cache is valid, requests that fill it are not executed. |
 
 ## Rich Filters
@@ -60,7 +60,7 @@ In order to establish a connection with a Netezza instance, specifying the follo
 
 The Netezza connector benefits from the feature of rich filters in the configuration of the connector. The criteria that can be used to filter the elements are the standard ones for JDBC `schema` and `table`, plus two additional keys to filter objects by type: `type` and `objclass`.
 
-Read more: [Filters](../../scanners/zeenea-filters.md)
+Read more: [Filters](../../scanners/filters.md)
 
 The filter can apply to the following criteria:
 
@@ -132,10 +132,10 @@ Dataset field.
 ## Data Profiling
 
 !!! warning "Important"
-    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Ensure the estimated impact of this feature is acceptable and that the default frequency is appropriate before enabling it.
 
 
-The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics in the following documentation: [Data Profiling](../../../features-applications/cross-application-features/zeenea-data-profiling.md).
+The statical profiles feature, also named "data profiling", is available for this connector. The impact of this feature must be evaluated before its activation on any of your connections. You can find more information about the resulting statistics in the following documentation: [Data Profiling](../../../features-applications/cross-application-features/data-profiling.md).
 
 Read access on targeted tables is mandatory to activate the feature. For Netezza technologies, the connector executes the following request to get a data sample: 
 
@@ -152,13 +152,13 @@ SELECT
 
 The request above collects a data sample for each field where the feature is activated through the studio (`field1`, `field2`). The limit of collected rows is 10.000.
 
-These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Zeenea Scanner Setup](../../scanners/zeenea-scanner-setup.md).
+These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Actian Data Intelligence Scanner Setup](../../scanners/scanner-setup.md).
 
 ## Unique Identification Keys
  
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
  
-More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about unique identification keys in this documentation: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
   
 | Object | Identification Key | Description |
 |---|---|---|

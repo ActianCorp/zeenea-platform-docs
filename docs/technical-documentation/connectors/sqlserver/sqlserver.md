@@ -3,11 +3,11 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Microsoft SQL Server.
-* Zeenea traffic flows towards SQL Server must be open.
+* Actian Data Intelligence traffic flow towards SQL Server must be open.
 * The only authentication mode supported by this connector requires the user's username and password.
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
  
 ## Supported Versions
@@ -18,9 +18,9 @@ The SQL Server connector was tested with the SQL Server 2019 and is compatible w
 
 From version 54 of the scanner, the SQL Server connector is presented as a plugin.
 
-The plugin can be downloaded here and requires a scanner version 64 or later: [Connector Downloads](../zeenea-connectors-list.md).
+The plugin can be downloaded here and requires a scanner version 64 or later: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ### Version 65 and later
 
@@ -32,14 +32,14 @@ Each time the scanner or plugin is updated, you must update the service using th
   
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-For more information about managing connections, see [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../../../features-applications/administration/managing-connections.md).
 
 To establish a connection with an SQL Server instance, fill in the following parameters in the dedicated configuration file:
  
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The connector type to use for the connection. Here, the value must be `SqlServer` and this value must not be modified. |
 | `connection.url` | Database URL<br/> Example: `jdbc:sqlserver://example.test.net;database=my_db;encrypt=true` |
 | `connection.database` | Database name |
@@ -67,7 +67,7 @@ Information about primary and foreign keys is collected using the following proc
 * `sp_pkeys`
 * `sp_fkeys`
 
-To collect this information, the Zeenea user defined in the connection configuration must be able to connect to the selected databases and must be granted the following permission:
+To collect this information, the Actian Data Intelligence user defined in the connection configuration must be able to connect to the selected databases and must be granted the following permission:
 
 `grant VIEW ANY DEFINITION to zeenea;`
 
@@ -82,7 +82,7 @@ If the data profiling feature is enabled, the user must have read access to impa
 
 Since version 47 of the scanner, the SQL Server connector supports rich filter feature in its configuration.
 
-For more information, see [Filters](../../scanners/zeenea-filters.md).
+For more information, see [Filters](../../scanners/filters.md).
 
 ## Data Extraction
 
@@ -138,7 +138,7 @@ A data process represents the request to build a view.
     The Data Profiling feature, which can be enabled on this connection, allows Explorers to better understand the type of data stored in each field. This feature, which can be activated in the Scanner, runs by default on a weekly schedule, every Saturday. However, depending on the number of fields for which you enable this feature, the calculation can quickly become costly. Before enabling it, ensure that the estimated impact of this feature is acceptable and that the default frequency is appropriate.
 
 
-The statistical profiles feature, also known as _Data Profiling_, is available for this connector. The impact of this feature must be evaluated before activating it on any of your connections. For more information about the resulting statistics, see [Data Profiling](../../../features-applications/cross-application-features/zeenea-data-profiling.md).
+The statistical profiles feature, also known as _Data Profiling_, is available for this connector. The impact of this feature must be evaluated before activating it on any of your connections. For more information about the resulting statistics, see [Data Profiling](../../../features-applications/cross-application-features/data-profiling.md).
 
 To activate this feature, read access to the target tables is required. For SQL Server technologies, the connector executes the following request to get a data sample: 
 
@@ -155,13 +155,13 @@ SELECT
 
 The request above collects a data sample for each field where the feature is activated through the studio (`field1`, `field2`). The limit is 10.000 lines (`linesPercentage` parameter) deduced from a calculation with the number of rows set in the previous request.
 
-These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Zeenea Scanner Setup](../../scanners/zeenea-scanner-setup.md).
+These requests will be executed, whether manually, in case of user action directly on the admin portal, or periodically according to the parameter `collect-fingerprint` from the `application.conf` file, as described in [Actian Data Intelligence Scanner Setup](../../scanners/scanner-setup.md).
 
 ## Unique Identifier Keys
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
  
-For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 | Object | Identifier Key | Description |
 |---|---|---|

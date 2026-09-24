@@ -3,34 +3,34 @@
 ## Prerequisites
 
 * To connect to a MongoDB cluster, a user with sufficient [permissions](#p100255 "title: MongoDB") is required.
-* The traffic flows from Zeenea towards the MongoDB cluster must be open.
+* Actian Data Intelligence traffic flow towards the MongoDB cluster must be open.
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
 
-Since scanner version 26.9, you can download the MongoDB plugin from [Connector Downloads](../zeenea-connectors-list.md)..
+Since scanner version 26.9, you can download the MongoDB plugin from [Connector Downloads](../connectors-list.md)..
 
 ## Installing the Plugin
 
-Since scanner version 26.9, you can download the MongoDB plugin from [Connector Downloads](../zeenea-connectors-list.md).
+Since scanner version 26.9, you can download the MongoDB plugin from [Connector Downloads](../connectors-list.md).
 
-For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for changes and resynchronizes automatically.
 
-For more information about managing connections, see [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../../../features-applications/administration/managing-connections.md).
 
 To establish a connection to a MongoDB cluster, fill in the following parameters in the dedicated configuration file:
 
 | Parameter | Expected value |
 |---|---|
 | `name` | Specifies the display name for the connection. |
-| `code` | Defines the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | Defines The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. The value must be `Mongodb` and must not be modified. |
 | `enabled` | A Boolean value to enable or disable the connection (`true` or `false`). <br />The default value is `true`. |
 | `catalog_code` | Defines the catalog code associated with the connection (`default` when empty). |
@@ -106,7 +106,7 @@ The `readAnyDatabase` integrated role is enough to catalog the entire system.
 
 The read integrated role, when assigned to a database, allows the user to catalog that base's collections.
 
-In the following example, the Zeenea account can catalog the sales and stock bases:
+In the following example, the Actian Data Intelligence account can catalog the sales and stock bases:
 
 ```
 db.grantRolesToUser('zeenea', [
@@ -115,9 +115,9 @@ db.grantRolesToUser('zeenea', [
 ]);
 ```
 
-### Zeenea Role
+### Actian Data Intelligence Role
 
-You may regroup permissions into one specific role for Zeenea:
+You may regroup permissions into one specific role for Actian Data Intelligence:
 
 ```
 db.createRole({
@@ -166,7 +166,7 @@ Table fields.
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
 
-For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 | Object | Identification Key | Description |
 |---|---|---|

@@ -5,10 +5,10 @@
 * **Java version:** Validated on Java 11 and 17 only.
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Azure Data Lake. 
-* Zeenea traffic flows towards the Data Lake must be open. 
+* Actian Data Intelligence traffic flow towards the Data Lake must be open. 
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -19,22 +19,22 @@ The Azure connection can be set up towards ADLS Gen 2. To choose the appropriate
 
 Starting with scanner version 54, the ADLS connector is provided as a plugin.
 
-You can download the Azure plugin from [Connector Downloads](../zeenea-connectors-list.md) and requires a scanner version 64 or later.
+You can download the Azure plugin from [Connector Downloads](../connectors-list.md) and requires a scanner version 64 or later.
 
-For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-For more information about managing connections, see [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../../../features-applications/administration/managing-connections.md).
 
 To establish a connection with an Azure Gen 2 cluster, fill in the following parameters in the dedicated configuration file:
 
 | Parameter| Expected Value |
 | :--- | :--- |
 | `name` | Specifies the display name for the connection. | 
-| `code` | Specifies the unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
+| `code` | Specifies the unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | Specifies the type of connector to be used for the connection. The value must be `ADLSGen2` and must not be modified. | 
 | `enabled` | Specifies whether to enable or disable the connection (`true` or `false`). <br />The default value is `true`. |
 | `catalog_code` | Specifies the catalog code associated with the connection (`default` when empty). |
@@ -90,13 +90,13 @@ or with a regex (slashes in regex must be escaped):
 
 `not path ~ /(^|.*\/)test\/.*/`
  
-For more information about filters, see [Filters](../../scanners/zeenea-filters.md).
+For more information about filters, see [Filters](../../scanners/filters.md).
  
 ## Data Extraction
 
 To extract data, the connector needs to follow specified rules in order to rebuild the hierarchy and the datasets.
 
-For more information, see [Dataset Detection on File Systems](../zeenea-dataset-detection.md).
+For more information, see [Dataset Detection on File Systems](../dataset-detection.md).
  
 ## Collected Metadata
 
@@ -132,7 +132,7 @@ A dataset is identified according to the connector's rules.
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
  
-For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 | Object | Identification Key | Description |
 |---|---|---|

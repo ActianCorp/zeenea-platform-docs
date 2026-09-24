@@ -144,7 +144,7 @@ You review all proposed changes on a single approval card before they are applie
 
 ## Administration
 
-Administrators manage the Steward agent from the **Agents** tab in **Administration**. This section is intended for administrators; everyday users can skip it. For more information about the full workflow, see [Managing Agents](../../administration/zeenea-managing-agents.md).
+Administrators manage the Steward agent from the **Agents** tab in **Administration**. This section is intended for administrators; everyday users can skip it. For more information about the full workflow, see [Managing Agents](../../administration/managing-agents.md).
 
 ### Enabling the Steward Agent
 
@@ -238,10 +238,10 @@ The agent declines requests that are unrelated to catalog stewardship. Rephrase 
 
 ## Related Resources
 
-- [Managing Agents](../../administration/zeenea-managing-agents.md) — Administration: enabling the agent, access, and shared instructions
-- [Managing Groups](../../administration/zeenea-managing-groups.md) — The *Manage Agents* permission and *Agent Access*
-- [Item Documentation](./zeenea-item-documentation.md)
-- [Editing Items in Bulk](./zeenea-editing-items-in-bulk.md)
-- [Documentation Completion Level](./zeenea-doc-completion-level.md)
-- [Adding & Removing Item Contacts](./zeenea-add-remove-item-contacts.md)
-- [Searching the Catalog](./zeenea-studio-search.md)
+- [Managing Agents](../../administration/managing-agents.md) — Administration: enabling the agent, access, and shared instructions
+- [Managing Groups](../../administration/managing-groups.md) — The *Manage Agents* permission and *Agent Access*
+- [Item Documentation](./item-documentation.md)
+- [Editing Items in Bulk](./editing-items-in-bulk.md)
+- [Documentation Completion Level](./doc-completion-level.md)
+- [Adding & Removing Item Contacts](./add-remove-item-contacts.md)
+- [Searching the Catalog](./studio-search.md)

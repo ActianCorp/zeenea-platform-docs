@@ -2,16 +2,17 @@
 
 In order to establish a connection with Amazon S3, a user with sufficient [permissions](#user-permissions) is required. 
 
-Zeenea traffic flows towards the database must be opened.
+Actian Data Intelligence traffic flow towards the database must be opened.
 
-There are two ways to authenticate the Zeenea Agent on S3:
+There are two ways to authenticate the Actian Data Intelligence Agent on S3:
 
 * Either the Agent's host server has sufficient credentials to connect to S3 (recommended way). 
   In this case, available authentication methods are: 
+    
     * Instance Role
     * Environment Variable
     * Configuration File
-* Or, the API Keys are managed by Zeenea. In this case, the keys need to be entered in the connection configuration file.
+* Or, the API Keys are managed by Actian Data Intelligence. In this case, the keys need to be entered in the connection configuration file.
 
 Traffic flows toward S3 must be open. 
 
@@ -20,7 +21,7 @@ Traffic flows toward S3 must be open.
 | AWS S3 | HTTPS | 443 |
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
  
 ## Supported Versions
@@ -29,22 +30,22 @@ The S3 connector was successfully tested with the online application.
 
 ## Installing the Plugin
 
-From version 54 of the scanner, the S3 connector is presented as a plugin and can be downloaded here: [Connector Downloads](../zeenea-connectors-list.md).
+From version 54 of the scanner, the S3 connector is presented as a plugin and can be downloaded here: [Connector Downloads](../connectors-list.md).
 
-For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
  
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
 
 In order to establish a connection with Amazon S3, specifying the following parameters in the dedicated file is required:
 
 | Parameter| Expected Value |
 | :--- | :--- |
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `AmazonS3` and this value must not be modified. |
 | `enabled` | A boolean value to enable or disable the connection. |
 | `catalog_code` | The catalog code associated with the connection (`default` when empty). |
@@ -141,7 +142,7 @@ Since version 54 of the scanner, the S3 connector benefits from the feature of r
 * `bucket`: name of the bucket
 * `key`: name of the object
 
-Read more: [Filters](../../scanners/zeenea-filters.md)
+Read more: [Filters](../../scanners/filters.md)
  
 ## Data Extraction
 
@@ -149,7 +150,7 @@ A dataset from a file system may actually be stored in multiple files. Those fil
 
 When running the inventory, the Amazon S3 connector detects datasets with the usual dataset naming convention in Amazon S3.
 
-Read more: [Dataset Detection on File Systems](../zeenea-dataset-detection.md)
+Read more: [Dataset Detection on File Systems](../dataset-detection.md)
  
 ## Collected Metadata
 
@@ -188,7 +189,7 @@ Dataset field.
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 | Object | Identification Key | Description |
 |---|---|---|

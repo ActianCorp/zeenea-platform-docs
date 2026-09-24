@@ -11,11 +11,11 @@ The Tableau (V1) plugin has been deprecated. You can use the [Tableau (V2)](./ta
 
 ## Prerequisites
 
-* A user with sufficient [permissions](#user-permissions) is required to establish a connection with the Tableau solution. Please read [User Permissions](#user-permissions) below.
-* The Zeenea traffic flows towards Tableau must be open. If you want to connect Zeenea to a Tableau installed on your own server, you must activate the Tableau API Metadata. See documentation here: [https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server](https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server)
+* A user with sufficient [permissions](#user-permissions) is required to establish a connection with the Tableau solution. See [User Permissions](#user-permissions).
+* The Actian Data Intelligence traffic flow towards Tableau must be open. If you want to connect Actian Data Intelligence to a Tableau installed on your own server, you must activate the Tableau API Metadata. See documentation here: [https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server](https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server)
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](./zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](./connectors-list.md).
 
 
 ## Supported Versions
@@ -27,25 +27,25 @@ The Tableau connector was tested on the SaaS solution.
 !!! warning
     * This version of the connector is NOT compatible with previous versions (3.XX and earlier) of Tableau Connector.
     * All the items you may have already imported **MUST** be deleted and reimported.
-    * If you need to export your documentation before upgrading, please contact our support before proceeding.
+    * If you need to export your documentation before upgrading, contact our support before proceeding.
 
 
-The Tableau plugin can be downloaded here: [Connector Downloads](./zeenea-connectors-list.md).
+The Tableau plugin can be downloaded here: [Connector Downloads](./connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](./connectors-install-as-plugin.md).
 
 ## Declaring the Connection
   
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
  
-Read more: [Managing Connections](../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../features-applications/administration/managing-connections.md)
  
 In order to establish a connection with Tableau, specifying the following parameters in the dedicated file is required:
  
 | Parameter | Expected value |
 |---|---|
 | `name` | The name that will be displayed to catalog users for this connection. |
-| `code` | The unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
+| `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `Tableau` and this value must not be modified. |
 | `connection.url` | URL of the server hosting Tableau. Example: `https://eu-west-1a.online.tableau.com/` |
 | `connection.site` | Name of the website created on the aforementioned server. The site name can be found in the URL.<br/>Example: https:&#47;&#47;eu-west-1a.online.tableau.com/#/site/**_site-name_**/home |
@@ -73,7 +73,7 @@ A Personal Access Token must be generated to access the metadata.
 
 In order to generate this token, log into Tableau with a User having Site Administrator privilege.
 
-Then, make sure you can create a Personal Access Token for the site (see instructions here: [https://help.tableau.com/current/pro/desktop/en-us/useracct.htm#create-and-revoke-personal-access-tokens](https://help.tableau.com/current/pro/desktop/en-us/useracct.htm#create-and-revoke-personal-access-tokens).
+Then, make sure you can create a Personal Access Token for the site (see instructions here: [https://help.tableau.com/current/pro/desktop/en-us/useracct.htm#create-and-revoke-personal-access-tokens](https://help.tableau.com/current/pro/desktop/en-us/useracct.htm#create-and-revoke-personal-access-tokens)).
 
 In case you are using Tableau Server, you also have to activate Tableau Metadata API. Instructions are provided here: [https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server](https://help.tableau.com/current/api/metadata_api/en-us/docs/meta_api_start.html#enable-the-tableau-metadata-api-for-tableau-server)
 
@@ -81,9 +81,7 @@ Finally, create a PAT (Personal Access Token) and paste it into your Tableau Con
 
 ## Data Extraction
 
-[comment]: <> (Text refers to Looker. Is this a cut/paste error?)
-
-In order to extract information from Tableau, the connector will scan all workbooks within the solution and transform them into **Visualization** objects in Zeenea. All related Data Sources are then collected and transferred to Zeenea. Data sources are referenced as **Datasets**. Fields are recreated as **Field** type objects in Zeenea. For each Looker Dataset, a **Data Process** is created to represent the lineage with the origin Dataset.
+In order to extract information from Tableau, the connector will scan all workbooks within the solution and transform them into **Visualization** objects in Actian Data Intelligence. All related Data Sources are then collected and transferred to Actian Data Intelligence. Data sources are referenced as **Datasets**. Fields are recreated as **Field** type objects in Actian Data Intelligence. For each Looker Dataset, a **Data Process** is created to represent the lineage with the origin Dataset.
 
 To identify the objects in the source system, the connector uses the technical identifiers produced by Tableau. In cases where these are changed (following a modification for example), this will lead to the duplication of the object in the catalog.
  
@@ -94,8 +92,6 @@ To identify the objects in the source system, the connector uses the technical i
 The inventory collects the list of reports (along with their data sources) that the user can access. 
 
 ### Lineage
-
-[comment]: <> (Text refers to Looker. Is this a cut/paste error?)
 
 The Tableau connector is able to retrieve the lineage between datasets that have been imported to the catalog. Datasets from other connections must have been previously imported to the catalog to be linked to the Looker dataset through a new Data Process object. This feature is available for the following systems and, for it to work, an additional parameter is needed in the source system connection as configured in the Tableau connection configuration panel.
 
@@ -150,7 +146,7 @@ Dataset field. Can be used as a Tableau report metric.
 
 ### Data Process
 
-To represent the data flow from an external source, a Zeenea Data Process will be created for each Tableau Dataset.
+To represent the data flow from an external source, an Actian Data Intelligence Data Process will be created for each Tableau Dataset.
 
 * **Name**: `import input/output dataset name`
 
@@ -158,7 +154,7 @@ To represent the data flow from an external source, a Zeenea Data Process will b
 
 A key is associated with each item of the catalog. When the object comes from an external system, the key is built and provided by the connector.
 
-Read more: [Identification Keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md)
+Read more: [Identification Keys](../../features-applications/studio/stewardship/identification-keys.md)
 
 | Object | Identification Key | Description |
 |---|---|---|

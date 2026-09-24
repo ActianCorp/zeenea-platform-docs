@@ -3,10 +3,10 @@
 ## Prerequisites
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with the Databricks Unity Catalog. 
-* Zeenea traffic flows towards the data source must be open.
+* Actian Data Intelligence traffic flow towards the data source must be open.
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -15,22 +15,22 @@ The Databricks Unity Catalog connector is compatible with REST API versions `2.0
 
 ## Installing the Plugin
 
-You can download the Databricks Unity Catalog plugin from [Connector Downloads](../zeenea-connectors-list.md).
+You can download the Databricks Unity Catalog plugin from [Connector Downloads](../connectors-list.md).
 
-For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-For more information about managing connections, see [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md).
+For more information about managing connections, see [Managing Connections](../../../features-applications/administration/managing-connections.md).
 
 To establish a connection with a Databricks Unity Catalog instance, fill in the following parameters in the dedicated configuration file:
 
 | Parameter| Expected Value |
 | :--- | :--- |
 | `name` | The name that will be displayed to catalog users for this connection | 
-| `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
+| `code` | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `databricks-unitycatalog` and this value must not be modified. | 
 | `connection.url` | Databricks URL address (`https://url.cloud.databricks.com`). |
 | `connection.oauth.endpoint`	| Databricks OAuth2 endpoint (optional)<br /><br /> Example: `https://tenant.cloud.databricks.com/oidc/v1/token`. |
@@ -61,7 +61,7 @@ Databricks connector benefits from the feature of rich filters in the configurat
 * `schema`
 * `table`
 
-For more information about filters, see [Filters](../../scanners/zeenea-filters.md).
+For more information about filters, see [Filters](../../scanners/filters.md).
 
 ## Data Extraction
 
@@ -136,7 +136,7 @@ A data process represents a Databricks job.
 
 Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
 
-For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 | Object | Identifier Key | Description |
 |---|---|---|

@@ -5,16 +5,16 @@
 * **Java version:** Validated on Java 11 and 17 only.
 
 * In order to establish a connection to Google BigQuery, a BigQuery user with sufficient [permissions](#user-permissions) is required.
-* Zeenea traffic flows towards Google BigQuery must be open.
+* Actian Data Intelligence traffic flow towards Google BigQuery must be open.
 
-Zeenea uses Google HTTP API to collect metadata. 
+Actian Data Intelligence uses Google HTTP API to collect metadata. 
 
 | Target| Protocol | Usual Ports |
 | :--- | :--- | :--- |
 | BigQuery | HTTPS | 443 |
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../zeenea-connectors-list.md).
+    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
 
 
 ## Supported Versions
@@ -30,22 +30,22 @@ There are two possible forms for this connector:
 
 From version 54 of the scanner, the SQL Server connector is presented as a plugin.
 
-It can be downloaded here and requires a scanner version 64 or later: [Connector Downloads](../zeenea-connectors-list.md).
+It can be downloaded here and requires a scanner version 64 or later: [Connector Downloads](../connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](../zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
 
 ## Declaring the Connection
 
 Creating and configuring connectors is done through a dedicated configuration file located in the `/connections` folder of the relevant scanner.
 
-Read more: [Managing Connections](../../../features-applications/administration/zeenea-managing-connections.md)
+Read more: [Managing Connections](../../../features-applications/administration/managing-connections.md)
  
 In order to establish a connection with BigQuery, specifying the following parameters in the dedicated file is required:
 
 | Parameter| Expected Value |
 | :--- | :--- |
 | `name` | The name that will be displayed to catalog users for this connection | 
-| `code` | Unique identifier of the connection on the Zeenea platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
+| `code` | Unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. | 
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `BigQuery` for project level or `BigQueryOrganization` for organization level. This value must not be modified. | 
 | `connection.json_key` | Path to the access JSON Key. |
 | `connection.billing_project_id` | (Optional) Identifier of the project used for the connection. The Google invoice is for this project. By default, one connection is established for each project that is scanned.<br /><br />NOTE: The retrieval of PK, FK requires this parameter. |
@@ -97,7 +97,7 @@ If the data profiling feature is enabled, another technical account is used. The
 
 Since version 47 of the scanner, the BigQuery connector benefits from the feature of rich filters in the configuration of the connector. This functionality also applies if on the metadata "Roles" of the datasets.
 
-Read more: [Filters](../../scanners/zeenea-filters.md)
+Read more: [Filters](../../scanners/filters.md)
 
 The filter can apply to the following criteria:
 
@@ -162,10 +162,10 @@ Dataset field.
 ## Data Profiling
 
 !!! warning "Important"
-    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Please make sure the estimated impact of this feature is acceptable and that the default frequency appropriate, before enabling it.
+    The Data Profiling feature, which can be enabled on this connection, allows your Explorers to get a better grasp on the type of data stored in each fields. This feature, which can be activated in the Scanner, is by default set to run on a weekly basis, every Saturday. However, depending on the number of fields you've activated this feature for, the calculation can quickly become costly. Ensure the estimated impact of this feature is acceptable and that the default frequency is appropriate before enabling it.
 
 
-The data profiling feature allows you to calculate statistical profiles on your datasets.More information on this feature can be found here: [Data Profiling](../../../features-applications/cross-application-features/zeenea-data-profiling.md).
+The data profiling feature allows you to calculate statistical profiles on your datasets.More information on this feature can be found here: [Data Profiling](../../../features-applications/cross-application-features/data-profiling.md).
 
 To activate this feature, the account used must have a read access on the relevant tables. 
 
@@ -215,13 +215,13 @@ SELECT
 
 The above requests will collect a data sample on fields where the feature has been enabled (fields 1 and 2). The sample contains a maximum of 10,000 lines (defined in the percentLines parameter).
 
-This request can either be manually executed from the Admin portal, or it can be scheduled, according to the collect-fingerprint variable in the `application.conf` file. For more information, see [Zeenea Scanner Setup](../../scanners/zeenea-scanner-setup.md).
+This request can either be manually executed from the Admin portal, or it can be scheduled, according to the collect-fingerprint variable in the `application.conf` file. For more information, see [Actian Data Intelligence Scanner Setup](../../scanners/scanner-setup.md).
 
 ## Object Identification Keys
 
 An identification key is associated with each object in the catalog. In the case of the object being created by a connector, the connector builds it.
 
-More information about how it works can be found here: [Identification Keys](../../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+More information about how it works can be found here: [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
 
 | Object | Identification Key | Description |
 |---|---|---|

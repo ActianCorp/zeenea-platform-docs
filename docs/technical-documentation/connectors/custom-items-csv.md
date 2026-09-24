@@ -9,7 +9,7 @@ search:
 
 Before you can use this connector, you must set up the custom items that will be fed by the connector.
 
-The connector will manage objects of a type that you will have to specify. This type must therefore be created beforehand. See the article [Creating or Deleting a Custom Item Type](../../features-applications/studio/catalog-design/zeenea-studio-create-delete-custom-item.md).
+The connector will manage objects of a type that you will have to specify. This type must therefore be created beforehand. See the article [Creating or Deleting a Custom Item Type](../../features-applications/studio/catalog-design/studio-create-delete-custom-item.md).
 
 To be used with the connector, the type must be "Synchronize Items with a connector" (and not "Manual").
 
@@ -24,7 +24,7 @@ My application B";the description of my application B
 ```
 ### Technical Documentation
 
-This plug-in provides two connectors that allow to load data from a CSV file into Zeenea.
+This plug-in provides two connectors that allow to load data from a CSV file into Actian Data Intelligence Platform.
 
 The available connectors are:
 
@@ -45,19 +45,19 @@ Unmapped file columns will be ignored.
 
 ## Installing the Plugin
 
-The CSV plugin can be downloaded here: [Connector Downloads](./zeenea-connectors-list.md).
+The CSV plugin can be downloaded here: [Connector Downloads](./connectors-list.md).
 
-For more information on how to install a plugin, please refer to the following article: [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+For more information on how to install a plugin, refer to the following article: [Installing and Configuring Connectors as a Plugin](./connectors-install-as-plugin.md).
 
 ## Parameters
 
 ### name
 
-The name of the connection as visible to users in Zeenea
+The name of the connection as visible to users in Actian Data Intelligence.
 
 ### code
 
-Zeenea Connection code
+Actian Data Intelligence Connection code
 
 ### connector_id
 

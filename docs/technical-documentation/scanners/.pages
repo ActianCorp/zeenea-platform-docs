@@ -1,9 +1,9 @@
 nav:
-    - data-intelligence-scanner-release-notes.md
-    - zeenea-scanner-setup.md
-    - zeenea-scanner-docker.md
-    - zeenea-filters.md
-    - zeenea-universal-filters.md
-    - zeenea-configure-hook.md
-    - zeenea-silwood-safyr.md
-    - zeenea-troubleshooting.md
+    - scanner-release-notes.md
+    - scanner-setup.md
+    - scanner-docker.md
+    - filters.md
+    - universal-filters.md
+    - configure-hook.md
+    - silwood-safyr.md
+    - troubleshooting.md
