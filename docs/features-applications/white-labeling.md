@@ -19,6 +19,9 @@ You can apply your branding across all supported applications or to individual a
 
 This document describes the branding inputs required to create a high-quality branded experience. 
 
+!!! note
+    For questions about pricing for this service, contact your sales representative or Customer Success Manager (CSM).
+
 ## Supported Customizations
 
 The following branding elements can be customized as part of white-labeling:
