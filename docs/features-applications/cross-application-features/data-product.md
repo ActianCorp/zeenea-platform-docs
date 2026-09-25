@@ -131,19 +131,25 @@ To create an output port:
 
      ![](./images/data-product-studio-output-port-create.png)
 
-6. Select a data source to filter the available data sources, and then click  **Next**.
-7. Select a data container, and then click **Next**.
-   
-    !!! warning
-        In this version, only schemas are supported.
+6. Select a data source, and then click  **Next**.
+7. Select a connection from the list of connections associated with the selected data source, and then click  **Next**.
+    
+    !!! note
+        The list is filtered based on the data source selected in the previous step. 
+        
+        If only one connection is available for the selected data source, it is selected automatically.
 
-8.  Search, filter, and select one or more datasets, and then click **Next**.
-   
+8.  Search, filter, and select one or more datasets. 
+
+    !!! warning "Important"
+        All selected datasets must belong to the same folder. To select datasets from a different folder, remove the current selection first.  
+
     !!! note
         You can select all datasets at once or add them individually. Selected datasets are marked with a check mark to prevent duplicate selections. You can remove individual datasets or clear the entire selection.
 
-9.  Review the information on the confirmation page.
-10. Click **Confirm**.
+9. Click **Next** after selecting the datasets.
+10. Review the information on the confirmation page.
+11. Click **Confirm**.
     
      The platform creates the output port and redirects you to its details page.
 
@@ -164,10 +170,7 @@ To add an output port to an existing user-defined data product:
    
      The output port creation wizard opens with the current data product preselected.
 
-4. Select a data source and a data container.
-5. Search, filter, and select one or more datasets.
-6. Review the information on the confirmation page.
-7. Click **Confirm**.
+4. Complete the output port creation wizard by following steps 6 through 11 in [Create an Output Port](#create-an-output-port).
    
      The platform creates the output port and associates it with the selected data product.
 
@@ -200,8 +203,17 @@ To manage datasets:
 
 Dataset linking for output ports is currently supported for the following connectors:
 
-* Snowflake
-* Snowflake V2
+* **Snowflake**
+* **Snowflake V2**
+* **Palantir Foundry**
+    
+    *  Palantir Foundry datasets imported through the public or private connector SDK can be linked to output ports using the Data Product API. 
+    *  Datasets imported through the public Connector SDK can be used to create data products in Studio.
+
+* **Databricks**
+    
+    * Databricks datasets imported through the public connector SDK can be linked to output ports using the Data Product API. 
+    * Datasets imported through the public Connector SDK can be used to create data products in Studio.
 
 #### Generated YAML Descriptors
 
@@ -274,20 +286,55 @@ schema:
 
 When uploading a data product or importing a dataset from a scanner, the platform uses the `name` and `physicalName` and the `servers` section to automatically link output ports with their physical implementations. See the [Supported Connectors](#supported-connectors) section.
 
-Following is an example of a `servers` section for Snowflake:
+The following examples show the `servers` section for different connectors:
 
-```yaml
-servers:
-  - id: snowflake-server-pse
-    server: Snowflake server
-    type: snowflake
-    host: ABCDEFGH-IJ12345.snowflakecomputing.com
-    port: 8080
-    account: IJ12345
-    database: DATABASE_1
-    warehouse: SMALL_COMPUTE_WH
-    schema: SCHEMA_1
-```
+* **Snowflake**
+
+    The following example shows a `servers` section for Snowflake:
+
+    ```yaml
+    servers:
+      - server: Snowflake server
+        type: snowflake
+        account: IJ12345
+        database: DATABASE_1
+        schema: SCHEMA_1
+    ```
+
+* **Palantir Foundry**
+
+    For Palantir Foundry, ODCS v3.1.0 does not define a server type. You can use the custom server syntax with a `custom-server-type` property.
+
+    The following example shows a `servers` section for Palantir Foundry:
+
+    ```yaml
+    servers:
+      - server: Palantir Foundry
+        type: custom
+        host: localhost
+        customProperties:
+          - property: custom-server-type
+            value: palantir-foundry
+    ```
+   
+    In the `schema` section, provide the technical name of the Palantir Foundry dataset in `physicalName` as follows:
+
+    ```yaml
+    physicalName: ri.foundry.main.dataset.f3d20e79-1d76-4c59-aa4d-1427e96f76d0
+    ```
+
+* **Databricks**
+
+    The following example shows a `servers` section for Databricks:
+
+    ```yaml
+    servers:
+      - server: Databricks
+        type: databricks
+        catalog: catalog-1
+        host: localhost
+        schema: schema-1
+    ```
 
 You can link the same dataset to multiple output ports and to different data products.
 
@@ -301,6 +348,8 @@ After a link is created, the related dataset appears in the **Datasets** tab of 
 If not all datasets defined in the data contract are linked to the output port, a banner indicates that the data contract is not fully implemented.
 
 ![](./images/data-product-output-port-warning.png)
+
+When an output port YAML specifies several servers, all datasets defined in the `schema` section must be linked for every specified server.
 
 ### Manage Actian-Specific Attributes for Data Products and Output Ports
 
