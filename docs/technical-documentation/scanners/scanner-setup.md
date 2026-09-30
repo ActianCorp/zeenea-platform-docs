@@ -226,7 +226,7 @@ The configuration is done via the configuration file `application.conf` located 
 
 By default, the file is named `application.conf.template`. It must be renamed to (or duplicated with the name) `application.conf`.
 
-### Enter your Platform Address
+### Enter Your Platform Address
 
 You must enter the address of your Actian Data Intelligence to allow the Scanner to retrieve the metadata. This is done by enhancing the `zeenea-url` property with the URL of your platform in the form:
 
@@ -252,7 +252,7 @@ authentication {
 }
 ```
 
-## Process Configuration (optional)
+## Process Configuration (Optional)
 
 The frequency of execution of the various automatic processes carried out by the scanner is configurable under the "automation" node.
 
@@ -272,7 +272,7 @@ Here are the processes triggered by the scanner:
     Each process execution is configured with the help of a cron expression. Read carefully this article describing its syntax: [https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)
 
 
-## Configure a Proxy (optional)
+## Configure a Proxy (Optional)
 
 !!! note
     The gRPC protocol cannot be used in conjunction with a proxy.
@@ -308,19 +308,19 @@ proxy-configuration {
 
 ## Modify Default Protocol (HTTP REST vs gRPC)
 
-### Why should you modify this?
+### Why Should You Modify This?
 
 The default REST based protocol is very convenient as it works almost everywhere. But, in some situations, the scanner may face one of its limits: the maximum size of the requests payload.
 
 gRPC protocol is not concerned by this limitation. Thus it could make sense to consider gRPC in case of very important inventories being built.
 
-### Is my architecture ready for gRPC?
+### Is My Architecture Ready for gRPC?
 
 gRPC uses HTTP/2 as its transport protocol. Your infrastructure MUST support HTTP/2 from end to end. In case of any doubt, read your proxies documentation to validate they do support HTTP/2 properly.
 
 When configured to use gRPC, the scanner will communicate with a unique central entry point: `grpc.zeenea.app`. Make sure this address is accessible for the scanner.
 
-### How do I enable and configure gRPC?
+### How Do I Enable and Configure gRPC?
 
 To activate gRPC, update the scanner configuration file as follows:
 
@@ -493,7 +493,7 @@ To execute the test, run the scanner with the `inventory` argument:
  
 ## Start the Scanner
 
-### Simple Start (test only)
+### Simple Start (Test Only)
 
 The `./bin/zeenea-scanner` script is used to start the Scanner.
 
@@ -545,7 +545,7 @@ zeenea-scanner.service
     * The parameters passed to the Actian Data Intelligence process must be adapted to your context.
 
 
-#### Sample file:
+#### Sample File:
 
 ```
 [Unit]
