@@ -7,6 +7,12 @@ search:
 
 The latest scanner version is available for download from the platform administration.
 
+## August 23, 2026 — Version 102
+
+**Enhancements**
+
+Added a new `scanner-update` script to the scanner archive. The script automates the migration of your configuration when upgrading to a new scanner version. For more information, see [Upgrade the Scanner](scanner-setup.md#upgrade-the-scanner).
+
 ## August 07, 2026 — Version 101
 
 **Enhancements**
