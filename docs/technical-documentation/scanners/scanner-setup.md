@@ -154,6 +154,50 @@ Run the following command with the service name used during registration to obta
     3. Specific service log files are available in the `/service-logs` folder in your Scanner folder tree.
 
 
+## Upgrade the Scanner
+
+The `scanner-update` script migrates your existing scanner configuration to a new scanner installation, including identity, connection files, plugins, custom drivers, and customized configuration.
+
+### Usage
+
+Download and extract the latest scanner version from the Actian Data Intelligence **Administration** interface. The script is included in the archive starting with **scanner version 102**. 
+  
+Run the script from the new installation and specify the path to the existing scanner installation:
+
+```bash
+./bin/scanner-update /path/to/old/scanner/install
+```
+
+Use the following options as needed:
+
+- `--dry-run`: Show what would be migrated without copying any files.
+- `--yes`: Run without confirmation prompts.
+- `--force`: Overwrite conflicting files in the new installation.
+
+### What Is Migrated
+
+The script migrates the following files and directories:
+
+1. `agent-identifier` — The scanner's persistent identity (required).
+2. `connections/` — Connection configuration files.
+3. `hooks/` — Hook configuration files.
+4. `lib-ext/*.jar` — Custom libraries, such as JDBC drivers.
+5. `plugins/*.zip` — Connector plugins. Existing files are never overwritten.
+6. `conf/application.conf` — Customized scanner configuration.
+7. `conf/log4j.xml` — Customized logging configuration.
+
+### After Running the Script
+
+The following exit codes indicate the result of the migration:
+
+| Exit code | Result |
+| --- | --- |
+| **`0`** | Migration completed successfully. Start the new scanner. |
+| **`1`** | Migration was aborted. Resolve the reported issue and then run the script again. |
+| **`2`** | Migration completed, but conflicts require review. Review the conflicts listed at the end of the output before starting the new scanner. |
+
+The script does not modify the existing installation, so you can safely run it again at any time.
+
 ## Configuration
 
 ### Name the Scanner
