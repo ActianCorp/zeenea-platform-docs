@@ -7,7 +7,7 @@ search:
 
 The latest scanner version is available for download from the platform administration.
 
-## August 23, 2026 — Version 102
+## September 23, 2026 — Version 102
 
 **Enhancements**
 
