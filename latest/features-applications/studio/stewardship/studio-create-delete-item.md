@@ -14,9 +14,15 @@ Only certain profiles can create or delete an Item in Actian Data Intelligence.
 Item types that can be created manually:
 
 * Category
-* Data process
+* Data Process
+* Data Product
 * Glossary Item
 * Custom Item
+* Output Port
+* Use Case
+
+!!! note
+    For more information about creating data products and output ports, see [Data Products](../../cross-application-features/data-product.md).
 
 To create a new Item from Studio:
 
