@@ -1,5 +1,11 @@
 # Adding a Snowflake Connection
 
+!!! warning "Password authentication is being removed for service users"
+    Snowflake no longer allows password authentication for service users
+    (`TYPE = SERVICE`). Enforcement is scheduled to complete by the end of October 2026.
+    
+    Use key pair authentication or a Programmatic Access Token (PAT). For more information, see [Authentication](#authentication).
+
 ## Prerequisites
 
 * In order to establish a connection with Snowflake, a user with sufficient [permissions](#user-permissions) is required.
@@ -44,9 +50,9 @@ In order to establish a connection with Snowflake, specifying the following para
 | `connector_id` | The type of connector to be used for the connection. Here, the value must be `Snowflake` and this value must not be modified. | 
 | `connection.url` | Database address.<br /><br />Example: `jdbc:snowflake://<account_identifier>.snowflakecomputing.com/?db=<database>&role=<role>&warehouse=<warehouse>`<br /><br />The `db` parameter is always required to initialize the connection.<br />The `role` and `warehouse` parameters are required if no default values are defined for the user. |
 | `connection.username` | Username |
-| `connection.password` | User password. (Optional during key pair authentication use.) |
-| `connection.privateKeyPath` | Full path to the `rs_key.p8` type file for key pair authentication |
-| `connection.passphrase` | Key password |
+| `connection.password` | Programmatic Access Token (PAT). Not required when using key pair authentication. |
+| `connection.privateKeyPath` | Full path to the PKCS#8 private key file, for example `rsa_key.p8`. |
+| `connection.passphrase` | Passphrase that protects the private key. Leave unset if the key is not encrypted. |
 | `dataClassification.enabled` | Option to enable retrieval of "Privacy Category" and "Semantic Category" metadata related to Snowflake data classification features |
 | `proxy.scheme` | Depending on the proxy, `http` or `https` |
 | `proxy.hostname` | Proxy address |
@@ -96,57 +102,103 @@ Since version 47 of the scanner, the Snowflake connector benefits from the featu
 
 Read more: [Filters](../../scanners/filters.md)
 
-## Multi Account Support
+## Authentication
 
-Snowflake connector supports a multi-account mode.
+The following authentication methods are supported:
 
-When activated, the list of accounts to scan can be determined by two ways:
+* **Key pair authentication (recommended)**: Register the public key on the Snowflake user, then set `connection.privateKeyPath` to the PKCS#8 private key file and `connection.passphrase` if the key is encrypted. The key does not expire or require rotation.
+* **Programmatic Access Token (PAT)**: Generate a token for the Snowflake user and set it as `connection.password`. The service user must be covered by a network policy that allows the scanner's outbound IP addresses. Tokens expire after a maximum of 365 days, so plan to rotate them.
 
-* The list can be provided by the parameter `multi_account.list` as a list of Snowflake account identifiers separated by a space. Account identifiers must be in the form `-` (see snowflake documentation).
-    
+!!! tip "Secrets"
+    Credentials can be resolved from the scanner's Secret Manager instead of being stored in clear text in the configuration file.
+
+### Multiple Accounts
+
+The Snowflake connector supports multi-account mode. When enabled, the list of accounts to scan can be determined in one of the following ways:
+
+* Provide the list through the `multi_account.list` parameter as a space-separated list of Snowflake account identifiers. Identifiers must use the format `<organization_name>-<account_name>` (see the [Snowflake documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier)).
+
     Example:
-    
-    `multi_account.list = "abcdefg-kn67972 abcdefg-kh90823"`
 
-* If no list is provided, the connector execute the following SQL query to get the accounts available in the organization:
-    
+    ```hocon
+    multi_account.list = "abcdefg-kn67972 abcdefg-kh90823"
     ```
-    SELECT ACCOUNT_LOCATOR, REGION
-      FROM SNOWFLAKE.ORGANIZATION_USAGE.ACCOUNTS
-      ```
 
-### Authentication
+* If no list is provided, the connector runs the following query to retrieve the accounts available in the organization:
 
-If all accounts can be accessed with the same username/password, you can just define the credentials the same way than with a single account connection.
+    ```sql
+    SELECT ACCOUNT_LOCATOR, REGION FROM SNOWFLAKE.ORGANIZATION_USAGE.ACCOUNTS
+    ```
 
-Otherwise, it is necessary to configure them in a secret manager so that the Snowflake connector can authenticate on each account.
+Credentials are per-account: a key pair is registered on a user of a given account, and a PAT is valid only for the account where it was issued. Credentials cannot be shared across accounts. Each account requires its own credentials.
 
-The parameters are the same as those used in the connection file. They just need to be prefixed by the account identifier.
+To declare per-account credentials, prefix each connection parameter with the account identifier:
 
-* `"-.url"`
-* `"-.username"`
-* `"-.password"`
-* `"-.privateKeyPath"`
-* `"-.passphrase"`
+* `"<account_identifier>.url"`
+* `"<account_identifier>.username"`
+* `"<account_identifier>.privateKeyPath"`
+* `"<account_identifier>.passphrase"`
+* `"<account_identifier>.password"`
 
-If the key is not found in the secret for a given account, the connector use value defined in the Snowflake configuration file.
+If a parameter is not set for a given account, the connector falls back to the `connection.*` value.
 
-### Example with password
+A `connection.url` is always required because it initializes the primary connection used to list the accounts, even when every account defines its own URL.
 
-For example, let's consider a secret being defined this way:
+!!! note "PAT constraints apply per-account"
+    Each account has its own token, which must be rotated before it expires. Each service user must be covered by a network policy on its own account that allows the scanner's outbound IP addresses.
+
+#### Example Using Key Pair Authentication (Recommended)
+
+The following example shows a secret that uses key pair authentication (PKCS#8 keys):
+
+```hocon
+my-secret {
+  "abcdefg-kn67972.username":"kn67972_user",
+  "abcdefg-kn67972.privateKeyPath":"/etc/zeenea/keys/zeenea-kn67972.p8",
+  "abcdefg-kn67972.passphrase":"kn67972_key_passphrase",
+  "abcdefg-kn67972.url":"jdbc:snowflake://abcdefg-kn67972.snowflakecomputing.com/?db=ZEENEA_PS_TEST&role=CNTY&warehouse=SMALL_COMPUTE_WH",
+  "abcdefg-kh90823.username":"kh90823_user",
+  "abcdefg-kh90823.privateKeyPath":"/etc/zeenea/keys/zeenea-kh90823.p8",
+  "abcdefg-kh90823.passphrase":"kh90823_key_passphrase",
+  "abcdefg-kh90823.url":"jdbc:snowflake://abcdefg-kh90823.snowflakecomputing.com/?db=ZEENEA_PS_TEST&role=CNTY&warehouse=SMALL_COMPUTE_WH"
+}
+```
+
+With the following configuration file:
+
+```hocon
+# ...
+secret_manager {
+  enabled = true
+  key = "my-secret"
+}
+connection {
+  url = ${secret_manager.abcdefg-kn67972.url}
+}
+multi_account {
+  enabled = true
+  list = "abcdefg-kn67972 abcdefg-kh90823"
+}
+```
+
+The connector processes the list of accounts and retrieves credentials from the secret manager.
+
+#### Example Using a Programmatic Access Token (PAT)
+
+The following example shows a secret that uses PATs:
 
 ```
 my-secret {
   "abcdefg-kn67972.username":"username1",
-  "abcdefg-kn67972.password":"password1",
-  "abcdefg-kn67972.url":"jdbc:snowflake://abcdefg-kn67972.snowflakecomputing.com/?db=ZEENEA_PS_TEST&role=CNTY&warehouse=SMALL_COMPUTE_WH""
+  "abcdefg-kn67972.password":"<PAT_ACCOUNT_1>",
+  "abcdefg-kn67972.url":"jdbc:snowflake://abcdefg-kn67972.snowflakecomputing.com/?db=ZEENEA_PS_TEST&role=CNTY&warehouse=SMALL_COMPUTE_WH",
   "abcdefg-kh90823.username":"username2",
-  "abcdefg-kh90823.password":"password2",
-  "abcdefg-kh90823.url":"jdbc:snowflake://abcdefg-kh90823.snowflakecomputing.com/?db=ZEENEA_PS_TEST&role=CNTY&warehouse=SMALL_COMPUTE_WH"",
+  "abcdefg-kh90823.password":"<PAT_ACCOUNT_2>",
+  "abcdefg-kh90823.url":"jdbc:snowflake://abcdefg-kh90823.snowflakecomputing.com/?db=ZEENEA_PS_TEST&role=CNTY&warehouse=SMALL_COMPUTE_WH"
 }
 ```
 
-and a Snowflake configuration file like this one:
+With the following configuration file:
 
 ```
 name = "snowflake"
@@ -158,50 +210,14 @@ secret_manager {
   key = "my-secret"
 }
 connection {
-  url = ${secret_manager.abcdfeg-kn67972.url}
-  username = ${secret_manager.abcdfeg-kn67972.username}
-  password = ${secret_manager.abcdfeg-kn67972.password}
+  url = ${secret_manager.abcdefg-kn67972.url}
+  username = ${secret_manager.abcdefg-kn67972.username}
+  password = ${secret_manager.abcdefg-kn67972.password}
 }
 multi_account.enabled = true
 ```
 
-In such a case, the Snowflake connector will use the connection information provided here to execute the SQL Query listing all the account and then will try to get from the Secret Manager associated values to request Snowflake and collect metadata.
-
-### Example wit PKCS#8 Key
-
-Here is another example of a secret using PKCS#8 keys:
-
-```
-my-secret {
-  "abcdefg-kn67972.username":"kn67972_user",
-  "abcdefg-kn67972.privateKeyPath":"/etc/zeenea/keys/zeenea-kn67972.p8",
-  "abcdefg-kn67972.passphrase":"kn67972_key_passphrase",
-  "abcdefg-kn67972.url":"jdbc:snowflake://abcdefg-kn67972.snowflakecomputing.com/?db=ZEENEA_PS_TEST&role=CNTY&warehouse=SMALL_COMPUTE_WH""
-  "abcdefg-kh90823.username":"kh90823_user",
-  "abcdefg-kh90823.privateKeyPath":"/etc/zeenea/keys/zeenea-kh90823.p8",
-  "abcdefg-kh90823.passphrase":"kh90823_key_passphrase",
-  "abcdefg-kh90823.url":"jdbc:snowflake://abcdefg-kh90823.snowflakecomputing.com/?db=ZEENEA_PS_TEST&role=CNTY&warehouse=SMALL_COMPUTE_WH"",
-}
-```
-
-With its configuration file:
-
-```
-# ...
-secret_manager {
-  enabled = true
-  key = "my-secret"
-}
-connection {
-  url = ${secret_manager.abcdfeg-kn67972.url}
-}
-multi_account {
-  enabled = true
-  list = "abcdefg-kn67972 abcdefg-kh90823"
-}
-```
-
-In that case, the connector walk though the list of accounts and fetch the credentials from the secret manager. However, setting a connection url in the connection file is still mandatory.
+The connector uses this connection information to run the query that lists all accounts and then retrieves the matching credentials from the secret manager to collect metadata on each of them.
 
 ## Data Extraction
 
