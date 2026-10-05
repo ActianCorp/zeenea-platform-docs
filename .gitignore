@@ -11,6 +11,9 @@
 .docusaurus
 .cache-loader
 
+# Python
+__pycache__/
+
 # Misc
 .DS_Store
 .env.local
