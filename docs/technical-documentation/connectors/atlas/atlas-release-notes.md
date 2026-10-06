@@ -7,6 +7,13 @@ search:
 
 The latest version of the **Hadoop** connector plugin is available for download from the [Connector Downloads](../connectors-list.md) page.
 
+## September 30, 2026 — Version 4.5.4
+
+**Enhancements**
+
+- Referenced entities are now retrieved in bulk, improving extraction performance. The new `connection.item_reference_bulk_chunk_size` parameter sets the bulk size.
+- Upgraded third-party dependencies to address security vulnerabilities.
+
 ## September 4, 2026 — Version 4.5.3
 
 **Fixed Issues**
