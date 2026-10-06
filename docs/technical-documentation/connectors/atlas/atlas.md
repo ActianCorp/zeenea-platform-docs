@@ -39,6 +39,7 @@ In order to establish a connection with Atlas, specifying the following paramete
 | `connection.max_concurrent_request` | Maximum concurrent requests to Atlas (default: 16) |
 | `connection.request_timeout` | Request timeout in seconds (default: 60 s) |
 | `connection.request_page_size` | Request page size (default: 100) |
+| `connection.item_reference_bulk_chunk_size` | To improve import performance, the connector retrieves the processes associated with an item (lineage) from Atlas in bulk by grouping multiple entity identifiers (GUIDs) into a single request instead of sending one request per entity. This parameter sets the maximum number of GUIDs sent in each bulk request. If a bulk request fails or the Atlas server does not support bulk retrieval, the connector automatically falls back to loading the entities one by one. The value must be a positive integer. Default value: 50. |
 | `api.min_ext_info.atlas_types` | Allows adding the `minExtInfo` parameter when calling the Atlas entity retrieval service. Allowed values : `hive_table`, `hbase_table`, `hive_process`, `hdfs_path`, `spark_process`, `sqoop_process`, or `sqoop_dbdatastore`. |
 | `cache.path` | Directory where caches are stored |
 | `cache.inventory.enable` | Enable Inventory cache |
