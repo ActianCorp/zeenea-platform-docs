@@ -4,19 +4,19 @@
     Groups replace Permission sets to manage user permissions in Actian Data Intelligence. Existing permission sets have already been automatically migrated to Groups with the same descriptions and scopes.
 
 
-Groups allow you to manage user permissions in Actian Data Intelligence. You can manage groups from the Administration section.
+Groups allow you to manage user permissions in Actian Data Intelligence. You can manage groups from the **Administration** section.
 
   ![](./images/group-create.png)
 
 ## Creating a Group
 
-To create a group, click the "Create a group" button on the top-right of the screen.
+To create a group, click the **Create group** button on the top-right of the screen.
 
 ### Group Type and License
 
-First, select a type of group: Explorer or Data Steward.
+First, select a type of group: **Explorer** or **Data Steward**.
 
-An Explorer group only grants read access to the catalog, while a Data Steward group allows granting edit permission on catalog items or administration permissions.
+An **Explorer** group only grants read access to the catalog, while a **Data Steward** group allows granting edit permission on catalog items or administration permissions.
 
 Note that it also corresponds to the two different license options Actian Data Intelligence offers.
 
@@ -51,7 +51,7 @@ This permission allows the creation and management of users and contacts. Only u
 
 ### Connectivity Administration
 
-This permission allows users to create API Keys (for Scanner configuration for example), configure connection options (data profiling, auto import, etc.), and launch jobs on existing connections (inventory, update, etc.).
+This permission allows users to create API Keys (for example, for Scanner configuration), configure connection options (data profiling, auto import, etc.), and launch jobs on existing connections (inventory, update, etc.).
 
 ### Access to the Analytics Dashboard
 
@@ -67,10 +67,11 @@ This permission allows users to manage agents from the **Agents** tab. Users can
 
 ### Catalog Access
 
-In this section, you can configure the read and write permissions on catalog items for Data Stewards. Write permissions on items are divided into three categories:
+In this section, you can configure the read and write permissions on catalog items for Data Stewards. Write permissions on items are divided into four categories:
 
-* Datasets, Fields, Visualizations, Data Processes, and Categories
+* Datasets, Fields, Visualizations, Data Processes, Categories, and Use Cases
 * Custom Items
+* Data Products and Output Ports
 * Glossary
 
 For each of these permissions, you can adjust the perimeter of Data Stewards as the following:
