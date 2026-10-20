@@ -9,7 +9,7 @@ tags, across one or several Snowflake accounts.
 | Capability | Support |
 | :--- | :--- |
 | **Connection & operations** | |
-| Authentication (password & key pair) | :material-check-circle:{ .green } Supported |
+| Authentication (key pair & Programmatic Access Token) | :material-check-circle:{ .green } Supported |
 | Multi-account | :material-check-circle:{ .green } Supported |
 | Filtering (inventory, sampling, profiling) | :material-check-circle:{ .green } Supported |
 | Extraction caching (fewer queries, faster refresh) | :material-check-circle:{ .green } Supported |
@@ -28,10 +28,10 @@ tags, across one or several Snowflake accounts.
 | Data classification (privacy & semantic categories) | :material-check-circle:{ .green } Supported |
 | User-defined tags | :material-check-circle:{ .green } Read-only (no write-back) |
 | Masking & row-access policies | :material-close-circle:{ .red } Not supported |
-| Data quality (data metric functions) | :material-close-circle:{ .red } Not supported |
 | **Data** | |
-| Data profiling | :material-check-circle:{ .green } Supported |
 | Data sampling | :material-check-circle:{ .green } Supported |
+| Data profiling | :material-check-circle:{ .green } Supported |
+| Data quality (Snowflake Data Metric Functions) | :material-close-circle:{ .red } Not supported |
 
 <small>¹ For views and dynamic table definitions, the mapping is resolved down to the
 **field-to-field** level from the object's SQL definition, and falls back to table-to-table level when the
@@ -48,6 +48,9 @@ Before creating the connection, make sure you have:
   capabilities you enable** (lineage, data classification, tags, profiling…): core metadata
   needs only read access, while some features require additional grants. See
   [Required privileges](#required-privileges) to grant only what you need.
+- Credentials for the Snowflake service user: a **key pair**, or a **Programmatic Access
+  Token** — in which case the user must be covered by a network policy allowing the scanner
+  outbound IP addresses. See [Connecting to Snowflake](#connecting-to-snowflake).
 
 ### Supported versions
 
@@ -61,6 +64,14 @@ The Snowflake connector ships as a plugin. Download it from
 [Zeenea Connector Downloads](./zeenea-connectors-list.md) and follow
 [Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
 
+!!! warning "Java 17 and later"
+    The Snowflake JDBC driver relies on an internal Java API. On Java 17+, add this
+    option to the scanner command line (or to `conf/application.ini` on Linux):
+
+    ```
+    -J--add-opens=java.base/java.nio=ALL-UNNAMED
+    ```
+
 ### Connecting to Snowflake
 
 The connection is declared in a configuration file in the scanner's `/connections` folder.
@@ -68,31 +79,42 @@ The JDBC URL **must** include the `db` parameter (the connector rejects a URL wi
 A `role` and a `warehouse` are needed to run queries; you can omit them from the URL if the
 user has defaults defined in Snowflake.
 
+Snowflake does not allow password authentication for service users (`TYPE = SERVICE`).
+Two authentication methods are supported:
+
+- **Key pair (recommended)** — register the public key on the Snowflake user, then set
+  `connection.private_key_path` to the PKCS#8 private key file, and `connection.passphrase`
+  if the key is encrypted. Nothing expires, nothing to rotate.
+- **Programmatic Access Token (PAT)** — generate a token on the Snowflake user and set it as
+  `connection.password`. The service user must be covered by a network policy allowing the
+  scanner outbound IP addresses, and the token expires, so rotation must
+  be planned.
+
 !!! tip "Credentials & secrets"
-    Prefer key-pair authentication in production. Credentials — for a single account
-    (`connection.*`) or per account (`<org>-<account>.*`) — can be resolved from the
-    scanner's **Secret Manager** instead of being stored in clear text in the config file.
-    This is a scanner capability and applies to both single- and multi-account connections.
+    Credentials — for a single account (`connection.*`) or per account
+    (`<org>-<account>.*`) — can be resolved from the scanner's **Secret Manager**
+    instead of being stored in clear text in the configuration file. This is a scanner
+    capability and applies to both single- and multi-account connections.
 
 #### Single account
 
-=== "Password"
-
-    ```hocon
-    connector_id = "snowflake-v2"
-    connection.url      = "jdbc:snowflake://<org>-<account>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
-    connection.username = "<USERNAME>"
-    connection.password = "<PASSWORD>"
-    ```
-
-=== "Key pair"
+=== "Key pair (recommended)"
 
     ```hocon
     connector_id = "snowflake-v2"
     connection.url              = "jdbc:snowflake://<org>-<account>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
     connection.username         = "<USERNAME>"
     connection.private_key_path = "/etc/keys/rsa_key.p8"
-    connection.passphrase       = "<PASSPHRASE>"
+    connection.passphrase       = "<PASSPHRASE>"   # set to "" if the key is not encrypted
+    ```
+
+=== "Programmatic Access Token"
+
+    ```hocon
+    connector_id = "snowflake-v2"
+    connection.url      = "jdbc:snowflake://<org>-<account>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
+    connection.username = "<USERNAME>"
+    connection.password = "<PAT>"
     ```
 
 #### Multiple accounts
@@ -105,35 +127,28 @@ To restrict the scope, list the accounts explicitly:
 multi_account.list = ["<org>-<account1>", "<org>-<account2>"]
 ```
 
-**Credentials** can be shared or set per account:
+**Credentials are per account.** A key pair is registered on a user of a given account, and a
+PAT is only valid on the account that issued it, so the same credentials cannot be shared
+across accounts — each one needs its own. Declare them by prefixing any connection parameter
+with the account identifier:
 
-- **Shared** — if every account uses the same credentials, define them once at the
-  `connection.*` level.
-- **Per account** — override any parameter by prefixing the account identifier
-  (`<org>-<account>`). If a per-account key is missing, the connector falls back to the
-  `connection.*` value.
+- `"<org>-<account>.url"`
+- `"<org>-<account>.username"`
+- `"<org>-<account>.private_key_path"`
+- `"<org>-<account>.passphrase"`
+- `"<org>-<account>.password"`
+
+If a parameter is not set for a given account, the connector falls back to the `connection.*`
+value — which is how the account declared in `connection.url` gets its credentials. Every
+other account must carry its own.
 
 !!! note
     A `connection.url` at the connection level is **always required**: it initializes the
-    primary connection, even when every account defines its own URL.
+    primary connection used to list the accounts, even when every account defines its own URL.
 
-=== "Password (per account)"
-
-    ```hocon
-    connector_id = "snowflake-v2"
-
-    connection.url = "jdbc:snowflake://<org>-<account1>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
-
-    multi_account.list = ["<org>-<account1>", "<org>-<account2>"]
-
-    <org>-<account1>.url      = "jdbc:snowflake://<org>-<account1>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
-    <org>-<account1>.username = "<USERNAME_1>"
-    <org>-<account1>.password = "<PASSWORD_1>"
-
-    <org>-<account2>.url      = "jdbc:snowflake://<org>-<account2>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
-    <org>-<account2>.username = "<USERNAME_2>"
-    <org>-<account2>.password = "<PASSWORD_2>"
-    ```
+!!! note "PAT constraints apply per account"
+    Each account has its own token to rotate before expiry, and each service user must be
+    covered by a network policy on its own account allowing the scanner outbound IP addresses.
 
 === "Key pair (per account)"
 
@@ -144,7 +159,6 @@ multi_account.list = ["<org>-<account1>", "<org>-<account2>"]
 
     multi_account.list = ["<org>-<account1>", "<org>-<account2>"]
 
-    <org>-<account1>.url              = "jdbc:snowflake://<org>-<account1>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
     <org>-<account1>.username         = "<USERNAME_1>"
     <org>-<account1>.private_key_path = "/etc/keys/account1.p8"
     <org>-<account1>.passphrase       = "<PASSPHRASE_1>"
@@ -153,6 +167,23 @@ multi_account.list = ["<org>-<account1>", "<org>-<account2>"]
     <org>-<account2>.username         = "<USERNAME_2>"
     <org>-<account2>.private_key_path = "/etc/keys/account2.p8"
     <org>-<account2>.passphrase       = "<PASSPHRASE_2>"
+    ```
+
+=== "Programmatic Access Token (per account)"
+
+    ```hocon
+    connector_id = "snowflake-v2"
+
+    connection.url = "jdbc:snowflake://<org>-<account1>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
+
+    multi_account.list = ["<org>-<account1>", "<org>-<account2>"]
+
+    <org>-<account1>.username = "<USERNAME_1>"
+    <org>-<account1>.password = "<PAT_1>"
+
+    <org>-<account2>.url      = "jdbc:snowflake://<org>-<account2>.snowflakecomputing.com/?db=<DB>&role=<ROLE>&warehouse=<WH>"
+    <org>-<account2>.username = "<USERNAME_2>"
+    <org>-<account2>.password = "<PAT_2>"
     ```
 
 !!! note
@@ -172,8 +203,8 @@ For the full list of properties and defaults, see the [Configuration reference](
 
 #### Authentication
 
-Password and key-pair authentication are configured when declaring the connection —
-see [Connecting to Snowflake](#connecting-to-snowflake).
+Key pair and Programmatic Access Token authentication are configured when declaring the
+connection — see [Connecting to Snowflake](#connecting-to-snowflake).
 
 #### Multi-account
 
@@ -241,8 +272,8 @@ See [Identification keys](../../features-applications/studio/stewardship/zeenea-
 
 | Object | Identification key | Components |
 | :--- | :--- | :--- |
-| Dataset | `catalog/schema/name` | **catalog**: Snowflake database · **schema**: schema · **name**: table, view, or dynamic table name |
-| Field | `catalog/schema/name/field` | …plus **field**: column name |
+| Dataset | `catalog/schema/table` | **catalog**: Snowflake database · **schema**: schema · **table**: table, view, or dynamic table name |
+| Field | `catalog/schema/table/field_key` | …plus **field_key**: column name |
 | Data process (query-history lineage) | `type/hash` | **type**: operation type · **hash**: hash of the access-history entry |
 | Data process (Snowpipe lineage) | `catalog/schema/pipe` | **catalog**: Snowflake database · **schema**: schema · **pipe**: Snowpipe name |
 
@@ -390,12 +421,12 @@ The table below lists the connection properties handled by the Snowflake V2 conn
 | **Connection** | | | |
 | `connection.url` | — | Yes | JDBC URL. `db` is required; `role` and `warehouse` are required unless the user has defaults. |
 | `connection.username` | — | Yes | Snowflake username. |
-| `connection.password` | — | Conditional | User password. Required unless key-pair authentication is used. |
-| `connection.private_key_path` | — | Conditional | Path to the PKCS#8 `.p8` private key (see [Single account](#single-account)). |
-| `connection.passphrase` | — | Conditional | Passphrase of the encrypted private key. |
+| `connection.password` | — | Conditional | Programmatic Access Token (PAT). Not required with key pair authentication. |
+| `connection.private_key_path` | — | Conditional | Full path to the PKCS#8 private key file, for example `rsa_key.p8`. Not required with PAT authentication. |
+| `connection.passphrase` | — | Conditional | Passphrase protecting the private key. Set to "" if the key is not encrypted. |
 | **Multi-account** | | | |
 | `multi_account.list` | *(auto-discovery)* | No | List of `<org>-<account>` identifiers (e.g. `["myorg-account1", "myorg-account2"]`). If unset, accounts are discovered automatically. See [Multiple accounts](#multiple-accounts). |
-| `<org>-<account>.*` | *(falls back to `connection.*`)* | No | Per-account override of `url`, `username`, `password`, `private_key_path`, `passphrase`. |
+| `<org>-<account>.*` | *(falls back to `connection.*`)* | No | Per-account `url`, `username`, `password`, `private_key_path`, `passphrase`. Required for every account other than the one declared in `connection.*`. |
 | **Filtering** | | | |
 | `inventory_filters` | *(none)* | No | Which objects are cataloged (`ACCEPT` / `REJECT`). See [Filtering](#filtering). |
 | `sampling_filters` | *(none)* | No | Which objects data sampling runs on. See [Filtering](#filtering). |
@@ -414,3 +445,14 @@ The table below lists the connection properties handled by the Snowflake V2 conn
 | `cache.enabled` | `false` | No | Enable extraction caching. See [Extraction caching](#extraction-caching). |
 | `cache.folder` | *(in-memory)* | No | Directory where cache files are stored. In-memory if unset. |
 | `cache.ttl` | `PT12H` | No | Cache validity period (ISO-8601 duration). |
+
+## Troubleshooting
+
+| Symptom | Likely cause | Fix |
+| :--- | :--- | :--- |
+| The connection is rejected at startup with an authentication error | Password authentication is no longer available for service users | Switch to key pair, or to a PAT set as `connection.password` — see [Connecting to Snowflake](#connecting-to-snowflake) |
+| The connection is rejected before anything is cataloged | No `db` parameter in the JDBC URL | Add `db=<DB>` to `connection.url` — see [Connecting to Snowflake](#connecting-to-snowflake) |
+| Databases, schemas or tables missing from the inventory, with no error | Snowflake returns only what the service role may see | Grant `USAGE` on the database and schemas (`FUTURE` grants for new objects) — see [Required privileges](#required-privileges) |
+| Views or dynamic tables sync, but lineage is missing or stays at table level | `SELECT` missing on the object, or secure view not readable by the role. Unparsable SQL also falls back to table level (expected) | Grant `SELECT` on views and dynamic tables; `SNOWFLAKE.OBJECT_VIEWER` for secure views — see [Required privileges](#required-privileges) |
+| `lineage.history.enabled = true`, but no operation is created | Account is not Enterprise Edition, `IMPORTED PRIVILEGES` missing, or `lineage.history.period` too short (default `2` days) | Check the edition, grant `IMPORTED PRIVILEGES ON DATABASE SNOWFLAKE`, widen the period — see [Query-history operations](#query-history-operations) |
+| Only one account is cataloged although several are expected | `ORGANIZATION_ACCOUNTS_VIEWER` missing, account identifiers not in `<org>-<account>` format, or an account has no credentials of its own — the fallback to `connection.*` is not valid on another account | Fix the identifiers, declare per-account credentials, or list the accounts in `multi_account.list` — see [Multiple accounts](#multiple-accounts) |
