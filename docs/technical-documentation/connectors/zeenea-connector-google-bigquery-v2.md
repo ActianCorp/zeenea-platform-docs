@@ -1,8 +1,8 @@
 # BigQuery V2 Connector Guide
 
 The BigQuery connector V2 catalogs your Google BigQuery metadata —
-tables, views, materialized views, table fields, constraints and more — and enriches it with
-lineage and data sampling, across one or several Google Cloud projects.
+tables, external tables, table fields, views, materialized views and more —
+and enriches it with lineage across one or several Google Cloud projects.
 
 ## Capability overview
 
@@ -10,30 +10,33 @@ lineage and data sampling, across one or several Google Cloud projects.
 | :--- | :--- |
 | **Connection & operations** | |
 | Authentication (service account JSON key) | :material-check-circle:{ .green } Supported |
-| Multi-project (auto-discovery of accessible projects) | :material-check-circle:{ .green } Supported |
-| Filtering (inventory by project and dataset, sampling) | :material-check-circle:{ .green } Supported |
-| Partitioned-table grouping | :material-check-circle:{ .green } Supported |
+| Multi-project (auto-discovery or a single project) | :material-check-circle:{ .green } Supported |
+| Filtering (inventory, sampling) | :material-check-circle:{ .green } Supported |
 | **Objects & metadata** | |
-| Tables, external tables, views, materialized views, table fields | :material-check-circle:{ .green } Supported |
-| Table snapshots | :material-check-circle:{ .green } Supported |
+| Tables, external tables, table snapshots, table fields, views, materialized views | :material-check-circle:{ .green } Supported |
 | Primary & foreign keys | :material-check-circle:{ .green } Supported |
-| Table statistics (row count, size) | :material-check-circle:{ .green } Supported |
+| Technical properties (e.g. row count) | :material-check-circle:{ .green } Supported |
+| Nested & repeated columns | :material-close-circle:{ .red } Not supported — imported as a single field |
+| Stored procedures & user-defined functions (routines) | :material-close-circle:{ .red } Not supported |
+| BigQuery ML models | :material-close-circle:{ .red } Not supported |
 | **Lineage** | |
-| Views & materialized views (definition SQL) | :material-check-circle:{ .green } Supported — field-to-field¹ |
-| Data Lineage API (`data_lineage_api` strategy) | :material-check-circle:{ .green } Supported — dataset-to-dataset |
-| Data Lineage API streaming (`data_lineage_streaming` strategy, trial) | :material-check-circle:{ .green } Supported — dataset-to-dataset and field-to-field (inferred²) |
-| Copy jobs | :material-check-circle:{ .green } Supported — dataset level, as reported by the Data Lineage API |
-| Table snapshots (base table) | :material-check-circle:{ .green } Supported — dataset level |
-| Load jobs (from Cloud Storage) | :material-check-circle:{ .green } Supported — dataset level, the source bucket |
+| Views & materialized views | :material-check-circle:{ .green } Supported — field-to-field¹ |
+| Table transformation jobs | :material-check-circle:{ .green } Supported — table-to-table, and field-to-field with `data_lineage_streaming`² |
+| Copy jobs | :material-check-circle:{ .green } Supported — table-to-table |
+| Load jobs from Cloud Storage | :material-check-circle:{ .green } Supported — from the source bucket |
+| **Classification & governance** | |
+| BigQuery labels (tables & views) | :material-check-circle:{ .green } Read-only (no write-back) |
+| Policy tags & column-level security | :material-close-circle:{ .red } Not supported |
+| Row-access policies | :material-close-circle:{ .red } Not supported |
 | **Data** | |
-| Data sampling | :material-check-circle:{ .green } Supported (views: opt-in) |
-| Fingerprint | :material-close-circle:{ .red } Not supported |
+| Data sampling | :material-check-circle:{ .green } Supported |
+| Data profiling | :material-close-circle:{ .red } Not supported |
 
-<small>¹ Lineage SQL (view and materialized-view definitions) is parsed by the Zeenea platform down
-to the **field-to-field** level, and falls back to dataset level when the statement cannot be
-fully parsed.<br>
-² Field links come from the Data Lineage API and are filtered with a heuristic — see
-[Data Lineage API streaming strategy](#data-lineage-api-streaming-strategy-trial).</small>
+<small>¹ View and materialized-view definition SQL is parsed by the platform down to the
+**field-to-field** level, and falls back to table level when the statement cannot be fully
+parsed.<br>
+² Field links are inferred by the connector from the Data Lineage API — see
+[Lineage](#lineage).</small>
 
 ## Prerequisites & connection
 
@@ -41,18 +44,23 @@ fully parsed.<br>
 
 Before creating the connection, make sure you have:
 
-- A network route open between the Zeenea scanner and the Google Cloud APIs (**port 443**,
-  outbound, to `*.googleapis.com` — BigQuery, Cloud Resource Manager, and, depending on the
-  lineage strategy, the Data Lineage API).
+- A network route open between the scanner and the Google Cloud APIs (**port 443**,
+  outbound, to `*.googleapis.com` — HTTPS for BigQuery, gRPC for Cloud Resource Manager and the
+  Data Lineage API). An outbound proxy can be declared in the connection.
+- The **Cloud Resource Manager API** enabled, when projects are auto-discovered, and the
+  **Data Lineage API** enabled, which both lineage strategies read — a disabled API is refused
+  regardless of the IAM roles granted.
 - A dedicated Google Cloud **service account**. The IAM roles to grant it **depend on which
   capabilities you enable** (lineage strategy, data sampling…): core metadata needs only
   read access. See [Required privileges](#required-privileges) to grant only what you need.
+- A Google Cloud project to **bill query jobs** to, if you enable a feature that runs them —
+  view sampling, for instance.
 
 ### Supported versions
 
 - **Google BigQuery** — cloud service.
-- **Zeenea scanner** — version **102** or later. See the plugin's entry in
-  [Zeenea Connector Downloads](./zeenea-connectors-list.md) for the latest release.
+- **Scanner** — each plugin release requires a minimum scanner version. See the plugin's
+  entry in [Zeenea Connector Downloads](./zeenea-connectors-list.md) for the exact version.
 
 ### Installing the plugin
 
@@ -63,34 +71,53 @@ The BigQuery connector ships as a plugin. Download it from
 ### Connecting to BigQuery
 
 The connection is declared in a configuration file in the scanner's `/connections` folder.
-Authentication uses a **service account JSON key**, provided in the
-`connection.json_key` property: either the JSON content inline (as a HOCON triple-quoted
-string, `"""{ ... }"""`), or a `file:` URL pointing to the key file on the scanner host
-(e.g. `file:///etc/zeenea/bigquery-key.json`).
-
-!!! warning
-    Any value that is not a `file:` URL is parsed as inline JSON: a bare file path such as
-    `/etc/zeenea/bigquery-key.json` fails with `Error loading JsonKey`. A `file:` URL that
-    cannot be read fails with `Invalid file: …`, and a blank value fails connection creation
-    with `json_key configuration is mandatory`.
+Authentication uses a **service account JSON key**, provided in the `connection.json_key`
+property either as a file reference or inline.
 
 !!! tip "Credentials & secrets"
-    The service account key can be resolved from the scanner's **Secret Manager** instead of
-    being stored in clear text in the configuration file.
+    Prefer the file reference in production. The key can also be resolved from the scanner's
+    **Secret Manager** instead of being stored in clear text in the configuration file — a
+    scanner capability, which requires a scanner 73 or later.
+
+!!! warning
+    The value must be a `file:` URL or inline JSON. A bare path such as
+    `/etc/keys/bigquery-scanner.json` is read as JSON content and fails with
+    `Error loading JsonKey`; a `file:` URL that cannot be read fails with `Invalid file: …`,
+    and a blank value with `json_key configuration is mandatory`.
+
+=== "Key file"
+
+    ```hocon
+    connector_id = "bigquery-v2"
+
+    connection {
+      # Absolute path of the JSON key file, as a file: URL
+      json_key = "file:///etc/keys/bigquery-scanner.json"
+    }
+    ```
+
+=== "Inline JSON key"
+
+    ```hocon
+    connector_id = "bigquery-v2"
+
+    connection {
+      # Service account credentials (JSON content)
+      json_key = """<SERVICE_ACCOUNT_JSON_KEY>"""
+    }
+    ```
+
+Two optional properties define the scope and the billing of the connection:
 
 ```hocon
-connector_id = "bigquery-v2"
+connection {
+  # Inventory a single project. If blank, every accessible project is inventoried.
+  project_id = "<PROJECT_ID>"
 
-# Service account credentials (JSON content)
-connection.json_key = """<SERVICE_ACCOUNT_JSON_KEY>"""
-
-# Optional: restrict the inventory to one project.
-# If blank or absent, every project accessible to the service account is inventoried.
-connection.project_id = "<PROJECT_ID>"
-
-# Optional: bill query jobs (view sampling) to a dedicated project.
-# If blank, each query job is billed to the project of the table it targets.
-connection.billing_project_id = "<BILLING_PROJECT_ID>"
+  # Issue every API call and query job under this project. If blank, each call goes to the
+  # project of the object it targets, which then needs bigquery.jobs.create.
+  billing_project_id = "<BILLING_PROJECT_ID>"
+}
 ```
 
 ## Detailed capabilities & configuration
@@ -98,10 +125,10 @@ connection.billing_project_id = "<BILLING_PROJECT_ID>"
 For the full list of properties and defaults, see the [Configuration reference](#configuration-reference).
 
 !!! note
-    Features marked :material-cash:{ .amber } run **BigQuery query jobs** billed to the
-    billing project (`connection.billing_project_id`; if blank, the project of the table each
-    job targets). Core metadata extraction, table sampling, and the Data Lineage API only
-    perform metadata or read-API calls — no query bytes are billed.
+    Features marked :material-cash:{ .amber } run **BigQuery query jobs**, billed as scanned
+    bytes to the billing project (`connection.billing_project_id`; if blank, the project of the
+    table each job targets). Every other operation only performs metadata or read-API calls —
+    no query bytes are billed.
 
 ### Connection & operations
 
@@ -112,121 +139,100 @@ see [Connecting to BigQuery](#connecting-to-bigquery).
 
 #### Multi-project
 
-> **Config:** `connection.project_id`
+> **Config:** `connection.project_id` · **Default:** *(auto-discovery)*
 
-When `connection.project_id` is left blank, the connector **auto-discovers** every project
-accessible to the service account (through the Cloud Resource Manager API) and inventories
-all of them. Set `connection.project_id` to restrict the scope to a single project. Every
-object is attributed to its project.
+When `connection.project_id` is left blank, the connector **auto-discovers** every project the
+service account can see through the Cloud Resource Manager API — including projects that do not
+use BigQuery. Set `connection.project_id` to restrict the scope, or use [Filtering](#filtering)
+to narrow it.
+
+Every object is attributed to its project, but all projects of a connection share a **single
+data source** in the catalog: the project is part of the object's identification key, not of
+the data source.
 
 #### Filtering
 
 > **Config:** `inventory_filters`, `sampling_filters`
 
-Filters follow the
-[Universal filters](../../technical-documentation/scanners/zeenea-universal-filters.md) syntax.
-Two independent keys are available:
+Filters restrict each stage to the objects you care about, following the
+[Universal filters](../../technical-documentation/scanners/zeenea-universal-filters.md) syntax:
 
-- `inventory_filters` restricts the inventory to the objects you care about. The connector
-  applies it to projects (key `project`) and datasets (keys `project`, `dataset`) while
-  listing, and the scanner applies it to the inventoried items.
-- `sampling_filters` is applied by the scanner before data sampling, e.g. to disable sampling
-  on a sensitive dataset.
+- **`inventory_filters`** — which objects are cataloged.
+- **`sampling_filters`** — which objects data sampling runs on.
 
-Each key falls back to the legacy `filters` key (same syntax) when absent.
-
-```hocon
-inventory_filters = [
-  {
-    id = "reject_staging_dataset"
-    action = REJECT
-    rules {
-      project = "my-project"
-      dataset = "staging"
-    }
-  },
-  {
-    id = "default_accept"
-    action = ACCEPT
-  }
-]
-
-sampling_filters = [
-  {
-    id = "no_sampling_on_pii_dataset"
-    action = ACCEPT
-    rules {
-      dataset = "pii"
-    }
-    sampling = false
-  },
-  {
-    id = "default_accept"
-    action = ACCEPT
-  }
-]
-```
+Rules match BigQuery objects on `project`, `dataset` (the BigQuery dataset, i.e. the container)
+and `table`. Each key falls back to the legacy `filters` key, with the same syntax, when it is
+absent.
 
 #### Partitioned-table grouping
 
 > **Config:** `inventory.partition.pattern` · **Default:** off
 
-A regex pattern matched against table names: every match is replaced by a wildcard, so that
-all partitions of a table are grouped as a **single inventory item** (e.g. `events_20260101`,
-`events_20260102`, … are listed once as `events_*`). This keeps the inventory compact for
-heavily partitioned tables. A table name with no match is inventoried as is.
+A regular expression matched against table names: every match is replaced by a wildcard, so that
+tables differing only by a partition suffix are cataloged as **a single Dataset**. With
+`inventory.partition.pattern = "\\d{8}$"`, the tables `events_20240101`, `events_20240102` and
+`events_20240103` become one Dataset named `events_*`. A table the pattern does not match keeps
+its own entry — `events_summary` stays a Dataset of its own.
 
-For example, with the pattern below (in a HOCON string, `\\d` is the regex `\d`) and the tables
-`log_cogip_2020_05_30`, `log_cogip_2020_06_01`, `log_acme_2020_06_03`, `log_acme_2020_06_04`,
-`x_files_01` and `x_files_02`, the inventory lists three items: `log_cogip_*`, `log_acme_*` and
-`x_files_*`.
+The group takes its metadata from its **most recent table**: fields, description, keys,
+statistics, lineage and data samples are all read from that one table. Statistics are therefore
+the latest table's, not the sum of the group, and a schema change between tables shows only in
+its latest state.
 
-```hocon
-inventory.partition.pattern = "\\d{4}_\\d{2}_\\d{2}$|\\d{2}$"
-```
-
-When the grouped item is extracted, the wildcard is expanded: the connector lists the dataset
-and builds **one Dataset per matching table**, each under its own table name (`events_20260101`,
-`events_20260102`, …).
+!!! note
+    The grouping is decided at inventory time. After changing or removing the pattern, run an
+    inventory: entries grouped under the former pattern no longer resolve to anything.
 
 ### Objects & metadata
 
 The connector maps BigQuery objects to catalog objects as follows:
 
-| BigQuery object | Imported into Zeenea as |
+| BigQuery object | Imported into the platform as |
 | :--- | :--- |
 | Table, external table, view, materialized view, table snapshot | **Dataset** |
 | Table column | **Field** |
 | View / materialized-view definition, lineage operation (Data Lineage API link, snapshot base table) | **Data process** (see [Lineage](#lineage)) |
+| Labels set on a table or a view | Property on the dataset (see [BigQuery labels](#bigquery-labels)) |
+
+!!! warning "BigQuery *dataset* vs platform *Dataset*"
+    A BigQuery **dataset** is a container — the equivalent of a schema — and is not cataloged as
+    an object of its own: it appears as a component of the identification key of the tables it
+    holds. A **Dataset** in the platform is a table, external table, view, materialized view or
+    snapshot.
 
 **Dataset** — a table, external table, view, materialized view, or table snapshot:
 
-- **Name** — the table name
-- **Description** — the table description
-- **Location** — project, dataset, and table name
-- **Type** — the BigQuery table type (`table`, `external`, `view`, `materialized view`, `snapshot`)
-- **Statistics** — row count, size, and long-term storage size (bytes)
+- **Name & description** — the table name, and the description set on the source object
+- **Friendly name** — the BigQuery display name, when one is set
+- **Location** — project, BigQuery dataset, and table name
+- **Data location** — the region the data is stored in (standard tables only)
+- **Type** — the BigQuery table type (table, external table, view, materialized view, snapshot)
+- **Statistics** — number of rows, storage size and long-term storage size, for objects that
+  have their own storage
 - **Timestamps** — creation, last-modification and expiration dates
-- **Data location** — the table location (standard and model tables only; not set for views, materialized views, external tables or snapshots)
-- **Labels** — the table labels, as space-separated `key:value` pairs
-- **Friendly name** — the table's friendly name, or the table name when none is set
+- **Labels** — the BigQuery labels set on the asset
 - **Primary key** — which of its fields form the primary key
-- **Foreign keys** — links from its fields to fields in other datasets. A foreign key without a
-  name, referenced table, project or columns is skipped.
+- **Foreign keys** — links from its fields to fields in other datasets. A foreign key with no
+  name, no referenced table or project, or no columns, is skipped.
 
 **Field** — a table column:
 
-- **Name** — the column name
-- **Description** — the column description
-- **Type** — mapped data type and native BigQuery type. `RECORD` and `REPEATED` (array) columns
-  are mapped to a structure type; nested fields are not cataloged as separate fields. A column
-  whose type is missing is kept with an unknown type.
+- **Name & description** — from the source description
+- **Type** — mapped data type, and the native BigQuery type as reported by the API
+  (`INTEGER`, `FLOAT`, `BOOLEAN`, `RECORD`…). A column whose type the API does not report is
+  cataloged with an unknown type and no native type.
 - **Position** — the column index
-- **Nullability** — nullable only when the BigQuery field mode is `NULLABLE`; `REQUIRED` and
-  `REPEATED` fields are reported as not nullable
+- **Nullability** — a column is nullable only when its BigQuery mode is `NULLABLE`; `REQUIRED`
+  and `REPEATED` columns are reported as not nullable
 
-Extraction is best-effort: a table, field or foreign key that fails to be read is logged and
-skipped, and the rest of the table and the other tables are still imported.
+!!! note
+    Only top-level columns are cataloged: a `RECORD` column is imported as a single field of
+    type *Struct*, without its sub-fields, and a `REPEATED` column is imported as a single field
+    that is not flagged as multivalued.
+
+!!! note
+    Extraction is best-effort: a table, a field or a foreign key that cannot be read is logged
+    and skipped, and the rest of the table — along with the other tables — is still imported.
 
 #### Identification keys
 
@@ -235,8 +241,8 @@ See [Identification keys](../../features-applications/studio/stewardship/zeenea-
 
 | Object | Identification key | Components |
 | :--- | :--- | :--- |
-| Data source | `type` | **type**: always `bigquery` (a single `BigQuery` data source, shared by every dataset and by lineage references to BigQuery tables) |
-| Dataset | `project/dataset/table` | **project**: Google Cloud project · **dataset**: BigQuery dataset · **table**: table, view, materialized view, or snapshot name |
+| Data source | `type` | **type**: always `bigquery` — a single data source per connection, whatever the number of projects, shared by every dataset and by the lineage references to BigQuery tables |
+| Dataset | `project/dataset/table` | **project**: Google Cloud project · **dataset**: BigQuery dataset · **table**: table, external table, view, materialized view, or snapshot name |
 | Field | `project/dataset/table/field_key` | …plus **field_key**: column name |
 
 ### Lineage
@@ -244,171 +250,177 @@ See [Identification keys](../../features-applications/studio/stewardship/zeenea-
 Lineage is materialized as **Data processes** that link input and output assets
 (*input → Data process → output*).
 
-The connector supports two **mutually exclusive lineage strategies**, selected with the
-`lineage.strategy` property. Both read the Google Cloud Data Lineage API, through different
-methods. They cannot be combined, so lineage edges are never double-reported: a connection
-that sets `data_lineage_streaming` together with another value is rejected at creation.
+Transformation, copy and load jobs are read from the **Google Cloud Data Lineage API**, through
+one of two **mutually exclusive strategies**, selected with `lineage.strategy`:
 
-| Strategy | Granularity | Status |
-| :--- | :--- | :--- |
-| `data_lineage_api` (default) | Dataset-to-dataset | Stable |
-| `data_lineage_streaming` | Dataset-to-dataset and field-to-field (inferred) | Trial |
+- **`data_lineage_api`** *(default)* — **table-to-table** links, read with `searchLinks`.
+- **`data_lineage_streaming`** — the same table-to-table links, plus **field-to-field** links
+  between columns, read with `SearchLineageStreaming`.
 
-Whatever the strategy, **views and materialized views** get their lineage from their own
-definition SQL, and **table snapshots** from their own metadata — see below.
-
-!!! warning
-    The former `job_history` strategy is no longer supported. A connection that still sets
-    `lineage.strategy = job_history` fails at creation. Switch to `data_lineage_api`
-    (dataset-level lineage) or `data_lineage_streaming` (dataset-level and field-to-field
-    lineage). Leftover `lineage.job_history.*` properties are ignored.
-
-#### Data Lineage API strategy
-
-> **Config:** `lineage.strategy = data_lineage_api` · **Default**
-
-Source datasets → **operation** → target table, read from the **Google Cloud Data Lineage
-API** and attached to standard and external tables. The edges are **dataset-to-dataset**;
-field-to-field lineage is not available from this source. Copy jobs are covered natively.
-
-- Requires `roles/datalineage.viewer` on each inventoried project, and on every project that
-  runs jobs writing the inventoried tables — see [Required privileges](#required-privileges)
-  and [Cross-project writes](#lineage-coverage-notes).
-- No billing project and no query jobs are needed.
-- The Data Lineage API retains **30 days** of history.
-
-#### Data Lineage API streaming strategy (trial)
-
-> **Config:** `lineage.strategy = data_lineage_streaming` ·
-> :material-lock:{ .amber } [Required privileges](#required-privileges)
-
-Source datasets → **operation** → target table, read from the **Google Cloud Data Lineage
-API** with one `SearchLineageStreaming` call per standard or external table (direct upstream
-only). A single call returns both the source datasets and the **field-to-field** links, so a
-relationship reaches the catalog through one channel. Use it instead of `data_lineage_api`, not
-alongside it.
-
-- Requires `roles/datalineage.viewer` on each inventoried project, and on every project that
-  runs jobs writing the inventoried tables. Field-level links additionally need the
-  `datalineage.events.getFields` permission — check that the role you grant carries it.
-- No billing project and no query jobs are needed.
-- The Data Lineage API retains **30 days** of history.
-- Views, materialized views and table snapshots are not queried; they keep their definition-SQL
-  and base-table lineage (see below).
-
-```hocon
-lineage {
-  strategy = data_lineage_streaming
-}
-```
-
-**Why it is a trial.** The Data Lineage API reports filter, grouping and expression
-dependencies alike as `OTHER`: `SUM(amount) AS total` and `WHERE region = 'EU'` look the same.
-The API exposes no job ID or SQL to tell them apart, so the connector infers which field links
-to keep:
-
-- A link is **declared** when it is an exact copy, when it carries no dependency information,
-  or when it comes from a source field that feeds a **single** target field.
-- A link is **not declared** when it is `OTHER`-only and its source field feeds **several**
-  target fields, since that looks like a filter, join key or group key.
-- The source dataset is declared in every case.
-
-The heuristic can misjudge. A filter on a single-output table stays declared, and an expression
-used for two outputs (`SUM(a) AS x, SUM(a) AS y`) is dropped. Review the field links before
-relying on them. Self-links and nested field paths are skipped, and field links are sent only
-when the table has at least one source dataset.
+!!! warning "Field links are inferred"
+    The API does not say whether a column link is a computation or merely a filter or join key,
+    so the connector infers which ones to declare: it can keep a spurious link, or drop a genuine
+    one. Source tables are always declared, so table-level lineage is unaffected.
 
 #### Views & materialized views
 
-Source tables → **view definition** → the view (both strategies, always on).
-The view or materialized-view definition SQL is parsed by the Zeenea platform down to the
-**field-to-field** level (falling back to dataset level when the statement cannot be fully
-parsed). Neither lineage strategy is additionally queried for views, so the edge is never
-double-reported.
+Source tables → **view definition** → the view. Always on, not configurable. The definition SQL
+is parsed by the platform down to the **field-to-field** level, falling back to table level when
+the statement cannot be fully parsed. Neither strategy queries the API for views, so the edge is
+never reported twice.
 
 #### Table snapshots
 
-Base table → **snapshot** → the table snapshot (both strategies, always on).
-A snapshot is an immutable point-in-time copy, so its base table — read from the snapshot's
-own metadata, at no extra API cost — is its complete upstream lineage. This works even when
-the snapshot outlives the 30-day retention of the Data Lineage API. A snapshot whose metadata
-carries no base table reference is logged and gets no lineage.
+Base table → **snapshot** → the snapshot, at **table-to-table** level. Always on, not
+configurable. A snapshot is an immutable copy, so the base table declared in its own metadata is
+its complete upstream lineage — at no API cost, and beyond the 30-day retention of the Data
+Lineage API. A snapshot whose metadata carries no base table is logged and gets no lineage.
 
-#### Supported source systems
+#### Table transformation jobs
 
-Sources are identified by the Data Lineage API fully qualified name (`{system}:{name}`):
+> **Config:** `lineage.strategy` · **Default:** `data_lineage_api` ·
+> :material-lock:{ .amber } [Required privileges](#required-privileges)
+
+Source tables → **operation** → output table, for the statements that write into a table.
+
+The connector makes **one API call per table**, at the location of its BigQuery dataset, and
+attaches the sources the API reports. Views, materialized views and snapshots are skipped: they
+already carry their own lineage.
+
+#### Copy jobs
+
+Source table → **copy** → destination table, at **table-to-table** level. Reported natively by
+the Data Lineage API, with both strategies — nothing to enable.
+
+#### Load jobs from Cloud Storage
+
+Source bucket → **load** → destination table. The Data Lineage API reports Cloud Storage sources
+at **bucket** level, so the upstream asset is the bucket itself, not the loaded files or folders.
+The edge resolves only if that bucket is cataloged, as `path={bucket}` in a data source aliased
+`gs-{bucket}`.
+
+#### Sources outside BigQuery
+
+The API names every source as `{system}:{name}`, and the connector maps the systems it knows:
 
 | Source system | Referenced as |
 | :--- | :--- |
-| BigQuery | The BigQuery dataset, in the `bigquery` data source. The reference is sent whether or not the source table is inventoried; the edge shows once the source table is cataloged, by this connection or by another BigQuery connection. |
-| Redshift, MySQL, Oracle, PostgreSQL, SQL Server, Db2, Snowflake, Hive | The table of the matching connector, by host and port (by account for Snowflake). A source without a host is skipped. |
-| Cloud Storage (`gcs:{bucket}`) | The bucket, as `path={bucket}` in the `gs-{bucket}` data source |
+| BigQuery | The table, in the `bigquery` data source. The reference is sent whether or not the source table is inventoried: the edge appears once that table is cataloged, by this connection or by another BigQuery connection. |
+| Redshift, MySQL, Oracle, PostgreSQL, SQL Server, Db2, Snowflake, Hive | The table of the matching connector, matched by host and port — by account for Snowflake. A source with no host is skipped. |
+| Cloud Storage | The bucket (see above) |
 
-Any other source type, or a malformed name, is logged and skipped.
+Any other system, or a name the connector cannot parse, is logged and skipped. These links appear
+only if lineage events from those systems reached the Data Lineage API; Google does not produce
+them on its own.
 
 #### Lineage coverage notes
 
-- **Job activity, not table history** (both strategies): lineage reflects jobs executed
-  within the last **30 days**, the retention of the Data Lineage API. A table last written
-  before the window shows no lineage.
-- **Delay**: a link is not readable as soon as the job ends. On the jobs observed, one link
-  became readable after about 40 minutes and another only the next day. A table synchronized
-  shortly after it is written can show no lineage until a later synchronization.
-- **Dataset location**: lineage is read at the dataset's location. A dataset whose location
-  cannot be found is logged and yields no lineage.
-- **Cross-project writes** (both strategies): the connector reads lineage under the table's
-  project, but the Data Lineage API stores a link under the project that **ran the job**. A job
-  run in project B that writes a table of project A is stored under B, whatever project holds
-  its source tables. Links stored under a project the service account cannot read are left out
-  silently: the table shows no lineage and no error is raised. Grant
-  `roles/datalineage.viewer` on every project that runs jobs writing the table, as well as on
-  the table's project. A source table of another project shows as an edge only once it is
-  cataloged.
-- **Load jobs** from Cloud Storage appear with the source **bucket** as upstream dataset
-  (`gcs:{bucket}`), not the loaded files or folders.
-- A lineage read failure (e.g. missing permission) logs a warning and yields empty lineage
-  for the affected table; **the sync itself never fails because of lineage**.
+- **Job activity, not table history**: lineage reflects the jobs the API has recorded, over its
+  fixed **30-day** retention. A table last written before that window shows no lineage.
+- Nothing is recorded before the Data Lineage API is **enabled** on the project, and a link is
+  not readable as soon as its job ends: on the jobs observed, from about 40 minutes to the next
+  day.
+- **Cross-project writes** (both strategies): the API stores a link under the project that **ran
+  the job**, not under the table's. Links under a project the service account cannot read are
+  dropped **silently** — grant `roles/datalineage.viewer` there too.
+- A table whose BigQuery dataset location cannot be determined is logged and gets no lineage.
+- A lineage read failure — a missing permission, for instance — is logged as a warning and
+  yields empty lineage for the affected table; the rest of the synchronization continues.
+
+### Classification & governance
+
+#### BigQuery labels
+
+Retrieves the labels set on tables and views, as a single text property holding the `key:value`
+pairs. **Read-only** — the connector never writes labels back to BigQuery. Labels set on the
+enclosing BigQuery dataset are not imported.
 
 ### Data
 
 #### Data sampling
 
-> **Config:** `sampling.view.enabled`, `sampling.view.simple_view_optimization` ·
-> :material-cash:{ .amber } Query jobs (views only) · :material-lock:{ .amber } [Required privileges](#required-privileges)
+> **Config:** `sampling.view.enabled`, `sampling.view.simple_view_optimization` (views only) ·
+> **Default:** off · :material-cash:{ .amber } Query jobs (views only) ·
+> :material-lock:{ .amber } [Required privileges](#required-privileges)
 
-Exposes a preview of field values, retrieved on demand from the sampled table. See
+Exposes a preview of field values, retrieved on demand from the sampled object. See
 [Data Sampling](../../features-applications/cross-application-features/zeenea-data-sampling.md).
 
-- **Tables** are sampled through the BigQuery read API (`tabledata.list`) — no query job,
-  no query bytes billed.
-- **Views** are sampled only when `sampling.view.enabled` is set: the sample is retrieved by
-  running the view's query as a **query job**. With
-  `sampling.view.simple_view_optimization`, simple views (single `FROM`, no
-  JOIN/UNION/GROUP BY/subqueries) are instead sampled with a `TABLESAMPLE` clause on their
-  underlying source table, reducing the data scanned by the query; if the optimization fails
-  (source table not found or not identifiable, source table with a zero or unknown row count,
-  schema mismatch, query error), no sample is returned — there is no fallback to the full view
-  query. Materialized views and complex views always run the plain view query.
+**Tables** are sampled without any configuration, through the BigQuery read API
+(`tabledata.list`): no query job, and no query bytes billed.
+
+**Views and materialized views** are sampled only when `sampling.view.enabled` is set, by
+running the view's query as a **query job** — one per request.
+
+!!! warning "Cost of view sampling"
+    A `LIMIT` does not reduce the bytes BigQuery scans: every sample request on a view scans
+    everything its query reads, and is billed accordingly. On large views the cost is
+    significant, and it repeats with each request — hence the property being off by default.
+
+**`sampling.view.simple_view_optimization`** cuts that cost, for the views it can handle. A view
+qualifies as *simple* when its query reads **a single table**: exactly one `FROM`, and no `JOIN`,
+`UNION`, `GROUP BY` or subquery. The connector then adds a `TABLESAMPLE SYSTEM` clause on that
+source table, sized to return about twice the requested rows, so the job scans a fraction of the
+table instead of all of it.
+
+- Materialized views, and views that do not qualify, always run the plain query.
+- The source table must be identifiable in the query and have a known, non-zero row count.
+- `TABLESAMPLE SYSTEM` reads whole storage blocks, so a sample can come back with fewer rows
+  than requested.
+
+!!! warning
+    When the optimization is enabled and fails on a given view — source table not identifiable,
+    zero or unknown row count, schema mismatch, query error — **no sample is returned** for that
+    view: there is no fallback to the plain query.
 
 ## Required privileges
 
 The connector is **read-only** with respect to your data. Grant only what the enabled
 features need — the table below maps each capability to the Google APIs it reads and the
-IAM permission or role required.
+IAM role required.
 
 | Capability | Google APIs / objects read | IAM required |
 | :--- | :--- | :--- |
-| Core metadata (datasets, tables, fields, constraints) | BigQuery metadata (datasets, tables, schemas) | `roles/bigquery.metadataViewer` on each inventoried project |
-| Project auto-discovery | Cloud Resource Manager (project listing) | Ability to list/get the projects to inventory (e.g. a role carrying `resourcemanager.projects.get` on them) |
-| Lineage — `data_lineage_api` strategy | Data Lineage API (`searchLinks`) | `roles/datalineage.viewer` on each inventoried project and on every project that runs jobs writing the inventoried tables |
-| Lineage — `data_lineage_streaming` strategy | Data Lineage API (`SearchLineageStreaming`) | `roles/datalineage.viewer` on each inventoried project and on every project that runs jobs writing the inventoried tables; field-level links additionally need `datalineage.events.getFields` |
-| Data sampling — tables | Table data (`tabledata.list` read API) | Read access to the sampled table data (`bigquery.tables.getData`, e.g. `roles/bigquery.dataViewer`) — no query job |
-| Data sampling — views | Table data (`SELECT … FROM <view>` query job) | `bigquery.jobs.create` on the billing project (or on the view's own project when no billing project is set) + read access to the sampled data (e.g. `roles/bigquery.dataViewer`) |
+| Core metadata (tables, fields, constraints, view definitions) | BigQuery metadata (`datasets.list`, `tables.list`, `tables.get`) | `roles/bigquery.metadataViewer` on each inventoried project |
+| Project auto-discovery | Cloud Resource Manager (`projects.search`) | `resourcemanager.projects.get`, already carried by `roles/bigquery.metadataViewer` |
+| Lineage (both strategies) | Data Lineage API (`searchLinks`, `SearchLineageStreaming`) | `roles/datalineage.viewer` on each inventoried project, and on every project that runs jobs writing those tables |
+| Data sampling — tables | Table data (`tabledata.list` read API) | `bigquery.tables.getData` on the sampled tables, e.g. `roles/bigquery.dataViewer` — no query job |
+| Data sampling — views | Table data (`SELECT … FROM <view>` query job) | `roles/bigquery.jobUser` where query jobs run · plus `bigquery.tables.getData` on the view and the tables it reads |
 
 !!! note
-    Metadata roles let the connector read object **definitions and structure** (including
-    view definitions used for lineage). Actual **table data** is read only when data
-    sampling is enabled.
+    "Where query jobs run" is the billing project when `connection.billing_project_id` is set,
+    and every inventoried project otherwise. Metadata roles cover object definitions and
+    structure, including the view definitions used for lineage; actual **table data** is read
+    only when a sample is requested.
+
+!!! note
+    Field-level lineage additionally reads `datalineage.events.getFields`, a permission
+    `roles/datalineage.viewer` already carries. Check it explicitly only if you replace that role
+    with a custom one.
+
+Example bindings for a dedicated service account (adapt names, then validate against your policy):
+
+```bash
+PROJECT="<PROJECT_ID>"                     # repeat for each inventoried project
+BILLING_PROJECT="<BILLING_PROJECT_ID>"     # connection.billing_project_id
+SA="serviceAccount:<SERVICE_ACCOUNT_EMAIL>"
+
+# Core metadata, and project auto-discovery
+gcloud projects add-iam-policy-binding "$PROJECT" --member="$SA" \
+  --role="roles/bigquery.metadataViewer"
+
+# Lineage, both strategies — grant it as well on every project that runs jobs writing your tables
+gcloud projects add-iam-policy-binding "$PROJECT" --member="$SA" \
+  --role="roles/datalineage.viewer"
+
+# Data sampling — scope it to the datasets you actually sample
+gcloud projects add-iam-policy-binding "$PROJECT" --member="$SA" \
+  --role="roles/bigquery.dataViewer"
+
+# View sampling only: query jobs need a job user where they run
+gcloud projects add-iam-policy-binding "$BILLING_PROJECT" --member="$SA" \
+  --role="roles/bigquery.jobUser"
+```
 
 ## Configuration reference
 
@@ -425,21 +437,29 @@ The table below lists the connection properties handled by the BigQuery V2 conne
 | `connector_id` | — | Yes | Connector type. Must be `bigquery-v2`. |
 | `enabled` | `true` | No | Whether the connection is active. |
 | **Connection** | | | |
-| `connection.json_key` | — | Yes | Google Cloud service account credentials: the JSON content (HOCON triple-quoted string), or a `file:` URL to the key file. A bare file path is not supported. See [Connecting to BigQuery](#connecting-to-bigquery). |
+| `connection.json_key` | — | Yes | Google Cloud service account credentials: a `file:` URL pointing to the key file, or the JSON content inline as a HOCON triple-quoted string. A bare file path is not supported. See [Connecting to BigQuery](#connecting-to-bigquery). |
 | `connection.project_id` | *(auto-discovery)* | No | Google Cloud project to inventory. If blank, every project accessible to the service account is inventoried. See [Multi-project](#multi-project). |
-| `connection.billing_project_id` | *(project of the targeted table)* | No | Project billed for query jobs (view sampling). If blank, each query job is billed to the project of the table it targets. See [Connecting to BigQuery](#connecting-to-bigquery). |
-| **Filtering & inventory** | | | |
-| `inventory_filters` | *(`filters`)* | No | Which objects are cataloged, matching on `project` and `dataset`. Falls back to the legacy `filters` key when absent. See [Filtering](#filtering). |
-| `sampling_filters` | *(`filters`)* | No | Which objects are sampled. Falls back to the legacy `filters` key when absent. See [Filtering](#filtering). |
-| `inventory.partition.pattern` | *(none)* | No | Regex grouping partitioned tables into a single inventory item. See [Partitioned-table grouping](#partitioned-table-grouping). |
-| **Lineage** | | | |
-| `lineage.strategy` | `data_lineage_api` | No | Lineage strategy: `data_lineage_api` (dataset-level) or `data_lineage_streaming` (trial; dataset-level and field-to-field). A blank or missing value defaults to `data_lineage_api`. `data_lineage_streaming` cannot be combined with another value. `job_history` is no longer supported, and any other value fails connection creation. See [Lineage](#lineage). |
-| **Sampling** | | | |
-| `sampling.view.enabled` | `false` | No | Enable data sampling for views by running the view's query. See [Data sampling](#data-sampling). |
-| `sampling.view.simple_view_optimization` | `false` | No | Sample simple views with a `TABLESAMPLE` clause on their source table, reducing the data scanned. See [Data sampling](#data-sampling). |
+| `connection.billing_project_id` | *(project of the targeted object)* | No | Project under which every BigQuery API call and query job is issued. See [Connecting to BigQuery](#connecting-to-bigquery). |
 | **Proxy** | | | |
-| `proxy.scheme` | *(none)* | No | Proxy scheme, `http` or `https`. The proxy is used only when both `proxy.scheme` and `proxy.hostname` are set. |
+| `proxy.scheme` | *(none)* | No | Proxy scheme, `http` or `https`. The proxy is used only when scheme and hostname are both set. |
 | `proxy.hostname` | *(none)* | No | Proxy host name. |
-| `proxy.port` | *(none)* | Yes, when a proxy is set | Proxy port. Mandatory as soon as `proxy.scheme` and `proxy.hostname` are set: without it, the Google API calls going through gRPC (project discovery, lineage) fail. |
-| `proxy.username` | *(none)* | No | Proxy user name. Used only when `proxy.password` is also set. |
-| `proxy.password` | *(none)* | No | Proxy password. Used only when `proxy.username` is also set. |
+| `proxy.port` | *(none)* | Yes, when a proxy is set | Proxy port. Required as soon as `proxy.scheme` and `proxy.hostname` are set: without it, the calls made over gRPC — project discovery and lineage — fail. |
+| `proxy.username` | *(none)* | No | Proxy user name. Used only when a password is also set. |
+| `proxy.password` | *(none)* | No | Proxy password. Used only when a user name is also set. |
+| **Filtering & inventory** | | | |
+| `inventory_filters` | *(`filters`)* | No | Which objects are cataloged (`ACCEPT` / `REJECT`), matching on `project`, `dataset` and `table`. Falls back to the legacy `filters` key when absent. See [Filtering](#filtering). |
+| `sampling_filters` | *(`filters`)* | No | Which objects data sampling runs on. Falls back to the legacy `filters` key when absent. See [Filtering](#filtering). |
+| `inventory.partition.pattern` | *(none)* | No | Regular expression whose every match in a table name is replaced by a wildcard, cataloging the matching tables as a single Dataset. See [Partitioned-table grouping](#partitioned-table-grouping). |
+| **Lineage** | | | |
+| `lineage.strategy` | `data_lineage_api` | No | Lineage strategy: `data_lineage_api` or `data_lineage_streaming`. A blank or missing value defaults to `data_lineage_api`. The two are mutually exclusive, and any other value fails connection creation. See [Lineage](#lineage). |
+| **Sampling** | | | |
+| `sampling.view.enabled` | `false` | No | Enable data sampling for views and materialized views, by running the view's query as a query job. Tables are sampled without configuration. See [Data sampling](#data-sampling). |
+| `sampling.view.simple_view_optimization` | `false` | No | For views reading a single table, sample through a `TABLESAMPLE` clause on that table instead of scanning the whole view. No sample is returned when the optimization fails. See [Data sampling](#data-sampling). |
+
+## Troubleshooting
+
+| Symptom | Likely cause | Fix |
+| :--- | :--- | :--- |
+| `403` on lineage or project discovery, although the IAM roles are granted | The API is not enabled on the project | Enable the Data Lineage API, or the Cloud Resource Manager API for auto-discovery |
+| Objects sync but no lineage appears | Missing privileges: the lineage read fails with a log warning, the sync carries on | Grant the roles in [Required privileges](#required-privileges) |
+| No lineage on a recently enabled project | Google records nothing before the Data Lineage API is enabled on the project | Wait — a job's lineage appears up to 24 hours after it runs. Activity from before the API was enabled is never recovered |
