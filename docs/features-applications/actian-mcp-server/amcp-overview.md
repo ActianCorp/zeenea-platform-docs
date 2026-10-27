@@ -293,20 +293,9 @@ The [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) is a t
     ```
 
 2. Configure the connection:
-    - **Transport type**: `Streamable HTTP`
-    - **URL**: `https://<your-tenant>.zeenea.app/api/mcp-server/mcp`
-    - **Header Name**: `x-api-secret`
-    - **Header Value**: `<your-api-key>`
-    - **Request Timeout**: `30000`
+   - **Transport type**: `Streamable HTTP`
+   - **URL**: `https://<your-tenant>.zeenea.app/api/mcp-server/mcp`
+   - **Request Timeout**: `30000`
+   - See [Remote Authentication Setup](amcp-remote-authentication.md) for authentication details.
 
 3. Click **Connect**.
-
-### Generating an API Key
-
-The MCP Inspector requires API key authentication. To generate an API key:
-
-1. Open Actian Data Intelligence **Administration**.
-2. Go to the **API keys** section.
-3. Click **Create API key** and copy the generated key.
-
-For full authentication details, see [Remote Authentication Setup](amcp-remote-authentication.md).
