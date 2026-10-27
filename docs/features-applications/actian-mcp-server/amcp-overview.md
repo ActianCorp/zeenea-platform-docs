@@ -3,15 +3,15 @@ search:
   boost: 2.0
 ---
 
-# Actian Model Context Protocol (MCP) Server
+# Actian Data Intelligence Platform MCP Server
 
-The Actian MCP Server uses the open-source Model Context Protocol (MCP) standard to enable AI agents to access contextual metadata from external systems. This protocol provides a standardized way for large language models (LLMs) and automation frameworks to retrieve the context they need to provide accurate and reliable results.
+The Actian Data Intelligence Platform MCP Server uses the open-source Model Context Protocol (MCP) standard to enable AI agents to access contextual metadata from external systems. This protocol provides a standardized way for large language models (LLMs) and automation frameworks to retrieve the context they need to provide accurate and reliable results.
 
-The Actian MCP Server acts as a secure bridge between the Actian Data Intelligence Platform and AI tools, such as Claude, Cursor, Windsurf, and Microsoft Copilot Studio. With the Actian MCP Server, you can search and find assets at both the semantic layer and the data model level, using real-time context from Studio and Explorer applications within the Actian Data Intelligence.
+The Actian Data Intelligence Platform MCP Server acts as a secure bridge between the Actian Data Intelligence Platform and AI tools, such as Claude, Cursor, Windsurf, and Microsoft Copilot Studio. With the Actian Data Intelligence Platform MCP Server, you can search and find assets at both the semantic layer and the data model level, using real-time context from Studio and Explorer applications within the Actian Data Intelligence.
 
-## Actian MCP Server Tools
+## Actian Data Intelligence Platform MCP Server Tools
 
-The Actian MCP Server provides a set of tools that enable AI agents to work directly with metadata in the Actian Data Intelligence. These tools supply real-time context to AI environments, making it easier to search, explore, and update metadata without leaving your workflow.
+The Actian Data Intelligence Platform MCP Server provides a set of tools that enable AI agents to work directly with metadata in the Actian Data Intelligence. These tools supply real-time context to AI environments, making it easier to search, explore, and update metadata without leaving your workflow.
 
 The tools include the following:
 
@@ -86,6 +86,37 @@ You should see a list of datasets named `albums` in the `music` schema in all co
 
 ## Deployment Options
 
-We currently provide only remote connections to Actian MCP Servers. 
+We currently provide only remote connections to Actian Data Intelligence Platform MCP Servers. 
 
 Our remote deployment is a per-tenant MCP Server managed by Actian. It supports API Key authentication.
+
+## Testing with MCP Inspector
+
+The [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) is a tool for testing and debugging MCP servers. You can use it to verify your connection to the Actian Data Intelligence Platform MCP Server and explore the available tools.
+
+### Setup
+
+1. Start the MCP Inspector:
+
+   ```bash
+   npx @modelcontextprotocol/inspector
+   ```
+
+2. Configure the connection:
+   - **Transport type**: `Streamable HTTP`
+   - **URL**: `https://<your-tenant>.zeenea.app/api/mcp-server/mcp`
+   - **Header Name**: `x-api-secret`
+   - **Header Value**: `<your-api-key>`
+   - **Request Timeout**: `30000`
+
+3. Click **Connect**.
+
+### Generating an API Key
+
+The MCP Inspector requires API Key authentication. To generate an API key:
+
+1. Open Actian Data Intelligence **Administration**.
+2. Go to the **API keys** section.
+3. Click **Create API key** and copy the generated key.
+
+See [Remote Authentication Setup](amcp-remote-authentication.md) for full authentication details.
