@@ -393,9 +393,9 @@ When you create an item using the API, the platform checks whether a lifecycle p
 
 The Actian Data Intelligence Chrome Extension respects lifecycle visibility rules. It displays glossary definitions only for items without a lifecycle policy or for items at stages visible in Explorer.
 
-## Lifecycle Stages in Actian MCP Server
+## Lifecycle Stages in Actian Data Intelligence Platform MCP Server
 
-The Actian MCP Server returns only items that are visible in Explorer. Items at stages with the **Studio only** visibility rule are excluded from MCP queries and AI-generated responses
+The Actian Data Intelligence Platform MCP Server returns only items that are visible in Explorer. Items at stages with the **Studio only** visibility rule are excluded from MCP queries and AI-generated responses
 
 ## Audit Trail
 
