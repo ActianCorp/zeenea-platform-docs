@@ -1,113 +1,157 @@
 # Universal Filters
 
-This document describes Actian Data Intelligence's scanner universal filtering system, a powerful tool designed to give you precise control over which assets are imported from your data sources.
+Universal filters control which assets the scanner imports from a data source, which datasets get a data sample, and which datasets get profiled. 
 
-With filters, you can create a set of rules to include or exclude specific items based on their names, ids, or other attributes. This is the perfect way to keep your data catalog clean and relevant, for example by:
+Typical uses include:
 
-* Including only production assets.
+* Importing only production assets.
 * Excluding temporary tables or test reports.
 * Focusing on assets from specific teams or projects.
-* Rooting items to specific catalogs
+* Routing assets to a specific catalog.
 
-This feature is available for **Scanner version 79 and above**.
+Universal filters are available starting with **Scanner version 79**. Separate filters for inventory, sampling, and profiling are available starting with **Scanner version 103**.
 
-## Core Concepts
+## Filter Lists
 
-Understanding two core concepts is key to mastering filters:
+Filters are declared in the connection configuration file, with one list for each process:
 
-1. **Rules are Processed in Order:** The filter is a list of rules that you define. When scanning a source, Actian Data Intelligence checks an item (like a table or a report) against your rules from top to bottom.
-2. **The First Match Wins:** As soon as an item matches a rule's conditions, Actian Data Intelligence applies the corresponding `ACCEPT` or `REJECT` action and immediately stops processing. No further rules are checked for that item.
+| Key | Controls |
+|---|---|
+| `inventory_filters` | Which items are inventoried, imported, and synchronized, and which catalog they are rooted in. |
+| `sampling_filters` | Which datasets get a data sample. |
+| `profiling_filters` | Which datasets get profiled. |
 
-If an item goes through the entire list without matching any rule, it will be accepted by default. For this reason, we strongly recommend that your **last rule is a "catch-all" reject rule** to prevent unwanted assets from being imported.
+!!! note "Legacy `filters` key"
 
-A rule is defined by several key properties that work together. You must specify its `id` (a unique name), its `action` (`ACCEPT` or `REJECT`), and an optional `catalog` to which it is being rooted. If `catalog` is not defined, thr default catalog will be used. The conditions themselves are defined within a `rules` block, where you list all the criteria an item must meet for the rule to apply.
+    Before version 103, a single `filters` list was used for all processes. It is still supported for backward compatibility, but **we recommend migrating to the new keys**.
 
-### Example: Include Only a Specific Workspace
+    * If `inventory_filters` or `sampling_filters` is missing, the scanner falls back to `filters` for that process.
+    * `profiling_filters` never falls back to `filters`.
+    * If both a new key and `filters` are present, the new key takes precedence for that process, and a warning is logged.
 
-The logic is:
+    The connection-level `catalog_code` key is no longer supported. Instead, use `catalog_code` in an `inventory_filters` rule. For more information, see [Filter Properties](#filter-properties).
 
-1. **Rule 1:** If an item is in the "Zeenea" workspace, `ACCEPT` it and root it to "Zeenea Catalog".
-2. **Rule 2:** If it is not in the "Zeenea" workspace, `REJECT` it.
+## How Filters Are Evaluated
 
-This filter will accept items from the "Zeenea" workspace and reject all others.
+1. Filters are checked **in order**, from top to bottom.
+2. The **first filter that matches** determines the outcome. All subsequent filters are ignored.
+3. If **no filter matches**, the item is **rejected**.
+4. If the list is **missing or empty**, every item is accepted.
+
+Because unmatched items are rejected, a list of `ACCEPT` filters acts as an allow list. To exclude only a few items and keep everything else, end the list with a catch-all `ACCEPT` filter.
+
+### Examples
+
+**Allow list: Keep only the "Zeenea" workspace, rooted in a specific catalog**
 
 ```
-filters = [
+inventory_filters = [
   {
     id = "accept_zeenea_workspace"
     action = ACCEPT
-    catalog = "Zeenea Catalog"
+    catalog_code = "<CATALOG_CODE>"
     rules {
       workspace_name = "Zeenea"
     }
-  },
-  {
-    id = "default_reject"
-    action = REJECT
   }
 ]
 ```
-## Building Your Rules
 
-Each rule you create is an object with four parts:
+**Deny list: Drop temporary tables and keep everything else**
 
-*   `id`: A unique name you give the rule for easy identification.
-*   `action`: The action to perform: `ACCEPT` (to keep the item) or `REJECT` (to discard it).
-*   `catalog`: The catalog identifier where items are rooted (optional)
-*   `rules`: A block where you define the conditions for the match. If this block is empty or missing, it matches everything.
+```
+inventory_filters = [
+  {
+    id = "reject_tmp_tables"
+    action = REJECT
+    rules {
+      table = "TMP_*"
+    }
+  },
+  {
+    id = "accept_everything_else"
+    action = ACCEPT
+  }
+]
+```
 
-The attributes you can use as keys inside the `rules` block (for example, `schema`, `table`, `workspace_name`) depend entirely on the technology being scanned. A database connector will offer keys like `schema` and `table`, while a business intelligence tool connector will have keys like `report_name` or `dashboard_id`. Therefore, it is essential to consult the documentation for the specific connector you are configuring to see the complete list of available filter keys.
+## Filter Properties
 
-### Defining Conditions: Matching Values
+| Property | Required | Description |
+|---|---|---|
+| `id` | Yes | Unique name of the filter, displayed in the logs. A filter without an `id` is ignored, and an error is logged. |
+| `action` | No | `ACCEPT` or `REJECT` (case-insensitive). Defaults to `ACCEPT`. Any value other than `REJECT` is treated as `ACCEPT`. |
+| `rules` | No | Conditions that an item must meet. If missing or empty, the filter matches every item. |
+| `catalog_code` | No | *Inventory, `ACCEPT` only.* Code of the catalog where matching items are rooted. Defaults to the default catalog. |
+| `sampling` | No | *Sampling only.* Set to `false` to delete the existing data sample of matching datasets. Defaults to `true`. |
+| `profiling` | No | *Profiling only.* Set to `false` to disable profiling of matching datasets. Defaults to `true`. |
+| `profilingOverride` | No | *Profiling only.* Overrides the connection's profiling sample size for matching datasets using any of `targetedPercentOfSample`, `minSampleCount`, and `maxSampleCount`. Unset fields retain the connection-level values. |
 
-The `rules` block is where you set the conditions based on an item's attributes (like `schema`, `table`, `workspace_name`, etc.). You can match values in three powerful ways.
+### Sampling and Profiling Outcomes
 
-1. **Exact Matching**<br />
-     This is the default. If you provide a value without any special characters, Actian Data Intelligence will look for an exact match.
+| Matching filter | Sampling | Profiling |
+|---|---|---|
+| `ACCEPT` | Sample is collected. | Dataset is profiled. |
+| `ACCEPT` with `sampling = false` / `profiling = false` | Existing sample is deleted. | Existing profile is deleted. |
+| `REJECT` | Skipped: existing sample is retained. | Existing profile is deleted. |
+| No filter matches | Skipped: existing sample is retained. | Existing profile is deleted. |
 
-     **Example:**<br />
-     This condition only matches if the schema is exactly `production`.
+**Example: Profile only the `analytics` schema, with a smaller sample on fact tables**
 
-      ```
-      rules {
-        schema = "production"
-      }
-      ```
-2. **Pattern Matching with Wildcards (`*` and `?`)**<br />
-     You can use wildcards for more flexible matching. This is the most common way to match patterns.
-   
-       *  `*` matches any number of characters.
-       *  `?` matches any single character.
+```
+profiling_filters = [
+  {
+    id = "profile_fact_tables"
+    action = ACCEPT
+    rules {
+      schema = "analytics"
+      table = "FACT_*"
+    }
+    profilingOverride {
+      maxSampleCount = 10000
+    }
+  },
+  {
+    id = "profile_analytics"
+    action = ACCEPT
+    rules {
+      schema = "analytics"
+    }
+  }
+]
+```
 
-       **Example:**<br />
-       This condition matches any table starting with `FACT_` in the `analytics` schema.
-      ```
-      rules {
-        schema = "analytics"
-        table = "FACT_*"
-      }
-      ```
-3. **Advanced Pattern Matching (Regular Expressions)**<br />
-     For maximum power and precision, you can use regular expressions by adding the `regex:` prefix. This is an advanced feature for complex matching needs.
-   
-     * **Example 1: Match one of several prefixes**<br />
-         The pattern `(HR|IT|MARKET)_` matches anything that starts with `HR_`, `IT_`, or `MARKET_`.
+## Writing Rules
 
-         **Example:**<br />
-         This condition accepts tables from the HR, IT, or Market departments.
-         ```
-         rules {
-           table = "regex:(HR|IT|MARKET)_.*"
-         }
-         ```
-         
-     * **Example 2: Exclude a prefix**<br />
-         The pattern `^(?!TMP_).*` is a very useful one that means "does not start with `TMP_`".
-         
-         **Example:**<br />
-         This condition matches tables that DO NOT start with `TMP_`.
-         ```
-         rules {
-           table = "regex:^(?!TMP_).*"
-         }
-         ```
+Each entry in the `rules` block defines a condition on an item attribute using the `<key> = "<pattern>"` syntax. **All conditions must match** for the filter to match.
+
+The available keys (for example, `schema`, `table`, `workspace_name`, and `report_name`) depend on the connector. For the list of supported filter keys, see the documentation for each connector.
+
+!!! note "Missing Attribute"
+
+    If an item does not have the attribute used in a condition, the condition evaluates to **true in an `ACCEPT` filter** and **false in a `REJECT` filter**.
+
+    For example, `workspace_name = "Zeenea"` in an `ACCEPT` filter also accepts items that do not have a `workspace_name` attribute.
+
+### Patterns
+
+Matching is **case-sensitive** and applies to the **whole value**.
+
+| Type | Syntax | Example | Matches |
+|---|---|---|---|
+| Exact | Plain value | `"production"` | `production` only |
+| Wildcard (default) | `*` any characters, `?` one character, `{a,b}` alternatives, `[abc]` one of the characters | `"FACT_*"` | `FACT_SALES`, `FACT_` |
+| Regular expression | `regex:` prefix | `"regex:(HR\|IT\|MARKET)_.*"` | Any value starting with `HR_`, `IT_`, or `MARKET_` |
+
+**Wildcard Notes**
+
+* `*` does **not** match `/`. Use `**` to match across `/` (for example, in file or folder paths).
+* `{ } [ ] \ * ?` are special characters. To match them literally, use a regular expression.
+
+**Useful Regular Expressions**
+
+| Match condition | Pattern |
+|---|---|
+| Does not start with `TMP_` | `regex:(?!TMP_).*` |
+| Case-insensitive match | `regex:(?i)production` |
+| One of several exact values | `regex:(sales\|finance\|hr)` |
