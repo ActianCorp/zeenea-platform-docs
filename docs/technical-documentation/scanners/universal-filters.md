@@ -21,7 +21,7 @@ Filters are declared in the connection configuration file, with one list for eac
 | `sampling_filters` | Which datasets get a data sample. |
 | `profiling_filters` | Which datasets get profiled. |
 
-!!! note "Legacy `filters` key"
+!!! note "Legacy `filters` Key"
 
     Before version 103, a single `filters` list was used for all processes. It is still supported for backward compatibility, but **we recommend migrating to the new keys**.
 
@@ -89,7 +89,7 @@ inventory_filters = [
 
 ### Sampling and Profiling Outcomes
 
-| Matching filter | Sampling | Profiling |
+| Matching Filter | Sampling | Profiling |
 |---|---|---|
 | `ACCEPT` | Sample is collected. | Dataset is profiled. |
 | `ACCEPT` with `sampling = false` / `profiling = false` | Existing sample is deleted. | Existing profile is deleted. |
@@ -150,7 +150,7 @@ Matching is **case-sensitive** and applies to the **whole value**.
 
 **Useful Regular Expressions**
 
-| Match condition | Pattern |
+| Match Condition | Pattern |
 |---|---|
 | Does not start with `TMP_` | `regex:(?!TMP_).*` |
 | Case-insensitive match | `regex:(?i)production` |
