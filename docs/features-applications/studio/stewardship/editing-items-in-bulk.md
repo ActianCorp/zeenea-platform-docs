@@ -105,7 +105,7 @@ It is not possible to delete values using this feature.
 This feature is enabled if the following conditions are met:
 
 * At least one item is selected.
-* The selection does not contain any items of the Field or Category type.
+* The selection does not contain any items of the Field type.
 * The selection does not contain any implemented Glossary Item.
 * The selection does not contain any implemented Custom items.
 

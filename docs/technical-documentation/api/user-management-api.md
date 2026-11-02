@@ -214,7 +214,7 @@ Note that the file contains the following information:
       * All: User can edit all Custom Items
       * UserOwned: The user can only edit Custom Items that are assigned to him
       * UserOwnedAndUnassigned: The user can edit Custom Items that are assigned to him and unassigned Custom Items
-* Item documentation permission: Whether the user can edit Datasets, Fields, Visualizations, Data Processes, and Categories (true/false)
+* Item documentation permission: Whether the user can edit Datasets, Fields, Visualizations, and Data Processes (true/false)
 * Item documentation scope
 * Glossary documentation permission: Whether the user can edit Glossary Items
 * Glossary documentation scope
@@ -229,5 +229,4 @@ Note that the file contains the following information:
 !!! note
     * If the user belongs to several groups, the file will return only the first one.
     * For the Federated Catalog, only information concerning the default catalog is displayed in the user's permission details.
-
 
