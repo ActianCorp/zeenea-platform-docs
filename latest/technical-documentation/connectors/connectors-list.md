@@ -25,7 +25,7 @@ search:
 | [Cassandra](./cassandra/cassandra.md) | Cassandra | 54 | [cassandra-connector-plugin-1.1.0.zip](https://plugins.zeenea.app/cassandra-connector-plugin/cassandra-connector-plugin-1.1.0.zip) |
 | [Couchbase](./couchbase/couchbase.md) | Couchbase | 54 | [couchbase-connector-plugin-1.1.0.zip](https://plugins.zeenea.app/couchbase-connector-plugin/couchbase-connector-plugin-1.1.0.zip) |
 | [Custom Item CSV](./custom-items-csv.md) (*deprecated*) | CSV | 54 | [csv-connector-plugin-2.0.0.zip](https://plugins.zeenea.app/csv-connector-plugin/csv-connector-plugin-2.0.0.zip) |
-| [Databricks Hive Metastore](./databricks-hive-metastore/databricks-hive-metastore.md)<br />[Databricks Unity Catalog REST](./databricks-unity-rest/databricks-unity-rest.md)<br />[Databricks Unity Catalog JDBC](./databricks-unity-jdbc/databricks-unity-jdbc.md) | Databricks | 84 | [databricks-connector-plugin-2.3.0.zip](https://plugins.zeenea.app/databricks-connector-plugin/databricks-connector-plugin-2.3.0.zip) |
+| [Databricks Hive Metastore](./databricks-hive-metastore/databricks-hive-metastore.md)<br />[Databricks Unity Catalog REST](./databricks-unity-rest/databricks-unity-rest.md)<br />[Databricks Unity Catalog JDBC](./databricks-unity-jdbc/databricks-unity-jdbc.md) | Databricks | 102 | [databricks-connector-plugin-2.3.0.zip](https://plugins.zeenea.app/databricks-connector-plugin/databricks-connector-plugin-2.3.0.zip) |
 | [Dataiku](./dataiku/dataiku.md) | Dataiku | 54 | [dataiku-connector-plugin-1.2.0.zip](https://plugins.zeenea.app/dataiku-connector-plugin/dataiku-connector-plugin-1.2.0.zip) |
 | [DBT](./dbt/dbt.md)<br />[DBT Cloud](./dbt-cloud/dbt-cloud.md) | DBT | 90 | [dbt-connector-plugin-3.1.1.zip](https://plugins.zeenea.app/dbt-connector-plugin/dbt-connector-plugin-3.1.1.zip) |
 | [Denodo](./denodo/denodo.md) | Denodo | 89 | [denodo-connector-plugin-1.3.7.zip](https://plugins.zeenea.app/denodo-connector-plugin/denodo-connector-plugin-1.3.7.zip) |
@@ -60,9 +60,9 @@ search:
 | [Tibco Data Virtualization](./tibco-data-virtualization/tibco-data-virtualization.md)<br />[Tibco Spotfire](./tibco-spotfire.md) (*Deprecated*) | Tibco | 54 | [tibco-connector-plugin-4.0.1.zip](https://plugins.zeenea.app/tibco-connector-plugin/tibco-connector-plugin-4.0.1.zip) |
 | [Tibco Spotfire (V2)](./tibco-spotfire-v2/tibco-spotfire-v2.md) | Tibco V2 | 88 | [tibco-v2-connector-plugin-1.0.0.zip](https://plugins.zeenea.app/tibco-v2-connector-plugin/tibco-v2-connector-plugin-1.0.0.zip) |
 | [Generic Dataset](./generic-dataset.md) (\*\*) (*Deprecated*) | Generic Dataset | 54 | [dataset-connector-plugin-1.0.0.zip](https://plugins.zeenea.app/dataset-connector-plugin/dataset-connector-plugin-1.0.0.zip) |
-| [Actian Data Intelligence Descriptor Format Dataset](./zdf/zdf.md) (\*\*) | Generic Dataset | 54 | [zdf-connector-plugin-2.0.2.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.2.zip) |
-| [Actian Data Intelligence Descriptor Format Visualization](./zdf/zdf.md) (\*\*) | Generic Visualization | 54 | [zdf-connector-plugin-2.0.2.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.2.zip) |
-| [Actian Data Intelligence Descriptor Format Lineage](./zdf/zdf.md) (\*\*) | Generic Lineage | 54 | [zdf-connector-plugin-2.0.2.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.2.zip) |
+| [Actian Data Intelligence Descriptor Format Dataset](./zdf/zdf.md) (\*\*) | Generic Dataset | 103 | [zdf-connector-plugin-2.0.2.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.2.zip) |
+| [Actian Data Intelligence Descriptor Format Visualization](./zdf/zdf.md) (\*\*) | Generic Visualization | 103 | [zdf-connector-plugin-2.0.2.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.2.zip) |
+| [Actian Data Intelligence Descriptor Format Lineage](./zdf/zdf.md) (\*\*) | Generic Lineage | 103 | [zdf-connector-plugin-2.0.2.zip](https://plugins.zeenea.app/zdf-connector-plugin/zdf-connector-plugin-2.0.2.zip) |
 
 (*) Safyr connectors require Safyr third party solution from Silwood.
 
