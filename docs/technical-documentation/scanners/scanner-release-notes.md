@@ -7,6 +7,14 @@ search:
 
 The latest scanner version is available for download from the platform administration.
 
+## October 21, 2026 — Version 103
+
+**Enhancements**
+
+* Universal filters can now be defined separately for inventory, data sampling, and data profiling. The legacy single filter list remains supported. See [Universal Filters](universal-filters.md).
+
+* Added support for retrieving connection credentials from HashiCorp Vault / OpenBao and Google Cloud Secret Manager. See [Secret Managers](secret-managers.md).
+
 ## September 23, 2026 — Version 102
 
 **Enhancements**

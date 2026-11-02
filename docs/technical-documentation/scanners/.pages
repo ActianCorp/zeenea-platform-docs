@@ -2,6 +2,7 @@ nav:
     - scanner-release-notes.md
     - scanner-setup.md
     - scanner-docker.md
+    - secret-managers.md
     - filters.md
     - universal-filters.md
     - configure-hook.md
