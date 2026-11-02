@@ -6,28 +6,6 @@ Many definitions on the list provide links to articles and core reference materi
 
 Use the search feature in your browser to quickly find the term or phrase that you are looking for. Search is usually activated with **CTRL+F** or **⌘ + F**.
 
-## Category
-
-The "Category" item type is a concept that facilitates the organization of datasets in Actian Data Intelligence.
-
-It will allow you to create groupings of datasets according to your organization and your domains.
-
-This Item type is deprecated.
-
-Its characteristics:
-
-* A dataset may or may not belong to a Category. 
-* A category can be created without associated datasets.
-* The search by Category is proposed in the search engine. 
-
-The elements of a Category item are the following:
-
-* Name
-* Description
-* Associated datasets
-* Properties
-* Contacts
-
 ## Connection
 A Connection represents a system to which Actian Data Intelligence is connected. It allows the scanner to retrieve metadata from your information source with which you are connected and incorporate them into Actian Data Intelligence. 
 

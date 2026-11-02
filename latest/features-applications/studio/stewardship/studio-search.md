@@ -50,7 +50,7 @@ Once selected, the scope doesn’t change when you update your search; that way,
 
 You can restrict your search to one of four scopes: 
 
-* Default: Datasets, Visualizations, Data Processes, Categories, and Custom Items
+* Default: Datasets, Visualizations, Data Processes, and Custom Items
 * Assets: Datasets, Visualizations and Data Processes
 * Glossary: Glossary Items
 * All Items
@@ -107,7 +107,6 @@ This option allows finding Items for which the selected attribute (contact, prop
 | Item | This filter allows you to select one or more types of items from the catalog. Native item types and custom item types are available here. |
 | Item Lifecycle Event | This filter allows you to retrieve items from the catalog according to certain events in their lifecycle.<br/>Select the required event type and then select a period for this event.<br/>Two types of events are proposed:<br/>- the date of import<br/>- the date of deletion of the source |
 | Contacts | This filter allows you to search for items based on the contacts associated with them.<br/>Type the first few characters of a contact's first name, last name, or email, then select the contact from the suggested list for your search.<br/>The contact you are looking for must therefore be registered in the catalog beforehand. |
-| Category | In the same way as the "Contacts" filter, this filter allows you to search for datasets associated with one or more categories. |
 | Access request policy | This filter allows you to search for items based on their associated access request policy. |
 | Stage | This filter allows you to search for items based on one or more lifecycle stages. |
 | Connections | This "faceted" type of filter allows you to select items from one or more connections using checkboxes. Only connections for which at least one item has been imported are displayed. |

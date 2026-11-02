@@ -58,7 +58,7 @@ This widget shows the history of the adoption rate and active users over 12 mont
 
 ### Most popular Items
 
-This widget lists, in descending order, the assets (Datasets, Visualizations, Processes, Categories, Data Products) most frequently consulted by catalog users (Explorer and Studio).
+This widget lists, in descending order, the assets (Datasets, Visualizations, Processes, Data Products) most frequently consulted by catalog users (Explorer and Studio).
 
 ### Most frequent searches
 

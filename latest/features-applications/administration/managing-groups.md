@@ -69,7 +69,7 @@ This permission allows users to manage agents from the **Agents** tab. Users can
 
 In this section, you can configure the read and write permissions on catalog items for Data Stewards. Write permissions on items are divided into four categories:
 
-* Datasets, Fields, Visualizations, Data Processes, Categories, and Use Cases
+* Datasets, Fields, Visualizations, Data Processes, and Use Cases
 * Custom Items
 * Data Products and Output Ports
 * Glossary
