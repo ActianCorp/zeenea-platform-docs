@@ -31,7 +31,6 @@ In Actian Data Intelligence, each type of Item can have specific attributes, dep
 * Type (Table, View, etc.)
 * List of foreign keys and relationships with other datasets
 * List of functional keys
-* Category
 * Sample data
 * Quality information
 
@@ -173,6 +172,5 @@ You can then apply the suggestion manually, if necessary.
 When a suggestion is accepted or declined, the author is automatically notified by email and can see whether it was accepted or declined, along with the associated comment.
 
 For more information about submitting a suggestion, see [Submitting a Suggestion](../../explorer/submit-suggestion.md).
-
 
 

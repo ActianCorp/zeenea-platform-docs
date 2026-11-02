@@ -28,7 +28,6 @@ Here is a list of all the services and which are implemented in the preview.
 | Data process | data-process | Ok | Ok |
 | Contact | contact | Ok | Ok |
 | Datasource | datasource | Ok | N/A |
-| Category | category | Ok | Ok |
 | Custom Item Type | Code of the custom item as defined in Actian Data Intelligence metamodel | Ok | Ok |
 | Glossary Item Type | Code of the glossary item as defined in Actian Data Intelligence metamodel | Ok | Ok |
 
@@ -82,7 +81,6 @@ Here is a list of all the services and which are implemented in the preview.
 | dataset | data-process | producers | Ok | Ok | All the data processes that have the dataset as output |
 | dataset | visualization | visualization | Ok | Ok | For the datasets that are embedded in a visualization, the visualization |
 | dataset | Custom item type | Code of the custom item type | Ok | Ok | Custom items of a given type linked to the dataset |
-| dataset | category | category | Ok | Ok | (DEPRECATED) Category of the dataset |
 | dataset | contact | curators | Ok | Ok | Curators of the dataset |
 | dataset | contact | Responsibility name | Ok | Ok | Contacts that have the given responsibility on the dataset |
 | dataset | datasource | datasource | Ok | N/A | The datasource of the dataset |
@@ -120,10 +118,6 @@ Here is a list of all the services and which are implemented in the preview.
 | contact | Any type | curator | Ok | Ok | All the items the contact is curator of (various types) |
 | contact | Any type | Responsibility name | Ok | Ok | All the items on which the contact has the given responsibility(various types) |
 | datasource | dataset, field, visualization, data-process | imports | Ok | N/A | All the items that have been imported from the source |
-| category | dataset | members | Ok | Ok | [DEPRECATED] Datasets of the category |
-| category | contact | curators | Ok | Ok | [DEPRECATED] Curators of the custom item |
-| category | contact | Responsibility name | Ok | Ok | [DEPRECATED] Contacts that have the given responsibility on the custom item |
-| category | All glossary item type | definitions | Ok | Ok | [DEPRECATED] All the glossary items linked to the category (can contain various types) |
 
 
 ## Custom Properties
