@@ -197,7 +197,7 @@ If the API response contains no more events, the cursorMark value will become nu
 
 ## Limitations
 
-For all "Link" type properties (curators, categories, business terms, data processes, visualizations, and natural keys), the API can only retrieve the updated values. 
+For all "Link" type properties (curators, business terms, data processes, visualizations, and natural keys), the API can only retrieve the updated values.
 
 For example, if a user adds two new curators (C and D) on a Dataset already assigned to curators A and B, the Audit Trail API will only retrieve the last two events, with the following values: 
 

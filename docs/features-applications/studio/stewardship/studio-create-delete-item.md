@@ -13,7 +13,6 @@ Only certain profiles can create or delete an Item in Actian Data Intelligence.
 
 Item types that can be created manually:
 
-* Category
 * Data Process
 * Data Product
 * Glossary Item

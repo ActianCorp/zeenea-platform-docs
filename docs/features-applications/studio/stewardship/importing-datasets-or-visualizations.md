@@ -13,7 +13,7 @@ These steps are described in the sections: [Actian Data Intelligence Scanner Set
 
 ## Import Datasets or Visualizations
 
-If all requirements are met, you can access the import wizard by clicking **Import** button from Studio, and then selecting **Select a data source**". Only specific profiles are allowed to import items.
+If all requirements are met, you can access the import wizard by clicking **Import** button from Studio, and then selecting **Select a data source**. Only specific profiles are allowed to import items.
 
   ![](./images/import-items.png)
 
@@ -57,11 +57,7 @@ You can assign one or more **Curators** to datasets during import. Curators act 
 
 You can assign a contact and a responsibility to the datasets selected for import. 
 
-### Step 6: Category (Optional)
-
-For datasets only, you can assign a category from the list of existing categories.
-
-### Step 7: Confirm
+### Step 6: Confirm
 
 Before confirming the import, a summary of the operations to be performed is displayed.
 
