@@ -35,7 +35,7 @@ For example, if you search for `Customer`, the tool returns that this concept is
 
 The `get_dataset_data_model` tool retrieves the relational data model for a specified dataset, including fields, relations, and connected datasets.
 
-In other words, you can use this tool to understand how your data tables connect to each other and see the **family tree** of your data relationships.
+In other words, you can use this tool to understand how your data tables connect to each other and view the **family tree** of your data relationships.
 
 For example, if you query the `orders` table, the tool can show that it connects to the `customers`, `products`, and `shipping` tables. This helps you understand the full data model for e-commerce analytics.
 
@@ -79,7 +79,7 @@ For example, if you want to search for datasets named `albums` in the `music` sc
  * **`name`**`: albums`
  * **`properties`**`: {"$z_schema": "music"}`
  
-You should see a list of datasets named `albums` in the `music` schema in all connections.
+The search returns datasets named `albums` in the `music` schema across all connections.
 
 !!! note
     Results are currently limited to a maximum of five items to avoid overloading the agent context.
@@ -88,35 +88,35 @@ You should see a list of datasets named `albums` in the `music` schema in all co
 
 We currently provide only remote connections to Actian Data Intelligence Platform MCP Servers. 
 
-Our remote deployment is a per-tenant MCP Server managed by Actian. It supports API Key authentication.
+Our remote deployment is a per-tenant MCP Server managed by Actian. It supports API key authentication.
 
 ## Testing with MCP Inspector
 
-The [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) is a tool for testing and debugging MCP servers. You can use it to verify your connection to the Actian Data Intelligence Platform MCP Server and explore the available tools.
+The [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) is a tool for testing and debugging MCP Servers. You can use it to verify your connection to the Actian Data Intelligence Platform MCP Server and explore the available tools.
 
 ### Setup
 
 1. Start the MCP Inspector:
 
-   ```bash
-   npx @modelcontextprotocol/inspector
-   ```
+    ```bash
+    npx @modelcontextprotocol/inspector
+    ```
 
 2. Configure the connection:
-   - **Transport type**: `Streamable HTTP`
-   - **URL**: `https://<your-tenant>.zeenea.app/api/mcp-server/mcp`
-   - **Header Name**: `x-api-secret`
-   - **Header Value**: `<your-api-key>`
-   - **Request Timeout**: `30000`
+    - **Transport type**: `Streamable HTTP`
+    - **URL**: `https://<your-tenant>.zeenea.app/api/mcp-server/mcp`
+    - **Header Name**: `x-api-secret`
+    - **Header Value**: `<your-api-key>`
+    - **Request Timeout**: `30000`
 
 3. Click **Connect**.
 
 ### Generating an API Key
 
-The MCP Inspector requires API Key authentication. To generate an API key:
+The MCP Inspector requires API key authentication. To generate an API key:
 
 1. Open Actian Data Intelligence **Administration**.
 2. Go to the **API keys** section.
 3. Click **Create API key** and copy the generated key.
 
-See [Remote Authentication Setup](amcp-remote-authentication.md) for full authentication details.
+For full authentication details, see [Remote Authentication Setup](amcp-remote-authentication.md).

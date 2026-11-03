@@ -5,52 +5,53 @@ search:
 
 # Remote Authentication Setup
 
-The Actian Data Intelligence Platform MCP Server supports multiple authentication methods for remote connections. Choose the method that best fits your use case: **OAuth 2.0** for interactive users who authenticate with their existing credentials, or **API Keys** for service-to-service integrations and automation.
+The Actian Data Intelligence Platform MCP Server supports multiple authentication methods for remote connections. Choose the method that best fits your use case: 
 
-These instructions apply to any MCP client, including Claude (Desktop, Claude.ai, Claude Code), Cursor, Windsurf, Microsoft Copilot Studio, and custom integrations. For Claude-specific setup instructions, see [Set up Claude with the Actian Data Intelligence Platform MCP Server](amcp-claude.md).
+- **OAuth 2.0**: For interactive users who authenticate with their existing credentials.
+- **API keys**: For service-to-service integrations and automation.
+
+These instructions apply to any MCP client, including Claude (Desktop, Claude.ai, and Claude Code), Cursor, Windsurf, Microsoft Copilot Studio, and custom integrations. For Claude-specific setup instructions, see [Set up Claude with the Actian Data Intelligence Platform MCP Server](amcp-claude.md).
 
 ## Prerequisites
 
-Before setting up authentication, ensure you have:
+Before setting up authentication, ensure that you have the following:
 
-- An Actian Data Intelligence tenant. If you don't have access, contact Actian Support or your Actian Customer Success team.
-- **For API Key auth**: An API key generated in the Administration section.
-- **For OAuth**: A user account with access to your Actian Data Intelligence tenant. If your organization uses identity federation (SSO with providers like Azure AD, Okta, or LDAP), ensure your account is properly synced.
-- **Node.js LTS** installed (only required when using `mcp-remote` or the MCP Inspector — not needed for clients with native HTTP support such as Claude Code or Cursor).
+- An Actian Data Intelligence tenant. If you do not have access, contact Actian Support or your Actian Customer Success team.
+- **For API key authentication**: An API key generated in the **Administration** section.
+- **For OAuth authentication**: A user account with access to your Actian Data Intelligence tenant. If your organization uses identity federation (SSO with providers such as Azure AD, Okta, or LDAP), ensure that your account is properly synchronized.
+- **Node.js LTS** installed. This is required only when using `mcp-remote` or MCP Inspector. It is not required for clients with native HTTP support, such as Claude Code or Cursor.
 
 ## Choosing an Authentication Method
 
 | Scenario | Recommended Method |
 |---|---|
-| Interactive use (Claude Desktop, Claude.ai, Claude Code, Cursor, etc.) | **OAuth 2.0** — no keys to manage, uses existing SSO |
-| Automated scripts, CI/CD pipelines | **API Key** — simple, non-interactive |
-| Testing and debugging with MCP Inspector | **API Key** — easiest to configure (see [Actian Data Intelligence Platform MCP Server Overview](amcp-overview.md#testing-with-mcp-inspector)) |
-| Custom application integration | **API Key** or **Bearer Token** — depending on your auth infrastructure |
-| Multiple users in an organization | **OAuth 2.0** — each user authenticates with their own credentials |
+| Interactive use (Claude Desktop, Claude.ai, Claude Code, Cursor, and similar clients) | **OAuth 2.0** — No keys to manage; uses existing SSO. |
+| Automated scripts, CI/CD pipelines | **API keys** — simple, non-interactive. |
+| Testing and debugging with MCP Inspector | **API keys** — easiest to configure (see [Testing with MCP Inspector](amcp-overview.md#testing-with-mcp-inspector)). |
+| Custom application integration | **API keys** or **Bearer Token** — depending on your authentication infrastructure. |
+| Multiple users in an organization | **OAuth 2.0** — each user authenticates with their own credentials. |
 
 ## Authentication Methods Overview
 
 | Method | Best For | How It Works |
 |---|---|---|
-| **OAuth 2.0** (recommended for users) | Interactive use with Claude, Cursor, and other MCP clients | Browser-based login with your existing corporate credentials |
-| **API Key** | Automation, scripts, CI/CD, MCP Inspector | Static secret passed in the `x-api-secret` header |
-| **Bearer Token (JWT)** | Advanced integrations | JWT passed in the `Authorization: Bearer` header |
+| **OAuth 2.0** (recommended for users) | Interactive use with Claude, Cursor, and other MCP clients | Browser-based login with your existing corporate credentials. |
+| **API keys** | Automation, scripts, CI/CD, and MCP Inspector | Static secret passed in the `x-api-secret` header. |
+| **Bearer Token (JWT)** | Advanced integrations | JWT passed in the `Authorization: Bearer` header. |
 
----
+## Authentication Using OAuth 2.0
 
-## Authentication using OAuth 2.0
+OAuth 2.0 authentication allows users to sign in with their existing corporate credentials (such as SSO, Azure AD, Okta, and other identity providers) through a browser-based authentication flow. No API keys need to be shared or stored, and each user authenticates with their own account.
 
-OAuth 2.0 authentication lets users sign in with their existing corporate credentials (SSO, Azure AD, Okta, etc.) through a browser-based flow. No API keys need to be shared or stored, and each user authenticates with their own account.
-
-The Actian Data Intelligence Platform MCP Server follows the [Model Context Protocol authorization specification](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization), implementing the **Authorization Code + PKCE** flow with automatic server discovery. This means compatible MCP clients (such as Claude Desktop, Claude.ai, Claude Code, Cursor, and others) can connect without any manual OAuth configuration — the client discovers the authorization server automatically and guides the user through the login flow.
+The Actian Data Intelligence Platform MCP Server follows the [Model Context Protocol authorization specification](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization), implementing the **Authorization Code + PKCE** flow with automatic authorization server discovery. As a result, compatible MCP clients (such as Claude Desktop, Claude.ai, Claude Code, Cursor, and others) can connect without any manual OAuth configuration. The client automatically discovers the authorization server and guides the user through the sign-in flow.
 
 ### Configuring OAuth for MCP Clients
 
-For most MCP clients, OAuth requires no configuration beyond the server URL — the client discovers everything automatically.
+For most MCP clients, OAuth requires no configuration beyond the server URL. The client discovers everything automatically.
 
-#### HTTP Transport (most modern clients)
+#### HTTP Transport (Most Modern Clients)
 
-Clients that support HTTP transport with OAuth need only the server URL:
+Clients that support HTTP transport with OAuth require only the server URL:
 
 ```json
 {
@@ -67,28 +68,28 @@ No headers are needed — the client handles the full OAuth flow automatically, 
 
 #### Other MCP Clients
 
-Any MCP client that supports the [MCP authorization specification](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization) can connect using OAuth. Point the client at:
+Any MCP client that supports the [MCP authorization specification](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization) can connect using OAuth. Configure the client to connect to:
 
 ```
 https://<your-tenant>.zeenea.app/api/mcp-server/mcp
 ```
 
-The client will discover the authorization server and guide the user through login automatically.
+The client automatically discovers the authorization server and guides the user through the sign-in flow.
 
-!!! tip "Claude-specific setup"
-    For step-by-step Claude setup (Desktop, Claude.ai, Claude Code, Cowork), see [Set up Claude with the Actian Data Intelligence Platform MCP Server](amcp-claude.md).
+!!! tip "Claude-Specific Setup"
+    For step-by-step setup instructions for Claude (Desktop, Claude.ai, Claude Code, and Cowork), see [Set up Claude with the Actian Data Intelligence Platform MCP Server](amcp-claude.md).
 
 ### How It Works
 
-When an MCP client connects to the Actian Data Intelligence Platform MCP Server without credentials, the following happens automatically:
+When an MCP client connects to the Actian Data Intelligence Platform MCP Server without credentials, the following steps occur automatically:
 
 1. The MCP Server responds with a `401` challenge pointing to its authorization metadata.
 2. The client discovers the authorization server through standard OAuth 2.0 discovery endpoints.
-3. The client registers itself automatically (no manual setup required).
+3. The client registers itself automatically; no manual setup is required.
 4. A browser window opens for the user to sign in with their corporate credentials.
-5. After successful login, the client receives an access token and uses it for all subsequent MCP requests.
+5. After successful authentication, the client receives an access token and uses it for all subsequent MCP requests.
 
-All of this follows industry-standard OAuth 2.0 specifications, including:
+This process follows industry-standard OAuth 2.0 specifications, including:
 
 - **RFC 9728** — OAuth 2.0 Protected Resource Metadata (server discovery)
 - **RFC 8414** — OAuth 2.0 Authorization Server Metadata (endpoint discovery)
@@ -97,9 +98,9 @@ All of this follows industry-standard OAuth 2.0 specifications, including:
 
 ### Security Notes
 
-- **PKCE is required**: The authorization flow uses PKCE (Proof Key for Code Exchange) to protect against interception.
+- **PKCE is required**: The authorization flow uses PKCE (Proof Key for Code Exchange) to protect against authorization code interception.
 - **Tokens are short-lived**: Access tokens expire according to your identity provider's configuration.
-- **Tenant isolation**: Users are automatically routed to the correct identity connection for your organization.
+- **Tenant isolation**: Users are automatically routed to the correct identity connection for their organization.
 - **HTTPS only**: All OAuth endpoints require HTTPS.
 
 ### Troubleshooting OAuth
@@ -107,25 +108,23 @@ All of this follows industry-standard OAuth 2.0 specifications, including:
 | Symptom | Likely Cause | Solution |
 |---|---|---|
 | Browser opens but login fails | Your account may not be synced with your identity provider | Contact your Actian administrator to verify your account is properly configured |
-| "Invalid client" error | Client registration expired | Reconnect — the client will re-register automatically |
+| "Invalid client" error | Client registration has expired | Reconnect — the client will re-register automatically |
 | 401 after successful login | Your session may have expired | Reconnect to get a fresh token |
-| "Cannot resolve a valid tenant" | Wrong tenant URL | Verify the URL matches your tenant: `https://<your-tenant>.zeenea.app/api/mcp-server/mcp` |
+| "Cannot resolve a valid tenant" | Incorrect tenant URL | Verify that the URL matches your tenant: `https://<your-tenant>.zeenea.app/api/mcp-server/mcp` |
 
----
+## Authentication Using API Keys
 
-## Authentication through API Key
-
-API Keys are the simplest way to authenticate for automated workflows, scripts, and tools that cannot perform a browser-based OAuth flow.
+API keys are the simplest way to authenticate automated workflows, scripts, and tools that cannot perform a browser-based OAuth flow.
 
 ### Step 1: Generate an API Key
 
 To generate an API key in Actian Data Intelligence **Administration**, follow these steps:
 
 1. Open **Administration**.
-2. Go to the **API keys** section.
+2. Go to **API keys** section.
 3. Click the **Create API key** button.<br />A **Create API key** window opens.
-4. Fill in the required fields and click **Create API key** button.
-5. Once the API key is generated, copy and store it in a secure location, such as a secrets manager or encrypted file.
+4. Complete the required fields, then click **Create API key**.
+5. Once the API key is generated, copy it and store it in a secure location, such as a secrets manager or encrypted file.
 
 !!! warning "Important"
     The secret is displayed only once and cannot be retrieved later.
@@ -134,9 +133,9 @@ To generate an API key in Actian Data Intelligence **Administration**, follow th
 
 Add the API key to your MCP client configuration using the `x-api-secret` header. The configuration format depends on your client.
 
-#### HTTP Transport with Headers (most modern clients)
+#### HTTP Transport with Headers (Most Modern Clients)
 
-Clients that support HTTP transport can pass the API key as a header:
+Clients that support HTTP transport can pass the API key in the `x-api-secret` header:
 
 ```json
 {
@@ -152,9 +151,9 @@ Clients that support HTTP transport can pass the API key as a header:
 }
 ```
 
-#### Using mcp-remote (clients without native HTTP header support)
+#### Using mcp-remote (Clients Without Native HTTP Header Support)
 
-Some MCP clients do not support custom headers on HTTP connections. Use [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) as a local proxy:
+Some MCP clients do not support custom headers with HTTP connections. In these cases, use [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) as a local proxy:
 
 ```json
 {
@@ -177,21 +176,21 @@ Some MCP clients do not support custom headers on HTTP connections. Use [`mcp-re
 
 This requires [Node.js LTS](https://nodejs.org/) to be installed.
 
-!!! tip "Claude-specific setup"
-    For step-by-step Claude setup with API Key authentication, see [Set up Claude with the Actian Data Intelligence Platform MCP Server](amcp-claude.md).
+!!! tip "Claude-Specific Setup"
+    For step-by-step setup instructions for Claude with API key authentication, see [Set up Claude with the Actian Data Intelligence Platform MCP Server](amcp-claude.md).
 
 !!! tip "Testing with MCP Inspector"
-    To test your connection with the MCP Inspector, see [Testing with MCP Inspector](amcp-overview.md#testing-with-mcp-inspector) in the Actian Data Intelligence Platform MCP Server Overview.
+    To test your connection with the MCP Inspector, see [Testing with MCP Inspector](amcp-overview.md#testing-with-mcp-inspector).
 
 ### Step 3: Test and Verify
 
 1. Restart or reload your MCP client to apply the new configuration.
-2. Test the connection by querying the MCP endpoint.
+2. Test the connection by sending a request to the MCP endpoint.
 3. Monitor for authentication errors, such as invalid secret responses.
-4. If errors occur, check the logs or the admin console for access details, and verify that the API key has not expired or been revoked.
+4. If errors occur, check the logs or the administration console for access details, and verify that the API key has not expired or been revoked.
 
 ### Additional Recommendations
 
-- **Security Best Practices**: Treat your API key like a password. Avoid hardcoding it in version control, use environment variables or a secrets manager, and rotate keys periodically.
+- **Security Best Practices**: Treat your API key like a password. Avoid hardcoding it in version control, use environment variables or a secrets manager, and rotate API keys periodically.
 - **Permissions and Roles**: Ensure that the API key is associated with roles that allow read and write access to catalog metadata required for MCP operations.
-- **GraphQL Access**: The same API key can be used for GraphQL API access at `https://<your-tenant>.zeenea.app/api/catalog/graphql`.
+- **GraphQL Access**: The same API key can be used to access the GraphQL API at `https://<your-tenant>.zeenea.app/api/catalog/graphql`.
