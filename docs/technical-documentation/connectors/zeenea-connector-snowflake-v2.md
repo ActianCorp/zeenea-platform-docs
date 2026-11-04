@@ -31,7 +31,7 @@ tags, across one or several Snowflake accounts.
 | **Data** | |
 | Data sampling | :material-check-circle:{ .green } Supported |
 | Data profiling | :material-check-circle:{ .green } Supported |
-| Data quality (Snowflake Data Metric Functions) | :material-close-circle:{ .red } Not supported |
+| Data quality (Snowflake Data Metric Functions) | :material-check-circle:{ .green } Supported |
 
 <small>¹ For views and dynamic table definitions, the mapping is resolved down to the
 **field-to-field** level from the object's SQL definition, and falls back to table-to-table level when the
@@ -348,6 +348,26 @@ See [Data Profiling](../../features-applications/cross-application-features/zeen
 Exposes a preview of field values, retrieved on demand from the sampled table. See
 [Data Sampling](../../features-applications/cross-application-features/zeenea-data-sampling.md).
 
+#### Data quality
+
+> **Config:** `import_observability_metrics.enabled` · **Default:** off · :material-cash:{ .amber } Warehouse compute · :material-lock:{ .amber } [Required privileges](#required-privileges)
+
+Imports the results of Snowflake **Data Metric Functions** as data quality checks on the
+dataset, shown on its *Data quality* tab:
+
+- **Expectations** — one check per expectation, carrying its latest measurement. A violated
+  expectation is reported as *Error*. A grouped expectation produces one check per group value,
+  capped at 100 grouped checks per dataset.
+- **Anomaly detection** — one check per monitored metric. A detected anomaly is reported as
+  *Warning*.
+
+A measurement Snowflake has not evaluated is never reported as a success: it takes the same
+status as a failure of its kind.
+
+Collection runs as a scheduled scanner job (`automation.collect-data-observability`), separately
+from metadata extraction, and covers every dataset of the connection. An expectation dropped in
+Snowflake stops being reported, with a lag of up to 30 minutes.
+
 ## Required privileges
 
 The connector is **read-only**. Grant only what the enabled features need — the table
@@ -364,6 +384,7 @@ below maps each capability to the Snowflake objects it reads and the privilege r
 | Data classification | `SNOWFLAKE.ACCOUNT_USAGE.TAG_REFERENCES` | `IMPORTED PRIVILEGES ON DATABASE SNOWFLAKE` |
 | User-defined tags | `INFORMATION_SCHEMA.TAG_REFERENCES()` / `TAG_REFERENCES_ALL_COLUMNS()`, `SHOW TAGS IN ACCOUNT` | Access to the tagged objects (same grants as core metadata) |
 | Data sampling & profiling | Table data (`SELECT … FROM <table>`) | `SELECT` on the targeted tables |
+| Data quality (DMF results) | `SNOWFLAKE.LOCAL.DATA_QUALITY_MONITORING_*` views, `SNOWFLAKE.ACCOUNT_USAGE.DATA_METRIC_FUNCTION_EXPECTATIONS` | `SNOWFLAKE.DATA_QUALITY_MONITORING_VIEWER` application role for the `SNOWFLAKE.LOCAL` views; `SNOWFLAKE.USAGE_VIEWER` or `SNOWFLAKE.GOVERNANCE_VIEWER` database role for `ACCOUNT_USAGE` — requires Snowflake **Enterprise Edition** |
 | Multi-account auto-discovery | `SNOWFLAKE.ORGANIZATION_USAGE.ACCOUNTS` | `SNOWFLAKE.ORGANIZATION_ACCOUNTS_VIEWER` database role (granted by an ORGADMIN) |
 
 !!! note
@@ -398,6 +419,10 @@ GRANT MONITOR ON PIPE <PIPE_NAME> TO ROLE SCANNER;   -- per Snowpipe
 -- 5. Multi-account auto-discovery (run by an ORGADMIN)
 GRANT DATABASE ROLE SNOWFLAKE.ORGANIZATION_ACCOUNTS_VIEWER TO ROLE SCANNER;
 
+-- 6. Data quality (Snowflake Data Metric Functions)
+GRANT APPLICATION ROLE SNOWFLAKE.DATA_QUALITY_MONITORING_VIEWER TO ROLE SCANNER;
+GRANT DATABASE ROLE SNOWFLAKE.GOVERNANCE_VIEWER TO ROLE SCANNER;
+
 -- Optional: automatically cover objects created later
 GRANT SELECT ON FUTURE TABLES         IN DATABASE <DB> TO ROLE SCANNER;
 GRANT SELECT ON FUTURE VIEWS          IN DATABASE <DB> TO ROLE SCANNER;
@@ -406,7 +431,7 @@ GRANT SELECT ON FUTURE DYNAMIC TABLES IN DATABASE <DB> TO ROLE SCANNER;
 
 ## Configuration reference
 
-The table below lists the connection properties handled by the Snowflake V2 connector.
+The table below lists the properties available in a Snowflake V2 connection file.
 
 !!! note
     A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
@@ -441,6 +466,8 @@ The table below lists the connection properties handled by the Snowflake V2 conn
 | **Classification & tags** | | | |
 | `data_classification.enabled` | `false` | No | Privacy & semantic categories. See [Data classification](#data-classification). |
 | `user_defined_tags.enabled` | `false` | No | User-defined tags (read-only). See [User-defined tags](#user-defined-tags). |
+| **Data quality** | | | |
+| `import_observability_metrics.enabled` | `false` | No | Enables data quality collection for every dataset of the connection. Read by the scanner, which runs it as a scheduled job. See [Data quality](#data-quality). |
 | **Extraction caching** | | | |
 | `cache.enabled` | `false` | No | Enable extraction caching. See [Extraction caching](#extraction-caching). |
 | `cache.folder` | *(in-memory)* | No | Directory where cache files are stored. In-memory if unset. |
@@ -455,4 +482,5 @@ The table below lists the connection properties handled by the Snowflake V2 conn
 | Databases, schemas or tables missing from the inventory, with no error | Snowflake returns only what the service role may see | Grant `USAGE` on the database and schemas (`FUTURE` grants for new objects) — see [Required privileges](#required-privileges) |
 | Views or dynamic tables sync, but lineage is missing or stays at table level | `SELECT` missing on the object, or secure view not readable by the role. Unparsable SQL also falls back to table level (expected) | Grant `SELECT` on views and dynamic tables; `SNOWFLAKE.OBJECT_VIEWER` for secure views — see [Required privileges](#required-privileges) |
 | `lineage.history.enabled = true`, but no operation is created | Account is not Enterprise Edition, `IMPORTED PRIVILEGES` missing, or `lineage.history.period` too short (default `2` days) | Check the edition, grant `IMPORTED PRIVILEGES ON DATABASE SNOWFLAKE`, widen the period — see [Query-history operations](#query-history-operations) |
+| The *Data quality* tab shows an error instead of checks | The role cannot read the data quality monitoring views, or the account is not Enterprise Edition | Grant `SNOWFLAKE.DATA_QUALITY_MONITORING_VIEWER` and `SNOWFLAKE.GOVERNANCE_VIEWER` (or `USAGE_VIEWER`), and check the edition — see [Required privileges](#required-privileges) |
 | Only one account is cataloged although several are expected | `ORGANIZATION_ACCOUNTS_VIEWER` missing, account identifiers not in `<org>-<account>` format, or an account has no credentials of its own — the fallback to `connection.*` is not valid on another account | Fix the identifiers, declare per-account credentials, or list the accounts in `multi_account.list` — see [Multiple accounts](#multiple-accounts) |
