@@ -11,4 +11,4 @@ The latest version of the **Databricks** connector plugin is available for downl
 
 **Enhancements**
 
-* Upgraded third-party dependencies to address security vulnerabilities.
+Upgraded third-party dependencies to address security vulnerabilities.
