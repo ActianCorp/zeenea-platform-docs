@@ -254,23 +254,23 @@ authentication {
 
 ## Process Configuration (Optional)
 
-The frequency of execution of the various automatic processes carried out by the scanner is configurable under the "automation" node.
+The execution frequency of the various automatic processes performed by the scanner can be configured under the "automation" node.
 
 !!! note
-    It is recommended to keep the default values except in very special cases.
+    We recommend keeping the default values except in exceptional cases.
 
+The scanner triggers the following processes:
 
-Here are the processes triggered by the scanner:
-
-* **launch-inventory**: Build a fresh new inventory of all items the connectors support from the source system. The inventory is what a Data Steward will see when opening the import wizard. By default, this process runs every 24H.
-* **update-schema**: For all the synchronized items already imported into the data catalog (Datasets, Fields, Visualizations), update their source metadata from the source system. By default, this process runs every 24H.
-* **synchronize**: Some connectors don't use an inventory to let the Data Steward import the items they want, but instead synchronize automatically all the items from the source system with Actian Data Intelligence. This process will trigger these connectors. By default, this process runs every 24H.
-* **collect-fingerprint**: Compute fingerprint and data profiling metrics for items with this option activated. By default, this process runs once a week.
-* **collect-data-sample**: Collect a data sample from the last 30 entries of each Dataset, if the option is enabled in the Administration interface. By default, this process runs once a week.
+* **launch-inventory**: Build a fresh inventory of all items the connectors support from the source system. The inventory is what a Data Steward sees when opening the import wizard. By default, this process is enabled and runs daily at 00:42.
+* **update-schema**: Update source metadata from the source system for all synchronized items that have already been imported into the data catalog (Datasets, Fields, and Visualizations). By default, this process is enabled and runs daily at 02:42.
+* **synchronize**: Some connectors do not use an inventory to allow the Data Steward to import selected items. Instead, they automatically synchronize all items from the source system with Actian Data Intelligence. This process triggers those connectors. By default, this process is enabled and runs daily at 04:42.
+* **collect-data-sample**: Collect a data sample from the last 30 entries of each Dataset if this option is enabled in the Administration interface. By default, this process is enabled and runs every Sunday at 05:42.
+* **collect-data-profile**: Compute data profiling metrics for items for which this option is enabled. By default, this process is enabled and runs every Saturday at 05:42.
+* **collect-data-observability**: Collect data quality and observability information (for example, Snowflake Data Metric Functions) from the source system for connections where this option is enabled in the connection file. This process is available only for supported connectors. By default, it is disabled. When enabled, it runs daily at 03:00.
 
 !!! note
-    Each process execution is configured with the help of a cron expression. Read carefully this article describing its syntax: [https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)
-
+    * Each process execution is configured using a cron expression. For more information about cron expression syntax, see [Cron Trigger Tutorial](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html).
+    * Cron expressions are evaluated in the time zone of the machine where the scanner runs.
 
 ## Configure a Proxy (Optional)
 
