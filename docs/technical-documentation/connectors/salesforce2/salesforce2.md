@@ -32,10 +32,14 @@ To establish a connection with a Salesforce instance, fill in the following para
 | `name` | The name that will be displayed to catalog users for this connection. |
 | `code` | The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
 | `connector_id` | The type of connector to be used for the connection. The value must be `salesforce` and must not be modified. |
-| `connection.endpoint` | Salesforce SOAP API endpoint instance URL (for example: `https://login.salesforce.com/services/Soap/u/63.0`). |
-| `connection.username` | Username from Salesforce (for example: `some-username@agentforce.com`). |
-| `connection.password` | Password for the provided username. |
-| `connection.token` | Security Token created for the user. |
+| `connection.auth_type` | Authentication type. Supported values are `password` or `jwt`. |
+| `connection.username` | Salesforce account username. |
+| `connection.password` | Password authentication **only**.<br>Salesforce account password. |
+| `connection.token` | Password authentication **only**.<br>Salesforce account security token created for the user. |
+| `connection.endpoint` | Salesforce SOAP API endpoint instance URL.<br>For example:<br>- `https://login.salesforce.com/services/Soap/u/64.0` for a production environment.<br>- `https://test.salesforce.com/services/Soap/u/64.0` for a sandbox environment.<br>- `https://<your-domain>.my.salesforce.com/services/Soap/u/64.0` if your organization enforces My Domain login. |
+| `connection.jwt.client_id` | JWT authentication **only**.<br>Consumer key of your external application in Salesforce. |
+| `connection.jwt.private_key_path` | JWT authentication **only**.<br>Path to the private key associated with your external application. |
+| `connection.jwt.private_key_passphrase` | JWT authentication **only**.<br>**Optional**. Passphrase for the private key, if it is encrypted. |
 | `inventory.additional_objects` | List of items to explicitly include in the inventory (for example: `Account,ServiceContract,ContractLineItem`). |
 | `inventory.managed_prefixes` | Item prefix to explicitly include items in the inventory (for example: `prefix1_,prefix2_`). |
 | `inventory.audit_fields` | Include Salesforce audit fields (CreatedById, CreatedDate, LastModifiedById, LastModifiedDate). The default value is `false`. |
