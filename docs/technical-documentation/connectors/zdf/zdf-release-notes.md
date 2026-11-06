@@ -7,5 +7,8 @@ search:
 
 The latest version of the **ZDF** connector plugin is available for download from the [Connector Downloads](../connectors-list.md) page.
 
-!!! note
-    No release notes are currently available for this connector. You can subscribe to the RSS feed to receive notifications about future updates.
+## October 29, 2026 — Version 2.0.2
+
+**Fixed Issues**
+
+Fixed an issue in the `zdf-visualization` connector where child items of a visualization were created in the default catalog instead of the catalog specified by `catalog_code`. This fix does not move items that were already created in the wrong catalog. Remove those items before running the next scan.
