@@ -7,6 +7,12 @@ search:
 
 The latest scanner version is available for download from the platform administration.
 
+## October 30, 2026 — Version 104
+
+**Enhancements**
+
+Added a mechanism to retrieve and orchestrate the collection of data quality and observability information from source systems (for example, Snowflake Data Metric Functions) for connectors based on the public SDK. This capability is not yet available for all connectors. Availability will be announced in the release notes for each connector. For more information, see [Process Configuration](scanner-setup.md#process-configuration-optional).
+
 ## October 21, 2026 — Version 103
 
 **Enhancements**
