@@ -3,7 +3,7 @@
 !!! warning
     Salesforce will deprecate SOAP username/password authentication in summer 2027. After this date, `password` authentication will no longer work. 
     
-    **Required action:** Migrate to JWT authentication before the deprecation date.
+    **Required action:** Switch to JWT authentication before the deprecation date.
 
     1. Update the plugin to version 1.1.0 or later.
     2. Set up an External App and a private key. For more information, see [Setting Up JWT Authentication](#setting-up-jwt-authentication).
