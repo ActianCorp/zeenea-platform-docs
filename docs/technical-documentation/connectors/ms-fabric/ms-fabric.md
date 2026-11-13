@@ -1,387 +1,388 @@
-# Adding a Microsoft Fabric Connection
+# MS Fabric Connector Guide
 
-## Prerequisites
+The Microsoft Fabric connector catalogs metadata from your Microsoft Fabric tenant, including Power BI reports, semantic models, lakehouse tables, and warehouse tables. It also enriches this metadata with lineage, workspace, and domain context across all workspaces in the Fabric tenant.
 
-* A user with sufficient [permissions](#user-permissions) is required to establish a connection with Microsoft Fabric.
-* The Fabric connector uses Fabric and Power BI APIs to obtain metadata.<br />The main metadata scan is performed using Power BI APIs, and most of the setup for the Fabric connector is common with the Power BI connector.
-* Actian Data Intelligence scanner traffic flows towards PowerBI/Fabric's instance and Azure must be open. See following:
+## Capability Overview
 
-     * [https://login.microsoftonline.com](https://login.microsoftonline.com)
-     * [https://api.powerbi.com](https://api.powerbi.com)
+| Capability | Support |
+| :--- | :--- |
+| **Connection and Operations** | |
+| Authentication (Microsoft Entra service principal and client secret) | Supported |
+| Tenant-wide inventory (workspaces are auto-discovered) | Supported |
+| Filtering (inventory) | Supported (workspaces and Fabric domains) |
+| Extraction caching (fewer API calls, faster refresh) | Supported |
+| **Objects and Metadata** | |
+| Power BI reports (pages and projected fields) | Supported |
+| Semantic models — tables, columns, and measures | Supported |
+| Lakehouse and warehouse tables and columns | Supported |
+| Primary and foreign keys | Supported (warehouse tables only) |
+| Lakehouse shortcuts (type and location) | Supported |
+| Power BI apps (*Application Model* URL, `[App]` name prefix) | Supported |
+| Dashboards, paginated reports, datamarts, dataflows | Not supported |
+| Notebooks, data pipelines, Spark job definitions, copy jobs | Not supported |
+| Eventhouses, KQL databases, eventstreams, mirrored databases, SQL databases | Not supported |
+| ML models and experiments | Not supported |
+| **Lineage** | |
+| Report → semantic model | Supported (field-to-field) |
+| Semantic model → lakehouse or warehouse table (Direct Lake) | Supported (field-to-field¹) |
+| Semantic model → external data source (Power Query / M) | Supported (resolved by the scanner) |
+| Lakehouse shortcut → OneLake target table | Supported (field-to-field) |
+| Shortcuts to external storage (S3, ADLS Gen2, GCS, Dataverse…) | Not supported as lineage (recorded as properties) |
+| Notebook, pipeline, dataflow and eventstream lineage | Not supported |
+| **Classification and Governance** | |
+| Report endorsement — *Endorsement* and *Certified By* | Read-only (no write-back) |
+| Fabric domains — *Domain* and *Domain Path* on lakehouse and warehouse datasets | Read-only (no write-back) |
+| Sensitivity labels (Microsoft Purview Information Protection) | Not supported |
+| Fabric item tags | Not supported |
+| **Data** | |
+| Data sampling | Not supported |
+| Data profiling | Not supported |
+
+<small>¹ Field-to-field when the semantic model table uses **Direct Lake** storage over a single source table. Otherwise, the link remains at **table-to-table** level.</small>
+
+## Prerequisites and Connection
+
+### Prerequisites
+
+Before creating the connection, make sure you have:
+
+- A network route open between the Actian Data Intelligence Scanner and Microsoft, outbound:
+    - **port 443** to `login.microsoftonline.com`, `api.powerbi.com`, and `api.fabric.microsoft.com`.
+    - **port 1433** to `*.datawarehouse.fabric.microsoft.com`. This is required only to catalog lakehouse and warehouse tables, which the connector reads through the SQL analytics endpoint.
+- A **Microsoft Entra app registration** (service principal) with a client secret.
+- Fabric **tenant settings** and **workspace roles** for that service principal. The privileges that must be granted **depend on the objects being cataloged**: workspace-level metadata requires only the read-only admin APIs, while report fields, domains, and lakehouse or warehouse tables each require additional access. See [Required Privileges](#required-privileges) to grant only the permissions you need.
+
+### Supported Versions
+
+- **Microsoft Fabric / Power BI Service**: Cloud service (SaaS) only. The connector uses the Power BI REST API `v1.0` and the Fabric REST API `v1`. On-premises Power BI Report Server is not supported.
+- **Actian Data Intelligence Scanner**: Each plugin release requires a minimum scanner version. For more information about the required version, see [Connector Downloads](../connectors-list.md).
+
+### Installing the Plugin
+
+The MS Fabric connector is distributed as a plugin. Download it from [Connector Downloads](../connectors-list.md) and follow the instructions in [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
+
+The Microsoft SQL Server JDBC driver used to read lakehouse and warehouse tables is bundled with the plugin. No additional installation is required.
+
+### Connecting to Microsoft Fabric
+
+The connection is declared in a configuration file in the scanner's `/connections` folder. One connection covers **one Fabric tenant**. To catalog multiple tenants, declare one connection per tenant.
+
+Authentication uses a **Microsoft Entra service principal** with a client secret. `connection.tenant` is the Entra tenant ID. The connector uses this value to build the token endpoint: `https://login.microsoftonline.com/<TENANT_ID>/oauth2/v2.0/token`.
+
+```hocon
+name         = "<DISPLAY NAME>"
+code         = "<UNIQUE CODE>"
+connector_id = "ms-fabric"
+
+connection {
+    tenant              = "<TENANT_ID>"
+    oauth.client_id     = "<CLIENT_ID>"
+    oauth.client_secret = "<CLIENT_SECRET>"
+}
+```
+
+!!! tip "Credentials and Secrets"
+    You can resolve `connection.oauth.client_secret` using the scanner's **Secret Manager** instead of storing it in plain text in the configuration file. This is a scanner capability.
+
+!!! note "Timeout and Proxy"
+    `connection.timeout` (in milliseconds, default `300000`) and the scanner's proxy settings apply to **both** the Power BI and the Fabric API clients.
+
+## Detailed Capabilities and Configuration
+
+For the full list of properties and defaults, see [Configuration Reference](#configuration-reference).
 
 !!! note
-    You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
+    Features marked :material-cash:{ .amber } consume **Fabric capacity**. Reading table structure opens a session on the SQL analytics endpoint of each warehouse and lakehouse. The cost depends on the number of warehouses and lakehouses in scope and on the extraction frequency.
 
+### Connection and Operations
 
-## Supported Versions
+#### Authentication
 
-The Microsoft Fabric connector is compatible with the product online version. 
+Service-principal authentication is configured when declaring the connection. For more information, see [Connecting to Microsoft Fabric](#connecting-to-microsoft-fabric).
 
-## Installing the Plugin
+#### Tenant-Wide Inventory
 
-You can download the Microsoft Fabric plugin from [Connector Downloads](../connectors-list.md).
+Config: `time_between_scan`
 
-For more information about how to install a plugin, see [Installing and Configuring Connectors as a Plugin](../connectors-install-as-plugin.md).
+Default: `3000` (ms)
 
-## Declaring the Connection
+One connection covers one Fabric tenant, and workspaces are discovered automatically. During each inventory, the connector:
 
-Connectors are created and configured through a dedicated configuration file located in the `/connections` folder of the relevant scanner. The scanner frequently checks for any change and resynchronises automatically.
+1. Lists the tenant's **active workspaces**, 5,000 per page.
+2. Runs a **metadata scan** on them, in batches of **100 workspaces**, requesting lineage, data source details, semantic model schema, DAX and Power Query expressions, and item users.
+3. Polls the scan status every `time_between_scan` milliseconds until the scan completes, then reads the result.
 
-For more information about managing connections, see [Managing Connections](../../../features-applications/administration/managing-connections.md).
+Increase `time_between_scan` on large tenants to reduce the number of polling requests.
 
-To establish a connection with a Microsoft Fabric instance, fill in the following parameters in the dedicated configuration file:
+#### Filtering
 
-| Parameter                         | Expected value |
-|:----------------------------------|:----------------|
-| `name` | Specifies the display name for the connection. |
-| `code` | Specifies The unique identifier of the connection on the Actian Data Intelligence Platform. Once registered on the platform, this code must not be modified or the connection will be considered as new and the old one removed from the scanner. |
-| `connector_id` | Specifies the type of connector to be used for the connection. The value must be `ms-fabric` and must not be modified. |
-| `enabled` | Specifies whether to enable or disable the connection (`true` or `false`). <br />The default value is `true`. |
-| `catalog_code` | Specifies the catalog code associated with the connection (`default` when empty). |
-| `secret_manager.enabled` | Specifies whether to enable or disable the secret manager for the connection. <br />This configuration works only with Scanner 73 or later and requires a functional secret manager configured in the scanner configuration file. <br />The default value is `true`. |
-| `secret_manager.key` | Specifies the name of the secret. |
-| `connection.tenant` | Specifies the tenant's unique identifier.<br/>To retrieve the tenant ID from Microsoft Fabric:<br/>1. Sign in to Microsoft Fabric and select the **?** (Help) icon  in the upper-right corner.<br/>2. Select **About Microsoft Fabric**.<br/>3. In the dialog, locate the **Tenant URL**, which has the following format:<br/>`https://app.fabric.microsoft.com/home?ctid=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`<br/>The tenant ID is the value of the `ctid` parameter in the Tenant URL. |
-| `connection.url` | Specifies the connection address. <br />The default value is `https://api.powerbi.com`. |
-| `connection.oauth.client_id` | Specifies the application ID (client) as defined in Azure. |
-| `connection.oauth.client_secret` | Specifies the client secret. |
-| `connection.timeout` | Specifies the maximum time, in milliseconds, that the system waits for a server response before terminating the connection to prevent indefinite hangs. The default value is `30000` ms. |
-| `inventory_on_reports_only` | Specifies whether to inventory only reports. If set to `true`, only reports will be inventoried. However, when a report is imported, all linked datasets will also be imported. This option is useful when working with a large number of items. <br/>The default value is `false`. |
-| `time_between_scan` | During a metadata scan, the connector checks the status of the scan at regular intervals. By default, the connector checks the status every 3 seconds (`3000` ms). To change the polling frequency, specify the interval in milliseconds. |
-| `dsn.configuration` | Specifies the list of DSNs configured in PowerBI Desktop. Must be provided to extract lineage to external sources from DSNs. See the template to complete the field. |
-| `cache.enabled` | Specifies whether to enable cache usage. <br />The default value is `false`. |
-| `cache.path` | (Optional) Specifies a custom disk storage path for the cache. <br />The default value is the scanner cache folder. |
-| `proxy.scheme` | Specifies the proxy protocol (`http` or `https`). |
-| `proxy.hostname` | Specifies the proxy address. |
-| `proxy.port` | Specifies the proxy port. |
-| `proxy.username` | Specifies the proxy username. |
-| `proxy.password` | Specifies the proxy account password. |
-| `contact.role_filter` | Specifies a filter to extract only the contacts whose roles match the defined criteria.. To achieve this, use the `role` key to filter the contacts. <br/>For example:  <br/> `contact.role_filter = "role in ('Owner', 'Read')"` |
-| `filters` | Specifies universal filters. See [Universal Filters](#universal-filters). |
+Config: `inventory_filters`
 
+Filters restrict which objects are cataloged, following the [Universal Filters](../../scanners/universal-filters.md) syntax.
 
-## User Permissions
+The following rule keys are supported:
 
-To collect metadata, the running user's permissions must allow them to access and read reports that need cataloging.
-A Service Principal account is needed to authenticate to MS Azure via a registered application using OAuth 2.0, an application ID, and a secret key.
-
-To create a service principal in Azure, you will first need to register an application in Azure Active Directory (Azure AD). This application registration will automatically create a corresponding service principal, which represents the application's identity in your Microsoft Entra tenant. You'll need to note the Application (client) ID and the Client Secret from the app registration, which will be needed for the Actian Data Intelligence Scanner configuration. Finally, you'll need to grant the service principal the necessary roles and permissions to access the resources it needs.
-
-Access to the PowerBI Admin API must be enabled for service principals using the Microsoft Fabric Admin Portal or Power BI Admin Portal and linked to a security group created using the Microsoft Entra Admin Center.
-
-In addition, to retrieve lineage information, `dataRetrievalState` must not include `DatasetExpressionsDisabledByAdmin`.
-
-To configure Admin API settings in Azure, you typically need to enable service principal authentication for admin APIs within the Admin portal, especially when using features like Microsoft Fabric. This involves signing into the Microsoft Fabric Admin Portal, navigating to tenant settings, and enabling the switch for service principal access to read-only admin APIs. You also need to assign a specific security group created during application creation to the Admin API settings.
-
-### Detailed PowerBI/Fabric Setup 
-
-#### Microsoft Azure Portal : [https://portal.azure.com/](https://portal.azure.com/)
-
-1. **Register an Application in Azure Entra ID (fka Active Directory)**:
-     * Log in to the Azure portal.
-     * Go to Azure Entra ID.
-     * Select **App registrations**.
-     * Click **New registration**.
-     * Enter a name for your application.
-     * Choose the appropriate supported account types.
-     * Select the redirect URI.
-          * Example: `https://login.microsoftonline.com/20057ce9-1386-4770-8b04-e7824ef632be/oauth2/v2.0/token`
-     * Click **Register**. 
-2. **Note the Application (client) ID**: 
-     * Once the app registration is complete, note the Application (client) ID. You'll need this later to authenticate with the service principal. 
-3. **Add a Client Secret**: 
-     * You can add a client secret to provide a password-based credential for authentication. 
-     * Go to **Certificates & secrets** under the app registration. 
-     * Click **New client secret**. 
-     * Enter a description and expiry date, then click **Add**.
-     > **Important:** Copy the value of the client secret immediately after creation, as you won't be able to retrieve it later. 
-4. **Grant Permissions**:
-     * Go to the Azure resource you want the service principal to access.
-     * Select **Access control (IAM)**.
-     * Click **Add role assignment**.
-     * Choose the appropriate privileged administrator role (for example, "Contributor").
-     * Add members by selecting the service principal created by the registered application.
-     * Click **Save**. 
-
-#### Microsoft Entra Admin Center: [https://entra.microsoft.com/](https://entra.microsoft.com/)
-
-**Create Security Group using the Microsoft Entra Admin Center:**
-
-   * Sign in to the Microsoft Entra admin center. Access the Entra admin center with appropriate permissions (at least a Groups Administrator role).
-   * Navigate to Groups: Go to **Identity** > **Groups** > **ALL groups**.
-   * Create a new group: Click on **New group**.
-   * Provide Group Details:
-      * Group type: Select **Security**.
-      * Group name: Enter a descriptive name for the group.
-      * Description: (Optional) Add a description for the group.
-      * Membership type: Choose **Assigned** for manually assigned members or **Dynamic** for automatically managed members based on rules.
-   * Choose Create: Select **Create** to finalize the group creation.
-   * Add previously created service principal to the security group as a direct member.
-
-#### Microsoft Fabric Admin Portal or PowerBI Admin Portal : [https://app.powerbi.com/admin-portal/tenantSettings?experience=power-bi](https://app.powerbi.com/admin-portal/tenantSettings?experience=power-bi)
-
-**Configure Admin API Settings:**
-
-   * Access the Admin Portal: Navigate to the Admin portal within the Fabric service. 
-   * Navigate to Tenant Settings:
-      * Within the Admin portal, locate the **Tenant Settings** section. 
-   * Locate Developer Settings:
-      * Find the **Developer settings** section within the tenant settings. 
-   * Enable Service Principal Authentication:
-      * Enable the switch that allows service principals to call Fabric public APIs.
-   * Locate Admin API Settings:
-      * Find the **Admin API settings** section within the tenant settings. 
-   * Enable Service Principal Authentication:
-      * Enable the switch that allows service principals to access read-only Admin APIs.
-      * Enable the switch that allows service principals to access read-only Admin APIs used for updates
-      * Enable the switch that allows for enhanced Admin API responses with detailed metadata. 
-        * Assign the security group created in the previous step to the Admin API settings enabled.
-   * To retrieve lineage through the MS Fabric plugin, enable the **Enhance admin APIs responses with DAX and mashup expressions** permission for the entire organization or for a specific group that includes the connector account.
-
-#### PowerBI Online Application : [https://app.powerbi.com](https://app.powerbi.com)
-
-**Give permission to PowerBI Workspaces:**
-
-* Access PowerBI Online Application.
-* Navigate to **Workspaces** section. 
-* Grant the **Member** permission set to the service principal for every Workspace that you want to catalog.
-
-    !!! note
-        Do not grant the **Member** permission set to a security group; otherwise, it will not work correctly.
-
-## Rich Filters
-
-Filter and extract only the contacts that do have a role matching the filter.
-
-| Criteria | Description |
+| Rule Key | Matches |
 | :--- | :--- |
-| `role` | The role name to filter. The values list is available [here](https://learn.microsoft.com/fr-fr/rest/api/power-bi/admin/workspace-info-get-scan-result#reportuseraccessright). |
+| `workspace_id`, `workspace_name` | The workspace the object belongs to. |
+| `domain_id`, `domain` | The Fabric domain the workspace is assigned to. |
+| `type` | The object type: `report`, `dataset`, `warehouse`, or `lakehouse`. |
+| `id` | The report or semantic model identifier. |
+| `name` | The report name, or the table name of a semantic model table. |
+| `semantic_model_name` | The semantic model a table belongs to. |
+| `dataset_name` | The table name inside a semantic model. |
 
-For example:
+!!! tip "Large Tenants: Filter on Workspaces or Domains"
+    When **every** `ACCEPT` filter includes a workspace criterion (`workspace_id` or `workspace_name`), or when every filter includes a domain criterion, the connector reads only the matching workspaces from Fabric. With any other rule set, it scans every workspace in the tenant and applies the filters afterwards. The result is the same, but the scan can take much longer on large tenants.
 
-`contact.role_filter = "role in ('Owner', 'Read')"`
+#### Report-Only Inventory
 
-For more information about filters, see [Filters](../../scanners/filters.md).
+Config: `inventory_on_reports_only`
 
+Default: `false`
 
-## Universal Filters
+When enabled, semantic model tables are no longer inventoried as standalone objects. Instead, they are imported together with the reports that consume them, ensuring that each report and its semantic model are imported as a whole. This option is useful for tenants with a large number of semantic models.
 
-Use the universal filter language to filter and root items based on the following criteria:
+!!! warning
+    This option does **not** exclude lakehouse and warehouse tables from the inventory. However, their extraction returns no results. Leave this option set to `false` when you catalog lakehouses or warehouses.
 
-| Criteria | Description |
-| :--- | :--- |
-| `workspace_id`        | (UUID) Fabric Workspace |
-| `type`                | (String Enum) Object type (dataset/report/warehouse/lakehouse) |
-| `id`                  | (UUID) PowerBI Report ID, Lakehouse ID, or Warehouse ID |   
-| `dataset_name`        | (String) Name of table in semantic model |
-| `semantic_model_name` | (String) Semantic Model Name |
-| `workspace_name`      | (String) Workspace Name |
-| `name`                | (String) Report Name |
-| `lakehouse`           | Lakehouse Name |
-| `warehouse`           | Warehouse Name |
-| `table_name`          | Lakehouse or Warehouse Table Name |
+#### Power Query Resolution (ODBC DSN)
 
-For example:
+Config: `dsn.configuration`
 
-```
-filters = [
-  {
-    id = "accept_zeenea_workspace"
-    action = ACCEPT
-    catalog = "Zeenea Catalog"
-    rules {
-      workspace_name = "Zeenea"
-    }
-  },
-  {
-    id = "default_reject"
-    action = REJECT
-  }
-]
+Semantic model tables contain their Power Query (M) expression, which the scanner uses to resolve lineage towards the underlying data sources. When those sources are accessed through an **ODBC DSN**, the connection details are not included in the M expression. Declare the DSNs so that the scanner can resolve the target.
+
+The value is a JSON array, either inline or `file:` followed by a path. Each object must contain `name` and `engine`, and can also contain `host`, `port`, `database`, and `awsRegion`, depending on the engine.
+
+Supported engines are `athena`, `denodo`, `oracle`, `redshift`, `snowflake`, and `sqlserver`.
+
+```hocon
+dsn.configuration = """
+   [
+       { "name": "Simba Athena", "engine": "athena", "awsRegion": "eu-west-3" },
+       { "name": "Snowflake PRD", "engine": "snowflake",
+         "host": "<ACCOUNT>.snowflakecomputing.com", "database": "<DB>" }
+   ]
+"""
 ```
 
-For more information about universal filters, see [Universal Filters](../../scanners/universal-filters.md).
+Semantic model parameters used in the expression are resolved to their values before the expression is sent to the catalog.
 
-## Data Extraction
+#### Extraction Caching
 
-To extract basic metadata information, the connector runs successively the following API requests:
+Config: `cache.*`
 
-* **GET** ` https://api.powerbi.com/v1.0/myorg/admin/workspaces/modified`: 
-    * Response: To get the workspaces list excluding personal workspaces.
-* **POST** ` https://api.powerbi.com/v1.0/myorg/admin/workspaces/getInfo`:
-    * Parameter: Workspaces list (100 workspaces limit)
-    * Response: Scan identifier
-* **GET** `https://api.powerbi.com/v1.0/myorg/admin/workspaces/scanStatus/`:
-    * Parameter: Scan identifier
-    * Response: Scan status: `NOT_STARTED`, `RUNNING`, `SUCCEEDED`
-* **GET** `https://api.powerbi.com/v1.0/myorg/admin/workspaces/scanResult/`:
-    * Parameter: Scan identifier
-    * Response: Object with all the metadata of report from scanned workspaces
-  
-To get PowerBI reports, the connector runs these API requests:
-  
-* **GET** `https://api.powerbi.com/v1.0/myorg/admin/apps`:
-    * Response: Object with all the apps in the organization
-* **GET** `https://api.powerbi.com/v1.0/myorg/groups/<workspace_id>/reports/<report_id>/pages`:
-    * Parameters: Workspace ID and Report ID
-    * Response: Object with all the pages within the specified report from the specified workspace
-* **GET** `https://api.powerbi.com/v1.0/myorg/groups/<workspace_id>/reports/<report_id>/export`:
-    * Parameters: Workspace ID and Report ID
-    * Response: PBIX file of the specified report from the specified workspace
-  
-To get additional Fabric metadata,  the connector runs these API requests:
+Default: off
 
-* **GET** `https://api.fabric.microsoft.com/v1/admin/domains`:
-    * Response: Domain metadata
-* **GET** `https://api.fabric.microsoft.com/v1/workspaces/<workspace_id>/warehouses/<warehouse_id>`:
-    * Parameters: Workspace ID and Warehouse ID
-    * Response: Metadata about the warehouse
-* **GET** `https://api.fabric.microsoft.com/v1/workspaces/<workspace_id>/lakehouses/<lakehouse_id>`:
-    * Parameters: Workspace ID and Lakehouse ID
-    * Response: Metadata about the lakehouse
-* **GET** `https://api.fabric.microsoft.com/v1/workspaces/<workspace_id>/items/<item_id>`:
-    * Parameters: Workspace ID and Item ID
-    * Response: Metadata about the specified item
-* **GET** `https://api.fabric.microsoft.com/v1/workspaces/<workspace_id>/items/<item_id>/shortcuts`:
-    * Parameters: Workspace ID and Item ID
-    * Response: Shortcut metadata
-* **GET** `https://api.fabric.microsoft.com/v1/workspaces/<workspace_id>/reports/<report_id>/getDefinition`:
-    * Parameters: Workspace ID and Report ID
-    * Response: Additional metadata about a report in Fabric
+Reduces the number of API calls during extraction. Workspace scan results, tenant domains, lakehouse and warehouse table lists, Power BI applications, and report layouts are read once, stored in the cache, and reused throughout the extraction. The cache is refreshed during each inventory and expires after `cache.ttl`.
 
-## Collected Metadata
+Fabric report definitions and lakehouse shortcuts are **never** cached. They are always retrieved directly from the source.
 
-### Inventory
+!!! note
+    Loading the cache requires reading the layout of **every** report in scope, which makes the first inventory after enabling the cache noticeably longer.
 
-The inventory collects the list of reports accessible by the user.
+### Objects and Metadata
+
+The connector maps Fabric objects to catalog objects as follows:
+
+| Fabric Object | Imported Into the Platform As |
+| :--- | :--- |
+| Power BI report | **Visualization** |
+| Semantic model table | **Dataset** |
+| Lakehouse or warehouse table | **Dataset** |
+| Semantic model column and measure | **Field** of the dataset |
+| Lakehouse or warehouse table column | **Field** of the dataset |
+| Field projected in a report visual | **Field** of the visualization |
+| Report users | **Contacts** of the visualization |
+| Fabric domain | Properties of the lakehouse and warehouse datasets |
+| Lakehouse shortcut | Properties of the dataset and link to the target dataset (see [Lineage](#lineage)) |
+
+**Visualization** — A Power BI report:
+
+- **Name and description** — From the report. A report distributed through a Power BI app carries the app's `[App]` name.
+- **Location** — *Workspace URL* and *Access URL* for opening the report in Fabric, and *Application Model* when the report is distributed through a Power BI app.
+- **Type** — *Report Type* (`PowerBiReport`).
+- **Pages** — List of report page names.
+- **Audit** — *Created By*, *Creation Date*, *Modified By*, and *Modified Date*.
+- **Endorsement** — *Endorsement* and *Certified By*, when set in Fabric.
+- **Contacts** — Report users, filtered by `contact.role_filter`.
+- **Fields** — One field per column or measure projected in a visual, with *Type* (`Dimension` or `Measure`), *Expression*, and the *Pages* on which it appears.
+
+**Dataset** — A semantic model table:
+
+- **Name and description** — From the semantic model.
+- **Location** — *Workspace URL* and *Semantic Model* URL.
+- **Fields** — Columns (*Type* `Dimension`) and measures (*Type* `Measure`, with their DAX *Expression*).
+- **Power Query** — The table's M expression, sent to the catalog to resolve lineage towards the underlying sources.
+
+**Dataset** — A lakehouse or warehouse table:
+
+:material-lock:{ .amber } [Required Privileges](#required-privileges)
+
+:material-cash:{ .amber } Fabric capacity
+
+- **Name** — The table name.
+- **Location** — *Workspace URL*, *Workspace*, and *Lakehouse* or *Warehouse*.
+- **Domain** — *Domain* and *Domain Path*, when the workspace is assigned to a Fabric domain.
+- **Shortcut** — *Shortcut Type* and *Shortcut Location*, for a lakehouse table backed by a shortcut.
+- **Primary key** — Warehouse tables only: which of its fields form the primary key.
+- **Foreign keys** — Warehouse tables only: links from its fields to fields of other datasets.
+- **Fields** — Columns, including their native SQL type, mapped data type, position, and nullability.
+
+#### Identification Keys
+
+Each catalog object carries an **identification key** generated by the connector. For more information, see [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
+
+| Object | Identification Key | Components |
+| :--- | :--- | :--- |
+| Visualization (report) | `workspace_id/type/id` | **workspace_id**: workspace<br/>**type**: `report`<br/>**id**: report ID |
+| Dataset (semantic model table) | `workspace_id/type/id/dataset_name` | **type**: `dataset`<br/>**id**: semantic model ID<br/>**dataset_name**: table name |
+| Dataset (warehouse table) | `workspace_id/type/id/table_name` | **type**: `warehouse`<br/>**id**: warehouse ID<br/>**table_name**: table name |
+| Dataset (lakehouse table) | `workspace_id/type/id/table_name` | **type**: `lakehouse`<br/>**id**: lakehouse ID<br/>**table_name**: table name |
+| Field | …plus `field_key` | **field_key**: column or measure name |
+
+Objects are assigned to a single data source named **MS Fabric**.
 
 ### Lineage
 
-The Microsoft Fabric connector is able to retrieve the lineage for these scenarios:
+Lineage is materialized by linking a dataset or a visualization to its source datasets and fields.
 
-* Reports → Semantic model (dataset)
-* Semantic model → Fabric dataset (for example, warehouse or lakehouse table)
-* Shortcut dataset → Fabric dataset (if the shortcut is to a warehouse or lakehouse table)
+#### Report → Semantic Model
 
-### Visualization
+Semantic model tables → the report. Each field projected in a visual is linked to the semantic model column or measure it comes from, providing **field-to-field** lineage.
 
-A visualization object is a Power BI report. 
+The report structure is read from the Fabric **report definition**, in either of the two formats returned by Fabric: PBIR (one file per page and per visual) or a single legacy layout file. When the definition cannot be read, the connector falls back to exporting the report as **PBIX** through the Power BI API and reads its layout.
 
-* **Name**
-* **Source Description**
-* **Contacts**
-* **Technical Data**:
+!!! note
+    If neither the report definition nor the PBIX export is available, usually because of a privilege issue (see [Required Privileges](#required-privileges)), the report is still cataloged but without fields and without its page list. The scanner logs a warning that identifies the report.
 
-    * Report WebURL: Link to the report.
-    * Report Type
-    * Workspace Name
-    * Application: URL to the PowerBI application which this report is attached.
-    * Source Server Name
-    * Created By
-    * Creation Date
-    * Modified By
-    * Modified Date
-    * Report's page
+#### Semantic Model → Lakehouse or Warehouse Table (Direct Lake)
 
-### Dataset
+Lakehouse or warehouse tables → the semantic model table, from the relations reported by the metadata scan. 
 
-A dataset is a table inside a Power BI semantic model, a Fabric warehouse table, a Fabric lakehouse table, or a Fabric shortcut.
+When the semantic model table uses **Direct Lake** storage over a single source table, each of its columns is also linked to the source column of the same name, providing **field-to-field** lineage. Otherwise, the link remains at **table-to-table** level.
 
-#### Semantic Model Table
+#### Semantic Model → External Data Source
 
-* **Name**
-* **Source Description**
-* **Technical Data**:
+The Power Query (M) expression of each semantic model table is sent to the catalog, and the scanner resolves it to the datasets of the underlying source connections (Snowflake, SQL Server, BigQuery, and others). 
 
-    * PowerBI Dataset: Name of the PowerBI dataset.
-    * Workspace: Link to PowerBI workspace.
-    * Semantic Model: Link to PowerBI semantic model.
-    * Power Query
-  
-#### Warehouse Table
+Parameters are substituted with their values beforehand, and ODBC DSNs are resolved from `dsn.configuration`. For more information, see [Power Query Resolution (ODBC DSN)](#power-query-resolution-odbc-dsn).
 
-* **Name**
-* **Source Description**
-* **Technical Data**:
+#### Lakehouse Shortcut → OneLake Target Table
 
-    * Workspace URL: Link to PowerBI workspace.
-    * Workspace: The name of the workspace.
-    * Domain: The name of the domain to which the workspace belongs.
-    * Domain path: The domain hierarchy if sub-domains are utilized.
-    * Warehouse: The name of the warehouse.
+:material-lock:{ .amber } [Required Privileges](#required-privileges)
 
-#### Lakehouse Table
+A lakehouse table backed by a **OneLake** shortcut is linked to the target lakehouse or warehouse table, column by column (**field-to-field**). The shortcut's *Shortcut Type* and *Shortcut Location* are recorded as properties.
 
-* **Name**
-* **Source Description**
-* **Technical Data**:
+Shortcuts pointing outside OneLake, such as Amazon S3, S3-compatible, ADLS Gen2, Azure Blob Storage, Google Cloud Storage, Dataverse, OneDrive or SharePoint, and external data shares, are recorded as properties only. No lineage link is created towards the external storage.
 
-    * Workspace URL: Link to PowerBI workspace.
-    * Workspace: The name of the workspace.
-    * Domain: The name of the domain to which the workspace belongs.
-    * Domain path: The domain hierarchy if sub-domains are utilized.
-    * Lakehouse: The name of the lakehouse.
-    * Shortcut type: The type of the target for a shortcut.
-    * Shortcut target location: The location of the dataset.
-  
-### Field
+### Classification and Governance
 
-Fields are fields or measures in a semantic model table, or a field in a warehouse or lakehouse table.
+#### Fabric Domains
 
-#### Semantic Model Table Field
+:material-lock:{ .amber } [Required Privileges](#required-privileges)
 
-* **Name**
-* **Source Description**
-* **Type**
-* **Can be null**: Not supported. The default value is `false`.
-* **Multivalued**: Not supported. The default value is `false`.
-* **Primary Key**: Not supported. The default value is `false`.
-* **Technical Data**: 
+The tenant's domains are read from the Fabric admin API. The domain of each workspace is attached to its lakehouse and warehouse datasets as *Domain* and *Domain Path*. The *Domain Path* contains the full parent hierarchy, for example `Finance/Controlling`. 
 
-    * Technical Name
-    * Native type
-    * Type
-    * Expression
+Domains can also be used for filtering. For more information, see [Filtering](#filtering).
 
-#### Warehouse Table Field
+#### Endorsement
 
-* **Name**
-* **Source Description**
-* **Type**
-* **Can be null**
-* **Multivalued**: Not supported. The default value is `false`.
-* **Primary Key**
-* **Technical Data**: 
+The report's *Endorsement* (`Promoted`, `Certified`) and *Certified By* values are read from the metadata scan and exposed as properties. 
 
-    * Native type
-    * Type
+**Read-only**: The connector never writes back to Fabric.
 
-#### Lakehouse Table Field
+#### Contacts
 
-* **Name**
-* **Source Description**
-* **Type**
-* **Can be null**
-* **Multivalued**: Not supported. The default value is `false`.
-* **Technical Data**: 
+Config: `contact.role_filter`
 
-    * Native type
-    * Type
+Report users returned by the metadata scan are imported as contacts, with their Power BI access right assigned as role. Only principals of type *User* with a valid email address are imported. 
 
+Use `contact.role_filter` to restrict which roles are imported as contacts. For example:
 
-## Object Identification Keys
- 
-Each object in the catalog is associated with a unique identifier key. When the object is imported from an external system, the key is generated and provided by the connector.
+```hocon
+contact.role_filter = "role in ('Owner')"
+```
 
-For more information about identifier keys, see [Identification Keys](../../../features-applications/studio/stewardship/identification-keys.md).
-  
-| Object          | Identification Key                                                                                          | Description |
-|-----------------|-------------------------------------------------------------------------------------------------------------|-------------|
-| Visualization   | code/workspace\_id/report/report\_id | - **code**: Unique identifier of the connection noted in the configuration file  <br/> - **workspace_id**: Fabric workspace technical identifier  <br/> - **report_id**: Power BI report technical identifier |
-| Dataset         | code/workspace\_id/dataset/dataset\_id/dataset\_name | - **code**:  Unique identifier of the connection noted in the configuration file  <br/> - **workspace_id**: Fabric workspace technical identifier  <br/> - **dataset_id**: Power BI technical semantic model technical identifier  <br/> - **dataset_name**: Power BI table name from semantic model |
-| Dataset Field   | code/workspace\_id/report/report\_id/dataset/field\_name  <br/> code/workspace\_id/dataset/dataset\_id/dataset\_name/field\_name | - **code**:  Unique identifier of the connection noted in the configuration file  <br/> - **workspace_id**: Fabric workspace technical identifier  <br/> - **dataset_id**: Power BI semantic model technical identifier  <br/> - **dataset_name**: Power BI technical table name from semantic model  <br/> - **field_name**: PowerBI field technical name |
-| Warehouse Table | code/workspace\_id/warehouse/warehouse\_id/table\_name | - **code**:  Unique identifier of the connection noted in the configuration file  <br/> - **workspace_id**: Fabric workspace technical identifier  <br/> - **warehouse_id**: Fabric warehouse technical identifier  <br/> - **table_name**: Warehouse table name |
-| Warehouse Table Field | code/workspace\_id/warehouse/warehouse\_id/table\_name/field\_name | - **code**:  Unique identifier of the connection noted in the configuration file  <br/> - **workspace_id**: Fabric workspace technical identifier  <br/> - **warehouse_id**: Fabric warehouse technical identifier  <br/> - **table_name**: Warehouse table name  <br/> - **field_name**: Warehouse table field technical name |
-| Lakehouse Table | code/workspace\_id/lakehouse/lakehouse\_id/table\_name | - **code**:  Unique identifier of the connection noted in the configuration file  <br/> - **workspace_id**: Fabric workspace technical identifier  <br/> - **lakehouse_id**: Fabric lakehouse technical identifier  <br/> - **table_name**: Lakehouse table name |
-| Lakehouse Table Field | code/workspace\_id/lakehouse/lakehouse\_id/table\_name/field\_name | - **code**:  Unique identifier of the connection noted in the configuration file  <br/> - **workspace_id**: Fabric workspace technical identifier  <br/> - **lakehouse_id**: Fabric lakehouse technical identifier  <br/> - **table_name**: Lakehouse table name  <br/> - **field_name**: Lakehouse table field technical name|
+### Data
 
- 
+Data profiling and data sampling are **not supported** by this connector. The connector reads structure and metadata only and never reads table contents.
+
+## Required Privileges
+
+The connector is **read-only** and never modifies Fabric content. Grant only what the objects you catalog need.
+
+### Tenant Settings
+
+A Fabric administrator must enable the following settings in **Admin portal > Tenant settings** and add the service principal to the security group allowed by each setting:
+
+| Setting | Section | Needed For |
+| :--- | :--- | :--- |
+| Service principals can access read-only admin APIs | Admin API settings | Workspace discovery and metadata scan |
+| Enhance admin APIs responses with detailed metadata | Admin API settings | Semantic model tables, columns, and measures |
+| Enhance admin APIs responses with DAX and mashup expressions | Admin API settings | Measure DAX and Power Query lineage |
+| Service principals can use Fabric APIs | Developer settings | Report definitions, domains, lakehouses, warehouses, shortcuts, and SQL analytics endpoint |
+
+### Privileges per Capability
+
+The following table lists the privileges required for each capability.
+
+| Capability | APIs and Objects Queried | Privilege Required |
+| :--- | :--- | :--- |
+| Workspace discovery | `GET /v1.0/myorg/admin/groups` | Read-only admin APIs (tenant setting and allowed security group). |
+| Reports, semantic models, report users, lakehouse and warehouse lists | `POST /v1.0/myorg/admin/workspaces/getInfo`, `admin/workspaces/scanStatus/{id}`, `admin/workspaces/scanResult/{id}` | Read-only admin APIs and both **Enhance admin APIs responses…** tenant settings. |
+| Power BI apps | `GET /v1.0/myorg/admin/apps` | Read-only admin APIs. |
+| Report pages and fields (report definition) | `POST /v1/workspaces/{workspaceId}/reports/{reportId}/getDefinition` | Microsoft requires read **and write** permission on the item (`Report.ReadWrite.All` or `Item.ReadWrite.All`). In practice, this requires a workspace role of **Contributor** or higher. |
+| Report pages and fields (PBIX fallback) | `GET /v1.0/myorg/groups/{workspaceId}/reports/{reportId}/export` | Access to the report in its workspace (`Report.Read.All`). |
+| Fabric domains | `GET /v1/admin/domains`, `GET /v1/admin/domains/{domainId}/workspaces` | The caller must be a **Fabric administrator** (`Tenant.Read.All`). |
+| Lakehouse and warehouse SQL endpoint discovery | `GET /v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}`, `GET /v1/workspaces/{workspaceId}/warehouses/{warehouseId}` | Read permission on the item. In practice, this requires a workspace **Viewer** (`Lakehouse.Read.All` , `Warehouse.Read.All` , or `Item.Read.All`). |
+| Lakehouse shortcuts | `GET /v1/workspaces/{workspaceId}/items/{itemId}/shortcuts`, `GET /v1/workspaces/{workspaceId}/items/{itemId}` | `OneLake.Read.All` and read permission on the item. |
+| Lakehouse and warehouse tables, columns, primary keys, and foreign keys | SQL analytics endpoint (TDS, port 1433): `INFORMATION_SCHEMA.COLUMNS`, `INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS` joined with `INFORMATION_SCHEMA.KEY_COLUMN_USAGE`, and the JDBC primary-key metadata | Read access to the SQL analytics endpoint of each warehouse and lakehouse. This requires a workspace role that grants **ReadData**, or `SELECT` permission granted explicitly to the service principal. |
+
+!!! tip "Least Privilege"
+    Enabling the **read-only admin APIs** provides tenant-wide access to workspaces, reports, and semantic models. Beyond that, grant the service principal access only to the workspaces where you need report fields (*Contributor* role) or lakehouse and warehouse tables (*Viewer* role and read access to the SQL analytics endpoint). Domains require the **Fabric administrator** role.
+
+!!! warning "Validate with Your Fabric Administrator"
+    Fabric permission requirements vary depending on tenant settings, capacity, and workspace configuration. Microsoft may also change the required permission scopes. Validate the required permissions with your Fabric administrator and start with a single workspace.
+
+## Configuration Reference
+
+The following table lists the connection properties supported by the MS Fabric connector.
+
+!!! note
+    A configuration file template is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
+
+| Property | Default | Required | Description |
+| :--- | :--- | :--- | :--- |
+| **General** | | | |
+| `name` | — | Yes | Display name shown to catalog users. |
+| `code` | — | Yes | Unique connection identifier. Do not change it after registration. |
+| `connector_id` | — | Yes | Connector type. Must be `ms-fabric`. |
+| `enabled` | `true` | No | Whether the connection is active. |
+| **Connection** | | | |
+| `connection.tenant` | — | Yes | Microsoft Entra tenant ID. Used to construct the OAuth 2.0 token endpoint. |
+| `connection.oauth.client_id` | — | Yes | Application (client) ID of the service principal. |
+| `connection.oauth.client_secret` | — | Yes | Client secret for the service principal. Can be resolved from the scanner's Secret Manager. |
+| `connection.url` | *(`https://api.powerbi.com` and `https://api.fabric.microsoft.com`)* | No | Base URL for the Power BI and Fabric APIs. Both API clients use this single value. If you point it to a gateway, that host must serve both the `/v1.0/myorg` and `/v1` paths. |
+| `connection.timeout` | `300000` | No | Request timeout, in milliseconds, for both API clients. |
+| **Inventory** | | | |
+| `inventory_filters` | *(none)* | No | Which objects are cataloged (`ACCEPT` or `REJECT`). See [Filtering](#filtering). |
+| `inventory_on_reports_only` | `false` | No | Import semantic model tables together with their reports instead of as standalone objects. See [Report-Only Inventory](#report-only-inventory). |
+| `time_between_scan` | `3000` | No | Delay, in milliseconds, between metadata scan status polls. See [Tenant-Wide Inventory](#tenant-wide-inventory). |
+| `contact.role_filter` | *(all roles)* | No | Which report user roles are imported as contacts. See [Contacts](#contacts). |
+| `dsn.configuration` | *(none)* | No | ODBC DSN definitions used to resolve Power Query lineage. Specify an inline JSON array, or `file:<path>`. See [Power Query Resolution (ODBC DSN)](#power-query-resolution-odbc-dsn). |
+| **Extraction Caching** | | | |
+| `cache.enabled` | `false` | No | Enable extraction caching. See [Extraction Caching](#extraction-caching). |
+| `cache.path` | `<scanner home>/cache/<connection name>.cache` | No | File where the cache is stored. |
+| `cache.ttl` | `PT23H` | No | Cache validity period (ISO-8601 duration). |
+
+## Troubleshooting
+
+| Symptom | Likely Cause | Fix |
+| :--- | :--- | :--- |
+| Reports are cataloged, but fields and page lists are missing. | Microsoft requires read **and write** permission on a report to read its definition, and the PBIX fallback was not available either. | Grant the service principal a *Contributor* role on the workspaces where you need report fields. For more information, see [Required Privileges](#required-privileges). |
+| Semantic model tables have no columns or measures, or measures have no DAX expression. | The **Enhance admin APIs responses…** tenant settings are not enabled for the service principal's security group. | Enable both settings. For more information, see [Tenant Settings](#tenant-settings). |
+| No lakehouse or warehouse tables appear in the catalog. | The *Service principals can use Fabric APIs* tenant setting is disabled, port 1433 is closed, the service principal lacks permission to read the items, or a newly created service principal does not yet have a Fabric token. | Check the tenant setting, the outbound route to `*.datawarehouse.fabric.microsoft.com`, and the item permissions. Then run the extraction again. The connector calls the Fabric API during each extraction, which creates the token. Microsoft requires the token to be renewed every 30 days. |
+| Tables from one warehouse or lakehouse are missing, while the others are available. | That SQL analytics endpoint could not be reached. The connector skips it for 60 seconds and continues processing. | Check that the item is available and that read access has been granted. |
+| *Domain* and *Domain Path* are empty for lakehouse and warehouse datasets. | Reading tenant domains requires the **Fabric administrator** role. | Grant the role, or accept that domains are not cataloged. |
+| The inventory takes hours to complete on a large tenant. | No workspace or domain criteria are specified in the `ACCEPT` filters, so the metadata scan runs on every workspace. | Update the rules so that every `ACCEPT` filter includes a workspace or domain criterion, and enable [Extraction Caching](#extraction-caching). |
