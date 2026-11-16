@@ -92,7 +92,7 @@ connection {
 For the full list of properties and defaults, see [Configuration Reference](#configuration-reference).
 
 !!! note
-    Features marked :material-cash:{ .amber } consume **Fabric capacity**. Reading table structure opens a session on the SQL analytics endpoint of each warehouse and lakehouse. The cost depends on the number of warehouses and lakehouses in scope and on the extraction frequency.
+    Features marked :material-cash-multiple:{ .amber } consume **Fabric capacity**. Reading table structure opens a session on the SQL analytics endpoint of each warehouse and lakehouse. The cost depends on the number of warehouses and lakehouses in scope and on the extraction frequency.
 
 ### Connection and Operations
 
@@ -211,7 +211,7 @@ The connector maps Fabric objects to catalog objects as follows:
 
 **Dataset** — A lakehouse or warehouse table:
 
-> :material-lock:{ .amber } [Required Privileges](#required-privileges) · :material-cash:{ .amber } Fabric capacity
+> :material-lock:{ .amber } [Required Privileges](#required-privileges) · :material-cash-multiple:{ .amber } Fabric capacity
 
 - **Name** — The table name.
 - **Location** — *Workspace URL*, *Workspace*, and *Lakehouse* or *Warehouse*.
