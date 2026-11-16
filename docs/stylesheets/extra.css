@@ -501,6 +501,33 @@ pre code {
 [data-md-color-scheme="slate"] .md-typeset .highlight .err { color: #cdd9e5 !important; background: transparent !important; border: none !important; }
 
 /* ═══════════════════════════════════════════════
+   STATUS ICONS
+   ═══════════════════════════════════════════════ */
+.md-typeset .twemoji.green {
+  color: #22863a;
+}
+
+.md-typeset .twemoji.red {
+  color: #d73a49;
+}
+
+.md-typeset .twemoji.amber {
+  color: #FFBF00;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .twemoji.green {
+  color: #8ddb8c;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .twemoji.red {
+  color: #f97583;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .twemoji.amber {
+  color: #FFD54F;
+}
+
+/* ═══════════════════════════════════════════════
    ADMONITIONS
    ═══════════════════════════════════════════════ */
 .md-typeset .admonition,
