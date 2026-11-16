@@ -102,9 +102,7 @@ Service-principal authentication is configured when declaring the connection. Fo
 
 #### Tenant-Wide Inventory
 
-> **Config**: `time_between_scan`
-
-Default: `3000` (ms)
+> **Config**: `time_between_scan` · **Default**: `3000` (ms)
 
 One connection covers one Fabric tenant, and workspaces are discovered automatically. During each inventory, the connector:
 
@@ -137,9 +135,7 @@ The following rule keys are supported:
 
 #### Report-Only Inventory
 
-> **Config**: `inventory_on_reports_only`
-
-Default: `false`
+> **Config**: `inventory_on_reports_only` · **Default**: `false`
 
 When enabled, semantic model tables are no longer inventoried as standalone objects. Instead, they are imported together with the reports that consume them, ensuring that each report and its semantic model are imported as a whole. This option is useful for tenants with a large number of semantic models.
 
@@ -266,7 +262,7 @@ Parameters are substituted with their values beforehand, and ODBC DSNs are resol
 
 #### Lakehouse Shortcut → OneLake Target Table
 
-:material-lock:{ .amber } [Required Privileges](#required-privileges)
+> :material-lock:{ .amber } [Required Privileges](#required-privileges)
 
 A lakehouse table backed by a **OneLake** shortcut is linked to the target lakehouse or warehouse table, column by column (**field-to-field**). The shortcut's *Shortcut Type* and *Shortcut Location* are recorded as properties.
 
@@ -276,7 +272,7 @@ Shortcuts pointing outside OneLake, such as Amazon S3, S3-compatible, ADLS Gen2,
 
 #### Fabric Domains
 
-:material-lock:{ .amber } [Required Privileges](#required-privileges)
+> :material-lock:{ .amber } [Required Privileges](#required-privileges)
 
 The tenant's domains are read from the Fabric admin API. The domain of each workspace is attached to its lakehouse and warehouse datasets as *Domain* and *Domain Path*. The *Domain Path* contains the full parent hierarchy, for example `Finance/Controlling`. 
 
