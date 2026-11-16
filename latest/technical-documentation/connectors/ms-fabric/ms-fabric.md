@@ -7,36 +7,36 @@ The Microsoft Fabric connector catalogs metadata from your Microsoft Fabric tena
 | Capability | Support |
 | :--- | :--- |
 | **Connection and Operations** | |
-| Authentication (Microsoft Entra service principal and client secret) | Supported |
-| Tenant-wide inventory (workspaces are auto-discovered) | Supported |
-| Filtering (inventory) | Supported (workspaces and Fabric domains) |
-| Extraction caching (fewer API calls, faster refresh) | Supported |
+| Authentication (Microsoft Entra service principal and client secret) | :material-check-circle:{ .green } Supported |
+| Tenant-wide inventory (workspaces are auto-discovered) | :material-check-circle:{ .green } Supported |
+| Filtering (inventory) | :material-check-circle:{ .green } Supported (workspaces and Fabric domains) |
+| Extraction caching (fewer API calls, faster refresh) | :material-check-circle:{ .green } Supported |
 | **Objects and Metadata** | |
-| Power BI reports (pages and projected fields) | Supported |
-| Semantic models — tables, columns, and measures | Supported |
-| Lakehouse and warehouse tables and columns | Supported |
-| Primary and foreign keys | Supported (warehouse tables only) |
-| Lakehouse shortcuts (type and location) | Supported |
-| Power BI apps (*Application Model* URL, `[App]` name prefix) | Supported |
-| Dashboards, paginated reports, datamarts, dataflows | Not supported |
-| Notebooks, data pipelines, Spark job definitions, copy jobs | Not supported |
-| Eventhouses, KQL databases, eventstreams, mirrored databases, SQL databases | Not supported |
-| ML models and experiments | Not supported |
+| Power BI reports (pages and projected fields) | :material-check-circle:{ .green } Supported |
+| Semantic models — tables, columns, and measures | :material-check-circle:{ .green } Supported |
+| Lakehouse and warehouse tables and columns | :material-check-circle:{ .green } Supported |
+| Primary and foreign keys | :material-check-circle:{ .green } Supported (warehouse tables only) |
+| Lakehouse shortcuts (type and location) | :material-check-circle:{ .green } Supported |
+| Power BI apps (*Application Model* URL, `[App]` name prefix) | :material-check-circle:{ .green } Supported |
+| Dashboards, paginated reports, datamarts, dataflows | :material-close-circle:{ .red } Not supported |
+| Notebooks, data pipelines, Spark job definitions, copy jobs | :material-close-circle:{ .red } Not supported |
+| Eventhouses, KQL databases, eventstreams, mirrored databases, SQL databases | :material-close-circle:{ .red } Not supported |
+| ML models and experiments | :material-close-circle:{ .red } Not supported |
 | **Lineage** | |
-| Report → semantic model | Supported (field-to-field) |
-| Semantic model → lakehouse or warehouse table (Direct Lake) | Supported (field-to-field¹) |
-| Semantic model → external data source (Power Query / M) | Supported (resolved by the scanner) |
-| Lakehouse shortcut → OneLake target table | Supported (field-to-field) |
-| Shortcuts to external storage (S3, ADLS Gen2, GCS, Dataverse…) | Not supported as lineage (recorded as properties) |
-| Notebook, pipeline, dataflow and eventstream lineage | Not supported |
+| Report → semantic model | :material-check-circle:{ .green } Supported (field-to-field) |
+| Semantic model → lakehouse or warehouse table (Direct Lake) | :material-check-circle:{ .green } Supported (field-to-field¹) |
+| Semantic model → external data source (Power Query / M) | :material-check-circle:{ .green } Supported (resolved by the scanner) |
+| Lakehouse shortcut → OneLake target table | :material-check-circle:{ .green } Supported (field-to-field) |
+| Shortcuts to external storage (S3, ADLS Gen2, GCS, Dataverse…) | :material-close-circle:{ .red } Not supported as lineage (recorded as properties) |
+| Notebook, pipeline, dataflow and eventstream lineage | :material-close-circle:{ .red } Not supported |
 | **Classification and Governance** | |
-| Report endorsement — *Endorsement* and *Certified By* | Read-only (no write-back) |
-| Fabric domains — *Domain* and *Domain Path* on lakehouse and warehouse datasets | Read-only (no write-back) |
-| Sensitivity labels (Microsoft Purview Information Protection) | Not supported |
-| Fabric item tags | Not supported |
+| Report endorsement — *Endorsement* and *Certified By* | :material-check-circle:{ .green } Read-only (no write-back) |
+| Fabric domains — *Domain* and *Domain Path* on lakehouse and warehouse datasets | :material-check-circle:{ .green } Read-only (no write-back) |
+| Sensitivity labels (Microsoft Purview Information Protection) | :material-close-circle:{ .red } Not supported |
+| Fabric item tags | :material-close-circle:{ .red } Not supported |
 | **Data** | |
-| Data sampling | Not supported |
-| Data profiling | Not supported |
+| Data sampling | :material-close-circle:{ .red } Not supported |
+| Data profiling | :material-close-circle:{ .red } Not supported |
 
 <small>¹ Field-to-field when the semantic model table uses **Direct Lake** storage over a single source table. Otherwise, the link remains at **table-to-table** level.</small>
 
@@ -102,7 +102,7 @@ Service-principal authentication is configured when declaring the connection. Fo
 
 #### Tenant-Wide Inventory
 
-Config: `time_between_scan`
+> **Config**: `time_between_scan`
 
 Default: `3000` (ms)
 
@@ -116,7 +116,7 @@ Increase `time_between_scan` on large tenants to reduce the number of polling re
 
 #### Filtering
 
-Config: `inventory_filters`
+> **Config**: `inventory_filters`
 
 Filters restrict which objects are cataloged, following the [Universal Filters](../../scanners/universal-filters.md) syntax.
 
@@ -137,7 +137,7 @@ The following rule keys are supported:
 
 #### Report-Only Inventory
 
-Config: `inventory_on_reports_only`
+> **Config**: `inventory_on_reports_only`
 
 Default: `false`
 
@@ -148,7 +148,7 @@ When enabled, semantic model tables are no longer inventoried as standalone obje
 
 #### Power Query Resolution (ODBC DSN)
 
-Config: `dsn.configuration`
+> **Config**: `dsn.configuration`
 
 Semantic model tables contain their Power Query (M) expression, which the scanner uses to resolve lineage towards the underlying data sources. When those sources are accessed through an **ODBC DSN**, the connection details are not included in the M expression. Declare the DSNs so that the scanner can resolve the target.
 
@@ -170,9 +170,7 @@ Semantic model parameters used in the expression are resolved to their values be
 
 #### Extraction Caching
 
-Config: `cache.*`
-
-Default: off
+> **Config**: `cache.*` · **Default**: off
 
 Reduces the number of API calls during extraction. Workspace scan results, tenant domains, lakehouse and warehouse table lists, Power BI applications, and report layouts are read once, stored in the cache, and reused throughout the extraction. The cache is refreshed during each inventory and expires after `cache.ttl`.
 
@@ -217,9 +215,7 @@ The connector maps Fabric objects to catalog objects as follows:
 
 **Dataset** — A lakehouse or warehouse table:
 
-:material-lock:{ .amber } [Required Privileges](#required-privileges)
-
-:material-cash:{ .amber } Fabric capacity
+> :material-lock:{ .amber } [Required Privileges](#required-privileges) · :material-cash:{ .amber } Fabric capacity
 
 - **Name** — The table name.
 - **Location** — *Workspace URL*, *Workspace*, and *Lakehouse* or *Warehouse*.
@@ -294,7 +290,7 @@ The report's *Endorsement* (`Promoted`, `Certified`) and *Certified By* values a
 
 #### Contacts
 
-Config: `contact.role_filter`
+> **Config**: `contact.role_filter`
 
 Report users returned by the metadata scan are imported as contacts, with their Power BI access right assigned as role. Only principals of type *User* with a valid email address are imported. 
 
