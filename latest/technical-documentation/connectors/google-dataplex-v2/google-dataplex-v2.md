@@ -49,10 +49,10 @@ To establish a connection with a Dataplex instance, fill in the following parame
 | `proxy.port` | Proxy port |
 | `proxy.username` | Proxy username |
 | `proxy.password` | Proxy account password |
-| `quota.read_per_minute` | Reads per minute quota value. The default value is `6000` (default value of Google Data Catalog). |
-| `quota.search_per_user_per_minute` | Search quota value per user per minute. The default value is `180` (default value in Google Data Catalog). |
-| `quota.timeout_minute` | Maximum waiting time when waiting for the availability of a quota. The default value is `10` minutes. |
-| `quota.max_retry` | Maximum number of retries when a request encounters a quota expiration error. |
+| `quota.reads_per_minute` | Reads per minute quota value. The default value is `400`. <br/>Your current value is available under **IAM & Admin > Quotas & System Limit > Read requests per minute per region**. |
+| `quota.searches_per_user_per_minute` | Search quota value per user per minute. The default value is `180` (default value in Google Data Catalog). |
+| `quota.timeout_minutes` | Maximum waiting time when waiting for the availability of a quota. The default value is `10` minutes. |
+| `quota.max_retries` | Maximum number of retries when a request encounters a quota expiration error. The default value is `10` retries. |
 
 
 ## Universal Filters
