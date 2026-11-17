@@ -4,7 +4,6 @@
 
 * A user with sufficient [permissions](#user-permissions) is required to establish a connection with Microsoft SQL Server.
 * Actian Data Intelligence traffic flow towards SQL Server must be open.
-* The only authentication mode supported by this connector requires the user's username and password.
 
 !!! note
     You can find a link to the configuration template in [Connector Downloads](../connectors-list.md).
@@ -49,6 +48,26 @@ To establish a connection with an SQL Server instance, fill in the following par
 | `filter` | To filter datasets during the inventory. See [Rich Filters](#rich-filters). |
 | `lineage.view.enabled` | To activate the lineage feature. Default value `false`.<br/>Example: `includes = "enterprise,equals:customers,contains:prod"` |
 | `lineage.storedproc.enabled` | Enables the lineage on Stored Procedures (`false` by default).<br/>**Note**: This feature has technical limitation due to information provided by the database system catalog. The relation between the stored procedure and tables in another catalog (database) is not available. Queries containing temporary (#) tables are ignored by the db engine.<br/>So, temporary tables are not part of the lineage, but tables referenced by the request will be ignored as well, except if they are used in another query. |
+
+### Windows Authentication
+
+When the scanner runs on Windows, it can connect to SQL Server using the identity of the Windows account running the scanner instead of a username and password.
+
+To use Windows authentication:
+
+1. Run the scanner as a Windows service under a dedicated Windows account. For instructions, see _Run the Service Under a Specific Windows Account_ in [Actian Data Intelligence Scanner Setup](../../scanners/scanner-setup.md#scanner-69-and-later).
+2. Make sure this account has a SQL Server login with the permissions described in [User Permissions](#user-permissions).
+3. In the connection file, add `integratedSecurity=true` to the JDBC URL and comment out the `username` and `password`:
+
+   ```hocon
+   connection {
+     url = "jdbc:sqlserver://<host>:1433;integratedSecurity=true;encrypt=true;"
+     #username = ""
+     #password = ""
+   }
+   ```
+
+When the connection starts, the scanner logs `sqlserver_windows_integrated_authentication enabled`. If the log shows `disabled`, the Windows authentication library could not be loaded.
 
 ## User Permissions
 
