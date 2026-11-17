@@ -127,6 +127,36 @@ Run the following command with the service name used during registration to obta
 
 `bin\prunmgr.exe //MS//`
 
+**Run the Service Under a Specific Windows Account**
+
+By default, the service runs as `LocalSystem`. To run it under a dedicated Windows account, for example to connect to a data source using Windows authentication:
+
+1. Install the service: 
+     
+     `bin\zeenea-service.bat`
+
+2. Stop the service:
+    
+     `sc stop ZeeneaScanner`
+
+3. Set the service account:
+   
+     `bin\prunsrv.exe //US//ZeeneaScanner --ServiceUser="<DOMAIN>\<account>" --ServicePassword="<password>"`
+   
+     For a local account, use `.\<account>`.
+
+4. Start the service:
+   
+     `sc start ZeeneaScanner`
+
+5. Verify that the service is running:
+   
+     `sc query ZeeneaScanner`
+   
+     The command should return `RUNNING`.
+
+If you specified `--ServiceName` during installation, replace `ZeeneaScanner` with your service name in the commands above.
+
 #### Scanner 68 and Previous
 
 1. Download Windows binaries:
