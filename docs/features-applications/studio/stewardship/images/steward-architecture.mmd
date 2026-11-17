@@ -1,0 +1,56 @@
+---
+config:
+    htmlLabels: false
+---
+flowchart TB
+
+
+    %% Main Infrastructure
+    subgraph Infra [Data intelligence Platform AWS EUW3]
+        direction TB
+        %% Langsmith External
+        CP[Langsmith - Trace storage and analytics]
+    end
+
+    subgraph Env_Cluster ["Data intelligence Platform Kubernetes {region} cluster"]
+        direction TB
+        %% Data Plane Layer
+        Steward[Data Steward Service]
+        Proxy[LiteLLM proxy]
+
+        %% Service Layer
+        DC1[Tenant 1]
+        Studio[Studio Backend]
+        GW[Gateway]
+    end
+
+    subgraph Model_provider [Model Provider - AWS Bedrock]
+        direction TB
+        %% External AI Model
+        AI[AI Model]
+        Guardrails[Guardrails]
+    end
+
+    %% Client Side
+    subgraph Client_Side [Client / User Space]
+        direction TB
+        WebApp[Studio application in client browser]
+    end
+
+    %% Connections
+
+    Steward -- Send traces --> CP
+    Steward --- Studio
+
+    Proxy -- Run inference --> AI
+    Proxy -- Validate user messages --> Guardrails
+
+    WebApp --- GW --- Studio
+    Steward -- Fetch data --> DC1
+    Studio -- Fetch data --> DC1
+    Steward -- Call AI capabilities --> Proxy
+
+
+
+
+    %% Styling

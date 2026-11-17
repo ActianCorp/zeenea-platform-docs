@@ -185,6 +185,8 @@ Use shared instructions to define conventions and policies, for example:
 
 This section explains where the Steward agent runs and where your data is stored for governance and security reviews.
 
+![Architecture diagram of the Steward agent: the Studio application calls the tenant cluster, which routes inference through the LiteLLM proxy to AWS Bedrock and sends traces to LangSmith](./images/steward-architecture.svg)
+
 The Steward agent runs **within the same Kubernetes cluster as your tenant**. 
 
 The following table describes its components and the data that flows through them. 
