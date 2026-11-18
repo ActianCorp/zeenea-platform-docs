@@ -13,11 +13,11 @@ This component presents a list of the most viewed Items in your perimeter over t
 ## Watchlists
 Watchlists allow you to save your favorite filters and quickly find your lists of Items to process. This component lists your Watchlists. By default, it contains 5 Watchlists:
 
-* Datasets for which you are the Curator and for which the completion rate is less than 50%
-* Glossary Items for which you are the Curator and for which the completion rate is less than 50%
-* Orphan Datasets for which you are the Curator
+* Datasets for which you are the Curator and for which the completion rate is less than 50%.
+* Glossary Items for which you are the Curator and for which the completion rate is less than 50%.
+* Orphan items for which you are the Curator.
 * Fields for which you are the Curator and for which suggestions are pending. These are Fields that may contain Personally Identifiable Information. The method for detecting and suggesting these Fields is described here.
-* Items for which you are Curator and for which user suggestions are pending
+* Items for which you are Curator and for which user suggestions are pending.
 
 ## Perimeter
 This component shows, by Item type, the number of Objects in your perimeter, as well as their completion rate, according to the rules defined by your Administrators. For more details, see [How the documentation completion level is calculated](./doc-completion-level.md).

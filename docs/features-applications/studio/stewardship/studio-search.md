@@ -105,13 +105,13 @@ This option allows finding Items for which the selected attribute (contact, prop
 |---------------|--------------|
 | Completion level  | This filter allows you to search for items according to their level of completion. |
 | Item | This filter allows you to select one or more types of items from the catalog. Native item types and custom item types are available here. |
-| Item Lifecycle Event | This filter allows you to retrieve items from the catalog according to certain events in their lifecycle.<br/>Select the required event type and then select a period for this event.<br/>Two types of events are proposed:<br/>- the date of import<br/>- the date of deletion of the source |
+| Item Lifecycle Event | This filter allows you to retrieve items from the catalog based on events in their lifecycle.<br/>Select the required event type and then select a time period for that event.<br/>The following event types are available:<br/>- **Import date**: The date the item was imported into the catalog.<br/>- **Removal date**: The date the item was deleted from the source system. Items deleted from the source system are flagged as orphan items. For more information, see [Orphan Items](../../../getting-started/definitions.md#orphan-item). |
 | Contacts | This filter allows you to search for items based on the contacts associated with them.<br/>Type the first few characters of a contact's first name, last name, or email, then select the contact from the suggested list for your search.<br/>The contact you are looking for must therefore be registered in the catalog beforehand. |
 | Access request policy | This filter allows you to search for items based on their associated access request policy. |
 | Stage | This filter allows you to search for items based on one or more lifecycle stages. |
 | Connections | This "faceted" type of filter allows you to select items from one or more connections using checkboxes. Only connections for which at least one item has been imported are displayed. |
 | Data Source | This filter allows you to select items from one or more data sources. Only data sources with at least one imported item are displayed. |
-| Orphan Items | This filter allows you to display the data sets deleted from a connection and still present in the catalog. |
+| Orphan Items | This filter allows you to display items deleted from a connection and still present in the catalog. |
 | Quality Status | This filter is used to display datasets according to their quality status:<br/>- Passed (each quality test passed since the last execution of the tests)<br/>- Warning (at least one test status is "Warning" since the last execution)<br/>- Failed (at least one test failed during the last execution)<br/>This filter is displayed if the catalog is synchronized with one of your data quality management tools only. |
 | Personally Identifiable Information| This filter displays the fields for which the Personally Identifiable Information property has been filled in (Yes/No). |
 | Implemented | This filter allows you to display only the glossary and custom items that are used to define or classify other items in the catalog. |

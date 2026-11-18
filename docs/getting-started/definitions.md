@@ -138,24 +138,27 @@ The attributes of a Glossary Item are the following:
 
 A key allows for each object in the catalog to be uniquely identified. Keys are especially useful when using synchronizing the catalog with an External System, either via the APIs, or when using the Excel Import feature. 
 
-## Orphan Dataset
+## Orphan Item
 
-An orphan dataset is a dataset that is still present in the catalog but is no longer listed by the connection during automatic or manual inventories.
+An orphan item is an item that remains in the catalog but is no longer listed by the connection during an inventory or update.
 
 ### Possible Causes
 
-* moving this dataset to a new storage system,
-* a migration of the data to another table,
-* etc.
+* Moving a dataset to a new storage system
+* Migrating data to another table
+* Updating a dataset schema
+* Etc.
 
 ### Objective
 
-Actian Data Intelligence helps identify orphan datasets to keep catalog content up-to-date and avoid directing Explorers to obsolete data assets.
+Actian Data Intelligence helps identify orphan items to keep catalog content up-to-date and avoid directing Explorers to obsolete data assets.
+
+For more information about identifying orphan items, see [Identifying Orphan Items](../features-applications/studio/stewardship/identifying-orphan-datasets.md).
 
 ### Impacts
 
-* The documentation of an orphan dataset can no longer be updated through its original connection.
-* If this dataset has been moved, it is treated by Actian Data Intelligence as a new entry.
+* The documentation of an orphan item can no longer be updated through its original connection.
+* If this item has been moved, it is treated by Actian Data Intelligence as a new entry.
 
 ## Property
 
