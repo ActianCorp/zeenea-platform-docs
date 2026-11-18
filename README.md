@@ -115,6 +115,7 @@ Edit files under `docs/`, preview at [http://127.0.0.1:8000](http://127.0.0.1:80
 - Use `!!! note`, `!!! tip`, `!!! important` for callout boxes (admonitions).
 - Fenced code blocks must specify a language tag (e.g., ` ```json `, ` ```bash `, ` ```yaml `).
 - Image references should always include alt text: `![Description of image](./images/example.png)`.
+- Diagrams are Mermaid charts exported to SVG. Keep the `.mmd` source next to the `.svg` in `images/`, and normalize the export before committing it or it renders blank: `python3 scripts/normalize_mermaid_svg.py exported.svg -o docs/<section>/images/<name>.svg`.
 - Cross-references between pages use relative `.md` paths: `[Link text](../other-page.md)`.
 - Navigation order is controlled by `.pages` files in each folder (via the `awesome-pages` plugin).
 - The custom sidebar (`cn-nav.js`) is regenerated from those same `.pages` files on every `mkdocs build` / `mkdocs serve`. To refresh it manually: `python scripts/generate_cn_nav.py`.
