@@ -15,7 +15,6 @@ For each object type define the following information:
 * Name
 * Code (this code is used as part of the Item's unique identification keys)
 * Description
-* Icon
 * Color
 * Options:
      * Creation settings: Specify from which channel(s) you will create Items for this type (UI and/or API)

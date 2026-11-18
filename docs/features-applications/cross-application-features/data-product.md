@@ -854,11 +854,11 @@ You can delete a data product from the Studio. When you delete a data product, i
 
 ### Share a Data Product in Marketplace
 
-Data products can be shared in the marketplace when the federated catalog option is activated. When you share a data product, its output ports and the datasets that compose them are shared automatically.
+Data products can be shared in the marketplace when the federated catalog option is activated. When you share a data product, its output ports are shared automatically. However, the datasets that compose those output ports are not shared automatically.
 
 ### Move a Data Product to Another Catalog
 
-In Studio, you can move a data product to another catalog when the federated catalog option is activated. When you move a data product, its output ports and the datasets that compose them are moved automatically.
+In Studio, you can move a data product to another catalog when the federated catalog option is activated. When you move a data product, its output ports are moved automatically. However, the datasets that compose those output ports are not moved automatically.
 
 You cannot move a data product to another catalog using the data product API. Attempting to do so generates a non-blocking error.
 

@@ -7,5 +7,8 @@ search:
 
 The latest version of the **DBT** connector plugin is available for download from the [Connector Downloads](../connectors-list.md) page.
 
-!!! note
-    No release notes are currently available for this connector. You can subscribe to the RSS feed to receive notifications about future updates.
+## November 12, 2026 — Version 3.1.2
+
+**Fixed Issues**
+
+Fixed an issue where JDBC references without a port could not be resolved. The database engine's default port is now used.

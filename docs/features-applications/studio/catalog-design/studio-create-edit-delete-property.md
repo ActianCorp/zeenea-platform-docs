@@ -67,6 +67,8 @@ There are different types of properties (Short Text, URL, Number, etc.). This al
 * **Standard**: The property is taken into account in the calculation of completion level.
 * **Important**: The property is also taken into account in the calculation of the completion level. An important property will count twice compared to a standard property in the calculation.
 
+For more information, see [Documentation Completion Level](../stewardship/doc-completion-level.md).
+
 ### Options
 
 #### Feed Settings
