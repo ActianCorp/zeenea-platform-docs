@@ -13,7 +13,7 @@ search:
     * For more information about installation, see [Actian Data Intelligence Scanner Setup](../scanners/scanner-setup.md).
 
 
-| Connector | Plugin | Scanner minimum version | Download Link |
+| Connector | Plugin | Scanner Minimum Version | Download Link |
 |---|---|---|---|
 | [Actian Informix](./actian-informix/actian-informix.md)<br />[Actian Ingres](./actian-ingres/actian-ingres.md)<br />[Actian Zen](./actian-zen/actian-zen.md)<br />[Amazon AWS Redshift](./aws-redshift/aws-redshift.md)<br />[Greenplum](./greenplum/greenplum.md)<br />[IBM DB2](./db2/db2.md)<br />[MariaDB](./mariadb/mariadb.md)<br />[Microsoft SQL Server](./sqlserver/sqlserver.md)<br />[MySQL](./mysql/mysql.md)<br />[Oracle RDBMS](./oracle/oracle.md)<br />[Postgres SQL](./postgresql/postgresql.md)<br />[Netezza](./netezza/netezza.md)<br />[Snowflake](./snowflake/snowflake.md)<br />[Sybase IQ](./sybase-iq/sybase-iq.md)<br />[Teradata](./teradata/teradata.md)<br />[*Generic JDBC*](./generic-jdbc/generic-jdbc.md) | JDBC | 78 | [jdbc-connector-plugin-1.5.6.zip](https://plugins.zeenea.app/jdbc-connector-plugin/jdbc-connector-plugin-1.5.6.zip) |
 | [Actian DataConnect](./actian-dataconnect/actian-dataconnect.md) | Actian DataConnect | 76 | [actian-dataconnect-connector-plugin-1.0.0.zip](https://plugins.zeenea.app/actian-dataconnect-connector-plugin/actian-dataconnect-connector-plugin-1.0.0.zip) |
