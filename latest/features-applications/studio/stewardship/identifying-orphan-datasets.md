@@ -1,12 +1,12 @@
-# Identifying Orphan Datasets
+# Identifying Orphan Items
 
-At each inventory of a connection, Actian Data Intelligence checks the status of each dataset imported into the catalog. A dataset can then become an orphan.
+At each inventory of a connection, Actian Data Intelligence checks the status of each item imported into the catalog. An item can then become an orphan.
 
-Read more: [Orphan Dataset](../../../getting-started/definitions.md#orphan-dataset)
- 
-## Dataset Notifications
+For more information about orphan items, see [Orphan Item](../../../getting-started/definitions.md#orphan-item)
 
-If a Dataset is no longer present in the inventory provided by the connection, an insert in red appears, indicating the date of the first inventory from which the Dataset was made an orphan. 
+## Item Notifications
+
+If an item is no longer present in the inventory provided by the connection, an insert in red appears, indicating the date of the first inventory from which the item was made an orphan.
 
 The latter is identified at different levels:
 
@@ -18,13 +18,13 @@ On its detailed page:
 
   ![](./images/orphaned-dataset2.png)
 
-## Deleting Orphan Datasets
+## Deleting Orphan Items
 
 The integration of its documentation will be removed from the catalog for all users.
 
-* The **Yes** button on the red inserts allows you to delete the dataset and its fields directly from its overview.
+* The **Yes** button on the red inserts allows you to delete the item and its fields directly from its overview.
 * The trash can button at the top right of its detailed page also allows you to delete it.
 
 ## From the Search
 
-You can also use the "Removed from connection" filter from the Catalog section of Studio to quickly identify orphan datasets.
+You can also use the "Orphan Items" filter from the Catalog section of Studio to quickly identify orphan items.
