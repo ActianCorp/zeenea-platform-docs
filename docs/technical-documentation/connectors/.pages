@@ -2,6 +2,7 @@ nav:
     - dataset-detection.md
     - Connector Downloads: connectors-list.md
     - connectors-install-as-plugin.md
+    - building-custom-connectors-with-public-sdk.md
     - externalizing-external-connectors.md
     - Actian DataConnect: actian-dataconnect
     - Actian Informix: actian-informix
