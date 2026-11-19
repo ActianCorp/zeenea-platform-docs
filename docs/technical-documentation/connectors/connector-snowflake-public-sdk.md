@@ -1,6 +1,6 @@
-# Snowflake V2 Connector Guide
+# Snowflake Public SDK Connector Guide
 
-The Snowflake connector V2 catalogs your Snowflake metadata —
+The Snowflake Public SDK connector catalogs your Snowflake metadata —
 tables, dynamic tables, table fields, views and more — and enriches it with lineage, data classification and
 tags, across one or several Snowflake accounts.
 
@@ -56,13 +56,13 @@ Before creating the connection, make sure you have:
 
 - **Snowflake** — cloud service (all current editions).
 - **Scanner** — each plugin release requires a minimum scanner version. See the plugin's
-  entry in [Zeenea Connector Downloads](./zeenea-connectors-list.md) for the exact version.
+  entry in [Zeenea Connector Downloads](./connectors-list.md) for the exact version.
 
 ### Installing the plugin
 
 The Snowflake connector ships as a plugin. Download it from
-[Zeenea Connector Downloads](./zeenea-connectors-list.md) and follow
-[Installing and Configuring Connectors as a Plugin](./zeenea-connectors-install-as-plugin.md).
+[Zeenea Connector Downloads](./connectors-list.md) and follow
+[Installing and Configuring Connectors as a Plugin](./connectors-install-as-plugin.md).
 
 !!! warning "Java 17 and later"
     The Snowflake JDBC driver relies on an internal Java API. On Java 17+, add this
@@ -219,7 +219,7 @@ or listed explicitly — see [Multiple accounts](#multiple-accounts).
 > **Config:** `inventory_filters`, `sampling_filters`, `profiling_filters`
 
 Filters restrict each stage to the objects you care about, following the
-[Universal filters](../../technical-documentation/scanners/zeenea-universal-filters.md) syntax:
+[Universal filters](../../technical-documentation/scanners/universal-filters.md) syntax:
 
 - **`inventory_filters`** — which objects are cataloged.
 - **`sampling_filters`** — which objects data sampling runs on.
@@ -268,7 +268,7 @@ The connector maps Snowflake objects to catalog objects as follows:
 #### Identification keys
 
 Each catalog object carries an **identification key**, built by the connector.
-See [Identification keys](../../features-applications/studio/stewardship/zeenea-identification-keys.md).
+See [Identification keys](../../features-applications/studio/stewardship/identification-keys.md).
 
 | Object | Identification key | Components |
 | :--- | :--- | :--- |
@@ -339,14 +339,14 @@ Retrieves user-defined Snowflake tags on tables, dynamic tables, views and table
 
 Statistical profiles per field. The connector draws a random sample
 (`COUNT(*)` + `TABLESAMPLE`) sized to the requested row count; statistics are then computed from that sample.
-See [Data Profiling](../../features-applications/cross-application-features/zeenea-data-profiling.md).
+See [Data Profiling](../../features-applications/cross-application-features/data-profiling.md).
 
 #### Data sampling
 
 :material-cash:{ .amber } Warehouse compute · :material-lock:{ .amber } [Required privileges](#required-privileges)
 
 Exposes a preview of field values, retrieved on demand from the sampled table. See
-[Data Sampling](../../features-applications/cross-application-features/zeenea-data-sampling.md).
+[Data Sampling](../../features-applications/cross-application-features/data-sampling.md).
 
 #### Data quality
 
@@ -364,9 +364,10 @@ dataset, shown on its *Data quality* tab:
 A measurement Snowflake has not evaluated is never reported as a success: it takes the same
 status as a failure of its kind.
 
-Collection runs as a scheduled scanner job (`automation.collect-data-observability`), separately
-from metadata extraction, and covers every dataset of the connection. An expectation dropped in
-Snowflake stops being reported, with a lag of up to 30 minutes.
+Collection runs as a scheduled scanner job (`automation.collect-data-observability`, see
+[Process Configuration](../scanners/scanner-setup.md#process-configuration-optional)),
+separately from metadata extraction, and covers every dataset of the connection. An expectation
+dropped in Snowflake stops being reported, with a lag of up to 30 minutes.
 
 ## Required privileges
 
@@ -431,7 +432,7 @@ GRANT SELECT ON FUTURE DYNAMIC TABLES IN DATABASE <DB> TO ROLE SCANNER;
 
 ## Configuration reference
 
-The table below lists the properties available in a Snowflake V2 connection file.
+The table below lists the properties available in a Snowflake Public SDK connection file.
 
 !!! note
     A template of the configuration file is available in [this repository](https://github.com/zeenea/connector-conf-templates/tree/main/templates).
