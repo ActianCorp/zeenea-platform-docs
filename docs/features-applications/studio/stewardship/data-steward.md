@@ -183,28 +183,44 @@ Use shared instructions to define conventions and policies, for example:
 
 ## Architecture and Data Residency
 
-This section explains where the Steward agent runs and where your data is stored for governance and security reviews.
+This section explains where the Steward agent runs, how a request travels from your browser to the model, and where your data is stored. It is intended for governance and security reviews.
 
-![Architecture diagram of the Steward agent: the Studio application calls the tenant cluster, which routes inference through the LiteLLM proxy to AWS Bedrock and sends traces to LangSmith](./images/steward-architecture.svg)
+![Architecture diagram of the Steward agent: the Studio application calls the Studio backend, which forwards the request to the Steward agent; the agent routes inference through the LiteLLM proxy to AWS Bedrock and sends traces to LangSmith](./images/steward-architecture.svg)
 
-The Steward agent runs **within the same Kubernetes cluster as your tenant**. 
+### How a Request Travels
 
-The following table describes its components and the data that flows through them. 
+1. The **Studio application** in your browser sends your message to the **Studio backend** for your tenant, through the platform gateway.
+2. The Studio backend forwards the request to the **Steward agent service**. The service runs once per environment, alongside the other platform components, and serves every tenant of that environment.
+3. Using your session, the agent reads the catalog context it needs — the item you are looking at, its properties, related glossary terms — and builds the prompt.
+4. The agent sends the prompt to the **LiteLLM gateway**, which forwards it to **AWS Bedrock**.
+5. **AWS Bedrock Guardrails** screens the user message. If a guardrail blocks it, the agent stops and returns an error instead of calling the model.
+6. The model generates the response, which the agent streams back as an answer, a plan, or an approval card.
 
-| Component | Where it runs | What it stores |
+The agent runs in the platform’s Kubernetes cluster for your region. Conversations and agent data are scoped at the user level: a thread belongs to the user who created it, and is only listed for that user, within the catalog where it was opened.
+
+### Components
+
+The following table describes each component and what happens to the data that passes through it.
+
+| Component | Where it runs | What it stores or processes |
 | --- | --- | --- |
-| **Steward agent** | Same Kubernetes cluster as your tenant | The running agent; no separate data store. |
-| **Agent database (PostgreSQL)** | Same Kubernetes cluster as your tenant | Conversation threads and agent state. |
-| **LiteLLM gateway** | Same Kubernetes cluster as your tenant | Routes the agent's LLM calls. Records **call statistics only**, not message content. |
-| **AWS Bedrock** | AWS | Runs the language models. Call logs are stored in the **same AWS region** as the request, with **restricted access**. |
-| **LangSmith** | Hosted instance in AWS **eu-west-3** | Agent traces used to improve the agent. |
+| **Studio application** | Your browser | The chat interface. |
+| **Studio backend** | Platform Kubernetes cluster, in your region | Forwards the chat request to the Steward agent and streams the response back. |
+| **Steward agent** | Platform Kubernetes cluster for your region, shared by every tenant of the environment | Runs the agent; no separate data store. |
+| **Agent database (PostgreSQL)** | Database provisioned for the agent, in your region | Conversation threads and agent state, scoped per user. |
+| **LiteLLM gateway** | Platform Kubernetes cluster for your region, one instance per region and environment | Forwards the agent’s model calls to AWS Bedrock and applies the guardrail check. |
+| **AWS Bedrock Guardrails** | AWS | Screens user messages. Records violations. |
+| **AWS Bedrock** | AWS | Runs the model the agent uses. |
+| **LangSmith** | Our LangSmith instance, in AWS **eu-west-3** | Agent execution traces used to improve the agent. |
 
-Key points:
+The Steward agent uses **Claude Sonnet 4.6**, an Anthropic model that AWS runs on its own infrastructure through Amazon Bedrock. Actian does not host the model.
 
-- **The agent and its database remain in your tenant’s cluster.** Conversations and agent state do not leave the cluster.  
-- **LLM calls use regional models, not global models.** Inference runs on region-specific models in AWS Bedrock rather than global cross-region models, so requests are not routed outside the model's region.  
-- **Bedrock call logs remain in their source region** and are kept with restricted access.  
-- **Execution traces are used to improve the agent.** The Steward agent sends execution traces to a hosted LangSmith instance in AWS **eu-west-3**.
+### Data Residency
+
+- **Conversations stay in your region, and are scoped per user.** Conversation threads and agent state are stored in the agent’s PostgreSQL database, in the same AWS region as your environment. A user only ever sees the threads they created.
+- **Inference stays within your geography.** AWS does not currently offer in-region inference for the model the Steward agent uses. Requests therefore use **geo cross-region inference**: AWS routes each request to a region within the same geography, never outside it. Actian does not use global cross-region inference. For an EU tenant, requests are handled only in EU regions — for example Frankfurt, Ireland, Paris, Stockholm, Milan, or Spain — and never in the US, Australia, Japan, or any other geography. See the [AWS model card](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-sonnet-4-6.html#model-card-anthropic-claude-sonnet-4-6-regional-availability) for the current routing.
+- **Only guardrail violations are recorded.** A message blocked by a guardrail is logged with the policy that fired. Actian keeps no audit record of model calls on the AWS side.
+- **Traces go to our LangSmith instance in AWS eu-west-3, and can be turned off.** While tracing is enabled, the Steward agent sends execution traces to our LangSmith instance in AWS **eu-west-3**. A trace captures the exchange — your messages, the model’s responses, the tool calls between them — and the thread it belongs to. Deployments that must not send data outside their own region run with tracing disabled.
 
 ## Limitations
 
