@@ -185,18 +185,18 @@ Use shared instructions to define conventions and policies, for example:
 
 This section explains where the Steward agent runs, how a request travels from your browser to the model, and where your data is stored. It is intended for governance and security reviews.
 
-![Architecture diagram of the Steward agent: the Studio application calls the Studio backend, which forwards the request to the Steward agent; the agent routes inference through the LiteLLM proxy to AWS Bedrock and sends traces to LangSmith](./images/steward-architecture.svg)
+![Architecture diagram: your browser reaches the Studio backend and the Steward agent in your region's Kubernetes cluster; the agent calls Amazon Bedrock through the LiteLLM gateway and sends traces to LangSmith](./images/steward-architecture.svg)
 
-### How a Request Travels
+### Request Flow
 
 1. The **Studio application** in your browser sends your message to the **Studio backend** for your tenant, through the platform gateway.
 2. The Studio backend forwards the request to the **Steward agent service**. The service runs once per environment, alongside the other platform components, and serves every tenant of that environment.
-3. Using your session, the agent reads the catalog context it needs — the item you are looking at, its properties, related glossary terms — and builds the prompt.
-4. The agent sends the prompt to the **LiteLLM gateway**, which forwards it to **AWS Bedrock**.
-5. **AWS Bedrock Guardrails** screens the user message. If a guardrail blocks it, the agent stops and returns an error instead of calling the model.
-6. The model generates the response, which the agent streams back as an answer, a plan, or an approval card.
+3. Using your session, the agent reads the catalog context it needs: the item you are looking at, its properties, and related glossary terms. It then builds the prompt.
+4. The agent sends the prompt to the **LiteLLM gateway**, which checks the user message against **Amazon Bedrock Guardrails**.
+5. If the guardrail allows the message, LiteLLM forwards it to **Amazon Bedrock**, and the model generates the response. If the guardrail blocks it, the model is not called and the agent returns an error.
+6. The agent streams the response back to Studio as an answer, a plan, or an approval card.
 
-The agent runs in the platform’s Kubernetes cluster for your region. Conversations and agent data are scoped at the user level: a thread belongs to the user who created it, and is only listed for that user, within the catalog where it was opened.
+The agent runs in the platform's Kubernetes cluster for your region. Conversations are scoped to your tenant and user: a thread belongs to the user who created it and is listed only for that user, within the catalog where it was opened.
 
 ### Components
 
@@ -204,23 +204,21 @@ The following table describes each component and what happens to the data that p
 
 | Component | Where it runs | What it stores or processes |
 | --- | --- | --- |
-| **Studio application** | Your browser | The chat interface. |
 | **Studio backend** | Platform Kubernetes cluster, in your region | Forwards the chat request to the Steward agent and streams the response back. |
-| **Steward agent** | Platform Kubernetes cluster for your region, shared by every tenant of the environment | Runs the agent; no separate data store. |
-| **Agent database (PostgreSQL)** | Database provisioned for the agent, in your region | Conversation threads and agent state, scoped per user. |
-| **LiteLLM gateway** | Platform Kubernetes cluster for your region, one instance per region and environment | Forwards the agent’s model calls to AWS Bedrock and applies the guardrail check. |
-| **AWS Bedrock Guardrails** | AWS | Screens user messages. Records violations. |
-| **AWS Bedrock** | AWS | Runs the model the agent uses. |
-| **LangSmith** | Our LangSmith instance, in AWS **eu-west-3** | Agent execution traces used to improve the agent. |
+| **Steward agent** | Platform Kubernetes cluster for your region, shared by every tenant of the environment | Stateless; conversation state is kept in the agent database. |
+| **Agent database (PostgreSQL)** | Database provisioned for the agent, in your region | Conversation threads and agent state, scoped to your tenant and user. |
+| **LiteLLM gateway** | Platform Kubernetes cluster for your region, one instance per environment | Checks the user message against Bedrock Guardrails, then forwards allowed calls to Amazon Bedrock. |
+| **Amazon Bedrock** | AWS | Runs the model the agent uses. |
+| **LangSmith** | Actian's LangSmith instance, in AWS **eu-west-3** | Agent execution traces used to improve the agent. |
 
-The Steward agent uses **Claude Sonnet 4.6**, an Anthropic model that AWS runs on its own infrastructure through Amazon Bedrock. Actian does not host the model.
+The Steward agent uses **Claude Sonnet 4.6** through **Amazon Bedrock**. AWS runs the model on its own infrastructure; Actian does not host it.
 
 ### Data Residency
 
-- **Conversations stay in your region, and are scoped per user.** Conversation threads and agent state are stored in the agent’s PostgreSQL database, in the same AWS region as your environment. A user only ever sees the threads they created.
-- **Inference stays within your geography.** AWS does not currently offer in-region inference for the model the Steward agent uses. Requests therefore use **geo cross-region inference**: AWS routes each request to a region within the same geography, never outside it. Actian does not use global cross-region inference. For an EU tenant, requests are handled only in EU regions — for example Frankfurt, Ireland, Paris, Stockholm, Milan, or Spain — and never in the US, Australia, Japan, or any other geography. See the [AWS model card](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-sonnet-4-6.html#model-card-anthropic-claude-sonnet-4-6-regional-availability) for the current routing.
-- **Only guardrail violations are recorded.** A message blocked by a guardrail is logged with the policy that fired. Actian keeps no audit record of model calls on the AWS side.
-- **Traces go to our LangSmith instance in AWS eu-west-3, and can be turned off.** While tracing is enabled, the Steward agent sends execution traces to our LangSmith instance in AWS **eu-west-3**. A trace captures the exchange — your messages, the model’s responses, the tool calls between them — and the thread it belongs to. Deployments that must not send data outside their own region run with tracing disabled.
+- **Conversations stay in your region.** Threads and agent state are stored in the agent's PostgreSQL database, in the same AWS region as your environment. Each thread is scoped to your tenant and visible only to the user who created it.
+- **Inference stays within your geography.** AWS does not currently offer in-region inference for Claude Sonnet 4.6, so requests use **geo cross-region inference**: AWS routes each request to a region in the same geography, never outside it. Actian does not use global cross-region inference. EU requests stay in EU regions; see the [AWS model card](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-sonnet-4-6.html#model-card-anthropic-claude-sonnet-4-6-regional-availability) for the current routing.
+- **Blocked requests are archived.** When a guardrail blocks a message, the model is not called. The LiteLLM gateway archives the blocked request, together with the policy that fired, in Amazon S3. Actian retains these records for 12 months.
+- **Traces go to LangSmith in AWS eu-west-3, and can be turned off.** While tracing is enabled, the Steward agent sends execution traces to Actian's LangSmith instance in AWS **eu-west-3**, which is outside your deployment's region unless you are deployed in eu-west-3. A trace captures the exchange (your messages, the model's responses, and the tool calls between them) and the thread it belongs to. Actian retains traces for 30 days. Deployments in a region that must not send data outside it, such as Australia, run with tracing disabled.
 
 ## Limitations
 
