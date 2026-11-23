@@ -45,7 +45,11 @@ To open DCB:
 
 ## DCB Home Page
 
-The DCB home page displays all data contracts available in the current tenant.
+The **DCB Home Page**  provides access to the **Contracts** and **Inbox** sections.
+
+## Contracts
+
+The **Contracts** section lists all data contracts available in the current tenant.
 
 From this page, you can:
 
@@ -57,3 +61,15 @@ From this page, you can:
 * Create a new contract.
 
 By default, all users have **Viewer** access and can browse available contracts. Additional actions, such as creating, editing, reviewing, or managing contracts, depend on the user's assigned role and permissions.
+
+## Inbox
+
+The **Inbox** section provides a central location for tracking suggestions and comments on the contracts you collaborate on.
+
+From this page, you can:
+
+* View suggestions and comments awaiting review.
+* Track suggestions you have submitted on contracts.
+* View decisions made on your contracts and submitted suggestions.
+* Filter by type and contract.
+* Open a suggestion to view its details and take action.

@@ -171,14 +171,6 @@ Provide the following information:
 * **Business name:** A business-friendly name for the table.
 * **Data granularity:** Describe the grain of one row in the table.
 * **Tags:** Specify tags that can be used to classify and organize the table.
-* **Quality rules:** Define data quality expectations that apply to the table as a whole. You can add up to three quality rules and specify a rule name, rule type, data quality dimension, and description. Supported rule types include:
-
-     * **Text:** Define the quality expectation in natural language.
-     * **SQL:** Define the quality expectation using a SQL expression.
-
-    !!! note
-        Table-level quality rules apply to the dataset as a whole rather than to individual fields.
-
 * **Authoritative definition:** Add relevant Actian Data Intelligence catalog assets or supporting documentation with the table.
 
 Click **Save** to apply the changes.
@@ -255,11 +247,6 @@ You can select the **Properties** button for a field to define additional metada
      * **Referenced table:** The table referenced by the foreign key.
      * **Referenced field:** The field referenced by the foreign key.
 
-* **Quality rules:** Define data quality expectations that apply to the field. You can add up to three quality rules and specify a rule name, rule type, data quality dimension, and description. Supported rule types include:
-
-     * **Text:** Define the quality expectation in natural language.
-     * **SQL:** Define the quality expectation using a SQL expression.
-
 * **Authoritative definition:** Add relevant Actian Data Intelligence catalog assets or supporting documentation with the field.
 
 Click **Save** to save the field properties.
@@ -267,6 +254,60 @@ Click **Save** to save the field properties.
 **Delete Field**
 
 To delete a field, click the **Delete** button next to the field.
+
+### Data Quality
+
+Use the **Data Quality** section to define and manage data quality rules for a contract.
+
+**Quality Overview**
+
+The Quality Overview displays the following details:
+
+* **Total Rules:** The total number of data quality rules defined for the contract.
+* **Table Coverage:** The percentage of tables with at least one data quality rule.
+* **Field Coverage:** The percentage of fields with at least one data quality rule.
+
+**Manage Rules**
+
+Use the **Manage Rules** area to create and manage data quality rules for tables and their fields.
+
+To add a rule:
+
+1. Select the table for which you want to define a rule.
+2. Select **Add rule**.
+   
+    The **Add quality rule** side panel opens.
+
+3. Provide the following information:
+
+    * **Applies to:** Specify whether the rule applies to the entire table or to a specific field.
+    * **Table or field:** Select the table or field to which the rule applies.
+    * **Rule name:** Enter a descriptive name for the rule.
+    * **Rule type:** Select **Text-based** rule or **Custom SQL** rule.
+    * **Condition or query:**
+
+          * For a **Text-based** rule, describe the validation condition in natural language.
+          * For a **Custom SQL** rule, enter the SQL query used to validate the data and define the condition that the query result must satisfy.
+   
+    * **Dimension:** Select a data quality dimension to classify the rule.
+
+4. Select **Add table rule** or **Add field rule**.
+
+To edit a rule:
+
+1. Select the table that contains the rule you want to edit.
+2. In the rule list, select **Edit** button next to the rule.
+   
+    The **Edit quality rule** side panel opens.
+
+3. Update the rule information as needed.
+4. Select **Save changes**.
+
+To delete a rule:
+
+1. Select the table that contains the rule you want to delete.
+2. In the rule list, select the **Delete** button next to the rule.
+3. Confirm the deletion.
 
 ### Team
 
