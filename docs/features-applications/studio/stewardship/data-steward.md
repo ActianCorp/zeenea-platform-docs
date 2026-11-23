@@ -190,7 +190,7 @@ This section explains where the Steward agent runs, how a request travels from y
 ### Request Flow
 
 1. The **Studio application** in your browser sends your message to the **Studio backend** for your tenant, through the platform's ingress gateway.
-2. The Studio backend forwards the request to the **Steward agent**. The agent runs once per regional cluster, alongside the other platform components, and serves every tenant in that cluster.
+2. The Studio backend forwards the request to the **Steward agent**. The agent is deployed once per regional cluster, alongside the other platform components, and serves every tenant in that cluster.
 3. Using your session, the agent reads the catalog context it needs: the item you are looking at, its properties, and related glossary terms. It then builds the prompt.
 4. The agent sends the prompt to the **LiteLLM proxy**, which checks the user message against **Amazon Bedrock Guardrails** in AWS.
 5. If the guardrail allows the message, the proxy forwards it to **Amazon Bedrock**, and the model generates the response. If the guardrail blocks it, the model is not called and the agent returns an error.
@@ -205,9 +205,9 @@ The following table describes the main components and what happens to the data t
 | Component | Where it runs | What it stores or processes |
 | --- | --- | --- |
 | **Studio backend** | Platform Kubernetes cluster, in your region | Forwards the chat request to the Steward agent and streams the response back. |
-| **Steward agent** | Platform Kubernetes cluster for your region; one instance per regional cluster, shared by its tenants | Stateless; conversation state is kept in the agent database. |
+| **Steward agent** | Platform Kubernetes cluster for your region; one deployment per regional cluster, shared by its tenants | Holds no conversation data itself; threads are kept in the agent database. |
 | **Agent database (PostgreSQL)** | Database provisioned for the agent, in your region | Conversation threads and agent state, scoped to your tenant and user. |
-| **LiteLLM proxy** | Platform Kubernetes cluster for your region; one instance per regional cluster | Checks the user message against Amazon Bedrock Guardrails in AWS, then forwards allowed calls to Amazon Bedrock. |
+| **LiteLLM proxy** | Platform Kubernetes cluster for your region; one deployment per regional cluster | Checks the user message against Amazon Bedrock Guardrails in AWS, then forwards allowed calls to Amazon Bedrock. |
 | **Amazon Bedrock** | AWS | Runs the model the agent uses. |
 | **LangSmith** | Actian's LangSmith instance, in AWS eu-west-3 | Agent execution traces used to improve the agent. |
 
