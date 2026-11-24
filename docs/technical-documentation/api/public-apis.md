@@ -16,6 +16,7 @@ Actian Data Intelligence provides the following APIs:
 * **User Management (SCIM)**: Allows you to manage Users, Contacts, and Permission sets. 
 * **Audit Trail API (REST)**: Allows you to track all Add, Update, and Delete events on all Items' metadata in your catalog. Items include Assets, Custom Items, Users, Contacts, and Permission sets. 
 * **Data Product API (REST)**: Allows you to ingest and update data products and data contracts.
+* **Item Attachments API (REST)**: Allows you to upload, list, download, and delete files attached to catalog items.
 * **Access Request API (REST)**: Allows you to manage access requests.
 
 For each API, dedicated documentation is available to help you understand its use cases, current limits, and some example requests.

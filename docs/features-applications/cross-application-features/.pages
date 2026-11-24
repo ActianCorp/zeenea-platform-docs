@@ -5,6 +5,7 @@ nav:
     - data-profiling.md
     - data-sampling.md
     - glossary-hierarchy.md
+    - item-attachments.md
     - item-lifecycle-policies.md
     - microsoft-teams.md
     - Synchronization with a Data Quality Management Tool: data-quality-synchronization
