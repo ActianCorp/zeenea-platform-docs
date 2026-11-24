@@ -172,7 +172,7 @@ Use shared instructions to define conventions and policies, for example:
 - *"When creating glossary terms, use sentence case."*
 
 !!! note
-    Shared instructions affect all users allowed to use the Steward agent. Coordinate before making changes.
+    Shared instructions affect all users allowed to use the Steward agent. Only administrators with the **Manage agents** permission can edit them. Changes apply immediately and are not versioned, so coordinate before making changes.
 
 ## How Your Data Stays Safe
 
