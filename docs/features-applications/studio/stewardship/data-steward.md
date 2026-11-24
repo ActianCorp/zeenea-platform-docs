@@ -177,7 +177,7 @@ Use shared instructions to define conventions and policies, for example:
 ## How Your Data Stays Safe
 
 - **Every change requires your approval.** The agent never updates the catalog without an approval card, even when executing an approved plan.
-- **Changes are audited.** Every change the agent applies is recorded in the platform audit trail, under the user who approved it.
+- **Changes are audited.** Every change the agent applies is recorded in the platform audit trail, under the user who approved it. You can retrieve these records through the [Audit Trail API](../../../technical-documentation/api/audit-trail-apis.md).
 - **The agent works only in your catalog.** It reads your organization's data and the catalog you have open, and cannot access other organizations' data.
 - **It does not fabricate results.** If a search or lookup returns no results, the agent reports this instead of generating an answer. 
 - **It stays focused on catalog stewardship.** The agent declines requests that are unrelated to catalog stewardship.
