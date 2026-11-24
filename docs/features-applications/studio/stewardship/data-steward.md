@@ -205,8 +205,8 @@ The following table describes each component, where it runs or stores data, what
 
 | Component | Where it runs or stores | Data | Retention | Access |
 | --- | --- | --- | --- | --- |
-| **Studio backend** | Platform Kubernetes cluster, in your region | Chat request and response, in transit | Not stored | — |
-| **Steward agent** | Platform Kubernetes cluster for your region; one deployment per regional cluster, shared by its tenants | No conversation data | — | — |
+| **Studio backend** | Platform Kubernetes cluster, in your region | In transit | Not stored | — |
+| **Steward agent** | Platform Kubernetes cluster for your region; one deployment per regional cluster, shared by its tenants | In transit | Not stored | — |
 | **Agent database (PostgreSQL)** | Database provisioned for the agent, in your region | Conversation threads and agent state | Until you delete the thread, then the standard RDS backup policy | The user who created the thread; scoped to your tenant, user, and catalog |
 | **LiteLLM proxy** | Platform Kubernetes cluster for your region; one deployment per regional cluster | Request metadata: email, tenant, token counts, timestamp | 30 days | Actian platform operations, restricted |
 | **Guardrail archive (Amazon S3)** | S3 bucket in your region | Blocked request and the guardrail policy that fired | 12 months | Actian platform operations, restricted |
