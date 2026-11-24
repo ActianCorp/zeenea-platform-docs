@@ -192,11 +192,11 @@ This section explains where the Steward agent runs, how a request travels from y
 1. The **Studio application** in your browser sends your message to the **Studio backend** for your tenant, through the platform's ingress gateway.
 2. The Studio backend forwards the request to the **Steward agent**. The agent is deployed once per regional cluster, alongside the other platform components, and serves every tenant in that cluster.
 3. Using your session, the agent reads the catalog context it needs: the item you are looking at, its properties, and related glossary terms. It then builds the prompt.
-4. The agent sends the prompt to the **LiteLLM proxy**, which checks the user message against **Amazon Bedrock Guardrails** in AWS.
+4. The agent sends the prompt to the **LiteLLM proxy**, which checks the user message against **Amazon Bedrock Guardrails** in AWS for content policy violations and prompt attacks.
 5. If the guardrail allows the message, the proxy forwards it to **Amazon Bedrock**, and the model generates the response. If the guardrail blocks it, the model is not called and the agent returns an error.
 6. The agent streams the response back to Studio as an answer, a plan, or an approval card.
 
-The agent runs in the platform's Kubernetes cluster for your region. Conversations are scoped to your tenant and user: a thread belongs to the user who created it and is listed only for that user, within the catalog where it was opened.
+The agent runs in the platform's Kubernetes cluster for your region. A thread belongs to one tenant, one user, and one catalog. The agent checks the thread's tenant and user when it reads the thread, and refuses to run a thread from another catalog.
 
 ### Components
 
@@ -207,18 +207,21 @@ The following table describes the main components and what happens to the data t
 | **Studio backend** | Platform Kubernetes cluster, in your region | Forwards the chat request to the Steward agent and streams the response back. |
 | **Steward agent** | Platform Kubernetes cluster for your region; one deployment per regional cluster, shared by its tenants | Holds no conversation data itself; threads are kept in the agent database. |
 | **Agent database (PostgreSQL)** | Database provisioned for the agent, in your region | Conversation threads and agent state, scoped to your tenant and user. |
-| **LiteLLM proxy** | Platform Kubernetes cluster for your region; one deployment per regional cluster | Checks the user message against Amazon Bedrock Guardrails in AWS, then forwards allowed calls to Amazon Bedrock. |
+| **LiteLLM proxy** | Platform Kubernetes cluster for your region; one deployment per regional cluster | Checks the user message against Amazon Bedrock Guardrails in AWS for content policy violations and prompt attacks, then forwards allowed calls to Amazon Bedrock. |
 | **Amazon Bedrock** | AWS | Runs the model the agent uses. |
-| **LangSmith** | Actian's LangSmith instance, in AWS eu-west-3 | Agent execution traces used to improve the agent. |
+| **LangSmith** | Actian's self-hosted LangSmith instance, in AWS eu-west-3 | Agent execution traces used by Actian to monitor and improve the agent. |
 
 The Steward agent uses **Claude Sonnet 4.6** through **Amazon Bedrock**. AWS runs the model on its own infrastructure; Actian does not host it.
 
 ### Data Residency
 
 - **Conversations stay in your region.** Threads and agent state are stored in the agent's PostgreSQL database, in the same AWS region as your deployment. Each thread is scoped to your tenant and visible only to the user who created it.
-- **Inference stays within your geography.** AWS does not currently offer in-region inference for Claude Sonnet 4.6, so requests use **geo cross-region inference**: AWS routes each request to a region in the same geography, never outside it. Actian does not use global cross-region inference. Requests from European deployments stay in European regions; see the [AWS model card](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-sonnet-4-6.html#model-card-anthropic-claude-sonnet-4-6-regional-availability) for the current routing.
+- **Threads are kept until you delete them.** Deletion is user-initiated and removes the thread from the agent database. Like other platform data, the thread remains in RDS backups under the standard backup policy.
+- **Inference stays within your geography.** AWS does not currently offer in-region inference for Claude Sonnet 4.6, so requests use **geo cross-region inference**: AWS routes each request to a region in the same geography, never outside it. Actian does not use global cross-region inference. Requests from European deployments stay in European regions; UK deployments are served from EU data centers. Contact Actian Support for the regions available to your deployment. See the [AWS model card](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-sonnet-4-6.html#model-card-anthropic-claude-sonnet-4-6-regional-availability) for the current routing.
+- **AWS does not log model calls.** Amazon Bedrock processes each request and returns the response without retaining the prompt or completion.
 - **Blocked requests are archived.** When a guardrail blocks a message, the model is not called. The LiteLLM proxy archives the blocked request, together with the policy that fired, in an S3 bucket in your region. Actian retains these records for 12 months.
-- **Traces go to LangSmith in AWS eu-west-3, and can be turned off.** While tracing is enabled, the Steward agent sends execution traces to Actian's LangSmith instance in AWS eu-west-3. Except for deployments in eu-west-3, traces leave your region. A trace captures the exchange (your messages, the model's responses, and the tool calls between them) and the thread it belongs to. Actian retains traces for 30 days. Deployments that must not send data outside their region, such as Australia, run with tracing disabled.
+- **Traces go to LangSmith in AWS eu-west-3.** While tracing is enabled, the Steward agent sends execution traces to Actian's self-hosted LangSmith instance in AWS eu-west-3. Except for deployments in eu-west-3, traces leave your region. A trace captures the exchange (your messages, the model's responses, and the tool calls between them) and the thread it belongs to. Actian retains traces for 30 days. Tracing is configured per region, not per tenant. Deployments that must not send data outside their region, such as Australia, run with tracing disabled.
+- **Your data is not used to train models.** Actian uses traces to monitor and improve the agent. Your data is not used to train foundation models.
 
 ## Limitations
 
