@@ -148,7 +148,7 @@ Administrators manage the Steward agent from the **Agents** tab in **Administrat
 
 ### Enabling the Steward Agent
 
-The Steward agent is **disabled by default**. An administrator must enable it on the **Agents** tab before users can use it.
+The Steward agent is **disabled by default**. An administrator must enable it on the **Agents** tab before users can use it. Disabling the agent keeps existing conversations. They are not accessible while the agent is disabled, and they become available again if you enable it.
 
 ### Granting Permission to Manage Agents
 
