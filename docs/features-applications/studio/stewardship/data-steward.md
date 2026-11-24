@@ -184,7 +184,7 @@ Use shared instructions to define conventions and policies, for example:
 
 ## Architecture and Data Residency
 
-This section explains where the Steward agent runs, how a request travels from your browser to the model, and where and how long your data is stored. It is intended for governance and security reviews.
+This section explains where the Steward agent runs, how a request travels from your browser to the model, and where and how long your data is stored. It applies to Actian-hosted deployments and is intended for governance and security reviews.
 
 ![The Steward agent in your region's Kubernetes cluster reads catalog data, sends the user message through the LiteLLM proxy and Bedrock Guardrails to Amazon Bedrock, and sends traces to LangSmith in eu-west-3](./images/steward-architecture.svg)
 
