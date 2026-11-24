@@ -148,7 +148,7 @@ Administrators manage the Steward agent from the **Agents** tab in **Administrat
 
 ### Enabling the Steward Agent
 
-The Steward agent is **disabled by default**. An administrator must enable it on the **Agents** tab before users can use it.
+The Steward agent is **disabled by default**. An administrator must enable it on the **Agents** tab before users can use it. Disabling the agent keeps existing conversations. They are not accessible while the agent is disabled, and they become available again if you enable it.
 
 ### Granting Permission to Manage Agents
 
@@ -172,43 +172,65 @@ Use shared instructions to define conventions and policies, for example:
 - *"When creating glossary terms, use sentence case."*
 
 !!! note
-    Shared instructions affect all users allowed to use the Steward agent. Coordinate before making changes.
+    Shared instructions affect all users allowed to use the Steward agent. Only administrators with the **Manage agents** permission can edit them. Changes apply immediately and are not versioned, so coordinate before making changes.
 
 ## How Your Data Stays Safe
 
 - **Every change requires your approval.** The agent never updates the catalog without an approval card, even when executing an approved plan.
-- **Your catalog remains private.** The agent works only within your organization's data and the catalog you have open.
+- **Changes are audited.** Every change the agent applies is recorded in the platform audit trail, under the user who approved it. You can retrieve these records through the [Audit Trail API](../../../technical-documentation/api/audit-trail-apis.md).
+- **The agent works only in your catalog.** It reads your organization's data and the catalog you have open, and cannot access other organizations' data.
 - **It does not fabricate results.** If a search or lookup returns no results, the agent reports this instead of generating an answer. 
 - **It stays focused on catalog stewardship.** The agent declines requests that are unrelated to catalog stewardship.
 
 ## Architecture and Data Residency
 
-This section explains where the Steward agent runs and where your data is stored for governance and security reviews.
+This section explains where the Steward agent runs, how a request travels from your browser to the model, and where and how long your data is stored. It applies to Actian-hosted deployments and is intended for governance and security reviews.
 
-The Steward agent runs **within the same Kubernetes cluster as your tenant**. 
+![The Steward agent in your region's Kubernetes cluster reads catalog data, sends the user message through the LiteLLM proxy and Bedrock Guardrails to Amazon Bedrock, and sends traces to LangSmith in eu-west-3](./images/steward-architecture.svg)
 
-The following table describes its components and the data that flows through them. 
+### Request Flow
 
-| Component | Where it runs | What it stores |
-| --- | --- | --- |
-| **Steward agent** | Same Kubernetes cluster as your tenant | The running agent; no separate data store. |
-| **Agent database (PostgreSQL)** | Same Kubernetes cluster as your tenant | Conversation threads and agent state. |
-| **LiteLLM gateway** | Same Kubernetes cluster as your tenant | Routes the agent's LLM calls. Records **call statistics only**, not message content. |
-| **AWS Bedrock** | AWS | Runs the language models. Call logs are stored in the **same AWS region** as the request, with **restricted access**. |
-| **LangSmith** | Hosted instance in AWS **eu-west-3** | Agent traces used to improve the agent. |
+1. The **Studio application** in your browser sends your message to the **Studio backend** for your tenant, through the platform's ingress gateway.
+2. The Studio backend forwards the request to the **Steward agent**. The agent is deployed once per regional cluster, alongside the other platform components, and serves every tenant in that cluster.
+3. The agent acts with your permissions: it uses your session to read the catalog context it needs, including the item you are looking at, its properties, and related glossary terms. It then builds the prompt.
+4. The agent sends the prompt to the **LiteLLM proxy**, which checks only the user message against **Amazon Bedrock Guardrails** in the deployment's AWS region for content policy violations and prompt attacks.
+5. If the guardrail allows the message, the proxy forwards it to **Amazon Bedrock**, and the model generates the response. If the guardrail blocks it, the model is not called and the agent returns an error.
+6. The agent streams the response back to Studio as an answer, a plan, or an approval card.
 
-Key points:
+A thread belongs to one tenant, one user, and one catalog. The agent checks the thread's tenant and user when it reads the thread, and refuses to run a thread from another catalog.
 
-- **The agent and its database remain in your tenant’s cluster.** Conversations and agent state do not leave the cluster.  
-- **LLM calls use regional models, not global models.** Inference runs on region-specific models in AWS Bedrock rather than global cross-region models, so requests are not routed outside the model's region.  
-- **Bedrock call logs remain in their source region** and are kept with restricted access.  
-- **Execution traces are used to improve the agent.** The Steward agent sends execution traces to a hosted LangSmith instance in AWS **eu-west-3**.
+### Components and Data
+
+The following table describes each component, where it runs or stores data, what it stores, how long it keeps it, and who can access it.
+
+| Component | Where it runs or stores | Data | Retention | Access |
+| --- | --- | --- | --- | --- |
+| **Studio backend** | Platform Kubernetes cluster, in your region | In transit | Not stored | — |
+| **Steward agent** | Platform Kubernetes cluster for your region; one deployment per regional cluster, shared by its tenants | In transit | Not stored | — |
+| **Agent database (PostgreSQL)** | Database provisioned for the agent, in your region | Conversation threads and agent state | Until you delete the thread, then the standard RDS backup policy | The user who created the thread; scoped to your tenant, user, and catalog |
+| **LiteLLM proxy** | Platform Kubernetes cluster for your region; one deployment per regional cluster | Request metadata: email, tenant, token counts, timestamp | 30 days | Actian platform operations, restricted |
+| **Guardrail archive (Amazon S3)** | S3 bucket in your region | Blocked request and the guardrail policy that fired | 12 months | Actian platform operations, restricted |
+| **Amazon Bedrock** | AWS, in your geography; no model-call logging | Prompt and response, transient | Not stored | Not retained |
+| **LangSmith** | Actian's self-hosted instance, in AWS eu-west-3 | Execution traces: messages, responses, tool calls, thread ID | 30 days | Actian platform operations, restricted |
+
+The Steward agent uses **Claude Sonnet 4.6** through **Amazon Bedrock**. AWS runs the model on its own infrastructure; Actian does not host it.
+
+### Data Residency
+
+**Regions and geographies.** A region is a single AWS location, such as eu-west-3 (Paris). A geography is a group of AWS regions used for cross-region routing, such as the EU, the United States, or Australia. Your deployment runs in one region, and inference stays within its geography.
+
+- **AWS does not log model calls.** Amazon Bedrock processes each request and returns the response without retaining the prompt or completion.
+- **Inference stays within your geography.** AWS does not currently offer in-region inference for Claude Sonnet 4.6, so requests use **geo cross-region inference**. AWS routes each request to a region within the same geography as your deployment, never to another geography. Actian does not use global cross-region inference. Within the EU geography, requests from EU regions are never routed to London, while UK requests can be routed to any EU region, including London. Contact Actian Support for the regions available to your deployment. See the [AWS model card](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-sonnet-4-6.html#model-card-anthropic-claude-sonnet-4-6-regional-availability) for the current routing.
+- **Data is encrypted in transit and at rest.** The agent database encrypts conversation data at rest, and traffic between components is encrypted.
+- **Traces go to LangSmith in AWS eu-west-3.** While tracing is enabled, the agent sends execution traces to Actian's self-hosted LangSmith instance in AWS eu-west-3. Except for deployments in eu-west-3, this sends traces outside your region; for deployments outside the EU geography, such as the US, it also sends them outside your geography.
+- **Tracing is configured per region, not per tenant.** Deployments that must not send data outside their region, such as Australia, run with tracing disabled.
+- **Your data is not used to train models.** Actian uses traces to monitor and improve the agent. Your data is not used to train foundation models.
 
 ## Limitations
 
 - **Some actions depend on the item type.** For example, alternative names apply only to glossary terms, schemas apply only to datasets, and glossary parent/child links are supported only between glossary terms. The agent skips unsupported actions for a given item type instead of reporting an error. 
 - **The completion score comes from the platform.** The agent can explain what the score means and help you improve it, but it does not calculate the score itself.
-- **Very large jobs are processed in batches.** Bulk changes are split into multiple approval cards, so you may need to approve more than one batch for a single request.
+- **Very large jobs are processed in batches.** The agent applies at most 25 changes per approval card. Bulk changes are split into multiple cards, so you may need to approve more than one batch for a single request.
 
 ## Troubleshooting
 
