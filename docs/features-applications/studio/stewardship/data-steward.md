@@ -230,7 +230,7 @@ The Steward agent uses **Claude Sonnet 4.6** through **Amazon Bedrock**. AWS run
 
 - **Some actions depend on the item type.** For example, alternative names apply only to glossary terms, schemas apply only to datasets, and glossary parent/child links are supported only between glossary terms. The agent skips unsupported actions for a given item type instead of reporting an error. 
 - **The completion score comes from the platform.** The agent can explain what the score means and help you improve it, but it does not calculate the score itself.
-- **Very large jobs are processed in batches.** Bulk changes are split into multiple approval cards, so you may need to approve more than one batch for a single request.
+- **Very large jobs are processed in batches.** The agent applies at most 25 changes per approval card. Bulk changes are split into multiple cards, so you may need to approve more than one batch for a single request.
 
 ## Troubleshooting
 
