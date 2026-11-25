@@ -32,9 +32,21 @@ The following scheme describes how access requests are handled in Actian Data In
   ![](./images/access-requests.png)
 
 ## Access Request Policy
+
 Access requests in Actian Data Intelligence are managed through policies defined by administrators in the Actian Data Intelligence **Administration** interface. These policies specify rules for requesting access to data assets, including required attributes.
 Data owners can define and manage access request policies in the Policies section. After a policy is created, it can be associated with individual data assets. Only items linked to a policy support access requests.
 Data consumers can request access to a data asset only if an access request policy is associated with it.
+
+### Access Duration
+
+When creating an access request policy, administrators can configure whether requesters must specify how long they need access when submitting an access request. 
+
+Depending on the policy configuration, requesters can request **Permanent** or **Temporary** access. 
+
+The selected duration is displayed to approvers during the review process and included in configured mailhook and webhook notifications, providing external provisioning systems with information about the requested access period.
+
+!!! note 
+    Actian Data Intelligence Platform records and communicates the requested access duration but does not enforce it. Access is not automatically revoked when the duration ends. Your provisioning system or team is responsible for determining how the requested duration is applied.
 
 ### Create an Access Request Policy
 
@@ -44,7 +56,7 @@ You can create new access request policies in Actian Data Intelligence **Adminis
 
 1. Open **Administration**.
    
-2. Go to the **Policies** section.
+2. Go to the **Policies > Access requests** section.
    
 3. Click the **Create policy** button.<br />The **Create an Access Request Policy** window opens. 
    ![](./images/access-requests-policy.png)
@@ -77,6 +89,8 @@ You can create new access request policies in Actian Data Intelligence **Adminis
          * **Extra field from use case template**: The field appears when you select **Select a use case**. Select a property from the available **Multi-select** or **Tag** type properties in the Use case item type template. For more information, see [Extra Field from Use Case Template](#extra-field-from-use-case-template).
           
          * **Approvers** (required): Select the roles responsible for approving access requests.
+         
+         * **Ask requesters for an access duration**: Select this option to require requesters to specify how long they need access when submitting an access request. This option is disabled by default. For more information about access duration, see [Access Duration](#access-duration).
       
       ![](./images/access-requests-policy-create-approval.png)
     
@@ -117,6 +131,9 @@ You can edit the access request policies in Actian Data Intelligence **Administr
 4. Make the required changes to the policy attributes.
 5. Click **Update policy**.
    ![](./images/access-requests-policy-edit.png)
+
+!!! note
+    Changes to the **Ask requesters for an access duration** setting apply only to new access requests. Existing requests retain their original access duration information, if any.
     
 ### Delete an Access Request Policy
 
@@ -142,7 +159,6 @@ For example, you can use this option to manage access requests for user groups i
 2.	When requesting access, the end user can select the user group for which they are requesting access.
 3.	This information is displayed to the data owner for review and then forwarded to the source system or IT department through the configured mailhook or webhook.
 
-
 ### Configure the Email Channel for the Authorization Workflow (Mailhook)
 
 When you activate the External workflow type and select Email, you must provide the following field:
@@ -150,6 +166,8 @@ When you activate the External workflow type and select Email, you must provide 
 * **Email**: Enter the email address that receives automatic notifications after each access request is approved in Studio.
 
 The email is formatted in `XML` so ticketing or workflow management tools, such as Jira or ServiceNow, can automatically parse it.
+
+If the request includes an access duration, the email notification includes the duration information described in [Access Duration in Notifications](#access-duration-in-notifications).
 
 Authorization request email example with extra input field activated:
 
@@ -227,6 +245,8 @@ When you activate the External workflow type and select Webhook, you must provid
 
 * **Webhook URL**: Enter the endpoint URL that your system exposes to receive access request notifications.  
 * **Secret key**: Enter a string of up to 4096 characters to sign the messages sent to the webhook.
+
+If the request includes an access duration, the webhook payload includes the optional `accessDuration` object described in [Access Duration in Notifications](#access-duration-in-notifications).
 
 To manage access request notifications, your system must expose an HTTPS REST API endpoint. After each access request approval, the Actian Data Intelligence sends `POST` messages secured with HMAC (Hash-based Message Authentication Code) to notify the webhook.  
    
@@ -334,6 +354,59 @@ app.post('/webhook', (req, res) => {
 })
 ```
 
+### Access Duration in Notifications
+
+Configured mailhook and webhook notifications include the access duration exactly as selected by the requester. The optional `accessDuration` object is present in notifications for requests that include a duration and omitted when no duration was specified.
+
+The webhook payload version remains unchanged (`"webhookVersion": "1.0"`). The `accessDuration` object is added to the existing payload and does not introduce a new webhook version.
+
+The following examples show how access duration is represented in notifications.
+
+**Permanent access**
+
+Access without a predefined end date.
+
+```json
+{
+  "accessDuration": {
+    "type": "permanent"
+  }
+}
+```
+
+**Temporary access with a preset duration**
+
+Access for a predefined period. The `duration` field uses an ISO 8601 duration value, such as `P1D` (1 day), `P1W` (1 week), `P2W` (2 weeks), `P1M` (1 month), `P6M` (6 months), or `P1Y` (1 year).
+
+```json
+{
+  "accessDuration": {
+    "type": "temporaryPreset",
+    "duration": "P1W"
+  }
+}
+```
+
+**Temporary access with custom dates**
+
+Access for a specific period defined by a start date and an end date. Both dates use the `yyyy-MM-dd` format and do not include a time or time zone.
+
+```json
+{
+  "accessDuration": {
+    "type": "temporaryRange",
+    "startDate": "2027-01-12",
+    "endDate": "2027-02-15"
+  }
+}
+```
+
+When processing notifications:
+
+* Treat a missing `accessDuration` as **no duration specified**, not as **Permanent**.
+* For preset durations, the provisioning system determines when access starts and ends. The platform does not interpret the preset or assign a start date.
+* Ignore unknown fields so that future payload additions do not break your integration.
+
 ## Activate Access Request on an Item
 
 When access request policies are enabled for an item type, curators can activate the feature from an item details page. You must have write permissions on the item to activate access request.
@@ -376,7 +449,26 @@ When the feature is activated for an item, you can request access from the item 
          * **Reason** (required): Enter the reason or project for which you need access to the data.
          * **Audience** (required): Select for whom you are requesting access (Myself or Service account). 
          ![](./images/access-requests-policy-submit.png)
-4. Click **Create**.
+4. If the policy requires an access duration, select **Permanent** or **Temporary** in the **Access duration** section. <br />For temporary access, choose one of the following options:
+     
+     * **A preset duration**: 1 day, 1 week, 2 weeks, 1 month, 6 months, or 1 year.
+        
+        !!! note
+            A preset duration defines a length of time, not a calendar period, and does not include a start date. Your provisioning system determines when the period starts based on when access is granted.
+     
+     * **Custom dates**: Select a start date and an end date from the calendar, or enter the dates manually.
+          
+        !!! note
+            For custom dates:
+              
+            * The start date cannot be in the past.
+            * The end date cannot be before the start date.
+            * A date range that starts and ends on the same day is valid.
+            * Dates are calendar days and do not include a time or time zone.
+         
+        ![](./images/access-requests-policy-duration.png)
+
+5. Click **Create**.
 
 Once the request is submitted, the approver receives an email notification to invite them to review it. After the review, you will receive an email notification with the status of your request (approved or rejected) and an optional comment from the approver.
 
@@ -440,6 +532,19 @@ In Explorer, the data requester can view the current status and all status chang
 3. Click an access request from the list.<br />The **Access Request Details** side panel opens, displaying the request's current **Status** and **Activity** history, including any comments.  
    ![](./images/access-request-status-explorer.png)
 
+### Access Duration in Request Details
+
+The access request details in Explorer and Studio display the access duration selected by the requester. This information is read-only for both requesters and approvers.
+
+The following access duration values can be displayed:
+
+* **Permanent**: Access with no end date was requested.
+* **Temporary** with a preset duration, such as **1 week**: Access for the selected duration was requested.
+* **Temporary** with custom start and end dates: Access for the specified date range was requested.
+* **No Access duration row**: The request was created when the policy option was disabled. No duration was specified. This does not indicate permanent access.
+
+![](./images/access-request-duration-details.png)
+
 ## Review Access Requests
 
 You can manage the access requests assigned to you from the **Access requests** section in the Studio.
@@ -448,15 +553,22 @@ You can manage the access requests assigned to you from the **Access requests** 
 
 1. Open Studio.
 2. Go to the **Access requests** section.<br />An **Access requests** window opens, displaying the list if pending access requests assigned to you.
-3. Click an access request to open a side panel with more details.
-4. After reviewing the details, click **Approve** or **Reject** button from the **Actions** column.<br />An **Approve the access request** or **Reject the access request** dialog opens.
+     ![](./images/access-requests-policy-review.png)
+3. Select an access request to open a side panel with more details.
+     ![](./images/access-requests-policy-review-details.png)
+4. Review the request details.
+5. Review the requested **Access duration**, if displayed.
+    
+    !!! note
+        Approvers cannot change the duration. If a different duration is required, reject the request and ask the requester to submit a new request.
+
+6. After reviewing the details, click **Approve** or **Reject**.<br />An **Approve the access request** or **Reject the access request** dialog opens.
    
     !!! note
         In both cases, you can add a comment.
 
-5. Click **Confirm**.
-6. If the External workflow type option is activated in Administration, Studio automatically sends an email to the specified email or calls the webhook when a request is approved.
-   ![](./images/access-requests-policy-review.png)
+7. Click **Confirm**.
+8. If the External workflow type option is activated in Administration, Studio automatically sends an email to the specified email or calls the webhook when a request is approved.
 
 ## Audit Access Requests
 
@@ -470,3 +582,12 @@ The data access requests and their processing are recorded in the audit log. You
 
 For more information about Audit API, see [Audit Trail API](../../technical-documentation/api/audit-trail-apis.md).
 
+## Limitations
+
+### Access Duration
+
+* Access durations are informational only and are not enforced by the platform. Your provisioning system or team is responsible for granting and revoking access in the source system.
+* When the requested duration ends, the request status does not change. For example, an **Approved** request remains **Approved**. There is no **Expired** status, automatic expiration scheduler, or additional notification when the duration ends.
+* Extensions and renewals are not supported. Submit a new access request instead.
+* Maximum duration limits cannot be configured per policy.
+* Access requests with an access duration can be created only from Explorer, not through the Access Request API.
