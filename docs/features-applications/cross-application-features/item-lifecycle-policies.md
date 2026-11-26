@@ -19,7 +19,7 @@ Each stage includes:
 * A color
 * A visibility rule that determines whether items at that stage appear in Explorer or remain visible only in Studio
 
-Lifecycle policies are scoped by catalog and item type. When you assign a policy to a catalog and item type combination, it applies to all matching items, both existing and new. Each catalog and item type combination can have only one lifecycle policy.
+Lifecycle policies are created independently of catalogs. The platform automatically determines compatible item types by evaluating the requirements configured across all stages of the policy. After a policy is created, you can apply it to a catalog and a compatible item type. The policy is then applied to matching existing and new items in that catalog. Each catalog and item type combination can have only one lifecycle policy.
 
 !!! warning "Important"
     Lifecycle policies support all item types except **Fields** and **Output ports**. Policies defined for datasets or data processes do not apply to their embedded items (such as fields or datasets).
@@ -37,6 +37,7 @@ The following table describes the key concepts used in lifecycle policies:
 | Not staged | A system stage automatically assigned to existing items when a new policy is applied, without affecting their visibility. Only Studio users can see that an item is not staged. |
 | Stage transition | The process of moving an item to the next or previous stage. |
 | Stage requirement | A condition associated with a lifecycle stage that must be satisfied before an item can transition to that stage. A stage requirement is based on an attribute that must not be empty. Requirements accumulate across stages. |
+| Compatible item type | An item type that supports all requirements defined across the stages of a lifecycle policy. The platform automatically determines compatible item types based on those requirements. |
 
 ## Typical Workflow
 
@@ -62,7 +63,7 @@ You can create new lifecycle policies in Administration.
 **To create a lifecycle policy**
 
 1. Open **Administration**.
-2. Select **Policies** > **Lifecycles**. 
+2. Navigate to **Policies** > **Lifecycles**. 
 3. Click **Create lifecycle policy**.  
    
      The **Create lifecycle policy** window opens.
@@ -74,9 +75,6 @@ You can create new lifecycle policies in Administration.
      * **Name** (required): Enter a descriptive name for the policy (for example, "Glossary Review Workflow").
      * **Code** (required): Enter a unique technical identifier.
      * **Description** (optional): Explain the purpose of this policy.
-     * **Catalogs to which the policy applies** (optional): Select one or more catalogs where the policy applies. You can leave this empty and add catalogs later by editing the policy.
-     * **Automatically apply to new catalogs** (optional): Turn on this option to automatically apply the policy to newly created catalogs.
-     * **Item types to which the policy applies** (optional): Select one or more item types to which the policy applies (all item types except Field and Output Port). You can leave this field empty and add item types later by editing the policy.
      * **Stages** (required): Define the ordered stages of the lifecycle. For more information about configuring lifecycle stages, see [Configure Lifecycle Stages](#configure-lifecycle-stages).  
 
 5. Click **Create lifecycle policy**.
@@ -85,10 +83,7 @@ You can create new lifecycle policies in Administration.
 
 
 !!! note
-    A lifecycle policy is not applied until you select at least one catalog and one item type. Until then, the policy exists but does not affect any items.
-
-!!! note
-    A catalog and item type combination can be associated with only one lifecycle policy. If you try to select a combination that is already used in another policy, the system rejects the selection.
+    Creating a lifecycle policy does not apply it to any catalog. Apply the policy separately from the **Catalogs** section in Administration. For more information, see [Apply a Lifecycle Policy to a Catalog](#apply-a-lifecycle-policy-to-a-catalog).
 
 #### Configure Lifecycle Stages
 
@@ -113,10 +108,11 @@ You can customize these stages or create your own.
            * **Studio only**: Items are hidden from Explorer.
            * **Studio and Explorer**: Items are visible in both Studio and Explorer.
      * **Color**: Select a color from the available palette.
+     * **Requirements**: Select the attributes that must be filled in before an item can transition to this stage. For more information, see [Configure Stage Requirements](#configure-stage-requirements).
 
 3. Click **Apply** to save the stage. 
    
-     The new stage appears in the list of stages for the policy.
+     The new stage appears in the list of stages for the policy. The stage card displays the configured **Visibility** and **Requirements** for the stage.
 
 **To edit an existing stage**
 
@@ -151,19 +147,26 @@ In addition to a name, code, visibility, and color, each stage (except the first
 
 **To add a stage requirement**
 
-1. Open the stage editor and locate the **stage requirements** section at the bottom of the panel.
+1. Open the stage editor and locate the **Requirements** section at the bottom of the panel.
 2. Click **Add requirement**.
-3. Select an **Attribute** to require:
-     
-     * **Description**: The item's description field.
-     * A **property** from the item type templates covered by the policy.
-     * A **responsibility** type defined in Studio, such as Data owner, Steward, or Curator.
+3. Select a requirement from the list.<br/>Requirements are grouped by category, including:
 
-4. Click **Apply** to save the requirement.
+    - **Description**: The item's description field.
+    - **Responsibilities**: Responsibility types defined in Studio, such as Data Owner, Steward, or Curator.
+    - **Properties**: Properties defined in item type templates.
+
+4. Click **Apply**.
 
 ![](./images/configure-lifecycle-policy-stage-requirement.png)
 
-When a lifecycle policy covers multiple item types, the property list displays only the properties that are common to all item types covered by the policy.
+When configuring stage requirements, the platform evaluates which item types support the selected requirements.
+
+The requirement selection list displays all available requirements. Requirements that are compatible with the requirements already configured in the lifecycle policy can be selected.
+
+!!! warning "Important"
+    Only compatible requirements can be selected. Requirements that conflict with the existing selection remain visible but are disabled.
+
+As requirements are added, removed, or modified, the platform automatically updates the list of selectable requirements and recalculates the list of compatible item types.
 
 A stage can have multiple requirements. Before an item can transition to a stage, it must meet all requirements for that stage and all previous stages. For more information, see [Cumulative Enforcement](#cumulative-enforcement).
 
@@ -178,15 +181,67 @@ Stage requirements apply only when moving an item forward to a later stage. Movi
 !!! warning
     The platform does not automatically move an item when it later meets or no longer meets a stage's requirements. The platform checks requirements only when a stage transition is attempted.
 
+#### Compatible Item Types
 
-#### Apply the Policy
+Lifecycle policies automatically determine the item types to which they can be applied.
 
-After you save the policy, it takes effect immediately:
+The platform evaluates the requirements configured across all lifecycle stages and identifies the item types that support those requirements. As requirements are added, removed, or modified, the platform automatically updates the list of compatible item types.
+
+Compatible item types are displayed at the bottom of the lifecycle policy editor. The section displays the number of compatible item types and lists the item types that support the currently selected requirements.
+
+When applying a lifecycle policy to a catalog, only compatible item types can be selected.
+
+#### Apply a Lifecycle Policy to a Catalog
+
+You can apply a saved lifecycle policy to a catalog and item type from the **Catalogs** section in Administration.
+
+**To apply a lifecycle policy**
+
+1. Navigate to **Administration > Catalogs**.
+2. Open the catalog menu (⋮).
+3. Select **Manage lifecycle policies**.
+    
+    The **Lifecycle policies** tab opens.
+
+4. Click **Apply policy**.
+5. Select one or more item types.
+6. Click **Continue**.
+7. Select a lifecycle policy for the selected item types.
+8. Click **Apply policy**.
+
+The policy takes effect immediately:
 
 * New items matching the policy’s catalog and item type criteria are automatically assigned the first stage when created (through Studio, API, or scanner import).  
 * Existing items that match the criteria are assigned a **Not staged** status. The **Not staged** status is visible only in Studio and does not affect the item’s visibility in Explorer.
 
 After applying a policy, use the stage filter in Studio to find items with the **Not staged** status. You can then update item stages individually or in bulk.
+
+### Switch a Lifecycle Policy for an Item Type
+
+You can switch the lifecycle policy assigned to an item type in a catalog without affecting other item types. During the switch process, stages from the current policy are mapped to stages in the new policy. This allows existing items to retain their lifecycle progress.
+
+**To switch a lifecycle policy**
+
+1. Navigate to **Administration > Catalogs**.
+2. Open the catalog menu (⋮).
+3. Select **Manage lifecycle policies**.
+    
+    The **Lifecycle policies** tab opens.
+
+4. Click **Change policy** next to the item type.
+5. Select the new **Lifecycle Policy**, then select **Continue**.<br/>The platform proposes initial stage mappings between the current policy and the new policy.
+6. Review and adjust the stage mapping as required.
+7. Click **Continue**.
+8. Review the switch summary, including the number of affected items and the stage mappings to be applied.
+9. Click **Switch policy** to confirm the change.
+
+The policy switch takes effect immediately. During the switch, items assigned to the previous policy are migrated to the corresponding stages in the new policy based on the configured stage mappings.
+
+!!! note
+
+    Changing a lifecycle policy triggers reindexing of all affected items in the search index. Depending on the number of affected items, this process can take some time.
+
+    Search results may be temporarily incomplete while reindexing is in progress.
 
 ### Edit a Lifecycle Policy
 
@@ -195,15 +250,13 @@ You can edit lifecycle policies from Administration.
 **To edit a lifecycle policy**
 
 1. Open **Administration**.
-2. Select **Policies** > **Lifecycles**. 
-3. Click the pencil icon next to the policy in the **Actions** column. 
+2. Navigate to **Policies** > **Lifecycles**. 
+3. Select **Edit policy** next to the policy.
    
      The **Edit lifecycle policy** window opens.
 
 4. Make the required changes to the policy attributes or stages.
 5. Click **Save changes**.
-
-![](./images/create-lifecycle-policy-edit.png)
 
 ### Delete a Lifecycle Policy
 
@@ -212,14 +265,12 @@ You can delete a lifecycle policy from Administration.
 **To delete a lifecycle policy**:
 
 1. Open **Administration**.
-2. Select **Policies** > **Lifecycles**. 
-3. Click the trash icon next to the policy in the **Actions** column. 
+2. Navigate to **Policies** > **Lifecycles**. 
+3. Select **Delete** next to the policy. 
    
      The **Delete lifecycle policy** dialog opens.
 
 4. Click **Confirm**. 
-
-![](./images/create-lifecycle-policy-delete.png)
 
 ### Lifecycle Policy Updates
 
@@ -227,14 +278,12 @@ The following table describes how the platform handles changes to lifecycle poli
 
 | Action | Behavior |
 | :---- | :---- |
-| Add a catalog to a policy | You can add a catalog only if no other policy covers the same catalog and item type combination. Existing items in that catalog are updated asynchronously to **Not staged**. |
-| Remove a catalog from a policy | All matching items lose their stage and return to a no-stage state. At least one catalog must remain associated with the policy. |
-| Add an item type to a policy | You can add an item type only if no other policy covers the same catalog and item type combination. |
-| Remove an item type from a policy | All matching items return to a no-stage state. At least one item type must remain associated with the policy. |
+| Apply a policy to a catalog and item type | Apply a saved policy from the **Catalogs** section. Each catalog and item type combination can have only one lifecycle policy. |
+| Switch a policy for an item type |  Map stages from the current policy to stages in the new policy. When the switch is completed, items are moved to the corresponding stages in the new policy based on the configured mappings. |
 | Add a stage | No impact on existing items. |
 | Delete a stage | You can delete a stage only if no items are currently assigned to it. |
 | Delete a policy | All matching items return to a no-stage state. A confirmation dialog appears before the deletion is completed. |
-| Delete a catalog from the tenant | The catalog is automatically removed from any lifecycle policies that reference it. |
+| Delete a catalog from the tenant | The catalog's lifecycle policy assignments are removed. |
 
 ### Stage Requirement Updates
 
